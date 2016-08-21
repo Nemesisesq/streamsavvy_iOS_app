@@ -12,6 +12,8 @@
 @interface Constants : NSObject
 
 +(void)showAlert:(NSString *)title withMessage:(NSString *)message fromController:(UIViewController *)vc;
++ (void)showAlert:(NSString *)title withMessage:(NSString *)message;
+
 +(void)fixSeparators:(UITableViewCell *)cell;
 
 +(UIColor *)r:(int)red g:(int)green b:(int)blue a:(float)alpha;

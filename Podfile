@@ -8,6 +8,9 @@ target 'Stream Savvy' do
 pod 'AFNetworking', '~> 2.0'
 pod 'SDWebImage', '~>3.7'
 pod 'SCLAlertView-Objective-C'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 
 platform :ios, '8.4'
 

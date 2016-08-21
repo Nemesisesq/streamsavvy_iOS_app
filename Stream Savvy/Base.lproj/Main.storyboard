@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -49,6 +49,9 @@
                                                 <state key="normal" title="SIGN IN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6cq-Bx-mX1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgK-Qa-DxQ">
                                                 <rect key="frame" x="20" y="335" width="560" height="45"/>
@@ -60,6 +63,9 @@
                                                 <state key="normal" title="SIGN IN with Facebook">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="facebookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oIZ-LC-Fhf"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="streamsavvy-wordmark-large" translatesAutoresizingMaskIntoConstraints="NO" id="iZN-jX-hWR">
                                                 <rect key="frame" x="20" y="20" width="560" height="60"/>
@@ -122,6 +128,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8O4-E8-H9g"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="xVM-C8-DrK" id="13N-Lx-dcx"/>
+                        <outlet property="facebookButton" destination="IgK-Qa-DxQ" id="f0K-pE-tGk"/>
+                        <outlet property="passwordTextField" destination="a1f-jF-Zco" id="SLu-Sv-zPy"/>
+                        <outlet property="signinButton" destination="dKs-tW-lCH" id="KFc-Eg-UUy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -36,4 +36,12 @@
 	[[UserLocation sharedController].locationManager stopUpdatingLocation];
 }
 
+- (IBAction)signinButtonTapped:(id)sender {
+	
+}
+
+- (IBAction)facebookButtonTapped:(id)sender {
+	
+}
+
 @end

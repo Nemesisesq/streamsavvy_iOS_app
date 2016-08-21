@@ -27,6 +27,16 @@
 }
 
 
++ (void)showAlert:(NSString *)title withMessage:(NSString *)message{
+	UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:title
+							   message:message
+							  delegate:self
+						 cancelButtonTitle:@"OK"
+						 otherButtonTitles:nil];
+	[theAlert show];
+}
+
+
 
 
 +(void)fixSeparators:(UITableViewCell *)cell{
