@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '709D4BF09EB1397777463E8D'
+               BlueprintIdentifier = '2B77D63112E64EE102DFAC81'
                BlueprintName = 'Pods-Stream Savvy'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-Stream Savvy.a'>
