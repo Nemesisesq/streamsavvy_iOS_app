@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9645304FD07223EA2CCFA859E2CF506724733DB8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "37A5C3BE188F36B41A0334B7736825046924AB29" : 0,
+    "9645304FD07223EA2CCFA859E2CF506724733DB8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7E041A84-F8C3-44C7-9A1A-A25ED31E0FFA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "37A5C3BE188F36B41A0334B7736825046924AB29" : "UtilityBelt\/",
+    "9645304FD07223EA2CCFA859E2CF506724733DB8" : "Stream%20Savvy\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Stream Savvy",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Stream Savvy.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/allenwhite\/OBJ-C_Utility_Belt.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37A5C3BE188F36B41A0334B7736825046924AB29"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Nemesisesq\/streamsavvy_iOS_app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9645304FD07223EA2CCFA859E2CF506724733DB8"
+    }
+  ]
+}

@@ -53,25 +53,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="gN1-bq-sXo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="57" id="gN1-bq-sXo">
                                 <rect key="frame" x="0.0" y="28" width="600" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gN1-bq-sXo" id="s82-pP-hI7">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-KH-QCE">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-KH-QCE">
                                             <rect key="frame" x="8" y="8" width="584" height="40"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Kvq-sU-aAh"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Lcn-KH-QCE" secondAttribute="bottom" constant="8" id="PIH-ra-9kH"/>
+                                        <constraint firstItem="Lcn-KH-QCE" firstAttribute="top" secondItem="s82-pP-hI7" secondAttribute="top" constant="8" id="RZU-xv-H7r"/>
+                                        <constraint firstItem="Lcn-KH-QCE" firstAttribute="leading" secondItem="s82-pP-hI7" secondAttribute="leading" constant="8" id="XZm-pe-0tJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Lcn-KH-QCE" secondAttribute="trailing" constant="8" id="oK4-zt-HbR"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="325" id="75Z-ed-o1B">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LeftGridTableViewCell" rowHeight="325" id="75Z-ed-o1B" customClass="LeftGridTableViewCell">
                                 <rect key="frame" x="0.0" y="85" width="600" height="325"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="75Z-ed-o1B" id="GbI-R1-rOa">
@@ -108,8 +117,13 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="bigImageView" destination="6aQ-7C-Nvs" id="hbi-SB-tOh"/>
+                                    <outlet property="bottomImageView" destination="lxn-Uw-8Mk" id="c0Z-z0-EBl"/>
+                                    <outlet property="topImageView" destination="d9u-ix-tC4" id="kRv-sU-fRL"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="325" id="Vsj-Ms-Eem">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RightGridTableViewCell" rowHeight="325" id="Vsj-Ms-Eem" customClass="RightGridTableViewCell">
                                 <rect key="frame" x="0.0" y="410" width="600" height="325"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vsj-Ms-Eem" id="S8G-fr-FXz">
@@ -147,6 +161,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="bigImageView" destination="AmW-OE-8DN" id="i65-go-Af2"/>
+                                    <outlet property="bottomImageView" destination="kqE-gq-tke" id="uwI-GZ-2hP"/>
+                                    <outlet property="topImageView" destination="PCL-3e-jxA" id="C6J-6K-ylP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
