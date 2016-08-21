@@ -7,6 +7,7 @@
 //
 
 #import "GuideTableViewController.h"
+#import "UserLocation.h"
 
 @interface GuideTableViewController ()
 
@@ -29,11 +30,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+	[super viewWillAppear:animated];
+	[[UserLocation sharedController]setDelegate:self];
+	[[UserLocation sharedController].locationManager startUpdatingLocation];
+	
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+	[super viewWillDisappear:animated];
+	[[UserLocation sharedController].locationManager stopUpdatingLocation];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

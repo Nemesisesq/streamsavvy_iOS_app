@@ -18,5 +18,10 @@
 
 +(UIColor *)StreamSavvyRed;
 
++(void)AWLog:(NSObject *)log LINE:(int)__LINE_ FUNCTION:(const char *)__PRETTY_FUNCTION_;
+
++(NSString *)trim:(NSString *)string;
+
+
 
 @end

@@ -25,6 +25,7 @@
 		9FE1B0501D693B160013DCB1 /* GuideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B04F1D693B160013DCB1 /* GuideTableViewController.m */; };
 		9FE1B0531D693BDC0013DCB1 /* LeftGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0521D693BDC0013DCB1 /* LeftGridTableViewCell.m */; };
 		9FE1B0561D693BEB0013DCB1 /* RightGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0551D693BEB0013DCB1 /* RightGridTableViewCell.m */; };
+		9FE1B05C1D6946410013DCB1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05B1D6946410013DCB1 /* User.m */; };
 		F2F3D56B08996538B85A19C7 /* libPods-Stream Savvy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2051076AFA3CD38B86A043A8 /* libPods-Stream Savvy.a */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,8 @@
 		9FE1B0521D693BDC0013DCB1 /* LeftGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftGridTableViewCell.m; sourceTree = "<group>"; };
 		9FE1B0541D693BEB0013DCB1 /* RightGridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightGridTableViewCell.h; sourceTree = "<group>"; };
 		9FE1B0551D693BEB0013DCB1 /* RightGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightGridTableViewCell.m; sourceTree = "<group>"; };
+		9FE1B05A1D6946410013DCB1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9FE1B05B1D6946410013DCB1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		AD86C8E948DCA6039C21A703 /* Pods-Stream Savvy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream Savvy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stream Savvy/Pods-Stream Savvy.debug.xcconfig"; sourceTree = "<group>"; };
 		B83CDA3621D095560B3C5333 /* Pods-Stream Savvy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream Savvy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stream Savvy/Pods-Stream Savvy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,17 +199,8 @@
 		9FE1B01E1D6922550013DCB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9FE1B04A1D69364F0013DCB1 /* TPKeyboardAvoid */,
-				9FE1B0351D6936210013DCB1 /* AFAPIClient.h */,
-				9FE1B0361D6936210013DCB1 /* AFAPIClient.m */,
-				9FE1B0371D6936210013DCB1 /* Constants.h */,
-				9FE1B0381D6936210013DCB1 /* Constants.m */,
-				9FE1B03A1D6936210013DCB1 /* SDWebModel.h */,
-				9FE1B0391D6936210013DCB1 /* SDWebModel.m */,
-				9FE1B03F1D6936210013DCB1 /* UserLocation.h */,
-				9FE1B0401D6936210013DCB1 /* UserLocation.m */,
-				9FE1B0411D6936210013DCB1 /* UserPrefs.h */,
-				9FE1B0421D6936210013DCB1 /* UserPrefs.m */,
+				9FE1B0591D6946060013DCB1 /* StreamSavvyModels */,
+				9FE1B0581D693DFF0013DCB1 /* Utility Belt */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -243,6 +237,33 @@
 				9FE1B0551D693BEB0013DCB1 /* RightGridTableViewCell.m */,
 			);
 			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		9FE1B0581D693DFF0013DCB1 /* Utility Belt */ = {
+			isa = PBXGroup;
+			children = (
+				9FE1B04A1D69364F0013DCB1 /* TPKeyboardAvoid */,
+				9FE1B0351D6936210013DCB1 /* AFAPIClient.h */,
+				9FE1B0361D6936210013DCB1 /* AFAPIClient.m */,
+				9FE1B0371D6936210013DCB1 /* Constants.h */,
+				9FE1B0381D6936210013DCB1 /* Constants.m */,
+				9FE1B03A1D6936210013DCB1 /* SDWebModel.h */,
+				9FE1B0391D6936210013DCB1 /* SDWebModel.m */,
+				9FE1B03F1D6936210013DCB1 /* UserLocation.h */,
+				9FE1B0401D6936210013DCB1 /* UserLocation.m */,
+				9FE1B0411D6936210013DCB1 /* UserPrefs.h */,
+				9FE1B0421D6936210013DCB1 /* UserPrefs.m */,
+			);
+			name = "Utility Belt";
+			sourceTree = "<group>";
+		};
+		9FE1B0591D6946060013DCB1 /* StreamSavvyModels */ = {
+			isa = PBXGroup;
+			children = (
+				9FE1B05A1D6946410013DCB1 /* User.h */,
+				9FE1B05B1D6946410013DCB1 /* User.m */,
+			);
+			name = StreamSavvyModels;
 			sourceTree = "<group>";
 		};
 		E502CC833A494C6559F7EB31 /* Pods */ = {
@@ -443,6 +464,7 @@
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* LeftGridTableViewCell.m in Sources */,
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
+				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9FE1B0501D693B160013DCB1 /* GuideTableViewController.m in Sources */,
 				9FE1B0561D693BEB0013DCB1 /* RightGridTableViewCell.m in Sources */,

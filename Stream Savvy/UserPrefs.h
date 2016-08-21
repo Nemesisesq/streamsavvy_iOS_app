@@ -21,6 +21,7 @@
 + (void)setUsername:(NSString *)username;
 + (void)setFirstname:(NSString *)firstname;
 + (void)setLastname:(NSString *)lastname;
++ (void)setEmail:(NSString *)email;
 + (void)setBio:(NSString *)bio;
 + (void)setPhone:(NSString *)phone;
 + (void)setPhoto:(NSString *)photoLink;
@@ -31,6 +32,7 @@
 + (NSString *)getUsername;
 + (NSString *)getFirstname;
 + (NSString *)getLastname;
++ (NSString *)getEmail;
 + (NSString *)getBio;
 + (NSString *)getPhone;
 + (NSString *)getPhoto;

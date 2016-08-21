@@ -54,7 +54,16 @@
 
 
 +(UIColor *)StreamSavvyRed{
-	return [self r:98 g:200 b:236 a:1];
+	return [self r:240 g:3 b:42 a:1];
+}
+
+
++(NSString *)trim:(NSString *)string{
+	return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
++(void)AWLog:(NSObject *)log LINE:(int)__LINE_ FUNCTION:(const char *)__PRETTY_FUNCTION_{
+	NSLog(@"\t\t\t%d\t\t%s\t\t%@", __LINE_, __PRETTY_FUNCTION_, log);
 }
 
 
