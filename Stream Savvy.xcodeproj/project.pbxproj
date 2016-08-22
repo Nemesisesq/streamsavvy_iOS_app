@@ -14,6 +14,7 @@
 		9F5A4D421D5AE1D70057AF6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A4D401D5AE1D70057AF6D /* LaunchScreen.storyboard */; };
 		9F5A4D4D1D5AE1D70057AF6D /* Stream_SavvyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D4C1D5AE1D70057AF6D /* Stream_SavvyTests.m */; };
 		9F5A4D581D5AE1D70057AF6D /* Stream_SavvyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D571D5AE1D70057AF6D /* Stream_SavvyUITests.m */; };
+		9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC977D1D6B97E1004B6182 /* Channel.m */; };
 		9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0361D6936210013DCB1 /* AFAPIClient.m */; };
 		9FE1B0441D6936210013DCB1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0381D6936210013DCB1 /* Constants.m */; };
 		9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0391D6936210013DCB1 /* SDWebModel.m */; };
@@ -26,6 +27,7 @@
 		9FE1B0531D693BDC0013DCB1 /* LeftGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0521D693BDC0013DCB1 /* LeftGridTableViewCell.m */; };
 		9FE1B0561D693BEB0013DCB1 /* RightGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0551D693BEB0013DCB1 /* RightGridTableViewCell.m */; };
 		9FE1B05C1D6946410013DCB1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05B1D6946410013DCB1 /* User.m */; };
+		9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05E1D6A5CAC0013DCB1 /* Media.m */; };
 		F2F3D56B08996538B85A19C7 /* libPods-Stream Savvy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2051076AFA3CD38B86A043A8 /* libPods-Stream Savvy.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		9F5A4D531D5AE1D70057AF6D /* Stream SavvyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stream SavvyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5A4D571D5AE1D70057AF6D /* Stream_SavvyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stream_SavvyUITests.m; sourceTree = "<group>"; };
 		9F5A4D591D5AE1D70057AF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FBC977C1D6B97E1004B6182 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		9FBC977D1D6B97E1004B6182 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
 		9FE1B0351D6936210013DCB1 /* AFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAPIClient.h; sourceTree = "<group>"; };
 		9FE1B0361D6936210013DCB1 /* AFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAPIClient.m; sourceTree = "<group>"; };
 		9FE1B0371D6936210013DCB1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 		9FE1B0551D693BEB0013DCB1 /* RightGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightGridTableViewCell.m; sourceTree = "<group>"; };
 		9FE1B05A1D6946410013DCB1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9FE1B05B1D6946410013DCB1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		9FE1B05D1D6A5CAC0013DCB1 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
+		9FE1B05E1D6A5CAC0013DCB1 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
 		AD86C8E948DCA6039C21A703 /* Pods-Stream Savvy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream Savvy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stream Savvy/Pods-Stream Savvy.debug.xcconfig"; sourceTree = "<group>"; };
 		B83CDA3621D095560B3C5333 /* Pods-Stream Savvy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream Savvy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stream Savvy/Pods-Stream Savvy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +268,10 @@
 			children = (
 				9FE1B05A1D6946410013DCB1 /* User.h */,
 				9FE1B05B1D6946410013DCB1 /* User.m */,
+				9FE1B05D1D6A5CAC0013DCB1 /* Media.h */,
+				9FE1B05E1D6A5CAC0013DCB1 /* Media.m */,
+				9FBC977C1D6B97E1004B6182 /* Channel.h */,
+				9FBC977D1D6B97E1004B6182 /* Channel.m */,
 			);
 			name = StreamSavvyModels;
 			sourceTree = "<group>";
@@ -462,12 +472,14 @@
 				9F5A4D341D5AE1D70057AF6D /* main.m in Sources */,
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* LeftGridTableViewCell.m in Sources */,
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
 				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9FE1B0501D693B160013DCB1 /* GuideTableViewController.m in Sources */,
 				9FE1B0561D693BEB0013DCB1 /* RightGridTableViewCell.m in Sources */,
+				9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */,
 				9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */,
 				9FE1B0441D6936210013DCB1 /* Constants.m in Sources */,
 			);

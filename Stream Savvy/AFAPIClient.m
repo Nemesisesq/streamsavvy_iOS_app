@@ -9,7 +9,7 @@
 #import "AFAPIClient.h"
 #import "Constants.h"
 
-static NSString * const AFAPIBaseURLString = @"http://54.148.137.189:10211/";
+static NSString * const AFAPIBaseURLString = @"https://ss-master-staging.herokuapp.com/";
 
 @implementation AFAPIClient
 
