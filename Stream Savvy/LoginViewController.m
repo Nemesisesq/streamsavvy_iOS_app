@@ -37,7 +37,6 @@
 }
 
 - (IBAction)signinButtonTapped:(id)sender {
-	
 }
 
 - (IBAction)facebookButtonTapped:(id)sender {

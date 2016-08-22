@@ -17,10 +17,10 @@
 	//		NSLog(@"User~-~-~\n\n%@", attributes);
 	self = [super init];
 	if (!self) return nil;
-	self.media_id			= [[attributes valueForKey:@"ProgramId"] integerValue];
+	self.program_id			= [[attributes valueForKey:@"ProgramId"] integerValue];
 	self.title					= [attributes valueForKey:@"Title"];
 	self.image_link			= [attributes valueForKey:@"artwork_608x342"];
-	self.deep_link			= [[attributes valueForKey:@"tvrage"] valueForKey:@"link"]; // ???????
+	self.deep_link			= @""; // ???????
 	
 	return self;
 }
@@ -28,7 +28,7 @@
 
 
 + (void)getRoviGuideForZipcode:(NSInteger)zipcode Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = [NSString stringWithFormat:@"api/guide/%ld", (long)zipcode];
+	NSString *url = [NSString stringWithFormat:@"https://ss-master-staging.herokuapp.com/api/guide/%ld", (long)zipcode];
 	
 	[[AFAPIClient sharedClient:nil] GET:url parameters:nil
 				    success:^(NSURLSessionDataTask *task, id JSON) {
@@ -45,7 +45,7 @@
 
 
 + (void)getPopularShowsForPage:(NSInteger)page Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = @"api/popular-shows?";
+	NSString *url = @"https://ss-master-staging.herokuapp.com/api/popular-shows?";
 	if (page)
 		url = [NSString stringWithFormat:@"%@page%ld", url, (long)page];
 	

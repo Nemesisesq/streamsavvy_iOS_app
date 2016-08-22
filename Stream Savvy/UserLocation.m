@@ -7,6 +7,7 @@
 //
 
 #import "UserLocation.h"
+#import "AFAPIClient.h"
 
 @implementation UserLocation
 
@@ -32,6 +33,39 @@
 	}
 	return self;
 }
+
+
+
++ (void)getLocationFromIP:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
+	NSString *url = @"http://freegeoip.net/json/";
+	
+	[[AFAPIClient sharedClient:nil] GET:url parameters:nil
+				    success:^(NSURLSessionDataTask *task, id JSON) {
+					    dispatch_async( dispatch_get_main_queue(), ^{
+						    successBlock(task, JSON);
+					    });
+				    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+					    dispatch_async( dispatch_get_main_queue(), ^{
+						    NSLog(@"%@", url);
+						    NSLog(@"~~~>%@", error);
+					    });
+				    }];
+	/*
+		{	
+			"ip":			"108.208.74.155",
+			"country_code":	"US",
+			"country_name":	"United States",
+			"region_code":	"OH",
+			"region_name":	"Ohio",
+			"city":			"New Albany",
+			"zip_code":		"43054",
+			"time_zone":		"America/New_York",
+			"latitude":		40.0848,
+			"longitude":		-82.8126,
+			"metro_code":	535}
+	 */
+}
+
 
 
 #pragma mark - Location Manager

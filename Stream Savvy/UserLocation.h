@@ -39,4 +39,6 @@
 
 + (UserLocation *)sharedController;
 
++ (void)getLocationFromIP:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
+
 @end
