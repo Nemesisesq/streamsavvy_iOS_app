@@ -26,6 +26,9 @@
 	[SDWebModel loadImageFor:self.bigImageView withRemoteURL:self.bigShow.image_link];
 	[SDWebModel loadImageFor:self.topImageView withRemoteURL:self.topShow.image_link];
 	[SDWebModel loadImageFor:self.bottomImageView withRemoteURL:self.bottomShow.image_link];
+	self.bigImageTitleLabel.text = self.bigShow.title;
+	self.topImageTitleLabel.text = self.topShow.title;
+	self.bottomImageTitleLabel.text = self.bottomShow.title;
 }
 
 @end

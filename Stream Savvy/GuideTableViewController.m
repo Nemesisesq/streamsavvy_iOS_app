@@ -25,14 +25,14 @@ NSInteger numStaticCell = 1;
 @implementation GuideTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 	UIImageView *logo = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"streamsavvy-wordmark-large"]];
 	[logo setContentMode:UIViewContentModeScaleAspectFit];
 	self.navigationItem.titleView = logo;
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	self.tableView.estimatedRowHeight = 60.0;
 	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-	[self.tableView setSeparatorColor:[Constants StreamSavvyRed]];
+	[self.tableView setSeparatorColor:[UIColor blackColor]];
 	
 	self.refreshControl = [[UIRefreshControl alloc] init];
 	self.refreshControl.backgroundColor = [UIColor blackColor];
@@ -88,11 +88,13 @@ NSInteger numStaticCell = 1;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.row == 0) {
 		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell" forIndexPath:indexPath];
+		[Constants fixSeparators:cell];
 		return cell;
 	}
 	NSLog(@"%lu", indexPath.row*showsPerCell);
 	if (indexPath.row % 2 == 0) {
 		LeftGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftGridTableViewCell" forIndexPath:indexPath];
+		[Constants fixSeparators:cell];
 		cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
 		cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
 		cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
@@ -100,6 +102,7 @@ NSInteger numStaticCell = 1;
 		return cell;
 	}else{
 		RightGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RightGridTableViewCell" forIndexPath:indexPath];
+		[Constants fixSeparators:cell];
 		cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
 		cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
 		cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
