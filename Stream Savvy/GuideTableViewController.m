@@ -20,6 +20,7 @@
 @end
 
 NSInteger showsPerCell = 3;
+NSInteger numStaticCell = 1;
 
 @implementation GuideTableViewController
 
@@ -80,23 +81,28 @@ NSInteger showsPerCell = 3;
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.popularShows.count / showsPerCell;
+    return numStaticCell + self.popularShows.count / showsPerCell;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == 0) {
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell" forIndexPath:indexPath];
+		return cell;
+	}
+	NSLog(@"%lu", indexPath.row*showsPerCell);
 	if (indexPath.row % 2 == 0) {
 		LeftGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftGridTableViewCell" forIndexPath:indexPath];
-		cell.bigShow = [self.popularShows objectAtIndex:(indexPath.row * showsPerCell)];
-		cell.topShow = [self.popularShows objectAtIndex:(indexPath.row * showsPerCell + 1)];
-		cell.bottomShow = [self.popularShows objectAtIndex:(indexPath.row * showsPerCell + 2)];
+		cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
+		cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
+		cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
 		[cell setCellDetails];
 		return cell;
 	}else{
 		RightGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RightGridTableViewCell" forIndexPath:indexPath];
-		cell.bigShow = [self.popularShows objectAtIndex:(indexPath.row * showsPerCell)];
-		cell.topShow = [self.popularShows objectAtIndex:(indexPath.row * showsPerCell + 1)];
-		cell.bottomShow = [self.popularShows objectAtIndex:(indexPath.row * showsPerCell + 2)];
+		cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
+		cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
+		cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
 		[cell setCellDetails];
 		return cell;
 	}
