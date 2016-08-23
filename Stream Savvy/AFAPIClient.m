@@ -9,7 +9,6 @@
 #import "AFAPIClient.h"
 #import "Constants.h"
 
-// had to put this to nothing due to the iplocation method... can I have two singletons with different base urls? something to ponder, when time permits 
 static NSString * const AFAPIBaseURLString = @"";
 
 @implementation AFAPIClient

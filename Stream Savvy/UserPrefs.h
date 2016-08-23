@@ -10,33 +10,19 @@
 
 @interface UserPrefs : NSObject
 
-/*
-	we will definitely need 
-		some login verification stuff, 
-	maybe 
-		a user id, 
-		location stuff, but not sure what else
- */
+
 + (void)setUserID:(NSString *)user_id;
-+ (void)setUsername:(NSString *)username;
 + (void)setFirstname:(NSString *)firstname;
 + (void)setLastname:(NSString *)lastname;
 + (void)setEmail:(NSString *)email;
-+ (void)setBio:(NSString *)bio;
-+ (void)setPhone:(NSString *)phone;
-+ (void)setPhoto:(NSString *)photoLink;
 + (void)setToken:(NSString *)token;
-+ (void)setDevicePushToken:(NSString *)token;
++ (void)setDidLogin:(BOOL)didLogin;
 
 + (NSString *)getUserID;
-+ (NSString *)getUsername;
 + (NSString *)getFirstname;
 + (NSString *)getLastname;
 + (NSString *)getEmail;
-+ (NSString *)getBio;
-+ (NSString *)getPhone;
-+ (NSString *)getPhoto;
 + (NSString *)getToken;
-+ (NSString *)getDevicePushToken;
++ (BOOL)getDidLogin;
 
 @end

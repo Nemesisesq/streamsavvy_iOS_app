@@ -17,7 +17,7 @@
 				      message:message
 				      preferredStyle:UIAlertControllerStyleAlert];
 	UIAlertAction* ok = [UIAlertAction
-			     actionWithTitle:@"Y'arr!"
+			     actionWithTitle:@"Okay"
 			     style:UIAlertActionStyleDefault
 			     handler:^(UIAlertAction * action){
 				     [alert dismissViewControllerAnimated:YES completion:nil];

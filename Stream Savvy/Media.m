@@ -26,41 +26,4 @@
 }
 
 
-
-+ (void)getRoviGuideForZipcode:(NSInteger)zipcode Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = [NSString stringWithFormat:@"https://ss-master-staging.herokuapp.com/api/guide/%ld", (long)zipcode];
-	
-	[[AFAPIClient sharedClient:nil] GET:url parameters:nil
-				    success:^(NSURLSessionDataTask *task, id JSON) {
-					    dispatch_async( dispatch_get_main_queue(), ^{
-						    successBlock(task, JSON);
-					    });
-				    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-					    dispatch_async( dispatch_get_main_queue(), ^{
-						    NSLog(@"%@", url);
-						    NSLog(@"~~~>%@", error);
-					    });
-				    }];
-}
-
-
-+ (void)getPopularShowsForPage:(NSInteger)page Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = @"https://ss-master-staging.herokuapp.com/api/popular-shows?";
-	if (page)
-		url = [NSString stringWithFormat:@"%@page%ld", url, (long)page];
-	
-	[[AFAPIClient sharedClient:nil] GET:url parameters:nil
-				    success:^(NSURLSessionDataTask *task, id JSON) {
-					    dispatch_async( dispatch_get_main_queue(), ^{
-						    successBlock(task, JSON);
-					    });
-				    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-					    dispatch_async( dispatch_get_main_queue(), ^{
-						    NSLog(@"%@", url);
-						    NSLog(@"~~~>%@", error);
-					    });
-				    }];
-}
-
-
 @end

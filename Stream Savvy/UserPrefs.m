@@ -12,25 +12,15 @@
 
 
 static NSString * const user_idDefaultString		= @"user_idDefaultString";
-static NSString * const usernameDefaultString	= @"usernameDefaultString";
 static NSString * const firstnameDefaultString	= @"firstnameDefaultString";
 static NSString * const lastnameDefaultString	= @"lastnameDefaultString";
-static NSString * const bioDefaultString			= @"bioDefaultString";
-static NSString * const phoneDefaultString		= @"phoneDefaultString";
+static NSString * const emailDefaultString		= @"emailDefaultString";
 static NSString * const tokenDefaultString		= @"tokenDefaultString";
-static NSString * const photoLinkDefaultString	= @"photoLinkDefaultString";
-static NSString * const devicePushDefaultString	= @"devicePushDefaultString";
-
+static NSString * const didLoginDefaultString	= @"didLoginDefaultString";
 
 
 + (void)setUserID:(NSString *)user_id{
-	NSLog(@"setUserID~~~~~~%@", user_id);
 	[[NSUserDefaults standardUserDefaults] setObject:user_id forKey:user_idDefaultString];
-}
-
-
-+ (void)setUsername:(NSString *)username{
-	[[NSUserDefaults standardUserDefaults] setObject:username forKey:usernameDefaultString];
 }
 
 
@@ -43,13 +33,9 @@ static NSString * const devicePushDefaultString	= @"devicePushDefaultString";
 	[[NSUserDefaults standardUserDefaults] setObject:lastname forKey:lastnameDefaultString];
 }
 
-+ (void)setBio:(NSString *)bio{
-	[[NSUserDefaults standardUserDefaults] setObject:bio forKey:bioDefaultString];
-}
 
-
-+ (void)setPhone:(NSString *)phone{
-	[[NSUserDefaults standardUserDefaults] setObject:phone forKey:phoneDefaultString];
++ (void)setEmail:(NSString *)email{
+	[[NSUserDefaults standardUserDefaults] setObject:email forKey:emailDefaultString];
 }
 
 
@@ -57,25 +43,16 @@ static NSString * const devicePushDefaultString	= @"devicePushDefaultString";
 	[[NSUserDefaults standardUserDefaults] setObject:token forKey:tokenDefaultString];
 }
 
-+ (void)setPhoto:(NSString *)photoLink{
-	[[NSUserDefaults standardUserDefaults] setObject:photoLink forKey:photoLinkDefaultString];
+
++ (void)setDidLogin:(BOOL)didLogin{
+	[[NSUserDefaults standardUserDefaults] setBool:didLogin forKey:didLoginDefaultString];
 }
 
-+ (void)setDevicePushToken:(NSString *)token{
-	[[NSUserDefaults standardUserDefaults] setObject:token forKey:devicePushDefaultString];
-}
 
 /////////////////////////////////////////// get ///////////////////////////////////////////
 
 + (NSString *)getUserID{
-	NSLog(@"getUserID ~%@", [[NSUserDefaults standardUserDefaults] objectForKey:user_idDefaultString]);
-	NSLog(@"getUserID resutl ~%@", [[NSUserDefaults standardUserDefaults] objectForKey:user_idDefaultString] ?: @"");
 	return [[NSUserDefaults standardUserDefaults] objectForKey:user_idDefaultString] ?: @"";
-}
-
-
-+ (NSString *)getUsername{
-	return [[NSUserDefaults standardUserDefaults] objectForKey:usernameDefaultString] ?: @"";
 }
 
 
@@ -89,13 +66,8 @@ static NSString * const devicePushDefaultString	= @"devicePushDefaultString";
 }
 
 
-+ (NSString *)getBio{
-	return [[NSUserDefaults standardUserDefaults] objectForKey:bioDefaultString] ?: @"";
-}
-
-
-+ (NSString *)getPhone{
-	return [[NSUserDefaults standardUserDefaults] objectForKey:phoneDefaultString] ?: @"";
++ (NSString *)getEmail{
+	return [[NSUserDefaults standardUserDefaults] objectForKey:emailDefaultString] ?: @"";
 }
 
 
@@ -104,12 +76,8 @@ static NSString * const devicePushDefaultString	= @"devicePushDefaultString";
 }
 
 
-+ (NSString *)getPhoto{
-	return [[NSUserDefaults standardUserDefaults] objectForKey:photoLinkDefaultString] ?: @"";
-}
-
-+ (NSString *)getDevicePushToken{
-	return [[NSUserDefaults standardUserDefaults] objectForKey:devicePushDefaultString] ?: @"";
++ (BOOL)getDidLogin{
+	return [[NSUserDefaults standardUserDefaults] objectForKey:didLoginDefaultString] ?: NO;
 }
 
 @end
