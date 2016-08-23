@@ -25,14 +25,16 @@ NSInteger showsPerCell = 3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+	UIImageView *logo = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"streamsavvy-wordmark-large"]];
+	[logo setContentMode:UIViewContentModeScaleAspectFit];
+	self.navigationItem.titleView = logo;
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	self.tableView.estimatedRowHeight = 60.0;
 	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-	[self.tableView setSeparatorColor:[UIColor grayColor]];
+	[self.tableView setSeparatorColor:[Constants StreamSavvyRed]];
 	
 	self.refreshControl = [[UIRefreshControl alloc] init];
-	self.refreshControl.backgroundColor = [UIColor clearColor];
+	self.refreshControl.backgroundColor = [UIColor blackColor];
 	self.refreshControl.tintColor = [Constants StreamSavvyRed];
 	[self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
 	[self.tableView addSubview:self.refreshControl];

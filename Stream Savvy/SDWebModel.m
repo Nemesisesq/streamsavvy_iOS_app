@@ -12,9 +12,7 @@
 @implementation SDWebModel
 
 +(void)loadImageFor:(UIImageView *)imageView withRemoteURL:(NSString *)url{
-	//	imageView.contentMode = UIViewContentModeScaleAspectFit;
 	if (![url isEqual:[NSNull null]]) {
-		imageView.contentMode = UIViewContentModeScaleAspectFill;
 		[imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed: @"default_profile_pic"]];
 	}else{
 		[imageView setImage:[UIImage imageNamed: @"default_profile_pic"]];
