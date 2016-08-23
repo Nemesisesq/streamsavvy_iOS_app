@@ -10,6 +10,8 @@
 #import "UserLocation.h"
 #import "LeftGridTableViewCell.h"
 #import "RightGridTableViewCell.h"
+#import "Constants.h"
+#import "PopularShow.h"
 
 @interface GuideTableViewController ()
 
@@ -23,7 +25,18 @@ NSInteger showsPerCell = 3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+	
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
+	self.tableView.estimatedRowHeight = 60.0;
+	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+	[self.tableView setSeparatorColor:[UIColor grayColor]];
+	
+	self.refreshControl = [[UIRefreshControl alloc] init];
+	self.refreshControl.backgroundColor = [UIColor clearColor];
+	self.refreshControl.tintColor = [Constants StreamSavvyRed];
+	[self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
+	[self.tableView addSubview:self.refreshControl];
+	[self reload];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +56,19 @@ NSInteger showsPerCell = 3;
 	[[UserLocation sharedController].locationManager stopUpdatingLocation];
 }
 
+-(void)reload{
+	[PopularShow getPopularShowsForPage:0 Success:^(NSURLSessionDataTask *task, id JSON) {
+		NSMutableArray *popularShows = [NSMutableArray new];
+		for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
+			[popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
+		}
+		self.popularShows = [popularShows copy];
+		[self.tableView reloadData];
+		if (self.refreshControl) {
+			[self.refreshControl endRefreshing];
+		}
+	}];
+}
 
 #pragma mark - Table view data source
 

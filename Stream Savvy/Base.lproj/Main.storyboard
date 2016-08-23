@@ -138,14 +138,15 @@
             </objects>
             <point key="canvasLocation" x="1137" y="400"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Guide Table View Controller-->
         <scene sceneID="ptM-fs-ybH">
             <objects>
-                <tableViewController id="FqQ-K3-7ul" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GuideTableViewController" id="FqQ-K3-7ul" customClass="GuideTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="an1-22-aNj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="57" id="gN1-bq-sXo">
                                 <rect key="frame" x="0.0" y="92" width="600" height="57"/>
@@ -181,16 +182,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="324"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview1" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-7C-Nvs">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview1" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-7C-Nvs">
                                             <rect key="frame" x="16" y="16" width="368" height="292"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="292" id="XRJ-7k-Lvw"/>
                                                 <constraint firstAttribute="height" constant="292" id="yeS-aY-k4G"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="yeS-aY-k4G"/>
+                                                </mask>
+                                            </variation>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview2" translatesAutoresizingMaskIntoConstraints="NO" id="d9u-ix-tC4">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview2" translatesAutoresizingMaskIntoConstraints="NO" id="d9u-ix-tC4">
                                             <rect key="frame" x="400" y="16" width="184" height="138"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview3" translatesAutoresizingMaskIntoConstraints="NO" id="lxn-Uw-8Mk">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview3" translatesAutoresizingMaskIntoConstraints="NO" id="lxn-Uw-8Mk">
                                             <rect key="frame" x="400" y="170" width="184" height="138"/>
                                         </imageView>
                                     </subviews>
@@ -217,20 +224,20 @@
                                     <outlet property="topImageView" destination="d9u-ix-tC4" id="kRv-sU-fRL"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RightGridTableViewCell" rowHeight="325" id="Vsj-Ms-Eem" customClass="RightGridTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RightGridTableViewCell" rowHeight="325" id="Vsj-Ms-Eem" customClass="RightGridTableViewCell">
                                 <rect key="frame" x="0.0" y="474" width="600" height="325"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vsj-Ms-Eem" id="S8G-fr-FXz">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="324"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-3e-jxA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-3e-jxA">
                                             <rect key="frame" x="16" y="16" width="184" height="138"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kqE-gq-tke">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kqE-gq-tke">
                                             <rect key="frame" x="16" y="170" width="184" height="138"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AmW-OE-8DN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AmW-OE-8DN">
                                             <rect key="frame" x="216" y="16" width="368" height="292"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="292" id="IWT-Kl-JBF"/>

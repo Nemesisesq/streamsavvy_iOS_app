@@ -7,6 +7,7 @@
 //
 
 #import "RightGridTableViewCell.h"
+#import "SDWebModel.h"
 
 @implementation RightGridTableViewCell
 
@@ -21,4 +22,9 @@
     // Configure the view for the selected state
 }
 
+-(void)setCellDetails{
+	[SDWebModel loadImageFor:self.bigImageView withRemoteURL:self.bigShow.image_link];
+	[SDWebModel loadImageFor:self.topImageView withRemoteURL:self.topShow.image_link];
+	[SDWebModel loadImageFor:self.bottomImageView withRemoteURL:self.bottomShow.image_link];
+}
 @end
