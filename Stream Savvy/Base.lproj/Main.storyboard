@@ -147,16 +147,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="57" id="gN1-bq-sXo">
-                                <rect key="frame" x="0.0" y="92" width="600" height="57"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="65" id="gN1-bq-sXo">
+                                <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gN1-bq-sXo" id="s82-pP-hI7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-KH-QCE">
-                                            <rect key="frame" x="8" y="8" width="584" height="40"/>
+                                            <rect key="frame" x="8" y="16" width="584" height="40"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="Kvq-sU-aAh"/>
@@ -169,54 +170,74 @@
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Lcn-KH-QCE" secondAttribute="bottom" constant="8" id="PIH-ra-9kH"/>
-                                        <constraint firstItem="Lcn-KH-QCE" firstAttribute="top" secondItem="s82-pP-hI7" secondAttribute="top" constant="8" id="RZU-xv-H7r"/>
+                                        <constraint firstItem="Lcn-KH-QCE" firstAttribute="top" secondItem="s82-pP-hI7" secondAttribute="top" constant="16" id="RZU-xv-H7r"/>
                                         <constraint firstItem="Lcn-KH-QCE" firstAttribute="leading" secondItem="s82-pP-hI7" secondAttribute="leading" constant="8" id="XZm-pe-0tJ"/>
                                         <constraint firstAttribute="trailing" secondItem="Lcn-KH-QCE" secondAttribute="trailing" constant="8" id="oK4-zt-HbR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LeftGridTableViewCell" rowHeight="325" id="75Z-ed-o1B" customClass="LeftGridTableViewCell">
-                                <rect key="frame" x="0.0" y="149" width="600" height="325"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LeftGridTableViewCell" rowHeight="349" id="75Z-ed-o1B" customClass="LeftGridTableViewCell">
+                                <rect key="frame" x="0.0" y="157" width="600" height="349"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="75Z-ed-o1B" id="GbI-R1-rOa">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="324"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="348"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview1" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-7C-Nvs">
-                                            <rect key="frame" x="16" y="16" width="368" height="292"/>
+                                            <rect key="frame" x="16" y="16" width="568" height="200"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="SQe-zk-eMN"/>
                                                 <constraint firstAttribute="height" constant="292" id="XRJ-7k-Lvw"/>
                                                 <constraint firstAttribute="height" constant="292" id="yeS-aY-k4G"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="XRJ-7k-Lvw"/>
                                                     <exclude reference="yeS-aY-k4G"/>
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview2" translatesAutoresizingMaskIntoConstraints="NO" id="d9u-ix-tC4">
-                                            <rect key="frame" x="400" y="16" width="184" height="138"/>
-                                        </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview3" translatesAutoresizingMaskIntoConstraints="NO" id="lxn-Uw-8Mk">
-                                            <rect key="frame" x="400" y="170" width="184" height="138"/>
+                                            <rect key="frame" x="308" y="232" width="276" height="100"/>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview2" translatesAutoresizingMaskIntoConstraints="NO" id="d9u-ix-tC4">
+                                            <rect key="frame" x="16" y="232" width="276" height="100"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="d9u-ix-tC4" firstAttribute="width" secondItem="lxn-Uw-8Mk" secondAttribute="width" id="0al-rg-AEc"/>
                                         <constraint firstItem="6aQ-7C-Nvs" firstAttribute="width" secondItem="d9u-ix-tC4" secondAttribute="width" multiplier="2" id="1qw-kW-MRV"/>
+                                        <constraint firstItem="lxn-Uw-8Mk" firstAttribute="height" secondItem="6aQ-7C-Nvs" secondAttribute="height" multiplier="0.5" id="4J1-aO-nTS"/>
                                         <constraint firstItem="6aQ-7C-Nvs" firstAttribute="leading" secondItem="GbI-R1-rOa" secondAttribute="leading" constant="16" id="4xz-4P-6xS"/>
-                                        <constraint firstAttribute="bottom" secondItem="6aQ-7C-Nvs" secondAttribute="bottom" constant="16" id="63s-cm-QfH"/>
+                                        <constraint firstItem="d9u-ix-tC4" firstAttribute="leading" secondItem="GbI-R1-rOa" secondAttribute="leading" constant="16" id="79p-nW-5cT"/>
                                         <constraint firstItem="d9u-ix-tC4" firstAttribute="leading" secondItem="6aQ-7C-Nvs" secondAttribute="trailing" constant="16" id="7tf-Oq-ghu"/>
                                         <constraint firstItem="lxn-Uw-8Mk" firstAttribute="leading" secondItem="6aQ-7C-Nvs" secondAttribute="trailing" constant="16" id="FGE-Qd-kBw"/>
                                         <constraint firstItem="lxn-Uw-8Mk" firstAttribute="top" secondItem="d9u-ix-tC4" secondAttribute="bottom" constant="16" id="Gj9-gS-m9r"/>
+                                        <constraint firstItem="lxn-Uw-8Mk" firstAttribute="top" secondItem="6aQ-7C-Nvs" secondAttribute="bottom" constant="16" id="LHi-6a-3my"/>
+                                        <constraint firstAttribute="bottom" secondItem="d9u-ix-tC4" secondAttribute="bottom" constant="16" id="OTH-U5-upj"/>
                                         <constraint firstItem="d9u-ix-tC4" firstAttribute="height" secondItem="lxn-Uw-8Mk" secondAttribute="height" id="ObN-p5-qJh"/>
+                                        <constraint firstItem="lxn-Uw-8Mk" firstAttribute="leading" secondItem="d9u-ix-tC4" secondAttribute="trailing" constant="16" id="Rdh-Xp-x56"/>
                                         <constraint firstAttribute="bottom" secondItem="lxn-Uw-8Mk" secondAttribute="bottom" constant="16" id="Uaq-Nj-bqL"/>
                                         <constraint firstAttribute="trailing" secondItem="lxn-Uw-8Mk" secondAttribute="trailing" constant="16" id="YsD-7V-99X"/>
+                                        <constraint firstAttribute="trailing" secondItem="6aQ-7C-Nvs" secondAttribute="trailing" constant="16" id="ZVT-NY-wki"/>
                                         <constraint firstItem="6aQ-7C-Nvs" firstAttribute="top" secondItem="GbI-R1-rOa" secondAttribute="top" constant="16" id="p4F-iw-4II"/>
+                                        <constraint firstItem="d9u-ix-tC4" firstAttribute="top" secondItem="6aQ-7C-Nvs" secondAttribute="bottom" constant="16" id="vdc-Mr-Jm6"/>
+                                        <constraint firstItem="d9u-ix-tC4" firstAttribute="height" secondItem="6aQ-7C-Nvs" secondAttribute="height" multiplier="0.5" id="x0B-Eq-u0S"/>
                                         <constraint firstItem="d9u-ix-tC4" firstAttribute="top" secondItem="GbI-R1-rOa" secondAttribute="top" constant="16" id="yyX-hU-zLi"/>
                                         <constraint firstAttribute="trailing" secondItem="d9u-ix-tC4" secondAttribute="trailing" constant="16" id="zHN-fe-Ajj"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="1qw-kW-MRV"/>
+                                            <exclude reference="7tf-Oq-ghu"/>
+                                            <exclude reference="yyX-hU-zLi"/>
+                                            <exclude reference="zHN-fe-Ajj"/>
+                                            <exclude reference="4J1-aO-nTS"/>
+                                            <exclude reference="FGE-Qd-kBw"/>
+                                            <exclude reference="Gj9-gS-m9r"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -226,7 +247,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RightGridTableViewCell" rowHeight="325" id="Vsj-Ms-Eem" customClass="RightGridTableViewCell">
-                                <rect key="frame" x="0.0" y="474" width="600" height="325"/>
+                                <rect key="frame" x="0.0" y="506" width="600" height="325"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vsj-Ms-Eem" id="S8G-fr-FXz">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="324"/>
