@@ -1,29 +1,27 @@
 //
-//  GuideTableViewController.m
+//  PopularShowTableViewController.m
 //  Stream Savvy
 //
-//  Created by Allen White on 8/23/16.
+//  Created by Allen White on 8/20/16.
 //  Copyright © 2016 Stream Savvy. All rights reserved.
 //
 
-#import "GuideTableViewController.h"
+#import "PopularShowTableViewController.h"
 #import "UserLocation.h"
 #import "TopGridTableViewCell.h"
 #import "Constants.h"
-#import "Channel.h"
+#import "PopularShow.h"
 
-@interface GuideTableViewController ()
+@interface PopularShowTableViewController ()
 
-@property (strong, nonatomic) NSArray *guideShows;
+@property (strong, nonatomic) NSArray *popularShows;
 
 @end
-
 
 NSInteger showsPerCell = 3;
 NSInteger numStaticCell = 1;
 
-
-@implementation GuideTableViewController
+@implementation PopularShowTableViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -53,7 +51,6 @@ NSInteger numStaticCell = 1;
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
 	[[UserLocation sharedController]setDelegate:self];
@@ -66,26 +63,18 @@ NSInteger numStaticCell = 1;
 	[[UserLocation sharedController].locationManager stopUpdatingLocation];
 }
 
-
 -(void)reload{
-	// this is fucking gnarly lol
-	[UserLocation getLocationFromIP:^(NSURLSessionDataTask *task, id JSON) {
-		NSInteger zip_code = [(NSDictionary *)JSON valueForKey:@"zip_code"];
-		
-		[Channel getRoviGuideForZipcode:zip_code Success:^(NSURLSessionDataTask *task, id JSON) {
-			NSMutableArray *guideShows = [NSMutableArray new];
-			for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
-				[guideShows addObject:[[PopularShow alloc] initWithAttributes:result]];
-			}
-			self.guideShows = [guideShows copy];
-			[self.tableView reloadData];
-			if (self.refreshControl) {
-				[self.refreshControl endRefreshing];
-			}
-		}];
+	[PopularShow getPopularShowsForPage:0 Success:^(NSURLSessionDataTask *task, id JSON) {
+		NSMutableArray *popularShows = [NSMutableArray new];
+		for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
+			[popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
+		}
+		self.popularShows = [popularShows copy];
+		[self.tableView reloadData];
+		if (self.refreshControl) {
+			[self.refreshControl endRefreshing];
+		}
 	}];
-	
-	
 }
 
 #pragma mark - Table view data source
@@ -94,9 +83,11 @@ NSInteger numStaticCell = 1;
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return numStaticCell + self.guideShows.count / showsPerCell;
+    return numStaticCell + self.popularShows.count / showsPerCell;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.row == 0) {
@@ -106,9 +97,9 @@ NSInteger numStaticCell = 1;
 	}
 	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];
-	cell.bigShow = [self.guideShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
-	cell.topShow = [self.guideShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
-	cell.bottomShow = [self.guideShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
+	cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
+	cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
+	cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
 	[cell setCellDetails];
 	return cell;
 }

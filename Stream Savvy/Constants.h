@@ -24,6 +24,7 @@
 
 +(NSString *)trim:(NSString *)string;
 
++ (void)addGradientForImageView:(UIImageView *)imageView;
 
 
 @end

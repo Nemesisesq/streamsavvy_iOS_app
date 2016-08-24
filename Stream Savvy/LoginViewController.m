@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UserLocation.h"
-#import "GuideTableViewController.h"
+#import "PopularShowTableViewController.h"
 #import "Constants.h"
 #import "User.h"
 #import "UserPrefs.h"
@@ -47,8 +47,8 @@
 }
 
 -(void)goToNextScreen{
-	UINavigationController *uinc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainNavigationController"];
-	[self presentViewController:uinc animated:YES completion:nil];
+	UITabBarController *uitbc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+	[self presentViewController:uitbc animated:YES completion:nil];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

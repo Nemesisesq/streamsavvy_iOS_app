@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PopularShow.h"
+#import "Channel.h"
 
 @interface TopGridTableViewCell : UITableViewCell
 
@@ -19,9 +20,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *topImageTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bottomImageTitleLabel;
 
+@property (nonatomic) BOOL isShowingPopularShows;
 @property (strong, nonatomic) PopularShow *bigShow;
 @property (strong, nonatomic) PopularShow *topShow;
 @property (strong, nonatomic) PopularShow *bottomShow;
+
+@property (strong, nonatomic) Channel *bigChannel;
+@property (strong, nonatomic) Channel *topChannel;
+@property (strong, nonatomic) Channel *bottomChannel;
+
 -(void)setCellDetails;
 
 @end
