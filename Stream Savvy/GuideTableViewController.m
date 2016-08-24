@@ -19,8 +19,8 @@
 @end
 
 
-NSInteger showsPerCell = 3;
-NSInteger numStaticCell = 1;
+NSInteger numShowsPerCell = 3;
+NSInteger numOfStaticCell = 1;
 
 
 @implementation GuideTableViewController
@@ -70,10 +70,11 @@ NSInteger numStaticCell = 1;
 -(void)reload{
 	// this is fucking gnarly lol
 	[UserLocation getLocationFromIP:^(NSURLSessionDataTask *task, id JSON) {
-		NSInteger zip_code = [(NSDictionary *)JSON valueForKey:@"zip_code"];
-		
+		NSInteger zip_code = [[(NSDictionary *)JSON valueForKey:@"zip_code"] integerValue];
+		NSLog(@"zip_code %ld", (long)zip_code);
 		[Channel getRoviGuideForZipcode:zip_code Success:^(NSURLSessionDataTask *task, id JSON) {
 			NSMutableArray *guideShows = [NSMutableArray new];
+			//////////////////////this needs edited
 			for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
 				[guideShows addObject:[[PopularShow alloc] initWithAttributes:result]];
 			}
@@ -95,7 +96,7 @@ NSInteger numStaticCell = 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return numStaticCell + self.guideShows.count / showsPerCell;
+    return numOfStaticCell + self.guideShows.count / numShowsPerCell;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -106,9 +107,9 @@ NSInteger numStaticCell = 1;
 	}
 	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];
-	cell.bigShow = [self.guideShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
-	cell.topShow = [self.guideShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
-	cell.bottomShow = [self.guideShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
+	cell.bigShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell)];
+	cell.topShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 1)];
+	cell.bottomShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 2)];
 	[cell setCellDetails];
 	return cell;
 }

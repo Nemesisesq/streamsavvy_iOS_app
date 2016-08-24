@@ -156,7 +156,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-KH-QCE">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Shows" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-KH-QCE">
                                             <rect key="frame" x="8" y="16" width="584" height="40"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -358,7 +358,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ej-MH-l9Q">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently Playing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ej-MH-l9Q">
                                             <rect key="frame" x="8" y="16" width="584" height="40"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -468,12 +468,12 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="gAH-xF-yHV"/>
+                                            <exclude reference="M8p-lY-pEK"/>
                                             <exclude reference="iX8-D9-6WS"/>
                                             <exclude reference="xfx-gn-l1Y"/>
-                                            <exclude reference="M8p-lY-pEK"/>
-                                            <exclude reference="fSa-dd-RMP"/>
                                             <exclude reference="EHz-va-jXb"/>
                                             <exclude reference="UYc-eE-IM5"/>
+                                            <exclude reference="fSa-dd-RMP"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
