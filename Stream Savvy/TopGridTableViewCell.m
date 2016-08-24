@@ -1,15 +1,15 @@
 //
-//  LeftGridTableViewCell.m
+//  TopGridTableViewCell.m
 //  Stream Savvy
 //
 //  Created by Allen White on 8/20/16.
 //  Copyright © 2016 Stream Savvy. All rights reserved.
 //
 
-#import "LeftGridTableViewCell.h"
+#import "TopGridTableViewCell.h"
 #import "SDWebModel.h"
 
-@implementation LeftGridTableViewCell
+@implementation TopGridTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -1,5 +1,5 @@
 //
-//  LeftGridTableViewCell.h
+//  TopGridTableViewCell.h
 //  Stream Savvy
 //
 //  Created by Allen White on 8/20/16.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PopularShow.h"
 
-@interface LeftGridTableViewCell : UITableViewCell
+@interface TopGridTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *bigImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *topImageView;

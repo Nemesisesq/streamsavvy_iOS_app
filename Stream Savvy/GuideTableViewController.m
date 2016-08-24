@@ -8,7 +8,7 @@
 
 #import "GuideTableViewController.h"
 #import "UserLocation.h"
-#import "LeftGridTableViewCell.h"
+#import "TopGridTableViewCell.h"
 #import "RightGridTableViewCell.h"
 #import "Constants.h"
 #import "PopularShow.h"
@@ -26,9 +26,17 @@ NSInteger numStaticCell = 1;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	UIImageView *logo = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"streamsavvy-wordmark-large"]];
-	[logo setContentMode:UIViewContentModeScaleAspectFit];
-	self.navigationItem.titleView = logo;
+//	UIImageView *logo = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"streamsavvy-wordmark-large"]];
+//	[logo setContentMode:UIViewContentModeScaleAspectFit];
+//	self.navigationItem.titleView = logo;
+	
+	UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
+	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
+	
+	UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
+	[workaroundImageView addSubview:navigationImage];
+	self.navigationItem.titleView=workaroundImageView;
+	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	self.tableView.estimatedRowHeight = 60.0;
 	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -91,24 +99,13 @@ NSInteger numStaticCell = 1;
 		[Constants fixSeparators:cell];
 		return cell;
 	}
-	NSLog(@"%lu", indexPath.row*showsPerCell);
-	if (indexPath.row % 2 == 0) {
-		LeftGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftGridTableViewCell" forIndexPath:indexPath];
-		[Constants fixSeparators:cell];
-		cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
-		cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
-		cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
-		[cell setCellDetails];
-		return cell;
-	}else{
-		RightGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RightGridTableViewCell" forIndexPath:indexPath];
-		[Constants fixSeparators:cell];
-		cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
-		cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
-		cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
-		[cell setCellDetails];
-		return cell;
-	}
+	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
+	[Constants fixSeparators:cell];
+	cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
+	cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
+	cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
+	[cell setCellDetails];
+	return cell;
 }
 
 @end

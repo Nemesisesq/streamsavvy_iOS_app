@@ -25,7 +25,7 @@
 		9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0421D6936210013DCB1 /* UserPrefs.m */; };
 		9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B04C1D693AE70013DCB1 /* LoginViewController.m */; };
 		9FE1B0501D693B160013DCB1 /* GuideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B04F1D693B160013DCB1 /* GuideTableViewController.m */; };
-		9FE1B0531D693BDC0013DCB1 /* LeftGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0521D693BDC0013DCB1 /* LeftGridTableViewCell.m */; };
+		9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0521D693BDC0013DCB1 /* TopGridTableViewCell.m */; };
 		9FE1B0561D693BEB0013DCB1 /* RightGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0551D693BEB0013DCB1 /* RightGridTableViewCell.m */; };
 		9FE1B05C1D6946410013DCB1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05B1D6946410013DCB1 /* User.m */; };
 		9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05E1D6A5CAC0013DCB1 /* Media.m */; };
@@ -87,8 +87,8 @@
 		9FE1B04C1D693AE70013DCB1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9FE1B04E1D693B160013DCB1 /* GuideTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideTableViewController.h; sourceTree = "<group>"; };
 		9FE1B04F1D693B160013DCB1 /* GuideTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideTableViewController.m; sourceTree = "<group>"; };
-		9FE1B0511D693BDC0013DCB1 /* LeftGridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftGridTableViewCell.h; sourceTree = "<group>"; };
-		9FE1B0521D693BDC0013DCB1 /* LeftGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftGridTableViewCell.m; sourceTree = "<group>"; };
+		9FE1B0511D693BDC0013DCB1 /* TopGridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopGridTableViewCell.h; sourceTree = "<group>"; };
+		9FE1B0521D693BDC0013DCB1 /* TopGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopGridTableViewCell.m; sourceTree = "<group>"; };
 		9FE1B0541D693BEB0013DCB1 /* RightGridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightGridTableViewCell.h; sourceTree = "<group>"; };
 		9FE1B0551D693BEB0013DCB1 /* RightGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightGridTableViewCell.m; sourceTree = "<group>"; };
 		9FE1B05A1D6946410013DCB1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -240,8 +240,8 @@
 		9FE1B0571D693C060013DCB1 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				9FE1B0511D693BDC0013DCB1 /* LeftGridTableViewCell.h */,
-				9FE1B0521D693BDC0013DCB1 /* LeftGridTableViewCell.m */,
+				9FE1B0511D693BDC0013DCB1 /* TopGridTableViewCell.h */,
+				9FE1B0521D693BDC0013DCB1 /* TopGridTableViewCell.m */,
 				9FE1B0541D693BEB0013DCB1 /* RightGridTableViewCell.h */,
 				9FE1B0551D693BEB0013DCB1 /* RightGridTableViewCell.m */,
 			);
@@ -478,7 +478,7 @@
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
-				9FE1B0531D693BDC0013DCB1 /* LeftGridTableViewCell.m in Sources */,
+				9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */,
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
 				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
