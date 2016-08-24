@@ -13,7 +13,7 @@
 
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes{
-	//		NSLog(@"User~-~-~\n\n%@", attributes);
+			NSLog(@"User~-~-~\n\n%@", attributes);
 	self = [super init];
 	if (!self) return nil;
 	self.guidebox_id			= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"id"] integerValue];
@@ -31,7 +31,7 @@
 	NSString *url = @"https://ss-master-staging.herokuapp.com/api/popular-shows?";
 	if (page)
 		url = [NSString stringWithFormat:@"%@page%ld", url, (long)page];
-	
+	NSLog(@"%@\n\n\n", url);
 	[[AFAPIClient sharedClient:nil] GET:url parameters:nil
 				    success:^(NSURLSessionDataTask *task, id JSON) {
 					    dispatch_async( dispatch_get_main_queue(), ^{

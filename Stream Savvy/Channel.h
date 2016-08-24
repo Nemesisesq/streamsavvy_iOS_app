@@ -11,7 +11,7 @@
 
 @interface Channel : NSObject
 
-@property (nonatomic) NSNumber			*channel;
+@property (nonatomic) NSNumber			*channel_id;
 @property (strong, nonatomic) NSString	*display_name;
 @property (strong, nonatomic) NSString	*image_link;
 @property (strong, nonatomic) NSString	*deep_link;

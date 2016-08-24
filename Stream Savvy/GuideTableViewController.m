@@ -75,8 +75,10 @@ NSInteger numOfStaticCell = 1;
 		[Channel getRoviGuideForZipcode:zip_code Success:^(NSURLSessionDataTask *task, id JSON) {
 			NSMutableArray *guideShows = [NSMutableArray new];
 			//////////////////////this needs edited
-			for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
-				[guideShows addObject:[[PopularShow alloc] initWithAttributes:result]];
+			for (NSDictionary *region_channels in (NSArray *)JSON) {
+				for (NSDictionary *channel in [[[region_channels objectForKey:@"data"] objectForKey:@"GridScheduleResult"] objectForKey:@"GridChannels"]) {
+					[guideShows addObject:[[Channel alloc] initWithAttributes: channel]];
+				}
 			}
 			self.guideShows = [guideShows copy];
 			[self.tableView reloadData];
@@ -107,6 +109,7 @@ NSInteger numOfStaticCell = 1;
 	}
 	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];
+	cell.isShowingPopularShows = NO;
 	cell.bigShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell)];
 	cell.topShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 1)];
 	cell.bottomShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 2)];

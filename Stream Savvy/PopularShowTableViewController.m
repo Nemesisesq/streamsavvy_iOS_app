@@ -65,6 +65,8 @@ NSInteger numStaticCell = 1;
 
 -(void)reload{
 	[PopularShow getPopularShowsForPage:0 Success:^(NSURLSessionDataTask *task, id JSON) {
+		
+		
 		NSMutableArray *popularShows = [NSMutableArray new];
 		for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
 			[popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
@@ -97,6 +99,7 @@ NSInteger numStaticCell = 1;
 	}
 	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];
+	cell.isShowingPopularShows = YES;
 	cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
 	cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
 	cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];

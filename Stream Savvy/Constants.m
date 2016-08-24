@@ -88,7 +88,7 @@
 	
 	gradientLayer.colors = [NSArray arrayWithObjects:
 				(id)[UIColor colorWithWhite:0.0f alpha:0.0f].CGColor,
-				(id)[UIColor colorWithWhite:0.0f alpha:0.8f].CGColor,
+				(id)[UIColor colorWithWhite:0.0f alpha:0.3f].CGColor,
 				nil];
 	
 	gradientLayer.locations = [NSArray arrayWithObjects:
