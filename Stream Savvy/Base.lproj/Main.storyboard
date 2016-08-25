@@ -240,6 +240,7 @@
                                         <constraint firstItem="d9u-ix-tC4" firstAttribute="leading" secondItem="GbI-R1-rOa" secondAttribute="leading" id="79p-nW-5cT"/>
                                         <constraint firstItem="d9u-ix-tC4" firstAttribute="top" secondItem="dWX-Jl-AJ0" secondAttribute="bottom" constant="8" id="7BU-71-olU"/>
                                         <constraint firstItem="d9u-ix-tC4" firstAttribute="leading" secondItem="6aQ-7C-Nvs" secondAttribute="trailing" constant="16" id="7tf-Oq-ghu"/>
+                                        <constraint firstItem="d9u-ix-tC4" firstAttribute="height" secondItem="6aQ-7C-Nvs" secondAttribute="height" multiplier="0.5" id="8Gx-Wf-rcf"/>
                                         <constraint firstAttribute="bottom" secondItem="q8J-5d-moj" secondAttribute="bottom" constant="8" id="9hc-JZ-5ol"/>
                                         <constraint firstItem="lxn-Uw-8Mk" firstAttribute="leading" secondItem="6aQ-7C-Nvs" secondAttribute="trailing" constant="16" id="FGE-Qd-kBw"/>
                                         <constraint firstItem="lxn-Uw-8Mk" firstAttribute="top" secondItem="d9u-ix-tC4" secondAttribute="bottom" constant="16" id="Gj9-gS-m9r"/>
@@ -267,6 +268,8 @@
                                         <mask key="constraints">
                                             <exclude reference="1qw-kW-MRV"/>
                                             <exclude reference="7tf-Oq-ghu"/>
+                                            <exclude reference="ObN-p5-qJh"/>
+                                            <exclude reference="x0B-Eq-u0S"/>
                                             <exclude reference="yyX-hU-zLi"/>
                                             <exclude reference="zHN-fe-Ajj"/>
                                             <exclude reference="4J1-aO-nTS"/>
@@ -503,7 +506,7 @@
         <scene sceneID="iWa-Kd-oWn">
             <objects>
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Popular Shows" image="streamsavvy-wordmark-large" id="sw4-yP-YcI"/>
+                    <tabBarItem key="tabBarItem" title="Popular Shows" image="tv-icon" id="sw4-yP-YcI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -528,6 +531,14 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="NBC-2m-3jW">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.94117647059999998" green="0.01176470588" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="selectedImageTintColor" red="0.94117647059999998" green="0.01176470588" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.94117647058823528" green="0.011764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="wOq-CV-4sH" kind="relationship" relationship="viewControllers" id="KEb-p7-l7X"/>
@@ -542,7 +553,7 @@
         <scene sceneID="ksm-By-zQq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXZ-uX-PNa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Guide" image="streamsavvy-wordmark-large" id="nLK-ZU-vND"/>
+                    <tabBarItem key="tabBarItem" title="Guide" image="tv-icon" id="nLK-ZU-vND"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QPR-pz-m9s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -562,5 +573,6 @@
     </scenes>
     <resources>
         <image name="streamsavvy-wordmark-large" width="306" height="54"/>
+        <image name="tv-icon" width="30" height="30"/>
     </resources>
 </document>

@@ -16,11 +16,11 @@
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	// Initialization code
-	[Constants addGradientForImageView:self.bigImageView];
 	[Constants addGradientForImageView:self.topImageView];
 	[Constants addGradientForImageView:self.bottomImageView];
+	[Constants addGradientForImageView:self.bigImageView];
 }
-
+ 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -43,6 +43,7 @@
 		self.topImageTitleLabel.text											= self.topChannel.now_playing.title;
 		self.bottomImageTitleLabel.text										= self.bottomChannel.now_playing.title;
 	}
+
 }
 
 @end

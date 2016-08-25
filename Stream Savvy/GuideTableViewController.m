@@ -72,7 +72,7 @@ NSInteger numOfStaticCell = 1;
 	[UserLocation getLocationFromIP:^(NSURLSessionDataTask *task, id JSON) {
 		NSInteger zip_code = [[(NSDictionary *)JSON valueForKey:@"zip_code"] integerValue];
 		NSLog(@"zip_code %ld", (long)zip_code);
-		[Channel getRoviGuideForZipcode:zip_code Success:^(NSURLSessionDataTask *task, id JSON) {
+		[Channel getRoviGuideForZipcode:43021 Success:^(NSURLSessionDataTask *task, id JSON) {
 			NSMutableArray *guideShows = [NSMutableArray new];
 			//////////////////////this needs edited
 			for (NSDictionary *region_channels in (NSArray *)JSON) {

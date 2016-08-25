@@ -80,27 +80,25 @@
 + (void)addGradientForImageView:(UIImageView *)imageView{
 	CAGradientLayer *gradientLayer = [CAGradientLayer layer];
 	gradientLayer.frame =  CGRectMake(
-					  imageView.frame.origin.x,
-					  imageView.frame.origin.y,
-					  imageView.frame.size.width * 2,
+					  0,
+					  0,
+					  imageView.frame.size.width,
 					  imageView.frame.size.height);
 	
-	
 	gradientLayer.colors = [NSArray arrayWithObjects:
-				(id)[UIColor colorWithWhite:0.0f alpha:0.0f].CGColor,
-				(id)[UIColor colorWithWhite:0.0f alpha:0.3f].CGColor,
+				(id)[UIColor clearColor].CGColor,  // transparent
+				(id)[UIColor blackColor].CGColor, // black
 				nil];
 	
 	gradientLayer.locations = [NSArray arrayWithObjects:
-				   [NSNumber numberWithFloat:0.3f],
-				   [NSNumber numberWithFloat:1.0f],
+				   [NSNumber numberWithFloat:0.0f],
+				   [NSNumber numberWithFloat:0.95f],
 				   nil];
 	
 	//If you want to have a border for this layer also
 	gradientLayer.borderColor = [UIColor clearColor].CGColor;
 	gradientLayer.borderWidth = 1;
-	[imageView.layer addSublayer:gradientLayer];
-
+	[imageView.layer insertSublayer:gradientLayer atIndex:0];
 }
 
 
