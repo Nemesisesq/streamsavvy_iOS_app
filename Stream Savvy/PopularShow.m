@@ -13,7 +13,6 @@
 
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes{
-			NSLog(@"User~-~-~\n\n%@", attributes);
 	self = [super init];
 	if (!self) return nil;
 	self.guidebox_id			= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"id"] integerValue];

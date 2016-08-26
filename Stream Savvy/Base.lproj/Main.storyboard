@@ -471,6 +471,7 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="gAH-xF-yHV"/>
+                                            <exclude reference="KMe-fJ-2dX"/>
                                             <exclude reference="M8p-lY-pEK"/>
                                             <exclude reference="iX8-D9-6WS"/>
                                             <exclude reference="xfx-gn-l1Y"/>

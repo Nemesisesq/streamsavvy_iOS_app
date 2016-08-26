@@ -16,10 +16,14 @@
 	self = [super init];
 	if (!self) return nil;
 	self.channel_id				= [attributes valueForKey:@"Channel"] ;
-	self.display_name		= [attributes valueForKey:@"DisplayName"];
-	self.image_link			= [[[attributes valueForKey:@"ChannelImages"] objectAtIndex:0] valueForKey:@"ImageUrl"];
-	self.deep_link			= @"link-goes-here";
-	self.now_playing			= [[Media alloc] initWithAttributes:[[attributes valueForKey:@"Airings"] objectAtIndex:0]];
+	self.display_name			= [attributes valueForKey:@"DisplayName"];
+	if ([[attributes valueForKey:@"ChannelImages"] count] > 0) {
+		self.image_link			= [[[attributes valueForKey:@"ChannelImages"] objectAtIndex:0] valueForKey:@"ImageUrl"];
+	}else{
+		self.image_link			= @"";
+	}
+	self.deep_link				= @"link-goes-here";
+	self.now_playing				= [[Media alloc] initWithAttributes:[[attributes valueForKey:@"Airings"] objectAtIndex:0]];
 	
 	return self;
 }

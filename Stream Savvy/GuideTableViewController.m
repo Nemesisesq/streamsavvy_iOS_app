@@ -36,7 +36,7 @@ NSInteger numOfStaticCell = 1;
 	self.navigationItem.titleView=workaroundImageView;
 	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
-	self.tableView.estimatedRowHeight = 60.0;
+	self.tableView.estimatedRowHeight = 328.0;
 	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 	[self.tableView setSeparatorColor:[UIColor blackColor]];
 	
@@ -71,16 +71,17 @@ NSInteger numOfStaticCell = 1;
 	// this is fucking gnarly lol
 	[UserLocation getLocationFromIP:^(NSURLSessionDataTask *task, id JSON) {
 		NSInteger zip_code = [[(NSDictionary *)JSON valueForKey:@"zip_code"] integerValue];
-		NSLog(@"zip_code %ld", (long)zip_code);
-		[Channel getRoviGuideForZipcode:43021 Success:^(NSURLSessionDataTask *task, id JSON) {
+		[Channel getRoviGuideForZipcode:zip_code Success:^(NSURLSessionDataTask *task, id JSON) {
 			NSMutableArray *guideShows = [NSMutableArray new];
 			//////////////////////this needs edited
-			for (NSDictionary *region_channels in (NSArray *)JSON) {
-				for (NSDictionary *channel in [[[region_channels objectForKey:@"data"] objectForKey:@"GridScheduleResult"] objectForKey:@"GridChannels"]) {
-					[guideShows addObject:[[Channel alloc] initWithAttributes: channel]];
-				}
+			int max_to_load = 0;
+			for (NSDictionary *region_channels in [[[(NSDictionary *)JSON objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]) {
+				if (max_to_load > 99) break;
+				max_to_load ++;
+				[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];
 			}
 			self.guideShows = [guideShows copy];
+			NSLog(@"#_#_#_#_%lu", (unsigned long)self.guideShows.count);
 			[self.tableView reloadData];
 			if (self.refreshControl) {
 				[self.refreshControl endRefreshing];
@@ -98,7 +99,11 @@ NSInteger numOfStaticCell = 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return numOfStaticCell + self.guideShows.count / numShowsPerCell;
+	NSLog(@"#_#_#_#_#_@_%lu", numOfStaticCell);
+	NSLog(@"#_#_#_#_#_@_%lu", (unsigned long)self.guideShows.count);
+	NSLog(@"#_#_#_#_#_@_%lu", numShowsPerCell);
+	NSLog(@"#_#_#_#_#_@_%lu", numOfStaticCell + self.guideShows.count / numShowsPerCell);
+    return (numOfStaticCell + self.guideShows.count / numShowsPerCell);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,12 +112,13 @@ NSInteger numOfStaticCell = 1;
 		[Constants fixSeparators:cell];
 		return cell;
 	}
+	NSLog(@"#_#_#_#_#_@_@_@_%ld", (long)indexPath.row);
 	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];
 	cell.isShowingPopularShows = NO;
-	cell.bigShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell)];
-	cell.topShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 1)];
-	cell.bottomShow = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 2)];
+	cell.bigChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell)];
+	cell.topChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 1)];
+	cell.bottomChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 2)];
 	[cell setCellDetails];
 	return cell;
 }
