@@ -8,6 +8,7 @@
 
 #import "Media.h"
 #import "AFAPIClient.h"
+#import "Constants.h"
 
 @implementation Media
 
@@ -20,6 +21,7 @@
 	self.program_id			= [[attributes valueForKey:@"ProgramId"] integerValue];
 	self.title					= [attributes valueForKey:@"Title"];
 	self.image_link			= [attributes valueForKey:@"artwork_608x342"];
+	self.time					= [Constants formalTimeWithTimeZone: [attributes valueForKey:@"AiringTime"]];
 	self.deep_link			= @""; // ???????
 	
 	return self;

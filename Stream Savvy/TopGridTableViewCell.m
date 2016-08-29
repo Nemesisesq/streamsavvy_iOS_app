@@ -35,6 +35,9 @@
 		self.bigImageTitleLabel.text											= self.bigShow.title;
 		self.topImageTitleLabel.text											= self.topShow.title;
 		self.bottomImageTitleLabel.text										= self.bottomShow.title;
+		self.bigImageTimeLabel.text											= self.bigShow.time;
+		self.topImageTimeLabel.text											= self.topShow.time;
+		self.bottomImageTimeLabel.text										= self.bottomShow.time;
 	}else{
 		[SDWebModel loadImageFor:self.bigImageView withRemoteURL:		self.bigChannel.image_link];
 		[SDWebModel loadImageFor:self.topImageView withRemoteURL:		self.topChannel.image_link];
@@ -42,6 +45,9 @@
 		self.bigImageTitleLabel.text											= self.bigChannel.now_playing.title;
 		self.topImageTitleLabel.text											= self.topChannel.now_playing.title;
 		self.bottomImageTitleLabel.text										= self.bottomChannel.now_playing.title;
+		self.bigImageTimeLabel.text											= self.bigChannel.now_playing.time;
+		self.topImageTimeLabel.text											= self.topChannel.now_playing.time;
+		self.bottomImageTimeLabel.text										= self.bottomChannel.now_playing.time;
 	}
 
 }

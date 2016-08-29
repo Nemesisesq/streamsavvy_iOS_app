@@ -26,5 +26,7 @@
 
 + (void)addGradientForImageView:(UIImageView *)imageView;
 
++(NSString*)formalTimeWithTimeZone:(NSString *)time;
+
 
 @end

@@ -101,5 +101,27 @@
 	[imageView.layer insertSublayer:gradientLayer atIndex:0];
 }
 
+	//	2016-08-24T19:00:00Z
+	//
+
++(NSString*)formalTimeWithTimeZone:(NSString *)time{
+	// 2015-07-03 21:26:22.124185
+	time = [[time stringByReplacingOccurrencesOfString:@"T" withString:@" "] stringByReplacingOccurrencesOfString:@":00Z" withString:@""];
+	[self AWLog:time LINE:__LINE__ FUNCTION:__FUNCTION__];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+	
+	NSDate *date = [dateFormatter dateFromString:time];
+	return [self formalTimeWithDate:date];
+}
+
++(NSString *)formalTimeWithDate:(NSDate *)date{
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"h:mm a"];
+	NSString *stringFromDate = [formatter stringFromDate:date];
+	return stringFromDate;
+}
+
+
 
 @end

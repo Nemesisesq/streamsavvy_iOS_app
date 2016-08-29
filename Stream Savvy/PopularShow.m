@@ -8,6 +8,7 @@
 
 #import "PopularShow.h"
 #import "AFAPIClient.h"
+#import "Constants.h"
 
 @implementation PopularShow
 
@@ -18,6 +19,8 @@
 	self.guidebox_id			= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"id"] integerValue];
 	self.title					= [attributes valueForKey:@"title"];
 	self.image_link			= [[attributes valueForKey:@"guidebox_data"] valueForKey:@"artwork_608x342"];
+	self.time					= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"detail"] valueForKey:@"air_time"]; // air_day_of_week
+	if (self.time.length == 0) [Constants AWLog:[[attributes valueForKey:@"guidebox_data"] valueForKey:@"detail"] LINE:__LINE__ FUNCTION:__FUNCTION__];
 	self.deep_link			= @"link-goes-here";
 	
 	return self;

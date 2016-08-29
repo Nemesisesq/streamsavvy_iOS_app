@@ -13,6 +13,7 @@
 @property (nonatomic) NSInteger			program_id;
 @property (strong, nonatomic) NSString	*title;
 @property (strong, nonatomic) NSString	*image_link;
+@property (strong, nonatomic) NSString	*time;
 @property (strong, nonatomic) NSString	*deep_link;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;

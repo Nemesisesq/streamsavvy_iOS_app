@@ -81,7 +81,6 @@ NSInteger numOfStaticCell = 1;
 				[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];
 			}
 			self.guideShows = [guideShows copy];
-			NSLog(@"#_#_#_#_%lu", (unsigned long)self.guideShows.count);
 			[self.tableView reloadData];
 			if (self.refreshControl) {
 				[self.refreshControl endRefreshing];
@@ -99,10 +98,6 @@ NSInteger numOfStaticCell = 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSLog(@"#_#_#_#_#_@_%lu", numOfStaticCell);
-	NSLog(@"#_#_#_#_#_@_%lu", (unsigned long)self.guideShows.count);
-	NSLog(@"#_#_#_#_#_@_%lu", numShowsPerCell);
-	NSLog(@"#_#_#_#_#_@_%lu", numOfStaticCell + self.guideShows.count / numShowsPerCell);
     return (numOfStaticCell + self.guideShows.count / numShowsPerCell);
 }
 
@@ -112,7 +107,6 @@ NSInteger numOfStaticCell = 1;
 		[Constants fixSeparators:cell];
 		return cell;
 	}
-	NSLog(@"#_#_#_#_#_@_@_@_%ld", (long)indexPath.row);
 	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];
 	cell.isShowingPopularShows = NO;

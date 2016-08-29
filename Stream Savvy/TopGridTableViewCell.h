@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *topImageTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bottomImageTitleLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *bigImageTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *topImageTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bottomImageTimeLabel;
+
 @property (nonatomic) BOOL isShowingPopularShows;
 @property (strong, nonatomic) PopularShow *bigShow;
 @property (strong, nonatomic) PopularShow *topShow;
