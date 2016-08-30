@@ -143,14 +143,14 @@
             <objects>
                 <tableViewController storyboardIdentifier="PopularShowTableViewController" id="FqQ-K3-7ul" customClass="PopularShowTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="an1-22-aNj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="65" id="gN1-bq-sXo">
-                                <rect key="frame" x="0.0" y="92" width="600" height="65"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gN1-bq-sXo" id="s82-pP-hI7">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
@@ -178,7 +178,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopGridTableViewCell" rowHeight="328" id="75Z-ed-o1B" customClass="TopGridTableViewCell">
-                                <rect key="frame" x="0.0" y="157" width="600" height="328"/>
+                                <rect key="frame" x="0.0" y="93" width="600" height="328"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="75Z-ed-o1B" id="GbI-R1-rOa">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="327"/>
@@ -340,7 +340,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RightGridTableViewCell" rowHeight="325" id="Vsj-Ms-Eem" customClass="RightGridTableViewCell">
-                                <rect key="frame" x="0.0" y="485" width="600" height="325"/>
+                                <rect key="frame" x="0.0" y="421" width="600" height="325"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vsj-Ms-Eem" id="S8G-fr-FXz">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="324"/>
@@ -395,18 +395,119 @@
             </objects>
             <point key="canvasLocation" x="3414" y="400"/>
         </scene>
+        <!--Show Details View Controller-->
+        <scene sceneID="kiN-Vn-zuG">
+            <objects>
+                <viewController storyboardIdentifier="ShowDetailsViewController" id="NlO-4D-6oM" customClass="ShowDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CxW-rT-bQl"/>
+                        <viewControllerLayoutGuide type="bottom" id="x3J-0w-7Xb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m14-NX-Uhy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjY-Eo-hbz">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLv-fc-zbc">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="466"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the app you want to use to watch!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-5F-exe">
+                                                <rect key="frame" x="20" y="75" width="560" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="MhF-D2-K5x"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="netflix-logo" translatesAutoresizingMaskIntoConstraints="NO" id="p3p-xt-CV2">
+                                                <rect key="frame" x="20" y="130" width="560" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="1hf-Sh-Uoo"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hulu" translatesAutoresizingMaskIntoConstraints="NO" id="9nR-xl-sM3">
+                                                <rect key="frame" x="20" y="278" width="560" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="UEC-1J-lR6"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game of Thrones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-Gh-8y4">
+                                                <rect key="frame" x="20" y="8" width="560" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="Zgq-Lp-NXa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="34"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="qIc-Gh-8y4" firstAttribute="leading" secondItem="nLv-fc-zbc" secondAttribute="leading" constant="20" id="AVE-Oy-ttS"/>
+                                            <constraint firstAttribute="bottom" secondItem="9nR-xl-sM3" secondAttribute="bottom" constant="60" id="Ceg-CH-yTp"/>
+                                            <constraint firstItem="qIc-Gh-8y4" firstAttribute="top" secondItem="nLv-fc-zbc" secondAttribute="top" constant="8" id="JiR-Fd-G96"/>
+                                            <constraint firstAttribute="trailing" secondItem="p3p-xt-CV2" secondAttribute="trailing" constant="20" id="LHE-rR-4me"/>
+                                            <constraint firstItem="9nR-xl-sM3" firstAttribute="top" secondItem="p3p-xt-CV2" secondAttribute="bottom" constant="20" id="Nga-78-YlA"/>
+                                            <constraint firstAttribute="trailing" secondItem="8jp-5F-exe" secondAttribute="trailing" constant="20" id="PAh-B2-bpp"/>
+                                            <constraint firstItem="p3p-xt-CV2" firstAttribute="top" secondItem="8jp-5F-exe" secondAttribute="bottom" constant="20" id="PSq-tm-7DS"/>
+                                            <constraint firstItem="9nR-xl-sM3" firstAttribute="leading" secondItem="nLv-fc-zbc" secondAttribute="leading" constant="20" id="Qgl-gc-3HV"/>
+                                            <constraint firstItem="qIc-Gh-8y4" firstAttribute="top" secondItem="nLv-fc-zbc" secondAttribute="top" constant="8" id="V0m-TE-z8X"/>
+                                            <constraint firstItem="p3p-xt-CV2" firstAttribute="leading" secondItem="nLv-fc-zbc" secondAttribute="leading" constant="20" id="WzM-pm-dTp"/>
+                                            <constraint firstItem="8jp-5F-exe" firstAttribute="top" secondItem="qIc-Gh-8y4" secondAttribute="bottom" constant="20" id="aed-HX-WCD"/>
+                                            <constraint firstAttribute="trailing" secondItem="qIc-Gh-8y4" secondAttribute="trailing" constant="20" id="fs9-ZD-uIX"/>
+                                            <constraint firstAttribute="trailing" secondItem="9nR-xl-sM3" secondAttribute="trailing" constant="20" id="o2i-h5-G4M"/>
+                                            <constraint firstItem="8jp-5F-exe" firstAttribute="leading" secondItem="nLv-fc-zbc" secondAttribute="leading" constant="20" id="rs5-jl-llr"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="V0m-TE-z8X"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nLv-fc-zbc" secondAttribute="bottom" id="387-ZS-pu8"/>
+                                    <constraint firstItem="nLv-fc-zbc" firstAttribute="leading" secondItem="yjY-Eo-hbz" secondAttribute="leading" id="78o-By-Uxh"/>
+                                    <constraint firstAttribute="trailing" secondItem="nLv-fc-zbc" secondAttribute="trailing" id="XeK-aS-LcZ"/>
+                                    <constraint firstItem="nLv-fc-zbc" firstAttribute="top" secondItem="yjY-Eo-hbz" secondAttribute="top" id="cDm-22-sCK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yjY-Eo-hbz" secondAttribute="trailing" id="FEF-Dv-3SG"/>
+                            <constraint firstItem="x3J-0w-7Xb" firstAttribute="top" secondItem="yjY-Eo-hbz" secondAttribute="bottom" id="Otn-b3-4Vz"/>
+                            <constraint firstItem="yjY-Eo-hbz" firstAttribute="top" secondItem="CxW-rT-bQl" secondAttribute="bottom" id="j4P-fD-FxP"/>
+                            <constraint firstItem="nLv-fc-zbc" firstAttribute="width" secondItem="m14-NX-Uhy" secondAttribute="width" id="uOD-D0-gPb"/>
+                            <constraint firstItem="yjY-Eo-hbz" firstAttribute="leading" secondItem="m14-NX-Uhy" secondAttribute="leading" id="vNU-Ri-XXe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="huluImageView" destination="9nR-xl-sM3" id="qGr-0o-xLP"/>
+                        <outlet property="mediaTitleLabel" destination="qIc-Gh-8y4" id="VJr-ul-vOY"/>
+                        <outlet property="netflixImageView" destination="p3p-xt-CV2" id="hdN-2q-OZ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JbW-Dm-916" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4107" y="759"/>
+        </scene>
         <!--Guide Table View Controller-->
         <scene sceneID="vv0-Ju-unJ">
             <objects>
                 <tableViewController storyboardIdentifier="GuideTableViewController" id="TBZ-IE-z7Y" customClass="GuideTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zVu-d0-3PY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="65" id="T0J-bE-cP2">
-                                <rect key="frame" x="0.0" y="92" width="600" height="65"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T0J-bE-cP2" id="bNb-8G-9pP">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
@@ -434,7 +535,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopGridTableViewCell" rowHeight="328" id="cet-3e-k3m" customClass="TopGridTableViewCell">
-                                <rect key="frame" x="0.0" y="157" width="600" height="328"/>
+                                <rect key="frame" x="0.0" y="93" width="600" height="328"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cet-3e-k3m" id="f7q-n4-Hfc">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="327"/>
@@ -605,10 +706,11 @@
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Popular Shows" image="tv-icon" id="sw4-yP-YcI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -652,10 +754,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXZ-uX-PNa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Guide" image="tv-icon" id="nLK-ZU-vND"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QPR-pz-m9s">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QPR-pz-m9s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -669,6 +772,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hulu" width="300" height="100"/>
+        <image name="netflix-logo" width="300" height="84"/>
         <image name="streamsavvy-wordmark-large" width="306" height="54"/>
         <image name="tv-icon" width="30" height="30"/>
     </resources>

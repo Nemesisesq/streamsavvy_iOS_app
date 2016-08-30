@@ -9,6 +9,7 @@
 #import "PopularShow.h"
 #import "AFAPIClient.h"
 #import "Constants.h"
+#import "MBProgressHUD.h"
 
 @implementation PopularShow
 
@@ -34,17 +35,22 @@
 	if (page)
 		url = [NSString stringWithFormat:@"%@page%ld", url, (long)page];
 	NSLog(@"%@\n\n\n", url);
-	[[AFAPIClient sharedClient:nil] GET:url parameters:nil
+	[MBProgressHUD showHUDAddedTo:view animated:YES];
+	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+		[[AFAPIClient sharedClient:nil] GET:url parameters:nil
 				    success:^(NSURLSessionDataTask *task, id JSON) {
 					    dispatch_async( dispatch_get_main_queue(), ^{
 						    successBlock(task, JSON);
+						    [MBProgressHUD hideHUDForView:view animated:YES];
 					    });
 				    } failure:^(NSURLSessionDataTask *task, NSError *error) {
 					    dispatch_async( dispatch_get_main_queue(), ^{
 						    NSLog(@"%@", url);
 						    NSLog(@"~~~>%@", error);
+						    [MBProgressHUD hideHUDForView:view animated:YES];
 					    });
 				    }];
+	});
 }
 
 

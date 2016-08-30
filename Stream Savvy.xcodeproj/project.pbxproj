@@ -17,6 +17,7 @@
 		9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC977D1D6B97E1004B6182 /* Channel.m */; };
 		9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC97801D6BD742004B6182 /* PopularShow.m */; };
 		9FBC97851D6D32CB004B6182 /* GuideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */; };
+		9FD956C91D750ECD00258535 /* ShowDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD956C81D750ECD00258535 /* ShowDetailsViewController.m */; };
 		9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0361D6936210013DCB1 /* AFAPIClient.m */; };
 		9FE1B0441D6936210013DCB1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0381D6936210013DCB1 /* Constants.m */; };
 		9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0391D6936210013DCB1 /* SDWebModel.m */; };
@@ -72,6 +73,8 @@
 		9FBC97801D6BD742004B6182 /* PopularShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularShow.m; sourceTree = "<group>"; };
 		9FBC97831D6D32CB004B6182 /* GuideTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideTableViewController.h; sourceTree = "<group>"; };
 		9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideTableViewController.m; sourceTree = "<group>"; };
+		9FD956C71D750ECD00258535 /* ShowDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsViewController.h; sourceTree = "<group>"; };
+		9FD956C81D750ECD00258535 /* ShowDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailsViewController.m; sourceTree = "<group>"; };
 		9FE1B0351D6936210013DCB1 /* AFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAPIClient.h; sourceTree = "<group>"; };
 		9FE1B0361D6936210013DCB1 /* AFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAPIClient.m; sourceTree = "<group>"; };
 		9FE1B0371D6936210013DCB1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				9FE1B04F1D693B160013DCB1 /* PopularShowTableViewController.m */,
 				9FBC97831D6D32CB004B6182 /* GuideTableViewController.h */,
 				9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */,
+				9FD956C71D750ECD00258535 /* ShowDetailsViewController.h */,
+				9FD956C81D750ECD00258535 /* ShowDetailsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9FE1B0501D693B160013DCB1 /* PopularShowTableViewController.m in Sources */,
 				9FE1B0561D693BEB0013DCB1 /* RightGridTableViewCell.m in Sources */,
+				9FD956C91D750ECD00258535 /* ShowDetailsViewController.m in Sources */,
 				9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */,
 				9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */,
 				9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */,

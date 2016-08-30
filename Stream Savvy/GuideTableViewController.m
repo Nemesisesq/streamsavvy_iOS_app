@@ -113,7 +113,9 @@ NSInteger numOfStaticCell = 1;
 	cell.bigChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell)];
 	cell.topChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 1)];
 	cell.bottomChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 2)];
+	cell.uivc = self;
 	[cell setCellDetails];
+	
 	return cell;
 }
 

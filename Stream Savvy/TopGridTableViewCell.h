@@ -33,6 +33,8 @@
 @property (strong, nonatomic) Channel *topChannel;
 @property (strong, nonatomic) Channel *bottomChannel;
 
+@property (strong, nonatomic) UIViewController *uivc;
+
 -(void)setCellDetails;
 
 @end

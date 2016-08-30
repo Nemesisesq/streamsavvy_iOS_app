@@ -10,6 +10,8 @@
 #import "SDWebModel.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Constants.h"
+#import "ShowDetailsViewController.h"
+
 
 @implementation TopGridTableViewCell
 
@@ -19,8 +21,20 @@
 	[Constants addGradientForImageView:self.topImageView];
 	[Constants addGradientForImageView:self.bottomImageView];
 	[Constants addGradientForImageView:self.bigImageView];
+	
+	UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topPressed)];
+	[self.topImageView addGestureRecognizer:tapGestureRecognizer];
+	[self.topImageView setUserInteractionEnabled:YES];
+	
+	tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bottomPressed)];
+	[self.bottomImageView addGestureRecognizer:tapGestureRecognizer];
+	[self.bottomImageView setUserInteractionEnabled:YES];
+	
+	tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigPressed)];
+	[self.bigImageView addGestureRecognizer:tapGestureRecognizer];
+	[self.bigImageView setUserInteractionEnabled:YES];
 }
- 
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -38,6 +52,9 @@
 		self.bigImageTimeLabel.text											= self.bigShow.time;
 		self.topImageTimeLabel.text											= self.topShow.time;
 		self.bottomImageTimeLabel.text										= self.bottomShow.time;
+		
+		
+
 	}else{
 		[SDWebModel loadImageFor:self.bigImageView withRemoteURL:		self.bigChannel.image_link];
 		[SDWebModel loadImageFor:self.topImageView withRemoteURL:		self.topChannel.image_link];
@@ -50,6 +67,28 @@
 		self.bottomImageTimeLabel.text										= self.bottomChannel.now_playing.time;
 	}
 
+}
+
+
+-(void)topPressed{
+	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
+	sdvc.mediaTitleText = self.topShow.title;
+	[self.uivc.navigationController pushViewController:sdvc animated:YES];
+}
+
+-(void)bottomPressed{
+	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
+	sdvc.mediaTitleText = self.bottomShow.title;
+	[self.uivc.navigationController pushViewController:sdvc animated:YES];
+}
+
+-(void)bigPressed{
+	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
+	sdvc.mediaTitleText = self.bigShow.title;
+	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
 @end

@@ -11,6 +11,7 @@ pod 'SCLAlertView-Objective-C'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
+pod 'MBProgressHUD', '~> 1.0.0'
 
 platform :ios, '8.4'
 
