@@ -30,7 +30,7 @@
 
 
 //////// gonna save this for now, we will put it somewhere eventually
-+ (void)getPopularShowsForPage:(NSInteger)page Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
++ (void)getPopularShowsForPage:(NSInteger)page view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
 	NSString *url = @"https://ss-master-staging.herokuapp.com/api/popular-shows?";
 	if (page)
 		url = [NSString stringWithFormat:@"%@page%ld", url, (long)page];

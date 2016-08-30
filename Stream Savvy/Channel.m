@@ -31,7 +31,7 @@
 
 
 
-+ (void)getRoviGuideForZipcode:(NSInteger)zipcode Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
++ (void)getRoviGuideForZipcode:(NSInteger)zipcode view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
 	NSString *url = [NSString stringWithFormat:@"https://ss-master-staging.herokuapp.com/api/guide/%ld", (long)zipcode];
 	NSLog(@"%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Media.h"
+#import <UIKit/UIKit.h>
 
 @interface Channel : NSObject
 
@@ -19,6 +20,6 @@
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
-+ (void)getRoviGuideForZipcode:(NSInteger)zipcode Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
++ (void)getRoviGuideForZipcode:(NSInteger)zipcode view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
 
 @end

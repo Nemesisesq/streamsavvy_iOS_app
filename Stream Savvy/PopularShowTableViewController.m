@@ -65,9 +65,7 @@ NSInteger numStaticCell = 1;
 }
 
 -(void)reload{
-	[PopularShow getPopularShowsForPage:0 Success:^(NSURLSessionDataTask *task, id JSON) {
-		
-		
+	[PopularShow getPopularShowsForPage:0 view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
 		NSMutableArray *popularShows = [NSMutableArray new];
 		for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
 			[popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];

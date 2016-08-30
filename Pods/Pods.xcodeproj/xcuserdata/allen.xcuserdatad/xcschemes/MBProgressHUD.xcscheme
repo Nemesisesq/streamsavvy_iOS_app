@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AFD98870AA4B7BB1EBEE2D3E'
-               BlueprintName = 'SCLAlertView-Objective-C'
+               BlueprintIdentifier = '22FBB4560585ED658FD56AA6'
+               BlueprintName = 'MBProgressHUD'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSCLAlertView-Objective-C.a'>
+               BuildableName = 'libMBProgressHUD.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

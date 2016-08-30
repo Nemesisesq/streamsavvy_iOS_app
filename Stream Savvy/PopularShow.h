@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface PopularShow : NSObject
 
@@ -18,6 +19,6 @@
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
-+ (void)getPopularShowsForPage:(NSInteger)page Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
++ (void)getPopularShowsForPage:(NSInteger)page view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
 
 @end

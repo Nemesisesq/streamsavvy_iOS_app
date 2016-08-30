@@ -71,7 +71,7 @@ NSInteger numOfStaticCell = 1;
 	// this is fucking gnarly lol
 	[UserLocation getLocationFromIP:^(NSURLSessionDataTask *task, id JSON) {
 		NSInteger zip_code = [[(NSDictionary *)JSON valueForKey:@"zip_code"] integerValue];
-		[Channel getRoviGuideForZipcode:zip_code Success:^(NSURLSessionDataTask *task, id JSON) {
+		[Channel getRoviGuideForZipcode:zip_code view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
 			NSMutableArray *guideShows = [NSMutableArray new];
 			//////////////////////this needs edited
 			int max_to_load = 0;

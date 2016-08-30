@@ -32,6 +32,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.14.0):
     - FBSDKCoreKit
+  - MBProgressHUD (1.0.0)
   - SCLAlertView-Objective-C (1.0.4)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - MBProgressHUD (~> 1.0.0)
   - SCLAlertView-Objective-C
   - SDWebImage (~> 3.7)
 
@@ -51,6 +53,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 6e020b5db0b5bd1e01f5fb0902131befd129a502
   FBSDKLoginKit: da563567a108050ef83739c8c8c001ee9e25fa13
   FBSDKShareKit: e8e5d4ccef69b41132fe33acda26db1e33143e33
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 

@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Stream Savvy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1EFEA604C73F31C855894A2A9F84EC85</key>
+		<key>0CC6D1C3F8BDE12C77A08BC59AB367C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>213D77A2841953060B7983F0BBAC789D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,17 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C83718E54355A7A393CC45AAC5EE92E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7E61C9A8C176278C6C99C2C59E9C152E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9DF058A64B40FFF4C944C09407CE809</key>
+		<key>9D5B977A15C6EB41FB295ED6AC0B2710</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D058B89EB3B3DF45457A2DCD3971AFFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
