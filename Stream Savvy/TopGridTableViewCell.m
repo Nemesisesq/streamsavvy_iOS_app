@@ -73,21 +73,33 @@
 -(void)topPressed{
 	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
-	sdvc.mediaTitleText = self.topShow.title;
+	if (self.isShowingPopularShows) {
+		sdvc.mediaTitleText = self.topShow.title;
+	}else{
+		sdvc.mediaTitleText = self.topChannel.now_playing.title;
+	}
 	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
 -(void)bottomPressed{
 	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
-	sdvc.mediaTitleText = self.bottomShow.title;
+	if (self.isShowingPopularShows) {
+		sdvc.mediaTitleText = self.bottomShow.title;
+	}else{
+		sdvc.mediaTitleText = self.bottomChannel.now_playing.title;
+	}
 	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
 -(void)bigPressed{
 	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
-	sdvc.mediaTitleText = self.bigShow.title;
+	if (self.isShowingPopularShows) {
+		sdvc.mediaTitleText = self.bigShow.title;
+	}else{
+		sdvc.mediaTitleText = self.bigChannel.now_playing.title;
+	}
 	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
