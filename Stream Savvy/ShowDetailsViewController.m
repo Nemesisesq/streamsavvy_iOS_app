@@ -19,6 +19,9 @@
 	// Do any additional setup after loading the view.
 	NSLog(@"%@",self.mediaTitleText);
 	self.mediaTitleLabel.text = self.mediaTitleText;
+	if (!self.isDisplayingPopularShows) {
+		self.netflixImageView.image = [UIImage imageNamed:@"sling"];
+	}
 
 }
 

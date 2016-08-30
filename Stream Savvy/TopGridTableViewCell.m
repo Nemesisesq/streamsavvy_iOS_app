@@ -52,9 +52,6 @@
 		self.bigImageTimeLabel.text											= self.bigShow.time;
 		self.topImageTimeLabel.text											= self.topShow.time;
 		self.bottomImageTimeLabel.text										= self.bottomShow.time;
-		
-		
-
 	}else{
 		[SDWebModel loadImageFor:self.bigImageView withRemoteURL:		self.bigChannel.image_link];
 		[SDWebModel loadImageFor:self.topImageView withRemoteURL:		self.topChannel.image_link];
@@ -77,6 +74,7 @@
 	}else{
 		sdvc.mediaTitleText = self.topChannel.now_playing.title;
 	}
+	sdvc.isDisplayingPopularShows = self.isShowingPopularShows;
 	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
@@ -87,6 +85,7 @@
 	}else{
 		sdvc.mediaTitleText = self.bottomChannel.now_playing.title;
 	}
+	sdvc.isDisplayingPopularShows = self.isShowingPopularShows;
 	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
@@ -97,6 +96,7 @@
 	}else{
 		sdvc.mediaTitleText = self.bigChannel.now_playing.title;
 	}
+	sdvc.isDisplayingPopularShows = self.isShowingPopularShows;
 	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
