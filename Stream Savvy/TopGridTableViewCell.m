@@ -71,7 +71,6 @@
 
 
 -(void)topPressed{
-	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
 	if (self.isShowingPopularShows) {
 		sdvc.mediaTitleText = self.topShow.title;
@@ -82,7 +81,6 @@
 }
 
 -(void)bottomPressed{
-	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
 	if (self.isShowingPopularShows) {
 		sdvc.mediaTitleText = self.bottomShow.title;
@@ -93,7 +91,6 @@
 }
 
 -(void)bigPressed{
-	NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
 	if (self.isShowingPopularShows) {
 		sdvc.mediaTitleText = self.bigShow.title;
