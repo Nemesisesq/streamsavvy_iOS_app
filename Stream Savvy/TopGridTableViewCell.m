@@ -76,6 +76,10 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
+		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+		sdtvc.media = self.topChannel.now_playing;
+		sdtvc.sources = [self staticSources];
+		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 	}
 }
 
@@ -89,7 +93,10 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-	
+		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+		sdtvc.media = self.bottomChannel.now_playing;
+		sdtvc.sources = [self staticSources];
+		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 	}
 }
 
@@ -98,13 +105,15 @@
 	if (self.isShowingPopularShows) {
 		[self.bigShow getShowDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
 			sdtvc.show = self.bigShow;
-			NSLog(@"SHOW.TITLE %@", self.bigShow.title);
 			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
 			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		
+		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+		sdtvc.media = self.bigChannel.now_playing;
+		sdtvc.sources = [self staticSources];
+		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 	}
 }
 
@@ -120,6 +129,43 @@
 		[media_sources addObject:source];
 	}
 	return [media_sources copy];
+}
+
+-(NSArray *)staticSources{
+	NSArray *source_dicts = @[
+				  @{
+					  @"display_name":@"Sling Orange",
+					  @"source":@"sling_orange"
+					  },
+				  @{
+					  @"display_name":@"Sling Blue",
+					  @"source":@"sling_blue"
+					  },
+				  @{
+					  @"display_name":@"Sling Blue Orange",
+					  @"source":@"sling_blue_orange"
+					  },
+				  @{
+					  @"display_name":@"Sony Vue Core",
+					  @"source":@"sony_vue_core"
+					  },
+				  @{
+					  @"display_name":@"Sony Vue Elite",
+					  @"source":@"sony_vue_elite"
+					  },
+				  @{
+					  @"display_name":@"Sony Vue Slim",
+					  @"source":@"sony_vue_slim"
+					  },
+				  ];
+	
+	NSMutableArray *media_sources = [NSMutableArray new];
+	for (NSDictionary *dict in source_dicts) {
+		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
+		[media_sources addObject:source];
+	}
+	return [media_sources copy];
+
 }
 
 @end
