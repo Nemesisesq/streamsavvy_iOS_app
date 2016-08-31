@@ -59,6 +59,7 @@ NSInteger numStaticCells = 1;
 	}
 	MediaSourceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MediaSourceTableViewCell" forIndexPath:indexPath];
 	cell.source = [self.sources objectAtIndex:indexPath.row - numStaticCells];
+	cell.sdtvc = self;
 	[cell setCellDetails];
 	return cell;
 }

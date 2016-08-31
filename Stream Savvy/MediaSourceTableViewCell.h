@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MediaSource.h"
+#import "ShowDetailsTableViewController.h"
 
 @interface MediaSourceTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) MediaSource *source;
 @property (weak, nonatomic) IBOutlet UIImageView *mediaSourceImageView;
 -(void)setCellDetails;
-
+@property (strong, nonatomic) UIWebView *webView;
+@property (strong, nonatomic) ShowDetailsTableViewController *sdtvc;
 @end

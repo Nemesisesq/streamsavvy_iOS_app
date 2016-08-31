@@ -22,10 +22,11 @@
 	self.title					= [attributes valueForKey:@"Title"];
 	self.image_link			= [attributes valueForKey:@"artwork_608x342"];
 	self.time					= [Constants formalTimeWithTimeZone: [attributes valueForKey:@"AiringTime"]];
-	self.deep_link			= @""; // ???????
+//	self.deep_link			= [Media randomUrl];
 	
 	return self;
 }
+
 
 
 @end
