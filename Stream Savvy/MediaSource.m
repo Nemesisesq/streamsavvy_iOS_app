@@ -17,9 +17,7 @@
 	if (!self) return nil;
 	self.display_name			= [attributes valueForKey:@"display_name"];
 	self.source					= [attributes valueForKey:@"source"];
-	self.image_link				= [NSString stringWithFormat:@" https://s3.amazonaws.com/streamsavvy/service_logos/sm_2x/%@", self.source];
 	NSLog(@"attributes:\t%@",attributes);
-	NSLog(@"link:\t%@",self.image_link);
 	return self;
 }
 

@@ -8,6 +8,7 @@
 
 #import "MediaSourceTableViewCell.h"
 #import "SDWebModel.h"
+#import "Constants.h"
 
 @implementation MediaSourceTableViewCell
 
@@ -23,7 +24,8 @@
 }
 
 -(void)setCellDetails{
-	[SDWebModel loadImageFor:self.mediaSourceImageView withRemoteURL:self.source.image_link];
+	[Constants AWLog:self.source.source LINE:__LINE__ FUNCTION:__FUNCTION__];
+	self.mediaSourceImageView.image = [UIImage imageNamed: self.source.source];
 }
 
 @end
