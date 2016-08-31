@@ -395,106 +395,94 @@
             </objects>
             <point key="canvasLocation" x="3414" y="400"/>
         </scene>
-        <!--Show Details View Controller-->
-        <scene sceneID="kiN-Vn-zuG">
+        <!--Show Details Table View Controller-->
+        <scene sceneID="lVH-lY-xHp">
             <objects>
-                <viewController storyboardIdentifier="ShowDetailsViewController" id="NlO-4D-6oM" customClass="ShowDetailsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CxW-rT-bQl"/>
-                        <viewControllerLayoutGuide type="bottom" id="x3J-0w-7Xb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="m14-NX-Uhy">
+                <tableViewController storyboardIdentifier="ShowDetailsTableViewController" id="aMM-Pm-owt" customClass="ShowDetailsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gvt-8f-2Xk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjY-Eo-hbz">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLv-fc-zbc">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="466"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the app you want to use to watch!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-5F-exe">
-                                                <rect key="frame" x="20" y="75" width="560" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="MhF-D2-K5x"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="netflix-logo" translatesAutoresizingMaskIntoConstraints="NO" id="p3p-xt-CV2">
-                                                <rect key="frame" x="20" y="130" width="560" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="128" id="1hf-Sh-Uoo"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hulu" translatesAutoresizingMaskIntoConstraints="NO" id="9nR-xl-sM3">
-                                                <rect key="frame" x="20" y="278" width="560" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="128" id="UEC-1J-lR6"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game of Thrones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-Gh-8y4">
-                                                <rect key="frame" x="20" y="8" width="560" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="Zgq-Lp-NXa"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="34"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="qIc-Gh-8y4" firstAttribute="leading" secondItem="nLv-fc-zbc" secondAttribute="leading" constant="20" id="AVE-Oy-ttS"/>
-                                            <constraint firstAttribute="bottom" secondItem="9nR-xl-sM3" secondAttribute="bottom" constant="60" id="Ceg-CH-yTp"/>
-                                            <constraint firstItem="qIc-Gh-8y4" firstAttribute="top" secondItem="nLv-fc-zbc" secondAttribute="top" constant="8" id="JiR-Fd-G96"/>
-                                            <constraint firstAttribute="trailing" secondItem="p3p-xt-CV2" secondAttribute="trailing" constant="20" id="LHE-rR-4me"/>
-                                            <constraint firstItem="9nR-xl-sM3" firstAttribute="top" secondItem="p3p-xt-CV2" secondAttribute="bottom" constant="20" id="Nga-78-YlA"/>
-                                            <constraint firstAttribute="trailing" secondItem="8jp-5F-exe" secondAttribute="trailing" constant="20" id="PAh-B2-bpp"/>
-                                            <constraint firstItem="p3p-xt-CV2" firstAttribute="top" secondItem="8jp-5F-exe" secondAttribute="bottom" constant="20" id="PSq-tm-7DS"/>
-                                            <constraint firstItem="9nR-xl-sM3" firstAttribute="leading" secondItem="nLv-fc-zbc" secondAttribute="leading" constant="20" id="Qgl-gc-3HV"/>
-                                            <constraint firstItem="qIc-Gh-8y4" firstAttribute="top" secondItem="nLv-fc-zbc" secondAttribute="top" constant="8" id="V0m-TE-z8X"/>
-                                            <constraint firstItem="p3p-xt-CV2" firstAttribute="leading" secondItem="nLv-fc-zbc" secondAttribute="leading" constant="20" id="WzM-pm-dTp"/>
-                                            <constraint firstItem="8jp-5F-exe" firstAttribute="top" secondItem="qIc-Gh-8y4" secondAttribute="bottom" constant="20" id="aed-HX-WCD"/>
-                                            <constraint firstAttribute="trailing" secondItem="qIc-Gh-8y4" secondAttribute="trailing" constant="20" id="fs9-ZD-uIX"/>
-                                            <constraint firstAttribute="trailing" secondItem="9nR-xl-sM3" secondAttribute="trailing" constant="20" id="o2i-h5-G4M"/>
-                                            <constraint firstItem="8jp-5F-exe" firstAttribute="leading" secondItem="nLv-fc-zbc" secondAttribute="leading" constant="20" id="rs5-jl-llr"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="V0m-TE-z8X"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="nLv-fc-zbc" secondAttribute="bottom" id="387-ZS-pu8"/>
-                                    <constraint firstItem="nLv-fc-zbc" firstAttribute="leading" secondItem="yjY-Eo-hbz" secondAttribute="leading" id="78o-By-Uxh"/>
-                                    <constraint firstAttribute="trailing" secondItem="nLv-fc-zbc" secondAttribute="trailing" id="XeK-aS-LcZ"/>
-                                    <constraint firstItem="nLv-fc-zbc" firstAttribute="top" secondItem="yjY-Eo-hbz" secondAttribute="top" id="cDm-22-sCK"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yjY-Eo-hbz" secondAttribute="trailing" id="FEF-Dv-3SG"/>
-                            <constraint firstItem="x3J-0w-7Xb" firstAttribute="top" secondItem="yjY-Eo-hbz" secondAttribute="bottom" id="Otn-b3-4Vz"/>
-                            <constraint firstItem="yjY-Eo-hbz" firstAttribute="top" secondItem="CxW-rT-bQl" secondAttribute="bottom" id="j4P-fD-FxP"/>
-                            <constraint firstItem="nLv-fc-zbc" firstAttribute="width" secondItem="m14-NX-Uhy" secondAttribute="width" id="uOD-D0-gPb"/>
-                            <constraint firstItem="yjY-Eo-hbz" firstAttribute="leading" secondItem="m14-NX-Uhy" secondAttribute="leading" id="vNU-Ri-XXe"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="huluImageView" destination="9nR-xl-sM3" id="qGr-0o-xLP"/>
-                        <outlet property="mediaTitleLabel" destination="qIc-Gh-8y4" id="VJr-ul-vOY"/>
-                        <outlet property="netflixImageView" destination="p3p-xt-CV2" id="hdN-2q-OZ8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JbW-Dm-916" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ShowDetailsTableViewCell" rowHeight="117" id="5gp-wy-eZj" customClass="ShowDetailsTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5gp-wy-eZj" id="c9C-IO-2ky">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="116"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game of Thrones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-Gh-8y4">
+                                            <rect key="frame" x="20" y="8" width="560" height="47"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="Zgq-Lp-NXa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="34"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the app you want to use to watch!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-5F-exe">
+                                            <rect key="frame" x="20" y="71" width="560" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="MhF-D2-K5x"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qIc-Gh-8y4" firstAttribute="top" secondItem="c9C-IO-2ky" secondAttribute="top" constant="8" id="1Wp-1q-jy6"/>
+                                        <constraint firstItem="8jp-5F-exe" firstAttribute="top" secondItem="qIc-Gh-8y4" secondAttribute="bottom" constant="16" id="GHu-17-UvU"/>
+                                        <constraint firstAttribute="bottom" secondItem="8jp-5F-exe" secondAttribute="bottom" constant="10" id="LYz-we-6jp"/>
+                                        <constraint firstAttribute="trailing" secondItem="qIc-Gh-8y4" secondAttribute="trailing" constant="20" id="R0D-XY-1c1"/>
+                                        <constraint firstAttribute="trailing" secondItem="8jp-5F-exe" secondAttribute="trailing" constant="20" id="TKY-Fa-E9a"/>
+                                        <constraint firstItem="qIc-Gh-8y4" firstAttribute="leading" secondItem="c9C-IO-2ky" secondAttribute="leading" constant="20" id="hrD-NU-W5q"/>
+                                        <constraint firstItem="8jp-5F-exe" firstAttribute="leading" secondItem="c9C-IO-2ky" secondAttribute="leading" constant="20" id="zPb-2A-53O"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="mediaTitleLabel" destination="qIc-Gh-8y4" id="jsp-2u-RLR"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MediaSourceTableViewCell" rowHeight="109" id="trS-gk-SbB" customClass="MediaSourceTableViewCell">
+                                <rect key="frame" x="0.0" y="145" width="600" height="109"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="trS-gk-SbB" id="9xu-rC-eHU">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="netflix-logo" translatesAutoresizingMaskIntoConstraints="NO" id="p3p-xt-CV2">
+                                            <rect key="frame" x="20" y="0.0" width="560" height="84"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="130" id="1hf-Sh-Uoo"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="p3p-xt-CV2" secondAttribute="trailing" constant="20" id="6o8-KL-V8L"/>
+                                        <constraint firstItem="p3p-xt-CV2" firstAttribute="top" secondItem="9xu-rC-eHU" secondAttribute="top" constant="1" id="FfZ-ek-cp5"/>
+                                        <constraint firstAttribute="bottom" secondItem="p3p-xt-CV2" secondAttribute="bottom" constant="1" id="GRz-Kp-F6X"/>
+                                        <constraint firstItem="p3p-xt-CV2" firstAttribute="leading" secondItem="9xu-rC-eHU" secondAttribute="leading" constant="20" id="ai5-Pc-Rnl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="mediaSourceImageView" destination="p3p-xt-CV2" id="kdA-Vx-he5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aMM-Pm-owt" id="39R-fc-vpS"/>
+                            <outlet property="delegate" destination="aMM-Pm-owt" id="j0h-CZ-0fJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EE1-bR-tBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4107" y="759"/>
+            <point key="canvasLocation" x="4212" y="745"/>
         </scene>
         <!--Guide Table View Controller-->
         <scene sceneID="vv0-Ju-unJ">
@@ -772,7 +760,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hulu" width="300" height="100"/>
         <image name="netflix-logo" width="300" height="84"/>
         <image name="streamsavvy-wordmark-large" width="306" height="54"/>
         <image name="tv-icon" width="30" height="30"/>

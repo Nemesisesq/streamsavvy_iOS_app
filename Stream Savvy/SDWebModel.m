@@ -12,6 +12,7 @@
 @implementation SDWebModel
 
 +(void)loadImageFor:(UIImageView *)imageView withRemoteURL:(NSString *)url{
+	NSLog(@"image url : %@", url);
 	if (![url isEqual:[NSNull null]]) {
 		[imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed: @"default_profile_pic"]];
 	}else{

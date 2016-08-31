@@ -11,7 +11,7 @@
 #import "TopGridTableViewCell.h"
 #import "Constants.h"
 #import "PopularShow.h"
-#import "ShowDetailsViewController.h"
+#import "ShowDetailsTableViewController.h"
 
 @interface PopularShowTableViewController ()
 

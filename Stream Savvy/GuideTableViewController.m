@@ -87,8 +87,6 @@ NSInteger numOfStaticCell = 1;
 			}
 		}];
 	}];
-	
-	
 }
 
 #pragma mark - Table view data source

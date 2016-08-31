@@ -16,9 +16,12 @@
 @property (strong, nonatomic) NSString	*image_link;
 @property (strong, nonatomic) NSString	*time;
 @property (strong, nonatomic) NSString	*deep_link;
+@property (strong, nonatomic) NSDictionary *raw;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
 + (void)getPopularShowsForPage:(NSInteger)page view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
+
+- (void)getShowDetailsWithView:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
 
 @end

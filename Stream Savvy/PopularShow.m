@@ -23,6 +23,7 @@
 	self.time					= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"detail"] valueForKey:@"air_time"]; // air_day_of_week
 	if (self.time.length == 0) [Constants AWLog:[[attributes valueForKey:@"guidebox_data"] valueForKey:@"detail"] LINE:__LINE__ FUNCTION:__FUNCTION__];
 	self.deep_link			= @"link-goes-here";
+	self.raw					= attributes;
 	
 	return self;
 }
@@ -50,6 +51,28 @@
 						    [MBProgressHUD hideHUDForView:view animated:YES];
 					    });
 				    }];
+	});
+}
+
+- (void)getShowDetailsWithView:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
+	NSString *url = @"http://ss-master-staging.herokuapp.com/node-data/detailsources/";
+
+	NSLog(@"%@\n\n\n", url);
+	[MBProgressHUD showHUDAddedTo:view animated:YES];
+	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+		[[AFAPIClient sharedClient:nil] POST:url parameters:self.raw
+					    success:^(NSURLSessionDataTask *task, id JSON) {
+						    dispatch_async( dispatch_get_main_queue(), ^{
+							    successBlock(task, JSON);
+							    [MBProgressHUD hideHUDForView:view animated:YES];
+						    });
+					    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+						    dispatch_async( dispatch_get_main_queue(), ^{
+							    NSLog(@"%@", url);
+							    NSLog(@"~~~>%@", error);
+							    [MBProgressHUD hideHUDForView:view animated:YES];
+						    });
+					    }];
 	});
 }
 

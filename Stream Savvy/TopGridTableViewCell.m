@@ -10,8 +10,8 @@
 #import "SDWebModel.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Constants.h"
-#import "ShowDetailsViewController.h"
-
+#import "ShowDetailsTableViewController.h"
+#import "MediaSource.h"
 
 @implementation TopGridTableViewCell
 
@@ -63,41 +63,63 @@
 		self.topImageTimeLabel.text											= self.topChannel.now_playing.time;
 		self.bottomImageTimeLabel.text										= self.bottomChannel.now_playing.time;
 	}
-
 }
 
 
 -(void)topPressed{
-	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
+	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsTableViewController"];
 	if (self.isShowingPopularShows) {
-		sdvc.mediaTitleText = self.topShow.title;
+		[self.topShow getShowDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.show = self.topShow;
+			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		}];
 	}else{
-		sdvc.mediaTitleText = self.topChannel.now_playing.title;
 	}
-	sdvc.isDisplayingPopularShows = self.isShowingPopularShows;
-	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
 -(void)bottomPressed{
-	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
+	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsTableViewController"];
 	if (self.isShowingPopularShows) {
-		sdvc.mediaTitleText = self.bottomShow.title;
+		[self.bottomShow getShowDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.show = self.bottomShow;
+			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		}];
 	}else{
-		sdvc.mediaTitleText = self.bottomChannel.now_playing.title;
+	
 	}
-	sdvc.isDisplayingPopularShows = self.isShowingPopularShows;
-	[self.uivc.navigationController pushViewController:sdvc animated:YES];
 }
 
 -(void)bigPressed{
-	ShowDetailsViewController *sdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsViewController"];
+	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsTableViewController"];
 	if (self.isShowingPopularShows) {
-		sdvc.mediaTitleText = self.bigShow.title;
+		[self.bigShow getShowDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.show = self.bigShow;
+			NSLog(@"SHOW.TITLE %@", self.bigShow.title);
+			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		}];
 	}else{
-		sdvc.mediaTitleText = self.bigChannel.now_playing.title;
+		
 	}
-	sdvc.isDisplayingPopularShows = self.isShowingPopularShows;
-	[self.uivc.navigationController pushViewController:sdvc animated:YES];
+}
+
+-(NSArray *)getSourcesFromShowWithJSON:(NSDictionary *)json{
+	NSArray *live			= [json objectForKey:@"live"];
+	NSArray *pay_per_view	= [json objectForKey:@"pay_per_view"];
+	NSArray *on_demand	= [json objectForKey:@"on_demand"];
+	NSArray *sources = [[NSSet setWithArray:[[live arrayByAddingObjectsFromArray:pay_per_view] arrayByAddingObjectsFromArray:on_demand]] allObjects];
+	NSMutableArray *media_sources = [NSMutableArray new];
+	NSLog(@"Sources LENGTH: %lu", (unsigned long)sources.count);
+	for (NSDictionary *dict in sources) {
+		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
+		[media_sources addObject:source];
+	}
+	return [media_sources copy];
 }
 
 @end
