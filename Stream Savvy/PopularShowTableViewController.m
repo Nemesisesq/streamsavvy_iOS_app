@@ -54,14 +54,13 @@ NSInteger numStaticCell = 1;
 
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
-	[[UserLocation sharedController]setDelegate:self];
-	[[UserLocation sharedController].locationManager startUpdatingLocation];
+	[UserLocation.sharedController.locationManager startUpdatingLocation];
 	
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
 	[super viewWillDisappear:animated];
-	[[UserLocation sharedController].locationManager stopUpdatingLocation];
+	[UserLocation.sharedController.locationManager stopUpdatingLocation];
 }
 
 -(void)reload{

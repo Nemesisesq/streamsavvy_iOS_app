@@ -20,6 +20,6 @@
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
-+ (void)getRoviGuideForZipcode:(NSInteger)zipcode view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
++ (void)getRoviGuideForLattitude:(float)lat Longitude:(float)lon view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock;
 
 @end

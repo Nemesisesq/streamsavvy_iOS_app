@@ -9,6 +9,7 @@
 #import "Channel.h"
 #import "AFAPIClient.h"
 #import "MBProgressHUD.h"
+#import "UserPrefs.h"
 
 @implementation Channel
 
@@ -31,12 +32,12 @@
 
 
 
-+ (void)getRoviGuideForZipcode:(NSInteger)zipcode view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = [NSString stringWithFormat:@"https://ss-master-staging.herokuapp.com/api/guide/%ld", (long)zipcode];
++ (void)getRoviGuideForLattitude:(float)lat Longitude:(float)lon view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
+	NSString *url = [NSString stringWithFormat:@"https://ss-master-staging.herokuapp.com/api/guide/%f/%f", lat, lon];
 	NSLog(@"%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];
 	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-	[[AFAPIClient sharedClient:nil] GET:url parameters:nil
+	[[AFAPIClient sharedClient:[NSString stringWithFormat:@"Bearer_%@", [UserPrefs getToken]]] GET:url parameters:nil
 				    success:^(NSURLSessionDataTask *task, id JSON) {
 					    dispatch_async( dispatch_get_main_queue(), ^{
 						    successBlock(task, JSON);

@@ -7,16 +7,17 @@
 // http://www.michaelbabiy.com/cllocationmanager-singleton/
 
 /*
-- (void)viewWillAppear:(BOOL)animated{
+ 
+ - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
-	[[UserLocation sharedController]setDelegate:self];
-	[[UserLocation sharedController].locationManager startUpdatingLocation];
-}
-
--(void)viewWillDisappear:(BOOL)animated{
+	[UserLocation.sharedController.locationManager startUpdatingLocation];
+	
+ }
+ 
+ -(void)viewWillDisappear:(BOOL)animated{
 	[super viewWillDisappear:animated];
-	[[UserLocation sharedController].locationManager stopUpdatingLocation];
-}
+	[UserLocation.sharedController.locationManager stopUpdatingLocation];
+ }
 */
 
 #import <Foundation/Foundation.h>

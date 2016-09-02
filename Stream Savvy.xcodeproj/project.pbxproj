@@ -22,6 +22,7 @@
 		9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC296141D76643F005CB080 /* MediaSourceTableViewCell.m */; };
 		9FC296181D766F63005CB080 /* MediaSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC296171D766F63005CB080 /* MediaSource.m */; };
 		9FC2961B1D774179005CB080 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2961A1D774179005CB080 /* WebViewViewController.m */; };
+		9FCF7D1C1D79B01A00B8538B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCF7D1B1D79B01A00B8538B /* CoreLocation.framework */; };
 		9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0361D6936210013DCB1 /* AFAPIClient.m */; };
 		9FE1B0441D6936210013DCB1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0381D6936210013DCB1 /* Constants.m */; };
 		9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0391D6936210013DCB1 /* SDWebModel.m */; };
@@ -86,6 +87,7 @@
 		9FC296171D766F63005CB080 /* MediaSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaSource.m; sourceTree = "<group>"; };
 		9FC296191D774179005CB080 /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
 		9FC2961A1D774179005CB080 /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
+		9FCF7D1B1D79B01A00B8538B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9FE1B0351D6936210013DCB1 /* AFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAPIClient.h; sourceTree = "<group>"; };
 		9FE1B0361D6936210013DCB1 /* AFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAPIClient.m; sourceTree = "<group>"; };
 		9FE1B0371D6936210013DCB1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCF7D1C1D79B01A00B8538B /* CoreLocation.framework in Frameworks */,
 				F2F3D56B08996538B85A19C7 /* libPods-Stream Savvy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +146,7 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FCF7D1B1D79B01A00B8538B /* CoreLocation.framework */,
 				2051076AFA3CD38B86A043A8 /* libPods-Stream Savvy.a */,
 			);
 			name = Frameworks;

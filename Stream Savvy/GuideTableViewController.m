@@ -56,44 +56,45 @@ NSInteger numOfStaticCell = 1;
 
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
-	[[UserLocation sharedController]setDelegate:self];
-	[[UserLocation sharedController].locationManager startUpdatingLocation];
+	NSLog(@"sharedController: %@", UserLocation.sharedController);
+	[UserLocation.sharedController.locationManager startUpdatingLocation];
+	NSLog(@"startUpdatingLocation");
 	
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
 	[super viewWillDisappear:animated];
-	[[UserLocation sharedController].locationManager stopUpdatingLocation];
+	[UserLocation.sharedController.locationManager stopUpdatingLocation];
+	NSLog(@"stopUpdatingLocation");
 }
 
 
 -(void)reload{
-	// this is fucking gnarly lol
-	[UserLocation getLocationFromIP:^(NSURLSessionDataTask *task, id JSON) {
-		NSInteger zip_code = [[(NSDictionary *)JSON valueForKey:@"zip_code"] integerValue];
-		[Channel getRoviGuideForZipcode:zip_code view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
-			NSMutableArray *guideShows = [NSMutableArray new];
-			//////////////////////this needs edited
-			int max_to_load = 0;
-			// itll crash if you uncomment all of these
-//			NSLog(@"\n\n\n\t\t0\n\n\n%@", [(NSArray *)JSON objectAtIndex:0]);
-////			NSLog(@"\n\n\n\t\t1\n\n\n%@", [[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"]);
-////			NSLog(@"\n\n\n\t\t2\n\n\n%@", [[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]);
-////			NSLog(@"\n\n\n\t\t3\n\n\n%@", [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]);
-			
-			for (NSDictionary *region_channels in [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]) {
-				if (max_to_load > 99) break;
-				max_to_load ++;
-				[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];
-			}
-			self.guideShows = [guideShows copy];
-			[self.tableView reloadData];
-			if (self.refreshControl) {
-				[self.refreshControl endRefreshing];
-			}
-		}];
+	float lat = UserLocation.sharedController.locationManager.location.coordinate.latitude;
+	float lon = UserLocation.sharedController.locationManager.location.coordinate.longitude;
+	[Channel getRoviGuideForLattitude:lat Longitude:lon view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
+		NSMutableArray *guideShows = [NSMutableArray new];
+		//////////////////////this needs edited
+		int max_to_load = 0;
+		// itll crash if you uncomment all of these
+		//			NSLog(@"\n\n\n\t\t0\n\n\n%@", [(NSArray *)JSON objectAtIndex:0]);
+		////			NSLog(@"\n\n\n\t\t1\n\n\n%@", [[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"]);
+		////			NSLog(@"\n\n\n\t\t2\n\n\n%@", [[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]);
+		////			NSLog(@"\n\n\n\t\t3\n\n\n%@", [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]);
+		
+		for (NSDictionary *region_channels in [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]) {
+			if (max_to_load > 99) break;
+			max_to_load ++;
+			[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];
+		}
+		self.guideShows = [guideShows copy];
+		[self.tableView reloadData];
+		if (self.refreshControl) {
+			[self.refreshControl endRefreshing];
+		}
+
 	}];
-}
+ }
 
 #pragma mark - Table view data source
 

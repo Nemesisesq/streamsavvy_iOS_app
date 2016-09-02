@@ -41,6 +41,7 @@
 						[UserPrefs setFirstname:	[((NSDictionary *)json) objectForKey:@"firstname"]];
 						[UserPrefs setLastname:	[((NSDictionary *)json) objectForKey:@"lastname"]];
 						[UserPrefs setEmail:		[((NSDictionary *)json) objectForKey:@"email"]];
+						[UserPrefs setToken:		[((NSDictionary *)json) objectForKey:@"token"]];
 						successBlock();
 
 				     } failure:^(NSURLSessionDataTask *task, NSError *error) {

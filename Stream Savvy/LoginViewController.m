@@ -42,8 +42,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
-	[[UserLocation sharedController]setDelegate:self];
-	[[UserLocation sharedController].locationManager startUpdatingLocation];
 }
 
 -(void)goToNextScreen{
@@ -53,7 +51,6 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
 	[super viewWillDisappear:animated];
-	[[UserLocation sharedController].locationManager stopUpdatingLocation];
 }
 
 - (IBAction)signinButtonTapped:(id)sender {

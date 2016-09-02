@@ -41,6 +41,7 @@ NSString *auth;
 {
 	NSMutableURLRequest *req = (NSMutableURLRequest *)request;
 	if (auth) {
+		NSLog(@"%@\t:\t%@", @"Authorization", auth);
 		[req setValue:auth forHTTPHeaderField:@"Authorization"];
 	}
 	return [super dataTaskWithRequest:req completionHandler:completionHandler];
