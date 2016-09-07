@@ -24,8 +24,14 @@
 	}else{
 		self.image_link			= @"";
 	}
+	self.channel_number			= [attributes valueForKey:@"Channel"];
 	self.deep_link				= @"link-goes-here";
+	self.source_id				= [attributes valueForKey:@"SourceId"];
+	self.source_long_name		= [attributes valueForKey:@"SourceLongName"];
+	self.call_letters				= [attributes valueForKey:@"CallLetters"];
+	
 	self.now_playing				= [[Media alloc] initWithAttributes:[[attributes valueForKey:@"Airings"] objectAtIndex:0]];
+	
 	
 	return self;
 }
@@ -53,6 +59,34 @@
 	});
 }
 
+
+- (void)getChannelDetailsWithView:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
+	NSString *url = @"http://ss-master-staging.herokuapp.com/process_live_streaming";
+	
+	NSLog(@"%@\n\n\n", url);
+	[MBProgressHUD showHUDAddedTo:view animated:YES];
+	NSDictionary *params = @{
+					@"CallLetters":			self.call_letters,
+					@"DisplayName":		self.display_name,
+					@"SourceLongName":	self.source_long_name,
+					@"SourceId":			self.source_id
+				 };
+	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+		[[AFAPIClient sharedClient:nil] POST:url parameters:params
+					     success:^(NSURLSessionDataTask *task, id JSON) {
+						     dispatch_async( dispatch_get_main_queue(), ^{
+							     successBlock(task, JSON);
+							     [MBProgressHUD hideHUDForView:view animated:YES];
+						     });
+					     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+						     dispatch_async( dispatch_get_main_queue(), ^{
+							     NSLog(@"%@", url);
+							     NSLog(@"~~~>%@", error);
+							     [MBProgressHUD hideHUDForView:view animated:YES];
+						     });
+					     }];
+	});
+}
 
 
 @end
