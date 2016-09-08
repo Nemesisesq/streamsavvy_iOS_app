@@ -69,8 +69,9 @@
 					@"CallLetters":			self.call_letters,
 					@"DisplayName":		self.display_name,
 					@"SourceLongName":	self.source_long_name,
-					@"SourceId":			self.source_id
+					@"SourceId":			[NSString stringWithFormat:@"%@", self.source_id]
 				 };
+	NSLog(@"\n\n\n%@\n\n\n", params);
 	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 		[[AFAPIClient sharedClient:nil] POST:url parameters:params
 					     success:^(NSURLSessionDataTask *task, id JSON) {

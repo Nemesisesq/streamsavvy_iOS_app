@@ -53,14 +53,21 @@ NSInteger numStaticCells = 1;
 		cell.isDisplayingPopularShows = self.isDisplayingPopularShows;
 		if (self.isDisplayingPopularShows) {
 			cell.show = self.show;
-			[cell setCellDetails];
+		}else{
+			cell.media = self.media;
 		}
+		[cell setCellDetails];
 		return cell;
 	}
+	NSLog(@"\n\n\nset up sources\n\n\n");
 	MediaSourceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MediaSourceTableViewCell" forIndexPath:indexPath];
+	NSLog(@"\n\n\ndequeue\n\n\n");
 	cell.source = [self.sources objectAtIndex:indexPath.row - numStaticCells];
+	NSLog(@"\n\n\nset source\n\n\n");
 	cell.sdtvc = self;
+	NSLog(@"\n\n\ni am ur parent\n\n\n");
 	[cell setCellDetails];
+	NSLog(@"\n\n\nset cell details\n\n\n");
 	return cell;
 }
 
