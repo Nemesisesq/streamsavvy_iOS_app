@@ -61,7 +61,7 @@
 
 
 - (void)getChannelDetailsWithView:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = @"http://ss-master-staging.herokuapp.com/process_live_streaming";
+	NSString *url = @"https://edr-go-staging.herokuapp.com/live-streaming-service";
 	
 	NSLog(@"%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];

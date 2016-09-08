@@ -79,10 +79,12 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-		sdtvc.media = self.topChannel.now_playing;
-		sdtvc.sources = [self staticSources];
-		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		[self.topChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			sdtvc.media = self.topChannel.now_playing;
+			sdtvc.sources = [(NSDictionary *)JSON objectForKey:@"streamingServices"];
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		}];
 	}
 }
 
@@ -96,10 +98,12 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-		sdtvc.media = self.bottomChannel.now_playing;
-		sdtvc.sources = [self staticSources];
-		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		[self.bottomChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			sdtvc.media = self.bottomChannel.now_playing;
+			sdtvc.sources = [(NSDictionary *)JSON objectForKey:@"streamingServices"];
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		}];
 	}
 }
 
@@ -113,10 +117,12 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-		sdtvc.media = self.bigChannel.now_playing;
-		sdtvc.sources = [self staticSources];
-		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		[self.bigChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			sdtvc.media = self.bigChannel.now_playing;
+			sdtvc.sources = [(NSDictionary *)JSON objectForKey:@"streamingServices"];
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		}];
 	}
 }
 
