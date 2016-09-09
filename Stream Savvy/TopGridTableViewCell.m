@@ -79,10 +79,12 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-		sdtvc.media = self.topChannel.now_playing;
-		sdtvc.sources = [self staticSources];
-		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		[self.topChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			sdtvc.media = self.topChannel.now_playing;
+			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		}];
 	}
 }
 
@@ -96,10 +98,12 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-		sdtvc.media = self.bottomChannel.now_playing;
-		sdtvc.sources = [self staticSources];
-		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		[self.bottomChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			sdtvc.media = self.bottomChannel.now_playing;
+			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		}];
 	}
 }
 
@@ -113,10 +117,13 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-		sdtvc.media = self.bigChannel.now_playing;
-		sdtvc.sources = [self staticSources];
-		[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+		[self.bigChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+			sdtvc.media = self.bigChannel.now_playing;
+			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
+			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
+			NSLog(@"\n\n\nBOOM\n\n\n");
+		}];
 	}
 }
 
@@ -134,6 +141,19 @@
 	}
 	return [media_sources copy];
 }
+
+
+-(NSArray *)getSourcesFromChannelWithJSON:(NSDictionary *)json{
+	NSArray *services			= [json objectForKey:@"streamingServices"];
+	NSMutableArray *media_sources = [NSMutableArray new];
+	for (NSDictionary *dict in services) {
+		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
+		source.deep_link = [MediaSource randomNetflixUrl];
+		[media_sources addObject:source];
+	}
+	return [media_sources copy];
+}
+
 
 -(NSArray *)staticSources{
 	NSArray *source_dicts = @[

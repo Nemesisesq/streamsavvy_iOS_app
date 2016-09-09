@@ -13,7 +13,7 @@
 @interface ShowDetailsTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) PopularShow *show;
-@property (strong, nonatomic) PopularShow *media;
+@property (strong, nonatomic) Media *media;
 
 @property (nonatomic) BOOL isDisplayingPopularShows;
 @property (weak, nonatomic) IBOutlet UILabel *mediaTitleLabel;
