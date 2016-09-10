@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthTableViewController.h"
 
-@interface PopularShowTableViewController : UITableViewController
+@interface PopularShowTableViewController : AuthTableViewController
 
 @end
