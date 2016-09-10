@@ -128,16 +128,10 @@
 }
 
 -(NSArray *)getSourcesFromShowWithJSON:(NSDictionary *)json{
-	NSArray *live			= [json objectForKey:@"live"];
-	NSArray *pay_per_view	= [json objectForKey:@"pay_per_view"];
-	NSArray *on_demand	= [json objectForKey:@"on_demand"];
-	NSArray *sources = [[NSSet setWithArray:[[live arrayByAddingObjectsFromArray:pay_per_view] arrayByAddingObjectsFromArray:on_demand]] allObjects];
 	NSMutableArray *media_sources = [NSMutableArray new];
-	NSLog(@"Sources LENGTH: %lu", (unsigned long)sources.count);
-	for (NSDictionary *dict in sources) {
-		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
-//		source.deep_link = [MediaSource randomNetflixUrl];
-		[media_sources addObject:source];
+	for (NSDictionary *source in (NSArray *)json) {
+		MediaSource *media_source = [[MediaSource alloc] initWithAttributes:source];
+		[media_sources addObject:media_source];
 	}
 	return [media_sources copy];
 }
@@ -148,7 +142,6 @@
 	NSMutableArray *media_sources = [NSMutableArray new];
 	for (NSDictionary *dict in services) {
 		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
-//		source.deep_link = [MediaSource randomNetflixUrl];
 		[media_sources addObject:source];
 	}
 	return [media_sources copy];
@@ -186,7 +179,6 @@
 	NSMutableArray *media_sources = [NSMutableArray new];
 	for (NSDictionary *dict in source_dicts) {
 		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
-//		source.deep_link = [MediaSource randomYoutubeUrl];
 		[media_sources addObject:source];
 	}
 	return [media_sources copy];
