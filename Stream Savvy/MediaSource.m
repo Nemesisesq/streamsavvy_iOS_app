@@ -17,7 +17,9 @@
 	if (!self) return nil;
 	self.display_name			= [attributes valueForKey:@"display_name"];
 	self.source					= [attributes valueForKey:@"source"];
-	
+	if ([attributes valueForKey:@"deep_links"]) {
+		self.deep_link = [[attributes valueForKey:@"deep_links"] valueForKey:@"AppStore"];
+	}
 	NSLog(@"attributes:\t%@",attributes);
 	return self;
 }

@@ -47,7 +47,6 @@ NSInteger numStaticCells = 1;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"^^^^^^^^^^^^^^^^^^^^^^^^");
 	if (indexPath.row == 0) {
 		ShowDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowDetailsTableViewCell" forIndexPath:indexPath];
 		cell.isDisplayingPopularShows = self.isDisplayingPopularShows;
@@ -59,15 +58,10 @@ NSInteger numStaticCells = 1;
 		[cell setCellDetails];
 		return cell;
 	}
-	NSLog(@"\n\n\nset up sources\n\n\n");
 	MediaSourceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MediaSourceTableViewCell" forIndexPath:indexPath];
-	NSLog(@"\n\n\ndequeue\n\n\n");
 	cell.source = [self.sources objectAtIndex:indexPath.row - numStaticCells];
-	NSLog(@"\n\n\nset source\n\n\n");
 	cell.sdtvc = self;
-	NSLog(@"\n\n\ni am ur parent\n\n\n");
 	[cell setCellDetails];
-	NSLog(@"\n\n\nset cell details\n\n\n");
 	return cell;
 }
 

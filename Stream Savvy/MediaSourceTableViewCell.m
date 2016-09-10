@@ -35,11 +35,11 @@
 
 
 -(void)mediaPressed{
-	WebViewViewController *wvvc = [self.sdtvc.storyboard instantiateViewControllerWithIdentifier:@"WebViewViewController"];
-	wvvc.urlToLoad =self.source.deep_link;
-//	[self.sdtvc showViewController:wvvc sender:nil];
-	[self.sdtvc presentViewController:wvvc animated:YES completion:nil];
-	
+//	WebViewViewController *wvvc = [self.sdtvc.storyboard instantiateViewControllerWithIdentifier:@"WebViewViewController"];
+//	wvvc.urlToLoad =self.source.deep_link;
+////	[self.sdtvc showViewController:wvvc sender:nil];
+//	[self.sdtvc presentViewController:wvvc animated:YES completion:nil];
+	 [[UIApplication sharedApplication] openURL:[NSURL URLWithString: self.source.deep_link]];
 }
 
 

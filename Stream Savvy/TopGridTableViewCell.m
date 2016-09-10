@@ -136,7 +136,7 @@
 	NSLog(@"Sources LENGTH: %lu", (unsigned long)sources.count);
 	for (NSDictionary *dict in sources) {
 		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
-		source.deep_link = [MediaSource randomNetflixUrl];
+//		source.deep_link = [MediaSource randomNetflixUrl];
 		[media_sources addObject:source];
 	}
 	return [media_sources copy];
@@ -148,7 +148,7 @@
 	NSMutableArray *media_sources = [NSMutableArray new];
 	for (NSDictionary *dict in services) {
 		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
-		source.deep_link = [MediaSource randomNetflixUrl];
+//		source.deep_link = [MediaSource randomNetflixUrl];
 		[media_sources addObject:source];
 	}
 	return [media_sources copy];
@@ -186,7 +186,7 @@
 	NSMutableArray *media_sources = [NSMutableArray new];
 	for (NSDictionary *dict in source_dicts) {
 		MediaSource *source = [[MediaSource alloc] initWithAttributes:dict];
-		source.deep_link = [MediaSource randomYoutubeUrl];
+//		source.deep_link = [MediaSource randomYoutubeUrl];
 		[media_sources addObject:source];
 	}
 	return [media_sources copy];
