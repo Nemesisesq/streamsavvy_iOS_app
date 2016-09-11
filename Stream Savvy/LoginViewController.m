@@ -54,11 +54,14 @@
 }
 
 - (IBAction)signinButtonTapped:(id)sender {
+	[self.signinButton setEnabled:NO];
 	if (self.emailTextField.text.length > 0 && self.passwordTextField.text.length > 0 && [self.emailTextField.text containsString:@"@"]) {
 		[UserPrefs setEmail:self.emailTextField.text];
 		[User loginWithPassword:self.passwordTextField.text success:^{
 			[UserPrefs setDidLogin:YES];
 			[self goToNextScreen];
+		}failure:^{
+			[self.signinButton setEnabled:YES];
 		}];
 	}else{
 		[Constants showAlert:@"Whoops!" withMessage:@"We need both an email and password to continue" fromController:self];
@@ -81,7 +84,11 @@
 				 [User loginWithPassword:@"" success:^{
 					 [UserPrefs setDidLogin:YES];
 					 [self goToNextScreen];
+				 }failure:^{
+					self.facebookButton.hidden = NO;
 				 }];
+			 }else{
+				 self.facebookButton.hidden = NO;
 			 }
 		 }];
 	}

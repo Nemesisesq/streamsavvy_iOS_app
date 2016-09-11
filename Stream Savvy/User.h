@@ -19,7 +19,7 @@
 // these are methods related to the user object
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
-+ (void)loginWithPassword:(NSString *)password success:(void (^)(void))successBlock;
++ (void)loginWithPassword:(NSString *)password success:(void (^)(void))successBlock failure:(void (^)(void))failblock;
 
 
 @end
