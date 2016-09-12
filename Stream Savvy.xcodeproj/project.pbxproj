@@ -402,6 +402,7 @@
 				TargetAttributes = {
 					9F5A4D2E1D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = P2N62YEN2Y;
 					};
 					9F5A4D471D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
@@ -679,11 +680,13 @@
 			baseConfigurationReference = AD86C8E948DCA6039C21A703 /* Pods-Stream Savvy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -693,11 +696,13 @@
 			baseConfigurationReference = B83CDA3621D095560B3C5333 /* Pods-Stream Savvy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				RESOURCES_TARGETED_DEVICE_FAMILY = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

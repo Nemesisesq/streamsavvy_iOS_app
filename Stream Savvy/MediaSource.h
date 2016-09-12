@@ -12,7 +12,8 @@
 
 @property (strong, nonatomic) NSString	*display_name;
 @property (strong, nonatomic) NSString	*source;
-@property (strong, nonatomic) NSString	*deep_link;
+@property (strong, nonatomic) NSArray	*deep_links;
+@property (strong, nonatomic) NSString  *app_store_link;
 
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
