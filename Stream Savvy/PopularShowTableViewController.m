@@ -26,6 +26,8 @@ NSInteger numStaticCell = 1;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    
 	
 	UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
 	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];

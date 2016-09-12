@@ -21,6 +21,8 @@
 	// Override point for customization after application launch.
 	[[FBSDKApplicationDelegate sharedInstance] application:application
 				 didFinishLaunchingWithOptions:launchOptions];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 	return YES;
 }
 
