@@ -28,7 +28,7 @@
 
 
 
-+ (void)loginWithPassword:(NSString *)password success:(void (^)(void))successBlock{
++ (void)loginWithPassword:(NSString *)password success:(void (^)(void))successBlock failure:(void (^)(void))failblock{
 	NSString *url = @"http://ss-master-staging.herokuapp.com/sign_up/";
 	NSDictionary *params = @{
 							@"email"			:[UserPrefs getEmail],
@@ -46,6 +46,8 @@
 
 				     } failure:^(NSURLSessionDataTask *task, NSError *error) {
 					     NSLog(@"~~~>%@", error);
+					     [Constants showAlert:@"Whoops!" withMessage:@"We could not log you in. Is your information correct?"];
+					     failblock();
 				     }];
 }
 

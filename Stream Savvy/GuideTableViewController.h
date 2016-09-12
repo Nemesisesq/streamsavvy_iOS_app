@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthTableViewController.h"
 
-@interface GuideTableViewController : UITableViewController
+@interface GuideTableViewController : AuthTableViewController
 
 @end

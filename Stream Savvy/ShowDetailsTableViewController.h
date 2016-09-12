@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PopularShow.h"
 #import "Media.h"
+#import "AuthTableViewController.h"
 
-@interface ShowDetailsTableViewController : UITableViewController
+@interface ShowDetailsTableViewController : AuthTableViewController
 
 @property (strong, nonatomic) PopularShow *show;
 
