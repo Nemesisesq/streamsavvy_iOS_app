@@ -69,11 +69,7 @@
         //[tableView makeToast: @"There is no app for this service"];
         
     } else {
-        
-        
-        
         if (![[self getDeepLink]  isEqual: @""]){
-            
             NSString *deep_link = [self getDeepLink];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString: deep_link]];
         } else {
