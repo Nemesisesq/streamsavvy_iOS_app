@@ -33,6 +33,8 @@
 	<string>676169215880122</string>
 	<key>FacebookDisplayName</key>
 	<string>Stream Savvy</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -84,8 +86,6 @@
 		<string>youtube</string>
 		<string>vuduiosplayer</string>
 	</array>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

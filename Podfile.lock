@@ -37,6 +37,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - Toast (3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - SCLAlertView-Objective-C
   - SDWebImage (~> 3.7)
+  - Toast (~> 3.0)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -56,5 +58,8 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 22aeec87e2a22f1e392bb0d70d80808549edf93a
+
+COCOAPODS: 1.0.1

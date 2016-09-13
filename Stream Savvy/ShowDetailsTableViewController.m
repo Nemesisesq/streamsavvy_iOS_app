@@ -16,6 +16,10 @@
 
 @implementation ShowDetailsTableViewController
 
+-(void)ssToaster:(NSString *)message {
+    
+    [self.view makeToast:message];
+}
 
 NSInteger numStaticCells = 1;
 

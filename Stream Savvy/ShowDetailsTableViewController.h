@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Toast/UIView+Toast.h>
 #import "PopularShow.h"
 #import "Media.h"
 #import "AuthTableViewController.h"
+
 
 @interface ShowDetailsTableViewController : AuthTableViewController
 
@@ -20,5 +22,7 @@
 @property (nonatomic) BOOL isDisplayingPopularShows;
 
 @property (strong, nonatomic)NSArray *sources;
+
+-(void)ssToaster:(NSString *)message;
 
 @end

@@ -58,14 +58,28 @@
     ////	[self.sdtvc showViewController:wvvc sender:nil];
     //	[self.sdtvc presentViewController:wvvc animated:YES completion:nil];
     
-    if (![[self getDeepLink]  isEqual: @""]){
-        
-        NSString *deep_link = [self getDeepLink];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: deep_link]];
-    } else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: self.source.app_store_link]];
-    }
+    id view  = [self superview];
     
+    UITableView *tableView = (UITableView *)view;
+    
+    
+    
+    if([self.source.app_store_link isEqual: @""]){
+        
+        //[tableView makeToast: @"There is no app for this service"];
+        
+    } else {
+        
+        
+        
+        if (![[self getDeepLink]  isEqual: @""]){
+            
+            NSString *deep_link = [self getDeepLink];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: deep_link]];
+        } else {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: self.source.app_store_link]];
+        }
+    }
     //TODO: hande scenario where there is no deep link or appstore link
     
     
