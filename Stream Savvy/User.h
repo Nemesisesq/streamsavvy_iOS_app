@@ -21,5 +21,7 @@
 
 + (void)loginWithPassword:(NSString *)password success:(void (^)(void))successBlock failure:(void (^)(void))failblock;
 
++ (void)loginWithFacebook:(NSString *)token success:(void (^)(void))successBlock failure:(void (^)(void))failBlock;
+
 
 @end
