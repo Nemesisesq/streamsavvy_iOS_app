@@ -7,6 +7,9 @@
 //
 
 #import "AuthTableViewController.h"
+#import "Constants.h"
+#import "UserPrefs.h"
+#import "LoginViewController.h"
 
 @interface AuthTableViewController ()
 
@@ -26,7 +29,13 @@
 
 - (void)viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];
-	NSLog(@"WOOOOOOO");
+	
+	if ([UserPrefs getDidLogin] && [UserPrefs getToken].length > 0) {
+		NSLog(@"WOOOOOOO");
+	}else{
+		LoginViewController *lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+		[self presentViewController:lvc animated:YES completion:nil];
+	}
 }
 
 @end
