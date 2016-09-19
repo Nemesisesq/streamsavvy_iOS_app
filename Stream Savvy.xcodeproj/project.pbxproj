@@ -38,6 +38,11 @@
 		9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0521D693BDC0013DCB1 /* TopGridTableViewCell.m */; };
 		9FE1B05C1D6946410013DCB1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05B1D6946410013DCB1 /* User.m */; };
 		9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05E1D6A5CAC0013DCB1 /* Media.m */; };
+		BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B01D8CD4C800B472E2 /* iCarousel.m */; };
+		BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */; };
+		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
+		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
+		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
 		F309181A44B714E9B53BF1D9 /* libPods-Stream SavvyUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB21DDA2A09D140C725C5916 /* libPods-Stream SavvyUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -124,7 +129,14 @@
 		9FE1B05E1D6A5CAC0013DCB1 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
 		AB21DDA2A09D140C725C5916 /* libPods-Stream SavvyUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stream SavvyUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AA43773FC467A7AA89322C /* Pods-Stream SavvyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream SavvyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stream SavvyUITests/Pods-Stream SavvyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD1834AF1D8CD4C800B472E2 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		BD1834B01D8CD4C800B472E2 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stream Savvy-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		BD1834B51D8CDACE00B472E2 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		BD191FCA1D8792540098A8E6 /* ShowDetailsTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsTableViewProtocol.h; sourceTree = "<group>"; };
+		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BD7076E91D8C903200F2B331 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F1D4A6B02BFF3F76D6C81A51 /* libPods-Stream SavvyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stream SavvyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */,
+				BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */,
 				9FCF7D1C1D79B01A00B8538B /* CoreLocation.framework in Frameworks */,
 				2931B69B700DDA4C58E82553 /* libPods-Stream Savvy.a in Frameworks */,
 			);
@@ -160,6 +174,8 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD7076E91D8C903200F2B331 /* UIKit.framework */,
+				BD7076E71D8C8FC300F2B331 /* Foundation.framework */,
 				9FCF7D1B1D79B01A00B8538B /* CoreLocation.framework */,
 				2555330CD445FA62E30C71FC /* libPods-Stream Savvy.a */,
 				F1D4A6B02BFF3F76D6C81A51 /* libPods-Stream SavvyTests.a */,
@@ -206,6 +222,7 @@
 		9F5A4D311D5AE1D70057AF6D /* Stream Savvy */ = {
 			isa = PBXGroup;
 			children = (
+				BD1834AE1D8CD48500B472E2 /* iCarousel */,
 				9F5A4D351D5AE1D70057AF6D /* AppDelegate.h */,
 				9F5A4D361D5AE1D70057AF6D /* AppDelegate.m */,
 				9F5A4D431D5AE1D70057AF6D /* Info.plist */,
@@ -257,6 +274,7 @@
 			children = (
 				9F5A4D3B1D5AE1D70057AF6D /* Main.storyboard */,
 				9F5A4D3E1D5AE1D70057AF6D /* Assets.xcassets */,
+				BD1834B51D8CDACE00B472E2 /* favorite.png */,
 				9F5A4D401D5AE1D70057AF6D /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -287,6 +305,8 @@
 				BD191FCA1D8792540098A8E6 /* ShowDetailsTableViewProtocol.h */,
 				9FC296191D774179005CB080 /* WebViewViewController.h */,
 				9FC2961A1D774179005CB080 /* WebViewViewController.m */,
+				BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */,
+				BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -348,6 +368,15 @@
 				9FC296171D766F63005CB080 /* MediaSource.m */,
 			);
 			name = StreamSavvyModels;
+			sourceTree = "<group>";
+		};
+		BD1834AE1D8CD48500B472E2 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				BD1834AF1D8CD4C800B472E2 /* iCarousel.h */,
+				BD1834B01D8CD4C800B472E2 /* iCarousel.m */,
+			);
+			name = iCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,12 +449,13 @@
 		9F5A4D271D5AE1D70057AF6D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Stream Savvy";
 				TargetAttributes = {
 					9F5A4D2E1D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = XWQ3X4T33E;
+						DevelopmentTeam = L2FX277R9E;
+						LastSwiftMigration = 0800;
 					};
 					9F5A4D471D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
@@ -467,6 +497,7 @@
 				9F5A4D421D5AE1D70057AF6D /* LaunchScreen.storyboard in Resources */,
 				9F5A4D3F1D5AE1D70057AF6D /* Assets.xcassets in Resources */,
 				9F5A4D3D1D5AE1D70057AF6D /* Main.storyboard in Resources */,
+				BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +653,7 @@
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
 				9F5A4D341D5AE1D70057AF6D /* main.m in Sources */,
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
+				BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */,
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */,
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
@@ -635,6 +667,7 @@
 				9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */,
 				9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */,
 				9FC296181D766F63005CB080 /* MediaSource.m in Sources */,
+				BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */,
 				9FE1B0441D6936210013DCB1 /* Constants.m in Sources */,
 				9FC296121D76621F005CB080 /* ShowDetailsTableViewCell.m in Sources */,
 			);
@@ -705,8 +738,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -752,8 +787,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -784,14 +821,19 @@
 			baseConfigurationReference = 649A5DDCEBAADA909648136B /* Pods-Stream Savvy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XWQ3X4T33E;
+				DEVELOPMENT_TEAM = L2FX277R9E;
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stream Savvy/Stream Savvy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -801,15 +843,19 @@
 			baseConfigurationReference = 0D65B6561D99A119651F7F64 /* Pods-Stream Savvy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XWQ3X4T33E;
+				DEVELOPMENT_TEAM = L2FX277R9E;
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RESOURCES_TARGETED_DEVICE_FAMILY = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stream Savvy/Stream Savvy-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -818,6 +864,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 32CA91380ACED7930D7A54E5 /* Pods-Stream SavvyTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Stream SavvyTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -831,6 +878,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D8C55DD2E8FC08821E8B008 /* Pods-Stream SavvyTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Stream SavvyTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -844,6 +892,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7AA43773FC467A7AA89322C /* Pods-Stream SavvyUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Stream SavvyUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-SavvyUITests";
@@ -856,6 +905,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DA83903386DD48FEF1F9714 /* Pods-Stream SavvyUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Stream SavvyUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-SavvyUITests";
