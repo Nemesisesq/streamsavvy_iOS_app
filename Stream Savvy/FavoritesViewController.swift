@@ -8,39 +8,30 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UITextFieldDelegate {
+
+class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating {
+    
+    var numbers = [Int]()
+    
+    let searchResults = SearchResults()
+    
+    @IBOutlet var carousel: iCarousel!
     
     @IBAction func search(_ sender: UIBarButtonItem) {
+        //Here we set the search bar and the results table
         let resultsController = UITableViewController(style: .plain)
         let searchController = UISearchController(searchResultsController: resultsController)
         self.present(searchController, animated:true, completion: nil)
         
-    }
-    //Here we set the search bar and the results table
-    
-    
-    
-    @IBOutlet var carousel: iCarousel!
-    
-    @IBOutlet var searchField: UITextField!
-    
-   
-    @IBAction func hideKeyboard(_ sender: UITextField) {
-        searchField.resignFirstResponder()
-    }
-    
-    
-    var numbers = [Int]()
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        return searchField.resignFirstResponder()
+        searchController.searchResultsUpdater = self
         
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return searchField.resignFirstResponder()
+    func updateSearchResults(for searchController: UISearchController) {
+        searchResults.fetchResults(q: "orange")
+        print(searchController.searchBar.text!)
     }
+    
     override func loadView() {
         super.loadView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -108,13 +99,6 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         return carouselItemView
         
     }
-    
-    
-    @IBAction func handleTouch(_ sender: AnyObject) {
-        searchField.resignFirstResponder()
-    }
-    
-    
     
     /*
      // MARK: - Navigation

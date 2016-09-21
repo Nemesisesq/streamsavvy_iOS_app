@@ -20,27 +20,29 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Alamofire (4.0.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - FBSDKCoreKit (4.14.0):
+  - FBSDKCoreKit (4.15.1):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.14.0):
+  - FBSDKLoginKit (4.15.1):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.14.0):
+  - FBSDKShareKit (4.15.1):
     - FBSDKCoreKit
   - MBProgressHUD (1.0.0)
-  - SCLAlertView-Objective-C (1.0.4)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
+  - SCLAlertView-Objective-C (1.0.5)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - Toast (3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - Alamofire (~> 4.0)
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -51,15 +53,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  FBSDKCoreKit: 6e020b5db0b5bd1e01f5fb0902131befd129a502
-  FBSDKLoginKit: da563567a108050ef83739c8c8c001ee9e25fa13
-  FBSDKShareKit: e8e5d4ccef69b41132fe33acda26db1e33143e33
+  FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
+  FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
+  FBSDKShareKit: 11cbb5a4d7b5fda8143cc95b76188147e6725736
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SCLAlertView-Objective-C: a2b8b09b8ce5fe14c233ecaa09c02be582c6389a
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: 22aeec87e2a22f1e392bb0d70d80808549edf93a
+PODFILE CHECKSUM: 58cc790a478cd29ec618c5fd8b835743aacab261
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AB5D64F123E9C23FE39F900 /* libPods-Stream SavvyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D4A6B02BFF3F76D6C81A51 /* libPods-Stream SavvyTests.a */; };
-		2931B69B700DDA4C58E82553 /* libPods-Stream Savvy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2555330CD445FA62E30C71FC /* libPods-Stream Savvy.a */; };
+		0C95D34F82A4B97A6F6711DA /* Pods_Stream_Savvy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6565779394F3C155499BC5F3 /* Pods_Stream_Savvy.framework */; };
+		6C1C1F5EEFDAC478D7452535 /* Pods_Stream_SavvyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */; };
 		9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28106F1D83B4B900158502 /* AuthTableViewController.m */; };
 		9F5A4D341D5AE1D70057AF6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D331D5AE1D70057AF6D /* main.m */; };
 		9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D361D5AE1D70057AF6D /* AppDelegate.m */; };
@@ -43,7 +43,9 @@
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
 		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
-		F309181A44B714E9B53BF1D9 /* libPods-Stream SavvyUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB21DDA2A09D140C725C5916 /* libPods-Stream SavvyUITests.a */; };
+		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
+		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
+		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,11 +67,12 @@
 
 /* Begin PBXFileReference section */
 		0D65B6561D99A119651F7F64 /* Pods-Stream Savvy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream Savvy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stream Savvy/Pods-Stream Savvy.release.xcconfig"; sourceTree = "<group>"; };
-		2555330CD445FA62E30C71FC /* libPods-Stream Savvy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stream Savvy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CA91380ACED7930D7A54E5 /* Pods-Stream SavvyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream SavvyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stream SavvyTests/Pods-Stream SavvyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DA83903386DD48FEF1F9714 /* Pods-Stream SavvyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream SavvyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stream SavvyUITests/Pods-Stream SavvyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		649A5DDCEBAADA909648136B /* Pods-Stream Savvy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream Savvy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stream Savvy/Pods-Stream Savvy.debug.xcconfig"; sourceTree = "<group>"; };
+		6565779394F3C155499BC5F3 /* Pods_Stream_Savvy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stream_Savvy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8C55DD2E8FC08821E8B008 /* Pods-Stream SavvyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream SavvyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stream SavvyTests/Pods-Stream SavvyTests.release.xcconfig"; sourceTree = "<group>"; };
+		95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stream_SavvyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F28106E1D83B4B900158502 /* AuthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTableViewController.h; sourceTree = "<group>"; };
 		9F28106F1D83B4B900158502 /* AuthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTableViewController.m; sourceTree = "<group>"; };
 		9F5A4D2F1D5AE1D70057AF6D /* Stream Savvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stream Savvy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +130,7 @@
 		9FE1B05B1D6946410013DCB1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9FE1B05D1D6A5CAC0013DCB1 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
 		9FE1B05E1D6A5CAC0013DCB1 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
-		AB21DDA2A09D140C725C5916 /* libPods-Stream SavvyUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stream SavvyUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stream_SavvyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AA43773FC467A7AA89322C /* Pods-Stream SavvyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stream SavvyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stream SavvyUITests/Pods-Stream SavvyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD1834AF1D8CD4C800B472E2 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		BD1834B01D8CD4C800B472E2 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
@@ -137,7 +140,8 @@
 		BD191FCA1D8792540098A8E6 /* ShowDetailsTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsTableViewProtocol.h; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BD7076E91D8C903200F2B331 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		F1D4A6B02BFF3F76D6C81A51 /* libPods-Stream SavvyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stream SavvyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +152,8 @@
 				BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */,
 				BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */,
 				9FCF7D1C1D79B01A00B8538B /* CoreLocation.framework in Frameworks */,
-				2931B69B700DDA4C58E82553 /* libPods-Stream Savvy.a in Frameworks */,
+				BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */,
+				0C95D34F82A4B97A6F6711DA /* Pods_Stream_Savvy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AB5D64F123E9C23FE39F900 /* libPods-Stream SavvyTests.a in Frameworks */,
+				C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F309181A44B714E9B53BF1D9 /* libPods-Stream SavvyUITests.a in Frameworks */,
+				6C1C1F5EEFDAC478D7452535 /* Pods_Stream_SavvyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,12 +179,13 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */,
 				BD7076E91D8C903200F2B331 /* UIKit.framework */,
 				BD7076E71D8C8FC300F2B331 /* Foundation.framework */,
 				9FCF7D1B1D79B01A00B8538B /* CoreLocation.framework */,
-				2555330CD445FA62E30C71FC /* libPods-Stream Savvy.a */,
-				F1D4A6B02BFF3F76D6C81A51 /* libPods-Stream SavvyTests.a */,
-				AB21DDA2A09D140C725C5916 /* libPods-Stream SavvyUITests.a */,
+				6565779394F3C155499BC5F3 /* Pods_Stream_Savvy.framework */,
+				A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */,
+				95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 				9FBC97801D6BD742004B6182 /* PopularShow.m */,
 				9FC296161D766F63005CB080 /* MediaSource.h */,
 				9FC296171D766F63005CB080 /* MediaSource.m */,
+				BD95CAAD1D9039FB00BCEBE2 /* Content.swift */,
 			);
 			name = StreamSavvyModels;
 			sourceTree = "<group>";
@@ -387,10 +394,10 @@
 			buildConfigurationList = 9F5A4D5C1D5AE1D70057AF6D /* Build configuration list for PBXNativeTarget "Stream Savvy" */;
 			buildPhases = (
 				ABED66482550BE913557675A /* [CP] Check Pods Manifest.lock */,
-				9F5A4D2B1D5AE1D70057AF6D /* Sources */,
 				9F5A4D2C1D5AE1D70057AF6D /* Frameworks */,
-				9F5A4D2D1D5AE1D70057AF6D /* Resources */,
 				51541C026DCD017D0EEB069D /* [CP] Embed Pods Frameworks */,
+				9F5A4D2B1D5AE1D70057AF6D /* Sources */,
+				9F5A4D2D1D5AE1D70057AF6D /* Resources */,
 				CA6141874F47563BB7B20645 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -432,6 +439,7 @@
 				9F5A4D501D5AE1D70057AF6D /* Frameworks */,
 				9F5A4D511D5AE1D70057AF6D /* Resources */,
 				D520E63B7A7F877C330F4F9F /* [CP] Copy Pods Resources */,
+				E8E2BA338C71D2C3D907A4E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,11 +468,13 @@
 					9F5A4D471D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = XWQ3X4T33E;
+						LastSwiftMigration = 0800;
 						TestTargetID = 9F5A4D2E1D5AE1D70057AF6D;
 					};
 					9F5A4D521D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = XWQ3X4T33E;
+						LastSwiftMigration = 0800;
 						TestTargetID = 9F5A4D2E1D5AE1D70057AF6D;
 					};
 				};
@@ -560,7 +570,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		ABED66482550BE913557675A /* [CP] Check Pods Manifest.lock */ = {
@@ -575,7 +585,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C31815736AB19BC4093B0C64 /* [CP] Copy Pods Resources */ = {
@@ -620,7 +630,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D520E63B7A7F877C330F4F9F /* [CP] Copy Pods Resources */ = {
@@ -636,6 +646,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stream SavvyUITests/Pods-Stream SavvyUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8E2BA338C71D2C3D907A4E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stream SavvyUITests/Pods-Stream SavvyUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -663,6 +688,7 @@
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */,
 				9FE1B0501D693B160013DCB1 /* PopularShowTableViewController.m in Sources */,
+				BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */,
 				9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */,
 				9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */,
 				9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */,
@@ -769,6 +795,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -811,6 +838,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -825,6 +853,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L2FX277R9E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -847,6 +879,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L2FX277R9E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -870,6 +906,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-SavvyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stream Savvy.app/Stream Savvy";
 			};
 			name = Debug;
@@ -884,6 +921,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-SavvyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stream Savvy.app/Stream Savvy";
 			};
 			name = Release;
@@ -897,6 +935,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-SavvyUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Stream Savvy";
 			};
 			name = Debug;
@@ -910,6 +949,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-SavvyUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Stream Savvy";
 			};
 			name = Release;

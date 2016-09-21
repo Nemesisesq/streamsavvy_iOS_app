@@ -1,0 +1,69 @@
+//
+//  SearchResults.swift
+//  Stream Savvy
+//
+//  Created by Carl Lewis on 9/19/16.
+//  Copyright © 2016 Stream Savvy. All rights reserved.
+//
+
+import UIKit
+import Alamofire
+
+
+
+class SearchResults: NSObject {
+    var results: [Content]?
+    
+    typealias JSONStandard = [[String: AnyObject]]
+    
+    public func fetchResults(q: String) {
+        
+        let url = "http://www.streamsavvy.tv/api/search/?q=\(q)"
+        
+        Alamofire.request(url).responseJSON(completionHandler: {
+            response in self.parseData(JSONData: response.data!)
+        })
+        
+    }
+    
+    
+    
+    func parseData(JSONData : Data) {
+        do {
+            let readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
+            // print(readableJSON)
+            
+            
+            for dict in readableJSON {
+                let content  = Content()
+//                content.setValuesForKeys(dict)
+                content.title = dict["title"] as? String
+                content.guidebox_data = dict["guidebox_data"] as? NSMutableDictionary
+                content.on_netflix = dict["on_netflix"] as? Bool
+                content.channel = dict["channel"] as? NSMutableDictionary
+                content.curr_pop_score = dict["curr_pop_score"] as? Float
+                content.channels_last_checked  = dict["channels_last_checked"] as? String
+                content.modified = dict["modified"] as? String
+                
+                self.results?.append(content)
+            }
+        }
+        catch let error {
+            print(error)
+        }
+    }
+}
+
+
+class Content: NSObject {
+    
+    
+    var title : String?
+    var guidebox_data : NSMutableDictionary?
+    var on_netflix : Bool?
+    var channel : NSMutableDictionary?
+    var curr_pop_score : Float?
+    var channels_last_checked : String?
+    var modified : String?
+    
+}
