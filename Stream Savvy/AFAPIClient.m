@@ -37,6 +37,7 @@ NSString *auth;
 
 /* HEADER AUTH */
 
+/* we are gonna have to edit this to include a fb header -- OH JOY */
 - (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLResponse *, id, NSError *))completionHandler
 {
 	NSMutableURLRequest *req = (NSMutableURLRequest *)request;
