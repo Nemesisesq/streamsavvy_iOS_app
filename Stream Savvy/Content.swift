@@ -12,13 +12,13 @@ import Alamofire
 
 
 class SearchResults: NSObject {
-    var results: [Content]?
+    var results = [Content]()
     
     typealias JSONStandard = [[String: AnyObject]]
     
     public func fetchResults(q: String) {
         
-        let url = "http://www.streamsavvy.tv/api/search/?q=\(q)"
+        let url = "http://ss-master-staging.herokuapp.com/api/search/?q=\(q)"
         
         Alamofire.request(url).responseJSON(completionHandler: {
             response in self.parseData(JSONData: response.data!)
@@ -45,12 +45,20 @@ class SearchResults: NSObject {
                 content.channels_last_checked  = dict["channels_last_checked"] as? String
                 content.modified = dict["modified"] as? String
                 
-                self.results?.append(content)
+                print(content.title)
+                
+                self.results.append(content)
+                
+                
             }
+            print(self.results)
         }
         catch let error {
             print(error)
         }
+        
+//        print(self.results)
+        
     }
 }
 

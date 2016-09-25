@@ -28,8 +28,12 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        searchResults.fetchResults(q: "orange")
-        print(searchController.searchBar.text!)
+        
+        if (searchController.searchBar.text?.isEmpty != true ){
+           searchResults.fetchResults(q: searchController.searchBar.text!)
+        }
+        
+//        print(searchController.searchBar.text!)
     }
     
     override func loadView() {

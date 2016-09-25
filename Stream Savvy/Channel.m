@@ -19,11 +19,13 @@
 	if (!self) return nil;
 	self.channel_id				= [attributes valueForKey:@"Channel"] ;
 	self.display_name			= [attributes valueForKey:@"DisplayName"];
-	if ([[attributes valueForKey:@"ChannelImages"] count] > 0) {
+	if ([[[[attributes valueForKey:@"Airings"] objectAtIndex:0]  valueForKey:@"images"] count] > 0) {
+		self.image_link			= [[[[[attributes valueForKey:@"Airings"] objectAtIndex:0] valueForKey:@"images"] objectAtIndex:0] valueForKey: @"ImageUrl"];
+	}else if([[[attributes valueForKey:@"ChannelImages"] objectAtIndex:0] count] > 0){
 		self.image_link			= [[[attributes valueForKey:@"ChannelImages"] objectAtIndex:0] valueForKey:@"ImageUrl"];
-	}else{
-		self.image_link			= @"";
-	}
+    } else {
+        self.image_link = @"";
+    }
 	self.channel_number			= [attributes valueForKey:@"Channel"];
 	self.deep_link				= @"link-goes-here";
 	self.source_id				= [attributes valueForKey:@"SourceId"];

@@ -18,9 +18,9 @@
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	// Initialization code
-	[Constants addGradientForImageView:self.topImageView];
-	[Constants addGradientForImageView:self.bottomImageView];
-	[Constants addGradientForImageView:self.bigImageView];
+//	[Constants addGradientForImageView:self.topImageView];
+//	[Constants addGradientForImageView:self.bottomImageView];
+//	[Constants addGradientForImageView:self.bigImageView];
 	
 	UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topPressed)];
 	[self.topImageView addGestureRecognizer:tapGestureRecognizer];
