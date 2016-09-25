@@ -9,7 +9,7 @@
 import UIKit
 
 
-class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating {
+class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
     
     var numbers = [Int]()
     
@@ -17,28 +17,67 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     @IBOutlet var carousel: iCarousel!
     
+    var resultsController: UITableViewController!
+    
+    var searchController: UISearchController!
+    
+    
+    
+    
     @IBAction func search(_ sender: UIBarButtonItem) {
         //Here we set the search bar and the results table
-        let resultsController = UITableViewController(style: .plain)
-        let searchController = UISearchController(searchResultsController: resultsController)
-        self.present(searchController, animated:true, completion: nil)
         
+        resultsController = UITableViewController(style: .plain)
+        resultsController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ResultCell")
+        resultsController.tableView.dataSource = self
+        resultsController.tableView.delegate = self
+        
+        searchController = UISearchController(searchResultsController: resultsController)
+//        searchController.hidesNavigationBarDuringPresentation = false
+//        searchController.searchBar.searchBarStyle = .prominent
         searchController.searchResultsUpdater = self
         
+        self.definesPresentationContext = true
+        
+        
+        
+        self.present(searchController, animated:true, completion: nil)
+        
+        
+        //        self.tableView  = resultsController.tableView
+        
+        
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
+        cell.textLabel?.text = "Hello World"
+        
+        return cell
+    }
+    
     
     func updateSearchResults(for searchController: UISearchController) {
         
         if (searchController.searchBar.text?.isEmpty != true ){
-           searchResults.fetchResults(q: searchController.searchBar.text!)
+            searchResults.fetchResults(q: searchController.searchBar.text!)
+            self.resultsController.tableView.reloadData()
+            
+            
         }
         
-//        print(searchController.searchBar.text!)
+        //        print(searchController.searchBar.text!)
     }
+    
     
     override func loadView() {
         super.loadView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     override func viewDidLoad() {
