@@ -55,7 +55,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
-        cell.textLabel?.text = "Hello World"
+        cell.textLabel?.text = "\(indexPath.row) Hello World"
+        cell.detailTextLabel?.text = "detail?"
         
         return cell
     }
