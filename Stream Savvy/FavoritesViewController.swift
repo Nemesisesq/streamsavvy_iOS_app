@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 
 class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
@@ -33,29 +34,31 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         resultsController.tableView.delegate = self
         
         searchController = UISearchController(searchResultsController: resultsController)
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        searchController.searchBar.searchBarStyle = .prominent
+        //        searchController.hidesNavigationBarDuringPresentation = false
+        //        searchController.searchBar.searchBarStyle = .prominent
         searchController.searchResultsUpdater = self
         
         self.definesPresentationContext = true
         
-        
-        
         self.present(searchController, animated:true, completion: nil)
-        
-        
-        //        self.tableView  = resultsController.tableView
-        
         
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return searchResults.results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row) Hello World"
+        
+        let sug = searchResults.results[indexPath.row]
+        
+        
+        cell.textLabel?.text = sug.title
         cell.detailTextLabel?.text = "detail?"
         
         return cell
@@ -65,9 +68,19 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     func updateSearchResults(for searchController: UISearchController) {
         
         if (searchController.searchBar.text?.isEmpty != true ){
-            searchResults.fetchResults(q: searchController.searchBar.text!)
-            self.resultsController.tableView.reloadData()
+            searchResults.results.removeAll()
             
+           
+                
+                
+                searchResults.fetchResults(q: searchController.searchBar.text!)
+                .then{result -> Void in
+                    print(result)
+                    self.resultsController.tableView.reloadData()
+                    
+//                    return result as! AnyPromise
+                    
+            }
             
         }
         

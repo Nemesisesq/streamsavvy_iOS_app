@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import PromiseKit
 
 
 
@@ -16,14 +17,24 @@ class SearchResults: NSObject {
     
     typealias JSONStandard = [[String: AnyObject]]
     
-    public func fetchResults(q: String) {
+    public func fetchResults(q: String) -> Promise<Any> {
         
         let url = "http://ss-master-staging.herokuapp.com/api/search/?q=\(q)"
-        
-        Alamofire.request(url).responseJSON(completionHandler: {
-            response in self.parseData(JSONData: response.data!)
-        })
-        
+        return Promise { fullfill, reject in
+            Alamofire.request(url)
+                .responseJSON{
+                    response in self.parseData(JSONData: response.data!)
+                    
+                    switch response.result {
+                    case .success(let dict):
+                        fullfill(dict)
+                        
+                    case .failure(let error):
+                        reject(error)
+                        
+                    }
+            }
+        }
     }
     
     
@@ -36,7 +47,7 @@ class SearchResults: NSObject {
             
             for dict in readableJSON {
                 let content  = Content()
-//                content.setValuesForKeys(dict)
+                //                content.setValuesForKeys(dict)
                 content.title = dict["title"] as? String
                 content.guidebox_data = dict["guidebox_data"] as? NSMutableDictionary
                 content.on_netflix = dict["on_netflix"] as? Bool
@@ -57,7 +68,7 @@ class SearchResults: NSObject {
             print(error)
         }
         
-//        print(self.results)
+        //        print(self.results)
         
     }
 }

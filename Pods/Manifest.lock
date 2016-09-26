@@ -34,6 +34,17 @@ PODS:
   - FBSDKShareKit (4.15.1):
     - FBSDKCoreKit
   - MBProgressHUD (1.0.0)
+  - PromiseKit (4.0.1):
+    - PromiseKit/Foundation (= 4.0.1)
+    - PromiseKit/QuartzCore (= 4.0.1)
+    - PromiseKit/UIKit (= 4.0.1)
+  - PromiseKit/CorePromise (4.0.1)
+  - PromiseKit/Foundation (4.0.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.1):
+    - PromiseKit/CorePromise
   - SCLAlertView-Objective-C (1.0.5)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -47,6 +58,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - MBProgressHUD (~> 1.0.0)
+  - PromiseKit (~> 4.0)
   - SCLAlertView-Objective-C
   - SDWebImage (~> 3.7)
   - Toast (~> 3.0)
@@ -59,10 +71,11 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
   FBSDKShareKit: 11cbb5a4d7b5fda8143cc95b76188147e6725736
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  PromiseKit: ae9e7f97ee758e23f7b9c5e80380a2e78d6338c5
   SCLAlertView-Objective-C: a2b8b09b8ce5fe14c233ecaa09c02be582c6389a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: 58cc790a478cd29ec618c5fd8b835743aacab261
+PODFILE CHECKSUM: 7f6f0b31c98b55f333f93fb0aeec4467447eea37
 
 COCOAPODS: 1.1.0.rc.2
