@@ -178,6 +178,36 @@
             </objects>
             <point key="canvasLocation" x="3412" y="-294.60269865067471"/>
         </scene>
+        <!--Content Detail View Controller-->
+        <scene sceneID="Xfw-gw-6QP">
+            <objects>
+                <viewController storyboardIdentifier="ContentDetailViewController" id="Lnh-9m-OXL" customClass="ContentDetailViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z0P-Ts-Azl"/>
+                        <viewControllerLayoutGuide type="bottom" id="DoB-VS-T41"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E1F-ST-kfa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhQ-KJ-gv5">
+                                <frame key="frameInset" minX="16" minY="236" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="test" destination="bhQ-KJ-gv5" id="aC0-tb-pHg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sof-eP-tV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4288.8000000000002" y="-294.60269865067471"/>
+        </scene>
         <!--Popular Show Table View Controller-->
         <scene sceneID="ptM-fs-ybH">
             <objects>
@@ -689,7 +719,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXZ-uX-PNa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Live" image="tv-icon" id="nLK-ZU-vND"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QPR-pz-m9s">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="QPR-pz-m9s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -712,7 +742,7 @@
                     <tabBarItem key="tabBarItem" title="Favorites" image="favorites" id="FFo-hD-0zQ"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I7S-g0-bjy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I7S-g0-bjy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

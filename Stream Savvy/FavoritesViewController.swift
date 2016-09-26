@@ -64,6 +64,14 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedShow = searchResults.results[indexPath[1]]
+        let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
+        cdvc.content = selectedShow
+        self.navigationController?.pushViewController(cdvc, animated: true)
+        
+        
+    }
     
     func updateSearchResults(for searchController: UISearchController) {
         
@@ -157,14 +165,15 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         
     }
     
-    /*
+   /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+     
+        var destination = segue.destination as! ContentDetailViewController
+        
+        destination.hello = "Nurse"
      }
-     */
-    
+    */
 }
