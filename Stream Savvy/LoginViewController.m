@@ -29,8 +29,9 @@
 
 -(void)viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];
-	if ([FBSDKAccessToken currentAccessToken] || [UserPrefs getDidLogin]) {
+	if ([FBSDKAccessToken currentAccessToken] || ([UserPrefs getDidLogin] && [UserPrefs getToken].length > 0) ) {
 		// User is logged in, do work such as go to next view controller.
+		NSLog(@"LoginViewController goToNextScreen");
 		[self goToNextScreen];
 	}
 }

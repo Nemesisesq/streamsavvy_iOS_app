@@ -30,9 +30,10 @@
 - (void)viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];
 	
-	if ([UserPrefs getDidLogin] && [UserPrefs getToken].length > 0) {
+	if ([FBSDKAccessToken currentAccessToken] || ([UserPrefs getDidLogin] && [UserPrefs getToken].length > 0) ) {
 		NSLog(@"WOOOOOOO");
 	}else{
+		NSLog(@"Awwww");
 		LoginViewController *lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
 		[self presentViewController:lvc animated:YES completion:nil];
 	}
