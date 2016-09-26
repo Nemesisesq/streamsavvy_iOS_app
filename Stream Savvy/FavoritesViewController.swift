@@ -21,9 +21,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     var resultsController: UITableViewController!
     
     var searchController: UISearchController!
-    
-    
-    
+	
     
     @IBAction func search(_ sender: UIBarButtonItem) {
         //Here we set the search bar and the results table
@@ -65,7 +63,9 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedShow = searchResults.results[indexPath[1]]
+        let selectedShow = searchResults.results[indexPath.row]
+	print("###########")
+	print(selectedShow)
         let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
         cdvc.content = selectedShow
         self.navigationController?.pushViewController(cdvc, animated: true)
@@ -77,17 +77,14 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         
         if (searchController.searchBar.text?.isEmpty != true ){
             searchResults.results.removeAll()
-            
-           
-                
-                
+		
                 searchResults.fetchResults(q: searchController.searchBar.text!)
                 .then{result -> Void in
                     print(result)
                     self.resultsController.tableView.reloadData()
-                    
+			
 //                    return result as! AnyPromise
-                    
+
             }
             
         }
@@ -99,21 +96,19 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     override func loadView() {
         super.loadView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         carousel.type = .cylinder
         // Do any additional setup after loading the view.
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        numbers = [1,2,3,4,5,7,8]
+        numbers = [1,2,3,4,5,7,8,9,10,11]
+	print("numbers1  \(numbers.count)")
+	print("Why is this not 11????")
         //
     }
     
@@ -124,6 +119,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     
     func numberOfItems(in carousel: iCarousel) -> Int {
+	print("number2s  \(numbers.count)")
         return numbers.count
     }
     
@@ -140,20 +136,23 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         /*
          here the content for the carousel can be set. a carousel item is crreatec and sub views can be added to that item
          */
+	let carouselItemView = UIView(frame: CGRect(
+		x: 0,
+		y: 0,
+		width: self.view.frame.size.width * 0.9,
+		height: self.view.frame.size.height - self.navigationController!.navigationBar.frame.size.height - self.tabBarController!.tabBar.frame.size.height));
         
-        let carouselItemView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 400));
-        
-        carouselItemView.backgroundColor = UIColor.blue
+        carouselItemView.backgroundColor = UIColor.darkGray
         
         /*
-         
+	
          example here we create a button  and center it inside of the carousel item view
          */
         
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100));
         
         button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
-                                y: carouselItemView.frame.size.height / 2)
+                                y: (carouselItemView.frame.size.height / 2))
         
         button.backgroundColor = UIColor.red
         

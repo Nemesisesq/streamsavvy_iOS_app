@@ -55,7 +55,8 @@ class SearchResults: NSObject {
                 content.curr_pop_score = dict["curr_pop_score"] as? Float
                 content.channels_last_checked  = dict["channels_last_checked"] as? String
                 content.modified = dict["modified"] as? String
-                
+		
+		print("@@@@@@@@@ ")
                 print(content.title)
                 
                 self.results.append(content)
