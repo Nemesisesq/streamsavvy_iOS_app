@@ -15,7 +15,9 @@ class ContentDetailViewController: UIViewController {
     var content: Content!
 
    
-    @IBOutlet var test: UILabel!
+	@IBOutlet var test: UILabel!
+	@IBOutlet weak var contentImageView: UIImageView!
+	@IBOutlet weak var addFavoriteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

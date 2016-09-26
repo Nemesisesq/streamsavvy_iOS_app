@@ -12,7 +12,7 @@ import PromiseKit
 
 class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
     
-    var numbers = [Int]()
+    var numbers = [String]()
     
     let searchResults = SearchResults()
     
@@ -106,7 +106,11 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        numbers = [1,2,3,4,5,7,8,9,10,11]
+//	searchResults.fetchResults(q: "rug").then{ result -> Void in
+//		self.numbers = result as! [Content]
+//	}
+//        numbers = [1,2,3,4,5,7,8,9,10,11]
+	numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
 	print("numbers1  \(numbers.count)")
 	print("Why is this not 11????")
         //
@@ -127,7 +131,6 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         if option == iCarouselOption.spacing {
             return value * 1.2
         }
-        
         return value
     }
     
@@ -142,23 +145,37 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
 		width: self.view.frame.size.width * 0.9,
 		height: self.view.frame.size.height - self.navigationController!.navigationBar.frame.size.height - self.tabBarController!.tabBar.frame.size.height));
         
-        carouselItemView.backgroundColor = UIColor.darkGray
+        carouselItemView.backgroundColor = UIColor.black
         
         /*
 	
          example here we create a button  and center it inside of the carousel item view
          */
         
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100));
+        let button = UIButton(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width * 0.9, height: 40));
         
-        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
-                                y: (carouselItemView.frame.size.height / 2))
-        
-        button.backgroundColor = UIColor.red
-        
-        button.setTitle("\(index)", for: .normal)
-        
+//        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
+//                                y: (carouselItemView.frame.size.height / 2))
+	
+        button.backgroundColor = UIColor.clear
+	button.tintColor = UIColor.red
+	button.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
+	
+	let newButton = UIButton(frame: CGRect(x: 0, y: 80, width: self.view.frame.size.width * 0.9, height: 40));
+	
+	//        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
+	//                                y: (carouselItemView.frame.size.height / 2))
+	
+	newButton.backgroundColor = UIColor.clear
+	newButton.tintColor = UIColor.red
+	newButton.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
+	newButton.setTitle("See Episodes ->", for: .normal)
+	
+	
+        button.setTitle(self.numbers[index], for: .normal)
+	
         carouselItemView.addSubview(button);
+	carouselItemView.addSubview(newButton);
         
         return carouselItemView
         
