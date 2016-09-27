@@ -12,10 +12,8 @@ import PromiseKit
 
 
 
-class SearchResults: NSObject {
+public class SearchResults: NSObject {
     var results = [Content]()
-    
-    typealias JSONStandard = [[String: AnyObject]]
     
     public func fetchResults(q: String) -> Promise<Any> {
         
@@ -23,7 +21,9 @@ class SearchResults: NSObject {
         return Promise { fullfill, reject in
             Alamofire.request(url)
                 .responseJSON{
-                    response in self.parseData(JSONData: response.data!)
+                    response in
+                    
+                    self.results = Content.parseData(JSONData: response.data!)
                     
                     switch response.result {
                     case .success(let dict):
@@ -39,43 +39,10 @@ class SearchResults: NSObject {
     
     
     
-    func parseData(JSONData : Data) {
-        do {
-            let readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
-            // print(readableJSON)
-            
-            
-            for dict in readableJSON {
-                let content  = Content()
-                //                content.setValuesForKeys(dict)
-                content.title = dict["title"] as? String
-                content.guidebox_data = dict["guidebox_data"] as? NSMutableDictionary
-                content.on_netflix = dict["on_netflix"] as? Bool
-                content.channel = dict["channel"] as? NSMutableDictionary
-                content.curr_pop_score = dict["curr_pop_score"] as? Float
-                content.channels_last_checked  = dict["channels_last_checked"] as? String
-                content.modified = dict["modified"] as? String
-		
-		print("@@@@@@@@@ ")
-                print(content.title)
-                
-                self.results.append(content)
-                
-                
-            }
-            print(self.results)
-        }
-        catch let error {
-            print(error)
-        }
-        
-        //        print(self.results)
-        
-    }
 }
 
 
-class Content: NSObject {
+public class Content: NSObject {
     
     
     var title : String?
@@ -86,4 +53,56 @@ class Content: NSObject {
     var channels_last_checked : String?
     var modified : String?
     
+    
+    
+    class func parseData(JSONData : Data) -> [Content] {
+        
+        typealias JSONStandard = [[String: AnyObject]]
+        var contentList = [Content]()
+        
+        do {
+            
+            
+            
+            let readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
+            // print(readableJSON)
+            
+            
+            for dict in readableJSON {
+                let content = parseDict(dict: dict as AnyObject)
+                print("@@@@@@@@@")
+                print(content.title)
+                
+                contentList.append(content)
+                
+                
+            }
+        }
+        catch let error {
+            print(error)
+        }
+        
+        //        print(self.results)
+        
+        return contentList
+        
+    }
+    
+    class func parseDict(dict: AnyObject) -> Content {
+        let content  = Content()
+        //                content.setValuesForKeys(dict)
+        content.title = dict["title"] as? String
+        content.guidebox_data = dict["guidebox_data"] as? NSMutableDictionary
+        content.on_netflix = dict["on_netflix"] as? Bool
+        content.channel = dict["channel"] as? NSMutableDictionary
+        content.curr_pop_score = dict["curr_pop_score"] as? Float
+        content.channels_last_checked  = dict["channels_last_checked"] as? String
+        content.modified = dict["modified"] as? String
+        
+        return content
+    }
+    
+    
 }
+
+
