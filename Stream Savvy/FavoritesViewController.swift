@@ -34,7 +34,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         resultsController.tableView.delegate = self
         
         searchController = UISearchController(searchResultsController: resultsController)
-        //        searchController.hidesNavigationBarDuringPresentation = false
+                searchController.hidesNavigationBarDuringPresentation = false
         //        searchController.searchBar.searchBarStyle = .prominent
         searchController.searchResultsUpdater = self
         
@@ -104,6 +104,17 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         super.viewDidLoad()
         carousel.type = .cylinder
         // Do any additional setup after loading the view.
+        
+//        self.navigationItem.hidesBackButton = true
+//        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+//        self.navigationItem.leftBarButtonItem = newBackButton;
+    }
+    
+    func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        // ...
+        // Go back to the previous ViewController
+//        self.navigationController?.popViewController(animated: true)
     }
     
     override func awakeFromNib() {
@@ -142,6 +153,18 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         return value
     }
     
+    func getRandomColor() -> UIColor{
+        
+        let randomRed:CGFloat = CGFloat(drand48())
+        
+        let randomGreen:CGFloat = CGFloat(drand48())
+        
+        let randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        
+    }
+    
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         
         /*
@@ -153,7 +176,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
             width: self.view.frame.size.width * 0.9,
             height: self.view.frame.size.height - self.navigationController!.navigationBar.frame.size.height - self.tabBarController!.tabBar.frame.size.height));
         
-        carouselItemView.backgroundColor = UIColor.black
+        
+        carouselItemView.backgroundColor = getRandomColor()
         
         /*
          
@@ -179,6 +203,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         newButton.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
         newButton.setTitle("See Episodes ->", for: .normal)
         
+        newButton.addTarget(self, action: #selector(showEpisodes), for: UIControlEvents.touchUpInside)
+        
         
         button.setTitle(self.numbers[index], for: .normal)
         
@@ -187,6 +213,10 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         
         return carouselItemView
         
+    }
+    
+    func showEpisodes() {
+        self.performSegue(withIdentifier: "EpisodeSegue", sender: self)
     }
     
     /*
