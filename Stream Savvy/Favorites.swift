@@ -33,8 +33,6 @@ class Favorites: NSObject {
                         reject(error)
                     }
             }
-            
-            
         }
     }
     
@@ -45,7 +43,6 @@ class Favorites: NSObject {
         
         do{
             theJson = try JSONSerialization.data(withJSONObject: content, options: .prettyPrinted)
-            
         }
         catch {
             print(error)
@@ -56,5 +53,4 @@ class Favorites: NSObject {
 //                          JSONEncoding.default)
         
     }
-    
 }
