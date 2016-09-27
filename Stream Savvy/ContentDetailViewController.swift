@@ -19,6 +19,9 @@ class ContentDetailViewController: UIViewController {
 	@IBOutlet weak var contentImageView: UIImageView!
 	@IBOutlet weak var addFavoriteButton: UIButton!
     
+    @IBAction func addContentToFavorites(_ sender: UIButton) {
+        Favorites.addContentToFavorites(content: content)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

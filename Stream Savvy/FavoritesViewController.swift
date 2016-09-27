@@ -16,12 +16,14 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     let searchResults = SearchResults()
     
+    let favorites = Favorites()
+    
     @IBOutlet var carousel: iCarousel!
     
     var resultsController: UITableViewController!
     
     var searchController: UISearchController!
-	
+    
     
     @IBAction func search(_ sender: UIBarButtonItem) {
         //Here we set the search bar and the results table
@@ -64,8 +66,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedShow = searchResults.results[indexPath.row]
-	print("###########")
-	print(selectedShow)
+        print("###########")
+        print(selectedShow)
         let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
         cdvc.content = selectedShow
         self.navigationController?.pushViewController(cdvc, animated: true)
@@ -77,14 +79,14 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         
         if (searchController.searchBar.text?.isEmpty != true ){
             searchResults.results.removeAll()
-		
-                searchResults.fetchResults(q: searchController.searchBar.text!)
+            
+            searchResults.fetchResults(q: searchController.searchBar.text!)
                 .then{result -> Void in
                     print(result)
                     self.resultsController.tableView.reloadData()
-			
-//                    return result as! AnyPromise
-
+                    
+                    //                    return result as! AnyPromise
+                    
             }
             
         }
@@ -106,14 +108,20 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//	searchResults.fetchResults(q: "rug").then{ result -> Void in
-//		self.numbers = result as! [Content]
-//	}
-//        numbers = [1,2,3,4,5,7,8,9,10,11]
-	numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
-	print("numbers1  \(numbers.count)")
-	print("Why is this not 11????")
+        //	searchResults.fetchResults(q: "rug").then{ result -> Void in
+        //		self.numbers = result as! [Content]
+        //	}
+        //        numbers = [1,2,3,4,5,7,8,9,10,11]
+        numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
+        print("numbers1  \(numbers.count)")
+        print("Why is this not 11????")
         //
+        
+        favorites.fetchFavorites()
+            .then{ result -> Void in
+//                self.carousel.reloadData()
+                
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -123,7 +131,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-	print("number2s  \(numbers.count)")
+        print("number2s  \(numbers.count)")
         return numbers.count
     }
     
@@ -139,57 +147,57 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         /*
          here the content for the carousel can be set. a carousel item is crreatec and sub views can be added to that item
          */
-	let carouselItemView = UIView(frame: CGRect(
-		x: 0,
-		y: 0,
-		width: self.view.frame.size.width * 0.9,
-		height: self.view.frame.size.height - self.navigationController!.navigationBar.frame.size.height - self.tabBarController!.tabBar.frame.size.height));
+        let carouselItemView = UIView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: self.view.frame.size.width * 0.9,
+            height: self.view.frame.size.height - self.navigationController!.navigationBar.frame.size.height - self.tabBarController!.tabBar.frame.size.height));
         
         carouselItemView.backgroundColor = UIColor.black
         
         /*
-	
+         
          example here we create a button  and center it inside of the carousel item view
          */
         
         let button = UIButton(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width * 0.9, height: 40));
         
-//        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
-//                                y: (carouselItemView.frame.size.height / 2))
-	
+        //        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
+        //                                y: (carouselItemView.frame.size.height / 2))
+        
         button.backgroundColor = UIColor.clear
-	button.tintColor = UIColor.red
-	button.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
-	
-	let newButton = UIButton(frame: CGRect(x: 0, y: 80, width: self.view.frame.size.width * 0.9, height: 40));
-	
-	//        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
-	//                                y: (carouselItemView.frame.size.height / 2))
-	
-	newButton.backgroundColor = UIColor.clear
-	newButton.tintColor = UIColor.red
-	newButton.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
-	newButton.setTitle("See Episodes ->", for: .normal)
-	
-	
+        button.tintColor = UIColor.red
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
+        
+        let newButton = UIButton(frame: CGRect(x: 0, y: 80, width: self.view.frame.size.width * 0.9, height: 40));
+        
+        //        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
+        //                                y: (carouselItemView.frame.size.height / 2))
+        
+        newButton.backgroundColor = UIColor.clear
+        newButton.tintColor = UIColor.red
+        newButton.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
+        newButton.setTitle("See Episodes ->", for: .normal)
+        
+        
         button.setTitle(self.numbers[index], for: .normal)
-	
+        
         carouselItemView.addSubview(button);
-	carouselItemView.addSubview(newButton);
+        carouselItemView.addSubview(newButton);
         
         return carouselItemView
         
     }
     
-   /*
+    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      
-        var destination = segue.destination as! ContentDetailViewController
-        
-        destination.hello = "Nurse"
+     var destination = segue.destination as! ContentDetailViewController
+     
+     destination.hello = "Nurse"
      }
-    */
+     */
 }
