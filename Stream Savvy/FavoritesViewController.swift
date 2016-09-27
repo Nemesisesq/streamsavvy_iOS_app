@@ -13,21 +13,15 @@ import PromiseKit
 class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
     
     var numbers = [String]()
-    
     let searchResults = SearchResults()
-    
     let favorites = Favorites()
-    
     @IBOutlet var carousel: iCarousel!
-    
     var resultsController: UITableViewController!
-    
     var searchController: UISearchController!
     
     
     @IBAction func search(_ sender: UIBarButtonItem) {
         //Here we set the search bar and the results table
-        
         resultsController = UITableViewController(style: .plain)
         resultsController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ResultCell")
         resultsController.tableView.dataSource = self
@@ -39,11 +33,14 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         searchController.searchResultsUpdater = self
         
         self.definesPresentationContext = true
-        
-        self.present(searchController, animated:true, completion: nil)
-        
+	self.searchController.hidesNavigationBarDuringPresentation = false;
+	self.definesPresentationContext = false;
+	
+	self.present(searchController, animated:true, completion: { print("Done")})
     }
-    
+	
+	
+	  
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -56,8 +53,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
         
         let sug = searchResults.results[indexPath.row]
-        
-        
+	
         cell.textLabel?.text = sug.title
         cell.detailTextLabel?.text = "detail?"
         
@@ -71,13 +67,10 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
         cdvc.content = selectedShow
         self.navigationController?.pushViewController(cdvc, animated: true)
-        
-        
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        
-        if (searchController.searchBar.text?.isEmpty != true ){
+        if (searchController.searchBar.text!.isEmpty != true ){
             searchResults.results.removeAll()
             
             searchResults.fetchResults(q: searchController.searchBar.text!)
@@ -86,11 +79,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                     self.resultsController.tableView.reloadData()
                     
                     //                    return result as! AnyPromise
-                    
             }
-            
         }
-        
         //        print(searchController.searchBar.text!)
     }
     
@@ -119,20 +109,14 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //	searchResults.fetchResults(q: "rug").then{ result -> Void in
-        //		self.numbers = result as! [Content]
-        //	}
-        //        numbers = [1,2,3,4,5,7,8,9,10,11]
         numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
         print("numbers1  \(numbers.count)")
-        print("Why is this not 11????")
-        //
-        
-        favorites.fetchFavorites()
-            .then{ result -> Void in
-//                self.carousel.reloadData()
-                
-        }
+	
+        favorites.fetchFavorites().then{ result -> Void in
+                print("$$$$$$$$$$$$")
+		print(result)
+		// self.carousel.reloadData()
+	}
     }
     
     override func didReceiveMemoryWarning() {
@@ -166,7 +150,6 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        
         /*
          here the content for the carousel can be set. a carousel item is crreatec and sub views can be added to that item
          */
