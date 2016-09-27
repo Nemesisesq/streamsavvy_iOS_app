@@ -23,9 +23,9 @@
 		self.image_link			= [[[[[attributes valueForKey:@"Airings"] objectAtIndex:0] valueForKey:@"images"] objectAtIndex:0] valueForKey: @"ImageUrl"];
 	}else if([[[attributes valueForKey:@"ChannelImages"] objectAtIndex:0] count] > 0){
 		self.image_link			= [[[attributes valueForKey:@"ChannelImages"] objectAtIndex:0] valueForKey:@"ImageUrl"];
-    } else {
-        self.image_link = @"";
-    }
+	} else {
+		self.image_link = @"";
+	}
 	self.channel_number			= [attributes valueForKey:@"Channel"];
 	self.deep_link				= @"link-goes-here";
 	self.source_id				= [attributes valueForKey:@"SourceId"];
@@ -33,7 +33,6 @@
 	self.call_letters				= [attributes valueForKey:@"CallLetters"];
 	
 	self.now_playing				= [[Media alloc] initWithAttributes:[[attributes valueForKey:@"Airings"] objectAtIndex:0]];
-	
 	
 	return self;
 }
