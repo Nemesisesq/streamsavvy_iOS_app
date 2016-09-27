@@ -11,7 +11,7 @@ import UIKit
 struct Season {
     var number : Int
     var episodes  : [Int]
-
+    
 }
 
 class MyCollectionViewCell: UICollectionViewCell {
@@ -20,25 +20,37 @@ class MyCollectionViewCell: UICollectionViewCell {
 }
 
 class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet var seasonCollectionView: UICollectionView!
     
-    var currentIndex = 0
+    @IBOutlet var episodeCollectionView: UICollectionView!
+    var currentIndex: Int!
     
     
     
-    let episodes = [ Season(number:1, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
-                     Season(number:2, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
-                     Season(number:3, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
-                     Season(number:4, episodes: [1, 2, 3, 4]),
-                        ]
+    var episodes: [Season]!
+    
+    override func awakeFromNib() {
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        episodes = [ Season(number:1, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
+                     Season(number:2, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
+                     Season(number:3, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
+                     Season(number:4, episodes: [1, 2, 3, 4]),
+        ]
+        
+        currentIndex = 0
+        
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         // Do any additional setup after loading the view.
     }
@@ -75,32 +87,45 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
             let season = self.episodes[currentIndex]
             return season.episodes.count
         }
-
-//        return 0
+        
+        //        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath)
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath)
+        var cell: MyCollectionViewCell
         
         // Configure the cell
-        
-        if (true){
-            let season = self.episodes[currentIndex]
-//            cell.myLabel.text = "Season \(season.number)"
+        if (collectionView.restorationIdentifier == "seasons"){
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! MyCollectionViewCell
+            
+            let sessionNumber = self.episodes[indexPath.row].number
+            
+            cell.myLabel?.text = "\(sessionNumber)"
+            
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath) as! MyCollectionViewCell
+            
+            let episodeNumber = self.episodes[currentIndex].episodes[indexPath.row]
+            
+            cell.myLabel?.text = "Season \(currentIndex + 1) Episode \(episodeNumber)"
         }
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentIndex = indexPath.row
+        episodeCollectionView?.reloadData()
+    }
+    
     // MARK: UICollectionViewDelegate
     
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
+    
+    // Uncomment this method to specify if the specified item should be highlighted during tracking
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     
     /*
      // Uncomment this method to specify if the specified item should be selected
