@@ -23,7 +23,7 @@ class Favorites: NSObject {
             Alamofire.request(url)
                 .responseJSON {response in
                     
-                    self.contentList = [Content.parseDetail(dict: response.data! as AnyObject)]
+                    self.contentList = Content.parseList(JSONData: (response.data! as Data))
                     
                     switch response.result {
                     case .success(let dict):
@@ -36,21 +36,25 @@ class Favorites: NSObject {
         }
     }
     
-   class func addContentToFavorites(content: Content) -> Void {
+    class func addContentToFavorites(content: Content) -> Promise<Void> {
         
         let url = "http://localhost:8080/favorites/add/test"
-        let theJson : Data
+        let theJson = content.asJson()
         
-        do{
-            theJson = try JSONSerialization.data(withJSONObject: content, options: .prettyPrinted)
+        return Promise { fulfill, reject in
+            Alamofire.request(url, method: .post, parameters: theJson as? Parameters,  encoding: JSONEncoding.default)
+                .responseJSON { response in
+                    
+                    switch response.result {
+                    case .success:
+                        fulfill()
+                        
+                    case .failure(let error):
+                        reject(error)
+                    }
+                    
+            }
         }
-        catch {
-            print(error)
-        }
-//        Alamofire.request(.POST,
-//                          url,
-//                          parameters: theJson,
-//                          JSONEncoding.default)
         
     }
 }

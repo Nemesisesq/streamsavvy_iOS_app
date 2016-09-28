@@ -141,7 +141,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VIG-OV-sfH"/>
                     </layoutGuides>
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="0Mb-5o-dQ2">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
@@ -245,6 +245,7 @@
                         <outlet property="addFavoriteButton" destination="Y0a-5N-r0y" id="KzP-fr-O3t"/>
                         <outlet property="contentImageView" destination="Orn-pw-n2r" id="y20-cB-q23"/>
                         <outlet property="test" destination="bhQ-KJ-gv5" id="aC0-tb-pHg"/>
+                        <segue destination="Ftx-ya-yvW" kind="showDetail" identifier="ContentAdded" id="PqR-Ou-oHG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sof-eP-tV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -260,7 +261,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pul-X2-fDc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Td6-ma-UB1">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="seasons" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-S9-5Hm">
@@ -869,7 +870,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="322"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3yl-4G-gxa" id="jMW-MR-4fj">
-                                    <frame key="frameInset" width="375" height="321"/>
+                                    <frame key="frameInset" width="375" height="322"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jns-lZ-kM5">
@@ -951,6 +952,7 @@
         <image name="tv-icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hcq-We-NDc"/>
+        <segue reference="PqR-Ou-oHG"/>
+        <segue reference="E7e-Nb-y52"/>
     </inferredMetricsTieBreakers>
 </document>

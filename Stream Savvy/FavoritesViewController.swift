@@ -90,6 +90,15 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         view.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favorites.fetchFavorites().then{ result -> Void in
+            print("$$$$$$$$$$$$")
+            print(result)
+            // self.carousel.reloadData()
+        }
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         carousel.type = .cylinder
@@ -112,12 +121,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
         print("numbers1  \(numbers.count)")
         
-        favorites.fetchFavorites().then{ result -> Void in
-            print("$$$$$$$$$$$$")
-            print(result)
-            // self.carousel.reloadData()
-        }
-    }
+           }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
