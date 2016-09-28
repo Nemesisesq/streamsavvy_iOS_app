@@ -102,7 +102,15 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         //        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
         //        self.navigationItem.leftBarButtonItem = newBackButton;
     }
-    
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		print("viewWillAppear")
+		print(self.carousel.isHidden)
+		print(self.carousel)
+		
+	}
+	
     func back(sender: UIBarButtonItem) {
         // Perform your custom actions
         // ...
