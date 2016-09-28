@@ -28,13 +28,11 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         resultsController.tableView.delegate = self
         
         searchController = UISearchController(searchResultsController: resultsController)
-        //        searchController.hidesNavigationBarDuringPresentation = false
-        //        searchController.searchBar.searchBarStyle = .prominent
         searchController.searchResultsUpdater = self
         
         self.definesPresentationContext = true
-	self.searchController.hidesNavigationBarDuringPresentation = false;
-	self.definesPresentationContext = false;
+//	self.searchController.hidesNavigationBarDuringPresentation = false
+//	self.definesPresentationContext = false
 	
 	self.present(searchController, animated:true, completion: { print("Done")})
     }
@@ -64,9 +62,11 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         let selectedShow = searchResults.results[indexPath.row]
         print("###########")
         print(selectedShow)
-        let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
+//	self.searchController.dismiss(animated: true, completion: nil)
+	let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
         cdvc.content = selectedShow
         self.navigationController?.pushViewController(cdvc, animated: true)
+
     }
     
     func updateSearchResults(for searchController: UISearchController) {
