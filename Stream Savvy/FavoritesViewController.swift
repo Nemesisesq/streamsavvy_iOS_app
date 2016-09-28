@@ -28,17 +28,19 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         resultsController.tableView.delegate = self
         
         searchController = UISearchController(searchResultsController: resultsController)
+        searchController.hidesNavigationBarDuringPresentation = false
+        //        searchController.searchBar.searchBarStyle = .prominent
         searchController.searchResultsUpdater = self
         
         self.definesPresentationContext = true
-//	self.searchController.hidesNavigationBarDuringPresentation = false
-//	self.definesPresentationContext = false
-	
-	self.present(searchController, animated:true, completion: { print("Done")})
+        self.searchController.hidesNavigationBarDuringPresentation = false;
+        self.definesPresentationContext = false;
+        
+        self.present(searchController, animated:true, completion: { print("Done")})
     }
-	
-	
-	  
+    
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -51,7 +53,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
         
         let sug = searchResults.results[indexPath.row]
-	
+        
         cell.textLabel?.text = sug.title
         cell.detailTextLabel?.text = "detail?"
         
@@ -65,6 +67,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
 //	self.searchController.dismiss(animated: true, completion: nil)
 	let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
         cdvc.content = selectedShow
+	self.searchController.isActive = false
         self.navigationController?.pushViewController(cdvc, animated: true)
 
     }
@@ -94,18 +97,29 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         super.viewDidLoad()
         carousel.type = .cylinder
         // Do any additional setup after loading the view.
+        
+        //        self.navigationItem.hidesBackButton = true
+        //        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+        //        self.navigationItem.leftBarButtonItem = newBackButton;
+    }
+    
+    func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        // ...
+        // Go back to the previous ViewController
+        //        self.navigationController?.popViewController(animated: true)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
         print("numbers1  \(numbers.count)")
-	
+        
         favorites.fetchFavorites().then{ result -> Void in
-                print("$$$$$$$$$$$$")
-		print(result)
-		// self.carousel.reloadData()
-	}
+            print("$$$$$$$$$$$$")
+            print(result)
+            // self.carousel.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -115,7 +129,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        print("number2s  \(numbers.count)")
+        print("numbers  \(numbers.count)")
         return numbers.count
     }
     
@@ -124,6 +138,18 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
             return value * 1.2
         }
         return value
+    }
+    
+    func getRandomColor() -> UIColor{
+        
+        let randomRed:CGFloat = CGFloat(drand48())
+        
+        let randomGreen:CGFloat = CGFloat(drand48())
+        
+        let randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
@@ -136,7 +162,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
             width: self.view.frame.size.width * 0.9,
             height: self.view.frame.size.height - self.navigationController!.navigationBar.frame.size.height - self.tabBarController!.tabBar.frame.size.height));
         
-        carouselItemView.backgroundColor = UIColor.black
+        
+        carouselItemView.backgroundColor = getRandomColor()
         
         /*
          
@@ -162,6 +189,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         newButton.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
         newButton.setTitle("See Episodes ->", for: .normal)
         
+        newButton.addTarget(self, action: #selector(showEpisodes), for: UIControlEvents.touchUpInside)
+        
         
         button.setTitle(self.numbers[index], for: .normal)
         
@@ -170,6 +199,10 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         
         return carouselItemView
         
+    }
+    
+    func showEpisodes() {
+        self.performSegue(withIdentifier: "EpisodeSegue", sender: self)
     }
     
     /*

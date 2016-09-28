@@ -48,6 +48,7 @@
 		BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
 		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
+		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
@@ -151,6 +152,7 @@
 		BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BD7076E91D8C903200F2B331 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,6 +244,7 @@
 		9F5A4D311D5AE1D70057AF6D /* Stream Savvy */ = {
 			isa = PBXGroup;
 			children = (
+				BD862C8E1D9B642D00C8FFF9 /* Extensions */,
 				BD1834AE1D8CD48500B472E2 /* iCarousel */,
 				9F5A4D351D5AE1D70057AF6D /* AppDelegate.h */,
 				9F5A4D361D5AE1D70057AF6D /* AppDelegate.m */,
@@ -402,6 +405,14 @@
 				BD1834B01D8CD4C800B472E2 /* iCarousel.m */,
 			);
 			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		BD862C8E1D9B642D00C8FFF9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -696,6 +707,7 @@
 				9FC2960F1D766110005CB080 /* ShowDetailsTableViewController.m in Sources */,
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
+				BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */,
 				9F5A4D341D5AE1D70057AF6D /* main.m in Sources */,
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
 				BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */,

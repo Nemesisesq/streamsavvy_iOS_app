@@ -144,10 +144,10 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="90" width="375" height="400"/>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.13494073279999999" green="0.24757543100000001" blue="0.90161637930000005" alpha="0.13173204790000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="dataSource" destination="Ftx-ya-yvW" id="OAP-x2-XEV"/>
@@ -171,6 +171,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="6og-Td-oyL" id="lav-1z-zzG"/>
+                        <segue destination="LNb-Yl-gEE" kind="show" identifier="EpisodeSegue" id="Hcq-We-NDc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeT-6H-BZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sof-eP-tV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4287.1999999999998" y="-295.50224887556226"/>
+            <point key="canvasLocation" x="4210" y="-678"/>
         </scene>
         <!--Episode Collection View Controller-->
         <scene sceneID="pZl-mB-hjV">
@@ -259,7 +260,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pul-X2-fDc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Td6-ma-UB1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="seasons" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-S9-5Hm">
@@ -347,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVe-rk-nic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5140" y="-296.40179910044981"/>
+            <point key="canvasLocation" x="4210" y="58"/>
         </scene>
         <!--Popular Show Table View Controller-->
         <scene sceneID="ptM-fs-ybH">
@@ -949,4 +950,7 @@
         <image name="streamsavvy-wordmark-large" width="306" height="53"/>
         <image name="tv-icon" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hcq-We-NDc"/>
+    </inferredMetricsTieBreakers>
 </document>

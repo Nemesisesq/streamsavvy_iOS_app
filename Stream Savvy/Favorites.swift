@@ -23,7 +23,7 @@ class Favorites: NSObject {
             Alamofire.request(url)
                 .responseJSON {response in
                     
-                    self.contentList = [Content.parseDict(dict: response.data! as AnyObject)]
+                    self.contentList = [Content.parseDetail(dict: response.data! as AnyObject)]
                     
                     switch response.result {
                     case .success(let dict):

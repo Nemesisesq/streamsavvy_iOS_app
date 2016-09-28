@@ -23,7 +23,7 @@ public class SearchResults: NSObject {
                 .responseJSON{
                     response in
                     
-                    self.results = Content.parseData(JSONData: response.data!)
+                    self.results = Content.parseList(JSONData: response.data!)
                     
                     switch response.result {
                     case .success(let dict):
@@ -55,7 +55,7 @@ public class Content: NSObject {
     
     
     
-    class func parseData(JSONData : Data) -> [Content] {
+    class func parseList(JSONData : Data) -> [Content] {
         
         typealias JSONStandard = [[String: AnyObject]]
         var contentList = [Content]()
@@ -69,7 +69,7 @@ public class Content: NSObject {
             
             
             for dict in readableJSON {
-                let content = parseDict(dict: dict as AnyObject)
+                let content = parseDetail(dict: dict as AnyObject)
                 print("@@@@@@@@@")
                 print(content.title)
                 
@@ -88,7 +88,7 @@ public class Content: NSObject {
         
     }
     
-    class func parseDict(dict: AnyObject) -> Content {
+    class func parseDetail(dict: AnyObject) -> Content {
         let content  = Content()
         //                content.setValuesForKeys(dict)
         content.title = dict["title"] as? String
