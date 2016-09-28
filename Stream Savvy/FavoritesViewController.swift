@@ -28,19 +28,19 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         resultsController.tableView.delegate = self
         
         searchController = UISearchController(searchResultsController: resultsController)
-                searchController.hidesNavigationBarDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
         //        searchController.searchBar.searchBarStyle = .prominent
         searchController.searchResultsUpdater = self
         
         self.definesPresentationContext = true
-	self.searchController.hidesNavigationBarDuringPresentation = false;
-	self.definesPresentationContext = false;
-	
-	self.present(searchController, animated:true, completion: { print("Done")})
+        self.searchController.hidesNavigationBarDuringPresentation = false;
+        self.definesPresentationContext = false;
+        
+        self.present(searchController, animated:true, completion: { print("Done")})
     }
-	
-	
-	  
+    
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -53,7 +53,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
         
         let sug = searchResults.results[indexPath.row]
-	
+        
         cell.textLabel?.text = sug.title
         cell.detailTextLabel?.text = "detail?"
         
@@ -95,28 +95,28 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         carousel.type = .cylinder
         // Do any additional setup after loading the view.
         
-//        self.navigationItem.hidesBackButton = true
-//        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
-//        self.navigationItem.leftBarButtonItem = newBackButton;
+        //        self.navigationItem.hidesBackButton = true
+        //        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+        //        self.navigationItem.leftBarButtonItem = newBackButton;
     }
     
     func back(sender: UIBarButtonItem) {
         // Perform your custom actions
         // ...
         // Go back to the previous ViewController
-//        self.navigationController?.popViewController(animated: true)
+        //        self.navigationController?.popViewController(animated: true)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
         print("numbers1  \(numbers.count)")
-	
+        
         favorites.fetchFavorites().then{ result -> Void in
-                print("$$$$$$$$$$$$")
-		print(result)
-		// self.carousel.reloadData()
-	}
+            print("$$$$$$$$$$$$")
+            print(result)
+            // self.carousel.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {
