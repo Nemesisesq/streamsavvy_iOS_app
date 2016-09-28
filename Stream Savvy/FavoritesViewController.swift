@@ -126,7 +126,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        print("number2s  \(numbers.count)")
+        print("numbers  \(numbers.count)")
         return numbers.count
     }
     
