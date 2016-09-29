@@ -13,6 +13,7 @@ import PromiseKit
 class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
     
     var numbers = [String]()
+    var selectedShow: Content!
     let searchResults = SearchResults()
     let favorites = Favorites()
     @IBOutlet var carousel: iCarousel!
@@ -28,11 +29,10 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         resultsController.tableView.delegate = self
         
         searchController = UISearchController(searchResultsController: resultsController)
-        searchController.hidesNavigationBarDuringPresentation = false
         //        searchController.searchBar.searchBarStyle = .prominent
         searchController.searchResultsUpdater = self
         
-        self.definesPresentationContext = true
+
         self.searchController.hidesNavigationBarDuringPresentation = false;
         self.definesPresentationContext = false;
         
@@ -53,7 +53,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
         if searchResults.results.count  > 0 {
             let sug = searchResults.results[indexPath.row]
-        
+            
             cell.textLabel?.text = sug.title
             cell.detailTextLabel?.text = "detail?"
         }
@@ -61,24 +61,29 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedShow = searchResults.results[indexPath.row]
+        selectedShow = searchResults.results[indexPath.row]
         print("###########")
         print(selectedShow)
         //	self.searchController.dismiss(animated: true, completion: nil)
-        let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
-        cdvc.content = selectedShow
         self.searchController.isActive = false
-        self.navigationController?.pushViewController(cdvc, animated: true)
-	
+        self.performSegue(withIdentifier: "ContentDetailSegue", sender: self)
+        
+        /*
+         let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
+         cdvc.content = selectedShow
+         
+         self.navigationController?.pushViewController(cdvc, animated: true)
+         */
+        
     }
     
     func updateSearchResults(for searchController: UISearchController) {
         if (searchController.searchBar.text!.isEmpty != true ){
-//            searchResults.results.removeAll()
+            //            searchResults.results.removeAll()
             
             searchResults.fetchResults(q: searchController.searchBar.text!)
                 .then{result -> Void in
-//                    print(result)
+                    //                    print(result)
                     self.resultsController.tableView.reloadData()
                     
                     //                    return result as! AnyPromise
@@ -90,31 +95,27 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     override func loadView() {
         super.loadView()
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-	carousel.type = .cylinder
-        print("viewWillAppear")
-	print(self.view.subviews)
-	self.carousel.delegate = self
-	self.carousel.dataSource = self
-	
-	
+        makeCarousel()
+        
+
         favorites.fetchFavorites().then{ result -> Void in
             print("fetchFavorites() success")
-//            print(result)
-		print(self.carousel.isHidden)
-		print(self.carousel.layer.zPosition)
-		self.carousel.reloadData()
-
+            //            print(result)
+            print(self.carousel.isHidden)
+            print(self.carousel.layer.zPosition)
+            self.carousel.reloadData()
+            
         }
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        carousel.type = .cylinder
+        //carousel.type = .cylinder
         // Do any additional setup after loading the view.
         
         //        self.navigationItem.hidesBackButton = true
@@ -124,16 +125,18 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     override func viewDidAppear(_ animated: Bool) {
         if (self.searchController != nil) {
-            self.searchController.isActive = true
+            //            self.searchController.isActive = true
+            print(self.carousel.isHidden)
+            print(self.carousel.layer.zPosition)
         }
-
+        
     }
     
     override func viewDidLayoutSubviews() {
         if (self.searchController != nil) {
-            self.searchController.isActive = true
+            //            self.searchController.isActive = true
         }
-
+        
     }
     
     
@@ -153,9 +156,18 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         // Dispose of any resources that can be recreated.
     }
     
+    func makeCarousel() {
+        carousel.type = .cylinder
+        print("viewWillAppear")
+        print(self.view.subviews)
+        self.carousel.delegate = self
+        self.carousel.dataSource = self
+
+    }
+    
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-//        print("number of favorites: \(favorites.contentList.count)")
+        //        print("number of favorites: \(favorites.contentList.count)")
         return favorites.contentList.count
     }
     
@@ -165,16 +177,16 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         }
         return value
     }
-	
-	
+    
+    
     func getRandomColor() -> UIColor{
         let randomRed:CGFloat = CGFloat(drand48())
         let randomGreen:CGFloat = CGFloat(drand48())
         let randomBlue:CGFloat = CGFloat(drand48())
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
-	
-	
+    
+    
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         /*
          here the content for the carousel can be set. a carousel item is crreatec and sub views can be added to that item
@@ -228,15 +240,18 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         self.performSegue(withIdentifier: "EpisodeSegue", sender: self)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     
-     var destination = segue.destination as! ContentDetailViewController
-     
-     destination.hello = "Nurse"
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ContentDetailSegue" {
+            let cdvc = segue.destination as! ContentDetailViewController
+            cdvc.content = selectedShow
+            //self.searchController.isActive = false
+            
+        }
+    }
+    
 }
