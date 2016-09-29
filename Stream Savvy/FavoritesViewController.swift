@@ -51,12 +51,12 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
+        if searchResults.results.count  > 0 {
+            let sug = searchResults.results[indexPath.row]
         
-        let sug = searchResults.results[indexPath.row]
-        
-        cell.textLabel?.text = sug.title
-        cell.detailTextLabel?.text = "detail?"
-        
+            cell.textLabel?.text = sug.title
+            cell.detailTextLabel?.text = "detail?"
+        }
         return cell
     }
     
@@ -64,17 +64,17 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         let selectedShow = searchResults.results[indexPath.row]
         print("###########")
         print(selectedShow)
-//	self.searchController.dismiss(animated: true, completion: nil)
-	let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
+        //	self.searchController.dismiss(animated: true, completion: nil)
+        let cdvc = storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
         cdvc.content = selectedShow
-	self.searchController.isActive = false
+        self.searchController.isActive = false
         self.navigationController?.pushViewController(cdvc, animated: true)
-
+        
     }
     
     func updateSearchResults(for searchController: UISearchController) {
         if (searchController.searchBar.text!.isEmpty != true ){
-            searchResults.results.removeAll()
+//            searchResults.results.removeAll()
             
             searchResults.fetchResults(q: searchController.searchBar.text!)
                 .then{result -> Void in
@@ -95,12 +95,15 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("viewWillAppear")
+        print(self.carousel.isHidden)
+        print(self.carousel)
         favorites.fetchFavorites().then{ result -> Void in
             print("$$$$$$$$$$$$")
             print(result)
-            // self.carousel.reloadData()
+            self.carousel.reloadData()
         }
-
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,15 +114,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         //        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
         //        self.navigationItem.leftBarButtonItem = newBackButton;
     }
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		print("viewWillAppear")
-		print(self.carousel.isHidden)
-		print(self.carousel)
-		
-	}
-	
+    
+    
     func back(sender: UIBarButtonItem) {
         // Perform your custom actions
         // ...
@@ -132,7 +128,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
         print("numbers1  \(numbers.count)")
         
-           }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -141,8 +137,9 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        print("numbers  \(numbers.count)")
-        return numbers.count
+        print("%%%%%%%%%")
+        print("number of favorites: \(favorites.contentList.count)")
+        return favorites.contentList.count
     }
     
     func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
@@ -172,7 +169,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
             x: 0,
             y: 0,
             width: self.view.frame.size.width * 0.9,
-            height: self.view.frame.size.height - self.navigationController!.navigationBar.frame.size.height - self.tabBarController!.tabBar.frame.size.height));
+            height: 400));
         
         
         carouselItemView.backgroundColor = getRandomColor()
@@ -204,7 +201,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         newButton.addTarget(self, action: #selector(showEpisodes), for: UIControlEvents.touchUpInside)
         
         
-        button.setTitle(self.numbers[index], for: .normal)
+        button.setTitle(favorites.contentList[index].title, for: .normal)
         
         carouselItemView.addSubview(button);
         carouselItemView.addSubview(newButton);

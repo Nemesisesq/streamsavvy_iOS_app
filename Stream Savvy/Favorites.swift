@@ -52,7 +52,6 @@ class Favorites: NSObject {
                     case .failure(let error):
                         reject(error)
                     }
-                    
             }
         }
         

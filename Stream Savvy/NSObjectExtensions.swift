@@ -37,8 +37,10 @@ extension NSObject {
         let json = NSMutableDictionary()
         
         for name in propertyNames() {
+            if (responds(to: NSSelectorFromString(name))){
             if let value: AnyObject = value(forKey: name) as AnyObject? {
                 json[name] = value
+                }
             }
         }
         
