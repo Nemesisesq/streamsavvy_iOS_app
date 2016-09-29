@@ -99,9 +99,14 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         print(self.carousel.isHidden)
         print(self.carousel)
         favorites.fetchFavorites().then{ result -> Void in
+            
+            
             print("$$$$$$$$$$$$")
             print(result)
             self.carousel.reloadData()
+            
+            
+            
         }
         
     }
@@ -113,6 +118,20 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         //        self.navigationItem.hidesBackButton = true
         //        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
         //        self.navigationItem.leftBarButtonItem = newBackButton;
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (self.searchController != nil) {
+            self.searchController.isActive = true
+        }
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if (self.searchController != nil) {
+            self.searchController.isActive = true
+        }
+
     }
     
     
