@@ -17,7 +17,7 @@ class Favorites: NSObject {
     var contentList = [Content]()
     
     public func fetchFavorites() -> Promise<Any> {
-        let url = "http://localhost:8080/favorites/test"
+        let url = "http://edr-go-staging.herokuapp.com/favorites/test"
         
         return Promise { fullfil, reject in
             Alamofire.request(url)
@@ -38,7 +38,7 @@ class Favorites: NSObject {
     
     class func addContentToFavorites(content: Content) -> Promise<Void> {
         
-        let url = "http://localhost:8080/favorites/add/test"
+        let url = "http://edr-go-staging.herokuapp.com/favorites/add/test"
         let theJson = content.asJson()
         
         return Promise { fulfill, reject in

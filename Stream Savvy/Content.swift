@@ -70,8 +70,8 @@ public class Content: NSObject {
             
             for dict in readableJSON {
                 let content = parseDetail(dict: dict as AnyObject)
-                print("@@@@@@@@@")
-                print(content.title)
+//                print("@@@@@@@@@")
+//                print(content.title)
                 
                 contentList.append(content)
                 

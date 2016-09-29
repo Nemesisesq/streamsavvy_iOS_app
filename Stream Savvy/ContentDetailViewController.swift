@@ -23,11 +23,11 @@ class ContentDetailViewController: UIViewController  {
         Favorites.addContentToFavorites(content: content)
             .then { _ -> Void in
 //                self.performSegue(withIdentifier: "ContentAdded", sender: sender)
+                print("Successsss")
                 
-                
-                let fvc = self.storyboard?.instantiateViewController(withIdentifier: "FavoritesViewController")
-                self.present(fvc!, animated: true, completion: nil)
-                 
+//                let fvc = self.storyboard?.instantiateViewController(withIdentifier: "FavoritesViewController")
+//                self.present(fvc!, animated: true, completion: nil)
+		self.navigationController?.popViewController(animated: true)
         }
     }
     
