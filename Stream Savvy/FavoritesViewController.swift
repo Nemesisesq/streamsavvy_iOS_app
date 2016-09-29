@@ -69,7 +69,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         cdvc.content = selectedShow
         self.searchController.isActive = false
         self.navigationController?.pushViewController(cdvc, animated: true)
-        
+	
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -78,7 +78,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
             
             searchResults.fetchResults(q: searchController.searchBar.text!)
                 .then{result -> Void in
-                    print(result)
+//                    print(result)
                     self.resultsController.tableView.reloadData()
                     
                     //                    return result as! AnyPromise
@@ -95,18 +95,20 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+	carousel.type = .cylinder
         print("viewWillAppear")
-        print(self.carousel.isHidden)
-        print(self.carousel)
+	print(self.view.subviews)
+	self.carousel.delegate = self
+	self.carousel.dataSource = self
+	
+	
         favorites.fetchFavorites().then{ result -> Void in
-            
-            
-            print("$$$$$$$$$$$$")
-            print(result)
-            self.carousel.reloadData()
-            
-            
-            
+            print("fetchFavorites() success")
+//            print(result)
+		print(self.carousel.isHidden)
+		print(self.carousel.layer.zPosition)
+		self.carousel.reloadData()
+
         }
         
     }
@@ -144,9 +146,6 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        numbers = ["Game of Thrones", "Rugrats", "England Rugby", "Rutgers Football","Sons of Anarchy" ]
-        print("numbers1  \(numbers.count)")
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -156,8 +155,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        print("%%%%%%%%%")
-        print("number of favorites: \(favorites.contentList.count)")
+//        print("number of favorites: \(favorites.contentList.count)")
         return favorites.contentList.count
     }
     
@@ -167,19 +165,16 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         }
         return value
     }
-    
+	
+	
     func getRandomColor() -> UIColor{
-        
         let randomRed:CGFloat = CGFloat(drand48())
-        
         let randomGreen:CGFloat = CGFloat(drand48())
-        
         let randomBlue:CGFloat = CGFloat(drand48())
-        
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
-        
     }
-    
+	
+	
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         /*
          here the content for the carousel can be set. a carousel item is crreatec and sub views can be added to that item
