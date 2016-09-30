@@ -251,7 +251,13 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
             cdvc.content = selectedShow
             //self.searchController.isActive = false
             
-        }
+	}else if segue.identifier == "EpisodeSegue" {
+		print("EpisodeSegue")
+		print(favorites.contentList[self.carousel.currentItemIndex].title)
+		let ecvc = segue.destination as! EpisodeCollectionViewController
+		ecvc.mediaTitle = favorites.contentList[self.carousel.currentItemIndex].title
+		
+	}
     }
-    
+	
 }

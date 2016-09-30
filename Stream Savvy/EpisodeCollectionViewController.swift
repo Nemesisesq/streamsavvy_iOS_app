@@ -16,18 +16,17 @@ struct Season {
 
 class MyCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var myLabel: UILabel!
+	@IBOutlet weak var myLabel: UILabel!
 }
 
 class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    @IBOutlet var seasonCollectionView: UICollectionView!
-    
-    @IBOutlet var episodeCollectionView: UICollectionView!
-    var currentIndex: Int!
-    
-    
-    
-    var episodes: [Season]!
+	
+	@IBOutlet var seasonCollectionView: UICollectionView!
+	@IBOutlet weak var mediaTitleLabel: UILabel!
+	@IBOutlet var episodeCollectionView: UICollectionView!
+	var currentIndex: Int!
+	var mediaTitle: String!
+	var episodes: [Season]!
     
     override func awakeFromNib() {
     }
@@ -35,7 +34,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.mediaTitleLabel.text = self.mediaTitle
         episodes = [ Season(number:1, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
                      Season(number:2, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
                      Season(number:3, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
