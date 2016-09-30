@@ -113,6 +113,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         }
         
     }
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         //carousel.type = .cylinder
@@ -146,16 +148,19 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         // Go back to the previous ViewController
         //        self.navigationController?.popViewController(animated: true)
     }
-    
+	
+	
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+	
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	
     func makeCarousel() {
         carousel.type = .cylinder
         print("viewWillAppear")
@@ -255,8 +260,9 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
 		print("EpisodeSegue")
 		print(favorites.contentList[self.carousel.currentItemIndex].title)
 		let ecvc = segue.destination as! EpisodeCollectionViewController
-		ecvc.mediaTitle = favorites.contentList[self.carousel.currentItemIndex].title
-		
+		ecvc.content = favorites.contentList[self.carousel.currentItemIndex]
+		print("\n\n\n~")
+		print(ecvc.content.guidebox_data)
 	}
     }
 	

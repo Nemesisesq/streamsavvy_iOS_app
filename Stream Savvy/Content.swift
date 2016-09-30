@@ -91,6 +91,9 @@ public class Content: NSObject {
     class func parseDetail(dict: AnyObject) -> Content {
         let content  = Content()
         //                content.setValuesForKeys(dict)
+	print("###\n\n###")
+	print(dict)
+	print("@@@\n\n@@@")
         content.title = dict["title"] as? String
         content.guidebox_data = dict["guidebox_data"] as? NSMutableDictionary
         content.on_netflix = dict["on_netflix"] as? Bool

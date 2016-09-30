@@ -91,7 +91,7 @@
 				nil];
 	
 	gradientLayer.locations = [NSArray arrayWithObjects:
-				   [NSNumber numberWithFloat:0.0f],
+				   [NSNumber numberWithFloat:00.0f],
 				   [NSNumber numberWithFloat:0.95f],
 				   nil];
 	
