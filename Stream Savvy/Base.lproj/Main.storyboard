@@ -144,7 +144,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,7 +208,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0a-5N-r0y">
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="tGF-EC-YR1"/>
+                                    <constraint firstAttribute="height" constant="46" id="tGF-EC-YR1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="ADD TO FAVORITES">
@@ -218,11 +218,13 @@
                                     <action selector="addContentToFavorites:" destination="Lnh-9m-OXL" eventType="touchUpInside" id="eoV-oa-cHq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st9-Mc-doo">
-                                <frame key="frameInset" minX="20" minY="365" width="335" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st9-Mc-doo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="24Q-l3-5s6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Episodes"/>
                                 <connections>
                                     <segue destination="LNb-Yl-gEE" kind="show" id="E7e-Nb-y52"/>
@@ -231,6 +233,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="st9-Mc-doo" firstAttribute="top" secondItem="Y0a-5N-r0y" secondAttribute="bottom" constant="23" id="78W-CB-IPT"/>
                             <constraint firstAttribute="trailing" secondItem="Orn-pw-n2r" secondAttribute="trailing" constant="20" id="B0A-Fp-z6G"/>
                             <constraint firstItem="Orn-pw-n2r" firstAttribute="top" secondItem="Z0P-Ts-Azl" secondAttribute="bottom" constant="8" id="B4L-mP-CSo"/>
                             <constraint firstAttribute="trailing" secondItem="bhQ-KJ-gv5" secondAttribute="trailing" constant="20" id="EZB-Bu-lVn"/>
@@ -238,6 +241,8 @@
                             <constraint firstItem="Y0a-5N-r0y" firstAttribute="top" secondItem="bhQ-KJ-gv5" secondAttribute="bottom" constant="29" id="HF8-kc-apj"/>
                             <constraint firstItem="bhQ-KJ-gv5" firstAttribute="top" secondItem="Orn-pw-n2r" secondAttribute="bottom" constant="20" id="Mi4-jY-bfu"/>
                             <constraint firstAttribute="trailing" secondItem="Y0a-5N-r0y" secondAttribute="trailing" constant="20" id="aHq-vM-v79"/>
+                            <constraint firstItem="st9-Mc-doo" firstAttribute="leading" secondItem="E1F-ST-kfa" secondAttribute="leading" constant="20" id="etI-ab-6g2"/>
+                            <constraint firstAttribute="trailing" secondItem="st9-Mc-doo" secondAttribute="trailing" constant="20" id="ktI-yb-5Uh"/>
                             <constraint firstItem="Y0a-5N-r0y" firstAttribute="leading" secondItem="E1F-ST-kfa" secondAttribute="leading" constant="20" id="u7R-JV-50d"/>
                             <constraint firstItem="bhQ-KJ-gv5" firstAttribute="leading" secondItem="E1F-ST-kfa" secondAttribute="leading" constant="20" id="wHf-Fq-gMR"/>
                         </constraints>
@@ -265,8 +270,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" restorationIdentifier="seasons" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-S9-5Hm">
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="seasons" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-S9-5Hm">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="CfP-dr-Wc5"/>
                                 </constraints>
@@ -287,7 +292,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5N-co-Jac">
                                                     <frame key="frameInset" minX="4" minY="15" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -303,11 +308,11 @@
                                     <outlet property="delegate" destination="LNb-Yl-gEE" id="4Lo-aa-sGj"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="episodes" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iMb-fT-IlB">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="episodes" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iMb-fT-IlB">
                                 <frame key="frameInset" minY="106" width="375" height="561"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aq3-9D-sF3">
                                     <size key="itemSize" width="340" height="140"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -325,7 +330,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9f-EE-cSe">
                                                     <frame key="frameInset" minY="60" width="340" height="41"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -974,8 +979,8 @@
         <image name="tv-icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hcq-We-NDc"/>
-        <segue reference="PqR-Ou-oHG"/>
+        <segue reference="E7e-Nb-y52"/>
         <segue reference="OMx-cz-c4Y"/>
+        <segue reference="PqR-Ou-oHG"/>
     </inferredMetricsTieBreakers>
 </document>

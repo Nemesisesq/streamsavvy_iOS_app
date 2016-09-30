@@ -18,9 +18,6 @@
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	// Initialization code
-//	[Constants addGradientForImageView:self.topImageView];
-//	[Constants addGradientForImageView:self.bottomImageView];
-//	[Constants addGradientForImageView:self.bigImageView];
 	
 	UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topPressed)];
 	[self.topImageView addGestureRecognizer:tapGestureRecognizer];
@@ -65,6 +62,9 @@
 		self.bigChannelLabel.text												= [NSString stringWithFormat:@"Channel %@", self.bigChannel.channel_number];
 		self.topChannelLabel.text												= [NSString stringWithFormat:@"Channel %@", self.topChannel.channel_number];
 		self.bottomChannelLabel.text											= [NSString stringWithFormat:@"Channel %@", self.bottomChannel.channel_number];
+			[Constants addGradientForImageView:self.topImageView];
+			[Constants addGradientForImageView:self.bottomImageView];
+			[Constants addGradientForImageView:self.bigImageView];
 	}
 }
 

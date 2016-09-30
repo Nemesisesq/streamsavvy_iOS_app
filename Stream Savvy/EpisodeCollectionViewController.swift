@@ -25,16 +25,16 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
 	@IBOutlet weak var mediaTitleLabel: UILabel!
 	@IBOutlet var episodeCollectionView: UICollectionView!
 	var currentIndex: Int!
-	var mediaTitle: String!
 	var episodes: [Season]!
-    
+	var content: Content!
+	
     override func awakeFromNib() {
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mediaTitleLabel.text = self.mediaTitle
+        self.mediaTitleLabel.text = self.content.title
         episodes = [ Season(number:1, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
                      Season(number:2, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
                      Season(number:3, episodes: [1, 2, 3, 4, 5, 6, 7, 8]),
