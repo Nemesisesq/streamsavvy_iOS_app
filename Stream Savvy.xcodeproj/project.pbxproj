@@ -491,7 +491,7 @@
 				TargetAttributes = {
 					9F5A4D2E1D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = XWQ3X4T33E;
+						DevelopmentTeam = L2FX277R9E;
 						LastSwiftMigration = 0800;
 					};
 					9F5A4D471D5AE1D70057AF6D = {
@@ -886,7 +886,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XWQ3X4T33E;
+				DEVELOPMENT_TEAM = L2FX277R9E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
@@ -912,7 +912,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XWQ3X4T33E;
+				DEVELOPMENT_TEAM = L2FX277R9E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
