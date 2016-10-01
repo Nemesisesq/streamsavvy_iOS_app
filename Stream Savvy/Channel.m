@@ -40,7 +40,7 @@
 
 
 + (void)getGuideForLattitude:(float)lat Longitude:(float)lon view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = [NSString stringWithFormat:@"https://edr-go-staging.herokuapp.com/api/guide/%f/%f", lat, lon];
+	NSString *url = [NSString stringWithFormat:@"https://edr-go-staging.herokuapp.com/gracenote/lineup-airings/%f/%f", lat, lon];
 	NSLog(@"%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];
 	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
