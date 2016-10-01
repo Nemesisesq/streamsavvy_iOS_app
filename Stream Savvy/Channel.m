@@ -14,7 +14,7 @@
 @implementation Channel
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes{
-	//		NSLog(@"User~-~-~\n\n%@", attributes);
+//			NSLog(@"Channel~-~-~\n\n%@", attributes);
 	self = [super init];
 	if (!self) return nil;
 	self.channel_id				= [attributes valueForKey:@"Channel"] ;
@@ -66,7 +66,7 @@
 	NSString *url = @"https://edr-go-staging.herokuapp.com/live-streaming-service";
 
 	
-	NSLog(@"%@\n\n\n", url);
+	NSLog(@"\n\n\n%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];
 	NSDictionary *params = @{
 					@"CallLetters":			self.call_letters,

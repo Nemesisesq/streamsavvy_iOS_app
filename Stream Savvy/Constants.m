@@ -78,6 +78,7 @@
 
 
 + (void)addGradientForImageView:(UIImageView *)imageView{
+	imageView.layer.sublayers = @[];
 	CAGradientLayer *gradientLayer = [CAGradientLayer layer];
 	gradientLayer.frame =  CGRectMake(
 					  0,

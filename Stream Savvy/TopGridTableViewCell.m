@@ -39,6 +39,9 @@
 }
 
 -(void)setCellDetails{
+	[Constants addGradientForImageView:self.topImageView];
+	[Constants addGradientForImageView:self.bottomImageView];
+	[Constants addGradientForImageView:self.bigImageView];
 	if (self.isShowingPopularShows) {
 		[SDWebModel loadImageFor:self.bigImageView withRemoteURL:		self.bigShow.image_link];
 		[SDWebModel loadImageFor:self.topImageView withRemoteURL:		self.topShow.image_link];
@@ -62,9 +65,6 @@
 		self.bigChannelLabel.text												= [NSString stringWithFormat:@"Channel %@", self.bigChannel.channel_number];
 		self.topChannelLabel.text												= [NSString stringWithFormat:@"Channel %@", self.topChannel.channel_number];
 		self.bottomChannelLabel.text											= [NSString stringWithFormat:@"Channel %@", self.bottomChannel.channel_number];
-			[Constants addGradientForImageView:self.topImageView];
-			[Constants addGradientForImageView:self.bottomImageView];
-			[Constants addGradientForImageView:self.bigImageView];
 	}
 }
 
@@ -80,6 +80,9 @@
 		}];
 	}else{
 		[self.topChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			NSLog(@"/n/n/n/n**");
+			NSLog(@"%@", JSON);
+			NSLog(@"/n/n/n/n**");
 			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
 			sdtvc.media = self.topChannel.now_playing;
 			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
@@ -99,6 +102,9 @@
 		}];
 	}else{
 		[self.bottomChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			NSLog(@"/n/n/n/n**");
+			NSLog(@"%@", JSON);
+			NSLog(@"/n/n/n/n**");
 			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
 			sdtvc.media = self.bottomChannel.now_playing;
 			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
@@ -118,6 +124,9 @@
 		}];
 	}else{
 		[self.bigChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+			NSLog(@"/n/n/n/n**");
+			NSLog(@"%@", JSON);
+			NSLog(@"/n/n/n/n**");
 			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
 			sdtvc.media = self.bigChannel.now_playing;
 			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
