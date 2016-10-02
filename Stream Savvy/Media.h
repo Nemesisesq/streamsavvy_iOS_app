@@ -10,13 +10,14 @@
 
 @interface Media : NSObject
 
-@property (nonatomic) NSInteger			program_id;
-@property (strong, nonatomic) NSString	*title;
-@property (strong, nonatomic) NSString	*image_link;
-@property (strong, nonatomic) NSString	*time;
-@property (strong, nonatomic) NSString	*deep_link;
+@property (nonatomic) NSInteger			station_id;
+@property (nonatomic) NSInteger			root_id;
+@property (nonatomic) NSInteger			duration;
+@property (nonatomic, strong) NSString	*start_time;
+@property (nonatomic, strong) NSString	*end_time;
+@property (nonatomic, strong) NSString	*title;
+@property (nonatomic, strong) NSString	*show_description;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
-
 
 @end

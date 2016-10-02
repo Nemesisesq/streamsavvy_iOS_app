@@ -79,12 +79,12 @@ NSInteger numOfStaticCell = 1;
 		//////////////////////this needs edited
 		int max_to_load = 0;
 		// itll crash if you uncomment all of these
-		//			NSLog(@"\n\n\n\t\t0\n\n\n%@", [(NSArray *)JSON objectAtIndex:0]);
+					NSLog(@"\n\n\n\t\t0\n\n\n%@", JSON);
 		////			NSLog(@"\n\n\n\t\t1\n\n\n%@", [[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"]);
 		////			NSLog(@"\n\n\n\t\t2\n\n\n%@", [[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]);
 		////			NSLog(@"\n\n\n\t\t3\n\n\n%@", [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]);
 		
-		for (NSDictionary *region_channels in [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]) {
+		for (NSDictionary *region_channels in (NSArray *)JSON) {
 			if (max_to_load > 99) break;
 			max_to_load ++;
 			[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];

@@ -12,14 +12,22 @@
 
 @interface Channel : NSObject
 
-@property (nonatomic) NSNumber			*channel_id;
-@property (strong, nonatomic) NSString	*display_name;
+//@property (nonatomic) NSNumber			*channel_id;
+//@property (strong, nonatomic) NSString	*display_name;
+//@property (strong, nonatomic) NSString	*image_link;
+//@property (strong, nonatomic) NSString	*deep_link;
+//@property (strong, nonatomic) NSString	*channel_number;
+//@property (strong, nonatomic) NSString	*call_letters;
+//@property (strong, nonatomic) NSString	*source_long_name;
+//@property (strong, nonatomic) NSString	*source_id;
+
+
+
+@property (nonatomic) NSNumber			*stationID;
+@property (nonatomic) NSNumber			*channel_number;
+@property (nonatomic, strong)NSString	*display_name;
+@property (nonatomic, strong)NSString	*affiliate_display_name;
 @property (strong, nonatomic) NSString	*image_link;
-@property (strong, nonatomic) NSString	*deep_link;
-@property (strong, nonatomic) NSString	*channel_number;
-@property (strong, nonatomic) NSString	*call_letters;
-@property (strong, nonatomic) NSString	*source_long_name;
-@property (strong, nonatomic) NSString	*source_id;
 @property (strong, nonatomic) Media		*now_playing;
 
 

@@ -62,7 +62,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedShow = searchResults.results[indexPath.row]
-        print("###########")
+//        print("###########")
         print(selectedShow)
         //	self.searchController.dismiss(animated: true, completion: nil)
         self.searchController.isActive = false

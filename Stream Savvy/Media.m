@@ -13,21 +13,20 @@
 @implementation Media
 
 
-
 - (instancetype)initWithAttributes:(NSDictionary *)attributes{
 	//		NSLog(@"User~-~-~\n\n%@", attributes);
 	self = [super init];
 	if (!self) return nil;
-	self.program_id			= [[attributes valueForKey:@"ProgramId"] integerValue];
-	self.title					= [attributes valueForKey:@"Title"];
-	self.image_link			= [attributes valueForKey:@"artwork_608x342"];
-	self.time					= [Constants formalTimeWithTimeZone: [attributes valueForKey:@"AiringTime"]];
+	self.station_id			= [[attributes valueForKey:@"stationId"] integerValue];
+	self.root_id				= [[[attributes valueForKey:@"program"] valueForKey:@"rootId"] integerValue];
+	self.duration				= [[attributes valueForKey:@"duration"] integerValue];
+	self.start_time			= [Constants formalTimeWithTimeZone: [attributes valueForKey:@"startTime"]];
+	self.end_time			= [Constants formalTimeWithTimeZone: [attributes valueForKey:@"endTime"]];
+	self.title					= [[attributes valueForKey:@"program"] valueForKey:@"title"];
+	self.show_description		= [[attributes valueForKey:@"program"] valueForKey:@"shortDescription"];
 //	self.deep_link			= [Media randomUrl];
 	
 	return self;
 }
-
-
-
 
 @end

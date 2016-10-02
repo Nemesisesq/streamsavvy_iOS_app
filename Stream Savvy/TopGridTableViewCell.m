@@ -59,9 +59,9 @@
 		self.bigImageTitleLabel.text											= self.bigChannel.now_playing.title;
 		self.topImageTitleLabel.text											= self.topChannel.now_playing.title;
 		self.bottomImageTitleLabel.text										= self.bottomChannel.now_playing.title;
-		self.bigImageTimeLabel.text											= self.bigChannel.now_playing.time;
-		self.topImageTimeLabel.text											= self.topChannel.now_playing.time;
-		self.bottomImageTimeLabel.text										= self.bottomChannel.now_playing.time;
+		self.bigImageTimeLabel.text											= self.bigChannel.now_playing.start_time;
+		self.topImageTimeLabel.text											= self.topChannel.now_playing.start_time;
+		self.bottomImageTimeLabel.text										= self.bottomChannel.now_playing.start_time;
 		self.bigChannelLabel.text												= [NSString stringWithFormat:@"Channel %@", self.bigChannel.channel_number];
 		self.topChannelLabel.text												= [NSString stringWithFormat:@"Channel %@", self.topChannel.channel_number];
 		self.bottomChannelLabel.text											= [NSString stringWithFormat:@"Channel %@", self.bottomChannel.channel_number];

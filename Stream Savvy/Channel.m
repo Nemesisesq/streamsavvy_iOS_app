@@ -13,26 +13,18 @@
 
 @implementation Channel
 
+
 - (instancetype)initWithAttributes:(NSDictionary *)attributes{
 //			NSLog(@"Channel~-~-~\n\n%@", attributes);
 	self = [super init];
 	if (!self) return nil;
-	self.channel_id				= [attributes valueForKey:@"Channel"] ;
-	self.display_name			= [attributes valueForKey:@"DisplayName"];
-	if ([[[[attributes valueForKey:@"Airings"] objectAtIndex:0]  valueForKey:@"images"] count] > 0) {
-		self.image_link			= [[[[[attributes valueForKey:@"Airings"] objectAtIndex:0] valueForKey:@"images"] objectAtIndex:0] valueForKey: @"ImageUrl"];
-	}else if([[[attributes valueForKey:@"ChannelImages"] objectAtIndex:0] count] > 0){
-		self.image_link			= [[[attributes valueForKey:@"ChannelImages"] objectAtIndex:0] valueForKey:@"ImageUrl"];
-	} else {
-		self.image_link = @"";
-	}
-	self.channel_number			= [attributes valueForKey:@"Channel"];
-	self.deep_link				= @"link-goes-here";
-	self.source_id				= [attributes valueForKey:@"SourceId"];
-	self.source_long_name		= [attributes valueForKey:@"SourceLongName"];
-	self.call_letters				= [attributes valueForKey:@"CallLetters"];
+	self.stationID					= [attributes valueForKey:@"stationId"] ;
+	self.display_name			= [attributes valueForKey:@"callSign"];
+	self.affiliate_display_name	= [attributes valueForKey:@"affiliateCallSign"];
+	self.channel_number			= [attributes valueForKey:@"channel"];
+	self.image_link				= [NSString stringWithFormat:@"http://developer.tmsimg.com/%@?api_key=3w8hvfmfxjuwgvbqkahrss35", [[attributes valueForKey:@"preferredImage"] valueForKey:@"uri"]];
 	
-	self.now_playing				= [[Media alloc] initWithAttributes:[[attributes valueForKey:@"Airings"] objectAtIndex:0]];
+	self.now_playing				= [[Media alloc] initWithAttributes:[[attributes valueForKey:@"airings"] objectAtIndex:0]];
 	
 	return self;
 }
@@ -44,7 +36,7 @@
 	NSLog(@"%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];
 	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-	[[AFAPIClient sharedClient:[NSString stringWithFormat:@"Bearer_%@", [UserPrefs getToken]]] GET:url parameters:nil
+		[[AFAPIClient sharedClient:[NSString stringWithFormat:@"Bearer_%@", [UserPrefs getToken]]] GET:url parameters:nil
 				    success:^(NSURLSessionDataTask *task, id JSON) {
 					    dispatch_async( dispatch_get_main_queue(), ^{
 						    successBlock(task, JSON);
@@ -61,18 +53,39 @@
 }
 
 
++ (void)getRoviGuideForLattitude:(float)lat Longitude:(float)lon view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
+	NSString *url = [NSString stringWithFormat:@"https://edr-go-staging.herokuapp.com/gracenote/lineup-airings/%f/%f", lat, lon];
+	NSLog(@"%@\n\n\n", url);
+	[MBProgressHUD showHUDAddedTo:view animated:YES];
+	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+		[[AFAPIClient sharedClient:[NSString stringWithFormat:@"Bearer_%@", [UserPrefs getToken]]] GET:url parameters:nil
+												       success:^(NSURLSessionDataTask *task, id JSON) {
+													       dispatch_async( dispatch_get_main_queue(), ^{
+														       successBlock(task, JSON);
+														       [MBProgressHUD hideHUDForView:view animated:YES];
+													       });
+												       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+													       dispatch_async( dispatch_get_main_queue(), ^{
+														       NSLog(@"%@", url);
+														       NSLog(@"~~~>%@", error);
+														       [MBProgressHUD hideHUDForView:view animated:YES];
+													       });
+												       }];
+	});
+}
+
+
 - (void)getChannelDetailsWithView:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
 
 	NSString *url = @"https://edr-go-staging.herokuapp.com/live-streaming-service";
-
 	
 	NSLog(@"\n\n\n%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];
 	NSDictionary *params = @{
-					@"CallLetters":			self.call_letters,
-					@"DisplayName":		self.display_name,
-					@"SourceLongName":	self.source_long_name,
-					@"SourceId":			[NSString stringWithFormat:@"%@", self.source_id]
+////					@"CallLetters":			self.call_letters,
+//					@"DisplayName":		self.display_name,
+//					@"SourceLongName":	self.source_long_name,
+//					@"SourceId":			[NSString stringWithFormat:@"%@", self.source_id]
 				 };
 	NSLog(@"\n\n\n%@\n\n\n", params);
 	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
