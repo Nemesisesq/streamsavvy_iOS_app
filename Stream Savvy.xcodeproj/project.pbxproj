@@ -46,9 +46,14 @@
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
 		BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */; };
+		BD39ADF61DA230E20065F02F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39ADF51DA230E20065F02F /* Common.swift */; };
+		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
 		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
 		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
+		BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD921BDD1DA1E5960018DCFB /* Episodes.swift */; };
+		BD921BFA1DA1F8AB0018DCFB /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */; };
+		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
@@ -150,9 +155,14 @@
 		BD191FCA1D8792540098A8E6 /* ShowDetailsTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsTableViewProtocol.h; sourceTree = "<group>"; };
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
+		BD39ADF51DA230E20065F02F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		BD39ADF71DA2A39C0065F02F /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = "Pods/../build/Debug-iphoneos/Dollar/Dollar.framework"; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BD7076E91D8C903200F2B331 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
+		BD921BDD1DA1E5960018DCFB /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		BD921BFB1DA204A90018DCFB /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Gloss/Gloss.framework"; sourceTree = "<group>"; };
 		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +172,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */,
+				BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */,
+				BD921BFA1DA1F8AB0018DCFB /* SwiftyJSON.framework in Frameworks */,
 				BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */,
 				BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */,
 				BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */,
@@ -193,6 +206,9 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD39ADF71DA2A39C0065F02F /* Dollar.framework */,
+				BD921BFB1DA204A90018DCFB /* Gloss.framework */,
+				BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */,
 				BD0D745E1D9A48B90012F184 /* SwiftyJSON.framework */,
 				BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */,
 				BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */,
@@ -244,6 +260,7 @@
 		9F5A4D311D5AE1D70057AF6D /* Stream Savvy */ = {
 			isa = PBXGroup;
 			children = (
+				BD39ADF41DA230CA0065F02F /* Common */,
 				BD862C8E1D9B642D00C8FFF9 /* Extensions */,
 				BD1834AE1D8CD48500B472E2 /* iCarousel */,
 				9F5A4D351D5AE1D70057AF6D /* AppDelegate.h */,
@@ -394,6 +411,7 @@
 				9FC296171D766F63005CB080 /* MediaSource.m */,
 				BD95CAAD1D9039FB00BCEBE2 /* Content.swift */,
 				BD0D745C1D9A0E170012F184 /* Favorites.swift */,
+				BD921BDD1DA1E5960018DCFB /* Episodes.swift */,
 			);
 			name = StreamSavvyModels;
 			sourceTree = "<group>";
@@ -405,6 +423,14 @@
 				BD1834B01D8CD4C800B472E2 /* iCarousel.m */,
 			);
 			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		BD39ADF41DA230CA0065F02F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BD39ADF51DA230E20065F02F /* Common.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		BD862C8E1D9B642D00C8FFF9 /* Extensions */ = {
@@ -703,6 +729,7 @@
 				9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */,
 				9FC2961B1D774179005CB080 /* WebViewViewController.m in Sources */,
 				BD0D74631D9AB3BF0012F184 /* TestData.swift in Sources */,
+				BD39ADF61DA230E20065F02F /* Common.swift in Sources */,
 				BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */,
 				9FC2960F1D766110005CB080 /* ShowDetailsTableViewController.m in Sources */,
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
@@ -716,6 +743,7 @@
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */,
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
+				BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */,
 				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */,
@@ -890,6 +918,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Dollar",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -916,6 +946,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Dollar",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

@@ -27,12 +27,14 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Dollar (6.0.0)
   - FBSDKCoreKit (4.15.1):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.15.1):
     - FBSDKCoreKit
   - FBSDKShareKit (4.15.1):
     - FBSDKCoreKit
+  - Gloss (1.0.0)
   - MBProgressHUD (1.0.0)
   - PromiseKit (4.0.1):
     - PromiseKit/Foundation (= 4.0.1)
@@ -54,9 +56,11 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Alamofire (~> 4.0)
+  - Dollar
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - Gloss (~> 1.0)
   - MBProgressHUD (~> 1.0.0)
   - PromiseKit (~> 4.0)
   - SCLAlertView-Objective-C
@@ -67,15 +71,17 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
   FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
   FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
   FBSDKShareKit: 11cbb5a4d7b5fda8143cc95b76188147e6725736
+  Gloss: 014789e9e69ca18f127eacca999f4c9b0bff6d58
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PromiseKit: ae9e7f97ee758e23f7b9c5e80380a2e78d6338c5
   SCLAlertView-Objective-C: a2b8b09b8ce5fe14c233ecaa09c02be582c6389a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: 2a5d57498b67ed176b7650a18f0740952c2b8bd5
+PODFILE CHECKSUM: a25db27795e90c90fe58943dcf894b87736c892b
 
 COCOAPODS: 1.1.0.rc.2
