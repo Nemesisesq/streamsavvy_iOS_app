@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 import PromiseKit
 import Alamofire
 import Gloss
@@ -67,16 +66,17 @@ public class Episode: Decodable {
     
     var _guidebox_id: String?
     var episode_list: NSDictionary?
+    
+    
     class func getEpisodeList(guidebox_id: String) -> Promise<[Episode]> {
         
-        let url = "http://edr-staging-go/episodes"
+        let url = "https://edr-go-staging.herokuapp.com/episodes"
         
         let parameters = ["guidebox_id": guidebox_id]
         
         return Promise {fullfill, reject in
             Alamofire.request(url, parameters:parameters)
                 .responseJSON { response -> Void in
-                    
                     var epiList = [Episode]()
                     
                     let the_json = getReadableJsonDict(data: response.data!)

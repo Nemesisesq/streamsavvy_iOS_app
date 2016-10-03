@@ -52,7 +52,6 @@
 		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
 		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
 		BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD921BDD1DA1E5960018DCFB /* Episodes.swift */; };
-		BD921BFA1DA1F8AB0018DCFB /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */; };
 		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
@@ -174,7 +173,6 @@
 			files = (
 				BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */,
 				BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */,
-				BD921BFA1DA1F8AB0018DCFB /* SwiftyJSON.framework in Frameworks */,
 				BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */,
 				BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */,
 				BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */,

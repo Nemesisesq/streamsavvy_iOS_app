@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SwiftyJSON/SwiftyJSON.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:SwiftyJSON/Package.swift">
-   </FileRef>
-   <FileRef
       location = "group:Stream Savvy.xcodeproj">
    </FileRef>
    <FileRef
