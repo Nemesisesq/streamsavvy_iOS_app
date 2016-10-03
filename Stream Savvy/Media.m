@@ -24,7 +24,9 @@
 	self.end_time			= [Constants formalTimeWithTimeZone: [attributes valueForKey:@"endTime"]];
 	self.title					= [[attributes valueForKey:@"program"] valueForKey:@"title"];
 	self.show_description		= [[attributes valueForKey:@"program"] valueForKey:@"shortDescription"];
+	self.genres				= [[attributes valueForKey:@"program"] objectForKey:@"genres"];
 //	self.deep_link			= [Media randomUrl];
+	NSLog(@"genres: %@", self.genres);
 	
 	return self;
 }
