@@ -178,7 +178,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeT-6H-BZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="pLS-OQ-rmU"/>
             </objects>
-            <point key="canvasLocation" x="3297" y="-579"/>
+            <point key="canvasLocation" x="4942" y="-510"/>
         </scene>
         <!--Content Detail View Controller-->
         <scene sceneID="Xfw-gw-6QP">
@@ -373,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVe-rk-nic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4941.6000000000004" y="-853.22338830584715"/>
+            <point key="canvasLocation" x="5828" y="-438"/>
         </scene>
         <!--Popular Show Table View Controller-->
         <scene sceneID="ptM-fs-ybH">
@@ -833,6 +833,99 @@
             </objects>
             <point key="canvasLocation" x="3412.5" y="1119.140625"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2hX-YT-DaG">
+            <objects>
+                <viewController storyboardIdentifier="MediaDetailsViewController" id="ufe-UX-R9O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ff7-LZ-nFD"/>
+                        <viewControllerLayoutGuide type="bottom" id="ey0-tK-Kl3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MtH-IT-Qp4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fubo_tv" translatesAutoresizingMaskIntoConstraints="NO" id="XXM-Y1-fqs"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GbT-lA-0mu">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="43 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coo-Z5-0Us">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Khs-gI-OXj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crime | Drama | Mystery | Thriller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qF-wc-Ai7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="h6D-qQ-VF7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Blacklist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VI-Tq-Ezq">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="K1V-j0-NDl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVn-X0-6wP">
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="OzP-Ja-Jy4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Watch New Episodes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBO-3t-3ye">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="CVv-lK-iQ5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Watch On-Demand Now">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XVn-X0-6wP" firstAttribute="leading" secondItem="MtH-IT-Qp4" secondAttribute="leading" constant="20" id="5Wz-uu-ffq"/>
+                            <constraint firstItem="GbT-lA-0mu" firstAttribute="top" secondItem="MtH-IT-Qp4" secondAttribute="top" id="9hT-Ls-aJt"/>
+                            <constraint firstAttribute="trailing" secondItem="GbT-lA-0mu" secondAttribute="trailing" id="B44-ah-tTb"/>
+                            <constraint firstItem="ey0-tK-Kl3" firstAttribute="top" secondItem="GbT-lA-0mu" secondAttribute="bottom" id="CBd-R7-DN3"/>
+                            <constraint firstItem="XXM-Y1-fqs" firstAttribute="top" secondItem="MtH-IT-Qp4" secondAttribute="top" id="FIz-Qf-euB"/>
+                            <constraint firstItem="8qF-wc-Ai7" firstAttribute="top" secondItem="Coo-Z5-0Us" secondAttribute="bottom" constant="12" id="IVp-2a-5sK"/>
+                            <constraint firstAttribute="trailing" secondItem="XXM-Y1-fqs" secondAttribute="trailing" id="PPq-kI-FYx"/>
+                            <constraint firstItem="XVn-X0-6wP" firstAttribute="top" secondItem="uBO-3t-3ye" secondAttribute="bottom" constant="16" id="QsS-73-SLT"/>
+                            <constraint firstItem="Coo-Z5-0Us" firstAttribute="top" secondItem="ff7-LZ-nFD" secondAttribute="bottom" constant="8" id="S1t-w3-HLh"/>
+                            <constraint firstAttribute="trailing" secondItem="XVn-X0-6wP" secondAttribute="trailing" constant="20" id="VLs-Y1-1Fi"/>
+                            <constraint firstItem="XXM-Y1-fqs" firstAttribute="leading" secondItem="MtH-IT-Qp4" secondAttribute="leading" id="ZSL-sj-LLe"/>
+                            <constraint firstItem="uBO-3t-3ye" firstAttribute="leading" secondItem="MtH-IT-Qp4" secondAttribute="leading" constant="20" id="bhP-Ck-BaT"/>
+                            <constraint firstItem="ey0-tK-Kl3" firstAttribute="top" secondItem="XVn-X0-6wP" secondAttribute="bottom" constant="20" id="boj-ed-JX9"/>
+                            <constraint firstItem="8qF-wc-Ai7" firstAttribute="leading" secondItem="MtH-IT-Qp4" secondAttribute="leading" constant="20" id="hnP-fk-WUv"/>
+                            <constraint firstAttribute="trailing" secondItem="8qF-wc-Ai7" secondAttribute="trailing" constant="20" id="ij9-pj-oRW"/>
+                            <constraint firstItem="GbT-lA-0mu" firstAttribute="leading" secondItem="MtH-IT-Qp4" secondAttribute="leading" id="m0f-CK-EFn"/>
+                            <constraint firstAttribute="trailing" secondItem="5VI-Tq-Ezq" secondAttribute="trailing" constant="20" id="nbC-hv-ql5"/>
+                            <constraint firstItem="5VI-Tq-Ezq" firstAttribute="leading" secondItem="MtH-IT-Qp4" secondAttribute="leading" constant="20" id="oiF-ra-ZzT"/>
+                            <constraint firstAttribute="trailing" secondItem="uBO-3t-3ye" secondAttribute="trailing" constant="20" id="pLb-0B-pci"/>
+                            <constraint firstItem="ey0-tK-Kl3" firstAttribute="top" secondItem="XXM-Y1-fqs" secondAttribute="bottom" id="rKs-TM-Tf2"/>
+                            <constraint firstItem="5VI-Tq-Ezq" firstAttribute="top" secondItem="8qF-wc-Ai7" secondAttribute="bottom" constant="25" id="wYm-hk-6UZ"/>
+                            <constraint firstItem="Coo-Z5-0Us" firstAttribute="leading" secondItem="MtH-IT-Qp4" secondAttribute="leading" constant="20" id="yKU-Zp-wEo"/>
+                            <constraint firstAttribute="trailing" secondItem="Coo-Z5-0Us" secondAttribute="trailing" constant="20" id="zCl-cq-MHE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hea-v3-FB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4205.6000000000004" y="1115.8920539730136"/>
+        </scene>
         <!--On Demand-->
         <scene sceneID="iWa-Kd-oWn">
             <objects>
@@ -974,13 +1067,14 @@
     <resources>
         <image name="close" width="21" height="21"/>
         <image name="favorites" width="32" height="32"/>
+        <image name="fubo_tv" width="224" height="74"/>
         <image name="netflix-logo" width="300" height="84"/>
         <image name="streamsavvy-wordmark-large" width="306" height="53"/>
         <image name="tv-icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="E7e-Nb-y52"/>
-        <segue reference="OMx-cz-c4Y"/>
+        <segue reference="Hcq-We-NDc"/>
         <segue reference="PqR-Ou-oHG"/>
+        <segue reference="OMx-cz-c4Y"/>
     </inferredMetricsTieBreakers>
 </document>
