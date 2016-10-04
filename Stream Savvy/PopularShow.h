@@ -17,6 +17,8 @@
 @property (strong, nonatomic) NSString	*time;
 @property (strong, nonatomic) NSString	*deep_link;
 @property (strong, nonatomic) NSDictionary *raw;
+@property (strong, nonatomic) NSArray	*genres;
+@property (nonatomic) NSInteger			duration;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 

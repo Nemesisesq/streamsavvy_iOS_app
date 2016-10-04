@@ -24,6 +24,11 @@
 	self.time					= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"detail"] valueForKey:@"air_time"]; // air_day_of_week
 //	self.deep_link			= [PopularShow randomUrl];
 	self.raw					= attributes;
+	NSMutableArray *genres = [NSMutableArray new];
+	for (NSDictionary *genre in [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"detail"] valueForKey:@"genres"]) {
+		[genres addObject:[genre valueForKey:@"title"]];
+	}
+	self.genres = genres;
 	
 	return self;
 }
