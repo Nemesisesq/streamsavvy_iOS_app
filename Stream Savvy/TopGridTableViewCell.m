@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "ShowDetailsTableViewController.h"
 #import "MediaSource.h"
+#import "LiveGuideDetailsViewController.h"
 
 @implementation TopGridTableViewCell
 
@@ -79,15 +80,11 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		[self.topChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
-			NSLog(@"/n/n/n/n**");
-			NSLog(@"%@", JSON);
-			NSLog(@"/n/n/n/n**");
-			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-			sdtvc.media = self.topChannel.now_playing;
-			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
-			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
-		}];
+		LiveGuideDetailsViewController *lgdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"LiveGuideDetailsViewController"];
+		NSLog(@"\t~\t~\t~\t%@", lgdvc);
+		lgdvc.channel = self.topChannel;
+		lgdvc.media = self.topChannel.now_playing;
+		[self.uivc.navigationController pushViewController:lgdvc animated:YES];
 	}
 }
 
@@ -101,15 +98,11 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		[self.bottomChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
-			NSLog(@"/n/n/n/n**");
-			NSLog(@"%@", JSON);
-			NSLog(@"/n/n/n/n**");
-			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-			sdtvc.media = self.bottomChannel.now_playing;
-			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
-			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
-		}];
+		LiveGuideDetailsViewController *lgdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"LiveGuideDetailsViewController"];
+		NSLog(@"\t~\t~\t~\t%@", lgdvc);
+		lgdvc.channel = self.bottomChannel;
+		lgdvc.media = self.bottomChannel.now_playing;
+		[self.uivc.navigationController pushViewController:lgdvc animated:YES];
 	}
 }
 
@@ -123,16 +116,11 @@
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
-		[self.bigChannel getChannelDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
-			NSLog(@"/n/n/n/n**");
-			NSLog(@"%@", JSON);
-			NSLog(@"/n/n/n/n**");
-			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
-			sdtvc.media = self.bigChannel.now_playing;
-			sdtvc.sources = [self getSourcesFromChannelWithJSON:(NSDictionary *)JSON];
-			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
-			NSLog(@"\n\n\nBOOM\n\n\n");
-		}];
+		LiveGuideDetailsViewController *lgdvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"LiveGuideDetailsViewController"];
+		NSLog(@"\t~\t~\t~\t%@", lgdvc);
+		lgdvc.channel = self.bigChannel;
+		lgdvc.media = self.bigChannel.now_playing;
+		[self.uivc.navigationController pushViewController:lgdvc animated:YES];
 	}
 }
 

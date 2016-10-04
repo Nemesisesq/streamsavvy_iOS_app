@@ -854,8 +854,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fubo_tv" translatesAutoresizingMaskIntoConstraints="NO" id="XXM-Y1-fqs"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GbT-lA-0mu">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GbT-lA-0mu">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="43 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coo-Z5-0Us">
                                 <constraints>
@@ -873,9 +873,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Blacklist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VI-Tq-Ezq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Blacklist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VI-Tq-Ezq">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="K1V-j0-NDl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="K1V-j0-NDl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -933,6 +933,117 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hea-v3-FB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4205.6000000000004" y="1115.8920539730136"/>
+        </scene>
+        <!--Live Guide Details View Controller-->
+        <scene sceneID="JNN-J4-60Y">
+            <objects>
+                <viewController restorationIdentifier=" " storyboardIdentifier="LiveGuideDetailsViewController" id="dsD-sz-tFw" customClass="LiveGuideDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WAy-Lg-6Kj"/>
+                        <viewControllerLayoutGuide type="bottom" id="CNG-fS-ONX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r3b-KF-uSV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nbc_lg_2x" translatesAutoresizingMaskIntoConstraints="NO" id="sKE-bP-FbM"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TAR-fr-ZJu">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="43 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-tO-bFs">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Bg2-Ui-9Sb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crime | Drama | Mystery | Thriller" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXb-4I-1o0">
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="gh1-Z9-ZXj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Show" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-Vp-DgR">
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="13J-br-yN2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel 42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6U-0d-FLD">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Xg5-0d-n2R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIs-Kc-0X5">
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="KxN-q0-cHd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="This is ALSO a Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQh-kD-M6D">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="DJn-Rf-qZr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="THIS is a BUTTON">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sKE-bP-FbM" secondAttribute="trailing" id="717-H7-rHF"/>
+                            <constraint firstAttribute="trailing" secondItem="fXb-4I-1o0" secondAttribute="trailing" constant="20" id="9RL-Mh-hvf"/>
+                            <constraint firstItem="fXb-4I-1o0" firstAttribute="top" secondItem="ZGd-tO-bFs" secondAttribute="bottom" constant="12" id="ABe-Y8-DS3"/>
+                            <constraint firstItem="v6U-0d-FLD" firstAttribute="top" secondItem="R8I-Vp-DgR" secondAttribute="bottom" constant="8" id="DHV-sb-mPU"/>
+                            <constraint firstItem="CNG-fS-ONX" firstAttribute="top" secondItem="TAR-fr-ZJu" secondAttribute="bottom" id="FDB-8f-fnr"/>
+                            <constraint firstItem="fXb-4I-1o0" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="IIQ-VV-B5W"/>
+                            <constraint firstItem="PIs-Kc-0X5" firstAttribute="top" secondItem="lQh-kD-M6D" secondAttribute="bottom" constant="16" id="Mg8-Ew-d8t"/>
+                            <constraint firstItem="v6U-0d-FLD" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="Ogt-ga-dmb"/>
+                            <constraint firstAttribute="trailing" secondItem="PIs-Kc-0X5" secondAttribute="trailing" constant="20" id="P7q-7r-oxh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZGd-tO-bFs" secondAttribute="trailing" constant="20" id="RHX-x6-Jta"/>
+                            <constraint firstItem="lQh-kD-M6D" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="RRJ-KO-uy7"/>
+                            <constraint firstItem="ZGd-tO-bFs" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="Scs-x9-p4c"/>
+                            <constraint firstItem="TAR-fr-ZJu" firstAttribute="top" secondItem="r3b-KF-uSV" secondAttribute="top" id="WmS-hA-wqU"/>
+                            <constraint firstItem="PIs-Kc-0X5" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="X3U-5m-nXN"/>
+                            <constraint firstItem="CNG-fS-ONX" firstAttribute="top" secondItem="sKE-bP-FbM" secondAttribute="bottom" id="ZXf-2b-neh"/>
+                            <constraint firstItem="R8I-Vp-DgR" firstAttribute="top" secondItem="fXb-4I-1o0" secondAttribute="bottom" constant="25" id="dVX-Az-rMs"/>
+                            <constraint firstItem="CNG-fS-ONX" firstAttribute="top" secondItem="PIs-Kc-0X5" secondAttribute="bottom" constant="20" id="fpK-i7-BBq"/>
+                            <constraint firstAttribute="trailing" secondItem="v6U-0d-FLD" secondAttribute="trailing" constant="20" id="gLn-GP-ftk"/>
+                            <constraint firstItem="sKE-bP-FbM" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" id="hNN-cB-Wmc"/>
+                            <constraint firstAttribute="trailing" secondItem="R8I-Vp-DgR" secondAttribute="trailing" constant="20" id="js1-FZ-DUR"/>
+                            <constraint firstAttribute="trailing" secondItem="lQh-kD-M6D" secondAttribute="trailing" constant="20" id="kJ9-fv-OV5"/>
+                            <constraint firstItem="TAR-fr-ZJu" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" id="ksL-dC-d55"/>
+                            <constraint firstItem="sKE-bP-FbM" firstAttribute="top" secondItem="r3b-KF-uSV" secondAttribute="top" id="po8-bn-PNP"/>
+                            <constraint firstItem="ZGd-tO-bFs" firstAttribute="top" secondItem="WAy-Lg-6Kj" secondAttribute="bottom" constant="8" id="qpj-kb-EKw"/>
+                            <constraint firstAttribute="trailing" secondItem="TAR-fr-ZJu" secondAttribute="trailing" id="qxL-Lv-VBZ"/>
+                            <constraint firstItem="R8I-Vp-DgR" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="uAU-qW-qeb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="channelImageView" destination="sKE-bP-FbM" id="8nT-lX-zsI"/>
+                        <outlet property="channelNumberLabel" destination="v6U-0d-FLD" id="d3x-DB-J2P"/>
+                        <outlet property="durationLabel" destination="ZGd-tO-bFs" id="Xem-Ih-Zpm"/>
+                        <outlet property="genresLabel" destination="fXb-4I-1o0" id="2Ap-sL-brB"/>
+                        <outlet property="mediaTitleLabel" destination="R8I-Vp-DgR" id="S8B-hX-hC3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZN-EY-hUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4988" y="1115.8920539730136"/>
         </scene>
         <!--On Demand-->
         <scene sceneID="iWa-Kd-oWn">
@@ -1076,6 +1187,7 @@
         <image name="close" width="21" height="21"/>
         <image name="favorites" width="32" height="32"/>
         <image name="fubo_tv" width="224" height="74"/>
+        <image name="nbc_lg_2x" width="180" height="104"/>
         <image name="netflix-logo" width="300" height="84"/>
         <image name="streamsavvy-wordmark-large" width="306" height="53"/>
         <image name="tv-icon" width="30" height="30"/>

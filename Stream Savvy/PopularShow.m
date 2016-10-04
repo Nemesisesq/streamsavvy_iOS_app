@@ -16,6 +16,7 @@
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes{
 	self = [super init];
+	NSLog(@"\t\tattributts: %@", attributes);
 	if (!self) return nil;
 	self.guidebox_id			= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"id"] integerValue];
 	self.title					= [attributes valueForKey:@"title"];

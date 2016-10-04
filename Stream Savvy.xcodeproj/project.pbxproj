@@ -10,6 +10,7 @@
 		0C95D34F82A4B97A6F6711DA /* Pods_Stream_Savvy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6565779394F3C155499BC5F3 /* Pods_Stream_Savvy.framework */; };
 		6C1C1F5EEFDAC478D7452535 /* Pods_Stream_SavvyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */; };
 		9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28106F1D83B4B900158502 /* AuthTableViewController.m */; };
+		9F420FAC1DA3345400A89D87 /* LiveGuideDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F420FAB1DA3345400A89D87 /* LiveGuideDetailsViewController.m */; };
 		9F5A4D341D5AE1D70057AF6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D331D5AE1D70057AF6D /* main.m */; };
 		9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D361D5AE1D70057AF6D /* AppDelegate.m */; };
 		9F5A4D3D1D5AE1D70057AF6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A4D3B1D5AE1D70057AF6D /* Main.storyboard */; };
@@ -85,6 +86,8 @@
 		95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stream_SavvyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F28106E1D83B4B900158502 /* AuthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTableViewController.h; sourceTree = "<group>"; };
 		9F28106F1D83B4B900158502 /* AuthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTableViewController.m; sourceTree = "<group>"; };
+		9F420FAA1DA3345400A89D87 /* LiveGuideDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveGuideDetailsViewController.h; sourceTree = "<group>"; };
+		9F420FAB1DA3345400A89D87 /* LiveGuideDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveGuideDetailsViewController.m; sourceTree = "<group>"; };
 		9F5A4D2F1D5AE1D70057AF6D /* Stream Savvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stream Savvy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5A4D331D5AE1D70057AF6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F5A4D351D5AE1D70057AF6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -332,6 +335,8 @@
 		9FE1B01F1D6922630013DCB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9F420FAA1DA3345400A89D87 /* LiveGuideDetailsViewController.h */,
+				9F420FAB1DA3345400A89D87 /* LiveGuideDetailsViewController.m */,
 				9F28106E1D83B4B900158502 /* AuthTableViewController.h */,
 				9F28106F1D83B4B900158502 /* AuthTableViewController.m */,
 				9FE1B0571D693C060013DCB1 /* TableViewCells */,
@@ -723,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F420FAC1DA3345400A89D87 /* LiveGuideDetailsViewController.m in Sources */,
 				9FBC97851D6D32CB004B6182 /* GuideTableViewController.m in Sources */,
 				9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */,
 				9FC2961B1D774179005CB080 /* WebViewViewController.m in Sources */,
