@@ -1054,7 +1054,7 @@
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="On Demand" image="tv-icon" id="sw4-yP-YcI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
