@@ -71,12 +71,13 @@
 
 
 -(void)topPressed{
-	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsTableViewController"];
+	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ContentDetailViewController"];
 	if (self.isShowingPopularShows) {
 		[self.topShow getShowDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
+            
 			sdtvc.show = self.topShow;
 			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
-			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+//			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
@@ -89,12 +90,12 @@
 }
 
 -(void)bottomPressed{
-	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsTableViewController"];
+	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ContentDetailViewController"];
 	if (self.isShowingPopularShows) {
 		[self.bottomShow getShowDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
 			sdtvc.show = self.bottomShow;
 			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
-			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+//			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{
@@ -107,12 +108,12 @@
 }
 
 -(void)bigPressed{
-	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ShowDetailsTableViewController"];
+	ShowDetailsTableViewController *sdtvc = [self.uivc.storyboard instantiateViewControllerWithIdentifier:@"ContentDetailViewController"];
 	if (self.isShowingPopularShows) {
 		[self.bigShow getShowDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
 			sdtvc.show = self.bigShow;
 			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
-			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
+//			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
 	}else{

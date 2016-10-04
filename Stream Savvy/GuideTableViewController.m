@@ -74,7 +74,7 @@ NSInteger numOfStaticCell = 1;
 -(void)reload{
 	float lat = UserLocation.sharedController.locationManager.location.coordinate.latitude;
 	float lon = UserLocation.sharedController.locationManager.location.coordinate.longitude;
-	[Channel getRoviGuideForLattitude:lat Longitude:lon view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
+	[Channel getGuideForLattitude:lat Longitude:lon view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
 		NSMutableArray *guideShows = [NSMutableArray new];
 		//////////////////////this needs edited
 		int max_to_load = 0;

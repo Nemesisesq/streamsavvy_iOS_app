@@ -53,28 +53,6 @@
 }
 
 
-+ (void)getRoviGuideForLattitude:(float)lat Longitude:(float)lon view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = [NSString stringWithFormat:@"https://edr-go-staging.herokuapp.com/gracenote/lineup-airings/%f/%f", lat, lon];
-	NSLog(@"%@\n\n\n", url);
-	[MBProgressHUD showHUDAddedTo:view animated:YES];
-	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-		[[AFAPIClient sharedClient:[NSString stringWithFormat:@"Bearer_%@", [UserPrefs getToken]]] GET:url parameters:nil
-												       success:^(NSURLSessionDataTask *task, id JSON) {
-													       dispatch_async( dispatch_get_main_queue(), ^{
-														       successBlock(task, JSON);
-														       [MBProgressHUD hideHUDForView:view animated:YES];
-													       });
-												       } failure:^(NSURLSessionDataTask *task, NSError *error) {
-													       dispatch_async( dispatch_get_main_queue(), ^{
-														       NSLog(@"%@", url);
-														       NSLog(@"~~~>%@", error);
-														       [MBProgressHUD hideHUDForView:view animated:YES];
-													       });
-												       }];
-	});
-}
-
-
 - (void)getChannelDetailsWithView:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
 
 	NSString *url = @"https://edr-go-staging.herokuapp.com/live-streaming-service";
@@ -82,7 +60,7 @@
 	NSLog(@"\n\n\n%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];
 	NSDictionary *params = @{
-////					@"CallLetters":			self.call_letters,
+////				@"CallLetters":			self.call_letters,
 //					@"DisplayName":		self.display_name,
 //					@"SourceLongName":	self.source_long_name,
 //					@"SourceId":			[NSString stringWithFormat:@"%@", self.source_id]
