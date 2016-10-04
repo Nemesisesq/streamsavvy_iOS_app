@@ -759,7 +759,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="HK2-Md-Tbb">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="88" id="HX3-Kz-jL8"/>
+                                                <constraint firstAttribute="width" constant="50" id="HX3-Kz-jL8"/>
                                                 <constraint firstAttribute="height" constant="27" id="kZ3-Az-BKR"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
@@ -777,7 +777,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lFl-1g-mRb">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="0EZ-XK-1DC"/>
-                                                <constraint firstAttribute="width" constant="88" id="Ccv-TW-JKK"/>
+                                                <constraint firstAttribute="width" constant="50" id="Ccv-TW-JKK"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -785,7 +785,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="rVF-gB-s7i" firstAttribute="width" secondItem="qT5-D0-lCh" secondAttribute="width" multiplier="0.5" id="5yU-Fi-J7c"/>
+                                        <constraint firstItem="rVF-gB-s7i" firstAttribute="width" secondItem="qT5-D0-lCh" secondAttribute="width" multiplier="0.4" id="5yU-Fi-J7c"/>
                                         <constraint firstItem="mSz-0c-nkm" firstAttribute="leading" secondItem="f7q-n4-Hfc" secondAttribute="leading" id="77h-KJ-kwd"/>
                                         <constraint firstItem="R5p-ZH-YTF" firstAttribute="top" secondItem="rVF-gB-s7i" secondAttribute="bottom" id="9zW-rN-tWi"/>
                                         <constraint firstItem="uTl-qh-Lbi" firstAttribute="leading" secondItem="f7q-n4-Hfc" secondAttribute="leading" id="BCO-Kw-KBw"/>
@@ -818,12 +818,15 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="bigChannelLabel" destination="rVF-gB-s7i" id="kHb-V0-VuM"/>
                                     <outlet property="bigImageTimeLabel" destination="rVF-gB-s7i" id="XM5-c7-SuY"/>
                                     <outlet property="bigImageTitleLabel" destination="qT5-D0-lCh" id="ZS4-n1-fC7"/>
                                     <outlet property="bigImageView" destination="uTl-qh-Lbi" id="hti-bg-wBG"/>
+                                    <outlet property="bottomChannelLabel" destination="lFl-1g-mRb" id="kVo-Sm-mKE"/>
                                     <outlet property="bottomImageTimeLabel" destination="lFl-1g-mRb" id="BOM-5A-Wq3"/>
                                     <outlet property="bottomImageTitleLabel" destination="K7C-Oi-3iN" id="hHu-Vu-szn"/>
                                     <outlet property="bottomImageView" destination="R5p-ZH-YTF" id="oki-RJ-0bE"/>
+                                    <outlet property="topChannelLabel" destination="HK2-Md-Tbb" id="g3Y-VJ-KRZ"/>
                                     <outlet property="topImageTimeLabel" destination="HK2-Md-Tbb" id="Kej-mR-yMb"/>
                                     <outlet property="topImageTitleLabel" destination="EoC-2J-PTt" id="cjq-XP-C67"/>
                                     <outlet property="topImageView" destination="mSz-0c-nkm" id="Awe-r6-hEa"/>
