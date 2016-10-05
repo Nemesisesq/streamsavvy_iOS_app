@@ -277,6 +277,7 @@
                     <connections>
                         <outlet property="addFavoriteButton" destination="Y0a-5N-r0y" id="KzP-fr-O3t"/>
                         <outlet property="backgroundImageView" destination="Etx-bW-ZKC" id="da0-nx-Ksq"/>
+                        <outlet property="genres" destination="8qF-wc-Ai7" id="38M-9r-BEp"/>
                         <outlet property="showTitle" destination="bhQ-KJ-gv5" id="mta-Hh-1zh"/>
                         <segue destination="Ftx-ya-yvW" kind="showDetail" identifier="ContentAdded" id="PqR-Ou-oHG"/>
                     </connections>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Dollar
 
 class ContentDetailViewController: UIViewController  {
     
@@ -23,6 +24,7 @@ class ContentDetailViewController: UIViewController  {
     var sources: [MediaSource]!
     
     
+    @IBOutlet var genres: UILabel!
 	@IBOutlet var showTitle: UILabel!
 	@IBOutlet weak var backgroundImageView: UIImageView!
 	@IBOutlet weak var addFavoriteButton: UIButton!
@@ -43,6 +45,11 @@ class ContentDetailViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if content == nil {
+            content = Content(withPopularShow: show)
+        }
+
+        
 //        self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.tabBarController?.tabBar.isHidden = true
         
@@ -52,6 +59,8 @@ class ContentDetailViewController: UIViewController  {
             showTitle.text = content.title
         }
         SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
+        
+        genres.text = $.join(show.genres as! [String], separator: " | ")
         
         // Do any additional setup after loading the view.
     }
@@ -72,9 +81,6 @@ class ContentDetailViewController: UIViewController  {
         
         let target = segue.destination as! EpisodeCollectionViewController
         
-        if content == nil {
-            content = Content(withPopularShow: show)
-        }
         
         target.content = content
         
