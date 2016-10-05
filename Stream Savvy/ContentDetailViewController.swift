@@ -92,7 +92,7 @@ class ContentDetailViewController: UIViewController  {
         override func viewDidDisappear(_ animated: Bool) {
                 super.viewDidDisappear(animated)
                 
-                self.navigationController?.tabBarController?.tabBar.isHidden = true
+                self.navigationController?.tabBarController?.tabBar.isHidden = false
         }
         
         

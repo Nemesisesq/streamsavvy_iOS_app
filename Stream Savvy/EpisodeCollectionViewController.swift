@@ -35,7 +35,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
     var currentIndex: Int!
     var episodes: [Episode]!
     var content: Content!
-    var seasons: [Int:[Episode]]!
+    var seasons: [String:[Episode]]!
     
     
     
@@ -45,19 +45,19 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-	print("4")
+//	print("4")
         self.mediaTitleLabel.text = self.content.title
-	print("3")
-	print("\(self.content.title!)")
-	print("3")
-	print("\(self.content.guidebox_id!)")
-	print("2.5")
+//	print("3")
+///	print("\(self.content.title!)")
+//	print("3")
+//	print("\(self.content.guidebox_id!)")
+//	print("2.5")
         Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
             .then{ epiList -> Void in
                 print("0")
                 self.episodes = epiList
                 print("00")
-                self.seasons = $.groupBy((self.episodes as? Array<Episode>)!, callback: { $0.seasonNumber! })
+                self.seasons = $.groupBy((self.episodes as? Array<Episode>)!, callback: { String($0.seasonNumber!) })
                 print("000")
                 
                 self.seasonCollectionView.reloadData()
@@ -112,7 +112,8 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
             if (collectionView.restorationIdentifier == "seasons" ){
                 return self.seasons.count
             } else {
-                return self.seasons[currentIndex + 1]!.count
+                
+                return self.seasons[String(currentIndex)]!.count
             }
         }
         
@@ -126,14 +127,14 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         if (collectionView.restorationIdentifier == "seasons"){
             var cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
             
-            cell.seasonLabel?.text = "Season \(indexPath.row)"
+            cell.seasonLabel?.text = "\(indexPath.row + 1)"
             
             return cell
             
         } else {
             var cell: EpisodeViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath) as! EpisodeViewCell
             
-            let episode = self.seasons[currentIndex + 1]?[indexPath.row]
+            let episode = self.seasons[String(currentIndex + 1)]?[indexPath.row]
             
             cell.seEp?.text = "Season \(currentIndex + 1) Episode \(episode!.episodeNumber!)"
             
