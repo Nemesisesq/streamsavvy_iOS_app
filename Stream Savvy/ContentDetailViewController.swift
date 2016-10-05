@@ -37,7 +37,13 @@ class ContentDetailViewController: UIViewController  {
                                 
                                 //                let fvc = self.storyboard?.instantiateViewController(withIdentifier: "FavoritesViewController")
                                 //                self.present(fvc!, animated: true, completion: nil)
-                                self.navigationController?.popViewController(animated: true)
+                                
+                                if let navigationController = self.navigationController {
+                                        navigationController.popViewController(animated: true)
+                                }
+                                
+                        }.catch{ err in
+                                print(err)
                 }
         }
         
@@ -49,8 +55,9 @@ class ContentDetailViewController: UIViewController  {
                         content = Content(withPopularShow: show)
                 }
                 
+                //MARK - Here we hid the tool bar and make the navigation tool bar transparent
                 
-                //        self.navigationController?.navigationBar.isHidden = true
+                self.navigationController?.navigationBar.backgroundColor = .clear
                 self.navigationController?.tabBarController?.tabBar.isHidden = true
                 
                 if content == nil {
@@ -89,8 +96,25 @@ class ContentDetailViewController: UIViewController  {
                 
         }
         
+        //MARK - ReShow tool bar here we are tryingt o reshow the tool bar after exiting the view.
+        
+        override func viewWillDisappear(_ animated: Bool) {
+                super.viewDidDisappear(animated)
+                
+                if let tabBarController = self.navigationController?.tabBarController {
+                        tabBarController.tabBar.isHidden = false
+                }
+                
+                self.navigationController?.tabBarController?.tabBar.isHidden = false
+        }
+
+        
         override func viewDidDisappear(_ animated: Bool) {
                 super.viewDidDisappear(animated)
+                
+                if let tabBarController = self.navigationController?.tabBarController {
+                        tabBarController.tabBar.isHidden = false
+                }
                 
                 self.navigationController?.tabBarController?.tabBar.isHidden = false
         }
