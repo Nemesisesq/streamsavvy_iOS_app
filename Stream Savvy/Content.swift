@@ -45,15 +45,15 @@ public class SearchResults: NSObject {
 public class Content: NSObject {
     
     
-    var title : String?
-    var guidebox_data : NSDictionary?
-    var guidebox_id : Int?
+    var title : String!
+    var guidebox_data : NSDictionary!
+    var guidebox_id : Int!
     var on_netflix : Bool?
-    var channel : NSMutableDictionary?
-    var curr_pop_score : Float?
-    var channels_last_checked : String?
-    var modified : String?
-    var image_link : String?
+    var channel : NSMutableDictionary!
+    var curr_pop_score : Float!
+    var channels_last_checked : String!
+    var modified : String!
+    var image_link : String!
 
     override init() {
         

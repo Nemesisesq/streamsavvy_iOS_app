@@ -47,7 +47,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         super.viewDidLoad()
         self.mediaTitleLabel.text = self.content.title
         
-        Episode.getEpisodeList(guidebox_id: "2098")
+        Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
             .then{ epiList -> Void in
                 
                 self.episodes = epiList
@@ -100,7 +100,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        if self.seasons != nil {
+        if self.seasons != nil && !self.seasons.isEmpty {
             if (collectionView.restorationIdentifier == "seasons" ){
                 return self.seasons.count
             } else {
