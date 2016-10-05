@@ -14,17 +14,21 @@
 
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes{
+    
+    NSDictionary *program = [attributes valueForKey:@"program"];
+    
 	//		NSLog(@"User~-~-~\n\n%@", attributes);
 	self = [super init];
 	if (!self) return nil;
 	self.station_id			= [[attributes valueForKey:@"stationId"] integerValue];
-	self.root_id				= [[[attributes valueForKey:@"program"] valueForKey:@"rootId"] integerValue];
+	self.root_id				= [[program valueForKey:@"rootId"] integerValue];
 	self.duration				= [[attributes valueForKey:@"duration"] integerValue];
 	self.start_time			= [Constants formalTimeWithTimeZone: [attributes valueForKey:@"startTime"]];
 	self.end_time			= [Constants formalTimeWithTimeZone: [attributes valueForKey:@"endTime"]];
-	self.title					= [[attributes valueForKey:@"program"] valueForKey:@"title"];
-	self.show_description		= [[attributes valueForKey:@"program"] valueForKey:@"shortDescription"];
-	self.genres				= [[attributes valueForKey:@"program"] objectForKey:@"genres"];
+	self.title					= [program valueForKey:@"title"];
+    self.episodeTitle = [program valueForKey:@"episodeTitle"];
+	self.show_description		= [program valueForKey:@"shortDescription"];
+	self.genres				= [program objectForKey:@"genres"];
 //	self.deep_link			= [Media randomUrl];
 	NSLog(@"genres: %@", self.genres);
 	

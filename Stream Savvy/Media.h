@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString	*start_time;
 @property (nonatomic, strong) NSString	*end_time;
 @property (nonatomic, strong) NSString	*title;
+@property (nonatomic, strong) NSString  *episodeTitle;
 @property (nonatomic, strong) NSString	*show_description;
 @property (nonatomic, strong) NSArray	*genres;
 

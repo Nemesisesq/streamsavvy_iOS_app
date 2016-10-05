@@ -46,12 +46,27 @@ public class Content: NSObject {
     
     
     var title : String?
-    var guidebox_data : NSMutableDictionary?
+    var guidebox_data : NSDictionary?
+    var guidebox_id : Int?
     var on_netflix : Bool?
     var channel : NSMutableDictionary?
     var curr_pop_score : Float?
     var channels_last_checked : String?
     var modified : String?
+    var image_link : String?
+
+    override init() {
+        
+    }
+    
+    init(withPopularShow show: PopularShow){
+        self.title = show.title
+        self.guidebox_id = show.guidebox_id
+        let  data = show.raw as NSDictionary as! [String: Any]
+        self.guidebox_data = data["guidebox_data"] as! NSDictionary?
+        self.image_link = show.image_link
+        
+    }
     
     
     

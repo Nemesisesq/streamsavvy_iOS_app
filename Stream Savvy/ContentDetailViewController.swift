@@ -14,8 +14,16 @@ class ContentDetailViewController: UIViewController  {
     
     var content: Content!
     
+    var show: PopularShow!
     
-    @IBOutlet var test: UILabel!
+    var media: Media!
+    
+    var isDisplayingPopularShows: Bool!
+    
+    var sources: [MediaSource]!
+    
+    
+    @IBOutlet var showTitle: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var addFavoriteButton: UIButton!
     
@@ -35,7 +43,15 @@ class ContentDetailViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        test.text = content.title
+//        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.tabBarController?.tabBar.isHidden = true
+        
+        if content == nil {
+            showTitle.text = show.title
+        } else {
+            showTitle.text = content.title
+        }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -46,14 +62,26 @@ class ContentDetailViewController: UIViewController  {
     }
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        
+        let target = segue.destination as! EpisodeCollectionViewController
+        
+        if content == nil {
+            content = Content(withPopularShow: show)
+        }
+        
+        target.content = content
+        
+        
+        
+        
      }
-     */
+    
     
 }
