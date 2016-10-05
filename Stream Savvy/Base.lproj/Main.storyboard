@@ -1123,7 +1123,8 @@
                         <outlet property="containerView" destination="r3b-KF-uSV" id="KWE-zG-3Gf"/>
                         <outlet property="genres" destination="SsH-fi-zSa" id="KLD-gA-zrm"/>
                         <outlet property="showProgress" destination="tbc-JS-2Sb" id="eE9-Mj-crS"/>
-                        <outlet property="showTitle" destination="ZGd-tO-bFs" id="9eJ-Jc-RHN"/>
+                        <outlet property="showSubtitleLabel" destination="ZGd-tO-bFs" id="b0r-Xz-3Ur"/>
+                        <outlet property="showTitle" destination="UJx-8I-puS" id="FiX-Es-SYN"/>
                         <outlet property="sportsUIView" destination="7k3-0H-Kk8" id="lj2-SP-V1I"/>
                     </connections>
                 </viewController>
