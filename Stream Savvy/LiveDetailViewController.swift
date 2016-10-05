@@ -18,24 +18,25 @@ class GenreCell: UICollectionViewCell {
 
 class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var channel: Channel!
+	var channel: Channel!
     
-    var media: Media!
+	var media: Media!
     
-    @IBOutlet var backgroundImage: UIImageView!
+	@IBOutlet var backgroundImage: UIImageView!
     
-    @IBOutlet var backgroundMask: UIImageView!
+	@IBOutlet var backgroundMask: UIImageView!
     
-    @IBOutlet var showTitle: UILabel!
+	@IBOutlet var showTitle: UILabel!
     
+	@IBOutlet weak var showSubtitleLabel: UILabel!
 	
-    @IBOutlet var showProgress: UIProgressView!
+	@IBOutlet var showProgress: UIProgressView!
     
-    @IBOutlet var containerView: UIView!
+	@IBOutlet var containerView: UIView!
     
-    @IBOutlet var genres: UILabel!
+	@IBOutlet var genres: UILabel!
     //
-    @IBOutlet var sportsUIView: UIView!
+	@IBOutlet var sportsUIView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +44,10 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
             
             print(JSON)
         })
-        showTitle.text = media.title
-        sportsUIView.isHidden = true
-
+        showTitle.text			= media.title
+	showSubtitleLabel.text	= "Channel \(channel.channel_number!)"
+        sportsUIView.isHidden	= true
+	showProgress.isHidden	= true
 //        
 //        if media.show_description != nil {
 //            if media.episodeTitle == nil {
