@@ -28,8 +28,7 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet var showTitle: UILabel!
     
-    @IBOutlet var episodeTitle: UITextView!
-    
+	
     @IBOutlet var showProgress: UIProgressView!
     
     @IBOutlet var containerView: UIView!
@@ -40,15 +39,13 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         channel.getDetailsWith(containerView, success: { JSON in
             
             print(JSON)
         })
-        
         showTitle.text = media.title
-        
         sportsUIView.isHidden = true
+
 //        
 //        if media.show_description != nil {
 //            if media.episodeTitle == nil {
@@ -65,7 +62,6 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         
         
         //
-        
         
         
         // Do any additional setup after loading the view.
