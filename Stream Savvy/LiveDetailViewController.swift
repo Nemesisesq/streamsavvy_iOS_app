@@ -8,8 +8,10 @@
 
 import UIKit
 
-class GenreCell: UICollectionViewCell {
+import Dollar
 
+class GenreCell: UICollectionViewCell {
+    
     @IBOutlet var genreLabel: UILabel!
 }
 
@@ -19,9 +21,9 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     var channel: Channel!
     
     var media: Media!
-
+    
     @IBOutlet var backgroundImage: UIImageView!
-
+    
     @IBOutlet var backgroundMask: UIImageView!
     
     @IBOutlet var showTitle: UILabel!
@@ -32,6 +34,7 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet var containerView: UIView!
     
+    @IBOutlet var genres: UILabel!
     //
     @IBOutlet var sportsUIView: UIView!
     
@@ -40,69 +43,66 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         
         channel.getDetailsWith(containerView, success: { JSON in
             
-           print(JSON)
+            print(JSON)
         })
         
         showTitle.text = media.title
         
         sportsUIView.isHidden = true
+//        
+//        if media.show_description != nil {
+//            if media.episodeTitle == nil {
+//                episodeTitle.text = media.show_description
+//                episodeTitle.sizeToFit()
+//            } else{
+//                episodeTitle.text = media.episodeTitle
+//            }
+//        }
         
         
-        if media.episodeTitle == nil {
-            episodeTitle.text = media.show_description
-            episodeTitle.sizeToFit()
-        } else {
-        episodeTitle.text = media.episodeTitle
-        }
+        genres.text = $.join(media.genres as! [String], separator: " | ")
+        
+        
+        
         //
         
         
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     //MARK: - Progress View Updated TODO
     
     //MARK: - Collection View Delegate
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-       return 1
+        return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if collectionView.restorationIdentifier == "GenreCollectionView" {
-            return media.genres.count
-        } else {
-            
-        }
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "genre", for: indexPath) as! GenreCell
-        
-        let genreArray = media.genres as! [String]
-        
-        cell.genreLabel.text = genreArray[indexPath.row]
-        cell.genreLabel.sizeToFit()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "app_icons", for: indexPath) as! GenreCell
         
         return cell
     }
@@ -113,13 +113,13 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         print("\(indexPath) clicked")
         
     }
-
-    
-   
     
     
-   
-
-
-
+    
+    
+    
+    
+    
+    
+    
 }
