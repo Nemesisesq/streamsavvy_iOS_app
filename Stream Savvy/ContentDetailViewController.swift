@@ -23,9 +23,9 @@ class ContentDetailViewController: UIViewController  {
     var sources: [MediaSource]!
     
     
-    @IBOutlet var showTitle: UILabel!
-    @IBOutlet weak var contentImageView: UIImageView!
-    @IBOutlet weak var addFavoriteButton: UIButton!
+	@IBOutlet var showTitle: UILabel!
+	@IBOutlet weak var backgroundImageView: UIImageView!
+	@IBOutlet weak var addFavoriteButton: UIButton!
     
     @IBAction func addContentToFavorites(_ sender: UIButton) {
         Favorites.addContentToFavorites(content: content)
@@ -51,7 +51,7 @@ class ContentDetailViewController: UIViewController  {
         } else {
             showTitle.text = content.title
         }
-        
+        SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
         
         // Do any additional setup after loading the view.
     }

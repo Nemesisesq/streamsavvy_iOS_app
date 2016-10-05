@@ -192,7 +192,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fubo_tv" translatesAutoresizingMaskIntoConstraints="NO" id="Etx-bW-ZKC"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fubo_tv" translatesAutoresizingMaskIntoConstraints="NO" id="Etx-bW-ZKC"/>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-d5-bOh">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -276,6 +276,7 @@
                     </view>
                     <connections>
                         <outlet property="addFavoriteButton" destination="Y0a-5N-r0y" id="KzP-fr-O3t"/>
+                        <outlet property="backgroundImageView" destination="Etx-bW-ZKC" id="da0-nx-Ksq"/>
                         <outlet property="showTitle" destination="bhQ-KJ-gv5" id="mta-Hh-1zh"/>
                         <segue destination="Ftx-ya-yvW" kind="showDetail" identifier="ContentAdded" id="PqR-Ou-oHG"/>
                     </connections>
@@ -1068,9 +1069,9 @@
                                     <constraint firstItem="fmN-F9-a97" firstAttribute="leading" secondItem="EHO-4C-S0x" secondAttribute="trailing" constant="6" id="v40-un-zm0"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONDAY NIGHT FOOTBALL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-tO-bFs" userLabel="Show Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONDAY NIGHT FOOTBALL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-tO-bFs" userLabel="Show Title">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Bg2-Ui-9Sb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Bg2-Ui-9Sb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
