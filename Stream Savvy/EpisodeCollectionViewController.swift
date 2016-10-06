@@ -50,7 +50,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
 //                Episode.getEpisodeList(guidebox_id: "2098")
                         .then{ epiList -> Void in
                                 self.episodes = epiList
-                                self.seasons = $.groupBy((self.episodes as? Array<Episode>)!, callback: { String($0.seasonNumber!) })
+                                self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { String($0.seasonNumber!) })
                                 self.seasonCollectionView.reloadData()
                                 self.episodeCollectionView.reloadData()
                         }.catch { error in
@@ -112,18 +112,18 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
 		
                 // Configure the cell
                 if (collectionView.restorationIdentifier == "seasons"){
-                        var cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
+                        let cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
                         
-                        cell.seasonLabel?.text = "Season \(indexPath.row + 1)"
+                        cell.seasonLabel?.text = "\(indexPath.row + 1)"
 			
 			return cell
                         
                 } else {
-                        var cell: EpisodeViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath) as! EpisodeViewCell
+                        let cell: EpisodeViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath) as! EpisodeViewCell
                         
                         let episode = self.seasons[String(currentIndex + 1)]?[indexPath.row]
                         
-                        cell.seEp?.text = "Season \(currentIndex + 1) Episode \(episode!.episodeNumber!)"
+                        cell.seEp?.text = "Episode \(episode!.episodeNumber!)"
                         
                         cell.epTitle?.text = "\(episode!.title!)"
 			
