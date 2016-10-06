@@ -59,7 +59,7 @@ class ContentDetailViewController: UIViewController  {
                 //MARK - Here we hid the tool bar and make the navigation tool bar transparent
                 
 //                self.navigationController?.navigationBar.barTintColor = nil
-                self.navigationController?.tabBarController?.tabBar.isHidden = true
+               
                 
                 if content == nil {
                         showTitle.text = show.title
@@ -74,6 +74,11 @@ class ContentDetailViewController: UIViewController  {
 		}
 		
                 // Do any additional setup after loading the view.
+        }
+        
+        override func viewWillAppear(_ animated: Bool) {
+                super.viewWillAppear(true)
+                 self.navigationController?.tabBarController?.tabBar.isHidden = true
         }
         
         override func didReceiveMemoryWarning() {
@@ -110,20 +115,20 @@ class ContentDetailViewController: UIViewController  {
 //                }
                 
                 self.navigationController?.tabBarController?.tabBar.isHidden = false
-                 self.navigationController?.navigationBar.backgroundColor = nil
+                
         }
 
         
         
-        override func viewDidDisappear(_ animated: Bool) {
-                super.viewDidDisappear(animated)
-                
-                if let tabBarController = self.navigationController?.tabBarController {
-                        tabBarController.tabBar.isHidden = false
-                }
-                
-                self.navigationController?.tabBarController?.tabBar.isHidden = false
-        }
+//        override func viewDidDisappear(_ animated: Bool) {
+//                super.viewDidDisappear(animated)
+//                
+//                if let tabBarController = self.navigationController?.tabBarController {
+//                        tabBarController.tabBar.isHidden = false
+//                }
+//                
+//                self.navigationController?.tabBarController?.tabBar.isHidden = false
+//        }
         
         
 }

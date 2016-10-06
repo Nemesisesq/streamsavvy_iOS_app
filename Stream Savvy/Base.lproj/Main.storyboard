@@ -955,14 +955,6 @@
                             <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TAR-fr-ZJu" userLabel="Mask">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJx-8I-puS">
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="LPQ-KP-DYr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="27"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="tbc-JS-2Sb">
                                 <color key="trackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
@@ -1109,19 +1101,27 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50562389184397161" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJx-8I-puS">
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="LPQ-KP-DYr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UJx-8I-puS" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="5l2-42-va5"/>
                             <constraint firstAttribute="trailing" secondItem="sKE-bP-FbM" secondAttribute="trailing" id="717-H7-rHF"/>
-                            <constraint firstItem="SsH-fi-zSa" firstAttribute="top" secondItem="UJx-8I-puS" secondAttribute="bottom" constant="8" id="BIS-iD-59b"/>
+                            <constraint firstItem="SsH-fi-zSa" firstAttribute="top" secondItem="UJx-8I-puS" secondAttribute="bottom" constant="-83" id="BIS-iD-59b"/>
                             <constraint firstAttribute="trailing" secondItem="tbc-JS-2Sb" secondAttribute="trailing" constant="88" id="D0Q-xY-9wQ"/>
                             <constraint firstItem="SsH-fi-zSa" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="EUF-9L-XiI"/>
                             <constraint firstItem="CNG-fS-ONX" firstAttribute="top" secondItem="TAR-fr-ZJu" secondAttribute="bottom" id="FDB-8f-fnr"/>
                             <constraint firstItem="tbc-JS-2Sb" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="OtK-fd-WSc"/>
-                            <constraint firstItem="ZGd-tO-bFs" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="Scs-x9-p4c"/>
+                            <constraint firstItem="ZGd-tO-bFs" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="16" id="Scs-x9-p4c"/>
                             <constraint firstItem="TAR-fr-ZJu" firstAttribute="top" secondItem="r3b-KF-uSV" secondAttribute="top" id="WmS-hA-wqU"/>
                             <constraint firstItem="CNG-fS-ONX" firstAttribute="top" secondItem="sKE-bP-FbM" secondAttribute="bottom" id="ZXf-2b-neh"/>
                             <constraint firstItem="tbc-JS-2Sb" firstAttribute="top" secondItem="7k3-0H-Kk8" secondAttribute="bottom" constant="20" id="aKO-iX-J82"/>
@@ -1130,7 +1130,7 @@
                             <constraint firstItem="sKE-bP-FbM" firstAttribute="top" secondItem="r3b-KF-uSV" secondAttribute="top" id="po8-bn-PNP"/>
                             <constraint firstItem="ZGd-tO-bFs" firstAttribute="top" secondItem="WAy-Lg-6Kj" secondAttribute="bottom" constant="8" id="qpj-kb-EKw"/>
                             <constraint firstAttribute="trailing" secondItem="TAR-fr-ZJu" secondAttribute="trailing" id="qxL-Lv-VBZ"/>
-                            <constraint firstItem="UJx-8I-puS" firstAttribute="top" secondItem="ZGd-tO-bFs" secondAttribute="bottom" constant="8" id="std-Jg-hdd"/>
+                            <constraint firstItem="UJx-8I-puS" firstAttribute="top" secondItem="ZGd-tO-bFs" secondAttribute="bottom" constant="45" id="std-Jg-hdd"/>
                             <constraint firstItem="7k3-0H-Kk8" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" constant="20" id="uUn-S3-Pjn"/>
                             <constraint firstItem="CNG-fS-ONX" firstAttribute="top" secondItem="tbc-JS-2Sb" secondAttribute="bottom" constant="40" id="uWN-BU-2N4"/>
                         </constraints>
@@ -1142,8 +1142,8 @@
                         <outlet property="containerView" destination="r3b-KF-uSV" id="KWE-zG-3Gf"/>
                         <outlet property="genres" destination="SsH-fi-zSa" id="KLD-gA-zrm"/>
                         <outlet property="showProgress" destination="tbc-JS-2Sb" id="eE9-Mj-crS"/>
-                        <outlet property="showSubtitleLabel" destination="ZGd-tO-bFs" id="b0r-Xz-3Ur"/>
-                        <outlet property="showTitle" destination="UJx-8I-puS" id="FiX-Es-SYN"/>
+                        <outlet property="showSubtitleLabel" destination="UJx-8I-puS" id="wYQ-bb-6mX"/>
+                        <outlet property="showTitle" destination="ZGd-tO-bFs" id="6Jh-1A-pU5"/>
                         <outlet property="sportsUIView" destination="7k3-0H-Kk8" id="lj2-SP-V1I"/>
                     </connections>
                 </viewController>

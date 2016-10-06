@@ -65,6 +65,18 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
                 
                 // Do any additional setup after loading the view.
+                
+        }
+        
+        override func viewWillAppear(_ animated: Bool) {
+                super.viewWillAppear(true)
+                
+                self.navigationController?.tabBarController?.tabBar.isHidden = true
+        }
+        
+        override func viewWillDisappear(_ animated: Bool) {
+                super.viewWillDisappear(true)
+                self.navigationController?.tabBarController?.tabBar.isHidden = false
         }
         
         override func didReceiveMemoryWarning() {
