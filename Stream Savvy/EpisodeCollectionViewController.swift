@@ -114,9 +114,9 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 if (collectionView.restorationIdentifier == "seasons"){
                         var cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
                         
-                        cell.seasonLabel?.text = "\(indexPath.row + 1)"
-                        
-                        return cell
+                        cell.seasonLabel?.text = "Season \(indexPath.row + 1)"
+			
+			return cell
                         
                 } else {
                         var cell: EpisodeViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath) as! EpisodeViewCell
@@ -126,7 +126,18 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         cell.seEp?.text = "Season \(currentIndex + 1) Episode \(episode!.episodeNumber!)"
                         
                         cell.epTitle?.text = "\(episode!.title!)"
-                        
+			
+			let backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
+			backgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
+			backgroundImageView.clipsToBounds = true
+			SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: episode?.thumbnail608X342)
+			let overLayImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
+			overLayImageView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
+			
+			cell.addSubview(backgroundImageView)
+			cell.addSubview(overLayImageView)
+			cell.sendSubview(toBack: overLayImageView)
+			cell.sendSubview(toBack: backgroundImageView)
                         return cell
                 }
 		
