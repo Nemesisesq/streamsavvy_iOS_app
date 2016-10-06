@@ -52,8 +52,8 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 //	print("3")
                 //	print("\(self.content.guidebox_id!)")
                 //	print("2.5")
-                //        Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
-                Episode.getEpisodeList(guidebox_id: "2098")
+                        Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
+//                Episode.getEpisodeList(guidebox_id: "2098")
                         .then{ epiList -> Void in
                                 print("0")
                                 self.episodes = epiList
@@ -113,8 +113,11 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         if (collectionView.restorationIdentifier == "seasons" ){
                                 return self.seasons.count
                         } else {
+                                let key: String = String(currentIndex + 1)
+                                let epis = self.seasons?[key]
+                                return (epis?.count)!
                                 
-                                return self.seasons[String(currentIndex)]!.count
+                                
                         }
                 }
                 

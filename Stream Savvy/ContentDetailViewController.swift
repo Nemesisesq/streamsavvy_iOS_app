@@ -57,7 +57,7 @@ class ContentDetailViewController: UIViewController  {
                 
                 //MARK - Here we hid the tool bar and make the navigation tool bar transparent
                 
-                self.navigationController?.navigationBar.backgroundColor = .clear
+//                self.navigationController?.navigationBar.barTintColor = nil
                 self.navigationController?.tabBarController?.tabBar.isHidden = true
                 
                 if content == nil {
@@ -101,13 +101,15 @@ class ContentDetailViewController: UIViewController  {
         override func viewWillDisappear(_ animated: Bool) {
                 super.viewDidDisappear(animated)
                 
-                if let tabBarController = self.navigationController?.tabBarController {
-                        tabBarController.tabBar.isHidden = false
-                }
+//                if let tabBarController = self.navigationController?.tabBarController {
+//                        tabBarController.tabBar.isHidden = false
+//                }
                 
                 self.navigationController?.tabBarController?.tabBar.isHidden = false
+                 self.navigationController?.navigationBar.backgroundColor = nil
         }
 
+        
         
         override func viewDidDisappear(_ animated: Bool) {
                 super.viewDidDisappear(animated)
