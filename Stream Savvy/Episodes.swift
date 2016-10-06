@@ -12,95 +12,93 @@ import Alamofire
 import Gloss
 
 public class Episode: Decodable {
-    let id: Int?
-    let tvdb: Int?
-    let contentType: String?
-    
-    
-    let imdbId: Int?
-    let seasonNumber: Int?
-    let episodeNumber: Int?
-    let showId: Int?
-    let themoviedb: Int?
-    
-    let firstAired: String?
-    let title: String?
-    let originalTitle: String?
-    
-    let overview: String?
-    let duration: Int?
-    let productionCode: String?
-    let thumbnail208X117: String?
-    let thumbnail304X171: String?
-    let thumbnail400X225: String?
-    let thumbnail608X342: String?
-    
-    public required init?(json: [String:Any]){
+        let id: Int?
+        let tvdb: Int?
+        let contentType: String?
         
         
-        id = "id" <~~ json
-        tvdb = "tvdb"  <~~ json
-        contentType = "content_type"  <~~ json
+        let imdbId: Int?
+        let seasonNumber: Int?
+        let episodeNumber: Int?
+        let showId: Int?
+        let themoviedb: Int?
         
+        let firstAired: String?
+        let title: String?
+        let originalTitle: String?
         
-        imdbId = "imdb_id"  <~~ json
-        seasonNumber = "season_number" <~~ json
-        episodeNumber = "episode_number"  <~~ json
-        showId = "show_id" <~~ json
-        themoviedb  = "themoviedb" <~~ json
-        
-        firstAired = "first_aired" <~~ json
-        title = "title" <~~ json
-        originalTitle = "original_title" <~~ json
-        
-        overview = "overview" <~~ json
-        duration = "duration" <~~ json
-        productionCode = "production_code" <~~ json
-        thumbnail208X117 = "thumbnail_208x117" <~~ json
-        thumbnail304X171 = "thumbnail_304x171" <~~ json
-        thumbnail400X225 = "thumbnail_400x225" <~~ json
-        thumbnail608X342 = "thumbnail_608x342" <~~ json
-        
-        
-    }
-    
-    var _guidebox_id: String?
-    var episode_list: NSDictionary?
-    
-    
-    class func getEpisodeList(guidebox_id: String) -> Promise<[Episode]> {
-        print("$")
-//        let url = "http://localhost:8080/episodes"
-        let url = "https://edr-go-staging.herokuapp.com:8080/episodes"
-        
-        let parameters = ["guidebox_id": guidebox_id]
-        
-        return Promise {fullfill, reject in
-            Alamofire.request(url, parameters:parameters)
-                .responseJSON { response -> Void in
-                    var epiList = [Episode]()
-                    print("$")
-                    let the_json = getReadableJsonDict(data: response.data!)
-			print("$")
-                    for epi in the_json["results"] as! NSArray {
-                        print("$")
-                        epiList.append(Episode(json: epi as! [String : Any])!)
-                        
-                    }
-                    print("$")
-                    let ep = Episode(json: ["hello": "World"])
-                    
-                    print("$")
-                    switch response.result {
-                    case .success:
-                        print("$")
-			fullfill(epiList)
-			
-                    case .failure(let error):
-			print("$")
-			reject(error)
-                    }
-            }
+        let overview: String?
+        let duration: Int?
+        let productionCode: String?
+        let thumbnail208X117: String?
+        let thumbnail304X171: String?
+        let thumbnail400X225: String?
+        let thumbnail608X342: String?
+	
+	public required init?(json: [String:Any]){
+                
+                
+                id = "id" <~~ json
+                tvdb = "tvdb"  <~~ json
+                contentType = "content_type"  <~~ json
+                
+                
+                imdbId = "imdb_id"  <~~ json
+                seasonNumber = "season_number" <~~ json
+                episodeNumber = "episode_number"  <~~ json
+                showId = "show_id" <~~ json
+                themoviedb  = "themoviedb" <~~ json
+                
+                firstAired = "first_aired" <~~ json
+                title = "title" <~~ json
+                originalTitle = "original_title" <~~ json
+                
+                overview = "overview" <~~ json
+                duration = "duration" <~~ json
+                productionCode = "production_code" <~~ json
+                thumbnail208X117 = "thumbnail_208x117" <~~ json
+                thumbnail304X171 = "thumbnail_304x171" <~~ json
+                thumbnail400X225 = "thumbnail_400x225" <~~ json
+                thumbnail608X342 = "thumbnail_608x342" <~~ json
+                
+                
         }
-    }
+        
+        var _guidebox_id: String?
+        var episode_list: NSDictionary?
+	
+        
+        class func getEpisodeList(guidebox_id: String) -> Promise<[Episode]> {
+                
+//                let url = "http://localhost:8080/episodes"
+                        let url = "https://edr-go-staging.herokuapp.com:8080/episodes"
+		
+                let parameters = ["guidebox_id": guidebox_id]
+                
+                return Promise {fullfill, reject in
+                        Alamofire.request(url, parameters:parameters)
+                                .responseJSON { response -> Void in
+                                        var epiList = [Episode]()
+                                        
+                                        let the_json = getReadableJsonDict(data: response.data!)
+                                        
+                                        let result = the_json["results"] as? NSArray
+                                        result?.forEach(){ epi in
+                                                epiList.append(Episode(json: epi as! [String : Any])!)
+                                                
+                                        }
+                                        
+                                        let ep = Episode(json: ["hello": "World"])
+                                        
+                                        
+                                        switch response.result {
+                                        case .success:
+                                                fullfill(epiList)
+                                                
+                                        case .failure(let error):
+                                                reject(error)
+                                        }
+                        }
+                }
+        }
 }
