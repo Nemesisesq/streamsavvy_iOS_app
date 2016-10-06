@@ -64,8 +64,9 @@ public class Content: NSObject {
         self.guidebox_id = show.guidebox_id
         let  data = show.raw as NSDictionary as! [String: Any]
         self.guidebox_data = data["guidebox_data"] as! NSDictionary?
+	
         self.image_link = show.image_link
-        
+        print("$$$ ~ \(show.image_link)")
     }
     
     
@@ -116,8 +117,9 @@ public class Content: NSObject {
         content.curr_pop_score = dict["curr_pop_score"] as? Float
         content.channels_last_checked  = dict["channels_last_checked"] as? String
         content.modified = dict["modified"] as? String
-        
+	content.image_link = content.guidebox_data["artwork_608x342"] as? String
         return content
+	
     }
     
     

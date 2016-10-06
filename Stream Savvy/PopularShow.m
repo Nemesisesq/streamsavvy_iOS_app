@@ -17,11 +17,14 @@
 - (instancetype)initWithAttributes:(NSDictionary *)attributes{
 	self = [super init];
 	NSLog(@"\t\tattributts: %@", attributes);
+	NSLog(@"~~~~~~~~~~~~~~");
 	if (!self) return nil;
 	self.guidebox_id			= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"id"] integerValue];
 	self.title					= [attributes valueForKey:@"title"];
 	self.image_link			= [[attributes valueForKey:@"guidebox_data"] valueForKey:@"artwork_608x342"];
+	NSLog(@"^^\t%@", self.image_link);
 	self.time					= [[[attributes valueForKey:@"guidebox_data"] valueForKey:@"detail"] valueForKey:@"air_time"]; // air_day_of_week
+	self.duration				= [[[[attributes valueForKey:@"guidebox_data"] valueForKey:@"detail"] valueForKey:@"runtime"] integerValue];
 //	self.deep_link			= [PopularShow randomUrl];
 	self.raw					= attributes;
 	NSMutableArray *genres = [NSMutableArray new];

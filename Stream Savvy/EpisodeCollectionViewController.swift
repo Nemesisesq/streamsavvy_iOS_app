@@ -129,7 +129,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         
                         return cell
                 }
-                
+		
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

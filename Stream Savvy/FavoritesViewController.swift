@@ -160,7 +160,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         // Dispose of any resources that can be recreated.
     }
 	
-	
+
     func makeCarousel() {
         carousel.type = .cylinder
         print("viewWillAppear")
@@ -209,7 +209,15 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
          
          example here we create a button  and center it inside of the carousel item view
          */
-        
+	let backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:carouselItemView.frame.size.width, height: carouselItemView.frame.size.height));
+	backgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
+	backgroundImageView.clipsToBounds = true
+	SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: favorites.contentList[index].image_link)
+//	backgroundImageView.backgroundColor = UIColor.black
+	
+	let overLayImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:carouselItemView.frame.size.width, height: carouselItemView.frame.size.height));
+	overLayImageView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
+	
         let button = UIButton(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width * 0.9, height: 40));
         
         //        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
@@ -233,9 +241,11 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         
         
         button.setTitle(favorites.contentList[index].title, for: .normal)
-        
-        carouselItemView.addSubview(button);
-        carouselItemView.addSubview(newButton);
+	
+	carouselItemView.addSubview(backgroundImageView)
+	carouselItemView.addSubview(overLayImageView)
+        carouselItemView.addSubview(button)
+        carouselItemView.addSubview(newButton)
         
         return carouselItemView
         
