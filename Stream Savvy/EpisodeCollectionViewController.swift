@@ -60,7 +60,6 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                                 print("00")
                                 self.seasons = $.groupBy((self.episodes as? Array<Episode>)!, callback: { String($0.seasonNumber!) })
                                 print("000")
-                                
                                 self.seasonCollectionView.reloadData()
                                 print("0000")
                                 self.episodeCollectionView.reloadData()
@@ -109,20 +108,23 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 // #warning Incomplete implementation, return the number of items
+		print("numberodsexonsinitem")
                 if self.seasons != nil && !self.seasons.isEmpty {
+			print("numberodsexonsinitem un")
                         if (collectionView.restorationIdentifier == "seasons" ){
-                                return self.seasons.count
+				print("numberodsexonsinitem 1 dun")
+				return self.seasons.count
                         } else {
-                                
+                                print("numberodsexonsinitem 2 dun")
                                 return self.seasons[String(currentIndex)]!.count
                         }
                 }
-                
+                print("numberodsexonsinitem 3 dun")
                 return 0
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-                
+                print("*")
                 
                 // Configure the cell
                 if (collectionView.restorationIdentifier == "seasons"){
@@ -143,7 +145,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         
                         return cell
                 }
-                
+                print("@@")
                 
         }
         

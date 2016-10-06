@@ -69,7 +69,7 @@ public class Episode: Decodable {
     
     
     class func getEpisodeList(guidebox_id: String) -> Promise<[Episode]> {
-        
+        print("$")
 //        let url = "http://localhost:8080/episodes"
         let url = "https://edr-go-staging.herokuapp.com:8080/episodes"
         
@@ -79,24 +79,26 @@ public class Episode: Decodable {
             Alamofire.request(url, parameters:parameters)
                 .responseJSON { response -> Void in
                     var epiList = [Episode]()
-                    
+                    print("$")
                     let the_json = getReadableJsonDict(data: response.data!)
-
+			print("$")
                     for epi in the_json["results"] as! NSArray {
-                        
+                        print("$")
                         epiList.append(Episode(json: epi as! [String : Any])!)
                         
                     }
-                    
+                    print("$")
                     let ep = Episode(json: ["hello": "World"])
                     
-                    
+                    print("$")
                     switch response.result {
                     case .success:
-                        fullfill(epiList)
-                        
+                        print("$")
+			fullfill(epiList)
+			
                     case .failure(let error):
-                        reject(error)
+			print("$")
+			reject(error)
                     }
             }
         }

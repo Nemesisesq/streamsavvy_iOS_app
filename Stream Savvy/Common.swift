@@ -13,14 +13,15 @@ typealias JSONStandardDict  = [String: AnyObject]
 
 func getReadableJsonDict(data : Data ) -> JSONStandardDict {
     do {
-    
+    print("@")
     
     let  readableJSON = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! JSONStandardDict
-        return readableJSON 
+	print("@%")
+	return readableJSON
     }
     catch {
         
     }
-    
+    print("@%%")
     return ["hello" : "world" as AnyObject]
 }
