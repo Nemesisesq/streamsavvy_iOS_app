@@ -45,35 +45,19 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                //	print("4")
                 self.mediaTitleLabel.text = self.content.title
-                //	print("3")
-                ///	print("\(self.content.title!)")
-                //	print("3")
-                //	print("\(self.content.guidebox_id!)")
-                //	print("2.5")
                         Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
 //                Episode.getEpisodeList(guidebox_id: "2098")
                         .then{ epiList -> Void in
-                                print("0")
                                 self.episodes = epiList
-                                print("00")
                                 self.seasons = $.groupBy((self.episodes as? Array<Episode>)!, callback: { String($0.seasonNumber!) })
-                                print("000")
                                 self.seasonCollectionView.reloadData()
-                                print("0000")
                                 self.episodeCollectionView.reloadData()
-                                print("00000")
                         }.catch { error in
                                 print(error)
                                 
                 }
-                print("2")
-                
                 currentIndex = 0
-                print("1")
-                
-                
                 // Uncomment the following line to preserve selection between presentations
                 // self.clearsSelectionOnViewWillAppear = false
                 
@@ -125,8 +109,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-                print("*")
-                
+		
                 // Configure the cell
                 if (collectionView.restorationIdentifier == "seasons"){
                         var cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
@@ -146,7 +129,6 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         
                         return cell
                 }
-                print("@@")
                 
         }
         

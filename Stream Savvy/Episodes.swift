@@ -72,7 +72,6 @@ public class Episode: Decodable {
                 
 //                let url = "http://localhost:8080/episodes"
                         let url = "https://edr-go-staging.herokuapp.com:8080/episodes"
-		
                 let parameters = ["guidebox_id": guidebox_id]
                 
                 return Promise {fullfill, reject in
