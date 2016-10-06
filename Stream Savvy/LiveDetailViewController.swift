@@ -10,14 +10,17 @@ import UIKit
 
 import Dollar
 
-class GenreCell: UICollectionViewCell {
+class AppCell: UICollectionViewCell {
     
-    @IBOutlet var genreLabel: UILabel!
+        @IBOutlet var image: UIImageView!
+   
 }
 
 
 class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+        @IBOutlet var channelImage: UIImageView!
+        
 	var channel: Channel!
     
 	var media: Media!
@@ -57,7 +60,7 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
 //                episodeTitle.text = media.episodeTitle
 //            }
 //        }
-        
+        SDWebModel.loadImage(for: channelImage, withRemoteURL: channel.image_link)
         
         genres.text = $.join(media.genres as! [String], separator: " | ")
         
@@ -100,7 +103,9 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "app_icons", for: indexPath) as! GenreCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "app_icons", for: indexPath) as! AppCell
+        
+//        cell.image
         
         return cell
     }
