@@ -194,63 +194,31 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         /*
-         here the content for the carousel can be set. a carousel item is crreatec and sub views can be added to that item
+         here the content for the carousel can be set. a carousel item is created and sub views can be added to that item
          */
-        let carouselItemView = UIView(frame: CGRect(
-            x: 0,
-            y: 0,
-            width: self.view.frame.size.width * 0.9,
-            height: 400));
+        let carouselItemView = CarouselItem.instantiateFromNib()
+        carouselItemView.frame = CGRect(
+                x: 0,
+                y: 0,
+                width: self.view.frame.size.width * 0.9,
+                height: 400)
+//        view?.addSubview(carouselItemView)
         
+//        carouselItemView.backgroundColor = getRandomColor()
         
-        carouselItemView.backgroundColor = getRandomColor()
-        
-        /*
-         
-         example here we create a button  and center it inside of the carousel item view
-         */
-	let backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:carouselItemView.frame.size.width, height: carouselItemView.frame.size.height));
-	backgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
-	backgroundImageView.clipsToBounds = true
-	SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: favorites.contentList[index].image_link)
-//	backgroundImageView.backgroundColor = UIColor.black
+	SDWebModel.loadImage(for: carouselItemView.showImage, withRemoteURL: favorites.contentList[index].image_link)
 	
-	let overLayImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:carouselItemView.frame.size.width, height: carouselItemView.frame.size.height));
-	overLayImageView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
+
+        
+
+        
+        
+        carouselItemView.showTitle.text = favorites.contentList[index].title
 	
-        let button = UIButton(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width * 0.9, height: 40));
-        
-        //        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
-        //                                y: (carouselItemView.frame.size.height / 2))
-        
-        button.backgroundColor = UIColor.clear
-        button.tintColor = UIColor.red
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
-        
-        let newButton = UIButton(frame: CGRect(x: 0, y: 80, width: self.view.frame.size.width * 0.9, height: 40));
-        
-        //        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
-        //                                y: (carouselItemView.frame.size.height / 2))
-        
-       
-        newButton.backgroundColor = UIColor.gray
-        newButton.tintColor = UIColor.red
-        newButton.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
-        newButton.setTitle("Watch Episodes", for: .normal)
-        
-        let margins = carouselItemView.layoutMarginsGuide
-        
-//        newButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 20.0).isActive = true
-        
-        newButton.addTarget(self, action: #selector(showEpisodes), for: UIControlEvents.touchUpInside)
-        
-        
-        button.setTitle(favorites.contentList[index].title, for: .normal)
-	
-	carouselItemView.addSubview(backgroundImageView)
-	carouselItemView.addSubview(overLayImageView)
-        carouselItemView.addSubview(button)
-        carouselItemView.addSubview(newButton)
+//	carouselItemView.addSubview(backgroundImageView)
+//	carouselItemView.addSubview(overLayImageView)
+//        carouselItemView.addSubview(button)
+//        carouselItemView.addSubview(newButton)
         
         return carouselItemView
         

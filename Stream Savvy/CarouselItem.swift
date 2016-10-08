@@ -9,24 +9,30 @@
 import UIKit
 
 class CarouselItem: UIView {
-
-        @IBOutlet var showImage: UIImageView!
+        
+        
         @IBOutlet var showTitle: UILabel!
         
-        @IBAction func watchEpisodes(_ sender: AnyObject) {
-        }
-        @IBAction func share(_ sender: AnyObject) {
-        }
+        @IBOutlet var showImage: UIImageView!
         
-        
-        @IBOutlet var likeButton: UIButton!
-        @IBAction func toggleLike(_ sender: UIButton) {
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-                super.init(coder: aDecoder)
-                UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: self, options: nil)
-        
-        }
+        @IBAction func watchEpisode(_ sender: UIButton) {
+                self.performSegue(withIdentifier: "EpisodeSegue", sender: self)
 
+        }
+        
+//        override init(frame: CGRect) {
+//                super.init(frame: frame)
+//                UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: self, options: nil)
+//                      }
+//        
+//        required init?(coder aDecoder: NSCoder) {
+//                super.init(coder: aDecoder)
+//                UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: self, options: nil)
+//        }
+        
+        class func instantiateFromNib() -> CarouselItem {
+                let view = UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: nil, options: nil).first as! CarouselItem
+                
+                return view
+        }
 }

@@ -437,12 +437,11 @@
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="65" id="gN1-bq-sXo">
                                 <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="gN1-bq-sXo" id="s82-pP-hI7">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gN1-bq-sXo" id="s82-pP-hI7">
                                     <frame key="frameInset" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Popular Shows" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-KH-QCE">
-                                            <frame key="frameInset" width="1000" height="1000"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Shows" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-KH-QCE">
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="Kvq-sU-aAh"/>
@@ -454,10 +453,9 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Lcn-KH-QCE" secondAttribute="bottom" constant="8" id="PIH-ra-9kH"/>
-                                        <constraint firstItem="Lcn-KH-QCE" firstAttribute="top" secondItem="s82-pP-hI7" secondAttribute="top" constant="16" id="RZU-xv-H7r"/>
-                                        <constraint firstItem="Lcn-KH-QCE" firstAttribute="leading" secondItem="s82-pP-hI7" secondAttribute="leading" constant="8" id="XZm-pe-0tJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="Lcn-KH-QCE" secondAttribute="trailing" constant="8" id="oK4-zt-HbR"/>
+                                        <constraint firstItem="Lcn-KH-QCE" firstAttribute="leading" secondItem="s82-pP-hI7" secondAttribute="leading" constant="8" id="QgR-hI-fnp"/>
+                                        <constraint firstAttribute="trailing" secondItem="Lcn-KH-QCE" secondAttribute="trailing" constant="8" id="WMn-0y-Irn"/>
+                                        <constraint firstItem="Lcn-KH-QCE" firstAttribute="top" secondItem="s82-pP-hI7" secondAttribute="top" constant="16" id="hwg-Vm-19a"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -582,7 +580,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gB-nH-Wh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="400"/>
+            <point key="canvasLocation" x="3412" y="399.85007496251876"/>
         </scene>
         <!--Show Details Table View Controller-->
         <scene sceneID="lVH-lY-xHp">
@@ -602,7 +600,7 @@
                                     <frame key="frameInset" width="375" height="111"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Game of Thrones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-Gh-8y4">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Game of Thrones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-Gh-8y4">
                                             <frame key="frameInset" width="1000" height="1000"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="Zgq-Lp-NXa"/>
@@ -611,7 +609,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tap the app you want to use to watch!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-5F-exe">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" text="Tap the app you want to use to watch!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-5F-exe">
                                             <frame key="frameInset" width="1000" height="1000"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="MhF-D2-K5x"/>
@@ -636,11 +634,11 @@
                                     <outlet property="mediaTitleLabel" destination="qIc-Gh-8y4" id="jsp-2u-RLR"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MediaSourceTableViewCell" rowHeight="82" id="trS-gk-SbB" customClass="MediaSourceTableViewCell">
-                                <rect key="frame" x="0.0" y="140" width="375" height="82"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MediaSourceTableViewCell" rowHeight="81" id="trS-gk-SbB" customClass="MediaSourceTableViewCell">
+                                <rect key="frame" x="0.0" y="140" width="375" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="trS-gk-SbB" id="9xu-rC-eHU">
-                                    <frame key="frameInset" width="375" height="81"/>
+                                    <frame key="frameInset" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="netflix-logo" translatesAutoresizingMaskIntoConstraints="NO" id="p3p-xt-CV2">
@@ -1049,8 +1047,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Crime | Drama | Mystery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsH-fi-zSa">
-                                <frame key="frameInset" minX="20" minY="59.5" width="191.5" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crime | Drama | Mystery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsH-fi-zSa">
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="29" id="1Xd-RA-KFg"/>
                                 </constraints>
@@ -1126,6 +1123,7 @@
                             <constraint firstItem="tbc-JS-2Sb" firstAttribute="top" secondItem="7k3-0H-Kk8" secondAttribute="bottom" constant="20" id="aKO-iX-J82"/>
                             <constraint firstItem="sKE-bP-FbM" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" id="hNN-cB-Wmc"/>
                             <constraint firstItem="TAR-fr-ZJu" firstAttribute="leading" secondItem="r3b-KF-uSV" secondAttribute="leading" id="ksL-dC-d55"/>
+                            <constraint firstItem="SsH-fi-zSa" firstAttribute="top" secondItem="ZGd-tO-bFs" secondAttribute="bottom" constant="8" id="oBS-bl-42c"/>
                             <constraint firstItem="sKE-bP-FbM" firstAttribute="top" secondItem="r3b-KF-uSV" secondAttribute="top" id="po8-bn-PNP"/>
                             <constraint firstItem="ZGd-tO-bFs" firstAttribute="top" secondItem="WAy-Lg-6Kj" secondAttribute="bottom" constant="8" id="qpj-kb-EKw"/>
                             <constraint firstAttribute="trailing" secondItem="TAR-fr-ZJu" secondAttribute="trailing" id="qxL-Lv-VBZ"/>
