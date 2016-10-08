@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import Dollar
 
 class AppCell: UICollectionViewCell {
@@ -19,11 +18,14 @@ class AppCell: UICollectionViewCell {
 
 class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
         
+        @IBOutlet var appCollectionView: UICollectionView!
         @IBOutlet var channelImage: UIImageView!
         
         var channel: Channel!
         
         var media: Media!
+        
+        var sources: [MediaSource]!
         
         @IBOutlet var backgroundImage: UIImageView!
         
@@ -31,7 +33,8 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         
         @IBOutlet var showTitle: UILabel!
         
-        @IBOutlet weak var showSubtitleLabel: UILabel!
+        
+        @IBOutlet weak var showSubtitleLabel: UITextView!
         
         @IBOutlet var showProgress: UIProgressView!
         
@@ -43,9 +46,28 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                channel.getDetailsWith(containerView, success: { JSON in
+                
+                
+                self.sources = [MediaSource]()
+                // MARK - This is where we make the call to get the streaming services for the channel
+                
+                channel.getDetailsWith(containerView, success: {task, JSON in
                         
-                        print(JSON)
+                        //                        print("supercal")
+                        let the_json = JSON as! NSDictionary
+                        let sourceDict = the_json.object(forKey: "streamingServices") as! [[String:Any]]
+                        
+                        sourceDict.forEach(){src in
+                                
+                                let mSrc: MediaSource = MediaSource.init(attributes: src)
+                                self.sources.append(mSrc)
+                        
+                        }
+                        
+                        self.appCollectionView.reloadData()
+                
+                        
+                        
                 })
                 showTitle.text			= media.title
                 //                showSubtitleLabel.text	= "Channel \(channel.channel_number!)"
@@ -111,7 +133,7 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 
-                return 0
+                return self.sources.count
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -120,19 +142,49 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
                 
                 //this needs to be hooked up
                 
-                
-//                SDWebModel.loadImage(for: cell.image, withRemoteURL: <#T##String!#>)
+                let source = sources[indexPath.row]
+                cell.image.image = UIImage(named:"\(source.source!)")
+                cell.backgroundColor = getRandomColor()
                 
                 return cell
         }
         
         //MARK: - Collection View Data Source
         
+        let application = UIApplication.shared
+        
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 print("\(indexPath) clicked")
                 
+                let source = sources[indexPath.row]
+                
+                let link = getDeepLink(deepLinks: source.deep_links as! [String])
+                
+                if link != "" {
+                        application.openURL(URL.init(string: link)!)
+                        
+                } else {
+                        
+                        application.openURL(URL.init(string: source.app_store_link)!)
+                }
+                
+                
+                
         }
         
+        func getDeepLink(deepLinks: [String]) -> String {
+                for i in deepLinks {
+                        if schemeAvailable(deepLink: i){
+                                return i
+                        }
+                }
+                
+                return ""
+        }
+        
+        func schemeAvailable(deepLink: String) -> Bool {
+                return application.canOpenURL(URL.init(string: deepLink)!)
+        }
         
         
         

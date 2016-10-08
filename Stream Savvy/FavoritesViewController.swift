@@ -232,10 +232,15 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         //        button.center = CGPoint(x: carouselItemView.frame.size.width  / 2,
         //                                y: (carouselItemView.frame.size.height / 2))
         
-        newButton.backgroundColor = UIColor.clear
+       
+        newButton.backgroundColor = UIColor.gray
         newButton.tintColor = UIColor.red
         newButton.titleLabel?.font = UIFont.systemFont(ofSize: 26, weight: 1)
-        newButton.setTitle("See Episodes ->", for: .normal)
+        newButton.setTitle("Watch Episodes", for: .normal)
+        
+        let margins = carouselItemView.layoutMarginsGuide
+        
+//        newButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 20.0).isActive = true
         
         newButton.addTarget(self, action: #selector(showEpisodes), for: UIControlEvents.touchUpInside)
         

@@ -58,6 +58,11 @@
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
 		BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */; };
+		BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE960441DA8AF5900E13C68 /* CarouselItem.swift */; };
+		BDE960471DA8AF5900E13C68 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE960451DA8AF5900E13C68 /* CarouselItem.xib */; };
+		BDE9604B1DA8B71600E13C68 /* Upload-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE960481DA8B71600E13C68 /* Upload-50.png */; };
+		BDE9604C1DA8B71600E13C68 /* Like Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE960491DA8B71600E13C68 /* Like Filled-50.png */; };
+		BDE9604D1DA8B71600E13C68 /* Like-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE9604A1DA8B71600E13C68 /* Like-50.png */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +176,11 @@
 		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveDetailViewController.swift; sourceTree = "<group>"; };
+		BDE960441DA8AF5900E13C68 /* CarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
+		BDE960451DA8AF5900E13C68 /* CarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
+		BDE960481DA8B71600E13C68 /* Upload-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload-50.png"; sourceTree = "<group>"; };
+		BDE960491DA8B71600E13C68 /* Like Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like Filled-50.png"; sourceTree = "<group>"; };
+		BDE9604A1DA8B71600E13C68 /* Like-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,9 +331,14 @@
 			children = (
 				9F5A4D3B1D5AE1D70057AF6D /* Main.storyboard */,
 				9F5A4D3E1D5AE1D70057AF6D /* Assets.xcassets */,
+				BDE960481DA8B71600E13C68 /* Upload-50.png */,
+				BDE960491DA8B71600E13C68 /* Like Filled-50.png */,
+				BDE9604A1DA8B71600E13C68 /* Like-50.png */,
 				BD25C0301DA646CF005C28C2 /* app_icons */,
 				BD1834B51D8CDACE00B472E2 /* favorite.png */,
 				9F5A4D401D5AE1D70057AF6D /* LaunchScreen.storyboard */,
+				BDE960441DA8AF5900E13C68 /* CarouselItem.swift */,
+				BDE960451DA8AF5900E13C68 /* CarouselItem.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -568,10 +583,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE9604B1DA8B71600E13C68 /* Upload-50.png in Resources */,
+				BDE9604D1DA8B71600E13C68 /* Like-50.png in Resources */,
 				9F5A4D421D5AE1D70057AF6D /* LaunchScreen.storyboard in Resources */,
 				9F5A4D3F1D5AE1D70057AF6D /* Assets.xcassets in Resources */,
 				BD25C0311DA646CF005C28C2 /* app_icons in Resources */,
+				BDE9604C1DA8B71600E13C68 /* Like Filled-50.png in Resources */,
 				9F5A4D3D1D5AE1D70057AF6D /* Main.storyboard in Resources */,
+				BDE960471DA8AF5900E13C68 /* CarouselItem.xib in Resources */,
 				BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,6 +756,7 @@
 			files = (
 				9F420FAC1DA3345400A89D87 /* LiveGuideDetailsViewController.m in Sources */,
 				9FBC97851D6D32CB004B6182 /* GuideTableViewController.m in Sources */,
+				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,
 				9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */,
 				9FC2961B1D774179005CB080 /* WebViewViewController.m in Sources */,
 				BD0D74631D9AB3BF0012F184 /* TestData.swift in Sources */,
