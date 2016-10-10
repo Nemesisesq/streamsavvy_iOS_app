@@ -118,7 +118,7 @@ public class Content: NSObject {
         content.curr_pop_score = dict["curr_pop_score"] as? Float
         content.channels_last_checked  = dict["channels_last_checked"] as? String
         content.modified = dict["modified"] as? String
-	content.image_link = content.guidebox_data["artwork_608x342"] as? String
+	content.image_link = (dict["guidebox_data"] as? NSMutableDictionary)?.object(forKey: "artwork_608x342") as? String
         return content
 	
     }
