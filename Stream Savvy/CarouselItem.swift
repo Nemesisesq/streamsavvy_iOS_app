@@ -9,14 +9,29 @@
 import UIKit
 
 class CarouselItem: UIView {
+
+        @IBOutlet var likeButtonStatus: UIButton!
         
+        var vc: FavoritesViewController!
+        
+        var index: Int!
         
         @IBOutlet var showTitle: UILabel!
         
         @IBOutlet var showImage: UIImageView!
         
+        @IBAction func toggleLikeButton(_ sender: UIButton) {
+                vc.favorites.contentList.remove(at: index)
+                likeButtonStatus.imageView?.image = #imageLiteral(resourceName: "Like-50")
+                vc.carousel.reloadData()
+                
+        }
+        
+        @IBAction func Share(_ sender: AnyObject) {
+        }
+        
         @IBAction func watchEpisode(_ sender: UIButton) {
-                self.performSegue(withIdentifier: "EpisodeSegue", sender: self)
+                vc.performSegue(withIdentifier: "EpisodeSegue", sender: self)
 
         }
         

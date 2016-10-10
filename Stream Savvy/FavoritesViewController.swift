@@ -214,6 +214,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         
         
         carouselItemView.showTitle.text = favorites.contentList[index].title
+        carouselItemView.vc = self
+        carouselItemView.index = index
 	
 //	carouselItemView.addSubview(backgroundImageView)
 //	carouselItemView.addSubview(overLayImageView)

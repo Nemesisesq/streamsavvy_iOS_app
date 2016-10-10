@@ -290,7 +290,7 @@
         <!--Episode Collection View Controller-->
         <scene sceneID="pZl-mB-hjV">
             <objects>
-                <viewController id="LNb-Yl-gEE" customClass="EpisodeCollectionViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EpisodeController" id="LNb-Yl-gEE" customClass="EpisodeCollectionViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ID4-kN-UgR"/>
                         <viewControllerLayoutGuide type="bottom" id="pul-X2-fDc"/>

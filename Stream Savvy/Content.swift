@@ -111,6 +111,7 @@ public class Content: NSObject {
 //	print(dict)
 //	print("@@@\n\n@@@")
         content.title = dict["title"] as? String
+        content.guidebox_id = (dict["guidebox_data"] as? NSMutableDictionary)?.object(forKey: "id") as! Int!
         content.guidebox_data = dict["guidebox_data"] as? NSMutableDictionary
         content.on_netflix = dict["on_netflix"] as? Bool
         content.channel = dict["channel"] as? NSMutableDictionary

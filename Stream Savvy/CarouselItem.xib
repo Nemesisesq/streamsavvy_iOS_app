@@ -30,6 +30,22 @@
                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <size key="shadowOffset" width="1" height="-1"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxc-cA-DIv">
+                    <frame key="frameInset" minX="293" minY="10" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="Upload-50"/>
+                    <connections>
+                        <action selector="Share:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="YZ6-MB-UUx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKb-B7-eci">
+                    <frame key="frameInset" minX="245" minY="10" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="Like Filled-50"/>
+                    <connections>
+                        <action selector="toggleLikeButton:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="ewD-Ww-Ig5"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -45,10 +61,15 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="likeButtonStatus" destination="tKb-B7-eci" id="igq-HQ-Lnh"/>
                 <outlet property="showImage" destination="SDO-oA-8e3" id="KgH-MC-pjK"/>
                 <outlet property="showTitle" destination="E5e-Ma-Rao" id="Udn-G4-77I"/>
             </connections>
             <point key="canvasLocation" x="17.5" y="-62"/>
         </view>
     </objects>
+    <resources>
+        <image name="Like Filled-50" width="50" height="50"/>
+        <image name="Upload-50" width="50" height="50"/>
+    </resources>
 </document>
