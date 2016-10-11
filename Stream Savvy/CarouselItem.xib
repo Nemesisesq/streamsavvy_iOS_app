@@ -15,23 +15,20 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SDO-oA-8e3">
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipf-8w-iiz">
-                    <frame key="frameInset" minX="106" minY="347" width="126" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipf-8w-iiz">
+                    <color key="backgroundColor" red="0.14835569371727753" green="0.036077939350969757" blue="0.04140581981882014" alpha="0.7896996897163121" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="WjB-Rh-Rhb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Watch Episodes"/>
                     <connections>
                         <action selector="watchEpisode:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="Iuf-ti-KhA"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5e-Ma-Rao">
-                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <size key="shadowOffset" width="1" height="-1"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxc-cA-DIv">
-                    <frame key="frameInset" minX="293" minY="10" width="40" height="40"/>
+                    <frame key="frameInset" minX="238" minY="12" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" backgroundImage="Upload-50"/>
                     <connections>
@@ -39,22 +36,34 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKb-B7-eci">
-                    <frame key="frameInset" minX="245" minY="10" width="40" height="40"/>
+                    <frame key="frameInset" minX="283" minY="12" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="Like Filled-50"/>
+                    <state key="normal" backgroundImage="close"/>
                     <connections>
                         <action selector="toggleLikeButton:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="ewD-Ww-Ig5"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5e-Ma-Rao">
+                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <size key="shadowOffset" width="1" height="-1"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="SDO-oA-8e3" secondAttribute="bottom" id="8Wd-mH-Ymu"/>
-                <constraint firstAttribute="trailing" secondItem="SDO-oA-8e3" secondAttribute="trailing" id="HmB-sO-7JT"/>
+                <constraint firstAttribute="trailing" secondItem="ipf-8w-iiz" secondAttribute="trailing" constant="20" id="Hd5-Yk-4Gs"/>
                 <constraint firstItem="SDO-oA-8e3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LEv-mT-3MH"/>
                 <constraint firstItem="SDO-oA-8e3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QD0-VQ-bDB"/>
-                <constraint firstItem="E5e-Ma-Rao" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="i1s-h4-pQK"/>
+                <constraint firstAttribute="bottom" secondItem="SDO-oA-8e3" secondAttribute="bottom" id="UYO-5R-nB2"/>
+                <constraint firstItem="ipf-8w-iiz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="hz9-9N-KMg"/>
+                <constraint firstItem="E5e-Ma-Rao" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="i1s-h4-pQK"/>
                 <constraint firstItem="E5e-Ma-Rao" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oU6-2q-H5c"/>
+                <constraint firstItem="SDO-oA-8e3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pij-7w-d6l"/>
+                <constraint firstAttribute="bottom" secondItem="ipf-8w-iiz" secondAttribute="bottom" constant="45" id="pmU-AB-Njo"/>
+                <constraint firstItem="ipf-8w-iiz" firstAttribute="centerX" secondItem="SDO-oA-8e3" secondAttribute="centerX" id="rcZ-zr-wdw"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -62,6 +71,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="likeButtonStatus" destination="tKb-B7-eci" id="igq-HQ-Lnh"/>
+                <outlet property="share" destination="pxc-cA-DIv" id="u1R-D5-Drj"/>
                 <outlet property="showImage" destination="SDO-oA-8e3" id="KgH-MC-pjK"/>
                 <outlet property="showTitle" destination="E5e-Ma-Rao" id="Udn-G4-77I"/>
             </connections>
@@ -69,7 +79,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Like Filled-50" width="50" height="50"/>
         <image name="Upload-50" width="50" height="50"/>
+        <image name="close" width="63" height="63"/>
     </resources>
 </document>

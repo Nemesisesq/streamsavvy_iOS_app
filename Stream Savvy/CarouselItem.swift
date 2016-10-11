@@ -12,6 +12,9 @@ class CarouselItem: UIView {
         
         @IBOutlet var likeButtonStatus: UIButton!
         
+        @IBOutlet var share: UIButton!
+        
+        
         var vc: FavoritesViewController!
         
         var index: Int!
@@ -56,6 +59,9 @@ class CarouselItem: UIView {
         
         class func instantiateFromNib() -> CarouselItem {
                 let view = UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: nil, options: nil).first as! CarouselItem
+                
+                
+                view.share.removeFromSuperview()
                 
                 return view
         }

@@ -214,11 +214,6 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 
                 carouselItemView.showImage.contentMode = .scaleAspectFill
                 
-                
-                
-                
-                
-                
                 carouselItemView.showTitle.text = favorites.contentList[index].title
                 carouselItemView.vc = self
                 carouselItemView.index = index
