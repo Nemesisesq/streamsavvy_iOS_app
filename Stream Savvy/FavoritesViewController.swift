@@ -212,6 +212,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 
                 SDWebModel.loadImage(for: carouselItemView.showImage, withRemoteURL: favorites.contentList[index].image_link)
                 
+                carouselItemView.showImage.contentMode = .scaleAspectFill
+                
                 
                 
                 

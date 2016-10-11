@@ -313,20 +313,21 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Episode" id="LeH-sC-cVm" customClass="EpisodeViewCell" customModule="Stream_Savvy" customModuleProvider="target">
-                                        <rect key="frame" x="17.5" y="0.0" width="340" height="140"/>
+                                        <rect key="frame" x="18" y="0.0" width="340" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="340" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9f-EE-cSe">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rju-Qi-VBZ"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9f-EE-cSe" propertyAccessControl="all">
                                                     <frame key="frameInset" minX="8" minY="75" width="340" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRp-Ht-UTq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRp-Ht-UTq" propertyAccessControl="all">
                                                     <frame key="frameInset" minX="8" minY="8" width="324" height="59"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -335,8 +336,15 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Rju-Qi-VBZ" firstAttribute="top" secondItem="LeH-sC-cVm" secondAttribute="top" id="7vK-iA-4em"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rju-Qi-VBZ" secondAttribute="trailing" id="Cer-ob-odR"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rju-Qi-VBZ" secondAttribute="bottom" id="gOA-7q-Ma1"/>
+                                            <constraint firstItem="Rju-Qi-VBZ" firstAttribute="leading" secondItem="LeH-sC-cVm" secondAttribute="leading" id="hw6-pP-9SQ"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="epTitle" destination="BRp-Ht-UTq" id="b1T-9b-NQL"/>
+                                            <outlet property="image" destination="Rju-Qi-VBZ" id="K8d-pr-05E"/>
                                             <outlet property="seEp" destination="A9f-EE-cSe" id="x83-Uv-t6x"/>
                                         </connections>
                                     </collectionViewCell>

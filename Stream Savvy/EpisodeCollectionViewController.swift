@@ -25,6 +25,9 @@ class EpisodeViewCell: UICollectionViewCell {
         
         @IBOutlet var epTitle: UILabel!
         
+        @IBOutlet var image: UIImageView!
+        
+        
 }
 
 class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -140,17 +143,21 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         
                         cell.epTitle?.text = "\(episode!.title!)"
                         
+                        SDWebModel.loadImage(for: cell.image, withRemoteURL: episode?.thumbnail608X342)
+                        
+                        cell.image.contentMode = .scaleAspectFill
+                        
                         let backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
                         backgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
                         backgroundImageView.clipsToBounds = true
-                        SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: episode?.thumbnail608X342)
+                        
                         let overLayImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
                         overLayImageView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
                         
-                        cell.addSubview(backgroundImageView)
-                        cell.addSubview(overLayImageView)
-                        cell.sendSubview(toBack: overLayImageView)
-                        cell.sendSubview(toBack: backgroundImageView)
+//                        cell.addSubview(backgroundImageView)
+//                        cell.addSubview(overLayImageView)
+//                        cell.sendSubview(toBack: overLayImageView)
+//                        cell.sendSubview(toBack: backgroundImageView)
                         return cell
                 }
                 
@@ -179,10 +186,11 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 if (collectionView.restorationIdentifier == "seasons"){
                         
                         currentIndex = indexPath.row
+                        selectedIndex = nil
                         episodeCollectionView?.reloadData()
                 } else {
                         
-                        if (selectedIndex == nil){
+                        if (selectedIndex == nil || selectedIndex != indexPath.row){
                         selectedIndex = indexPath.row
                         } else {
                                 selectedIndex = nil
