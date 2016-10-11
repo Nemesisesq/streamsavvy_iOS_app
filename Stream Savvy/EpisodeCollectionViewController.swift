@@ -104,11 +104,11 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 // #warning Incomplete implementation, return the number of items
-		print("numberodsexonsinitem")
+		
                 if self.seasons != nil && !self.seasons.isEmpty {
-			print("numberodsexonsinitem un")
+	
                         if (collectionView.restorationIdentifier == "seasons" ){
-				print("numberodsexonsinitem 1 dun")
+				
 				return self.seasons.count
                         } else {
                                 let key: String = String(currentIndex + 1)
@@ -116,7 +116,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                                 return (epis?.count)!
                         }
                 }
-                print("numberodsexonsinitem 3 dun")
+        
                 return 0
         }
         
@@ -156,8 +156,8 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                currentIndex = indexPath.row
-                episodeCollectionView?.reloadData()
+//                currentIndex = indexPath.row
+//                episodeCollectionView?.reloadData()
         }
         
         // MARK: UICollectionViewDelegate
