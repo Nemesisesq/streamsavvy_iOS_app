@@ -159,12 +159,19 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
                 let width = self.view.frame.size.width
                 
-                if (selectedIndex == indexPath.row){
-                        return CGSize(width: width, height: width * 0.9)
+                if (collectionView.restorationIdentifier == "episodes"){
+                        
+                        if (selectedIndex == indexPath.row){
+                                return  CGSize(width: width , height: width * 0.9 )
+                        }
+                        
+                        return CGSize(width: width, height: width * 0.4)
+                } else {
+                        
+                        
+                        
+                        return CGSize(width: 50, height: 50)
                 }
-                
-                return CGSize(width: width , height: width * 0.4 )
-                
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -172,18 +179,17 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 if (collectionView.restorationIdentifier == "seasons"){
                         
                         currentIndex = indexPath.row
-                                        } else {
+                        episodeCollectionView?.reloadData()
+                } else {
                         
-                        if (selectedIndex == indexPath.row){
-                                selectedIndex = nil
-                                
+                        if (selectedIndex == nil){
+                        selectedIndex = indexPath.row
                         } else {
-                                selectedIndex = indexPath.row
-                                                       }
+                                selectedIndex = nil
+                        }
+                        
+                        episodeCollectionView?.reloadData()
                 }
-                
-                episodeCollectionView?.reloadData()
-
         }
         
         // MARK: UICollectionViewDelegate
