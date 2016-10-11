@@ -110,10 +110,9 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 
                 
                 favorites.fetchFavorites().then{ result -> Void in
-                        print("fetchFavorites() success")
-                        //            print(result)
-                        print(self.carousel.isHidden)
-                        print(self.carousel.layer.zPosition)
+                        
+                        self.favorites.contentList = self.favorites.contentList.reversed()
+                        
                         self.carousel.reloadData()
                         
                 }
@@ -183,6 +182,8 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         }
         
         func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
+                
+        
                 if option == iCarouselOption.spacing {
                         return value * 1.2
                 }
