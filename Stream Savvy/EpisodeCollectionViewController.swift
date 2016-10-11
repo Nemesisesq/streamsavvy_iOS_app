@@ -33,6 +33,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         @IBOutlet weak var mediaTitleLabel: UILabel!
         @IBOutlet var episodeCollectionView: UICollectionView!
         var currentIndex: Int!
+        var selectedIndex: Int?
         var episodes: [Episode]!
         var content: Content!
         var seasons: [String:[Episode]]!
@@ -46,8 +47,8 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         override func viewDidLoad() {
                 super.viewDidLoad()
                 self.mediaTitleLabel.text = self.content.title
-                        Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
-//                Episode.getEpisodeList(guidebox_id: "2098")
+                Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
+                        //                Episode.getEpisodeList(guidebox_id: "2098")
                         .then{ epiList -> Void in
                                 self.episodes = epiList
                                 self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { String($0.seasonNumber!) })
@@ -104,31 +105,31 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 // #warning Incomplete implementation, return the number of items
-		
+                
                 if self.seasons != nil && !self.seasons.isEmpty {
-	
+                        
                         if (collectionView.restorationIdentifier == "seasons" ){
-				
-				return self.seasons.count
+                                
+                                return self.seasons.count
                         } else {
                                 let key: String = String(currentIndex + 1)
                                 let epis = self.seasons?[key]
                                 return (epis?.count)!
                         }
                 }
-        
+                
                 return 0
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		
+                
                 // Configure the cell
                 if (collectionView.restorationIdentifier == "seasons"){
                         let cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
                         
                         cell.seasonLabel?.text = "\(indexPath.row + 1)"
-			
-			return cell
+                        
+                        return cell
                         
                 } else {
                         let cell: EpisodeViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath) as! EpisodeViewCell
@@ -138,26 +139,51 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         cell.seEp?.text = "Episode \(episode!.episodeNumber!)"
                         
                         cell.epTitle?.text = "\(episode!.title!)"
-			
-			let backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
-			backgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
-			backgroundImageView.clipsToBounds = true
-			SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: episode?.thumbnail608X342)
-			let overLayImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
-			overLayImageView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
-			
-			cell.addSubview(backgroundImageView)
-			cell.addSubview(overLayImageView)
-			cell.sendSubview(toBack: overLayImageView)
-			cell.sendSubview(toBack: backgroundImageView)
+                        
+                        let backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
+                        backgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
+                        backgroundImageView.clipsToBounds = true
+                        SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: episode?.thumbnail608X342)
+                        let overLayImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
+                        overLayImageView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
+                        
+                        cell.addSubview(backgroundImageView)
+                        cell.addSubview(overLayImageView)
+                        cell.sendSubview(toBack: overLayImageView)
+                        cell.sendSubview(toBack: backgroundImageView)
                         return cell
                 }
-		
+                
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+                let width = self.view.frame.size.width
+                
+                if (selectedIndex == indexPath.row){
+                        return CGSize(width: width, height: width * 0.9)
+                }
+                
+                return CGSize(width: width , height: width * 0.4 )
+                
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//                currentIndex = indexPath.row
-//                episodeCollectionView?.reloadData()
+                
+                if (collectionView.restorationIdentifier == "seasons"){
+                        
+                        currentIndex = indexPath.row
+                                        } else {
+                        
+                        if (selectedIndex == indexPath.row){
+                                selectedIndex = nil
+                                
+                        } else {
+                                selectedIndex = indexPath.row
+                                                       }
+                }
+                
+                episodeCollectionView?.reloadData()
+
         }
         
         // MARK: UICollectionViewDelegate
@@ -167,6 +193,8 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
                 return true
         }
+        
+        
         
         
         /*

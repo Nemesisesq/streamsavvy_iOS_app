@@ -320,6 +320,7 @@
 		9FBC97821D6D31DB004B6182 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9FE1B04E1D693B160013DCB1 /* PopularShowTableViewController.h */,
 				9FE1B04B1D693AE70013DCB1 /* LoginViewController.h */,
 				9FE1B04C1D693AE70013DCB1 /* LoginViewController.m */,
 			);
@@ -363,7 +364,6 @@
 				9FBC97821D6D31DB004B6182 /* Login */,
 				9FE1B04F1D693B160013DCB1 /* PopularShowTableViewController.m */,
 				9FBC97831D6D32CB004B6182 /* GuideTableViewController.h */,
-				9FE1B04E1D693B160013DCB1 /* PopularShowTableViewController.h */,
 				9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */,
 				9FC2960D1D766110005CB080 /* ShowDetailsTableViewController.h */,
 				9FC2960E1D766110005CB080 /* ShowDetailsTableViewController.m */,
