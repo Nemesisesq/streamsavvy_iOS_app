@@ -67,13 +67,17 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 let titles  = favorites.contentList.map { $0.title } as [String]
                 
                 if $.contains(titles, value: selectedShow.title){
-                        self.searchController.isActive = false
-                        self.performSegue(withIdentifier: "ContentDetailSegue", sender: self)
                         
+                        let title = selectedShow.title
+                        
+                        Constants.showAlert("Great News!!!", withMessage: "You already added \(title)")
                 }
                         
                 else {
-                        Constants.showAlert("Great News!!!", withMessage: "You already added \(selectedShow.title)")
+                        self.searchController.isActive = false
+                        self.performSegue(withIdentifier: "ContentDetailSegue", sender: self)
+
+                        
                 }
                 
                 

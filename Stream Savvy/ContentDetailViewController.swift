@@ -28,7 +28,7 @@ class ContentDetailViewController: UIViewController  {
         @IBOutlet var showTitle: UILabel!
         @IBOutlet weak var backgroundImageView: UIImageView!
         @IBOutlet weak var addFavoriteButton: UIButton!
-	@IBOutlet weak var durationLabel: UILabel!
+        @IBOutlet weak var durationLabel: UILabel!
         
         @IBAction func addContentToFavorites(_ sender: UIButton) {
                 Favorites.addContentToFavorites(content: content)
@@ -58,27 +58,30 @@ class ContentDetailViewController: UIViewController  {
                 
                 //MARK - Here we hid the tool bar and make the navigation tool bar transparent
                 
-//                self.navigationController?.navigationBar.barTintColor = nil
-               
+                //                self.navigationController?.navigationBar.barTintColor = nil
+                
                 
                 if content == nil {
                         showTitle.text = show.title
                 } else {
                         showTitle.text = content.title
                 }
-                SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
                 
-                genres.text = $.join(show.genres as! [String], separator: " | ")
-		if show.duration > 0 {
-			durationLabel.text = "\(show.duration) min"
-		}
-		
+                if show != nil {
+                        SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
+                        
+                        genres.text = $.join(show.genres as! [String], separator: " | ")
+                        if show.duration > 0 {
+                                durationLabel.text = "\(show.duration) min"
+                        }
+                        
+                }
                 // Do any additional setup after loading the view.
         }
         
         override func viewWillAppear(_ animated: Bool) {
                 super.viewWillAppear(true)
-                 self.navigationController?.tabBarController?.tabBar.isHidden = true
+                self.navigationController?.tabBarController?.tabBar.isHidden = true
         }
         
         override func didReceiveMemoryWarning() {
@@ -110,25 +113,25 @@ class ContentDetailViewController: UIViewController  {
         override func viewWillDisappear(_ animated: Bool) {
                 super.viewDidDisappear(animated)
                 
-//                if let tabBarController = self.navigationController?.tabBarController {
-//                        tabBarController.tabBar.isHidden = false
-//                }
+                //                if let tabBarController = self.navigationController?.tabBarController {
+                //                        tabBarController.tabBar.isHidden = false
+                //                }
                 
                 self.navigationController?.tabBarController?.tabBar.isHidden = false
                 
         }
-
         
         
-//        override func viewDidDisappear(_ animated: Bool) {
-//                super.viewDidDisappear(animated)
-//                
-//                if let tabBarController = self.navigationController?.tabBarController {
-//                        tabBarController.tabBar.isHidden = false
-//                }
-//                
-//                self.navigationController?.tabBarController?.tabBar.isHidden = false
-//        }
+        
+        //        override func viewDidDisappear(_ animated: Bool) {
+        //                super.viewDidDisappear(animated)
+        //
+        //                if let tabBarController = self.navigationController?.tabBarController {
+        //                        tabBarController.tabBar.isHidden = false
+        //                }
+        //                
+        //                self.navigationController?.tabBarController?.tabBar.isHidden = false
+        //        }
         
         
 }
