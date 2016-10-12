@@ -32,6 +32,7 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         }
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+<<<<<<< HEAD
                 
                 
                 if section == 0 {
@@ -47,6 +48,11 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
                                 return pws.count
                         }
                         
+=======
+		print("###")
+                if let sws = episode?.subscription_ios_sources {
+                        return sws.count
+>>>>>>> d0d1039d6fd261150e9166a4a5932fa9d2738e43
                 }
                 
                 

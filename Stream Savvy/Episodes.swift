@@ -32,15 +32,19 @@ public class Episode: Decodable {
         let thumbnail400X225: String?
         let thumbnail608X342: String?
         let subscription_ios_sources: [IOSSubscriptionSource]?
+
         let purchase_ios_sources: [IOSPurchaseSource]?
         
+
+	
         var _guidebox_id: String?
         var episode_list: NSDictionary?
 
 
 	
 	public required init?(json: [String:Any]){
-
+		print("%%%%%")
+		print(json["subscription_ios_sources"])
                 id = "id" <~~ json
                 tvdb = "tvdb"  <~~ json
                 contentType = "content_type"  <~~ json
@@ -61,7 +65,7 @@ public class Episode: Decodable {
                 thumbnail608X342 = "thumbnail_608x342" <~~ json
                 subscription_ios_sources = "subscription_ios_sources" <~~ json
                 purchase_ios_sources  = "purchase_ios_sources" <~~ json
-                
+                deep_links = ["http://www.google.com", "http://www.youtube.com"]
                 
         }
         
@@ -69,9 +73,9 @@ public class Episode: Decodable {
         
         class func getEpisodeList(guidebox_id: String) -> Promise<[Episode]> {
                 
-                let url = "http://localhost:8080/episodes"
+//                let url = "http://localhost:8080/episodes"
 
-//                        let url = "https://edr-go-staging.herokuapp.com/episodes"
+                        let url = "https://edr-go-staging.herokuapp.com/episodes"
                 
                 let parameters = ["guidebox_id": guidebox_id]
                 
@@ -84,7 +88,7 @@ public class Episode: Decodable {
                                         
                                         let result = the_json["results"] as? NSArray
                                         result?.forEach(){ epi in
-                                                epiList.append(Episode(json: epi as! [String : Any])!)
+						epiList.append(Episode(json: epi as! [String : Any])!)
                                                 
                                         }
                                         
