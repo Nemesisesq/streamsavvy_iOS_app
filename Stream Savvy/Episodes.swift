@@ -32,8 +32,12 @@ public class Episode: Decodable {
         let thumbnail400X225: String?
         let thumbnail608X342: String?
         let subscription_ios_sources: [IOSSubscriptionSource]?
+<<<<<<< HEAD
 
         let purchase_ios_sources: [IOSPurchaseSource]?
+=======
+        let purchase_ios_sources: [IOSPurchaseSources]?
+>>>>>>> parent of 61be325... completed wiring for deep links
         
 
 	

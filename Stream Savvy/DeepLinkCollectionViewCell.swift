@@ -21,12 +21,6 @@ class LinkViewCell: UICollectionViewCell {
                 }
         }
         
-        var purchaseIOSSource: IOSPurchaseSource? {
-                didSet {
-                        linkLabelview.text = purchaseIOSSource?.display_name
-                }
-        }
-        
         
         func openDeepLink(){
                 

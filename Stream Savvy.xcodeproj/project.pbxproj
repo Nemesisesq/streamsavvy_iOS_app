@@ -340,13 +340,16 @@
 				9F5A4D3E1D5AE1D70057AF6D /* Assets.xcassets */,
 				BDE960481DA8B71600E13C68 /* Upload-50.png */,
 				BDE960491DA8B71600E13C68 /* Like Filled-50.png */,
-				BD1834B51D8CDACE00B472E2 /* favorite.png */,
 				BDE9604A1DA8B71600E13C68 /* Like-50.png */,
 <<<<<<< HEAD
 				BD25C0301DA646CF005C28C2 /* app_icons */,
+<<<<<<< HEAD
 =======
 				BD1834B51D8CDACE00B472E2 /* favorite.png */,
 >>>>>>> d0d1039d6fd261150e9166a4a5932fa9d2738e43
+=======
+				BD1834B51D8CDACE00B472E2 /* favorite.png */,
+>>>>>>> parent of 61be325... completed wiring for deep links
 				9F5A4D401D5AE1D70057AF6D /* LaunchScreen.storyboard */,
 				BDE960441DA8AF5900E13C68 /* CarouselItem.swift */,
 				BDE960451DA8AF5900E13C68 /* CarouselItem.xib */,
