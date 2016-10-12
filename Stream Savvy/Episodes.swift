@@ -86,9 +86,9 @@ public class Episode: Decodable {
         
         class func getEpisodeList(guidebox_id: String) -> Promise<[Episode]> {
                 
-                let url = "http://localhost:8080/episodes"
+//                let url = "http://localhost:8080/episodes"
 
-//                        let url = "https://edr-go-staging.herokuapp.com/episodes"
+                       let url = "https://edr-go-staging.herokuapp.com/episodes"
                 
                 let parameters = ["guidebox_id": guidebox_id]
                 
