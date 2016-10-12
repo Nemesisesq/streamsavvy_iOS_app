@@ -60,6 +60,7 @@
 		BDD2B7041DAD8FE800C77260 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
 		BDD2B7081DAD907F00C77260 /* DeepLinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */; };
+		BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7091DAE052700C77260 /* Sources.swift */; };
 		BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */; };
 		BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE960441DA8AF5900E13C68 /* CarouselItem.swift */; };
 		BDE960471DA8AF5900E13C68 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE960451DA8AF5900E13C68 /* CarouselItem.xib */; };
@@ -181,6 +182,7 @@
 		BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDD2B7091DAE052700C77260 /* Sources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
 		BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveDetailViewController.swift; sourceTree = "<group>"; };
 		BDE960441DA8AF5900E13C68 /* CarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
 		BDE960451DA8AF5900E13C68 /* CarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				BD95CAAD1D9039FB00BCEBE2 /* Content.swift */,
 				BD0D745C1D9A0E170012F184 /* Favorites.swift */,
 				BD921BDD1DA1E5960018DCFB /* Episodes.swift */,
+				BDD2B7091DAE052700C77260 /* Sources.swift */,
 			);
 			name = StreamSavvyModels;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */,
 				BD0D745D1D9A0E170012F184 /* Favorites.swift in Sources */,
 				9FE1B0441D6936210013DCB1 /* Constants.m in Sources */,
+				BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */,
 				BD0D74611D9AB1120012F184 /* EpisodeCollectionViewController.swift in Sources */,
 				9FC296121D76621F005CB080 /* ShowDetailsTableViewCell.m in Sources */,
 				BDD2B7081DAD907F00C77260 /* DeepLinkCollectionViewCell.swift in Sources */,

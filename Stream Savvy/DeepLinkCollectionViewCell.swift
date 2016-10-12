@@ -15,16 +15,16 @@ class LinkViewCell: UICollectionViewCell {
         @IBOutlet weak var linkLabelview: UILabel!
         
         
-        var subscriptionWebSource : SubscriptionWebSource? {
+        var subscriptionIOSSource : IOSSubscriptionSource? {
                 didSet{
-                        linkLabelview.text = subscriptionWebSource?.display_name
+                        linkLabelview.text = subscriptionIOSSource?.display_name
                 }
         }
         
         
         func openDeepLink(){
                 
-                if let link =  subscriptionWebSource?.link{
+                if let link =  subscriptionIOSSource?.link{
                         Common.openDeepLink(link: link)
                 }
         }

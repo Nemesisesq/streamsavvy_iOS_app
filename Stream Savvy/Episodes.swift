@@ -11,36 +11,19 @@ import PromiseKit
 import Alamofire
 import Gloss
 
-class SubscriptionWebSource: Decodable {
-        let source: String?
-        let display_name: String?
-        let id: Int?
-        let link: String?
-        
-        public required init?(json: [String:Any]) {
-                source = "source" <~~ json
-                display_name = "display_name" <~~ json
-                id = "id" <~~ json
-                link = "link"  <~~ json
-        }
-}
 
 public class Episode: Decodable {
         let id: Int?
         let tvdb: Int?
         let contentType: String?
-        
-        
         let imdbId: Int?
         let seasonNumber: Int?
         let episodeNumber: Int?
         let showId: Int?
         let themoviedb: Int?
-        
         let firstAired: String?
         let title: String?
         let originalTitle: String?
-        
         let overview: String?
         let duration: Int?
         let productionCode: String?
@@ -48,26 +31,27 @@ public class Episode: Decodable {
         let thumbnail304X171: String?
         let thumbnail400X225: String?
         let thumbnail608X342: String?
-        let subscription_web_sources: [SubscriptionWebSource]?
+        let subscription_ios_sources: [IOSSubscriptionSource]?
+        let purchase_ios_sources: [IOSPurchaseSources]?
+        
+        var _guidebox_id: String?
+        var episode_list: NSDictionary?
+
+
 	
 	public required init?(json: [String:Any]){
-                
-                
+
                 id = "id" <~~ json
                 tvdb = "tvdb"  <~~ json
                 contentType = "content_type"  <~~ json
-                
-                
                 imdbId = "imdb_id"  <~~ json
                 seasonNumber = "season_number" <~~ json
                 episodeNumber = "episode_number"  <~~ json
                 showId = "show_id" <~~ json
                 themoviedb  = "themoviedb" <~~ json
-                
                 firstAired = "first_aired" <~~ json
                 title = "title" <~~ json
                 originalTitle = "original_title" <~~ json
-                
                 overview = "overview" <~~ json
                 duration = "duration" <~~ json
                 productionCode = "production_code" <~~ json
@@ -75,20 +59,19 @@ public class Episode: Decodable {
                 thumbnail304X171 = "thumbnail_304x171" <~~ json
                 thumbnail400X225 = "thumbnail_400x225" <~~ json
                 thumbnail608X342 = "thumbnail_608x342" <~~ json
-                subscription_web_sources = "subscription_web_sources" <~~ json
+                subscription_ios_sources = "subscription_ios_sources" <~~ json
+                purchase_ios_sources  = "purchase_ios_sources" <~~ json
                 
                 
         }
         
-        var _guidebox_id: String?
-        var episode_list: NSDictionary?
-	
+        
         
         class func getEpisodeList(guidebox_id: String) -> Promise<[Episode]> {
                 
-//                let url = "http://localhost:8080/episodes"
+                let url = "http://localhost:8080/episodes"
 
-                       let url = "https://edr-go-staging.herokuapp.com/episodes"
+//                        let url = "https://edr-go-staging.herokuapp.com/episodes"
                 
                 let parameters = ["guidebox_id": guidebox_id]
                 

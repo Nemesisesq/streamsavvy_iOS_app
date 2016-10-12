@@ -29,7 +29,7 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 
-                if let sws = episode?.subscription_web_sources {
+                if let sws = episode?.subscription_ios_sources {
                         return sws.count
                 }
                 
@@ -39,8 +39,8 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinkCell", for: indexPath) as! LinkViewCell
-                if let sws = episode?.subscription_web_sources {
-                       cell.subscriptionWebSource = sws[indexPath.row]
+                if let sws = episode?.subscription_ios_sources {
+                       cell.subscriptionIOSSource = sws[indexPath.row]
                 }
                 
                 
