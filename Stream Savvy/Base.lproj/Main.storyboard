@@ -334,17 +334,63 @@
                                                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-fq-cmz">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="Lf6-eV-C85"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dUO-pG-adw">
+                                                        <size key="itemSize" width="97" height="35"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LinkCell" id="KpV-Eb-Dxf" customClass="LinkViewCell" customModule="Stream_Savvy" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="97" height="35"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="97" height="35"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Iq-Gd-Keb">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="8Iq-Gd-Keb" secondAttribute="bottom" id="Kec-Uz-L48"/>
+                                                                <constraint firstItem="8Iq-Gd-Keb" firstAttribute="leading" secondItem="KpV-Eb-Dxf" secondAttribute="leading" id="Um5-Lx-u9A"/>
+                                                                <constraint firstAttribute="trailing" secondItem="8Iq-Gd-Keb" secondAttribute="trailing" id="bhe-1f-WzD"/>
+                                                                <constraint firstItem="8Iq-Gd-Keb" firstAttribute="top" secondItem="KpV-Eb-Dxf" secondAttribute="top" id="gwR-vm-YcI"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="linkLabelview" destination="8Iq-Gd-Keb" id="qJC-TN-JRB"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="LeH-sC-cVm" id="V59-kd-8Y1"/>
+                                                        <outlet property="delegate" destination="LeH-sC-cVm" id="PBF-xi-gSb"/>
+                                                    </connections>
+                                                </collectionView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Rju-Qi-VBZ" firstAttribute="top" secondItem="LeH-sC-cVm" secondAttribute="top" id="7vK-iA-4em"/>
                                             <constraint firstAttribute="trailing" secondItem="Rju-Qi-VBZ" secondAttribute="trailing" id="Cer-ob-odR"/>
+                                            <constraint firstAttribute="trailing" secondItem="ucc-fq-cmz" secondAttribute="trailing" constant="20" id="E7t-Sl-g8p"/>
+                                            <constraint firstItem="ucc-fq-cmz" firstAttribute="bottom" secondItem="Rju-Qi-VBZ" secondAttribute="bottom" id="OCX-Q4-aHP"/>
                                             <constraint firstAttribute="bottom" secondItem="Rju-Qi-VBZ" secondAttribute="bottom" id="gOA-7q-Ma1"/>
                                             <constraint firstItem="Rju-Qi-VBZ" firstAttribute="leading" secondItem="LeH-sC-cVm" secondAttribute="leading" id="hw6-pP-9SQ"/>
+                                            <constraint firstItem="ucc-fq-cmz" firstAttribute="leading" secondItem="LeH-sC-cVm" secondAttribute="leading" constant="20" id="tei-Yo-7Q5"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="epTitle" destination="BRp-Ht-UTq" id="b1T-9b-NQL"/>
                                             <outlet property="image" destination="Rju-Qi-VBZ" id="K8d-pr-05E"/>
+                                            <outlet property="linkCollectionView" destination="ucc-fq-cmz" id="wH7-cx-fIJ"/>
                                             <outlet property="seEp" destination="A9f-EE-cSe" id="x83-Uv-t6x"/>
                                         </connections>
                                     </collectionViewCell>
@@ -1163,7 +1209,7 @@
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="On Demand" image="tv-icon" id="sw4-yP-YcI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

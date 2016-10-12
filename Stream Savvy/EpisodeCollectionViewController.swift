@@ -15,20 +15,8 @@ struct Season {
         var episodes  : [Episode]
         
 }
-class SeasonViewCell: UICollectionViewCell {
-        
-        @IBOutlet var seasonLabel: UILabel!
-}
-class EpisodeViewCell: UICollectionViewCell {
-        
-        @IBOutlet weak var seEp: UILabel!
-        
-        @IBOutlet var epTitle: UILabel!
-        
-        @IBOutlet var image: UIImageView!
-        
-        
-}
+
+
 
 class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
         
@@ -141,7 +129,11 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         
                         cell.seEp?.text = "Episode \(episode!.episodeNumber!)"
                         
+                        cell.linkCollectionView.isHidden = (selectedIndex != indexPath.row)
+                        
                         cell.epTitle?.text = "\(episode!.title!)"
+                        
+                        cell.episode = episode
                         
                         SDWebModel.loadImage(for: cell.image, withRemoteURL: episode?.thumbnail608X342)
                         

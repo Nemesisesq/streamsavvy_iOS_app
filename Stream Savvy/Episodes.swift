@@ -11,6 +11,20 @@ import PromiseKit
 import Alamofire
 import Gloss
 
+class SubscriptionWebSource: Decodable {
+        let source: String?
+        let display_name: String?
+        let id: Int?
+        let link: String?
+        
+        public required init?(json: [String:Any]) {
+                source = "source" <~~ json
+                display_name = "display_name" <~~ json
+                id = "id" <~~ json
+                link = "link"  <~~ json
+        }
+}
+
 public class Episode: Decodable {
         let id: Int?
         let tvdb: Int?
@@ -34,6 +48,7 @@ public class Episode: Decodable {
         let thumbnail304X171: String?
         let thumbnail400X225: String?
         let thumbnail608X342: String?
+        let subscription_web_sources: [SubscriptionWebSource]?
 	
 	public required init?(json: [String:Any]){
                 
@@ -60,6 +75,7 @@ public class Episode: Decodable {
                 thumbnail304X171 = "thumbnail_304x171" <~~ json
                 thumbnail400X225 = "thumbnail_400x225" <~~ json
                 thumbnail608X342 = "thumbnail_608x342" <~~ json
+                subscription_web_sources = "subscription_web_sources" <~~ json
                 
                 
         }
@@ -70,9 +86,9 @@ public class Episode: Decodable {
         
         class func getEpisodeList(guidebox_id: String) -> Promise<[Episode]> {
                 
-//                let url = "http://localhost:8080/episodes"
+                let url = "http://localhost:8080/episodes"
 
-                        let url = "https://edr-go-staging.herokuapp.com/episodes"
+//                        let url = "https://edr-go-staging.herokuapp.com/episodes"
                 
                 let parameters = ["guidebox_id": guidebox_id]
                 
@@ -81,7 +97,7 @@ public class Episode: Decodable {
                                 .responseJSON { response -> Void in
                                         var epiList = [Episode]()
                                         
-                                        let the_json = getReadableJsonDict(data: response.data!)
+                                        let the_json = Common.getReadableJsonDict(data: response.data!)
                                         
                                         let result = the_json["results"] as? NSArray
                                         result?.forEach(){ epi in

@@ -144,7 +144,7 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
                 
                 let source = sources[indexPath.row]
                 cell.image.image = UIImage(named:"\(source.source!)")
-                cell.backgroundColor = getRandomColor()
+                cell.backgroundColor = Common.getRandomColor()
                 
                 return cell
         }

@@ -213,6 +213,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 SDWebModel.loadImage(for: carouselItemView.showImage, withRemoteURL: favorites.contentList[index].image_link)
                 
                 carouselItemView.showImage.contentMode = .scaleAspectFill
+                carouselItemView.showImage.clipsToBounds = true
                 
                 carouselItemView.showTitle.text = favorites.contentList[index].title
                 carouselItemView.vc = self
