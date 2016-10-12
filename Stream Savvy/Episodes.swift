@@ -32,14 +32,7 @@ public class Episode: Decodable {
         let thumbnail400X225: String?
         let thumbnail608X342: String?
         let subscription_ios_sources: [IOSSubscriptionSource]?
-<<<<<<< HEAD
-
         let purchase_ios_sources: [IOSPurchaseSource]?
-=======
-        let purchase_ios_sources: [IOSPurchaseSources]?
->>>>>>> parent of 61be325... completed wiring for deep links
-        
-
 	
         var _guidebox_id: String?
         var episode_list: NSDictionary?
@@ -69,7 +62,7 @@ public class Episode: Decodable {
                 thumbnail608X342 = "thumbnail_608x342" <~~ json
                 subscription_ios_sources = "subscription_ios_sources" <~~ json
                 purchase_ios_sources  = "purchase_ios_sources" <~~ json
-                deep_links = ["http://www.google.com", "http://www.youtube.com"]
+//                deep_links = ["http://www.google.com", "http://www.youtube.com"]
                 
         }
         

@@ -41,16 +41,12 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
                         //                Episode.getEpisodeList(guidebox_id: "2098")
                         .then{ epiList -> Void in
-				print(444)
-				print(epiList)
-				self.episodes = epiList
+                                self.episodes = epiList
                                 self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { String($0.seasonNumber!) })
                                 self.seasonCollectionView.reloadData()
                                 self.episodeCollectionView.reloadData()
-				
                         }.catch { error in
-				print(999)
-				print(error)
+                                print(error)
                                 
                 }
                 currentIndex = 0
@@ -130,8 +126,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         let cell: EpisodeViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath) as! EpisodeViewCell
                         
                         let episode = self.seasons[String(currentIndex + 1)]?[indexPath.row]
-                        print("oOo")
-			print(episode!)
+                        
                         cell.seEp?.text = "Episode \(episode!.episodeNumber!)"
                         
                         cell.linkCollectionView.isHidden = (selectedIndex != indexPath.row)
@@ -188,7 +183,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 } else {
                         
                         if (selectedIndex == nil || selectedIndex != indexPath.row){
-				selectedIndex = indexPath.row
+                        selectedIndex = indexPath.row
                         } else {
                                 selectedIndex = nil
                         }

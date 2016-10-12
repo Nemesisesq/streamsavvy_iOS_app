@@ -1,4 +1,4 @@
-git//
+//
 //  DeepLinkCollectionViewCell.swift
 //  Stream Savvy
 //
@@ -18,6 +18,12 @@ class LinkViewCell: UICollectionViewCell {
         var subscriptionIOSSource : IOSSubscriptionSource? {
                 didSet{
                         linkLabelview.text = subscriptionIOSSource?.display_name
+                }
+        }
+        
+        var purchaseIOSSource: IOSPurchaseSource? {
+                didSet {
+                        linkLabelview.text = purchaseIOSSource?.display_name
                 }
         }
         
