@@ -53,7 +53,7 @@ class Formats : Decodable {
         }
 }
 
-class IOSPurchaseSources : IOSSubscriptionSource{
+class IOSPurchaseSource : IOSSubscriptionSource{
         var formats: [Formats]?
         
         required init?(json : [String:Any]){

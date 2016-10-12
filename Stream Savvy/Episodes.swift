@@ -32,7 +32,7 @@ public class Episode: Decodable {
         let thumbnail400X225: String?
         let thumbnail608X342: String?
         let subscription_ios_sources: [IOSSubscriptionSource]?
-        let purchase_ios_sources: [IOSPurchaseSources]?
+        let purchase_ios_sources: [IOSPurchaseSource]?
         
         var _guidebox_id: String?
         var episode_list: NSDictionary?
