@@ -47,7 +47,6 @@
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
 		BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */; };
-		BD25C0311DA646CF005C28C2 /* app_icons in Resources */ = {isa = PBXBuildFile; fileRef = BD25C0301DA646CF005C28C2 /* app_icons */; };
 		BD39ADF61DA230E20065F02F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39ADF51DA230E20065F02F /* Common.swift */; };
 		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
@@ -168,7 +167,6 @@
 		BD191FCA1D8792540098A8E6 /* ShowDetailsTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsTableViewProtocol.h; sourceTree = "<group>"; };
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
-		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
 		BD39ADF51DA230E20065F02F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BD39ADF71DA2A39C0065F02F /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = "Pods/../build/Debug-iphoneos/Dollar/Dollar.framework"; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -343,7 +341,6 @@
 				BDE960481DA8B71600E13C68 /* Upload-50.png */,
 				BDE960491DA8B71600E13C68 /* Like Filled-50.png */,
 				BDE9604A1DA8B71600E13C68 /* Like-50.png */,
-				BD25C0301DA646CF005C28C2 /* app_icons */,
 				BD1834B51D8CDACE00B472E2 /* favorite.png */,
 				9F5A4D401D5AE1D70057AF6D /* LaunchScreen.storyboard */,
 				BDE960441DA8AF5900E13C68 /* CarouselItem.swift */,
@@ -561,7 +558,7 @@
 				TargetAttributes = {
 					9F5A4D2E1D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = L2FX277R9E;
+						DevelopmentTeam = XWQ3X4T33E;
 						LastSwiftMigration = 0800;
 					};
 					9F5A4D471D5AE1D70057AF6D = {
@@ -607,7 +604,6 @@
 				BDE9604D1DA8B71600E13C68 /* Like-50.png in Resources */,
 				9F5A4D421D5AE1D70057AF6D /* LaunchScreen.storyboard in Resources */,
 				9F5A4D3F1D5AE1D70057AF6D /* Assets.xcassets in Resources */,
-				BD25C0311DA646CF005C28C2 /* app_icons in Resources */,
 				BDE9604C1DA8B71600E13C68 /* Like Filled-50.png in Resources */,
 				9F5A4D3D1D5AE1D70057AF6D /* Main.storyboard in Resources */,
 				BDE960471DA8AF5900E13C68 /* CarouselItem.xib in Resources */,
@@ -970,7 +966,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = L2FX277R9E;
+				DEVELOPMENT_TEAM = XWQ3X4T33E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
@@ -998,7 +994,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = L2FX277R9E;
+				DEVELOPMENT_TEAM = XWQ3X4T33E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",

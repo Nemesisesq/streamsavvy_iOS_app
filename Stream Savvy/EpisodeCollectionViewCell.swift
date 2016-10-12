@@ -28,7 +28,7 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         @IBOutlet var image: UIImageView!
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-                
+		print("###")
                 if let sws = episode?.subscription_ios_sources {
                         return sws.count
                 }
