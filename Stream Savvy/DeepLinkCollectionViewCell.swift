@@ -21,7 +21,7 @@ class LinkViewCell: UICollectionViewCell {
         var jsValue: JSValue?
         var jsContext: JSContext?
         var display_name: String?
-        
+        var isHeightCalculated = false
         
         var subscriptionIOSSource : IOSSubscriptionSource? {
                 didSet{
@@ -41,7 +41,14 @@ class LinkViewCell: UICollectionViewCell {
                         
                         if let res = jsValue{
                                 image_name = res.toString()
+                                image_name = "marks_\(image_name!)"
                                 linkImageView.image = UIImage(named: image_name!)
+                                
+                        }
+                        
+                        
+                        if linkImageView.image != nil{
+                                self.linkLabelview.isHidden = true
                         }
                         
                         
@@ -52,6 +59,29 @@ class LinkViewCell: UICollectionViewCell {
         var purchaseIOSSource: IOSPurchaseSource? {
                 didSet {
                         linkLabelview.text = purchaseIOSSource?.display_name
+                        
+                        jsContext = Common.getJSContext()
+                        
+                        test = jsContext?.evaluateScript("_.snakeCase('Hello World')").toString()
+                        
+                        if let res = purchaseIOSSource?.display_name {
+                                display_name = res
+                        }
+                        
+                        if let res = jsContext?.evaluateScript("_.snakeCase('\(display_name!)')"){
+                                jsValue = res
+                        }
+                        
+                        if let res = jsValue{
+                                image_name = res.toString()
+                                image_name = "marks_\(image_name!)"
+                                linkImageView.image = UIImage(named: image_name!)
+                        }
+                        
+                        
+                        if linkImageView.image != nil{
+                                self.linkLabelview.isHidden = true
+                        }
                 }
         }
         
@@ -82,4 +112,15 @@ class LinkViewCell: UICollectionViewCell {
                 
         }
         
+        override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+                if !isHeightCalculated {
+                        let height: CGFloat = 30
+                        let ratio = linkImageView.image!.size.width/linkImageView.image!.size.height
+                        let finalWidth = ratio * height
+                        layoutAttributes.frame.size.height = height
+                        layoutAttributes.frame.size.width = finalWidth
+                        isHeightCalculated = true
+                }
+                return layoutAttributes
+        }
 }

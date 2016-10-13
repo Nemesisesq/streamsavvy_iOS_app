@@ -27,6 +27,15 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         
         @IBOutlet var image: UIImageView!
         
+        override func awakeFromNib() {
+                let flow = UICollectionViewFlowLayout()
+                flow.estimatedItemSize = CGSize(width: 100, height: 30)
+                flow.scrollDirection = .vertical
+                flow.minimumInteritemSpacing = 0
+                flow.minimumLineSpacing = 0
+                linkCollectionView.collectionViewLayout = flow
+        }
+        
         func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 2
         }
@@ -69,8 +78,6 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
                         }
                 }
 
-                
-                
                 return cell
         }
         
