@@ -62,7 +62,7 @@ public class Episode: Decodable {
                 thumbnail608X342 = "thumbnail_608x342" <~~ json
                 subscription_ios_sources = "subscription_ios_sources" <~~ json
                 purchase_ios_sources  = "purchase_ios_sources" <~~ json
-//                deep_links = ["http://www.google.com", "http://www.youtube.com"]
+
                 
         }
         
@@ -85,11 +85,9 @@ public class Episode: Decodable {
                                         let result = the_json["results"] as? NSArray
                                         result?.forEach(){ epi in
 						epiList.append(Episode(json: epi as! [String : Any])!)
-                                                
                                         }
                                         
                                         let ep = Episode(json: ["hello": "World"])
-                                        
                                         
                                         switch response.result {
                                         case .success:

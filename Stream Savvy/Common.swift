@@ -43,7 +43,7 @@ struct Common {
         
         static func openDeepLink(link:String) {
                 
-                application.openURL(URL.init(string: link)!)
+                let x = application.openURL(URL.init(string: link)!)
                 
                 
         }

@@ -8,6 +8,7 @@
 
 import Foundation
 import Dollar
+import JavaScriptCore
 
 
 class LinkViewCell: UICollectionViewCell {
@@ -16,26 +17,36 @@ class LinkViewCell: UICollectionViewCell {
         @IBOutlet weak var linkLabelview: UILabel!
         
         var image_name: String?
+        var test: String?
+        var jsValue: JSValue?
+        var jsContext: JSContext?
+        var display_name: String?
         
         
         var subscriptionIOSSource : IOSSubscriptionSource? {
                 didSet{
                         linkLabelview.text = subscriptionIOSSource?.display_name
                         
-                        let jsContext = Common.getJSContext()
+                        jsContext = Common.getJSContext()
                         
-                        let test = jsContext.evaluateScript("_.snakeCase('Hello World')").toString()
+                        test = jsContext?.evaluateScript("_.snakeCase('Hello World')").toString()
                         
-                        let value = jsContext.evaluateScript("_.snakeCase('\(subscriptionIOSSource?.display_name)')")
-                        
-                        if let x = value?.toString(){
-                                image_name = x
+                        if let res = subscriptionIOSSource?.display_name {
+                                display_name = res
                         }
-                        if let y = image_name{
-                                linkImageView.image = UIImage(named: y)
-                                
+                        
+                        if let res = jsContext?.evaluateScript("_.snakeCase('\(display_name!)')"){
+                                jsValue = res
                         }
+                        
+                        if let res = jsValue{
+                                image_name = res.toString()
+                                linkImageView.image = UIImage(named: image_name!)
+                        }
+                        
+                        
                 }
+                
         }
         
         var purchaseIOSSource: IOSPurchaseSource? {

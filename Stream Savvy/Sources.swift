@@ -34,7 +34,7 @@ class IOSSubscriptionSource : Source {
                 app_name = "app_name" <~~ json
                 app_link = "app_link" <~~ json
                 app_required = "app_required" <~~ json
-                app_download_link = "app_downlaod_link" <~~ json
+                app_download_link = "app_download_link" <~~ json
                 
                 
                 
