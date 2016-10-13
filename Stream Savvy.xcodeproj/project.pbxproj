@@ -57,6 +57,7 @@
 		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
+		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
 		BDD2B7041DAD8FE800C77260 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
 		BDD2B7081DAD907F00C77260 /* DeepLinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */; };
@@ -179,6 +180,7 @@
 		BD921BFB1DA204A90018DCFB /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Gloss/Gloss.framework"; sourceTree = "<group>"; };
 		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
 		BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		9F5A4D311D5AE1D70057AF6D /* Stream Savvy */ = {
 			isa = PBXGroup;
 			children = (
+				BDAEC8A61DAEE681001370F6 /* javascript */,
 				BD39ADF41DA230CA0065F02F /* Common */,
 				BD862C8E1D9B642D00C8FFF9 /* Extensions */,
 				BD1834AE1D8CD48500B472E2 /* iCarousel */,
@@ -475,6 +478,14 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		BDAEC8A61DAEE681001370F6 /* javascript */ = {
+			isa = PBXGroup;
+			children = (
+				BDAEC8A71DAEE791001370F6 /* lodash.js */,
+			);
+			name = javascript;
+			sourceTree = "<group>";
+		};
 		BDD2B7021DAD8FA800C77260 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,6 +614,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */,
 				BDE9604B1DA8B71600E13C68 /* Upload-50.png in Resources */,
 				BDE9604D1DA8B71600E13C68 /* Like-50.png in Resources */,
 				9F5A4D421D5AE1D70057AF6D /* LaunchScreen.storyboard in Resources */,

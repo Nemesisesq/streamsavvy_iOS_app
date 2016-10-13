@@ -26,6 +26,26 @@
 				<string>fb676169215880122</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>hbo_now</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>hbo_now://</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>netflix</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>nflix://</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>28</string>

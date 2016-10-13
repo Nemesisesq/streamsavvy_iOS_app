@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JavaScriptCore
 
 
 typealias JSONStandardDict  = [String: AnyObject]
@@ -40,18 +41,9 @@ struct Common {
         }
         
         
-      static func openDeepLink(link:String) {
+        static func openDeepLink(link:String) {
                 
-                //        let link = getDeepLink()
-        
-                if self.schemeAvailable(deepLink: link) {
-                        application.openURL(URL.init(string: link)!)
-                        
-                } else {
-                        
-                        Constants.showAlert("We're sorry", withMessage: "You Don't have this app")
-                }
-                
+                application.openURL(URL.init(string: link)!)
                 
                 
         }
@@ -59,6 +51,20 @@ struct Common {
         
         static func schemeAvailable(deepLink: String) -> Bool {
                 return application.canOpenURL(URL.init(string: deepLink)!)
+        }
+
+        
+        
+        static func getJSContext() -> JSContext {
+                let fileURL = Bundle.main.url(forResource: "lodash", withExtension: "js")
+                let lodash = try! String(contentsOf: fileURL!, encoding:String.Encoding.utf8)
+                
+                let context = JSContext()
+                
+                _ = context?.evaluateScript(lodash)
+                
+                return context!
+                
         }
         
 }
