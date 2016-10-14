@@ -112,6 +112,7 @@ class LinkViewCell: UICollectionViewCell {
                 
         }
         
+        
         override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
                 if !isHeightCalculated {
                         let height: CGFloat = 30

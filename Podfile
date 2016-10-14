@@ -17,6 +17,7 @@ pod 'Alamofire', '~> 4.0'
 pod "PromiseKit", "~> 4.0"
 pod "Gloss", "~> 1.0"
 pod 'Dollar'
+pod 'UICollectionViewLeftAlignedLayout'
 
 
 platform :ios, '10.0'

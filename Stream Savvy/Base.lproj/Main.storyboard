@@ -338,7 +338,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="Lf6-eV-C85"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dUO-pG-adw">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="20" id="dUO-pG-adw" customClass="UICollectionViewLeftAlignedLayout">
                                                         <size key="itemSize" width="83" height="50"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -394,6 +394,7 @@
                                             <outlet property="epTitle" destination="BRp-Ht-UTq" id="b1T-9b-NQL"/>
                                             <outlet property="image" destination="Rju-Qi-VBZ" id="K8d-pr-05E"/>
                                             <outlet property="linkCollectionView" destination="ucc-fq-cmz" id="wH7-cx-fIJ"/>
+                                            <outlet property="linkCollectionViewFlowLayout" destination="dUO-pG-adw" id="sI5-bs-TH8"/>
                                             <outlet property="seEp" destination="A9f-EE-cSe" id="x83-Uv-t6x"/>
                                         </connections>
                                     </collectionViewCell>

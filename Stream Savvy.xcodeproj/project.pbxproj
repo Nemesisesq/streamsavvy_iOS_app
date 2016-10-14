@@ -41,7 +41,6 @@
 		9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05E1D6A5CAC0013DCB1 /* Media.m */; };
 		BD0D745D1D9A0E170012F184 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D745C1D9A0E170012F184 /* Favorites.swift */; };
 		BD0D74611D9AB1120012F184 /* EpisodeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */; };
-		BD0D74631D9AB3BF0012F184 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D74621D9AB3BF0012F184 /* TestData.swift */; };
 		BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B01D8CD4C800B472E2 /* iCarousel.m */; };
 		BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */; };
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
@@ -55,6 +54,7 @@
 		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
 		BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD921BDD1DA1E5960018DCFB /* Episodes.swift */; };
 		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
+		BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */; };
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
@@ -160,7 +160,6 @@
 		BD0D745C1D9A0E170012F184 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		BD0D745E1D9A48B90012F184 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewController.swift; sourceTree = "<group>"; };
-		BD0D74621D9AB3BF0012F184 /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		BD1834AF1D8CD4C800B472E2 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		BD1834B01D8CD4C800B472E2 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stream Savvy-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -178,6 +177,8 @@
 		BD921BDD1DA1E5960018DCFB /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		BD921BFB1DA204A90018DCFB /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Gloss/Gloss.framework"; sourceTree = "<group>"; };
+		BD9563D61DB07EF80089652E /* ERJustifiedFlowLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ERJustifiedFlowLayout.framework; path = "Pods/../build/Debug-iphoneos/ERJustifiedFlowLayout/ERJustifiedFlowLayout.framework"; sourceTree = "<group>"; };
+		BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICollectionViewLeftAlignedLayout.framework; path = "Pods/../build/Debug-iphoneos/UICollectionViewLeftAlignedLayout/UICollectionViewLeftAlignedLayout.framework"; sourceTree = "<group>"; };
 		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */,
 				BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */,
 				BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */,
 				BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */,
@@ -231,6 +233,8 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */,
+				BD9563D61DB07EF80089652E /* ERJustifiedFlowLayout.framework */,
 				BD39ADF71DA2A39C0065F02F /* Dollar.framework */,
 				BD921BFB1DA204A90018DCFB /* Gloss.framework */,
 				BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */,
@@ -285,18 +289,19 @@
 		9F5A4D311D5AE1D70057AF6D /* Stream Savvy */ = {
 			isa = PBXGroup;
 			children = (
+				9FE1B0581D693DFF0013DCB1 /* Utility Belt */,
+				9FE1B0571D693C060013DCB1 /* TableViewCells */,
+				BDD2B7021DAD8FA800C77260 /* CollectionViewCells */,
 				BDAEC8A61DAEE681001370F6 /* javascript */,
 				BD39ADF41DA230CA0065F02F /* Common */,
 				BD862C8E1D9B642D00C8FFF9 /* Extensions */,
 				BD1834AE1D8CD48500B472E2 /* iCarousel */,
-				9F5A4D351D5AE1D70057AF6D /* AppDelegate.h */,
-				9F5A4D361D5AE1D70057AF6D /* AppDelegate.m */,
-				9F5A4D431D5AE1D70057AF6D /* Info.plist */,
-				9FE1B01E1D6922550013DCB1 /* Model */,
 				9FE1B01D1D6922400013DCB1 /* View */,
+				9FE1B01E1D6922550013DCB1 /* Model */,
 				9FE1B01F1D6922630013DCB1 /* Controller */,
+				9FBC97821D6D31DB004B6182 /* Login */,
 				9F5A4D321D5AE1D70057AF6D /* Supporting Files */,
-				BD0D74621D9AB3BF0012F184 /* TestData.swift */,
+				9F5A4D431D5AE1D70057AF6D /* Info.plist */,
 			);
 			path = "Stream Savvy";
 			sourceTree = "<group>";
@@ -304,6 +309,8 @@
 		9F5A4D321D5AE1D70057AF6D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9F5A4D351D5AE1D70057AF6D /* AppDelegate.h */,
+				9F5A4D361D5AE1D70057AF6D /* AppDelegate.m */,
 				BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */,
 				9F5A4D331D5AE1D70057AF6D /* main.m */,
 			);
@@ -358,8 +365,20 @@
 		9FE1B01E1D6922550013DCB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9FE1B0591D6946060013DCB1 /* StreamSavvyModels */,
-				9FE1B0581D693DFF0013DCB1 /* Utility Belt */,
+				9FE1B05A1D6946410013DCB1 /* User.h */,
+				9FE1B05B1D6946410013DCB1 /* User.m */,
+				9FBC977C1D6B97E1004B6182 /* Channel.h */,
+				9FBC977D1D6B97E1004B6182 /* Channel.m */,
+				9FE1B05D1D6A5CAC0013DCB1 /* Media.h */,
+				9FE1B05E1D6A5CAC0013DCB1 /* Media.m */,
+				9FBC977F1D6BD742004B6182 /* PopularShow.h */,
+				9FBC97801D6BD742004B6182 /* PopularShow.m */,
+				9FC296161D766F63005CB080 /* MediaSource.h */,
+				9FC296171D766F63005CB080 /* MediaSource.m */,
+				BD95CAAD1D9039FB00BCEBE2 /* Content.swift */,
+				BD0D745C1D9A0E170012F184 /* Favorites.swift */,
+				BD921BDD1DA1E5960018DCFB /* Episodes.swift */,
+				BDD2B7091DAE052700C77260 /* Sources.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -367,13 +386,10 @@
 		9FE1B01F1D6922630013DCB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BDD2B7021DAD8FA800C77260 /* CollectionViewCells */,
 				9F420FAA1DA3345400A89D87 /* LiveGuideDetailsViewController.h */,
 				9F420FAB1DA3345400A89D87 /* LiveGuideDetailsViewController.m */,
 				9F28106E1D83B4B900158502 /* AuthTableViewController.h */,
 				9F28106F1D83B4B900158502 /* AuthTableViewController.m */,
-				9FE1B0571D693C060013DCB1 /* TableViewCells */,
-				9FBC97821D6D31DB004B6182 /* Login */,
 				9FE1B04F1D693B160013DCB1 /* PopularShowTableViewController.m */,
 				9FBC97831D6D32CB004B6182 /* GuideTableViewController.h */,
 				9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */,
@@ -430,27 +446,6 @@
 				9FE1B0421D6936210013DCB1 /* UserPrefs.m */,
 			);
 			name = "Utility Belt";
-			sourceTree = "<group>";
-		};
-		9FE1B0591D6946060013DCB1 /* StreamSavvyModels */ = {
-			isa = PBXGroup;
-			children = (
-				9FE1B05A1D6946410013DCB1 /* User.h */,
-				9FE1B05B1D6946410013DCB1 /* User.m */,
-				9FBC977C1D6B97E1004B6182 /* Channel.h */,
-				9FBC977D1D6B97E1004B6182 /* Channel.m */,
-				9FE1B05D1D6A5CAC0013DCB1 /* Media.h */,
-				9FE1B05E1D6A5CAC0013DCB1 /* Media.m */,
-				9FBC977F1D6BD742004B6182 /* PopularShow.h */,
-				9FBC97801D6BD742004B6182 /* PopularShow.m */,
-				9FC296161D766F63005CB080 /* MediaSource.h */,
-				9FC296171D766F63005CB080 /* MediaSource.m */,
-				BD95CAAD1D9039FB00BCEBE2 /* Content.swift */,
-				BD0D745C1D9A0E170012F184 /* Favorites.swift */,
-				BD921BDD1DA1E5960018DCFB /* Episodes.swift */,
-				BDD2B7091DAE052700C77260 /* Sources.swift */,
-			);
-			name = StreamSavvyModels;
 			sourceTree = "<group>";
 		};
 		BD1834AE1D8CD48500B472E2 /* iCarousel */ = {
@@ -791,7 +786,6 @@
 				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,
 				9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */,
 				9FC2961B1D774179005CB080 /* WebViewViewController.m in Sources */,
-				BD0D74631D9AB3BF0012F184 /* TestData.swift in Sources */,
 				BD39ADF61DA230E20065F02F /* Common.swift in Sources */,
 				BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */,
 				BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */,
@@ -988,6 +982,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Dollar",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/ERJustifiedFlowLayout",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/UICollectionViewLeftAlignedLayout",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1016,6 +1012,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Dollar",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/ERJustifiedFlowLayout",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/UICollectionViewLeftAlignedLayout",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
