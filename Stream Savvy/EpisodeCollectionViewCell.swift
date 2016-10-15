@@ -11,7 +11,7 @@ import UICollectionViewLeftAlignedLayout
 
 class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
         
-        var episode: Episode?
+        var episode: Episode?                
         
         var link = [String]() {
                 didSet {
@@ -19,7 +19,8 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
                 }
         }
         
-        @IBOutlet var linkCollectionViewFlowLayout: UICollectionViewLeftAlignedLayout!
+       
+        @IBOutlet var layout: UICollectionViewLeftAlignedLayout!
         
         @IBOutlet weak var seEp: UILabel!
         
@@ -29,16 +30,20 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         
         @IBOutlet var image: UIImageView!
         
-        override func awakeFromNib() {
-                let flow = linkCollectionViewFlowLayout
-                flow?.estimatedItemSize = CGSize(width: 100, height: 30)
-                flow?.scrollDirection = .vertical
-                flow?.minimumInteritemSpacing = 0
-                flow?.minimumLineSpacing = 0
-//                linkCollectionView.collectionViewLayout = flow!
+        override func prepareForReuse() {
                 
         }
         
+        override func awakeFromNib() {
+                super.awakeFromNib()
+            let flow =  UICollectionViewLeftAlignedLayout()
+                flow.estimatedItemSize = CGSize(width: 100, height: 30)
+                flow.scrollDirection = .vertical
+                flow.minimumInteritemSpacing = 0
+                flow.minimumLineSpacing = 0
+                linkCollectionView.collectionViewLayout = flow
+                
+        }
         
         
         func numberOfSections(in collectionView: UICollectionView) -> Int {

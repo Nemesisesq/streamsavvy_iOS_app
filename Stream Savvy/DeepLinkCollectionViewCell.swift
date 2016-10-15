@@ -114,14 +114,14 @@ class LinkViewCell: UICollectionViewCell {
         
         
         override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-                if !isHeightCalculated {
+                
                         let height: CGFloat = 30
                         let ratio = linkImageView.image!.size.width/linkImageView.image!.size.height
                         let finalWidth = ratio * height
                         layoutAttributes.frame.size.height = height
                         layoutAttributes.frame.size.width = finalWidth
-                        isHeightCalculated = true
-                }
+                        
+               
                 return layoutAttributes
         }
 }

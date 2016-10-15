@@ -103,9 +103,11 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                                 
                                 return self.seasons.count
                         } else {
-                                let key: String = String(currentIndex + 1)
-                                let epis = self.seasons?[key]
-                                return (epis?.count)!
+                                let key: String = String(currentIndex)
+                                if let x  = self.seasons?[key] {
+                                        let epis = self.seasons?[key]
+                                        return (epis?.count)!
+                                }
                         }
                 }
                 
@@ -118,14 +120,14 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 if (collectionView.restorationIdentifier == "seasons"){
                         let cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
                         
-                        cell.seasonLabel?.text = "\(indexPath.row + 1)"
+                        cell.seasonLabel?.text = "\(indexPath.row)"
                         
                         return cell
                         
                 } else {
                         let cell: EpisodeViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Episode", for: indexPath) as! EpisodeViewCell
                         
-                        let episode = self.seasons[String(currentIndex + 1)]?[indexPath.row]
+                        let episode = self.seasons[String(currentIndex)]?[indexPath.row]
                         
                         cell.seEp?.text = "Episode \(episode!.episodeNumber!)"
                         
@@ -146,15 +148,23 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         let overLayImageView = UIImageView(frame: CGRect(x: 0, y: 0, width:cell.frame.size.width, height: cell.frame.size.height));
                         overLayImageView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
                         
-//                        cell.addSubview(backgroundImageView)
-//                        cell.addSubview(overLayImageView)
-//                        cell.sendSubview(toBack: overLayImageView)
-//                        cell.sendSubview(toBack: backgroundImageView)
+                        //                        cell.addSubview(backgroundImageView)
+                        //                        cell.addSubview(overLayImageView)
+                        //                        cell.sendSubview(toBack: overLayImageView)
+                        //                        cell.sendSubview(toBack: backgroundImageView)
                         return cell
                 }
                 
         }
         
+        func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+                if (collectionView.restorationIdentifier != "seasons"){
+                        //let episode = self.seasons[String(currentIndex)]?[indexPath.row]
+                        if let cell = cell as? EpisodeViewCell {
+                                cell.linkCollectionView.reloadData()
+                        }
+                }
+        }
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
                 let width = self.view.frame.size.width
                 
@@ -183,7 +193,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 } else {
                         
                         if (selectedIndex == nil || selectedIndex != indexPath.row){
-                        selectedIndex = indexPath.row
+                                selectedIndex = indexPath.row
                         } else {
                                 selectedIndex = nil
                         }
