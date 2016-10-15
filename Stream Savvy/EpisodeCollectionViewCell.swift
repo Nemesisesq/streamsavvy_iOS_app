@@ -32,7 +32,7 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         
         @IBOutlet var image: UIImageView!
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-                return CGSize.init(width: 34, height: 8)
+                return CGSize.init(width: 200, height: 40)
         }
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
                 if indexPath.section == 0 {
