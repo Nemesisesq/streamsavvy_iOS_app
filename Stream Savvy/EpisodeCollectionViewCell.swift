@@ -31,7 +31,9 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         @IBOutlet var linkCollectionView: UICollectionView!
         
         @IBOutlet var image: UIImageView!
-        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+                return CGSize.init(width: 34, height: 8)
+        }
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
                 if indexPath.section == 0 {
                         if let source = episode?.subscription_ios_sources?[indexPath.row] {
@@ -125,6 +127,18 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
                 }
                 
                 return cell
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+                let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "deep_links", for: indexPath) as! LinkCellCollectionReusableView
+                if indexPath.section == 0 {
+                        view.viewingWindow.text = "On Demand"
+                } else {
+                        view.viewingWindow.text = "Pay Per View"
+                }
+                
+                return view
+                
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -340,13 +341,13 @@
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DUO-dY-BWj" customClass="LinkCollectionViewFlowLayout" customModule="Stream_Savvy" customModuleProvider="target">
                                                         <size key="itemSize" width="50" height="50"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="headerReferenceSize" width="50" height="50"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LinkCell" id="KpV-Eb-Dxf" customClass="LinkViewCell" customModule="Stream_Savvy" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="50" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -374,6 +375,26 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="deep_links" reuseIdentifier="deep_links" id="YEb-Q9-O2y" customClass="LinkCellCollectionReusableView" customModule="Stream_Savvy" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebi-G1-EuY">
+                                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="ebi-G1-EuY" firstAttribute="leading" secondItem="YEb-Q9-O2y" secondAttribute="leadingMargin" id="2Rl-8U-RHf"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="ebi-G1-EuY" secondAttribute="trailing" id="8Lf-Bd-glT"/>
+                                                            <constraint firstItem="ebi-G1-EuY" firstAttribute="centerX" secondItem="YEb-Q9-O2y" secondAttribute="centerX" id="FGx-aZ-Cs8"/>
+                                                            <constraint firstItem="ebi-G1-EuY" firstAttribute="top" secondItem="YEb-Q9-O2y" secondAttribute="topMargin" constant="5" id="uPl-LT-VX9"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="viewingWindow" destination="ebi-G1-EuY" id="dAt-hg-5gn"/>
+                                                        </connections>
+                                                    </collectionReusableView>
                                                     <connections>
                                                         <outlet property="dataSource" destination="LeH-sC-cVm" id="V59-kd-8Y1"/>
                                                         <outlet property="delegate" destination="LeH-sC-cVm" id="PBF-xi-gSb"/>

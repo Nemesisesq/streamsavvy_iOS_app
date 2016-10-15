@@ -56,6 +56,7 @@
 		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
 		BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */; };
 		BD9563E11DB209790089652E /* LinkCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9563E01DB209790089652E /* LinkCollectionViewFlowLayout.swift */; };
+		BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9563E41DB2A9C60089652E /* LinkCellCollectionReusableView.swift */; };
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
@@ -181,6 +182,7 @@
 		BD9563D61DB07EF80089652E /* ERJustifiedFlowLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ERJustifiedFlowLayout.framework; path = "Pods/../build/Debug-iphoneos/ERJustifiedFlowLayout/ERJustifiedFlowLayout.framework"; sourceTree = "<group>"; };
 		BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICollectionViewLeftAlignedLayout.framework; path = "Pods/../build/Debug-iphoneos/UICollectionViewLeftAlignedLayout/UICollectionViewLeftAlignedLayout.framework"; sourceTree = "<group>"; };
 		BD9563E01DB209790089652E /* LinkCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		BD9563E41DB2A9C60089652E /* LinkCellCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCellCollectionReusableView.swift; sourceTree = "<group>"; };
 		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */,
 				BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */,
 				BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */,
+				BD9563E41DB2A9C60089652E /* LinkCellCollectionReusableView.swift */,
 			);
 			name = CollectionViewCells;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				9FC2960F1D766110005CB080 /* ShowDetailsTableViewController.m in Sources */,
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
+				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,
 				BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */,
 				9F5A4D341D5AE1D70057AF6D /* main.m in Sources */,
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
