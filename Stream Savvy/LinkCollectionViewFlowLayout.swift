@@ -10,5 +10,5 @@ import UIKit
 import UICollectionViewLeftAlignedLayout
 
 class LinkCollectionViewFlowLayout: UICollectionViewLeftAlignedLayout {
-
+        
 }

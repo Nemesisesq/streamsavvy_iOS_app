@@ -8,10 +8,11 @@
 
 import Foundation
 import UICollectionViewLeftAlignedLayout
+import JavaScriptCore
 
-class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
         
-        var episode: Episode?                
+        var episode: Episode?
         
         var link = [String]() {
                 didSet {
@@ -19,8 +20,9 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
                 }
         }
         
-       
         
+        
+        var jsContext: JSContext = Common.getJSContext()
         
         @IBOutlet weak var seEp: UILabel!
         
@@ -30,6 +32,54 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         
         @IBOutlet var image: UIImageView!
         
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+                if indexPath.section == 0 {
+                        if let source = episode?.subscription_ios_sources?[indexPath.row] {
+                        
+                        
+                        if let res = jsContext.evaluateScript("_.snakeCase('\(source.display_name!)')"){
+                                let jsValue = res
+                                
+                                if let res = jsValue.toString() {
+                                var image_name = res
+                                image_name = "marks_\(image_name)"
+                                let img = UIImage(named: image_name)
+                                
+                                let height: CGFloat = 30
+                                let ratio = (img?.size.width)!/(img?.size.height)!
+                                let finalWidth = ratio * height
+                                
+                                return CGSize(width: finalWidth, height: height)
+                                }
+                                }
+                                
+                        }
+                } else {
+                        if let source = episode?.purchase_ios_sources?[indexPath.row]{
+                        
+                        if let res = jsContext.evaluateScript("_.snakeCase('\(source.display_name!)')"){
+                                let jsValue = res
+                                
+                                
+                                if let rez = jsValue.toString() {
+                                        var image_name = rez
+                                        image_name = "marks_\(image_name)"
+                                        let img = UIImage(named: image_name)
+                                        
+                                        let height: CGFloat = 30
+                                        let ratio = (img?.size.width)!/(img?.size.height)!
+                                        let finalWidth = ratio * height
+                                
+                                return CGSize(width: finalWidth, height: height)
+                                }
+                                
+                        }
+                                
+                        }
+                        
+                }
+                return CGSize(width: 0, height: 0)
+        }
         
         
         func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -73,7 +123,7 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
                                 cell.purchaseIOSSource = pws[indexPath.row]
                         }
                 }
-
+                
                 return cell
         }
         
