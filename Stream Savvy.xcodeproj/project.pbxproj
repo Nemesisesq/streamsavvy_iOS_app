@@ -55,6 +55,7 @@
 		BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD921BDD1DA1E5960018DCFB /* Episodes.swift */; };
 		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
 		BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */; };
+		BD9563E11DB209790089652E /* LinkCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9563E01DB209790089652E /* LinkCollectionViewFlowLayout.swift */; };
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
@@ -179,6 +180,7 @@
 		BD921BFB1DA204A90018DCFB /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Gloss/Gloss.framework"; sourceTree = "<group>"; };
 		BD9563D61DB07EF80089652E /* ERJustifiedFlowLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ERJustifiedFlowLayout.framework; path = "Pods/../build/Debug-iphoneos/ERJustifiedFlowLayout/ERJustifiedFlowLayout.framework"; sourceTree = "<group>"; };
 		BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICollectionViewLeftAlignedLayout.framework; path = "Pods/../build/Debug-iphoneos/UICollectionViewLeftAlignedLayout/UICollectionViewLeftAlignedLayout.framework"; sourceTree = "<group>"; };
+		BD9563E01DB209790089652E /* LinkCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		9F5A4D311D5AE1D70057AF6D /* Stream Savvy */ = {
 			isa = PBXGroup;
 			children = (
+				BD9563DF1DB2091A0089652E /* Layouts */,
 				9FE1B0581D693DFF0013DCB1 /* Utility Belt */,
 				9FE1B0571D693C060013DCB1 /* TableViewCells */,
 				BDD2B7021DAD8FA800C77260 /* CollectionViewCells */,
@@ -471,6 +474,14 @@
 				BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		BD9563DF1DB2091A0089652E /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				BD9563E01DB209790089652E /* LinkCollectionViewFlowLayout.swift */,
+			);
+			name = Layouts;
 			sourceTree = "<group>";
 		};
 		BDAEC8A61DAEE681001370F6 /* javascript */ = {
@@ -801,6 +812,7 @@
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */,
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
+				BD9563E11DB209790089652E /* LinkCollectionViewFlowLayout.swift in Sources */,
 				BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */,
 				BDD2B7041DAD8FE800C77260 /* EpisodeCollectionViewCell.swift in Sources */,
 				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,

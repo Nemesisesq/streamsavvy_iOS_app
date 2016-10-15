@@ -20,7 +20,7 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         }
         
        
-        @IBOutlet var layout: UICollectionViewLeftAlignedLayout!
+        
         
         @IBOutlet weak var seEp: UILabel!
         
@@ -30,20 +30,6 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         
         @IBOutlet var image: UIImageView!
         
-        override func prepareForReuse() {
-                
-        }
-        
-        override func awakeFromNib() {
-                super.awakeFromNib()
-            let flow =  UICollectionViewLeftAlignedLayout()
-                flow.estimatedItemSize = CGSize(width: 100, height: 30)
-                flow.scrollDirection = .vertical
-                flow.minimumInteritemSpacing = 0
-                flow.minimumLineSpacing = 0
-                linkCollectionView.collectionViewLayout = flow
-                
-        }
         
         
         func numberOfSections(in collectionView: UICollectionView) -> Int {
