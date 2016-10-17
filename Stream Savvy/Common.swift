@@ -39,8 +39,7 @@ struct Common {
                 let randomBlue:CGFloat = CGFloat(drand48())
                 return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
         }
-        
-        
+
         static func openDeepLink(link:String) {
                 
                 let x = application.openURL(URL.init(string: link)!)

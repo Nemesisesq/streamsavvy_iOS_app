@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Alamofire (4.0.1)
+  - Appz (2.0.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -57,6 +58,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Alamofire (~> 4.0)
+  - Appz
   - Dollar
   - FBSDKCoreKit
   - FBSDKLoginKit
@@ -72,6 +74,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Appz: 06989c7fae267e014480f997c8d68ec8c4347d7e
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
   FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
@@ -85,6 +88,6 @@ SPEC CHECKSUMS:
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: b6a0ff35652a119bd794ed81fd50fbc2273d453c
+PODFILE CHECKSUM: c0b626c8d4fc2bc9fc370b817f0b6070a1810920
 
 COCOAPODS: 1.1.0.rc.2

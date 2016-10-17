@@ -18,6 +18,7 @@ pod "PromiseKit", "~> 4.0"
 pod "Gloss", "~> 1.0"
 pod 'Dollar'
 pod 'UICollectionViewLeftAlignedLayout'
+pod 'Appz'
 
 
 platform :ios, '10.0'

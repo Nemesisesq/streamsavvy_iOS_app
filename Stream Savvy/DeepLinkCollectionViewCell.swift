@@ -9,6 +9,7 @@
 import Foundation
 import Dollar
 import JavaScriptCore
+import Appz
 
 
 class LinkViewCell: UICollectionViewCell {
@@ -88,7 +89,12 @@ class LinkViewCell: UICollectionViewCell {
         
         func openDeepLink(){
                 
+                
+                
+                
                 if let source = subscriptionIOSSource{
+                        
+                        
                         if Common.schemeAvailable(deepLink: source.link!){
                                 Common.openDeepLink(link: source.link!)
                         } else {
@@ -115,13 +121,13 @@ class LinkViewCell: UICollectionViewCell {
         
         override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
                 
-                        let height: CGFloat = 30
-                        let ratio = linkImageView.image!.size.width/linkImageView.image!.size.height
-                        let finalWidth = ratio * height
-                        layoutAttributes.frame.size.height = height
-                        layoutAttributes.frame.size.width = finalWidth
-                        
-               
+                let height: CGFloat = 30
+                let ratio = linkImageView.image!.size.width/linkImageView.image!.size.height
+                let finalWidth = ratio * height
+                layoutAttributes.frame.size.height = height
+                layoutAttributes.frame.size.width = finalWidth
+                
+                
                 return layoutAttributes
         }
 }
