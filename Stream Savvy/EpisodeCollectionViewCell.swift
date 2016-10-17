@@ -132,9 +132,9 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
                 let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "deep_links", for: indexPath) as! LinkCellCollectionReusableView
                 if indexPath.section == 0 {
-                        view.viewingWindow.text = "On Demand"
+                        view.viewingWindow.text = "Subscription"
                 } else {
-                        view.viewingWindow.text = "Pay Per View"
+                        view.viewingWindow.text = "Buy This Episode"
                 }
                 
                 return view
