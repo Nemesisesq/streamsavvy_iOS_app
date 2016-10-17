@@ -29,6 +29,8 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         var content: Content!
         var seasons: [String:[Episode]]!
         
+        var seasonKeys: [String]?
+        
         
         
         override func awakeFromNib() {
@@ -43,6 +45,8 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         .then{ epiList -> Void in
                                 self.episodes = epiList
                                 self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { String($0.seasonNumber!) })
+                                self.seasonKeys = $.keys(self.seasons).sorted()
+                                
                                 self.seasonCollectionView.reloadData()
                                 self.episodeCollectionView.reloadData()
                         }.catch { error in
@@ -104,7 +108,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                                 return self.seasons.count
                         } else {
                                 let key: String = String(currentIndex)
-                                if let x  = self.seasons?[key] {
+                                if let x = self.seasons?[key] {
                                         let epis = self.seasons?[key]
                                         return (epis?.count)!
                                 }
@@ -120,7 +124,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 if (collectionView.restorationIdentifier == "seasons"){
                         let cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
                         
-                        cell.seasonLabel?.text = "\(indexPath.row)"
+                        cell.seasonLabel?.text = seasonKeys?[indexPath.row]
                         
                         return cell
                         
