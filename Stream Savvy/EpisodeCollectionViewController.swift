@@ -25,7 +25,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         @IBOutlet var seasonCollectionView: UICollectionView!
         @IBOutlet weak var mediaTitleLabel: UILabel!
         //        @IBOutlet var episodeCollectionView: UICollectionView!
-        var currentIndex: Int!
+        var currentIndex: Int?
         var selectedIndex: Int?
         var episodes: [Episode]!
         var content: Content!
@@ -34,15 +34,11 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         var seasonKeys: [String]?
         
         var key: String!
-
+        
         var season: [Episode]!
-
+        
         var seasonKey: String!
         var episode : Episode!
-        
-        
-        override func awakeFromNib() {
-        }
         
         
         override func viewDidLoad() {
@@ -54,14 +50,14 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                                 self.episodes = epiList
                                 self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { String($0.seasonNumber!) })
                                 self.seasonKeys = $.keys(self.seasons).sorted()
-                                
+                                self.currentIndex = 0
                                 self.seasonCollectionView.reloadData()
                                 self.episodeTableView.reloadData()
                         }.catch { error in
                                 print(error)
                                 
                 }
-                currentIndex = 0
+                //                currentIndex = nil
                 // Uncomment the following line to preserve selection between presentations
                 // self.clearsSelectionOnViewWillAppear = false
                 
@@ -111,11 +107,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 
                 if self.seasons != nil && !self.seasons.isEmpty {
                         
-                        
-                        
                         return self.seasons.count
-                        
-                        
                         
                 }
                 
@@ -129,6 +121,14 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 let cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
                 
                 cell.seasonLabel?.text = seasonKeys?[indexPath.row]
+                
+                if $.equal(indexPath.row, currentIndex) {
+                        
+                        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top )
+                        
+                }
+                
+                
                 
                 cell.isSelected = $.equal(indexPath.row, currentIndex)
                 
