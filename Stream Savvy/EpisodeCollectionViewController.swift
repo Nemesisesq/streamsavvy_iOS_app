@@ -29,15 +29,15 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         var selectedIndex: Int?
         var episodes: [Episode]!
         var content: Content!
-        var seasons: [String:[Episode]]!
+        var seasons: [Int:[Episode]]!
         
-        var seasonKeys: [String]?
+        var seasonKeys: [Int]?
         
-        var key: String!
+        var key: Int!
         
         var season: [Episode]!
         
-        var seasonKey: String!
+        var seasonKey: Int!
         var episode : Episode!
         
         
@@ -48,7 +48,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                         //                Episode.getEpisodeList(guidebox_id: "2098")
                         .then{ epiList -> Void in
                                 self.episodes = epiList
-                                self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { String($0.seasonNumber!) })
+                                self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { $0.seasonNumber! })
                                 self.seasonKeys = $.keys(self.seasons).sorted()
                                 self.currentIndex = 0
                                 self.seasonCollectionView.reloadData()
@@ -120,8 +120,10 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 
                 let cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
                 
-                cell.seasonLabel?.text = seasonKeys?[indexPath.row]
                 
+                if  let k = seasonKeys?[indexPath.row] {
+                cell.seasonLabel?.text = String(describing: k)
+                }
                 if $.equal(indexPath.row, currentIndex) {
                         
                         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top )
