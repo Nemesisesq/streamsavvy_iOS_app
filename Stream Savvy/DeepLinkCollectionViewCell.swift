@@ -89,9 +89,6 @@ class LinkViewCell: UICollectionViewCell {
         
         func openDeepLink(){
                 
-                
-                
-                
                 if let source = subscriptionIOSSource{
                         
                         

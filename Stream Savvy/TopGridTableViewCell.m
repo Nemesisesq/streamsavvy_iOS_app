@@ -76,7 +76,7 @@
 		[self.topShow getShowDetailsWithView:self.uivc.view Success:^(NSURLSessionDataTask *task, id JSON) {
             
 			sdtvc.show = self.topShow;
-			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
+//			sdtvc.sources = [self getSourcesFromShowWithJSON:(NSDictionary *)JSON];
 //			sdtvc.isDisplayingPopularShows = self.isShowingPopularShows;
 			[self.uivc.navigationController pushViewController:sdtvc animated:YES];
 		}];
