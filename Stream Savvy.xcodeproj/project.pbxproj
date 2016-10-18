@@ -43,6 +43,8 @@
 		BD0D74611D9AB1120012F184 /* EpisodeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */; };
 		BD0DCC161DB473C7005C32B2 /* Appz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0DCC151DB473C7005C32B2 /* Appz.framework */; };
 		BD0DCC181DB4785E005C32B2 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC171DB4785E005C32B2 /* UIApplication.swift */; };
+		BD0DCC1F1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC1E1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift */; };
+		BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC231DB5C60D005C32B2 /* EpisodeTableViewCell.swift */; };
 		BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B01D8CD4C800B472E2 /* iCarousel.m */; };
 		BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */; };
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
@@ -166,6 +168,8 @@
 		BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewController.swift; sourceTree = "<group>"; };
 		BD0DCC151DB473C7005C32B2 /* Appz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appz.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Appz/Appz.framework"; sourceTree = "<group>"; };
 		BD0DCC171DB4785E005C32B2 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		BD0DCC1E1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeTableViewControllerExtension.swift; path = "../../Library/Mobile Documents/com~apple~CloudDocs/EpisodeTableViewControllerExtension.swift"; sourceTree = "<group>"; };
+		BD0DCC231DB5C60D005C32B2 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		BD1834AF1D8CD4C800B472E2 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		BD1834B01D8CD4C800B472E2 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stream Savvy-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -437,6 +441,7 @@
 				9FC296111D76621F005CB080 /* ShowDetailsTableViewCell.m */,
 				9FC296131D76643F005CB080 /* MediaSourceTableViewCell.h */,
 				9FC296141D76643F005CB080 /* MediaSourceTableViewCell.m */,
+				BD0DCC231DB5C60D005C32B2 /* EpisodeTableViewCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 			children = (
 				BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */,
 				BD0DCC171DB4785E005C32B2 /* UIApplication.swift */,
+				BD0DCC1E1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -819,6 +825,8 @@
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
 				BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */,
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */,
+				BD0DCC1F1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift in Sources */,
 				9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */,
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */,

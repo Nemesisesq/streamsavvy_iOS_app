@@ -11,4 +11,27 @@ import Foundation
 class SeasonViewCell: UICollectionViewCell {
         
         @IBOutlet var seasonLabel: UILabel!
+        
+        
+        override var isSelected: Bool {
+                willSet {
+                        
+                }
+                
+                didSet {
+                        
+                        if self.isSelected {
+                                let v = UIView()
+                                v.backgroundColor = .white
+                                self.selectedBackgroundView = v
+//                                self.seasonLabel?.textColor = Constants.streamSavvyRed()
+                                self.seasonLabel.highlightedTextColor = Constants.streamSavvyRed()
+
+                        }
+                        
+                }
+                
+        }
+        
+        
 }

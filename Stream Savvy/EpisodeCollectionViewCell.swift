@@ -12,6 +12,7 @@ import JavaScriptCore
 
 class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
         
+        
         var episode: Episode?
         
         var link = [String]() {
