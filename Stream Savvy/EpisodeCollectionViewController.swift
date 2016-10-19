@@ -43,6 +43,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         
         override func viewDidLoad() {
                 super.viewDidLoad()
+                episodeTableView.separatorStyle = .none
                 self.mediaTitleLabel.text = self.content.title
                 Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
                         //                Episode.getEpisodeList(guidebox_id: "2098")
