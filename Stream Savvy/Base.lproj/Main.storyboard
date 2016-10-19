@@ -308,7 +308,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="383"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rUL-Pb-4ff" id="onp-Iu-NRh">
-                                            <frame key="frameInset" width="375" height="382"/>
+                                            <frame key="frameInset" width="375" height="383"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hf5-Ek-4Y0"/>
@@ -335,13 +335,13 @@
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Z0-li-Spf" customClass="LinkCollectionViewFlowLayout" customModule="Stream_Savvy" customModuleProvider="target">
                                                         <size key="itemSize" width="60" height="52"/>
-                                                        <size key="headerReferenceSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="50" height="30"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LinkCell" id="2HZ-8C-6wJ" customClass="LinkViewCell" customModule="Stream_Savvy" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="50" width="60" height="52"/>
+                                                            <rect key="frame" x="0.0" y="30" width="60" height="52"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="52"/>
@@ -371,11 +371,11 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="deep_links" id="7Wg-ZX-Aaz" customClass="LinkCellCollectionReusableView" customModule="Stream_Savvy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJp-Fa-spu">
-                                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="10"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -436,29 +436,32 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b30-XN-lxZ">
-                                            <size key="itemSize" width="68" height="46"/>
+                                            <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Season" id="ZSu-EW-BeG" customClass="SeasonViewCell" customModule="Stream_Savvy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5N-co-Jac">
-                                                            <frame key="frameInset" minX="8" minY="13" width="44" height="24"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5N-co-Jac">
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                     </subviews>
                                                 </view>
-                                                <size key="customSize" width="60" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="J5N-co-Jac" secondAttribute="trailing" id="0vh-DX-gts"/>
+                                                    <constraint firstItem="J5N-co-Jac" firstAttribute="top" secondItem="ZSu-EW-BeG" secondAttribute="top" id="2pC-Vk-i65"/>
+                                                    <constraint firstAttribute="bottom" secondItem="J5N-co-Jac" secondAttribute="bottom" id="96y-j8-ZOp"/>
+                                                    <constraint firstItem="J5N-co-Jac" firstAttribute="leading" secondItem="ZSu-EW-BeG" secondAttribute="leading" id="RsO-Vo-Jv3"/>
+                                                </constraints>
                                                 <connections>
                                                     <outlet property="seasonLabel" destination="J5N-co-Jac" id="S5x-of-X5v"/>
                                                 </connections>

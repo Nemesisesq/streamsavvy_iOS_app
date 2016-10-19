@@ -120,47 +120,44 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 let cell: SeasonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Season", for: indexPath) as! SeasonViewCell
                 
                 
-                if  let k = seasonKeys?[indexPath.row] {
-                        cell.seasonLabel?.text = String(describing: k)
-
-                }
-                
-                if currentIndex != nil{
-                let path = IndexPath.init(item: currentIndex!, section: 0)
-//                collectionView.deselectItem(at: path, animated: true)
-                }
-
-                if $.equal(indexPath.row, currentIndex) {
-                        
-                        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top )
-                         cell.isSelected = true
-                        
-                }
-                
-                
                 if currentIndex == nil{
                         
                         currentIndex = 0
-                        if $.equal(indexPath.row, currentIndex){
-                                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top )
-                                cell.isSelected = true
-                        }
                         
+                }
+                
+                
+                if  let k = seasonKeys?[indexPath.row] {
+                        cell.seasonLabel?.text = String(describing: k)
                         
-                        collectionView.reloadData()
+                }
+                
+                if $.equal(indexPath.row, currentIndex) {
+                        
+                        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top )
+                        cell.isSelected = true
+                        
                         episodeTableView.reloadData()
                         
                 }
+                
+                
+                
                 return cell
                 
                 
         }
         
+        override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+                if let observedObject = object as! UICollectionView? , observedObject == seasonCollectionView {
+                        episodeTableView.reloadData()
+                }
+        }
+        
         func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-                if (collectionView.restorationIdentifier != "seasons"){
-                        if let cell = cell as? EpisodeViewCell {
-                                cell.linkCollectionView.reloadData()
-                        }
+                if let cell = cell as? EpisodeViewCell {
+                        cell.linkCollectionView.reloadData()
+                        
                 }
         }
         
@@ -169,8 +166,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         // MARK: UICollectionViewDelegate
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                
-                
+
                 
                 currentIndex = indexPath.row
                 selectedIndex = nil
