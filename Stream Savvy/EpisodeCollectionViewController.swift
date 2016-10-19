@@ -50,14 +50,13 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                                 self.episodes = epiList
                                 self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { $0.seasonNumber! })
                                 self.seasonKeys = $.keys(self.seasons).sorted()
-                                self.currentIndex = 0
                                 self.seasonCollectionView.reloadData()
                                 self.episodeTableView.reloadData()
                         }.catch { error in
                                 print(error)
                                 
                 }
-                //                currentIndex = nil
+                //                currentIndex = 0
                 // Uncomment the following line to preserve selection between presentations
                 // self.clearsSelectionOnViewWillAppear = false
                 
@@ -122,18 +121,36 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 
                 
                 if  let k = seasonKeys?[indexPath.row] {
-                cell.seasonLabel?.text = String(describing: k)
+                        cell.seasonLabel?.text = String(describing: k)
+
                 }
+                
+                if currentIndex != nil{
+                let path = IndexPath.init(item: currentIndex!, section: 0)
+//                collectionView.deselectItem(at: path, animated: true)
+                }
+
                 if $.equal(indexPath.row, currentIndex) {
                         
                         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top )
+                         cell.isSelected = true
                         
                 }
                 
                 
-                
-                cell.isSelected = $.equal(indexPath.row, currentIndex)
-                
+                if currentIndex == nil{
+                        
+                        currentIndex = 0
+                        if $.equal(indexPath.row, currentIndex){
+                                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top )
+                                cell.isSelected = true
+                        }
+                        
+                        
+                        collectionView.reloadData()
+                        episodeTableView.reloadData()
+                        
+                }
                 return cell
                 
                 
@@ -152,6 +169,9 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         // MARK: UICollectionViewDelegate
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                
+                
+                
                 currentIndex = indexPath.row
                 selectedIndex = nil
                 episodeTableView.reloadData()
