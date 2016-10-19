@@ -13,8 +13,8 @@ import Dollar
 //import SwiftyJSON
 
 
-//let host = "edr-go-staging.herokuapp.com"
-var host = "localhost:8080"
+let host = "edr-go-staging.herokuapp.com"
+//var host = "localhost:8080"
 
 
 class Favorites: NSObject {
