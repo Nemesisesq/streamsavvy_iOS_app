@@ -10,4 +10,5 @@
 #import "MediaSource.h"
 #import "SDWebModel.h"
 #import "Constants.h"
+#import "UserPrefs.h"
 

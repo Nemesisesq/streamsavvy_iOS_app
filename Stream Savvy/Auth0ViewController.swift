@@ -13,6 +13,8 @@ class Auth0ViewController: UIViewController {
         
         var loginComplete: Bool?
         
+
+        
         override func viewDidLoad() {
                 super.viewDidLoad()
                 
@@ -34,6 +36,12 @@ class Auth0ViewController: UIViewController {
                 controller?.onAuthenticationBlock = { profile, token in
                         // Do something with token  profile. e.g.: save them.
                         // Lock will not save these objects for you.
+                        
+                        UserPrefs.setToken(token?.accessToken)
+                        UserPrefs.setEmail(profile?.email)
+                        
+                        
+                        
                         
                         // Don't forget to dismiss the Lock controller
                         controller?.dismiss(animated: true, completion: nil)

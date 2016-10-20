@@ -44,9 +44,9 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
                 if section == 0 {
-//                        if episode?.subscription_ios_sources?.count == 0 {
-//                                return CGSize.init(width: 0, height: 0)
-//                        }
+                        if episode?.subscription_ios_sources?.count == 0 {
+                                return CGSize.init(width: 0, height: 0)
+                        }
                 }
                 return CGSize.init(width: 200, height: 40)
         }
