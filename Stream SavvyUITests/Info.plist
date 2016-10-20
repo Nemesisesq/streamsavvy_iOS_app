@@ -20,5 +20,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Auth0ClientId</key>
+	<string>NagwQC83XJEPKdRGi9tz6g7kGpTu8y1b</string>
+        <key>Auth0Domain</key>
+        <string>streamsavvy.auth0.com</string>
+        
 </dict>
 </plist>

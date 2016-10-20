@@ -41,7 +41,6 @@
 		9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B05E1D6A5CAC0013DCB1 /* Media.m */; };
 		BD0D745D1D9A0E170012F184 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D745C1D9A0E170012F184 /* Favorites.swift */; };
 		BD0D74611D9AB1120012F184 /* EpisodeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */; };
-		BD0DCC161DB473C7005C32B2 /* Appz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0DCC151DB473C7005C32B2 /* Appz.framework */; };
 		BD0DCC181DB4785E005C32B2 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC171DB4785E005C32B2 /* UIApplication.swift */; };
 		BD0DCC1F1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC1E1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift */; };
 		BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC231DB5C60D005C32B2 /* EpisodeTableViewCell.swift */; };
@@ -55,6 +54,8 @@
 		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
 		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
+		BD712D301DB87A6500320590 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD712D2F1DB87A6500320590 /* Auth0.plist */; };
+		BD712D321DB87C5600320590 /* Auth0ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD712D311DB87C5600320590 /* Auth0ViewController.swift */; };
 		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
 		BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD921BDD1DA1E5960018DCFB /* Episodes.swift */; };
 		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
@@ -63,6 +64,7 @@
 		BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9563E41DB2A9C60089652E /* LinkCellCollectionReusableView.swift */; };
 		BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95CAAD1D9039FB00BCEBE2 /* Content.swift */; };
 		BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */; };
+		BD9818781DB880CE003A5159 /* Auth0ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD712D311DB87C5600320590 /* Auth0ViewController.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
 		BDD2B7041DAD8FE800C77260 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
@@ -183,6 +185,9 @@
 		BD39ADF71DA2A39C0065F02F /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = "Pods/../build/Debug-iphoneos/Dollar/Dollar.framework"; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BD7076E91D8C903200F2B331 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BD712D2F1DB87A6500320590 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		BD712D311DB87C5600320590 /* Auth0ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0ViewController.swift; sourceTree = "<group>"; };
+		BD712D331DB87CAA00320590 /* Lock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lock.framework; path = "Pods/../build/Debug-iphoneos/Lock/Lock.framework"; sourceTree = "<group>"; };
 		BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		BD921BDD1DA1E5960018DCFB /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -193,6 +198,7 @@
 		BD9563E41DB2A9C60089652E /* LinkCellCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCellCollectionReusableView.swift; sourceTree = "<group>"; };
 		BD95CAAD1D9039FB00BCEBE2 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD95CAAF1D9055D300BCEBE2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		BD9818761DB87EFB003A5159 /* Auth0.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Auth0.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/Auth0/Auth0.framework"; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
 		BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -211,7 +217,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD0DCC161DB473C7005C32B2 /* Appz.framework in Frameworks */,
 				BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */,
 				BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */,
 				BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */,
@@ -246,6 +251,8 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD9818761DB87EFB003A5159 /* Auth0.framework */,
+				BD712D331DB87CAA00320590 /* Lock.framework */,
 				BD0DCC151DB473C7005C32B2 /* Appz.framework */,
 				BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */,
 				BD9563D61DB07EF80089652E /* ERJustifiedFlowLayout.framework */,
@@ -317,6 +324,7 @@
 				9FBC97821D6D31DB004B6182 /* Login */,
 				9F5A4D321D5AE1D70057AF6D /* Supporting Files */,
 				9F5A4D431D5AE1D70057AF6D /* Info.plist */,
+				BD712D2F1DB87A6500320590 /* Auth0.plist */,
 			);
 			path = "Stream Savvy";
 			sourceTree = "<group>";
@@ -353,9 +361,9 @@
 		9FBC97821D6D31DB004B6182 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				9FE1B04E1D693B160013DCB1 /* PopularShowTableViewController.h */,
 				9FE1B04B1D693AE70013DCB1 /* LoginViewController.h */,
 				9FE1B04C1D693AE70013DCB1 /* LoginViewController.m */,
+				BD712D311DB87C5600320590 /* Auth0ViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -405,6 +413,7 @@
 				9F420FAB1DA3345400A89D87 /* LiveGuideDetailsViewController.m */,
 				9F28106E1D83B4B900158502 /* AuthTableViewController.h */,
 				9F28106F1D83B4B900158502 /* AuthTableViewController.m */,
+				9FE1B04E1D693B160013DCB1 /* PopularShowTableViewController.h */,
 				9FE1B04F1D693B160013DCB1 /* PopularShowTableViewController.m */,
 				9FBC97831D6D32CB004B6182 /* GuideTableViewController.h */,
 				9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */,
@@ -644,6 +653,7 @@
 				BD25C0311DA646CF005C28C2 /* app_icons in Resources */,
 				BDE9604C1DA8B71600E13C68 /* Like Filled-50.png in Resources */,
 				9F5A4D3D1D5AE1D70057AF6D /* Main.storyboard in Resources */,
+				BD712D301DB87A6500320590 /* Auth0.plist in Resources */,
 				BDE960471DA8AF5900E13C68 /* CarouselItem.xib in Resources */,
 				BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */,
 			);
@@ -813,6 +823,7 @@
 				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,
 				9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */,
 				9FC2961B1D774179005CB080 /* WebViewViewController.m in Sources */,
+				BD712D321DB87C5600320590 /* Auth0ViewController.swift in Sources */,
 				BD39ADF61DA230E20065F02F /* Common.swift in Sources */,
 				BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */,
 				BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */,
@@ -860,6 +871,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5A4D4D1D5AE1D70057AF6D /* Stream_SavvyTests.m in Sources */,
+				BD9818781DB880CE003A5159 /* Auth0ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,6 +945,7 @@
 				DEVELOPMENT_TEAM = XWQ3X4T33E;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -983,6 +996,7 @@
 				DEVELOPMENT_TEAM = XWQ3X4T33E;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1016,6 +1030,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Dollar",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ERJustifiedFlowLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/UICollectionViewLeftAlignedLayout",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Lock",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1046,7 +1061,9 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Dollar",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ERJustifiedFlowLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/UICollectionViewLeftAlignedLayout",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Lock",
 				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/**";
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

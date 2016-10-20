@@ -88,7 +88,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 if (searchController.searchBar.text!.isEmpty != true ){
                         //            searchResults.results.removeAll()
                         
-                        searchResults.fetchResults(q: searchController.searchBar.text!)
+                        _ = searchResults.fetchResults(q: searchController.searchBar.text!)
                                 .then{result -> Void in
                                         
                                         self.resultsController.tableView.reloadData()
@@ -109,7 +109,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 makeCarousel()
                 
                 
-                favorites.fetchFavorites().then{ result -> Void in
+                _ = favorites.fetchFavorites().then{ result -> Void in
                         
                         self.favorites.contentList = self.favorites.contentList.reversed()
                         
@@ -133,17 +133,13 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         override func viewDidAppear(_ animated: Bool) {
                 if (self.searchController != nil) {
                         //            self.searchController.isActive = true
-                        print(self.carousel.isHidden)
-                        print(self.carousel.layer.zPosition)
+                       
                 }
                 
         }
         
         override func viewDidLayoutSubviews() {
-                if (self.searchController != nil) {
-                        //            self.searchController.isActive = true
-                }
-                
+//              carousel.currentItemIndex = -1
         }
         
         

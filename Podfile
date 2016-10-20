@@ -5,7 +5,7 @@
 
 target 'Stream Savvy' do
 
-pod 'AFNetworking', '~> 2.0'
+pod 'AFNetworking', '~> 3.0'
 pod 'SDWebImage', '~>3.7'
 pod 'SCLAlertView-Objective-C'
 pod 'FBSDKCoreKit'
@@ -18,7 +18,8 @@ pod "PromiseKit", "~> 4.0"
 pod "Gloss", "~> 1.0"
 pod 'Dollar'
 pod 'UICollectionViewLeftAlignedLayout'
-pod 'Appz'
+pod 'Lock', "~> 1.27"
+pod 'Auth0', '1.0.0'
 
 
 platform :ios, '10.0'

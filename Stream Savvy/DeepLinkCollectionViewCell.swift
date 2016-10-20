@@ -9,7 +9,7 @@
 import Foundation
 import Dollar
 import JavaScriptCore
-import Appz
+
 
 
 class LinkViewCell: UICollectionViewCell {
