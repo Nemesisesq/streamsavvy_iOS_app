@@ -10,6 +10,10 @@ import Foundation
 import Alamofire
 import PromiseKit
 import Dollar
+import SimpleKeychain
+import Lock
+
+
 //import SwiftyJSON
 
 
@@ -21,11 +25,37 @@ class Favorites: NSObject {
         
         var contentList = [Content]()
         
+        var profile: A0UserProfile!
+        
+        var keychain = A0SimpleKeychain(service: "Auth0")
+        
+        
+        
         public func fetchFavorites() -> Promise<Any> {
-                let url = "http://\(host)/favorites/test"
+                let url = "http://\(host)/favorites"
                 
                 return Promise { fullfil, reject in
-                        Alamofire.request(url)
+                        
+                        
+                        
+                        if  let p = keychain.data(forKey: "profile") {
+                                
+                                profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
+                        }
+                        
+                        
+                        let params: Parameters = [
+                                "id_token": keychain.string(forKey: "id_token")!,
+                                "email" : profile.email!,
+                                "name"  : profile.name,
+                                                        ]
+                        
+                        let authHeader: HTTPHeaders = ["Id-Token" :keychain.string(forKey: "id_token")!,
+                                                       "Accept": "application/json",
+                                                       "User-Id" : profile.userId]
+
+                        
+                        Alamofire.request(url, parameters: params, headers: authHeader)
                                 .responseJSON {response in
                                         
                                         self.contentList = Content.parseList(JSONData: (response.data! as Data))
@@ -43,11 +73,22 @@ class Favorites: NSObject {
         
         public func removeContentFromFavorites(content: Content) -> Promise<Void> {
                 
-                let url = "http://\(host)/favorites/remove/test"
+                if  let p = keychain.data(forKey: "profile") {
+                        
+                        profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
+                }
+
+                
+                let url = "http://\(host)/favorites/remove"
                 let theJson = content.asJson()
+                let authHeader: HTTPHeaders = ["Id-Token" :keychain.string(forKey: "id_token")!,
+                                               "Accept": "application/json",
+                                                "User-Id" : profile.userId]
+
+
                 
                 return Promise { fulfill, reject in
-                        Alamofire.request(url, method: .delete, parameters: theJson as? Parameters,  encoding: JSONEncoding.default)
+                        Alamofire.request(url, method: .delete, parameters: theJson as? Parameters,  encoding: JSONEncoding.default, headers: authHeader)
                                 .responseJSON { response in
                                         
                                         switch response.result {
@@ -62,13 +103,22 @@ class Favorites: NSObject {
                 
                 
         }
-        class func addContentToFavorites(content: Content) -> Promise<Void> {
+        public func addContentToFavorites(content: Content) -> Promise<Void> {
+                if  let p = keychain.data(forKey: "profile") {
+                        
+                        profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
+                }
+
                 
-                let url = "http://\(host)/favorites/add/test"
+                let url = "http://\(host)/favorites/add"
                 let theJson = content.asJson()
+                let authHeader: HTTPHeaders = ["Id-Token" :keychain.string(forKey: "id_token")!,
+                                   "Accept": "application/json",
+                                    "User-Id" : profile.userId]
+
                 
                 return Promise { fulfill, reject in
-                        Alamofire.request(url, method: .post, parameters: theJson as? Parameters,  encoding: JSONEncoding.default)
+                        Alamofire.request(url, method: .post, parameters: theJson as? Parameters,  encoding: JSONEncoding.default, headers: authHeader)
                                 .responseJSON { response in
                                         
                                         switch response.result {

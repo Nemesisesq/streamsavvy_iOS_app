@@ -20,6 +20,7 @@ pod 'Dollar'
 pod 'UICollectionViewLeftAlignedLayout'
 pod 'Lock', "~> 1.27"
 pod 'Auth0', '1.0.0'
+pod 'SimpleKeychain', '~> 0.7'
 
 
 platform :ios, '10.0'

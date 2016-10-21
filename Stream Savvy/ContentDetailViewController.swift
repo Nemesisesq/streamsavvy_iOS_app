@@ -23,6 +23,8 @@ class ContentDetailViewController: UIViewController  {
         
         var sources: [MediaSource]!
         
+        var favorites: Favorites! = Favorites()
+        
         
         @IBOutlet var genres: UILabel!
         @IBOutlet var showTitle: UILabel!
@@ -31,7 +33,7 @@ class ContentDetailViewController: UIViewController  {
         @IBOutlet weak var durationLabel: UILabel!
         
         @IBAction func addContentToFavorites(_ sender: UIButton) {
-                Favorites.addContentToFavorites(content: content)
+                favorites.addContentToFavorites(content: content)
                         .then { _ -> Void in
                                
                                 if let navigationController = self.navigationController {

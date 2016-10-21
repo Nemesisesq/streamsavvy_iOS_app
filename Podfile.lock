@@ -60,6 +60,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SimpleKeychain (0.7.0)
   - Toast (3.0)
   - UICollectionViewLeftAlignedLayout (1.0.2)
 
@@ -77,6 +78,7 @@ DEPENDENCIES:
   - PromiseKit (~> 4.0)
   - SCLAlertView-Objective-C
   - SDWebImage (~> 3.7)
+  - SimpleKeychain (~> 0.7)
   - Toast (~> 3.0)
   - UICollectionViewLeftAlignedLayout
 
@@ -96,9 +98,10 @@ SPEC CHECKSUMS:
   PromiseKit: ae9e7f97ee758e23f7b9c5e80380a2e78d6338c5
   SCLAlertView-Objective-C: a2b8b09b8ce5fe14c233ecaa09c02be582c6389a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: 35461f85b9ee67c8e046dbecdb943df6b4a05296
+PODFILE CHECKSUM: d474f93e83a137901235645ff205880fd1be449b
 
 COCOAPODS: 1.1.0.rc.2
