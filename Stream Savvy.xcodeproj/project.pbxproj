@@ -68,6 +68,7 @@
 		BD98187B1DB916A7003A5159 /* Auth0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9818791DB916A7003A5159 /* Auth0.framework */; };
 		BD98187C1DB916A7003A5159 /* Lock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187A1DB916A7003A5159 /* Lock.framework */; };
 		BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */; };
+		BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9818801DBA8D10003A5159 /* UILableExtensions.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
 		BDD2B7041DAD8FE800C77260 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
@@ -206,6 +207,7 @@
 		BD98187A1DB916A7003A5159 /* Lock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lock.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Lock/Lock.framework"; sourceTree = "<group>"; };
 		BD98187D1DB94198003A5159 /* Stream Savvy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stream Savvy.entitlements"; sourceTree = "<group>"; };
 		BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleKeychain.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/SimpleKeychain/SimpleKeychain.framework"; sourceTree = "<group>"; };
+		BD9818801DBA8D10003A5159 /* UILableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILableExtensions.swift; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
 		BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */,
 				BD0DCC171DB4785E005C32B2 /* UIApplication.swift */,
 				BD0DCC1E1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift */,
+				BD9818801DBA8D10003A5159 /* UILableExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */,
 				9F420FAC1DA3345400A89D87 /* LiveGuideDetailsViewController.m in Sources */,
 				9FBC97851D6D32CB004B6182 /* GuideTableViewController.m in Sources */,
 				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,

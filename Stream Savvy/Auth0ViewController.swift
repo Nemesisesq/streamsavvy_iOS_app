@@ -71,6 +71,8 @@ class Auth0ViewController: UIViewController {
                 }
                 
                 
+                // TODO: Logic here is kind of broken
+                
                 
                 guard let idToken = keychain.string(forKey: "id_token") else {
                         // idToken doesn't exist, user has to enter his credentials to log in

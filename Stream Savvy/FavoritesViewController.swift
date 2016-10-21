@@ -17,9 +17,11 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         var selectedShow: Content!
         let searchResults = SearchResults()
         let favorites = Favorites()
-        @IBOutlet var carousel: iCarousel!
-        var resultsController: UITableViewController!
+               var resultsController: UITableViewController!
         var searchController: UISearchController!
+        @IBOutlet var carousel: iCarousel!
+        @IBOutlet var emptyLabel: UILabel!
+
         
         
         @IBAction func search(_ sender: UIBarButtonItem) {
@@ -112,6 +114,10 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 _ = favorites.fetchFavorites().then{ result -> Void in
                         
                         self.favorites.contentList = self.favorites.contentList.reversed()
+                        
+                        if self.favorites.contentList.count > 0 {
+                                self.emptyLabel.isHidden = true
+                        }
                         
                         self.carousel.reloadData()
                         

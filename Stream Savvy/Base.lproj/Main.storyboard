@@ -166,6 +166,15 @@
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Shows And Add to Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGj-U5-kDj">
+                                        <frame key="frameInset" minX="8" minY="231" width="359" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5056238918" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -190,6 +199,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="6og-Td-oyL" id="lav-1z-zzG"/>
+                        <outlet property="emptyLabel" destination="yGj-U5-kDj" id="YTa-3H-khG"/>
                         <segue destination="LNb-Yl-gEE" kind="show" identifier="EpisodeSegue" id="Hcq-We-NDc"/>
                         <segue destination="Lnh-9m-OXL" kind="show" identifier="ContentDetailSegue" id="OMx-cz-c4Y"/>
                     </connections>
@@ -197,7 +207,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeT-6H-BZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="pLS-OQ-rmU"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="-294"/>
+            <point key="canvasLocation" x="3412" y="-294.60269865067471"/>
         </scene>
         <!--Content Detail View Controller-->
         <scene sceneID="Xfw-gw-6QP">
@@ -1405,6 +1415,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PqR-Ou-oHG"/>
-        <segue reference="DTT-qn-3uB"/>
+        <segue reference="Hcq-We-NDc"/>
     </inferredMetricsTieBreakers>
 </document>
