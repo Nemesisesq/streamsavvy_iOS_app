@@ -24,6 +24,24 @@ class LinkViewCell: UICollectionViewCell {
         var display_name: String?
         var isHeightCalculated = false
         
+        var freeIOSSource : IOSFreeSource? {
+                didSet{
+                        linkLabelview.text = freeIOSSource?.display_name
+                        
+                        jsContext = Common.getJSContext()
+                        
+                        test = jsContext?.evaluateScript("_.snakeCase('Hello World')").toString()
+                        
+                        if let res = freeIOSSource?.source {
+                                linkImageView.image = UIImage(named: res)
+                        }
+                        
+                        if linkImageView.image != nil{
+                                self.linkLabelview.isHidden = true
+                        }
+                }
+        }
+        
         var subscriptionIOSSource : IOSSubscriptionSource? {
                 didSet{
                         linkLabelview.text = subscriptionIOSSource?.display_name
@@ -88,6 +106,18 @@ class LinkViewCell: UICollectionViewCell {
         
         
         func openDeepLink(){
+                
+                if let source = freeIOSSource{
+                        
+                        
+                        if Common.schemeAvailable(deepLink: source.link!){
+                                Common.openDeepLink(link: source.link!)
+                        } else {
+                                
+                                Common.openDeepLink(link: source.app_download_link!)
+                                
+                        }
+                }
                 
                 if let source = subscriptionIOSSource{
                         

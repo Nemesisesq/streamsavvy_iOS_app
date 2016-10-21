@@ -43,16 +43,40 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-                if section == 0 {
-                        if episode?.subscription_ios_sources?.count == 0 {
-                                return CGSize.init(width: 0, height: 0)
-                        }
+                
+                if episode?.subscription_ios_sources?.count == 0 {
+                        return CGSize.init(width: 0, height: 0)
                 }
+                
+                if episode?.free_ios_sources?.count == 0 {
+                        return CGSize.init(width: 0, height: 0)
+                }
+                
                 return CGSize.init(width: 200, height: 40)
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-                if indexPath.section == 0 {
+                if indexPath.section == 0  {
+                        if  let source = episode?.free_ios_sources?[indexPath.row] {
+                                if let res = jsContext.evaluateScript("_.snakeCase('\(source.display_name!)')"){
+                                        let jsValue = res
+                                        
+                                        if let res = jsValue.toString() {
+                                                var image_name = res
+                                                image_name = "marks_\(image_name)"
+                                                let img = UIImage(named: image_name)
+                                                
+                                                let height: CGFloat = 30
+                                                let ratio = (img?.size.width)!/(img?.size.height)!
+                                                let finalWidth = ratio * height
+                                                
+                                                return CGSize(width: finalWidth, height: height)
+                                        }
+                                }
+                                
+                                
+                        }
+                } else if indexPath.section == 1 {
                         if let source = episode?.subscription_ios_sources?[indexPath.row] {
                                 
                                 
@@ -97,47 +121,53 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
                         }
                         
                 }
+                
                 return CGSize(width: 0, height: 0)
         }
         
         
         func numberOfSections(in collectionView: UICollectionView) -> Int {
-                return 2
+                return 3
         }
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 
-                
                 if section == 0 {
-                        if let sws = episode?.subscription_ios_sources {
-                                return sws.count
+                        if let fis = episode?.free_ios_sources {
+                                return fis.count
                         }
-                        
                 }
                 
                 if section == 1 {
-                        
+                        if let sws = episode?.subscription_ios_sources {
+                                return sws.count
+                        }
+                }
+                
+                if section == 2 {
                         if let pws = episode?.purchase_ios_sources {
                                 return pws.count
                         }
-                        
                 }
                 
-                
                 return 0
-                
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinkCell", for: indexPath) as! LinkViewCell
+                if indexPath.section == 0 {
+                        if let fis = episode?.free_ios_sources {
+                                cell.freeIOSSource = fis[indexPath.row]
+                        }
+                }
                 
-                if (indexPath.section == 0) {
+                if (indexPath.section == 1) {
                         if let sws = episode?.subscription_ios_sources {
                                 cell.subscriptionIOSSource = sws[indexPath.row]
                         }
                 }
                 
-                if (indexPath.section == 1) {
+                if (indexPath.section == 2) {
                         if let pws = episode?.purchase_ios_sources {
                                 cell.purchaseIOSSource = pws[indexPath.row]
                         }
@@ -147,8 +177,12 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         }
         
         func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+                
                 let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "deep_links", for: indexPath) as! LinkCellCollectionReusableView
+                
                 if indexPath.section == 0 {
+                        view.viewingWindow.text = "Free"
+                } else if indexPath.section == 1 {
                         view.viewingWindow.text = "Subscription"
                 } else {
                         view.viewingWindow.text = "Buy This Episode"
@@ -161,7 +195,5 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 let cell = collectionView.cellForItem(at: indexPath) as! LinkViewCell
                 cell.openDeepLink()
-                
-                
         }
 }

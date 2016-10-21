@@ -41,6 +41,15 @@ class IOSSubscriptionSource : Source {
         }
 }
 
+class IOSFreeSource: IOSSubscriptionSource {
+        var embed : String?
+        
+        required init?(json: [String : Any]) {
+                super.init(json: json)
+                embed = "embed" <~~ json
+        }
+}
+
 class Formats : Decodable {
         let price : String?
         let format: String?

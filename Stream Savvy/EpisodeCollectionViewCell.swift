@@ -39,6 +39,7 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
                 
                 return CGSize.init(width: 200, height: 40)
         }
+        
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
                 if indexPath.section == 0 {
                         if let source = episode?.subscription_ios_sources?[indexPath.row] {
@@ -90,7 +91,7 @@ class EpisodeViewCell: UICollectionViewCell, UICollectionViewDataSource, UIColle
         
         
         func numberOfSections(in collectionView: UICollectionView) -> Int {
-                return 2
+                return 3
         }
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
