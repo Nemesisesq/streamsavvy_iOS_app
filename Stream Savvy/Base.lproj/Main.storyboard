@@ -11,7 +11,7 @@
         <!--Auth0 View Controller-->
         <scene sceneID="HFr-RX-16r">
             <objects>
-                <viewController id="nyn-XC-XPI" customClass="Auth0ViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Auth0ViewController" id="nyn-XC-XPI" customClass="Auth0ViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FNq-Jw-sgp"/>
                         <viewControllerLayoutGuide type="bottom" id="UoQ-D0-QAh"/>

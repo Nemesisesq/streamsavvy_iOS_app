@@ -34,8 +34,8 @@
 		NSLog(@"WOOOOOOO");
 	}else{
 		NSLog(@"Awwww");
-		LoginViewController *lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-		[self presentViewController:lvc animated:YES completion:nil];
+//		LoginViewController *lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"Auth0ViewController"];
+//		[self presentViewController:lvc animated:YES completion:nil];
 	}
 }
 

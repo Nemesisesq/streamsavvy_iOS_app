@@ -67,6 +67,7 @@
 		BD9818781DB880CE003A5159 /* Auth0ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD712D311DB87C5600320590 /* Auth0ViewController.swift */; };
 		BD98187B1DB916A7003A5159 /* Auth0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9818791DB916A7003A5159 /* Auth0.framework */; };
 		BD98187C1DB916A7003A5159 /* Lock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187A1DB916A7003A5159 /* Lock.framework */; };
+		BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
 		BDD2B7041DAD8FE800C77260 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
@@ -204,6 +205,7 @@
 		BD9818791DB916A7003A5159 /* Auth0.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Auth0.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Auth0/Auth0.framework"; sourceTree = "<group>"; };
 		BD98187A1DB916A7003A5159 /* Lock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lock.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Lock/Lock.framework"; sourceTree = "<group>"; };
 		BD98187D1DB94198003A5159 /* Stream Savvy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stream Savvy.entitlements"; sourceTree = "<group>"; };
+		BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleKeychain.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/SimpleKeychain/SimpleKeychain.framework"; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
 		BDD2B7031DAD8FE800C77260 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */,
 				9FCF7D1C1D79B01A00B8538B /* CoreLocation.framework in Frameworks */,
 				BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */,
+				BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */,
 				0C95D34F82A4B97A6F6711DA /* Pods_Stream_Savvy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +261,7 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */,
 				BD9818791DB916A7003A5159 /* Auth0.framework */,
 				BD98187A1DB916A7003A5159 /* Lock.framework */,
 				BD9818761DB87EFB003A5159 /* Auth0.framework */,
@@ -319,11 +323,11 @@
 		9F5A4D311D5AE1D70057AF6D /* Stream Savvy */ = {
 			isa = PBXGroup;
 			children = (
-				BD98187D1DB94198003A5159 /* Stream Savvy.entitlements */,
-				BD9563DF1DB2091A0089652E /* Layouts */,
-				9FE1B0581D693DFF0013DCB1 /* Utility Belt */,
-				9FE1B0571D693C060013DCB1 /* TableViewCells */,
 				BDD2B7021DAD8FA800C77260 /* CollectionViewCells */,
+				BD98187D1DB94198003A5159 /* Stream Savvy.entitlements */,
+				9FE1B0581D693DFF0013DCB1 /* Utility Belt */,
+				BD9563DF1DB2091A0089652E /* Layouts */,
+				9FE1B0571D693C060013DCB1 /* TableViewCells */,
 				BDAEC8A61DAEE681001370F6 /* javascript */,
 				BD39ADF41DA230CA0065F02F /* Common */,
 				BD862C8E1D9B642D00C8FFF9 /* Extensions */,
@@ -980,6 +984,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm6 arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1020,10 +1025,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm6 arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1053,6 +1060,46 @@
 					"$(BUILT_PRODUCTS_DIR)/**",
 					"$(TARGET_BUILD_DIR)/**",
 				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Auth0\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"Dollar\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"Gloss\"",
+					"-framework",
+					"\"Lock\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"PromiseKit\"",
+					"-framework",
+					"\"SCLAlertView_Objective_C\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SimpleKeychain\"",
+					"-framework",
+					"\"Toast\"",
+					"-framework",
+					"\"UICollectionViewLeftAlignedLayout\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1060,6 +1107,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64 arm6";
 			};
 			name = Debug;
 		};
@@ -1089,6 +1137,46 @@
 					"$(BUILT_PRODUCTS_DIR)/**",
 					"$(TARGET_BUILD_DIR)/**",
 				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Auth0\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"Dollar\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"Gloss\"",
+					"-framework",
+					"\"Lock\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"PromiseKit\"",
+					"-framework",
+					"\"SCLAlertView_Objective_C\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SimpleKeychain\"",
+					"-framework",
+					"\"Toast\"",
+					"-framework",
+					"\"UICollectionViewLeftAlignedLayout\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1096,6 +1184,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Stream Savvy/Stream Savvy-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64 arm6";
 			};
 			name = Release;
 		};
