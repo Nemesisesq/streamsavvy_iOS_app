@@ -47,7 +47,7 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         override func viewDidLoad() {
                 super.viewDidLoad()
                 
-                
+                print("THERE")
                 self.sources = [MediaSource]()
                 // MARK - This is where we make the call to get the streaming services for the channel
                 
@@ -70,18 +70,19 @@ class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
                         
                 })
                 showTitle.text			= media.title
+		showSubtitleLabel.text	= media.show_description
                 //                showSubtitleLabel.text	= "Channel \(channel.channel_number!)"
                 sportsUIView.isHidden	= true
                 
                 
-                if media.show_description != nil {
-                        if media.episodeTitle == nil {
-                                showSubtitleLabel.text = media.show_description
-                                showSubtitleLabel.sizeToFit()
-                        } else{
-                                showSubtitleLabel.text = media.episodeTitle
-                        }
-                }
+//                if media.show_description != nil {
+//                        if media.episodeTitle == nil {
+//                                showSubtitleLabel.text = media.show_description
+//                                showSubtitleLabel.sizeToFit()
+//                        } else{
+//                                showSubtitleLabel.text = media.episodeTitle
+//                        }
+//                }
                 SDWebModel.loadImage(for: channelImage, withRemoteURL: channel.image_link)
                 
                 genres.text = $.join(media.genres as! [String], separator: " | ")

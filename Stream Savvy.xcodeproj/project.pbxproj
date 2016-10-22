@@ -19,6 +19,7 @@
 		9F5A4D4D1D5AE1D70057AF6D /* Stream_SavvyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D4C1D5AE1D70057AF6D /* Stream_SavvyTests.m */; };
 		9F5A4D581D5AE1D70057AF6D /* Stream_SavvyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D571D5AE1D70057AF6D /* Stream_SavvyUITests.m */; };
 		9F5D4E911DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D4E901DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m */; };
+		9F5D4E931DBC197400AC7AD2 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D4E921DBC197400AC7AD2 /* ContentDetailViewController.swift */; };
 		9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC977D1D6B97E1004B6182 /* Channel.m */; };
 		9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC97801D6BD742004B6182 /* PopularShow.m */; };
 		9FBC97851D6D32CB004B6182 /* GuideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */; };
@@ -48,7 +49,6 @@
 		BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */; };
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
-		BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */; };
 		BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */; };
 		BD39ADF61DA230E20065F02F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39ADF51DA230E20065F02F /* Common.swift */; };
 		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
@@ -127,6 +127,7 @@
 		9F5A4D591D5AE1D70057AF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F5D4E8F1DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveGuideTableViewCell.h; sourceTree = "<group>"; };
 		9F5D4E901DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveGuideTableViewCell.m; sourceTree = "<group>"; };
+		9F5D4E921DBC197400AC7AD2 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
 		9FBC977C1D6B97E1004B6182 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
 		9FBC977D1D6B97E1004B6182 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
 		9FBC977F1D6BD742004B6182 /* PopularShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularShow.h; sourceTree = "<group>"; };
@@ -183,7 +184,6 @@
 		BD1834B51D8CDACE00B472E2 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		BD191FCA1D8792540098A8E6 /* ShowDetailsTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsTableViewProtocol.h; sourceTree = "<group>"; };
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
-		BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
 		BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewControllerExtension.swift; sourceTree = "<group>"; };
 		BD39ADF51DA230E20065F02F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -439,9 +439,9 @@
 				9FC296191D774179005CB080 /* WebViewViewController.h */,
 				9FC2961A1D774179005CB080 /* WebViewViewController.m */,
 				BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */,
-				BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */,
 				BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */,
 				BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */,
+				9F5D4E921DBC197400AC7AD2 /* ContentDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -850,8 +850,8 @@
 				BD712D321DB87C5600320590 /* Auth0ViewController.swift in Sources */,
 				BD39ADF61DA230E20065F02F /* Common.swift in Sources */,
 				BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */,
-				BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */,
 				9FC2960F1D766110005CB080 /* ShowDetailsTableViewController.m in Sources */,
+				9F5D4E931DBC197400AC7AD2 /* ContentDetailViewController.swift in Sources */,
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
 				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,

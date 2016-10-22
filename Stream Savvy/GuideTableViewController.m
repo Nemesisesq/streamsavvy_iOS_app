@@ -118,9 +118,10 @@ NSInteger numOfStaticCell = 1;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	Channel *channel = [self.guideShows objectAtIndex:indexPath.row];
-	LiveGuideDetailsViewController *lgdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveGuideDetailsViewController"];
-	NSLog(@"\t~\t~\t~\t%@", lgdvc);
+	LiveGuideDetailsViewController *lgdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveDetailsViewController"];
+	NSLog(@"HERE");
 	lgdvc.channel = channel;
 	lgdvc.media = channel.now_playing;
 	[self.navigationController pushViewController:lgdvc animated:YES];

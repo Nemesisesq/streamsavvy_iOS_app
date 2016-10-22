@@ -35,6 +35,7 @@
 	self.genresLabel.text = genres;
 	self.mediaTitleLabel.text = self.media.title;
 	self.channelNumberLabel.text = [NSString stringWithFormat:@"Channel %@", self.channel.channel_number];
+	
 	[SDWebModel loadImageFor:self.channelImageView withRemoteURL:self.channel.image_link];
 }
 

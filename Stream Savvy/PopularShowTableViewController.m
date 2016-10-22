@@ -103,7 +103,7 @@ NSInteger numStaticCell = 1;
 	cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
 	cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
 	cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
-	cell.uivc = self;
+	cell.uivc = self; 
 	[cell setCellDetails];
 	return cell;
 }

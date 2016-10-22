@@ -26,6 +26,7 @@ class ContentDetailViewController: UIViewController  {
         var favorites: Favorites! = Favorites()
         
         
+	@IBOutlet weak var showDetailsLabel: UILabel!
         @IBOutlet var genres: UILabel!
         @IBOutlet var showTitle: UILabel!
         @IBOutlet weak var backgroundImageView: UIImageView!
@@ -62,16 +63,18 @@ class ContentDetailViewController: UIViewController  {
                         showTitle.text = show.title
                 } else {
                         showTitle.text = content.title
+			if media != nil {
+				showDetailsLabel.text = media.show_description
+			}else{
+				showDetailsLabel.text = ""
+			}	
                 }
-                
                 if show != nil {
-                        SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
-                        
+			SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
                         genres.text = $.join(show.genres as! [String], separator: " | ")
                         if show.duration > 0 {
                                 durationLabel.text = "\(show.duration) min"
                         }
-                        
                 }
                 // Do any additional setup after loading the view.
         }
