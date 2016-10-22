@@ -11,4 +11,4 @@
 #import "SDWebModel.h"
 #import "Constants.h"
 #import "UserPrefs.h"
-
+#import "SDWebImage/UIImageView+WebCache.h"
