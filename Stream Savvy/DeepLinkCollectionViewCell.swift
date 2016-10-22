@@ -33,7 +33,8 @@ class LinkViewCell: UICollectionViewCell {
                         test = jsContext?.evaluateScript("_.snakeCase('Hello World')").toString()
                         
                         if let res = freeIOSSource?.source {
-                                linkImageView.image = UIImage(named: res)
+                                 let image_name = "marks_\(res)"
+                                linkImageView.image = UIImage(named: image_name)
                         }
                         
                         if linkImageView.image != nil{
@@ -149,7 +150,13 @@ class LinkViewCell: UICollectionViewCell {
         override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
                 
                 let height: CGFloat = 30
-                let ratio = linkImageView.image!.size.width/linkImageView.image!.size.height
+                
+                var ratio = CGFloat(1)
+                if let xx = linkImageView.image {
+                        
+                
+                 ratio = xx.size.width / xx.size.height
+                }
                 let finalWidth = ratio * height
                 layoutAttributes.frame.size.height = height
                 layoutAttributes.frame.size.width = finalWidth

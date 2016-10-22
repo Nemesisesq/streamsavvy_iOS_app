@@ -43,12 +43,16 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-                
-                if episode?.subscription_ios_sources?.count == 0 {
+                if let free = episode?.free_ios_sources, free.count == 0 && section == 0 {
                         return CGSize.init(width: 0, height: 0)
                 }
                 
-                if episode?.free_ios_sources?.count == 0 {
+                
+                if let sub = episode?.subscription_ios_sources , sub.count == 0 && section == 1{
+                        return CGSize.init(width: 0, height: 0)
+                }
+                
+                if let purch = episode?.purchase_ios_sources, purch.count == 0 && section == 2 {
                         return CGSize.init(width: 0, height: 0)
                 }
                 
@@ -58,66 +62,43 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
                 if indexPath.section == 0  {
                         if  let source = episode?.free_ios_sources?[indexPath.row] {
-                                if let res = jsContext.evaluateScript("_.snakeCase('\(source.display_name!)')"){
-                                        let jsValue = res
+                                
+                                let image_name = "marks_\(source.source!)"
+                                if let img = UIImage(named: image_name) {
                                         
-                                        if let res = jsValue.toString() {
-                                                var image_name = res
-                                                image_name = "marks_\(image_name)"
-                                                let img = UIImage(named: image_name)
-                                                
-                                                let height: CGFloat = 30
-                                                let ratio = (img?.size.width)!/(img?.size.height)!
-                                                let finalWidth = ratio * height
-                                                
-                                                return CGSize(width: finalWidth, height: height)
-                                        }
+                                        let height: CGFloat = 30
+                                        let ratio = img.size.width/img.size.height
+                                        let finalWidth = ratio * height
+                                        
+                                        return CGSize(width: finalWidth, height: height)
                                 }
-                                
-                                
                         }
                 } else if indexPath.section == 1 {
                         if let source = episode?.subscription_ios_sources?[indexPath.row] {
                                 
-                                
-                                if let res = jsContext.evaluateScript("_.snakeCase('\(source.display_name!)')"){
-                                        let jsValue = res
+                                let image_name = "marks_\(source.source!)"
+                                if  let img = UIImage(named: image_name) {
                                         
-                                        if let res = jsValue.toString() {
-                                                var image_name = res
-                                                image_name = "marks_\(image_name)"
-                                                let img = UIImage(named: image_name)
-                                                
-                                                let height: CGFloat = 30
-                                                let ratio = (img?.size.width)!/(img?.size.height)!
-                                                let finalWidth = ratio * height
-                                                
-                                                return CGSize(width: finalWidth, height: height)
-                                        }
+                                        let height: CGFloat = 30
+                                        let ratio = img.size.width/img.size.height
+                                        let finalWidth = ratio * height
+                                        
+                                        return CGSize(width: finalWidth, height: height)
                                 }
-                                
                         }
                 } else {
                         if let source = episode?.purchase_ios_sources?[indexPath.row]{
                                 
-                                if let res = jsContext.evaluateScript("_.snakeCase('\(source.display_name!)')"){
-                                        let jsValue = res
+                                let image_name = "marks_\(source.source!)"
+                                if let img = UIImage(named: image_name) {
                                         
+                                        let height: CGFloat = 30
+                                        let ratio = img.size.width / img.size.height
+                                        let finalWidth = ratio * height
                                         
-                                        if let rez = jsValue.toString() {
-                                                var image_name = rez
-                                                image_name = "marks_\(image_name)"
-                                                let img = UIImage(named: image_name)
-                                                
-                                                let height: CGFloat = 30
-                                                let ratio = (img?.size.width)!/(img?.size.height)!
-                                                let finalWidth = ratio * height
-                                                
-                                                return CGSize(width: finalWidth, height: height)
-                                        }
+                                        return CGSize(width: finalWidth, height: height)
                                         
                                 }
-                                
                         }
                         
                 }
