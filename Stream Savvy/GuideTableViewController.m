@@ -11,6 +11,8 @@
 #import "TopGridTableViewCell.h"
 #import "Constants.h"
 #import "Channel.h"
+#import "LiveGuideTableViewCell.h"
+#import "LiveGuideDetailsViewController.h"
 
 @interface GuideTableViewController ()
 
@@ -27,8 +29,6 @@ NSInteger numOfStaticCell = 1;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    
-    
 	
 	UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
 	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
@@ -94,7 +94,6 @@ NSInteger numOfStaticCell = 1;
 		if (self.refreshControl) {
 			[self.refreshControl endRefreshing];
 		}
-
 	}];
  }
 
@@ -109,21 +108,22 @@ NSInteger numOfStaticCell = 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0) {
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell" forIndexPath:indexPath];
-		[Constants fixSeparators:cell];
-		return cell;
-	}
-	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
+	LiveGuideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LiveGuideTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];
-	cell.isShowingPopularShows = NO;
-	cell.bigChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell)];
-	cell.topChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 1)];
-	cell.bottomChannel = [self.guideShows objectAtIndex:((indexPath.row - numOfStaticCell) * numShowsPerCell + 2)];
+	cell.channel = [self.guideShows objectAtIndex:indexPath.row];
 	cell.uivc = self;
 	[cell setCellDetails];
 	
 	return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	Channel *channel = [self.guideShows objectAtIndex:indexPath.row];
+	LiveGuideDetailsViewController *lgdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveGuideDetailsViewController"];
+	NSLog(@"\t~\t~\t~\t%@", lgdvc);
+	lgdvc.channel = channel;
+	lgdvc.media = channel.now_playing;
+	[self.navigationController pushViewController:lgdvc animated:YES];
 }
 
 @end

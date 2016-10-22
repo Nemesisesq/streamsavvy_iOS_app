@@ -336,11 +336,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rUL-Pb-4ff" id="onp-Iu-NRh">
-<<<<<<< HEAD
                                             <frame key="frameInset" width="375" height="403"/>
-=======
-                                            <frame key="frameInset" width="375" height="403.5"/>
->>>>>>> 185b39e9d780e4176fcd1523953ac2a606531c80
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hf5-Ek-4Y0"/>
@@ -403,7 +399,7 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="deep_links" id="7Wg-ZX-Aaz" customClass="LinkCellCollectionReusableView" customModule="Stream_Savvy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJp-Fa-spu">
@@ -586,11 +582,7 @@
                                 <rect key="frame" x="0.0" y="93" width="375" height="328"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="75Z-ed-o1B" id="GbI-R1-rOa">
-<<<<<<< HEAD
                                     <frame key="frameInset" width="375" height="327"/>
-=======
-                                    <frame key="frameInset" width="375" height="327.5"/>
->>>>>>> 185b39e9d780e4176fcd1523953ac2a606531c80
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageview1" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-7C-Nvs">
@@ -726,7 +718,7 @@
                                     <frame key="frameInset" width="375" height="111"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Game of Thrones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-Gh-8y4">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Game of Thrones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-Gh-8y4">
                                             <frame key="frameInset" width="1000" height="1000"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="Zgq-Lp-NXa"/>
@@ -735,7 +727,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" text="Tap the app you want to use to watch!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-5F-exe">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="Tap the app you want to use to watch!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-5F-exe">
                                             <frame key="frameInset" width="1000" height="1000"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="MhF-D2-K5x"/>
@@ -991,6 +983,61 @@
                                     <outlet property="topImageTimeLabel" destination="HK2-Md-Tbb" id="Kej-mR-yMb"/>
                                     <outlet property="topImageTitleLabel" destination="EoC-2J-PTt" id="cjq-XP-C67"/>
                                     <outlet property="topImageView" destination="mSz-0c-nkm" id="Awe-r6-hEa"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LiveGuideTableViewCell" rowHeight="60" id="SV7-G2-Ks2" customClass="LiveGuideTableViewCell">
+                                <rect key="frame" x="0.0" y="329" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SV7-G2-Ks2" id="q9e-vr-WR9">
+                                    <frame key="frameInset" width="375" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrS-Oc-eu2"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="phn-oy-BeD">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="eS4-7C-5tw"/>
+                                                <constraint firstAttribute="height" constant="43" id="h8b-5A-613"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Big Bang Theory" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sO1-gT-Ots">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="PdC-vy-z12"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fab-eC-rA3">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="bD8-jz-AnS"/>
+                                                <constraint firstAttribute="width" constant="44" id="bPg-mz-B2A"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="phn-oy-BeD" firstAttribute="top" secondItem="q9e-vr-WR9" secondAttribute="top" constant="8" id="5Rk-5R-h33"/>
+                                        <constraint firstAttribute="trailing" secondItem="rrS-Oc-eu2" secondAttribute="trailing" id="BXr-38-Fgp"/>
+                                        <constraint firstItem="fab-eC-rA3" firstAttribute="leading" secondItem="sO1-gT-Ots" secondAttribute="trailing" constant="8" id="GoB-5n-2a0"/>
+                                        <constraint firstAttribute="bottom" secondItem="sO1-gT-Ots" secondAttribute="bottom" constant="8" id="HYD-xL-ftu"/>
+                                        <constraint firstAttribute="bottom" secondItem="fab-eC-rA3" secondAttribute="bottom" constant="8" id="TxB-hY-0kf"/>
+                                        <constraint firstItem="rrS-Oc-eu2" firstAttribute="top" secondItem="q9e-vr-WR9" secondAttribute="top" id="e5Y-4s-Shl"/>
+                                        <constraint firstItem="sO1-gT-Ots" firstAttribute="top" secondItem="q9e-vr-WR9" secondAttribute="top" constant="8" id="fdH-Aq-Zwf"/>
+                                        <constraint firstAttribute="trailing" secondItem="fab-eC-rA3" secondAttribute="trailing" constant="8" id="luM-MY-iTa"/>
+                                        <constraint firstItem="rrS-Oc-eu2" firstAttribute="leading" secondItem="q9e-vr-WR9" secondAttribute="leading" id="lyR-zb-IUM"/>
+                                        <constraint firstItem="phn-oy-BeD" firstAttribute="leading" secondItem="q9e-vr-WR9" secondAttribute="leading" constant="16" id="pKX-6m-TBm"/>
+                                        <constraint firstItem="sO1-gT-Ots" firstAttribute="leading" secondItem="phn-oy-BeD" secondAttribute="trailing" constant="8" id="qNs-76-GfX"/>
+                                        <constraint firstAttribute="bottom" secondItem="rrS-Oc-eu2" secondAttribute="bottom" id="x1A-Jo-g8m"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="backGroundImageView" destination="rrS-Oc-eu2" id="8Bf-97-oXy"/>
+                                    <outlet property="durationLabel" destination="fab-eC-rA3" id="kB1-16-9KL"/>
+                                    <outlet property="networkImageView" destination="phn-oy-BeD" id="ird-I6-8gz"/>
+                                    <outlet property="titleLabel" destination="sO1-gT-Ots" id="qUL-mp-Yq7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1281,7 +1328,7 @@
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="On Demand" image="tv-icon" id="sw4-yP-YcI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
