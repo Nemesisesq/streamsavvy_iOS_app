@@ -42,7 +42,6 @@
 		BD0D745D1D9A0E170012F184 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D745C1D9A0E170012F184 /* Favorites.swift */; };
 		BD0D74611D9AB1120012F184 /* EpisodeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */; };
 		BD0DCC181DB4785E005C32B2 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC171DB4785E005C32B2 /* UIApplication.swift */; };
-		BD0DCC1F1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC1E1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift */; };
 		BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0DCC231DB5C60D005C32B2 /* EpisodeTableViewCell.swift */; };
 		BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B01D8CD4C800B472E2 /* iCarousel.m */; };
 		BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */; };
@@ -50,6 +49,7 @@
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
 		BD1CF92F1D98C142007E1EC2 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */; };
 		BD25C0311DA646CF005C28C2 /* app_icons in Resources */ = {isa = PBXBuildFile; fileRef = BD25C0301DA646CF005C28C2 /* app_icons */; };
+		BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */; };
 		BD39ADF61DA230E20065F02F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39ADF51DA230E20065F02F /* Common.swift */; };
 		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
@@ -173,7 +173,6 @@
 		BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewController.swift; sourceTree = "<group>"; };
 		BD0DCC151DB473C7005C32B2 /* Appz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appz.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Appz/Appz.framework"; sourceTree = "<group>"; };
 		BD0DCC171DB4785E005C32B2 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
-		BD0DCC1E1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeTableViewControllerExtension.swift; path = "../../Library/Mobile Documents/com~apple~CloudDocs/EpisodeTableViewControllerExtension.swift"; sourceTree = "<group>"; };
 		BD0DCC231DB5C60D005C32B2 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		BD1834AF1D8CD4C800B472E2 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		BD1834B01D8CD4C800B472E2 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
@@ -184,6 +183,7 @@
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD1CF92E1D98C142007E1EC2 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
+		BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewControllerExtension.swift; sourceTree = "<group>"; };
 		BD39ADF51DA230E20065F02F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BD39ADF71DA2A39C0065F02F /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = "Pods/../build/Debug-iphoneos/Dollar/Dollar.framework"; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -507,9 +507,9 @@
 		BD862C8E1D9B642D00C8FFF9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */,
 				BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */,
 				BD0DCC171DB4785E005C32B2 /* UIApplication.swift */,
-				BD0DCC1E1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift */,
 				BD9818801DBA8D10003A5159 /* UILableExtensions.swift */,
 			);
 			name = Extensions;
@@ -857,7 +857,6 @@
 				BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */,
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */,
-				BD0DCC1F1DB5BF99005C32B2 /* EpisodeTableViewControllerExtension.swift in Sources */,
 				9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */,
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */,
@@ -869,6 +868,7 @@
 				9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */,
 				9FE1B0501D693B160013DCB1 /* PopularShowTableViewController.m in Sources */,
 				BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */,
+				BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */,
 				BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */,
 				9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */,
 				9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */,
