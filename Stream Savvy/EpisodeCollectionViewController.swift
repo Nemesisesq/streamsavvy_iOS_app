@@ -149,11 +149,11 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                 
         }
         
-        override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-                if let observedObject = object as! UICollectionView? , observedObject == seasonCollectionView {
-                        episodeTableView.reloadData()
-                }
-        }
+//        override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//                if let observedObject = object as! UICollectionView? , observedObject == seasonCollectionView {
+//                        episodeTableView.reloadData()
+//                }
+//        }
         
         
         
