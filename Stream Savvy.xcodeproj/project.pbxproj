@@ -10,7 +10,6 @@
 		0C95D34F82A4B97A6F6711DA /* Pods_Stream_Savvy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6565779394F3C155499BC5F3 /* Pods_Stream_Savvy.framework */; };
 		6C1C1F5EEFDAC478D7452535 /* Pods_Stream_SavvyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */; };
 		9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28106F1D83B4B900158502 /* AuthTableViewController.m */; };
-		9F420FAC1DA3345400A89D87 /* LiveGuideDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F420FAB1DA3345400A89D87 /* LiveGuideDetailsViewController.m */; };
 		9F5A4D341D5AE1D70057AF6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D331D5AE1D70057AF6D /* main.m */; };
 		9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D361D5AE1D70057AF6D /* AppDelegate.m */; };
 		9F5A4D3D1D5AE1D70057AF6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A4D3B1D5AE1D70057AF6D /* Main.storyboard */; };
@@ -23,11 +22,9 @@
 		9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC977D1D6B97E1004B6182 /* Channel.m */; };
 		9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC97801D6BD742004B6182 /* PopularShow.m */; };
 		9FBC97851D6D32CB004B6182 /* GuideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */; };
-		9FC2960F1D766110005CB080 /* ShowDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2960E1D766110005CB080 /* ShowDetailsTableViewController.m */; };
 		9FC296121D76621F005CB080 /* ShowDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC296111D76621F005CB080 /* ShowDetailsTableViewCell.m */; };
 		9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC296141D76643F005CB080 /* MediaSourceTableViewCell.m */; };
 		9FC296181D766F63005CB080 /* MediaSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC296171D766F63005CB080 /* MediaSource.m */; };
-		9FC2961B1D774179005CB080 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2961A1D774179005CB080 /* WebViewViewController.m */; };
 		9FCF7D1C1D79B01A00B8538B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCF7D1B1D79B01A00B8538B /* CoreLocation.framework */; };
 		9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0361D6936210013DCB1 /* AFAPIClient.m */; };
 		9FE1B0441D6936210013DCB1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B0381D6936210013DCB1 /* Constants.m */; };
@@ -109,8 +106,6 @@
 		95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stream_SavvyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F28106E1D83B4B900158502 /* AuthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTableViewController.h; sourceTree = "<group>"; };
 		9F28106F1D83B4B900158502 /* AuthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTableViewController.m; sourceTree = "<group>"; };
-		9F420FAA1DA3345400A89D87 /* LiveGuideDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveGuideDetailsViewController.h; sourceTree = "<group>"; };
-		9F420FAB1DA3345400A89D87 /* LiveGuideDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveGuideDetailsViewController.m; sourceTree = "<group>"; };
 		9F5A4D2F1D5AE1D70057AF6D /* Stream Savvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stream Savvy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5A4D331D5AE1D70057AF6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F5A4D351D5AE1D70057AF6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,16 +129,12 @@
 		9FBC97801D6BD742004B6182 /* PopularShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularShow.m; sourceTree = "<group>"; };
 		9FBC97831D6D32CB004B6182 /* GuideTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideTableViewController.h; sourceTree = "<group>"; };
 		9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideTableViewController.m; sourceTree = "<group>"; };
-		9FC2960D1D766110005CB080 /* ShowDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsTableViewController.h; sourceTree = "<group>"; };
-		9FC2960E1D766110005CB080 /* ShowDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailsTableViewController.m; sourceTree = "<group>"; };
 		9FC296101D76621F005CB080 /* ShowDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsTableViewCell.h; sourceTree = "<group>"; };
 		9FC296111D76621F005CB080 /* ShowDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailsTableViewCell.m; sourceTree = "<group>"; };
 		9FC296131D76643F005CB080 /* MediaSourceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaSourceTableViewCell.h; sourceTree = "<group>"; };
 		9FC296141D76643F005CB080 /* MediaSourceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaSourceTableViewCell.m; sourceTree = "<group>"; };
 		9FC296161D766F63005CB080 /* MediaSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaSource.h; sourceTree = "<group>"; };
 		9FC296171D766F63005CB080 /* MediaSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaSource.m; sourceTree = "<group>"; };
-		9FC296191D774179005CB080 /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
-		9FC2961A1D774179005CB080 /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
 		9FCF7D1B1D79B01A00B8538B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9FE1B0351D6936210013DCB1 /* AFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAPIClient.h; sourceTree = "<group>"; };
 		9FE1B0361D6936210013DCB1 /* AFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAPIClient.m; sourceTree = "<group>"; };
@@ -182,7 +173,6 @@
 		BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stream Savvy-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BD1834B51D8CDACE00B472E2 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
-		BD191FCA1D8792540098A8E6 /* ShowDetailsTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailsTableViewProtocol.h; sourceTree = "<group>"; };
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
 		BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -425,19 +415,12 @@
 		9FE1B01F1D6922630013DCB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9F420FAA1DA3345400A89D87 /* LiveGuideDetailsViewController.h */,
-				9F420FAB1DA3345400A89D87 /* LiveGuideDetailsViewController.m */,
 				9F28106E1D83B4B900158502 /* AuthTableViewController.h */,
 				9F28106F1D83B4B900158502 /* AuthTableViewController.m */,
 				9FE1B04E1D693B160013DCB1 /* PopularShowTableViewController.h */,
 				9FE1B04F1D693B160013DCB1 /* PopularShowTableViewController.m */,
 				9FBC97831D6D32CB004B6182 /* GuideTableViewController.h */,
 				9FBC97841D6D32CB004B6182 /* GuideTableViewController.m */,
-				9FC2960D1D766110005CB080 /* ShowDetailsTableViewController.h */,
-				9FC2960E1D766110005CB080 /* ShowDetailsTableViewController.m */,
-				BD191FCA1D8792540098A8E6 /* ShowDetailsTableViewProtocol.h */,
-				9FC296191D774179005CB080 /* WebViewViewController.h */,
-				9FC2961A1D774179005CB080 /* WebViewViewController.m */,
 				BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */,
 				BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */,
 				BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */,
@@ -842,15 +825,12 @@
 			files = (
 				9F5D4E911DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m in Sources */,
 				BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */,
-				9F420FAC1DA3345400A89D87 /* LiveGuideDetailsViewController.m in Sources */,
 				9FBC97851D6D32CB004B6182 /* GuideTableViewController.m in Sources */,
 				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,
 				9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */,
-				9FC2961B1D774179005CB080 /* WebViewViewController.m in Sources */,
 				BD712D321DB87C5600320590 /* Auth0ViewController.swift in Sources */,
 				BD39ADF61DA230E20065F02F /* Common.swift in Sources */,
 				BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */,
-				9FC2960F1D766110005CB080 /* ShowDetailsTableViewController.m in Sources */,
 				9F5D4E931DBC197400AC7AD2 /* ContentDetailViewController.swift in Sources */,
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
