@@ -87,8 +87,12 @@ class Auth0ViewController: UIViewController {
                                                 // We store the fetched user profile
                                                 keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
                                                 // ✅ At this point, you can log the user into your app,
+                                                self.loginComplete = true
+                                                
+                                                controller?.dismiss(animated: true, completion: nil)
                                                 self.continueToApp()
-                                        
+                                                return
+                                                
                                                 
                                                 
                                                 
@@ -127,7 +131,11 @@ class Auth0ViewController: UIViewController {
                                                 
                 })
                 
-                
+                if let c = loginComplete, c {
+                        continueToApp()
+                } else {
+                        A0Lock.shared().present(controller, from: self)
+                }
                 
                 
                 

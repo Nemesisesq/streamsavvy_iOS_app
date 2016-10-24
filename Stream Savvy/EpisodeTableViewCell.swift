@@ -39,9 +39,13 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
                 super.setSelected(selected, animated: animated)
                 if selected {
                         
-                        
-                        linkCollectionView.reloadData()
+                       
                 }
+        }
+        
+        
+        override func prepareForReuse() {
+                super.prepareForReuse()
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -69,73 +73,73 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
                 
         }
         
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-                
-                if let item = collectionView.cellForItem(at: indexPath) as? LinkViewCell {
-                        
-                        let oldWidth = item.linkImageView.frame.width
-                        let oldheight = item.linkImageView.frame.height
-                        
-                        let height: CGFloat = 30
-                        let ratio = oldWidth / oldheight
-                        let final = ratio * height
-                        
-                        return CGSize(width: final, height: height)
-                }
-                
-                
-                
-                
-                
-                
-                //                if indexPath.section == 0  {
-                //                        if  let source = episode?.free_ios_sources?[indexPath.row] {
-                //
-                //                                let image_name = "marks_\(source.source!)"
-                //                                if let img = UIImage(named: image_name) {
-                //
-                //                                        let height: CGFloat = 30
-                //                                        let ratio = img.size.width/img.size.height
-                //                                        let finalWidth = ratio * height
-                //
-                //
-                //                                        return CGSize(width: finalWidth, height: height)
-                //
-                //                                }
-                //                        }
-                //                } else if indexPath.section == 1 {
-                //                        if let source = episode?.subscription_ios_sources?[indexPath.row] {
-                //
-                //                                let image_name = "marks_\(source.source!)"
-                //                                if  let img = UIImage(named: image_name) {
-                //
-                //                                        let height: CGFloat = 30
-                //                                        let ratio = img.size.width/img.size.height
-                //                                        let finalWidth = ratio * height
-                //
-                //                                        return CGSize(width: finalWidth, height: height)
-                //                                }
-                //                        }
-                //                } else {
-                //                        if let source = episode?.purchase_ios_sources?[indexPath.row]{
-                //
-                //                                let image_name = "marks_\(source.source!)"
-                //                                if let img = UIImage(named: image_name) {
-                //
-                //                                        let height: CGFloat = 30
-                //                                        let ratio = img.size.width / img.size.height
-                //                                        let finalWidth = ratio * height
-                //
-                //
-                //                                        return CGSize(width: finalWidth, height: height)
-                //
-                //                                }
-                //                        }
-                //
-                //                }
-                //
-                return CGSize(width: 50, height: 30)
-        }
+//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//                
+//                if let item = collectionView.cellForItem(at: indexPath) as? LinkViewCell {
+//                        
+//                        let oldWidth = item.linkImageView.frame.width
+//                        let oldheight = item.linkImageView.frame.height
+//                        
+//                        let height: CGFloat = 30
+//                        let ratio = oldWidth / oldheight
+//                        let final = ratio * height
+//                        
+//                        return CGSize(width: final, height: height)
+//                }
+//                
+//                
+//                
+//                
+//                
+//                
+//                //                if indexPath.section == 0  {
+//                //                        if  let source = episode?.free_ios_sources?[indexPath.row] {
+//                //
+//                //                                let image_name = "marks_\(source.source!)"
+//                //                                if let img = UIImage(named: image_name) {
+//                //
+//                //                                        let height: CGFloat = 30
+//                //                                        let ratio = img.size.width/img.size.height
+//                //                                        let finalWidth = ratio * height
+//                //
+//                //
+//                //                                        return CGSize(width: finalWidth, height: height)
+//                //
+//                //                                }
+//                //                        }
+//                //                } else if indexPath.section == 1 {
+//                //                        if let source = episode?.subscription_ios_sources?[indexPath.row] {
+//                //
+//                //                                let image_name = "marks_\(source.source!)"
+//                //                                if  let img = UIImage(named: image_name) {
+//                //
+//                //                                        let height: CGFloat = 30
+//                //                                        let ratio = img.size.width/img.size.height
+//                //                                        let finalWidth = ratio * height
+//                //
+//                //                                        return CGSize(width: finalWidth, height: height)
+//                //                                }
+//                //                        }
+//                //                } else {
+//                //                        if let source = episode?.purchase_ios_sources?[indexPath.row]{
+//                //
+//                //                                let image_name = "marks_\(source.source!)"
+//                //                                if let img = UIImage(named: image_name) {
+//                //
+//                //                                        let height: CGFloat = 30
+//                //                                        let ratio = img.size.width / img.size.height
+//                //                                        let finalWidth = ratio * height
+//                //
+//                //
+//                //                                        return CGSize(width: finalWidth, height: height)
+//                //
+//                //                                }
+//                //                        }
+//                //
+//                //                }
+//                //
+//                return CGSize(width: 50, height: 30)
+//        }
         
         
         func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -194,7 +198,7 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
                         }
                 }
                 
-                //                collectionView.reloadData()
+                
                 
                 
         }

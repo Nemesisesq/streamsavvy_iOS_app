@@ -24,7 +24,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
         
         @IBOutlet var seasonCollectionView: UICollectionView!
         @IBOutlet weak var mediaTitleLabel: UILabel!
-        //        @IBOutlet var episodeCollectionView: UICollectionView!
+        
         var currentIndex: Int?
         var selectedIndex: Int?
         var episodes: [Episode]!
@@ -59,7 +59,7 @@ class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegat
                                 print(error)
                                 
                 }
-                //                currentIndex = 0
+                
                 // Uncomment the following line to preserve selection between presentations
                 // self.clearsSelectionOnViewWillAppear = false
                 
