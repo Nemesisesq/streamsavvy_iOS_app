@@ -368,9 +368,11 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Ab-kI-ZLU">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Ab-kI-ZLU">
+                                                    <frame key="frameInset" minY="300" width="375" height="104"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30969410211267606" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="104" id="0Yk-EQ-UTX"/>
                                                         <constraint firstAttribute="height" constant="200" id="eEr-MV-O1d"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Z0-li-Spf" customClass="LinkCollectionViewFlowLayout" customModule="Stream_Savvy" customModuleProvider="target">
@@ -456,6 +458,7 @@
                                             <outlet property="epTitle" destination="n1q-hf-Wvb" id="zvU-o9-viu"/>
                                             <outlet property="episodeImage" destination="hf5-Ek-4Y0" id="3zs-yO-iSf"/>
                                             <outlet property="linkCollectionView" destination="9Ab-kI-ZLU" id="fnO-7C-0OC"/>
+                                            <outlet property="linkCollectionViewFlowLayout" destination="8Z0-li-Spf" id="Tmg-tt-bm5"/>
                                             <outlet property="seEp" destination="V5x-bU-J0z" id="vPq-8C-2Ca"/>
                                         </connections>
                                     </tableViewCell>

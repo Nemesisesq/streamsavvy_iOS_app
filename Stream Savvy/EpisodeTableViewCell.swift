@@ -23,87 +23,118 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         
         @IBOutlet var linkCollectionView: UICollectionView!
         
+        @IBOutlet var linkCollectionViewFlowLayout: LinkCollectionViewFlowLayout!
         var episode: Episode?
-        
-        var link = [String]() {
-                didSet {
-                        linkCollectionView.reloadData()
-                }
-        }
         
         override func awakeFromNib() {
                 super.awakeFromNib()
                 // Initialization code
+                linkCollectionViewFlowLayout.estimatedItemSize = CGSize(width:100, height:100)
+                
         }
+        
+        
         
         override func setSelected(_ selected: Bool, animated: Bool) {
                 super.setSelected(selected, animated: animated)
-                
-                // Configure the view for the selected state
+                if selected {
+                        
+                        
+                        linkCollectionView.reloadData()
+                }
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-                if let free = episode?.free_ios_sources, free.count == 0 && section == 0 {
-                        return CGSize.init(width: 0, height: 0)
-                }
                 
                 
-                if let sub = episode?.subscription_ios_sources , sub.count == 0 && section == 1{
-                        return CGSize.init(width: 0, height: 0)
-                }
-                
-                if let purch = episode?.purchase_ios_sources, purch.count == 0 && section == 2 {
-                        return CGSize.init(width: 0, height: 0)
+                switch section {
+                case 0:
+                        if episode?.free_ios_sources == nil || episode?.free_ios_sources?.count == 0 {
+                                return CGSize.init(width: 0, height: 0)
+                        }
+                        
+                case 1:
+                        if let sub = episode?.subscription_ios_sources , sub.count == 0 && section == 1{
+                                return CGSize.init(width: 0, height: 0)
+                        }
+                case 2:
+                        if let purch = episode?.purchase_ios_sources, purch.count == 0 && section == 2 {
+                                return CGSize.init(width: 0, height: 0)
+                        }
+                default:
+                        return CGSize.init(width: 200, height: 40)
                 }
                 
                 return CGSize.init(width: 200, height: 40)
+                
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-                if indexPath.section == 0  {
-                        if  let source = episode?.free_ios_sources?[indexPath.row] {
-                                
-                                let image_name = "marks_\(source.source!)"
-                                if let img = UIImage(named: image_name) {
-                                        
-                                        let height: CGFloat = 30
-                                        let ratio = img.size.width/img.size.height
-                                        let finalWidth = ratio * height
-                                        
-                                        return CGSize(width: finalWidth, height: height)
-                                }
-                        }
-                } else if indexPath.section == 1 {
-                        if let source = episode?.subscription_ios_sources?[indexPath.row] {
-                                
-                                let image_name = "marks_\(source.source!)"
-                                if  let img = UIImage(named: image_name) {
-                                        
-                                        let height: CGFloat = 30
-                                        let ratio = img.size.width/img.size.height
-                                        let finalWidth = ratio * height
-                                        
-                                        return CGSize(width: finalWidth, height: height)
-                                }
-                        }
-                } else {
-                        if let source = episode?.purchase_ios_sources?[indexPath.row]{
-                                
-                                let image_name = "marks_\(source.source!)"
-                                if let img = UIImage(named: image_name) {
-                                        
-                                        let height: CGFloat = 30
-                                        let ratio = img.size.width / img.size.height
-                                        let finalWidth = ratio * height
-                                        
-                                        return CGSize(width: finalWidth, height: height)
-                                        
-                                }
-                        }
+                
+                if let item = collectionView.cellForItem(at: indexPath) as? LinkViewCell {
                         
+                        let oldWidth = item.linkImageView.frame.width
+                        let oldheight = item.linkImageView.frame.height
+                        
+                        let height: CGFloat = 30
+                        let ratio = oldWidth / oldheight
+                        let final = ratio * height
+                        
+                        return CGSize(width: final, height: height)
                 }
                 
-                return CGSize(width: 0, height: 0)
+                
+                
+                
+                
+                
+                //                if indexPath.section == 0  {
+                //                        if  let source = episode?.free_ios_sources?[indexPath.row] {
+                //
+                //                                let image_name = "marks_\(source.source!)"
+                //                                if let img = UIImage(named: image_name) {
+                //
+                //                                        let height: CGFloat = 30
+                //                                        let ratio = img.size.width/img.size.height
+                //                                        let finalWidth = ratio * height
+                //
+                //
+                //                                        return CGSize(width: finalWidth, height: height)
+                //
+                //                                }
+                //                        }
+                //                } else if indexPath.section == 1 {
+                //                        if let source = episode?.subscription_ios_sources?[indexPath.row] {
+                //
+                //                                let image_name = "marks_\(source.source!)"
+                //                                if  let img = UIImage(named: image_name) {
+                //
+                //                                        let height: CGFloat = 30
+                //                                        let ratio = img.size.width/img.size.height
+                //                                        let finalWidth = ratio * height
+                //
+                //                                        return CGSize(width: finalWidth, height: height)
+                //                                }
+                //                        }
+                //                } else {
+                //                        if let source = episode?.purchase_ios_sources?[indexPath.row]{
+                //
+                //                                let image_name = "marks_\(source.source!)"
+                //                                if let img = UIImage(named: image_name) {
+                //
+                //                                        let height: CGFloat = 30
+                //                                        let ratio = img.size.width / img.size.height
+                //                                        let finalWidth = ratio * height
+                //
+                //
+                //                                        return CGSize(width: finalWidth, height: height)
+                //
+                //                                }
+                //                        }
+                //
+                //                }
+                //
+                return CGSize(width: 50, height: 30)
         }
         
         
@@ -136,25 +167,36 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinkCell", for: indexPath) as! LinkViewCell
-                if indexPath.section == 0 {
-                        if let fis = episode?.free_ios_sources {
-                                cell.freeIOSSource = fis[indexPath.row]
-                        }
-                }
-                
-                if (indexPath.section == 1) {
-                        if let sws = episode?.subscription_ios_sources {
-                                cell.subscriptionIOSSource = sws[indexPath.row]
-                        }
-                }
-                
-                if (indexPath.section == 2) {
-                        if let pws = episode?.purchase_ios_sources {
-                                cell.purchaseIOSSource = pws[indexPath.row]
-                        }
-                }
                 
                 return cell
+        }
+        
+        
+        func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+                if let x = cell as? LinkViewCell {
+                        
+                        switch indexPath.section {
+                        case  0:
+                                if let fis = episode?.free_ios_sources {
+                                        x.freeIOSSource = fis[indexPath.row]
+                                }
+                        case 1:
+                                if let sws = episode?.subscription_ios_sources {
+                                        x.subscriptionIOSSource = sws[indexPath.row]
+                                }
+                        case 2:
+                                if let pws = episode?.purchase_ios_sources {
+                                        x.purchaseIOSSource = pws[indexPath.row]
+                                }
+                                
+                        default:
+                                print("Hello World")
+                        }
+                }
+                
+                //                collectionView.reloadData()
+                
+                
         }
         
         func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

@@ -21,8 +21,14 @@ extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataS
                 }
                 tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                 tableView.reloadData()
+                
                 let cell = tableView.cellForRow(at: indexPath) as! EpisodeTableViewCell
-                cell.linkCollectionView.reloadData()
+                
+                DispatchQueue.main.async {
+                        cell.linkCollectionView.reloadData()
+                        
+                }
+
         }
         
         
@@ -82,25 +88,7 @@ extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataS
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "EpiTableViewCell", for: indexPath) as! EpisodeTableViewCell
                 
-                //                episode = season[indexPath.row]
-                //
-                //                // let episode = self.seasons[seasonky(currentIndex)]?[indexPath.row]
-                //
-                //                cell.seEp?.text = "Episode \(episode!.episodeNumber!)"
-                //
-                //                cell.linkCollectionView.isHidden = (selectedIndex != indexPath.row)
-                //
-                //                cell.epTitle?.text = "\(episode!.title!)"
-                //
-                //                cell.episode = episode
-                
-                //                cell.episodeImage.sd_setImage(with: URL(string: (episode?.thumbnail304X171)!))
-                
-                //                SDWebModel.loadImage(for: cell.episodeImage, withRemoteURL: episode?.thumbnail608X342)
-                
-                //               cell.episodeImage?.contentMode = .scaleAspectFill
-                
-                
+                               
                 return cell
         }
         
