@@ -1,4 +1,5 @@
 PODS:
+  - ADMozaicCollectionViewLayout (2.1.0)
   - AFNetworking (3.1.0):
     - AFNetworking/NSURLSession (= 3.1.0)
     - AFNetworking/Reachability (= 3.1.0)
@@ -65,6 +66,7 @@ PODS:
   - UICollectionViewLeftAlignedLayout (1.0.2)
 
 DEPENDENCIES:
+  - ADMozaicCollectionViewLayout (~> 2.0)
   - AFNetworking (~> 3.0)
   - Alamofire (~> 4.0)
   - Auth0 (= 1.0.0)
@@ -83,6 +85,7 @@ DEPENDENCIES:
   - UICollectionViewLeftAlignedLayout
 
 SPEC CHECKSUMS:
+  ADMozaicCollectionViewLayout: b81be75b99b091fbbff46a013b061f4914fcb175
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Auth0: 3ff1a10fe8f6a323b171de883a8b9f08d29529b2
@@ -102,6 +105,6 @@ SPEC CHECKSUMS:
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: d474f93e83a137901235645ff205880fd1be449b
+PODFILE CHECKSUM: 21cd362e60aa2bcb59a0b63710013444d362661c
 
 COCOAPODS: 1.1.0.rc.2

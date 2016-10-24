@@ -47,6 +47,8 @@
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
 		BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */; };
+		BD3184A31DBE978600AAFD1E /* MozaicGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */; };
+		BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BD39ADF61DA230E20065F02F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39ADF51DA230E20065F02F /* Common.swift */; };
 		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
@@ -176,6 +178,8 @@
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
 		BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewControllerExtension.swift; sourceTree = "<group>"; };
+		BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MozaicGuideViewController.swift; sourceTree = "<group>"; };
+		BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ADMozaicCollectionViewLayout.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/ADMozaicCollectionViewLayout/ADMozaicCollectionViewLayout.framework"; sourceTree = "<group>"; };
 		BD39ADF51DA230E20065F02F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BD39ADF71DA2A39C0065F02F /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = "Pods/../build/Debug-iphoneos/Dollar/Dollar.framework"; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -216,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */,
 				BD98187B1DB916A7003A5159 /* Auth0.framework in Frameworks */,
 				BD98187C1DB916A7003A5159 /* Lock.framework in Frameworks */,
 				BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */,
@@ -253,6 +258,7 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */,
 				BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */,
 				BD9818791DB916A7003A5159 /* Auth0.framework */,
 				BD98187A1DB916A7003A5159 /* Lock.framework */,
@@ -425,6 +431,7 @@
 				BD0D74601D9AB1120012F184 /* EpisodeCollectionViewController.swift */,
 				BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */,
 				9F5D4E921DBC197400AC7AD2 /* ContentDetailViewController.swift */,
+				BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -852,6 +859,7 @@
 				9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */,
 				9FE1B0501D693B160013DCB1 /* PopularShowTableViewController.m in Sources */,
 				BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */,
+				BD3184A31DBE978600AAFD1E /* MozaicGuideViewController.swift in Sources */,
 				BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */,
 				BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */,
 				9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */,
@@ -1036,6 +1044,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ERJustifiedFlowLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/UICollectionViewLeftAlignedLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Lock",
+					"$(SRCROOT)",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

@@ -66,21 +66,11 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 selectedShow = searchResults.results[indexPath.row]
                 
-                let titles  = favorites.contentList.map { $0.title } as [String]
-                
-                if $.contains(titles, value: selectedShow.title){
-                        
-                        let title = selectedShow.title
-                        
-                        Constants.showAlert("Great News!!!", withMessage: "You already added \(title)")
-                }
-                        
-                else {
-                        self.searchController.isActive = false
+                                        self.searchController.isActive = false
                         self.performSegue(withIdentifier: "ContentDetailSegue", sender: self)
 
                         
-                }
+                
                 
                 
                 
@@ -239,6 +229,7 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 if segue.identifier == "ContentDetailSegue" {
                         let cdvc = segue.destination as! ContentDetailViewController
                         cdvc.content = selectedShow
+                        cdvc.favorites = favorites  
                         
                         
                 }else if segue.identifier == "EpisodeSegue" {

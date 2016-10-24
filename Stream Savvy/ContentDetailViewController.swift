@@ -23,7 +23,7 @@ class ContentDetailViewController: UIViewController  {
         
         var sources: [MediaSource]!
         
-        var favorites: Favorites! = Favorites()
+        var favorites: Favorites!
         
         
 	@IBOutlet weak var showDetailsLabel: UILabel!
@@ -34,6 +34,16 @@ class ContentDetailViewController: UIViewController  {
         @IBOutlet weak var durationLabel: UILabel!
         
         @IBAction func addContentToFavorites(_ sender: UIButton) {
+                
+                let titles  = favorites.contentList.map { $0.title } as [String]
+                
+                if $.contains(titles, value: content.title){
+                        
+                        Constants.showAlert("Great News!!!", withMessage: "You already added \(content.title!)")
+                }
+                        
+                else {
+
                 favorites.addContentToFavorites(content: content)
                         .then { _ -> Void in
                                
@@ -44,11 +54,29 @@ class ContentDetailViewController: UIViewController  {
                         }.catch{ err in
                                 print(err)
                 }
+                }
         }
         
         
         override func viewDidLoad() {
                 super.viewDidLoad()
+                if favorites == nil {
+                        favorites = Favorites()
+                }
+                _ = favorites.fetchFavorites().then{ result -> Void in
+                        
+                        self.favorites.contentList = self.favorites.contentList.reversed()
+                        
+                        
+                        let titles  = self.favorites.contentList.map { $0.title } as [String]
+                        
+                        if $.contains(titles, value: self.content.title){
+                                
+                                self.addFavoriteButton.isEnabled = false
+                                self.addFavoriteButton.setTitle("Already Added", for: .normal)
+                        }
+                }
+
                 
                 if content == nil {
                         content = Content(withPopularShow: show)
