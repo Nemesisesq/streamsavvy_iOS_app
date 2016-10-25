@@ -11,5 +11,9 @@ import UIKit
 class GuideCollectionViewCell: UICollectionViewCell {
         
         @IBOutlet var imgView: UIImageView!
+        @IBOutlet var titleLable: UILabel!
+        
+        var channel: Channel!
+        
     
 }
