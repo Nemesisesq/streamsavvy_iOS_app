@@ -10,7 +10,7 @@
 #import "AuthTableViewController.h"
 
 
-@interface GuideObjectiveCViewController: AuthTableViewController
+@interface GuideObjectiveCViewController: UIViewController
 
 @property (strong, nonatomic) NSArray *guideShows;
 

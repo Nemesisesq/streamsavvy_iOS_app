@@ -43,16 +43,16 @@ NSInteger numOfStaticCell = 1;
 	[workaroundImageView addSubview:navigationImage];
 	self.navigationItem.titleView=workaroundImageView;
 	
-	self.tableView.rowHeight = UITableViewAutomaticDimension;
-	self.tableView.estimatedRowHeight = 328.0;
-	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-	[self.tableView setSeparatorColor:[UIColor blackColor]];
+//	self.tableView.rowHeight = UITableViewAutomaticDimension;
+//	self.tableView.estimatedRowHeight = 328.0;
+//	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+//	[self.tableView setSeparatorColor:[UIColor blackColor]];
 	
-	self.refreshControl = [[UIRefreshControl alloc] init];
-	self.refreshControl.backgroundColor = [UIColor blackColor];
-	self.refreshControl.tintColor = [Constants StreamSavvyRed];
-	[self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
-	[self.tableView addSubview:self.refreshControl];
+//	self.refreshControl = [[UIRefreshControl alloc] init];
+//	self.refreshControl.backgroundColor = [UIColor blackColor];
+//	self.refreshControl.tintColor = [Constants StreamSavvyRed];
+//	[self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
+//	[self.tableView addSubview:self.refreshControl];
 	[self reload];
 }
 
@@ -97,41 +97,41 @@ NSInteger numOfStaticCell = 1;
 			[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];
 		}
 		self.guideShows = [guideShows copy];
-		[self.tableView reloadData];
-		if (self.refreshControl) {
-			[self.refreshControl endRefreshing];
-		}
+//		[self.tableView reloadData];
+//		if (self.refreshControl) {
+//			[self.refreshControl endRefreshing];
+//		}
 	}];
  }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (numOfStaticCell + self.guideShows.count / numShowsPerCell);
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	LiveGuideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LiveGuideTableViewCell" forIndexPath:indexPath];
-	[Constants fixSeparators:cell];
-	cell.channel = [self.guideShows objectAtIndex:indexPath.row];
-	cell.uivc = self;
-	[cell setCellDetails];
-	
-	return cell;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-	[tableView deselectRowAtIndexPath:indexPath animated:NO];
-	Channel *channel = [self.guideShows objectAtIndex:indexPath.row];
-	LiveGuideDetailsViewController *lgdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveDetailsViewController"];
-	NSLog(@"HERE");
-	lgdvc.channel = channel;
-	lgdvc.media = channel.now_playing;
-	[self.navigationController pushViewController:lgdvc animated:YES];
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return (numOfStaticCell + self.guideShows.count / numShowsPerCell);
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//	LiveGuideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LiveGuideTableViewCell" forIndexPath:indexPath];
+//	[Constants fixSeparators:cell];
+//	cell.channel = [self.guideShows objectAtIndex:indexPath.row];
+//	cell.uivc = self;
+//	[cell setCellDetails];
+//	
+//	return cell;
+//}
+//
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//	[tableView deselectRowAtIndexPath:indexPath animated:NO];
+//	Channel *channel = [self.guideShows objectAtIndex:indexPath.row];
+//	LiveGuideDetailsViewController *lgdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveDetailsViewController"];
+//	NSLog(@"HERE");
+//	lgdvc.channel = channel;
+//	lgdvc.media = channel.now_playing;
+//	[self.navigationController pushViewController:lgdvc animated:YES];
+//}
 
 @end
