@@ -69,6 +69,7 @@
 		BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */; };
 		BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9818801DBA8D10003A5159 /* UILableExtensions.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
+		BDCDA6221DBEB06800ADFB1B /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDA6211DBEB06800ADFB1B /* GuideCollectionViewCell.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
 		BDD2B7081DAD907F00C77260 /* DeepLinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */; };
 		BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7091DAE052700C77260 /* Sources.swift */; };
@@ -204,6 +205,7 @@
 		BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleKeychain.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/SimpleKeychain/SimpleKeychain.framework"; sourceTree = "<group>"; };
 		BD9818801DBA8D10003A5159 /* UILableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILableExtensions.swift; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
+		BDCDA6211DBEB06800ADFB1B /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7091DAE052700C77260 /* Sources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 				BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */,
 				BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */,
 				BD9563E41DB2A9C60089652E /* LinkCellCollectionReusableView.swift */,
+				BDCDA6211DBEB06800ADFB1B /* GuideCollectionViewCell.swift */,
 			);
 			name = CollectionViewCells;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5D4E911DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m in Sources */,
+				BDCDA6221DBEB06800ADFB1B /* GuideCollectionViewCell.swift in Sources */,
 				BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */,
 				9FBC97851D6D32CB004B6182 /* GuideTableViewController.m in Sources */,
 				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,

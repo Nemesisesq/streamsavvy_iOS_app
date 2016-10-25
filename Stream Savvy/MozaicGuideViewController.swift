@@ -14,15 +14,18 @@ enum ADMozaikLayoutType {
         case landscape
 }
 
-class MozaicCollectionViewController: UICollectionViewController, ADMozaikLayoutDelegate {
+class MozaicCollectionViewController: UIViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource {
         
-        let columnWidth = UIScreen.main.bounds.size.width / 3
+        let columnWidth = UIScreen.main.bounds.size.width / 4
+        
+        @IBOutlet var mozCollectionView: UICollectionView!
+        
         
         fileprivate let ADMozaikCollectionViewLayoutExampleImagesCount = 22
 
         fileprivate var portraitLayout: ADMozaikLayout {
-                let columns = [ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth)]
-                let layout = ADMozaikLayout(rowHeight: 93, columns: columns)
+                let columns = [ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth),ADMozaikLayoutColumn(width: columnWidth)]
+                let layout = ADMozaikLayout(rowHeight: columnWidth, columns: columns)
                 layout.delegate = self
                 layout.minimumLineSpacing = 1
                 layout.minimumInteritemSpacing = 1
@@ -47,20 +50,20 @@ class MozaicCollectionViewController: UICollectionViewController, ADMozaikLayout
         override func viewWillAppear(_ animated: Bool) {
                 super.viewWillAppear(animated)
                 
-//                self.setCollectionViewLayout(false, ofType: UIScreen.main.bounds.width > UIScreen.main.bounds.height ? .landscape : .portrait)
+                self.setCollectionViewLayout(false, ofType: UIScreen.main.bounds.width > UIScreen.main.bounds.height ? .landscape : .portrait)
         }
         
         //MARK: - Helpers
         
-//        fileprivate func setCollectionViewLayout(_ animated: Bool, ofType type: ADMozaikLayoutType) {
-//                self.collectionView?.collectionViewLayout.invalidateLayout()
-//                if type == .landscape {
-//                        self.collectionView?.setCollectionViewLayout(self.landscapeLayout, animated: true)
-//                }
-//                else {
-//                        self.collectionView?.setCollectionViewLayout(self.portraitLayout, animated: true)
-//                }
-//        }
+        fileprivate func setCollectionViewLayout(_ animated: Bool, ofType type: ADMozaikLayoutType) {
+                self.mozCollectionView?.collectionViewLayout.invalidateLayout()
+                if type == .landscape {
+                        self.mozCollectionView?.setCollectionViewLayout(self.landscapeLayout, animated: true)
+                }
+                else {
+                        self.mozCollectionView?.setCollectionViewLayout(self.portraitLayout, animated: true)
+                }
+        }
         
         //MARK: - ADMozaikLayoutDelegate
         
@@ -68,11 +71,14 @@ class MozaicCollectionViewController: UICollectionViewController, ADMozaikLayout
                 if indexPath.item == 0 {
                         return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 1)
                 }
+                if indexPath.item % 10 == 0 {
+                        return ADMozaikLayoutSize(numberOfColumns: 4, numberOfRows: 1)
+                }
                 if indexPath.item % 8 == 0 {
-                        return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 2)
+                        return ADMozaikLayoutSize(numberOfColumns: 3, numberOfRows: 1)
                 }
                 else if indexPath.item % 6 == 0 {
-                        return ADMozaikLayoutSize(numberOfColumns: 3, numberOfRows: 1)
+                        return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 1)
                 }
                 else if indexPath.item % 4 == 0 {
                         return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 3)
@@ -84,18 +90,17 @@ class MozaicCollectionViewController: UICollectionViewController, ADMozaikLayout
         
         //MARK: - UICollectionViewDataSource
         
-        override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
         }
         
-        override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 return 10000
         }
         
-        override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADMozaikLayoutCell", for: indexPath) as UICollectionViewCell
-                let imageView: UIImageView = cell.viewWithTag(1000) as! UIImageView
-                imageView.image = UIImage(named: "\((indexPath as NSIndexPath).item % ADMozaikCollectionViewLayoutExampleImagesCount)")
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADMozaikLayoutCell", for: indexPath) as! GuideCollectionViewCell
+                cell.imgView.image = #imageLiteral(resourceName: "marks_favicon")
                 return cell
         }
         
