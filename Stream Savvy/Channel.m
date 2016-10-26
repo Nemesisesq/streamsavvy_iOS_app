@@ -37,19 +37,19 @@
 //                         NSString stringWithFormat:@"http://localhost:8080/gracenote/lineup-airings/%f/%f"
                          , lat, lon];
 	NSLog(@"%@\n\n\n", url);
-//	[MBProgressHUD showHUDAddedTo:view animated:YES];
+	[MBProgressHUD showHUDAddedTo:view animated:YES];
 	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 		[[AFAPIClient sharedClient:[NSString stringWithFormat:@"Bearer_%@", [UserPrefs getToken]]] GET:url parameters:nil
 				    success:^(NSURLSessionDataTask *task, id JSON) {
 					    dispatch_async( dispatch_get_main_queue(), ^{
 						    successBlock(task, JSON);
-//						    [MBProgressHUD hideHUDForView:view animated:YES];
+						    [MBProgressHUD hideHUDForView:view animated:YES];
 					    });
 				    } failure:^(NSURLSessionDataTask *task, NSError *error) {
 					    dispatch_async( dispatch_get_main_queue(), ^{
 						    NSLog(@"%@", url);
 						    NSLog(@"~~~>%@", error);
-//						    [MBProgressHUD hideHUDForView:view animated:YES];
+						    [MBProgressHUD hideHUDForView:view animated:YES];
 					    });
 				    }];
 	});

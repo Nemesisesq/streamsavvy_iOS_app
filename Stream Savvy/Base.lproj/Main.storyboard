@@ -816,10 +816,10 @@
             </objects>
             <point key="canvasLocation" x="4297" y="400"/>
         </scene>
-        <!--Guide Table View Controller-->
+        <!--Guide ObjectiveC View Controller-->
         <scene sceneID="vv0-Ju-unJ">
             <objects>
-                <tableViewController storyboardIdentifier="GuideTableViewController" id="TBZ-IE-z7Y" customClass="GuideTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GuideTableViewController" id="TBZ-IE-z7Y" customClass="GuideObjectiveCViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zVu-d0-3PY">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
