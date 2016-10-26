@@ -46,6 +46,7 @@
 		BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */; };
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
+		BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */; };
 		BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */; };
 		BD3184A31DBE978600AAFD1E /* MozaicGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */; };
 		BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -177,6 +178,7 @@
 		BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BD1834B51D8CDACE00B472E2 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
+		BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
 		BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewControllerExtension.swift; sourceTree = "<group>"; };
 		BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MozaicGuideViewController.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */,
 				9F5D4E921DBC197400AC7AD2 /* ContentDetailViewController.swift */,
 				BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */,
+				BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 				9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */,
 				9FC296181D766F63005CB080 /* MediaSource.m in Sources */,
 				BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */,
+				BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */,
 				BD0D745D1D9A0E170012F184 /* Favorites.swift in Sources */,
 				BD0DCC181DB4785E005C32B2 /* UIApplication.swift in Sources */,
 				9FE1B0441D6936210013DCB1 /* Constants.m in Sources */,
