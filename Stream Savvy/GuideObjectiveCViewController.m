@@ -6,7 +6,7 @@
 //  Copyright © 2016 Stream Savvy. All rights reserved.
 //
 
-#import "GuideTableViewController.h"
+#import "GuideObjectiveCViewController.h"
 #import "UserLocation.h"
 #import "TopGridTableViewCell.h"
 #import "Constants.h"
@@ -14,10 +14,11 @@
 #import "LiveGuideTableViewCell.h"
 #import "LiveGuideDetailsViewController.h"
 
-@interface GuideTableViewController ()
+@interface GuideObjectiveCViewController ()
 
-@property (strong, nonatomic) NSArray *guideShows;
 
+
+- (NSArray *) getGuideShows;
 @end
 
 
@@ -25,7 +26,12 @@ NSInteger numShowsPerCell = 3;
 NSInteger numOfStaticCell = 1;
 
 
-@implementation GuideTableViewController
+@implementation GuideObjectiveCViewController
+
+- (NSArray *) getGuideShows {
+        return _guideShows;
+}
+
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -74,10 +80,11 @@ NSInteger numOfStaticCell = 1;
 -(void)reload{
 	float lat = UserLocation.sharedController.locationManager.location.coordinate.latitude;
 	float lon = UserLocation.sharedController.locationManager.location.coordinate.longitude;
+        
 	[Channel getGuideForLattitude:lat Longitude:lon view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
 		NSMutableArray *guideShows = [NSMutableArray new];
 		//////////////////////this needs edited
-		int max_to_load = 0;
+//		int max_to_load = 0;
 		// itll crash if you uncomment all of these
 					NSLog(@"\n\n\n\t\t0\n\n\n%@", JSON);
 		////			NSLog(@"\n\n\n\t\t1\n\n\n%@", [[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"]);
@@ -85,8 +92,8 @@ NSInteger numOfStaticCell = 1;
 		////			NSLog(@"\n\n\n\t\t3\n\n\n%@", [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]);
 		
 		for (NSDictionary *region_channels in (NSArray *)JSON) {
-			if (max_to_load > 99) break;
-			max_to_load ++;
+//			if (max_to_load > 99) break;
+//			max_to_load ++;
 			[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];
 		}
 		self.guideShows = [guideShows copy];

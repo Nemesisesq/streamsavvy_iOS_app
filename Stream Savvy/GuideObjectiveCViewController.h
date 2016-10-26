@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AuthTableViewController.h"
 
-@interface GuideTableViewController : AuthTableViewController
+
+@interface GuideObjectiveCViewController: AuthTableViewController
+
+@property (strong, nonatomic) NSArray *guideShows;
+
+-(void) reload;
 
 @end
