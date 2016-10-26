@@ -1327,7 +1327,7 @@
                                             <frame key="frameInset" width="375" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Like Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="L6b-Y8-tGK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6b-Y8-tGK">
                                                     <frame key="frameInset" minX="30" minY="25" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1512,7 +1512,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Like Filled-50" width="50" height="50"/>
         <image name="favorites" width="32" height="32"/>
         <image name="fubo_tv" width="224" height="74"/>
         <image name="nbc_lg_2x" width="180" height="104"/>
