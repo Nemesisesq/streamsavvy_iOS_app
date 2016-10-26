@@ -29,6 +29,7 @@
     self.episodeTitle = [program valueForKey:@"episodeTitle"];
 	self.show_description		= [program valueForKey:@"shortDescription"];
 	self.genres				= [program objectForKey:@"genres"];
+        self.preferredImage = [program objectForKey:@"preferredImage"];
 //	self.deep_link			= [Media randomUrl];
 	NSLog(@"genres: %@", self.genres);
 	
