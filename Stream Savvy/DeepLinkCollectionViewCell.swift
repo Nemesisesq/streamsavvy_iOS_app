@@ -39,6 +39,8 @@ class LinkViewCell: UICollectionViewCell {
                         
                         if linkImageView.image != nil{
                                 self.linkLabelview.isHidden = true
+                        } else {
+                                self.linkLabelview.isHidden = false
                         }
                 }
         }
@@ -151,7 +153,7 @@ class LinkViewCell: UICollectionViewCell {
                 
                 let height: CGFloat = 30
                 
-                var ratio = CGFloat(1)
+                var ratio = CGFloat(3)
                 if let xx = linkImageView.image {
                         
                 

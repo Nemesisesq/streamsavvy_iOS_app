@@ -439,21 +439,23 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="52"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7E-BA-uKN">
-                                                                        <frame key="frameInset" minX="10" minY="16" width="42" height="21"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nlH-NJ-kKa"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7E-BA-uKN">
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nlH-NJ-kKa"/>
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
                                                                 <constraint firstItem="nlH-NJ-kKa" firstAttribute="top" secondItem="2HZ-8C-6wJ" secondAttribute="top" id="9R4-Gw-0pe"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="h7E-BA-uKN" secondAttribute="bottom" id="GXt-yO-gfE"/>
                                                                 <constraint firstItem="nlH-NJ-kKa" firstAttribute="leading" secondItem="2HZ-8C-6wJ" secondAttribute="leading" id="GlC-E3-HRT"/>
                                                                 <constraint firstAttribute="trailing" secondItem="nlH-NJ-kKa" secondAttribute="trailing" id="WP4-Ru-LBg"/>
+                                                                <constraint firstItem="h7E-BA-uKN" firstAttribute="trailing" secondItem="2HZ-8C-6wJ" secondAttribute="trailingMargin" id="dnx-m2-YxY"/>
                                                                 <constraint firstAttribute="bottom" secondItem="nlH-NJ-kKa" secondAttribute="bottom" id="k9n-p2-y90"/>
+                                                                <constraint firstItem="h7E-BA-uKN" firstAttribute="top" secondItem="2HZ-8C-6wJ" secondAttribute="topMargin" id="kih-h2-RFx"/>
+                                                                <constraint firstItem="h7E-BA-uKN" firstAttribute="leading" secondItem="2HZ-8C-6wJ" secondAttribute="leadingMargin" id="ktO-Vh-XPc"/>
                                                             </constraints>
                                                             <size key="customSize" width="60" height="52"/>
                                                             <connections>

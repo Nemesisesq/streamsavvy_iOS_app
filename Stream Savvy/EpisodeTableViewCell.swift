@@ -39,7 +39,7 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
                 super.setSelected(selected, animated: animated)
                 if selected {
                         
-                       
+                       linkCollectionView.reloadData()
                 }
         }
         
