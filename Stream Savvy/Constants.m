@@ -76,6 +76,15 @@
 	NSLog(@"\t\t\t%d\t\t%s\t\t%@", __LINE_, __PRETTY_FUNCTION_, log);
 }
 
++(void)addRadalGradientForImageView:(UIImageView *)imageView{
+        CAGradientLayer *gradientLayer = [CAGradientLayer new];
+        gradientLayer.frame = imageView.bounds;
+        
+        
+        
+        
+}
+
 
 + (void)addGradientForImageView:(UIImageView *)imageView{
 	imageView.layer.sublayers = @[];

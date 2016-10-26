@@ -24,10 +24,10 @@ extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataS
                 
                 let cell = tableView.cellForRow(at: indexPath) as! EpisodeTableViewCell
                 
-//                DispatchQueue.main.async {
-//                        cell.linkCollectionView.reloadData()
+                DispatchQueue.main.async {
+                        cell.linkCollectionView.reloadData()
 
-//                }
+                }
 
         }
         
