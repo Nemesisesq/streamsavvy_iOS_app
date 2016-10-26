@@ -1313,26 +1313,31 @@
                                                     <color key="textColor" red="1" green="0.047905128009999999" blue="0.11604493959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="unverified" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWR-Uj-P2q">
-                                                    <frame key="frameInset" minX="53" minY="20" width="66" height="11"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nemesisesq@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMM-Sx-0hk">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="J0Q-bA-Sdn"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="unverified" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWR-Uj-P2q">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="11" id="7Li-H1-bRW"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HEllo world=" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMM-Sx-0hk">
-                                                    <frame key="frameInset" minX="10" minY="39" width="354" height="30"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="qMM-Sx-0hk" firstAttribute="trailing" secondItem="vwO-sv-cjw" secondAttribute="trailingMargin" id="A9Q-yp-J8d"/>
+                                                <constraint firstItem="qMM-Sx-0hk" firstAttribute="leading" secondItem="vwO-sv-cjw" secondAttribute="leadingMargin" constant="5" id="AvJ-C0-t4p"/>
                                                 <constraint firstItem="oiE-n6-EQw" firstAttribute="leading" secondItem="vwO-sv-cjw" secondAttribute="leadingMargin" constant="5" id="L4g-hO-hjn"/>
-                                                <constraint firstItem="qMM-Sx-0hk" firstAttribute="top" secondItem="oiE-n6-EQw" secondAttribute="bottom" constant="7.5" id="Oio-sQ-uIc"/>
-                                                <constraint firstItem="qMM-Sx-0hk" firstAttribute="leading" secondItem="vwO-sv-cjw" secondAttribute="leadingMargin" constant="5" id="Y1T-nh-Tra"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="qMM-Sx-0hk" secondAttribute="bottom" constant="12" id="kTC-Ev-AiB"/>
-                                                <constraint firstItem="qMM-Sx-0hk" firstAttribute="trailing" secondItem="vwO-sv-cjw" secondAttribute="trailingMargin" id="oT6-NZ-cuM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qMM-Sx-0hk" secondAttribute="bottom" constant="10" id="Mja-WY-j9l"/>
+                                                <constraint firstItem="qMM-Sx-0hk" firstAttribute="top" secondItem="wWR-Uj-P2q" secondAttribute="bottom" constant="5" id="WN1-9g-R2J"/>
+                                                <constraint firstItem="wWR-Uj-P2q" firstAttribute="leading" secondItem="oiE-n6-EQw" secondAttribute="trailing" constant="5" id="kaX-Aw-DNk"/>
+                                                <constraint firstItem="qMM-Sx-0hk" firstAttribute="top" secondItem="oiE-n6-EQw" secondAttribute="bottom" id="vcY-3f-lWw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1343,23 +1348,26 @@
                                             <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fM-jt-gjW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fM-jt-gjW">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="0.047905128009999999" blue="0.11604493959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HEllo world=" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEG-Qi-LGp">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nem" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEG-Qi-LGp">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="CkN-z2-6HT"/>
+                                                    </constraints>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rEG-Qi-LGp" firstAttribute="leading" secondItem="FdP-Ku-qt5" secondAttribute="leadingMargin" constant="5" id="Chy-Xv-gMs"/>
+                                                <constraint firstItem="rEG-Qi-LGp" firstAttribute="top" secondItem="0fM-jt-gjW" secondAttribute="bottom" id="DAO-hK-apc"/>
                                                 <constraint firstItem="rEG-Qi-LGp" firstAttribute="trailing" secondItem="FdP-Ku-qt5" secondAttribute="trailingMargin" id="eIC-et-rMd"/>
                                                 <constraint firstItem="0fM-jt-gjW" firstAttribute="leading" secondItem="FdP-Ku-qt5" secondAttribute="leadingMargin" constant="5" id="taP-5s-Snl"/>
-                                                <constraint firstItem="rEG-Qi-LGp" firstAttribute="top" secondItem="0fM-jt-gjW" secondAttribute="bottom" constant="7.5" id="tgc-Tn-uM8"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="rEG-Qi-LGp" secondAttribute="bottom" constant="12" id="vaA-FA-iz8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rEG-Qi-LGp" secondAttribute="bottom" constant="10" id="vaA-FA-iz8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
