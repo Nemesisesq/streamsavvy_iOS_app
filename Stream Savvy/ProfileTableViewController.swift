@@ -24,7 +24,12 @@ class ProfileTableViewController: UITableViewController {
         
         @IBOutlet var nicknameTextField: UITextField!
         
-        @IBOutlet var profileImageView: UIImageView!
+        @IBOutlet var profileImageView: UIImageView! {
+                didSet{
+                        profileImageView.layer.cornerRadius = 50
+                        profileImageView.layer.masksToBounds = true
+                }
+        }
         
 
         @IBAction func logout(_ sender: AnyObject) {
