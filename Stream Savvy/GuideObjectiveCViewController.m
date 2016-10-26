@@ -111,7 +111,7 @@ NSInteger numOfStaticCell = 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (numOfStaticCell + self.guideShows.count / numShowsPerCell);
+        return self.guideShows.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
