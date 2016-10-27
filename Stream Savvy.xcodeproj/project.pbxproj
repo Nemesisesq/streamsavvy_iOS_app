@@ -81,6 +81,8 @@
 		BDE9604B1DA8B71600E13C68 /* Upload-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE960481DA8B71600E13C68 /* Upload-50.png */; };
 		BDE9604C1DA8B71600E13C68 /* Like Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE960491DA8B71600E13C68 /* Like Filled-50.png */; };
 		BDE9604D1DA8B71600E13C68 /* Like-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE9604A1DA8B71600E13C68 /* Like-50.png */; };
+		BDEB23271DC23A0E00B21291 /* Auth0ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB23261DC23A0E00B21291 /* Auth0ViewControllerTests.swift */; };
+		BDEB232B1DC254A000B21291 /* Auth0Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +221,8 @@
 		BDE960481DA8B71600E13C68 /* Upload-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload-50.png"; sourceTree = "<group>"; };
 		BDE960491DA8B71600E13C68 /* Like Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like Filled-50.png"; sourceTree = "<group>"; };
 		BDE9604A1DA8B71600E13C68 /* Like-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like-50.png"; sourceTree = "<group>"; };
+		BDEB23261DC23A0E00B21291 /* Auth0ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0ViewControllerTests.swift; sourceTree = "<group>"; };
+		BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +367,7 @@
 			children = (
 				9F5A4D4C1D5AE1D70057AF6D /* Stream_SavvyTests.m */,
 				9F5A4D4E1D5AE1D70057AF6D /* Info.plist */,
+				BDEB23261DC23A0E00B21291 /* Auth0ViewControllerTests.swift */,
 			);
 			path = "Stream SavvyTests";
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 			children = (
 				BD39ADF51DA230E20065F02F /* Common.swift */,
 				BD1B6F1C1DC103120053432E /* RadialGradientLayer.swift */,
+				BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -879,6 +885,7 @@
 				9FC296181D766F63005CB080 /* MediaSource.m in Sources */,
 				BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */,
 				BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */,
+				BDEB232B1DC254A000B21291 /* Auth0Protocol.swift in Sources */,
 				BD0D745D1D9A0E170012F184 /* Favorites.swift in Sources */,
 				BD0DCC181DB4785E005C32B2 /* UIApplication.swift in Sources */,
 				9FE1B0441D6936210013DCB1 /* Constants.m in Sources */,
@@ -893,6 +900,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDEB23271DC23A0E00B21291 /* Auth0ViewControllerTests.swift in Sources */,
 				9F5A4D4D1D5AE1D70057AF6D /* Stream_SavvyTests.m in Sources */,
 				BD9818781DB880CE003A5159 /* Auth0ViewController.swift in Sources */,
 			);

@@ -18,7 +18,7 @@ struct Season {
 
 
 
-class EpisodeCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDelegate, UICollectionViewDataSource {
         
         @IBOutlet var episodeTableView: UITableView!
         

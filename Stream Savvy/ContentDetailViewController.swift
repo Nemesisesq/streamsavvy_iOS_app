@@ -9,7 +9,7 @@
 import UIKit
 import Dollar
 
-class ContentDetailViewController: UIViewController  {
+class ContentDetailViewController:  Auth0ViewController  {
         
         var hello = "Detailed World"
         

@@ -11,7 +11,7 @@ import PromiseKit
 import Dollar
 
 
-class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
+class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
         //        let constants = Constants()
         var numbers = [String]()
         var selectedShow: Content!

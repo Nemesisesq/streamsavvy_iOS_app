@@ -16,7 +16,7 @@ class AppCell: UICollectionViewCell {
 }
 
 
-class LiveDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate, UICollectionViewDataSource {
         
         @IBOutlet var appCollectionView: UICollectionView!
         @IBOutlet var channelImage: UIImageView!

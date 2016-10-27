@@ -1,0 +1,110 @@
+//
+//  Auth0.swift
+//  Stream Savvy
+//
+//  Created by Carl Lewis on 10/27/16.
+//  Copyright © 2016 Stream Savvy. All rights reserved.
+//
+
+import Foundation
+import Lock
+import SimpleKeychain
+import PromiseKit
+
+
+class Auth0: NSObject {
+        static let keychain = A0SimpleKeychain(service: "Auth0")
+        
+        static let client = A0Lock.shared().apiClient()
+        
+        static var controller: A0LockViewController {
+                let c = A0Lock.shared().newLockViewController()
+                
+                c?.closable = true
+                
+                c?.onAuthenticationBlock = { profile, token in
+                        // Do something with token  profile. e.g.: save them.
+                        // Lock will not save these objects for you.
+                        
+                        UserPrefs.setToken(token?.accessToken)
+                        UserPrefs.setEmail(profile?.email)
+                        
+                        guard
+                                let token = token,
+                                let refreshToken = token.refreshToken
+                                else { return }
+                        
+                        let keychain = A0SimpleKeychain(service: "Auth0")
+                        keychain.setString(token.idToken, forKey: "id_token")
+                        keychain.setString(refreshToken, forKey: "refresh_token")
+                        
+                        
+                        // Don't forget to dismiss the Lock controller
+                        c?.dismiss(animated: true, completion: nil)
+                        
+                        //                        self.continueToApp(controller: controller!)
+                        //                                self.loginComplete = true
+                        
+                }
+                
+                return c!
+                
+        }
+        
+}
+
+
+protocol Auth0Protocol {
+        
+        func fetchUserProfile(client: A0APIClient, idToken: String, keychain: A0SimpleKeychain, controller: A0LockViewController) -> Promise<Any>
+        
+        func fetchNewIdToken(controler: A0LockViewController, client: A0APIClient, refreshToken: String, keychain: A0SimpleKeychain) -> Void
+        
+        func continueToApp(controller: A0LockViewController, vc: UIViewController) -> Void
+}
+
+extension Auth0Protocol {
+        
+        func continueToApp(controller: A0LockViewController, vc: UIViewController) {
+                controller.dismiss(animated: true, completion: nil)
+                if let mc = vc.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") {
+                        vc.present(mc, animated: true, completion: nil)
+                }
+                
+        }
+        
+        func fetchNewIdToken(controler: A0LockViewController, client: A0APIClient, refreshToken: String, keychain: A0SimpleKeychain) {
+                client.fetchNewIdToken(withRefreshToken: refreshToken,
+                                       parameters: nil,
+                                       success: {newToken in
+                                        
+                                        keychain.setString(newToken.idToken, forKey: "id_token")
+                                        
+                                        // ✅ At this point, you can log the user into your app, by navigating to the corresponding screen
+                        },
+                                       failure: { error in
+                                        
+                                        // refreshToken is no longer valid (e.g. it has been revoked)
+                                        // Cleaning stored values since they are no longer valid
+                                        
+                                        keychain.clearAll()
+                                        
+                                        // ⛔️ At this point, you should ask the user to enter his credentials again!
+                                        
+                })
+                
+        }
+        
+        func fetchUserProfile(client: A0APIClient, idToken: String, keychain: A0SimpleKeychain, controller: A0LockViewController) -> Promise<Any>{
+                return Promise {fulfill, reject in
+                        client.fetchUserProfile(withIdToken: idToken,
+                                                success: { profile in
+                                                        fulfill(profile)
+                                },
+                                                failure: { error in
+                                                        
+                                                        reject(error)
+                        })
+                }
+        }
+}
