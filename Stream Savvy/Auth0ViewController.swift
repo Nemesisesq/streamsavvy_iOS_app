@@ -39,15 +39,15 @@ class Auth0ViewController: UIViewController, Auth0Protocol{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        do {
-            _ =  try checkForIdToken(keychain: keychain, controller: controller, vc: self)
-            
-        } catch MyError.Null {
-            print("there is no token")
-            continueToApp(controller: controller, vc: self)
-        } catch {
-            print("something else went wrong")
-        }
+//        do {
+//            _ =  try checkForIdToken(keychain: keychain, controller: controller, vc: self)
+//            
+//        } catch MyError.Null {
+//            print("there is no token")
+//            continueToApp(controller: controller, vc: self)
+//        } catch {
+//            print("something else went wrong")
+//        }
         
         
     }
@@ -60,9 +60,12 @@ class Auth0ViewController: UIViewController, Auth0Protocol{
         
         
         controller.onUserDismissBlock = {
-            self.continueToApp(controller: self.controller, vc: self)
+            if Auth0.userDismissed == false || Auth0.loggedIn == false {
+                self.continueToApp(controller: self.controller, vc: self)
+            }
             Auth0.userDismissed = true
             return
+            
         }
         
         

@@ -14,6 +14,8 @@ import PromiseKit
 
 class Auth0: NSObject {
     
+    static var loggedIn: Bool = false
+    
     static var loginComplete: Bool? = false
     
     static var userDismissed: Bool = false
@@ -77,7 +79,10 @@ extension Auth0Protocol {
         guard let idToken = keychain.string(forKey: "id_token") else {
             // idToken doesn't exist, user has to enter his credentials to log in
             // Present A0Lock Login
+            
+            if Auth0.userDismissed == false {
             A0Lock.shared().present(controller, from: vc)
+            }
             throw MyError.Null
         }
         
@@ -100,12 +105,16 @@ extension Auth0Protocol {
                                    parameters: nil,
                                    success: {newToken in
                                     
+                                    Auth0.loggedIn = true
+                                    
                                     
                                     fulfill(newToken)
                                     
                                     // ✅ At this point, you can log the user into your app, by navigating to the corresponding screen
                 },
                                    failure: { error in
+                                    
+                                    Auth0.loggedIn = false
                                     
                                     // refreshToken is no longer valid (e.g. it has been revoked)
                                     // Cleaning stored values since they are no longer valid
@@ -125,8 +134,12 @@ extension Auth0Protocol {
             client.fetchUserProfile(withIdToken: idToken,
                                     success: { profile in
                                         fulfill(profile)
+                                        
+                                        Auth0.loggedIn = true
                 },
                                     failure: { error in
+                                        
+                                        Auth0.loggedIn = false
                                         
                                         reject(error)
             })
