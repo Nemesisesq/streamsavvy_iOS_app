@@ -12,80 +12,117 @@ import SimpleKeychain
 import PromiseKit
 
 class Auth0ViewController: UIViewController, Auth0Protocol{
+    
+    
+    let keychain = Auth0.keychain
+    
+    let controller = Auth0.controller
+    
+    let client = A0Lock.shared().apiClient()
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        var loginComplete: Bool?
         
         
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        do {
+            _ =  try checkForIdToken(keychain: keychain, controller: controller, vc: self)
+            
+        } catch MyError.Null {
+            print("there is no token")
+            continueToApp(controller: controller, vc: self)
+        } catch {
+            print("something else went wrong")
+        }
         
-        override func viewDidLoad() {
-                super.viewDidLoad()
-                
-                
-                // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth0.userDismissed {
+            return
         }
         
         
         
-        override func didReceiveMemoryWarning() {
-                super.didReceiveMemoryWarning()
-                // Dispose of any resources that can be recreated.
+        controller.onUserDismissBlock = {
+            self.continueToApp(controller: self.controller, vc: self)
+            Auth0.userDismissed = true
+            return
         }
         
-        override func viewWillAppear(_ animated: Bool) {
-                
+        
+        
+        // TODO: Logic here is kind of broken
+        
+        
+        guard let idToken = keychain.string(forKey: "id_token") else {
+            // idToken doesn't exist, user has to enter his credentials to log in
+            // Present A0Lock Login
+            A0Lock.shared().present(controller, from: self)
+            return
         }
-        override func viewDidAppear(_ animated: Bool) {
+        
+        _ = fetchUserProfile(client: client, idToken: idToken, keychain: keychain, controller: controller)
+            .then {result -> Void in
                 
+                if let profile = result as? A0UserProfile {
+                    
+                    // Our idToken is still valid...
+                    // We store the fetched user profile
+                    self.keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
+                    // ✅ At this point, you can log the user into your app,
+                    Auth0.loginComplete = true
+                    
+                    self.continueToApp(controller: self.controller, vc: self)
+                    
+                    
+                    
+                }
+            }.catch { error in
                 
-                let keychain = Auth0.keychain
-                
-                let controller = Auth0.controller
-                
-                let client = A0Lock.shared().apiClient()
-                
-                
-                
-                // TODO: Logic here is kind of broken
-                
-                
-                guard let idToken = keychain.string(forKey: "id_token") else {
-                        // idToken doesn't exist, user has to enter his credentials to log in
-                        // Present A0Lock Login
-                        A0Lock.shared().present(controller, from: self)
-                        return
+                guard let refreshToken = self.keychain.string(forKey: "refresh_token") else {
+                    // ⚠️ idToken has expired or is no longer valid
+                    // See step 4
+                    self.keychain.clearAll()
+                    
+                    // ⛔️ At this point, you should ask the user to enter his credentials again!
+                    A0Lock.shared().present(self.controller, from: self)
+                    
+                    return
                 }
                 
-                _ = fetchUserProfile(client: client, idToken: idToken, keychain: keychain, controller: controller)
-                        .then {result -> Void in
-                                
-                                if let profile = result as? A0UserProfile {
-                                        
-                                        // Our idToken is still valid...
-                                        // We store the fetched user profile
-                                        keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
-                                        // ✅ At this point, you can log the user into your app,
-                                        self.loginComplete = true
-                                        
-                                        self.continueToApp(controller: controller, vc: self)
-                                        
-                                } else {
-                                        guard let refreshToken = keychain.string(forKey: "refresh_token") else {
-                                                // ⚠️ idToken has expired or is no longer valid
-                                                // See step 4
-                                                keychain.clearAll()
-                                                
-                                                // ⛔️ At this point, you should ask the user to enter his credentials again!
-                                                A0Lock.shared().present(controller, from: self)
-                                                
-                                                return
-                                        }
-                                        
-                                        
-                                        self.fetchNewIdToken(controler: controller, client: client, refreshToken: refreshToken, keychain: keychain)
-                                }
-                                
+                
+                _ = self.fetchNewIdToken(controler: self.controller, client: self.client, refreshToken: refreshToken, keychain: self.keychain)
+                    .then{ result -> Void in
+                        if let x = result as? A0Token {
+                            self.keychain.setString(x.idToken, forKey: "id_token")
+                        }
+                        
+                        
+                        self.continueToApp(controller: self.controller, vc: self)
+                    }.catch {error in
+                        
+                        self.keychain.clearAll()
+                        A0Lock.shared().present(self.controller, from: self)
                 }
                 
         }
         
+    }
+    
 }

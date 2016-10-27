@@ -12,55 +12,84 @@ import SimpleKeychain
 
 
 class ProfileTableViewController: UITableViewController, Auth0Protocol {
+    
+    var keychain = Auth0.keychain
+    
+    var client = Auth0.client
+    
+    var controller = Auth0.controller
+    
+    
+    @IBOutlet var emailTextField: UITextField!
+    
+    @IBOutlet var nicknameTextField: UITextField!
+    
+    @IBOutlet var profileImageView: UIImageView! {
+        didSet{
+            profileImageView.layer.cornerRadius = 50
+            profileImageView.layer.masksToBounds = true
+        }
+    }
+    
+    
+    @IBAction func logout(_ sender: AnyObject) {
+        keychain.clearAll()
+        Auth0.userDismissed = false
+        Auth0.loginComplete = false
+        A0Lock.shared().present(controller, from: self)
         
-        var keychain = A0SimpleKeychain(service: "Auth0")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        controller.onUserDismissBlock = {
+            self.continueToApp(controller: self.controller, vc: self)
+            Auth0.userDismissed = true
+            return
+        }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        var client = A0Lock.shared().apiClient()
+        // Do any additional setup after loading the view.
         
-        var controller = A0Lock.shared().newLockViewController()
-        
-        @IBOutlet var emailTextField: UITextField!
-        
-        @IBOutlet var nicknameTextField: UITextField!
-        
-        @IBOutlet var profileImageView: UIImageView! {
-                didSet{
-                        profileImageView.layer.cornerRadius = 50
-                        profileImageView.layer.masksToBounds = true
-                }
+        do {
+            
+            let idToken = try checkForIdToken(keychain: Auth0.keychain, controller: Auth0.controller, vc: self)
+            
+            _ = fetchUserProfile(client: client, idToken: idToken, keychain: keychain, controller: controller)
+                .then { result -> Void in
+                    
+                    if let profile = result as? A0UserProfile {
+                        self.emailTextField.text = profile.email
+                        self.nicknameTextField.text = profile.nickname
+                        self.profileImageView.sd_setImage(with: profile.picture)
+                    }
+            }
+        } catch {
+            
         }
         
         
-        @IBAction func logout(_ sender: AnyObject) {
-                keychain.clearAll()
-                
-        }
-        override func viewDidLoad() {
-                super.viewDidLoad()
-                
-                // Do any additional setup after loading the view.
-                guard let idToken = keychain.string(forKey: "id_token") else {
-                        // idToken doesn't exist, user has to enter his credentials to log in
-                        // Present A0Lock Login
-                        A0Lock.shared().present(controller, from: self)
-                        return
-                }
-        }
         
-        override func didReceiveMemoryWarning() {
-                super.didReceiveMemoryWarning()
-                // Dispose of any resources that can be recreated.
-        }
+
         
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destinationViewController.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -154,13 +154,13 @@
         <!--Data Source-->
         <scene sceneID="8Q0-Kf-AE6">
             <objects>
-                <viewController storyboardIdentifier="FavoritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ftx-ya-yvW" customClass="FavoritesViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="favorites" storyboardIdentifier="FavoritesViewController" id="Ftx-ya-yvW" customClass="FavoritesViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mIS-Ph-j1j"/>
                         <viewControllerLayoutGuide type="bottom" id="VIG-OV-sfH"/>
                     </layoutGuides>
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="0Mb-5o-dQ2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
@@ -218,7 +218,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DoB-VS-T41"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="E1F-ST-kfa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fubo_tv" translatesAutoresizingMaskIntoConstraints="NO" id="Etx-bW-ZKC"/>
@@ -405,7 +405,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pul-X2-fDc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Td6-ma-UB1" propertyAccessControl="none">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="404" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QMz-CO-CeD">
@@ -1285,7 +1285,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="dl7-Ht-Rt0">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="gfT-Xs-oKt" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="gfT-Xs-oKt" customClass="SSTabBarController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="NBC-2m-3jW">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -1314,7 +1314,7 @@
         <!--Profile Table View Controller-->
         <scene sceneID="a35-yU-6mn">
             <objects>
-                <tableViewController id="4hj-pm-nup" customClass="ProfileTableViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="profile" id="4hj-pm-nup" customClass="ProfileTableViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="4b5-Ka-0Uh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1470,7 +1470,7 @@
         <!--Favorites-->
         <scene sceneID="VPj-Lp-7BV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ma-ov-Uhn" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="favorites" automaticallyAdjustsScrollViewInsets="NO" id="9ma-ov-Uhn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="favorites" id="FFo-hD-0zQ"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -1492,7 +1492,7 @@
         <!--Profile-->
         <scene sceneID="IMr-oh-Hau">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a5R-UH-ybB" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="profile" automaticallyAdjustsScrollViewInsets="NO" id="a5R-UH-ybB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="tv-icon" id="PjR-Yv-a2l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wV3-lP-eAD">
@@ -1521,7 +1521,7 @@
         <image name="tv-icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PqR-Ou-oHG"/>
-        <segue reference="DTT-qn-3uB"/>
+        <segue reference="uH8-Eb-6tX"/>
+        <segue reference="Hcq-We-NDc"/>
     </inferredMetricsTieBreakers>
 </document>

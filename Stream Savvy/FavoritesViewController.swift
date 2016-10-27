@@ -124,6 +124,9 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                 //        self.navigationItem.hidesBackButton = true
                 //        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
                 //        self.navigationItem.leftBarButtonItem = newBackButton;
+                
+                
+                
         }
         
         override func viewDidAppear(_ animated: Bool) {
