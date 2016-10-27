@@ -43,16 +43,16 @@ NSInteger numOfStaticCell = 1;
 	[workaroundImageView addSubview:navigationImage];
 	self.navigationItem.titleView=workaroundImageView;
 	
-//	self.tableView.rowHeight = UITableViewAutomaticDimension;
-//	self.tableView.estimatedRowHeight = 328.0;
-//	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-//	[self.tableView setSeparatorColor:[UIColor blackColor]];
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
+	self.tableView.estimatedRowHeight = 328.0;
+	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+	[self.tableView setSeparatorColor:[UIColor blackColor]];
 	
-//	self.refreshControl = [[UIRefreshControl alloc] init];
-//	self.refreshControl.backgroundColor = [UIColor blackColor];
-//	self.refreshControl.tintColor = [Constants StreamSavvyRed];
-//	[self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
-//	[self.tableView addSubview:self.refreshControl];
+	self.refreshControl = [[UIRefreshControl alloc] init];
+	self.refreshControl.backgroundColor = [UIColor blackColor];
+	self.refreshControl.tintColor = [Constants StreamSavvyRed];
+	[self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
+	[self.tableView addSubview:self.refreshControl];
 	[self reload];
 }
 
@@ -97,10 +97,10 @@ NSInteger numOfStaticCell = 1;
 			[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];
 		}
 		self.guideShows = [guideShows copy];
-//		[self.tableView reloadData];
-//		if (self.refreshControl) {
-//			[self.refreshControl endRefreshing];
-//		}
+		[self.tableView reloadData];
+		if (self.refreshControl) {
+			[self.refreshControl endRefreshing];
+		}
 	}];
  }
 
@@ -133,6 +133,5 @@ NSInteger numOfStaticCell = 1;
 	lgdvc.media = channel.now_playing;
 	[self.navigationController pushViewController:lgdvc animated:YES];
 }
-
 
 @end

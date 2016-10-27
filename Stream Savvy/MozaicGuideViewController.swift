@@ -15,10 +15,10 @@ enum ADMozaikLayoutType {
         case landscape
 }
 
-class MozaicCollectionViewController: GuideObjectiveCViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource {
+class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource {
         
         
-        override var guideShows : [Any]! {
+        override var popularShows : [Any]! {
                 didSet {
                         mozCollectionView.reloadData()
                 }
@@ -136,12 +136,25 @@ class MozaicCollectionViewController: GuideObjectiveCViewController, ADMozaikLay
         
         //MARK: - UICollectionViewDataSource
         
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                let cell = collectionView.cellForItem(at: indexPath) as! OnDemandCollectionViewCell
+                
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+                let show = popularShows[indexPath.row] as! PopularShow
+                let cell = cell as! OnDemandCollectionViewCell
+                cell.imgView.sd_setImage(with: URL(string : show.image_link ))
+                cell.titleLable.text = show.title
+
+        }
+        
         func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
         }
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-                if let x = guideShows?.count {
+                if let x = popularShows?.count {
                         return x
                         
                 }
@@ -150,13 +163,9 @@ class MozaicCollectionViewController: GuideObjectiveCViewController, ADMozaikLay
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADMozaikLayoutCell", for: indexPath) as! GuideCollectionViewCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADMozaikLayoutCell", for: indexPath) as! OnDemandCollectionViewCell
                 
-                let chan = guideShows[indexPath.row] as! Channel
-                cell.imgView.sd_setImage(with: URL(string : chan.image_link))
-                cell.titleLable.text = chan.display_name
-                cell.channel = chan
-                return cell
+                               return cell
         }
         
         //MARK: - Orientation
