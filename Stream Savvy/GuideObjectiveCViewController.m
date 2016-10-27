@@ -106,32 +106,33 @@ NSInteger numOfStaticCell = 1;
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return (numOfStaticCell + self.guideShows.count / numShowsPerCell);
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//	LiveGuideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LiveGuideTableViewCell" forIndexPath:indexPath];
-//	[Constants fixSeparators:cell];
-//	cell.channel = [self.guideShows objectAtIndex:indexPath.row];
-//	cell.uivc = self;
-//	[cell setCellDetails];
-//	
-//	return cell;
-//}
-//
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//	[tableView deselectRowAtIndexPath:indexPath animated:NO];
-//	Channel *channel = [self.guideShows objectAtIndex:indexPath.row];
-//	LiveGuideDetailsViewController *lgdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveDetailsViewController"];
-//	NSLog(@"HERE");
-//	lgdvc.channel = channel;
-//	lgdvc.media = channel.now_playing;
-//	[self.navigationController pushViewController:lgdvc animated:YES];
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+        return self.guideShows.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	LiveGuideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LiveGuideTableViewCell" forIndexPath:indexPath];
+	[Constants fixSeparators:cell];
+	cell.channel = [self.guideShows objectAtIndex:indexPath.row];
+	cell.uivc = self;
+	[cell setCellDetails];
+	
+	return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	[tableView deselectRowAtIndexPath:indexPath animated:NO];
+	Channel *channel = [self.guideShows objectAtIndex:indexPath.row];
+	LiveGuideDetailsViewController *lgdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveDetailsViewController"];
+	NSLog(@"HERE");
+	lgdvc.channel = channel;
+	lgdvc.media = channel.now_playing;
+	[self.navigationController pushViewController:lgdvc animated:YES];
+}
+
 
 @end

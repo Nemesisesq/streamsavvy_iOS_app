@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString  *episodeTitle;
 @property (nonatomic, strong) NSString	*show_description;
 @property (nonatomic, strong) NSArray	*genres;
+@property (nonatomic, strong) NSDictionary *preferredImage;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
