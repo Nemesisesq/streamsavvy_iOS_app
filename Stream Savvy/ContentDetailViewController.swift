@@ -133,7 +133,7 @@ class ContentDetailViewController:  Auth0ViewController  {
         let target = segue.destination as! EpisodeCollectionViewController
         
         
-        target.content = content
+        target.content = Content.init(withPopularShow: show)
         
         
         
