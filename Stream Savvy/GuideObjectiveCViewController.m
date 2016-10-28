@@ -13,8 +13,10 @@
 #import "Channel.h"
 #import "LiveGuideTableViewCell.h"
 #import "LiveGuideDetailsViewController.h"
+#import "Stream_Savvy-Swift.h"
 
 @interface GuideObjectiveCViewController ()
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 
 
 
@@ -34,7 +36,8 @@ NSInteger numOfStaticCell = 1;
 
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
+    [super viewDidLoad];
+	
 	
 	UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
 	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
@@ -64,11 +67,21 @@ NSInteger numOfStaticCell = 1;
 
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
+    
+    if (Auth0.loggedIn) {
+        [self.loginButton setEnabled:NO];
+        [self.loginButton setTintColor:nil];
+    } else {
+        [self.loginButton setEnabled:YES];
+        [self.loginButton setTintColor:[Constants StreamSavvyRed]];
+    }
 	NSLog(@"sharedController: %@", UserLocation.sharedController);
 	[UserLocation.sharedController.locationManager startUpdatingLocation];
 	NSLog(@"startUpdatingLocation");
 	
 }
+
+
 
 -(void)viewWillDisappear:(BOOL)animated{
 	[super viewWillDisappear:animated];
@@ -132,6 +145,14 @@ NSInteger numOfStaticCell = 1;
 	lgdvc.channel = channel;
 	lgdvc.media = channel.now_playing;
 	[self.navigationController pushViewController:lgdvc animated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Login"]){
+        Auth0ViewController *vc = [segue destinationViewController];
+        vc.fromSegue = true;
+        
+    }
 }
 
 @end

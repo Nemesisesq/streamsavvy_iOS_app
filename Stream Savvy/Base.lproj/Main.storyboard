@@ -778,7 +778,16 @@
                             <outlet property="delegate" destination="FqQ-K3-7ul" id="J8U-bc-G14"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="mD9-xZ-G5h"/>
+                    <navigationItem key="navigationItem" id="mD9-xZ-G5h">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="9AI-ur-ZE5">
+                            <connections>
+                                <segue destination="nyn-XC-XPI" kind="showDetail" identifier="Login" id="bRh-gc-R6O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loginButton" destination="9AI-ur-ZE5" id="2EZ-dc-73M"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gB-nH-Wh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1035,7 +1044,16 @@
                             <outlet property="delegate" destination="TBZ-IE-z7Y" id="ovf-6R-peZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yfA-4K-PDp"/>
+                    <navigationItem key="navigationItem" id="yfA-4K-PDp">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="RM6-rl-1Co">
+                            <connections>
+                                <segue destination="nyn-XC-XPI" kind="showDetail" identifier="Login" id="J4w-fq-JgX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loginButton" destination="RM6-rl-1Co" id="1fx-sF-m82"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFZ-2Z-45V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1522,6 +1540,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uH8-Eb-6tX"/>
+        <segue reference="bRh-gc-R6O"/>
         <segue reference="Hcq-We-NDc"/>
     </inferredMetricsTieBreakers>
 </document>

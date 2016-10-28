@@ -12,7 +12,9 @@ import SimpleKeychain
 import PromiseKit
 
 
-class Auth0: NSObject {
+@objc class Auth0: NSObject {
+    
+    
     
     static var loggedIn: Bool = false
     
@@ -57,6 +59,12 @@ class Auth0: NSObject {
         
         return c!
         
+    }
+    
+    static func resetAll() {
+        Auth0.loggedIn = false
+        Auth0.userDismissed  = false
+        Auth0.loginComplete = false
     }
     
 }

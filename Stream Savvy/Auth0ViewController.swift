@@ -11,8 +11,15 @@ import Lock
 import SimpleKeychain
 import PromiseKit
 
-class Auth0ViewController: UIViewController, Auth0Protocol{
+@objc class Auth0ViewController: UIViewController, Auth0Protocol{
     
+    var fromSegue: Bool = false {
+        willSet {
+            if newValue {
+                Auth0.resetAll()
+            }
+        }
+    }
     
     let keychain = Auth0.keychain
     
@@ -20,7 +27,9 @@ class Auth0ViewController: UIViewController, Auth0Protocol{
     
     let client = A0Lock.shared().apiClient()
     
-    
+    func setFromSegue(bool:Bool){
+        fromSegue = bool
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +48,10 @@ class Auth0ViewController: UIViewController, Auth0Protocol{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+//        if Auth0.userDismissed {
+//            Auth0.userDismissed = false
+//        }
 //        do {
 //            _ =  try checkForIdToken(keychain: keychain, controller: controller, vc: self)
 //            
