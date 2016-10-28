@@ -47,7 +47,7 @@ NSInteger numOfStaticCell = 1;
 	self.navigationItem.titleView=workaroundImageView;
 	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
-	self.tableView.estimatedRowHeight = 328.0;
+//	self.tableView.estimatedRowHeight = 328.0;
 	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 	[self.tableView setSeparatorColor:[UIColor blackColor]];
 	
