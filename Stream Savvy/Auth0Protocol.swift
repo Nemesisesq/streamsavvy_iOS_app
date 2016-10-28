@@ -15,6 +15,7 @@ import PromiseKit
 @objc class Auth0: NSObject {
     
     
+    static var calledBySubclass: Bool = false
     
     static var loggedIn: Bool = false
     

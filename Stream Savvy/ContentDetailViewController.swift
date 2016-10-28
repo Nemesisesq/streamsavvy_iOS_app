@@ -60,6 +60,8 @@ class ContentDetailViewController:  Auth0ViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Auth0.calledBySubclass = true
         if favorites == nil  {
             favorites = Favorites()
         }

@@ -34,7 +34,7 @@ import PromiseKit
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        Auth0.calledBySubclass = false
         
         // Do any additional setup after loading the view.
     }
@@ -104,8 +104,10 @@ import PromiseKit
                     // ✅ At this point, you can log the user into your app,
                     Auth0.loginComplete = true
                     
-                    self.continueToApp(controller: self.controller, vc: self)
+                    if Auth0.calledBySubclass == false {
                     
+                        self.continueToApp(controller: self.controller, vc: self)
+                    }
                     
                     
                 }

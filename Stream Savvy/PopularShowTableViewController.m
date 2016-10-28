@@ -64,7 +64,7 @@ NSInteger numStaticCell = 1;
     
     if (Auth0.loggedIn) {
         [self.loginButton setEnabled:NO];
-        [self.loginButton setTintColor:nil];
+        [self.loginButton setTintColor:[UIColor clearColor]];
     } else {
         [self.loginButton setEnabled:YES];
         [self.loginButton setTintColor:[Constants StreamSavvyRed]];

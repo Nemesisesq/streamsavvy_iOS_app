@@ -34,8 +34,7 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
     
     @IBAction func logout(_ sender: AnyObject) {
         keychain.clearAll()
-        Auth0.userDismissed = false
-        Auth0.loginComplete = false
+        Auth0.resetAll()
         A0Lock.shared().present(controller, from: self)
         
     }
@@ -50,6 +49,8 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Auth0.calledBySubclass = true
         
         // Do any additional setup after loading the view.
         

@@ -118,6 +118,8 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         
         override func viewDidLoad() {
                 super.viewDidLoad()
+            
+            Auth0.calledBySubclass = true
                 //carousel.type = .cylinder
                 // Do any additional setup after loading the view.
                 

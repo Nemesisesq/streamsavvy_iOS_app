@@ -69,6 +69,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         
         override func viewDidLoad() {
                 super.viewDidLoad()
+            Auth0.calledBySubclass = true
 
 //                refreshControl?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
 //                self.mozCollectionView.addSubview(refreshControl!)
