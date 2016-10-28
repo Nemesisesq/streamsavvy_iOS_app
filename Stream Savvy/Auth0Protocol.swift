@@ -1,6 +1,6 @@
 //
 //  Auth0.swift
-//  Stream Savvy
+//  Stream Savvy 
 //
 //  Created by Carl Lewis on 10/27/16.
 //  Copyright © 2016 Stream Savvy. All rights reserved.
@@ -27,9 +27,34 @@ import PromiseKit
     
     static let client = A0Lock.shared().apiClient()
     
+    
+    
+
+    
+    
+    
     static var controller: A0LockViewController {
         let c = A0Lock.shared().newLockViewController()
         
+        let theme = A0Theme()
+        
+        theme.register(Constants.streamSavvyRed(), forKey: A0ThemePrimaryButtonNormalColor)
+        theme.register(UIColor.white, forKey: A0ThemePrimaryButtonTextColor)
+        theme.register(UIColor.black, forKey: A0ThemeScreenBackgroundColor)
+        theme.registerImage(withName: "marks_streamsavvy_mark_large", bundle: Bundle.main, forKey: A0ThemeIconImageName)
+        theme.register(UIColor.clear, forKey: A0ThemeIconBackgroundColor)
+        theme.register(UIColor.white, forKey: A0ThemeDescriptionTextColor)
+        theme.register(UIColor.white, forKey: A0ThemeSeparatorTextColor)
+        theme.register(UIColor.white, forKey: A0ThemeTitleTextColor)
+        theme.register(UIColor.white, forKey: A0ThemeSecondaryButtonTextColor)
+        theme.register(UIColor.white, forKey: A0ThemeTextFieldTextColor)
+        theme.register(UIColor.white, forKey: A0ThemeTextFieldIconColor)
+        theme.register(UIColor.white, forKey: A0ThemeTextFieldPlaceholderTextColor)
+        theme.register(Constants.streamSavvyRed(), forKey:A0ThemeCloseButtonTintColor)
+        
+        
+        
+        A0Theme.sharedInstance().register(theme)
         c?.closable = true
         
         c?.onAuthenticationBlock = { profile, token in
@@ -39,6 +64,8 @@ import PromiseKit
             UserPrefs.setToken(token?.accessToken)
             UserPrefs.setEmail(profile?.email)
             
+           
+            
             guard
                 let token = token,
                 let refreshToken = token.refreshToken
@@ -47,17 +74,16 @@ import PromiseKit
             let keychain = A0SimpleKeychain(service: "Auth0")
             keychain.setString(token.idToken, forKey: "id_token")
             keychain.setString(refreshToken, forKey: "refresh_token")
+            keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile!), forKey: "profile")
             
             
             // Don't forget to dismiss the Lock controller
             c?.dismiss(animated: true, completion: nil)
             
-            //                        self.continueToApp(controller: controller!)
-            //                                self.loginComplete = true
-            
+        
+            loggedIn = true
         }
-        
-        
+    
         return c!
         
     }
