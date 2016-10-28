@@ -11,7 +11,7 @@ import PromiseKit
 import Dollar
 
 
-class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
+class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarouselDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
         //        let constants = Constants()
         var numbers = [String]()
         var selectedShow: Content!
@@ -124,6 +124,9 @@ class FavoritesViewController: UIViewController, iCarouselDataSource, iCarouselD
                 //        self.navigationItem.hidesBackButton = true
                 //        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
                 //        self.navigationItem.leftBarButtonItem = newBackButton;
+                
+                
+                
         }
         
         override func viewDidAppear(_ animated: Bool) {

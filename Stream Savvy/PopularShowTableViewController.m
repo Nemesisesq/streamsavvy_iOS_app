@@ -12,10 +12,14 @@
 #import "Constants.h"
 #import "PopularShow.h"
 #import "ShowDetailsTableViewController.h"
+#import "Stream_Savvy-Swift.h"
 
 @interface PopularShowTableViewController ()
 
 @property (strong, nonatomic) NSArray *popularShows;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
+
 
 @end
 
@@ -25,28 +29,28 @@ NSInteger numStaticCell = 1;
 @implementation PopularShowTableViewController
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
+    [super viewDidLoad];
     
     
-	
-	UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
-	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
-	
-	UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
-	[workaroundImageView addSubview:navigationImage];
-	self.navigationItem.titleView=workaroundImageView;
-	
-	self.tableView.rowHeight = UITableViewAutomaticDimension;
-	self.tableView.estimatedRowHeight = 328.0;
-	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-	[self.tableView setSeparatorColor:[UIColor blackColor]];
-	
-	self.refreshControl = [[UIRefreshControl alloc] init];
-	self.refreshControl.backgroundColor = [UIColor blackColor];
-	self.refreshControl.tintColor = [Constants StreamSavvyRed];
-	[self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
-	[self.tableView addSubview:self.refreshControl];
-	[self reload];
+    
+    UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
+    navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
+    
+    UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
+    [workaroundImageView addSubview:navigationImage];
+    self.navigationItem.titleView=workaroundImageView;
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 328.0;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.tableView setSeparatorColor:[UIColor blackColor]];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor blackColor];
+    self.refreshControl.tintColor = [Constants StreamSavvyRed];
+    [self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    [self reload];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,28 +59,36 @@ NSInteger numStaticCell = 1;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-	[super viewWillAppear:animated];
-	[UserLocation.sharedController.locationManager startUpdatingLocation];
-	
+    [super viewWillAppear:animated];
+    [UserLocation.sharedController.locationManager startUpdatingLocation];
+    
+    if (Auth0.loggedIn) {
+        [self.loginButton setEnabled:NO];
+        [self.loginButton setTintColor:nil];
+    } else {
+        [self.loginButton setEnabled:YES];
+        [self.loginButton setTintColor:[Constants StreamSavvyRed]];
+    }
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-	[super viewWillDisappear:animated];
-	[UserLocation.sharedController.locationManager stopUpdatingLocation];
+    [super viewWillDisappear:animated];
+    [UserLocation.sharedController.locationManager stopUpdatingLocation];
 }
 
 -(void)reload{
-	[PopularShow getPopularShowsForPage:0 view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
-		NSMutableArray *popularShows = [NSMutableArray new];
-		for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
-			[popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
-		}
-		self.popularShows = [popularShows copy];
-		[self.tableView reloadData];
-		if (self.refreshControl) {
-			[self.refreshControl endRefreshing];
-		}
-	}];
+    [PopularShow getPopularShowsForPage:0 view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
+        NSMutableArray *popularShows = [NSMutableArray new];
+        for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
+            [popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
+        }
+        self.popularShows = [popularShows copy];
+        [self.tableView reloadData];
+        if (self.refreshControl) {
+            [self.refreshControl endRefreshing];
+        }
+    }];
 }
 
 #pragma mark - Table view data source
@@ -92,20 +104,28 @@ NSInteger numStaticCell = 1;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0) {
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell" forIndexPath:indexPath];
-		[Constants fixSeparators:cell];
-		return cell;
-	}
-	TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
-	[Constants fixSeparators:cell];
-	cell.isShowingPopularShows = YES;
-	cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
-	cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
-	cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
-	cell.uivc = self; 
-	[cell setCellDetails];
-	return cell;
+    if (indexPath.row == 0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell" forIndexPath:indexPath];
+        [Constants fixSeparators:cell];
+        return cell;
+    }
+    TopGridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
+    [Constants fixSeparators:cell];
+    cell.isShowingPopularShows = YES;
+    cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
+    cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
+    cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
+    cell.uivc = self; 
+    [cell setCellDetails];
+    return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Login"]){
+        Auth0ViewController *vc = [segue destinationViewController];
+        vc.fromSegue = true;
+    
+    }
 }
 
 @end

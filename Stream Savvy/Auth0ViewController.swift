@@ -11,155 +11,134 @@ import Lock
 import SimpleKeychain
 import PromiseKit
 
-class Auth0ViewController: UIViewController {
+@objc class Auth0ViewController: UIViewController, Auth0Protocol{
+    
+    var fromSegue: Bool = false {
+        willSet {
+            if newValue {
+                Auth0.resetAll()
+            }
+        }
+    }
+    
+    let keychain = Auth0.keychain
+    
+    let controller = Auth0.controller
+    
+    let client = A0Lock.shared().apiClient()
+    
+    func setFromSegue(bool:Bool){
+        fromSegue = bool
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        var loginComplete: Bool?
         
         
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
-        override func viewDidLoad() {
-                super.viewDidLoad()
-                
-                
-                // Do any additional setup after loading the view.
+//        if Auth0.userDismissed {
+//            Auth0.userDismissed = false
+//        }
+//        do {
+//            _ =  try checkForIdToken(keychain: keychain, controller: controller, vc: self)
+//            
+//        } catch MyError.Null {
+//            print("there is no token")
+//            continueToApp(controller: controller, vc: self)
+//        } catch {
+//            print("something else went wrong")
+//        }
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth0.userDismissed {
+            return
         }
         
         
         
-        override func didReceiveMemoryWarning() {
-                super.didReceiveMemoryWarning()
-                // Dispose of any resources that can be recreated.
+        controller.onUserDismissBlock = {
+            if Auth0.userDismissed == false || Auth0.loggedIn == false {
+                self.continueToApp(controller: self.controller, vc: self)
+            }
+            Auth0.userDismissed = true
+            return
+            
         }
         
-        override func viewWillAppear(_ animated: Bool) {
-                
+        
+        
+        // TODO: Logic here is kind of broken
+        
+        
+        guard let idToken = keychain.string(forKey: "id_token") else {
+            // idToken doesn't exist, user has to enter his credentials to log in
+            // Present A0Lock Login
+            A0Lock.shared().present(controller, from: self)
+            return
         }
-        override func viewDidAppear(_ animated: Bool) {
+        
+        _ = fetchUserProfile(client: client, idToken: idToken, keychain: keychain, controller: controller)
+            .then {result -> Void in
                 
+                if let profile = result as? A0UserProfile {
+                    
+                    // Our idToken is still valid...
+                    // We store the fetched user profile
+                    self.keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
+                    // ✅ At this point, you can log the user into your app,
+                    Auth0.loginComplete = true
+                    
+                    self.continueToApp(controller: self.controller, vc: self)
+                    
+                    
+                    
+                }
+            }.catch { error in
                 
-                let keychain = A0SimpleKeychain(service: "Auth0")
-                
-                let controller = A0Lock.shared().newLockViewController()
-                
-                let client = A0Lock.shared().apiClient()
-                
-                controller?.closable = true
-                
-                controller?.onAuthenticationBlock = { profile, token in
-                        // Do something with token  profile. e.g.: save them.
-                        // Lock will not save these objects for you.
-                        
-                        UserPrefs.setToken(token?.accessToken)
-                        UserPrefs.setEmail(profile?.email)
-                        
-                        guard
-                                let token = token,
-                                let refreshToken = token.refreshToken
-                                else { return }
-                        
-                        let keychain = A0SimpleKeychain(service: "Auth0")
-                        keychain.setString(token.idToken, forKey: "id_token")
-                        keychain.setString(refreshToken, forKey: "refresh_token")
-                        
-                        
-                        // Don't forget to dismiss the Lock controller
-                        controller?.dismiss(animated: true, completion: nil)
-                        
-                        self.continueToApp()
-                        //                                self.loginComplete = true
-                        
+                guard let refreshToken = self.keychain.string(forKey: "refresh_token") else {
+                    // ⚠️ idToken has expired or is no longer valid
+                    // See step 4
+                    self.keychain.clearAll()
+                    
+                    // ⛔️ At this point, you should ask the user to enter his credentials again!
+                    A0Lock.shared().present(self.controller, from: self)
+                    
+                    return
                 }
                 
                 
-                // TODO: Logic here is kind of broken
-                
-                
-                guard let idToken = keychain.string(forKey: "id_token") else {
-                        // idToken doesn't exist, user has to enter his credentials to log in
-                        // Present A0Lock Login
-                        A0Lock.shared().present(controller, from: self)
-                        return
-                }
-                
-                client.fetchUserProfile(withIdToken: idToken,
-                                        success: { profile in
-                                                // Our idToken is still valid...
-                                                // We store the fetched user profile
-                                                keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
-                                                // ✅ At this point, you can log the user into your app,
-                                                self.loginComplete = true
-                                                
-                                                controller?.dismiss(animated: true, completion: nil)
-                                                self.continueToApp()
-                                                return
-                                                
-                                                
-                                                
-                                                
-                        },
-                                        failure: { error in
-                                                // ⚠️ idToken has expired or is no longer valid
-                                                // See step 4
-                                                
-                                                guard let refreshToken = keychain.string(forKey: "refresh_token") else {
-                                                        keychain.clearAll()
-                                                        
-                                                        // ⛔️ At this point, you should ask the user to enter his credentials again!
-                                                        A0Lock.shared().present(controller, from: self)
-                                                        return
-                                                }
-                                                
-                                                client.fetchNewIdToken(withRefreshToken: refreshToken,
-                                                                       parameters: nil,
-                                                                       success: {newToken in
-                                                                        
-                                                                        keychain.setString(newToken.idToken, forKey: "id_token")
-                                                                        
-                                                                        // ✅ At this point, you can log the user into your app, by navigating to the corresponding screen
-                                                        },
-                                                                       failure: { error in
-                                                                        
-                                                                        // refreshToken is no longer valid (e.g. it has been revoked)
-                                                                        // Cleaning stored values since they are no longer valid
-                                                                        
-                                                                        keychain.clearAll()
-                                                                        
-                                                                        // ⛔️ At this point, you should ask the user to enter his credentials again!
-                                                                        
-                                                })
-                                                
-                                                
-                })
-                
-                if let c = loginComplete, c {
-                        continueToApp()
-                } else {
-                        A0Lock.shared().present(controller, from: self)
-                }
-                
-                
-                
-                
-                
-                
-        }
-        
-        func continueToApp() {
-                if let mc = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") {
-                        self.present(mc, animated: true, completion: nil)
+                _ = self.fetchNewIdToken(controler: self.controller, client: self.client, refreshToken: refreshToken, keychain: self.keychain)
+                    .then{ result -> Void in
+                        if let x = result as? A0Token {
+                            self.keychain.setString(x.idToken, forKey: "id_token")
+                        }
+                        
+                        
+                        self.continueToApp(controller: self.controller, vc: self)
+                    }.catch {error in
+                        
+                        self.keychain.clearAll()
+                        A0Lock.shared().present(self.controller, from: self)
                 }
                 
         }
         
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destinationViewController.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
+    }
+    
 }

@@ -45,9 +45,6 @@
 		BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B01D8CD4C800B472E2 /* iCarousel.m */; };
 		BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */; };
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
-		BD1B6F1D1DC103120053432E /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F1C1DC103120053432E /* RadialGradientLayer.swift */; };
-		BD1B6F221DC1AAC90053432E /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */; };
-		BD1B6F231DC1AAC90053432E /* PopularShowObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F211DC1AAC90053432E /* PopularShowObjectiveCViewController.m */; };
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
 		BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */; };
 		BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */; };
@@ -83,6 +80,10 @@
 		BDE9604B1DA8B71600E13C68 /* Upload-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE960481DA8B71600E13C68 /* Upload-50.png */; };
 		BDE9604C1DA8B71600E13C68 /* Like Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE960491DA8B71600E13C68 /* Like Filled-50.png */; };
 		BDE9604D1DA8B71600E13C68 /* Like-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE9604A1DA8B71600E13C68 /* Like-50.png */; };
+		BDEB23271DC23A0E00B21291 /* Auth0ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB23261DC23A0E00B21291 /* Auth0ViewControllerTests.swift */; };
+		BDEB232B1DC254A000B21291 /* Auth0Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */; };
+		BDEB232D1DC267D300B21291 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232C1DC267D300B21291 /* File.swift */; };
+		BDEB232F1DC279C900B21291 /* SSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232E1DC279C900B21291 /* SSTabBarController.swift */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -180,11 +181,13 @@
 		BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stream Savvy-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BD1834B51D8CDACE00B472E2 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
-		BD1B6F1C1DC103120053432E /* RadialGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
+
+
 		BD1B6F1E1DC1AAC90053432E /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		BD1B6F201DC1AAC90053432E /* PopularShowObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularShowObjectiveCViewController.h; sourceTree = "<group>"; };
 		BD1B6F211DC1AAC90053432E /* PopularShowObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularShowObjectiveCViewController.m; sourceTree = "<group>"; };
+
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
@@ -225,6 +228,10 @@
 		BDE960481DA8B71600E13C68 /* Upload-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload-50.png"; sourceTree = "<group>"; };
 		BDE960491DA8B71600E13C68 /* Like Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like Filled-50.png"; sourceTree = "<group>"; };
 		BDE9604A1DA8B71600E13C68 /* Like-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like-50.png"; sourceTree = "<group>"; };
+		BDEB23261DC23A0E00B21291 /* Auth0ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0ViewControllerTests.swift; sourceTree = "<group>"; };
+		BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0Protocol.swift; sourceTree = "<group>"; };
+		BDEB232C1DC267D300B21291 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		BDEB232E1DC279C900B21291 /* SSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +376,7 @@
 			children = (
 				9F5A4D4C1D5AE1D70057AF6D /* Stream_SavvyTests.m */,
 				9F5A4D4E1D5AE1D70057AF6D /* Info.plist */,
+				BDEB23261DC23A0E00B21291 /* Auth0ViewControllerTests.swift */,
 			);
 			path = "Stream SavvyTests";
 			sourceTree = "<group>";
@@ -449,6 +457,7 @@
 				9F5D4E921DBC197400AC7AD2 /* ContentDetailViewController.swift */,
 				BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */,
 				BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */,
+				BDEB232E1DC279C900B21291 /* SSTabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -511,7 +520,8 @@
 			isa = PBXGroup;
 			children = (
 				BD39ADF51DA230E20065F02F /* Common.swift */,
-				BD1B6F1C1DC103120053432E /* RadialGradientLayer.swift */,
+				BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */,
+				BDEB232C1DC267D300B21291 /* File.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -867,7 +877,6 @@
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
 				BD1B6F221DC1AAC90053432E /* AuthViewController.m in Sources */,
 				BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */,
-				BD1B6F1D1DC103120053432E /* RadialGradientLayer.swift in Sources */,
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */,
 				9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */,
@@ -885,12 +894,16 @@
 				BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */,
 				BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */,
 				9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */,
+				BDEB232F1DC279C900B21291 /* SSTabBarController.swift in Sources */,
 				9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */,
 				9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */,
 				BD1B6F231DC1AAC90053432E /* PopularShowObjectiveCViewController.m in Sources */,
+				BDEB232D1DC267D300B21291 /* File.swift in Sources */,
+
 				9FC296181D766F63005CB080 /* MediaSource.m in Sources */,
 				BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */,
 				BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */,
+				BDEB232B1DC254A000B21291 /* Auth0Protocol.swift in Sources */,
 				BD0D745D1D9A0E170012F184 /* Favorites.swift in Sources */,
 				BD0DCC181DB4785E005C32B2 /* UIApplication.swift in Sources */,
 				9FE1B0441D6936210013DCB1 /* Constants.m in Sources */,
@@ -905,6 +918,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDEB23271DC23A0E00B21291 /* Auth0ViewControllerTests.swift in Sources */,
 				9F5A4D4D1D5AE1D70057AF6D /* Stream_SavvyTests.m in Sources */,
 				BD9818781DB880CE003A5159 /* Auth0ViewController.swift in Sources */,
 			);
@@ -1059,6 +1073,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Stream Savvy/Stream Savvy.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L2FX277R9E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1137,6 +1152,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Stream Savvy/Stream Savvy.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L2FX277R9E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
