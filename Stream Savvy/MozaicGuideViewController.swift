@@ -103,13 +103,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         //MARK: - Helpers
         
         fileprivate func setCollectionViewLayout(_ animated: Bool, ofType type: ADMozaikLayoutType) {
-                self.mozCollectionView?.collectionViewLayout.invalidateLayout()
-                if type == .landscape {
-                        self.mozCollectionView?.setCollectionViewLayout(self.landscapeLayout, animated: true)
-                }
-                else {
-                        self.mozCollectionView?.setCollectionViewLayout(self.portraitLayout, animated: true)
-                }
+                self.mozCollectionView?.setCollectionViewLayout(self.portraitLayout, animated: true)
         }
         
         //MARK: - ADMozaikLayoutDelegate
@@ -153,6 +147,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
                 let cell = cell as! OnDemandCollectionViewCell
                 cell.imgView.sd_setImage(with: URL(string : show.image_link ))
                 cell.titleLable.text = show.title
+                cell.popularShow = show
 
         }
         
