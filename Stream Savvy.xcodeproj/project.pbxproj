@@ -1062,14 +1062,14 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L2FX277R9E;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
+					"$(inherited)/**",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Dollar",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ERJustifiedFlowLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/UICollectionViewLeftAlignedLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Lock",
-					"$(SRCROOT)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
