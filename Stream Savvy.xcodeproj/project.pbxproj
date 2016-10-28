@@ -84,6 +84,8 @@
 		BDEB232B1DC254A000B21291 /* Auth0Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */; };
 		BDEB232D1DC267D300B21291 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232C1DC267D300B21291 /* File.swift */; };
 		BDEB232F1DC279C900B21291 /* SSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232E1DC279C900B21291 /* SSTabBarController.swift */; };
+		BDEB23301DC2F96600B21291 /* PopularShowObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F211DC1AAC90053432E /* PopularShowObjectiveCViewController.m */; };
+		BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -181,13 +183,10 @@
 		BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stream Savvy-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BD1834B51D8CDACE00B472E2 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
-
-
 		BD1B6F1E1DC1AAC90053432E /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		BD1B6F201DC1AAC90053432E /* PopularShowObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularShowObjectiveCViewController.h; sourceTree = "<group>"; };
 		BD1B6F211DC1AAC90053432E /* PopularShowObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularShowObjectiveCViewController.m; sourceTree = "<group>"; };
-
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
@@ -872,10 +871,10 @@
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
 				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,
+				BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */,
 				BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */,
 				9F5A4D341D5AE1D70057AF6D /* main.m in Sources */,
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
-				BD1B6F221DC1AAC90053432E /* AuthViewController.m in Sources */,
 				BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */,
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */,
@@ -885,6 +884,7 @@
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
 				BD9563E11DB209790089652E /* LinkCollectionViewFlowLayout.swift in Sources */,
 				BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */,
+				BDEB23301DC2F96600B21291 /* PopularShowObjectiveCViewController.m in Sources */,
 				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */,
@@ -897,9 +897,7 @@
 				BDEB232F1DC279C900B21291 /* SSTabBarController.swift in Sources */,
 				9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */,
 				9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */,
-				BD1B6F231DC1AAC90053432E /* PopularShowObjectiveCViewController.m in Sources */,
 				BDEB232D1DC267D300B21291 /* File.swift in Sources */,
-
 				9FC296181D766F63005CB080 /* MediaSource.m in Sources */,
 				BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */,
 				BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */,

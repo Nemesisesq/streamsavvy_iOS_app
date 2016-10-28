@@ -139,6 +139,12 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 let cell = collectionView.cellForItem(at: indexPath) as! OnDemandCollectionViewCell
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
+            vc.show = cell.popularShow
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            
                 
         }
         

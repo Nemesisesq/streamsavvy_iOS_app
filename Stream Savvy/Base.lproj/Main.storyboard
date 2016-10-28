@@ -160,7 +160,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VIG-OV-sfH"/>
                     </layoutGuides>
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="0Mb-5o-dQ2">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
@@ -218,11 +218,11 @@
                         <viewControllerLayoutGuide type="bottom" id="DoB-VS-T41"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="E1F-ST-kfa">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fubo_tv" translatesAutoresizingMaskIntoConstraints="NO" id="Etx-bW-ZKC"/>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-d5-bOh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ContentDetailViewController" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-d5-bOh">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0a-5N-r0y">
@@ -388,7 +388,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pMC-GY-ogB"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="pMC-GY-ogB">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="WIj-1j-0VX">
+                            <connections>
+                                <segue destination="nyn-XC-XPI" kind="showDetail" identifier="Login" id="weI-IH-32F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mozCollectionView" destination="TF5-Pw-jat" id="7GM-W7-uSv"/>
                     </connections>
@@ -406,17 +414,17 @@
                         <viewControllerLayoutGuide type="bottom" id="pul-X2-fDc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Td6-ma-UB1" propertyAccessControl="none">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="404" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QMz-CO-CeD">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpiTableViewCell" rowHeight="404" id="rUL-Pb-4ff" customClass="EpisodeTableViewCell" customModule="Stream_Savvy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="404"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rUL-Pb-4ff" id="onp-Iu-NRh">
-                                            <frame key="frameInset" width="1000" height="403"/>
+                                            <frame key="frameInset" width="375" height="403"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hf5-Ek-4Y0"/>
@@ -780,11 +788,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="mD9-xZ-G5h">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="9AI-ur-ZE5">
-                            <connections>
-                                <segue destination="nyn-XC-XPI" kind="showDetail" identifier="Login" id="bRh-gc-R6O"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="9AI-ur-ZE5"/>
                     </navigationItem>
                     <connections>
                         <outlet property="loginButton" destination="9AI-ur-ZE5" id="2EZ-dc-73M"/>
@@ -1251,7 +1255,7 @@
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="On Demand" image="tv-icon" id="sw4-yP-YcI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1509,7 +1513,7 @@
                 <navigationController restorationIdentifier="profile" automaticallyAdjustsScrollViewInsets="NO" id="a5R-UH-ybB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="tv-icon" id="PjR-Yv-a2l"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wV3-lP-eAD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wV3-lP-eAD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1536,8 +1540,8 @@
         <image name="tv-icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uH8-Eb-6tX"/>
-        <segue reference="bRh-gc-R6O"/>
-        <segue reference="Hcq-We-NDc"/>
+        <segue reference="weI-IH-32F"/>
+        <segue reference="DTT-qn-3uB"/>
+        <segue reference="PqR-Ou-oHG"/>
     </inferredMetricsTieBreakers>
 </document>
