@@ -8,6 +8,7 @@
 
 import UIKit
 import Dollar
+import Lock
 
 class ContentDetailViewController:  Auth0ViewController  {
     
@@ -57,6 +58,36 @@ class ContentDetailViewController:  Auth0ViewController  {
         }
     }
     
+    @IBAction func loginFromContentDetail(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Great News!!!", message: "Login to Add Shows to Favorites", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction) in
+            
+            self.keychain.clearAll()
+            Auth0.resetAll()
+            A0Lock.shared().present(self.controller, from: self)
+        }))
+        alert.addAction(UIAlertAction(title: "No Thanks", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    func checkIfInFavorites(){
+        if favorites != nil{
+            self.favorites.contentList = self.favorites.contentList.reversed()
+            
+            
+            let titles  = self.favorites.contentList.map { $0.title } as [String]
+            
+            if $.contains(titles, value: self.content.title){
+                
+                self.addFavoriteButton.isEnabled = false
+                self.addFavoriteButton.setTitle("Already Added", for: .normal)
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,55 +96,64 @@ class ContentDetailViewController:  Auth0ViewController  {
         if favorites == nil  {
             favorites = Favorites()
         }
-        if Auth0.loggedIn {
-            _ = favorites.fetchFavorites().then{ result -> Void in
-                
-                self.favorites.contentList = self.favorites.contentList.reversed()
-                
-                
-                let titles  = self.favorites.contentList.map { $0.title } as [String]
-                
-                if $.contains(titles, value: self.content.title){
-                    
-                    self.addFavoriteButton.isEnabled = false
-                    self.addFavoriteButton.setTitle("Already Added", for: .normal)
-                }
-            }
-            
-            
-            if content == nil {
-                content = Content(withPopularShow: show)
-            }
-            
-            //MARK - Here we hid the tool bar and make the navigation tool bar transparent
-            
-            //                self.navigationController?.navigationBar.barTintColor = nil
-            
-            
-            if content == nil {
-                showTitle.text = show.title
-            } else {
-                showTitle.text = content.title
-                if media != nil {
-                    showDetailsLabel.text = media.show_description
-                }else{
-                    showDetailsLabel.text = ""
-                }
-            }
-            if show != nil {
-                SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
-                genres.text = $.join(show.genres as! [String], separator: " | ")
-                if show.duration > 0 {
-                    durationLabel.text = "\(show.duration) min"
-                }
-            }
-            // Do any additional setup after loading the view.
+        
+        
+        if content == nil {
+            content = Content(withPopularShow: show)
         }
+        
+        //MARK - Here we hid the tool bar and make the navigation tool bar transparent
+        
+        //                self.navigationController?.navigationBar.barTintColor = nil
+        
+        
+        if content == nil {
+            showTitle.text = show.title
+        } else {
+            showTitle.text = content.title
+            if media != nil {
+                showDetailsLabel.text = media.show_description
+            }else{
+                showDetailsLabel.text = ""
+            }
+        }
+        if show != nil {
+            SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
+            genres.text = $.join(show.genres as! [String], separator: " | ")
+            if show.duration > 0 {
+                durationLabel.text = "\(show.duration) min"
+            }
+        }
+        // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.tabBarController?.tabBar.isHidden = true
+        controller.onUserDismissBlock = {
+            self.addFavoriteButton.removeTarget(self, action: #selector(ContentDetailViewController.addContentToFavorites(_:)), for: UIControlEvents.touchUpInside)
+            self.addFavoriteButton.addTarget(self, action:#selector(ContentDetailViewController.loginFromContentDetail(_:)), for: UIControlEvents.touchUpInside)
+            Auth0.userDismissed = true
+        }
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Auth0.loggedIn {
+            _ = favorites.fetchFavorites().then{ result -> Void in
+                
+                self.checkIfInFavorites()
+            }
+        } else {
+            self.addFavoriteButton.removeTarget(self, action: #selector(ContentDetailViewController.addContentToFavorites(_:)), for: UIControlEvents.touchUpInside)
+            self.addFavoriteButton.addTarget(self, action:#selector(ContentDetailViewController.loginFromContentDetail(_:)), for: UIControlEvents.touchUpInside)
+        }
+
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -150,6 +190,10 @@ class ContentDetailViewController:  Auth0ViewController  {
         //                }
         
         self.navigationController?.tabBarController?.tabBar.isHidden = false
+        
+        self.addFavoriteButton.addTarget(self, action: #selector(ContentDetailViewController.addContentToFavorites(_:)), for: UIControlEvents.touchUpInside)
+        self.addFavoriteButton.removeTarget(self, action:#selector(ContentDetailViewController.loginFromContentDetail(_:)), for: UIControlEvents.touchUpInside)
+        
         
     }
     
