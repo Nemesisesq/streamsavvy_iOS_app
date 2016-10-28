@@ -45,6 +45,8 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
         
         override func viewDidLoad() {
                 super.viewDidLoad()
+            
+            Auth0.calledBySubclass = true
                 episodeTableView.separatorStyle = .none
                 self.mediaTitleLabel.text = self.content.title
                 Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
