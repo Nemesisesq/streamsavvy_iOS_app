@@ -1348,7 +1348,7 @@
                                                         <constraint firstAttribute="height" constant="11" id="7Li-H1-bRW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="0.033820135745052049" blue="0.048080924302422501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
