@@ -8,12 +8,12 @@
 
 import UIKit
 
-class GuideCollectionViewCell: UICollectionViewCell {
+class OnDemandCollectionViewCell: UICollectionViewCell {
         
         @IBOutlet var imgView: UIImageView!
         @IBOutlet var titleLable: UILabel!
         
-        var channel: Channel!
+        var popularShow: PopularShow!
         
     
 }

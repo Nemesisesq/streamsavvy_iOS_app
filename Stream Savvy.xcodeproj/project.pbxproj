@@ -70,7 +70,7 @@
 		BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */; };
 		BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9818801DBA8D10003A5159 /* UILableExtensions.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
-		BDCDA6221DBEB06800ADFB1B /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDA6211DBEB06800ADFB1B /* GuideCollectionViewCell.swift */; };
+		BDCDA6221DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDA6211DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
 		BDD2B7081DAD907F00C77260 /* DeepLinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */; };
 		BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7091DAE052700C77260 /* Sources.swift */; };
@@ -84,6 +84,8 @@
 		BDEB232B1DC254A000B21291 /* Auth0Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */; };
 		BDEB232D1DC267D300B21291 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232C1DC267D300B21291 /* File.swift */; };
 		BDEB232F1DC279C900B21291 /* SSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232E1DC279C900B21291 /* SSTabBarController.swift */; };
+		BDEB23301DC2F96600B21291 /* PopularShowObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F211DC1AAC90053432E /* PopularShowObjectiveCViewController.m */; };
+		BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +183,10 @@
 		BD1834B21D8CD7FE00B472E2 /* Stream Savvy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stream Savvy-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD1834B31D8CD7FE00B472E2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BD1834B51D8CDACE00B472E2 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
+		BD1B6F1E1DC1AAC90053432E /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		BD1B6F201DC1AAC90053432E /* PopularShowObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularShowObjectiveCViewController.h; sourceTree = "<group>"; };
+		BD1B6F211DC1AAC90053432E /* PopularShowObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularShowObjectiveCViewController.m; sourceTree = "<group>"; };
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
@@ -211,7 +217,7 @@
 		BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleKeychain.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/SimpleKeychain/SimpleKeychain.framework"; sourceTree = "<group>"; };
 		BD9818801DBA8D10003A5159 /* UILableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILableExtensions.swift; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
-		BDCDA6211DBEB06800ADFB1B /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDCDA6211DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnDemandCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7091DAE052700C77260 /* Sources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
@@ -434,6 +440,10 @@
 		9FE1B01F1D6922630013DCB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BD1B6F1E1DC1AAC90053432E /* AuthViewController.h */,
+				BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */,
+				BD1B6F201DC1AAC90053432E /* PopularShowObjectiveCViewController.h */,
+				BD1B6F211DC1AAC90053432E /* PopularShowObjectiveCViewController.m */,
 				9F28106E1D83B4B900158502 /* AuthTableViewController.h */,
 				9F28106F1D83B4B900158502 /* AuthTableViewController.m */,
 				9FE1B04E1D693B160013DCB1 /* PopularShowTableViewController.h */,
@@ -548,7 +558,7 @@
 				BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */,
 				BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */,
 				BD9563E41DB2A9C60089652E /* LinkCellCollectionReusableView.swift */,
-				BDCDA6211DBEB06800ADFB1B /* GuideCollectionViewCell.swift */,
+				BDCDA6211DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift */,
 			);
 			name = CollectionViewCells;
 			sourceTree = "<group>";
@@ -849,7 +859,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5D4E911DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m in Sources */,
-				BDCDA6221DBEB06800ADFB1B /* GuideCollectionViewCell.swift in Sources */,
+				BDCDA6221DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift in Sources */,
 				BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */,
 				9FBC97851D6D32CB004B6182 /* GuideObjectiveCViewController.m in Sources */,
 				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,
@@ -861,6 +871,7 @@
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
 				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,
+				BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */,
 				BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */,
 				9F5A4D341D5AE1D70057AF6D /* main.m in Sources */,
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
@@ -873,6 +884,7 @@
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
 				BD9563E11DB209790089652E /* LinkCollectionViewFlowLayout.swift in Sources */,
 				BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */,
+				BDEB23301DC2F96600B21291 /* PopularShowObjectiveCViewController.m in Sources */,
 				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */,
