@@ -56,6 +56,7 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
                                 self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { $0.seasonNumber! })
                                 self.seasonKeys = $.keys(self.seasons).sorted()
                                 self.seasonCollectionView.reloadData()
+                            self.seasonCollectionView.collectionViewLayout.invalidateLayout()   
                                 self.episodeTableView.reloadData()
                         }.catch { error in
                                 print(error)

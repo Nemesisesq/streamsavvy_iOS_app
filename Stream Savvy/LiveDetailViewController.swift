@@ -67,6 +67,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
             }
             
             self.appCollectionView.reloadData()
+            self.appCollectionView.collectionViewLayout.invalidateLayout()
             
             
             

@@ -96,6 +96,7 @@ class MozaicCollectionViewController: GuideObjectiveCViewController, ADMozaikLay
                 // Simply adding an object to the data source for this example
                 reload()
                 mozCollectionView.reloadData()
+            mozCollectionView.collectionViewLayout.invalidateLayout()   
                 refreshControl.endRefreshing()
         }
         

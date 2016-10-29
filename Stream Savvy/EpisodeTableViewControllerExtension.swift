@@ -9,7 +9,8 @@
 import Foundation
 
 extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataSource {
-        
+
+
         // MARK: UITableViewDelegate
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 if  (selectedIndex != indexPath.row){
@@ -22,12 +23,17 @@ extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataS
                 tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                 tableView.reloadData()
                 
-                let cell = tableView.cellForRow(at: indexPath) as! EpisodeTableViewCell
+             if let cell = tableView.cellForRow(at: indexPath) as? EpisodeTableViewCell {
                 
                 DispatchQueue.main.async {
-                        cell.linkCollectionView.reloadData()
-
+                    cell.linkCollectionView.reloadData()
+                    cell.linkCollectionView.collectionViewLayout.invalidateLayout()
+                    
                 }
+                
+            }
+                
+            
 
         }
         
