@@ -191,11 +191,6 @@
                     </scrollView>
                     <navigationItem key="navigationItem" id="X3w-mN-sdL">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="vFX-bx-kca" propertyAccessControl="none">
-                            <connections>
-                                <action selector="search:" destination="Ftx-ya-yvW" id="yIX-Rc-fCH"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="6og-Td-oyL" id="lav-1z-zzG"/>
@@ -1123,7 +1118,7 @@
         <!--On Demand-->
         <scene sceneID="iWa-Kd-oWn">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="On Demand" image="tv-icon" id="sw4-yP-YcI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
@@ -1337,7 +1332,7 @@
         <!--Live-->
         <scene sceneID="ksm-By-zQq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXZ-uX-PNa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXZ-uX-PNa" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Live" image="tv-icon" id="nLK-ZU-vND"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QPR-pz-m9s">
@@ -1359,7 +1354,7 @@
         <!--Favorites-->
         <scene sceneID="VPj-Lp-7BV">
             <objects>
-                <navigationController restorationIdentifier="favorites" automaticallyAdjustsScrollViewInsets="NO" id="9ma-ov-Uhn" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="favorites" automaticallyAdjustsScrollViewInsets="NO" id="9ma-ov-Uhn" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="favorites" id="FFo-hD-0zQ"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

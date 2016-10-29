@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchNavigationControllerViewController: UINavigationController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
-    
+    let searchResults = SearchResults()
     var resultsController: UITableViewController!
     var searchController: UISearchController!
     var searchButton: UIBarButtonItem!
@@ -17,6 +17,7 @@ class SearchNavigationControllerViewController: UINavigationController, UISearch
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -25,7 +26,7 @@ class SearchNavigationControllerViewController: UINavigationController, UISearch
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
-        var search
+        
     }
     
     
