@@ -9,6 +9,8 @@
 import UIKit
 import ADMozaicCollectionViewLayout
 import PromiseKit
+import MarqueeLabel
+
 
 enum ADMozaikLayoutType {
     case portrait
@@ -149,6 +151,9 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         cell.imgView.sd_setImage(with: URL(string : show.image_link ))
         cell.titleLable.text = show.title
         cell.popularShow = show
+        cell.titleLable.type = .leftRight
+        
+
         
     }
     

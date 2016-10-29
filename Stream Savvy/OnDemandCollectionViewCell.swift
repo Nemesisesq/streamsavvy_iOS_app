@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import MarqueeLabel
 
 class OnDemandCollectionViewCell: UICollectionViewCell {
         
         @IBOutlet var imgView: UIImageView!
-        @IBOutlet var titleLable: UILabel!
+        @IBOutlet var titleLable: MarqueeLabel!
         
         var popularShow: PopularShow!
-        
+    
     
 }

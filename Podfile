@@ -23,6 +23,7 @@ pod 'Lock', "~> 1.27"
 pod 'Auth0', '1.0.0'
 pod 'SimpleKeychain', '~> 0.7'
 pod 'ADMozaicCollectionViewLayout', '~> 2.0'
+pod "MarqueeLabel/Swift"
 
 platform :ios, '10.0'
 
