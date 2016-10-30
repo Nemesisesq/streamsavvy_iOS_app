@@ -19,7 +19,7 @@ enum ADMozaikLayoutType {
 
 class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource {
     
-    
+    var searchButton: UIBarButtonItem!
     override var popularShows : [Any]! {
         didSet {
             mozCollectionView.reloadData()
@@ -35,6 +35,12 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     let columnWidth = UIScreen.main.bounds.size.width / 3
     
     @IBOutlet var mozCollectionView: UICollectionView!
+    
+    @IBAction func search(_ sender:UIBarButtonItem) {
+        if let x = self.navigationController as? SearchNavigationControllerViewController {
+            x.search()
+        }
+    }
     
     
     //        lazy var refreshControl: UIRefreshControl = {
@@ -73,8 +79,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         super.viewDidLoad()
         Auth0.calledBySubclass = true
         
-        //                refreshControl?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
-        //                self.mozCollectionView.addSubview(refreshControl!)
+        searchButton = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(self.search(_:)))
+        searchButton.tintColor = Constants.streamSavvyRed() 
+        
+        navigationItem.rightBarButtonItem = searchButton
         
     }
     

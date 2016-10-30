@@ -345,6 +345,7 @@
 		9F5A4D311D5AE1D70057AF6D /* Stream Savvy */ = {
 			isa = PBXGroup;
 			children = (
+				BDB8176B1DC5A1F2007EA0C8 /* Navigation */,
 				BD98187D1DB94198003A5159 /* Stream Savvy.entitlements */,
 				9FE1B0581D693DFF0013DCB1 /* Utility Belt */,
 				BD9563DF1DB2091A0089652E /* Layouts */,
@@ -463,7 +464,6 @@
 				BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */,
 				BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */,
 				BDEB232E1DC279C900B21291 /* SSTabBarController.swift */,
-				BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -557,6 +557,14 @@
 				BDAEC8A71DAEE791001370F6 /* lodash.js */,
 			);
 			name = javascript;
+			sourceTree = "<group>";
+		};
+		BDB8176B1DC5A1F2007EA0C8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */,
+			);
+			name = Navigation;
 			sourceTree = "<group>";
 		};
 		BDD2B7021DAD8FA800C77260 /* CollectionViewCells */ = {

@@ -13,13 +13,13 @@ class SearchNavigationControllerViewController: UINavigationController, UISearch
     let searchResults = SearchResults()
     var resultsController: UITableViewController!
     var searchController: UISearchController!
-    var searchButton: UIBarButtonItem!
+  
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+              
         // Do any additional setup after loading the view.
     }
 
@@ -30,8 +30,13 @@ class SearchNavigationControllerViewController: UINavigationController, UISearch
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
     
-    @IBAction func search(_ sender: UIBarButtonItem) {
+    
+     func search() {
         //Here we set the search bar and the results table
         resultsController = UITableViewController(style: .plain)
         resultsController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ResultCell")
