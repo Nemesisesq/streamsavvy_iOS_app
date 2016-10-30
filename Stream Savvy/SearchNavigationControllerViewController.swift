@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchNavigationControllerViewController: UINavigationController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
+    var selectedShow: Content!
     let searchResults = SearchResults()
     var resultsController: UITableViewController!
     var searchController: UISearchController!
