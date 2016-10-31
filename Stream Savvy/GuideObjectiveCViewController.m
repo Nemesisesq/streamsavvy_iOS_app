@@ -143,6 +143,11 @@ NSInteger numOfStaticCell = 1;
         return self.guideShows.count;
 }
 
+- (double)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+	return 68;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	LiveGuideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LiveGuideTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];

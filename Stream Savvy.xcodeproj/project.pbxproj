@@ -10,6 +10,7 @@
 		0C95D34F82A4B97A6F6711DA /* Pods_Stream_Savvy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6565779394F3C155499BC5F3 /* Pods_Stream_Savvy.framework */; };
 		6C1C1F5EEFDAC478D7452535 /* Pods_Stream_SavvyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */; };
 		9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28106F1D83B4B900158502 /* AuthTableViewController.m */; };
+		9F402A2D1DC773AD00DA651E /* RadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F402A2C1DC773AD00DA651E /* RadialGradientLayer.m */; };
 		9F5A4D341D5AE1D70057AF6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D331D5AE1D70057AF6D /* main.m */; };
 		9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A4D361D5AE1D70057AF6D /* AppDelegate.m */; };
 		9F5A4D3D1D5AE1D70057AF6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A4D3B1D5AE1D70057AF6D /* Main.storyboard */; };
@@ -119,6 +120,8 @@
 		95C6B4F6B12A07F183C8F7A0 /* Pods_Stream_SavvyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stream_SavvyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F28106E1D83B4B900158502 /* AuthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTableViewController.h; sourceTree = "<group>"; };
 		9F28106F1D83B4B900158502 /* AuthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTableViewController.m; sourceTree = "<group>"; };
+		9F402A2B1DC773AD00DA651E /* RadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadialGradientLayer.h; sourceTree = "<group>"; };
+		9F402A2C1DC773AD00DA651E /* RadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadialGradientLayer.m; sourceTree = "<group>"; };
 		9F5A4D2F1D5AE1D70057AF6D /* Stream Savvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stream Savvy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5A4D331D5AE1D70057AF6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F5A4D351D5AE1D70057AF6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -505,6 +508,8 @@
 				9FE1B0361D6936210013DCB1 /* AFAPIClient.m */,
 				9FE1B0371D6936210013DCB1 /* Constants.h */,
 				9FE1B0381D6936210013DCB1 /* Constants.m */,
+				9F402A2B1DC773AD00DA651E /* RadialGradientLayer.h */,
+				9F402A2C1DC773AD00DA651E /* RadialGradientLayer.m */,
 				9FE1B03A1D6936210013DCB1 /* SDWebModel.h */,
 				9FE1B0391D6936210013DCB1 /* SDWebModel.m */,
 				9FE1B03F1D6936210013DCB1 /* UserLocation.h */,
@@ -926,6 +931,7 @@
 				BD0DCC181DB4785E005C32B2 /* UIApplication.swift in Sources */,
 				9FE1B0441D6936210013DCB1 /* Constants.m in Sources */,
 				BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */,
+				9F402A2D1DC773AD00DA651E /* RadialGradientLayer.m in Sources */,
 				BD0D74611D9AB1120012F184 /* EpisodeCollectionViewController.swift in Sources */,
 				9FC296121D76621F005CB080 /* ShowDetailsTableViewCell.m in Sources */,
 				BDD2B7081DAD907F00C77260 /* DeepLinkCollectionViewCell.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "Constants.h"
+#import "RadialGradientLayer.h"
 
 @implementation Constants
 
@@ -76,9 +77,11 @@
 	NSLog(@"\t\t\t%d\t\t%s\t\t%@", __LINE_, __PRETTY_FUNCTION_, log);
 }
 
-+(void)addRadalGradientForImageView:(UIImageView *)imageView{
-        CAGradientLayer *gradientLayer = [CAGradientLayer new];
-        gradientLayer.frame = imageView.bounds;
++(void)addRadialGradientForImageView:(UIImageView *)imageView{
+	RadialGradientLayer *gradientLayer = [RadialGradientLayer new];
+	gradientLayer.frame = imageView.bounds;
+	[imageView.layer setSublayers:@[]];
+	[imageView.layer addSublayer:gradientLayer];
 }
 
 

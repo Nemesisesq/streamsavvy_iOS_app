@@ -157,12 +157,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         cell.titleLable.text = show.title
         cell.popularShow = show
         cell.titleLable.type = .leftRight
-	print("\(cell)")
-	cell.imgView.tintColor = UIColor.clear
-        Constants.addGradient(for: cell.imgView)
-	print("HMM")
+	Constants.addGradient(for: cell.imgView)
+
     }
-    
+	
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -178,8 +176,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADMozaikLayoutCell", for: indexPath) as! OnDemandCollectionViewCell
-        
-        return cell
+
+	
+	
+	return cell
     }
     
     //MARK: - Orientation

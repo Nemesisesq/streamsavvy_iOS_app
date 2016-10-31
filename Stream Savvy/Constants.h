@@ -24,6 +24,8 @@
 
 +(NSString *)trim:(NSString *)string;
 
++(void)addRadialGradientForImageView:(UIImageView *)imageView;
+	
 + (void)addGradientForImageView:(UIImageView *)imageView;
 
 +(NSString*)formalTimeWithTimeZone:(NSString *)time;
