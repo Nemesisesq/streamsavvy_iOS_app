@@ -19,6 +19,8 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         let favorites = Favorites()
                var resultsController: UITableViewController!
         var searchController: UISearchController!
+    
+    var searchButton: UIBarButtonItem!
         @IBOutlet var carousel: iCarousel!
         @IBOutlet var emptyLabel: UILabel!
 
@@ -26,21 +28,8 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         
         @IBAction func search(_ sender: UIBarButtonItem) {
                 //Here we set the search bar and the results table
-                resultsController = UITableViewController(style: .plain)
-                resultsController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ResultCell")
-                resultsController.tableView.dataSource = self
-                resultsController.tableView.delegate = self
-                
-                searchController = UISearchController(searchResultsController: nil)
-                //        searchController.searchBar.searchBarStyle = .prominent
-                searchController.searchResultsUpdater = self
-                
-                
-                self.searchController.hidesNavigationBarDuringPresentation = false;
-                self.definesPresentationContext = false;
-                
-                self.present(searchController, animated:true, completion: { print("Done")})
-        }
+                (self.navigationController as! SearchNavigationControllerViewController).search()
+    }
         
         
         
@@ -122,7 +111,16 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
             Auth0.calledBySubclass = true
                 //carousel.type = .cylinder
                 // Do any additional setup after loading the view.
-                
+            
+            
+            
+            searchButton = UIBarButtonItem.init(barButtonSystemItem: .search, target:self , action: #selector(self.search(_:)))
+            searchButton.tintColor  = Constants.streamSavvyRed()
+            self.navigationItem.rightBarButtonItem = searchButton
+            
+            
+            
+            
                 //        self.navigationItem.hidesBackButton = true
                 //        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
                 //        self.navigationItem.leftBarButtonItem = newBackButton;
