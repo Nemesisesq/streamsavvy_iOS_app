@@ -24,8 +24,7 @@ class ContentDetailViewController: UIViewController  {
         var sources: [MediaSource]!
         
         var favorites: Favorites! = Favorites()
-        
-        
+	
 	@IBOutlet weak var showDetailsLabel: UILabel!
         @IBOutlet var genres: UILabel!
         @IBOutlet var showTitle: UILabel!
@@ -45,8 +44,7 @@ class ContentDetailViewController: UIViewController  {
                                 print(err)
                 }
         }
-        
-        
+	
         override func viewDidLoad() {
                 super.viewDidLoad()
                 
@@ -58,8 +56,7 @@ class ContentDetailViewController: UIViewController  {
                 
                 //                self.navigationController?.navigationBar.barTintColor = nil
                 
-                
-                if content == nil {
+		if content == nil {
                         showTitle.text = show.title
                 } else {
                         showTitle.text = content.title
@@ -67,7 +64,7 @@ class ContentDetailViewController: UIViewController  {
 				showDetailsLabel.text = media.show_description
 			}else{
 				showDetailsLabel.text = ""
-			}	
+			}
                 }
                 if show != nil {
 			SDWebModel.loadImage(for: backgroundImageView, withRemoteURL: show.image_link)
@@ -120,18 +117,5 @@ class ContentDetailViewController: UIViewController  {
                 self.navigationController?.tabBarController?.tabBar.isHidden = false
                 
         }
-        
-        
-        
-        //        override func viewDidDisappear(_ animated: Bool) {
-        //                super.viewDidDisappear(animated)
-        //
-        //                if let tabBarController = self.navigationController?.tabBarController {
-        //                        tabBarController.tabBar.isHidden = false
-        //                }
-        //                
-        //                self.navigationController?.tabBarController?.tabBar.isHidden = false
-        //        }
-        
         
 }
