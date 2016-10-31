@@ -50,16 +50,16 @@ NSInteger numOfStaticCell = 1;
 	
     UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
 	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
-
 	UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
 	[workaroundImageView addSubview:navigationImage];
 	self.navigationItem.titleView=workaroundImageView;
     
     UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search:)];
-    
     searchButton.tintColor = [Constants StreamSavvyRed];
-    
     self.navigationItem.rightBarButtonItem = searchButton;
+    
+    if Auth0.loggedIn == False
+    UIBarButtonItem *LoginButton =
     
 	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
