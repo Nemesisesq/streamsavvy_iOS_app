@@ -16,5 +16,17 @@ class OnDemandCollectionViewCell: UICollectionViewCell {
         
         var popularShow: PopularShow!
     
-    
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		
+		Constants.addGradient(for: imgView)
+
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+//		fatalError("init(coder:) has not been implemented")
+		Constants.addGradient(for: imgView)
+
+	}
 }
