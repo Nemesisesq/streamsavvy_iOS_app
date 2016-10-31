@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ADMozaicCollectionViewLayout/ADMozaicCollectionViewLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Auth0/Auth0.framework"
@@ -95,6 +96,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Gloss/Gloss.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Lock/Lock.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MarqueeLabel/MarqueeLabel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PromiseKit/PromiseKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SCLAlertView-Objective-C/SCLAlertView_Objective_C.framework"
@@ -104,6 +106,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/UICollectionViewLeftAlignedLayout/UICollectionViewLeftAlignedLayout.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ADMozaicCollectionViewLayout/ADMozaicCollectionViewLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Auth0/Auth0.framework"
@@ -115,6 +118,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Gloss/Gloss.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Lock/Lock.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MarqueeLabel/MarqueeLabel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PromiseKit/PromiseKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SCLAlertView-Objective-C/SCLAlertView_Objective_C.framework"

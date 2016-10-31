@@ -76,8 +76,15 @@
 	NSLog(@"\t\t\t%d\t\t%s\t\t%@", __LINE_, __PRETTY_FUNCTION_, log);
 }
 
++(void)addRadalGradientForImageView:(UIImageView *)imageView{
+        CAGradientLayer *gradientLayer = [CAGradientLayer new];
+        gradientLayer.frame = imageView.bounds;
+}
+
 
 + (void)addGradientForImageView:(UIImageView *)imageView{
+	NSLog(@"## %@", imageView);
+	NSLog(@"@@ %@", imageView.layer.sublayers);
 	imageView.layer.sublayers = @[];
 	CAGradientLayer *gradientLayer = [CAGradientLayer layer];
 	gradientLayer.frame =  CGRectMake(
@@ -87,19 +94,21 @@
 					  imageView.frame.size.height);
 	
 	gradientLayer.colors = [NSArray arrayWithObjects:
-				(id)[UIColor clearColor].CGColor,  // transparent
-				(id)[UIColor blackColor].CGColor, // black
+				(id)[UIColor blackColor].CGColor,  // transparent
+				(id)[UIColor clearColor].CGColor, // black
 				nil];
 	
 	gradientLayer.locations = [NSArray arrayWithObjects:
 				   [NSNumber numberWithFloat:00.0f],
-				   [NSNumber numberWithFloat:0.95f],
+				   [NSNumber numberWithFloat:0.4f],
 				   nil];
 	
 	//If you want to have a border for this layer also
 	gradientLayer.borderColor = [UIColor clearColor].CGColor;
 	gradientLayer.borderWidth = 1;
+	[imageView.layer setSublayers:@[]];
 	[imageView.layer insertSublayer:gradientLayer atIndex:0];
+	NSLog(@"** %@", imageView.layer.sublayers);
 }
 
 	//	2016-08-24T19:00:00Z

@@ -6,18 +6,21 @@
 //  Copyright © 2016 Stream Savvy. All rights reserved.
 //
 
-#import "GuideTableViewController.h"
+#import "GuideObjectiveCViewController.h"
 #import "UserLocation.h"
 #import "TopGridTableViewCell.h"
 #import "Constants.h"
 #import "Channel.h"
 #import "LiveGuideTableViewCell.h"
 #import "LiveGuideDetailsViewController.h"
+#import "Stream_Savvy-Swift.h"
 
-@interface GuideTableViewController ()
+@interface GuideObjectiveCViewController ()
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 
-@property (strong, nonatomic) NSArray *guideShows;
 
+
+- (NSArray *) getGuideShows;
 @end
 
 
@@ -25,20 +28,42 @@ NSInteger numShowsPerCell = 3;
 NSInteger numOfStaticCell = 1;
 
 
-@implementation GuideTableViewController
+@implementation GuideObjectiveCViewController
+
+- (NSArray *) getGuideShows {
+        return _guideShows;
+}
+
+-(IBAction)search:(id)sender
+{
+    
+    if([self.navigationController isKindOfClass:[SearchNavigationControllerViewController class]])
+    {
+        [((SearchNavigationControllerViewController *)self.navigationController) search];
+        
+    }
+}
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
+    [super viewDidLoad];
+
 	
-	UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
+    UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
 	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
-	
+
 	UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
 	[workaroundImageView addSubview:navigationImage];
 	self.navigationItem.titleView=workaroundImageView;
+    
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search:)];
+    
+    searchButton.tintColor = [Constants StreamSavvyRed];
+    
+    self.navigationItem.rightBarButtonItem = searchButton;
+    
 	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
-	self.tableView.estimatedRowHeight = 328.0;
+//	self.tableView.estimatedRowHeight = 328.0;
 	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 	[self.tableView setSeparatorColor:[UIColor blackColor]];
 	
@@ -58,11 +83,21 @@ NSInteger numOfStaticCell = 1;
 
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
+    
+    if (Auth0.loggedIn) {
+        [self.loginButton setEnabled:NO];
+        [self.loginButton setTintColor:[UIColor clearColor]];
+    } else {
+        [self.loginButton setEnabled:YES];
+        [self.loginButton setTintColor:[Constants StreamSavvyRed]];
+    }
 	NSLog(@"sharedController: %@", UserLocation.sharedController);
 	[UserLocation.sharedController.locationManager startUpdatingLocation];
 	NSLog(@"startUpdatingLocation");
 	
 }
+
+
 
 -(void)viewWillDisappear:(BOOL)animated{
 	[super viewWillDisappear:animated];
@@ -74,10 +109,11 @@ NSInteger numOfStaticCell = 1;
 -(void)reload{
 	float lat = UserLocation.sharedController.locationManager.location.coordinate.latitude;
 	float lon = UserLocation.sharedController.locationManager.location.coordinate.longitude;
+        
 	[Channel getGuideForLattitude:lat Longitude:lon view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
 		NSMutableArray *guideShows = [NSMutableArray new];
 		//////////////////////this needs edited
-		int max_to_load = 0;
+//		int max_to_load = 0;
 		// itll crash if you uncomment all of these
 					NSLog(@"\n\n\n\t\t0\n\n\n%@", JSON);
 		////			NSLog(@"\n\n\n\t\t1\n\n\n%@", [[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"]);
@@ -85,8 +121,8 @@ NSInteger numOfStaticCell = 1;
 		////			NSLog(@"\n\n\n\t\t3\n\n\n%@", [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]);
 		
 		for (NSDictionary *region_channels in (NSArray *)JSON) {
-			if (max_to_load > 99) break;
-			max_to_load ++;
+//			if (max_to_load > 99) break;
+//			max_to_load ++;
 			[guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];
 		}
 		self.guideShows = [guideShows copy];
@@ -104,7 +140,7 @@ NSInteger numOfStaticCell = 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (numOfStaticCell + self.guideShows.count / numShowsPerCell);
+        return self.guideShows.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -125,6 +161,14 @@ NSInteger numOfStaticCell = 1;
 	lgdvc.channel = channel;
 	lgdvc.media = channel.now_playing;
 	[self.navigationController pushViewController:lgdvc animated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Login"]){
+        Auth0ViewController *vc = [segue destinationViewController];
+        vc.fromSegue = true;
+        
+    }
 }
 
 @end

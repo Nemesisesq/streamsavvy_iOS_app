@@ -27,7 +27,11 @@
 	[Constants addGradientForImageView:self.backGroundImageView];
 
 	[SDWebModel loadImageFor:self.networkImageView withRemoteURL:		self.channel.image_link];
-//	[SDWebModel loadImageFor:self.backGroundImageView withRemoteURL:		self.channel.now_playing];
+        
+        NSString *url = [NSString stringWithFormat:@"http://developer.tmsimg.com/%@?api_key=3w8hvfmfxjuwgvbqkahrss35", [self.channel.now_playing.preferredImage valueForKey:@"uri"]];
+        
+        
+	[SDWebModel loadImageFor:self.backGroundImageView withRemoteURL:		url];
 	
 	self.titleLabel.text = self.channel.now_playing.title;
 	if (self.channel.now_playing.duration > 60){

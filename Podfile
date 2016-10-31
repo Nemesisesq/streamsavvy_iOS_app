@@ -1,7 +1,8 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '8.0'
 # Uncomment this line if you're using Swift
- use_frameworks!
+
+use_frameworks!
 
 target 'Stream Savvy' do
 
@@ -21,7 +22,8 @@ pod 'UICollectionViewLeftAlignedLayout'
 pod 'Lock', "~> 1.27"
 pod 'Auth0', '1.0.0'
 pod 'SimpleKeychain', '~> 0.7'
-
+pod 'ADMozaicCollectionViewLayout', '~> 2.0'
+pod "MarqueeLabel/Swift"
 
 platform :ios, '10.0'
 

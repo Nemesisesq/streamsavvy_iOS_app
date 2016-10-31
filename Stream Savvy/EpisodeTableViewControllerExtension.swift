@@ -9,7 +9,8 @@
 import Foundation
 
 extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataSource {
-        
+
+
         // MARK: UITableViewDelegate
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 if  (selectedIndex != indexPath.row){
@@ -21,15 +22,42 @@ extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataS
                 }
                 tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                 tableView.reloadData()
-                let cell = tableView.cellForRow(at: indexPath) as! EpisodeTableViewCell
-                cell.linkCollectionView.reloadData()
+                
+             if let cell = tableView.cellForRow(at: indexPath) as? EpisodeTableViewCell {
+                
+                DispatchQueue.main.async {
+                    cell.linkCollectionView.reloadData()
+                    cell.linkCollectionView.collectionViewLayout.invalidateLayout()
+                    
+                }
+                
+            }
+                
+            
+
         }
         
         
         func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+                
                 if let cell = cell as? EpisodeTableViewCell {
                         
-                        cell.linkCollectionView.reloadData()
+                        episode = season[indexPath.row]
+                        
+                        // let episode = self.seasons[seasonky(currentIndex)]?[indexPath.row]
+                        
+                        cell.seEp?.text = "Episode \(episode!.episodeNumber!)"
+                        
+                        cell.linkCollectionView.isHidden = (selectedIndex != indexPath.row)
+                        
+                        cell.epTitle?.text = "\(episode!.title!)"
+                        
+                        cell.episode = episode
+                        
+                        cell.episodeImage.sd_setImage(with: URL(string: (episode?.thumbnail304X171)!))
+                        
+                        cell.episodeImage?.contentMode = .scaleAspectFill
+                        
                 }
         }
         // MARK: UITableViewDataSource
@@ -62,26 +90,11 @@ extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataS
                 
         }
         
+        
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "EpiTableViewCell", for: indexPath) as! EpisodeTableViewCell
                 
-                episode = season[indexPath.row]
-                
-                // let episode = self.seasons[seasonky(currentIndex)]?[indexPath.row]
-                
-                cell.seEp?.text = "Episode \(episode!.episodeNumber!)"
-                
-                cell.linkCollectionView.isHidden = (selectedIndex != indexPath.row)
-                
-                cell.epTitle?.text = "\(episode!.title!)"
-                
-                cell.episode = episode
-                
-                SDWebModel.loadImage(for: cell.episodeImage, withRemoteURL: episode?.thumbnail608X342)
-                
-                cell.episodeImage?.contentMode = .scaleAspectFill
-                
-                
+                               
                 return cell
         }
         
