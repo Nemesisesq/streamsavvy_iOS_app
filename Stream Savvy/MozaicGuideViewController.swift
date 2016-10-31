@@ -20,6 +20,8 @@ enum ADMozaikLayoutType {
 class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource {
     
     var searchButton: UIBarButtonItem!
+    var loginButton: UIBarButtonItem!
+    
     override var popularShows : [Any]! {
         didSet {
             mozCollectionView.reloadData()
@@ -40,6 +42,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         if let x = self.navigationController as? SearchNavigationControllerViewController {
             x.search()
         }
+    }
+    
+    @IBAction func goToLogin(_ sender:UIBarButtonItem) {
+        self.performSegue(withIdentifier: "Live", sender: self)
     }
     
     
@@ -80,9 +86,12 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         Auth0.calledBySubclass = true
         
         searchButton = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(self.search(_:)))
-        searchButton.tintColor = Constants.streamSavvyRed() 
+        searchButton.tintColor = Constants.streamSavvyRed()
         
-        navigationItem.rightBarButtonItem = searchButton
+        loginButton = UIBarButtonItem.init(title: "Login", style: .plain, target: self, action: #selector(self.goToLogin(_:)))
+        loginButton.tintColor = Constants.streamSavvyRed()
+        
+        self.navigationItem.rightBarButtonItems = [loginButton, searchButton]
         
     }
     
@@ -113,7 +122,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     //MARK: - Helpers
     
     fileprivate func setCollectionViewLayout(_ animated: Bool, ofType type: ADMozaikLayoutType) {
-        self.mozCollectionView?.setCollectionViewLayout(self.portraitLayout, animated: true)
+        self.mozCollectionView?.setCollectionViewLayout(self.portraitLayout, animated: false)
     }
     
     //MARK: - ADMozaikLayoutDelegate

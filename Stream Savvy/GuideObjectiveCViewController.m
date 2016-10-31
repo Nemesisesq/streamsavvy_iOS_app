@@ -16,11 +16,12 @@
 #import "Stream_Savvy-Swift.h"
 
 @interface GuideObjectiveCViewController ()
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
+//@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 
 
 
 - (NSArray *) getGuideShows;
+@property (strong, nonnull) UIBarButtonItem *loginButton;
 @end
 
 
@@ -32,6 +33,10 @@ NSInteger numOfStaticCell = 1;
 
 - (NSArray *) getGuideShows {
         return _guideShows;
+}
+
+-(IBAction)goToLogin:(id)sender {
+    [self performSegueWithIdentifier:@"Live" sender:self];
 }
 
 -(IBAction)search:(id)sender
@@ -56,10 +61,15 @@ NSInteger numOfStaticCell = 1;
     
     UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search:)];
     searchButton.tintColor = [Constants StreamSavvyRed];
-    self.navigationItem.rightBarButtonItem = searchButton;
     
-    if Auth0.loggedIn == False
-    UIBarButtonItem *LoginButton =
+    
+    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStylePlain target:self action:@selector(goToLogin:)];
+    loginButton.tintColor = [Constants StreamSavvyRed];
+    
+    
+    NSArray *tempArray = [[NSArray alloc] initWithObjects:loginButton, searchButton, nil];
+    self.navigationItem.rightBarButtonItems = tempArray;
+    
     
 	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
