@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchNavigationControllerViewController: UINavigationController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
+@objc class SearchNavigationControllerViewController: UINavigationController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
     var selectedShow: Content!
     let searchResults = SearchResults()
     var resultsController: UITableViewController!
@@ -36,7 +36,7 @@ class SearchNavigationControllerViewController: UINavigationController, UISearch
     }
     
     
-     func search() {
+    func search() {
         //Here we set the search bar and the results table
         resultsController = UITableViewController(style: .plain)
         resultsController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ResultCell")

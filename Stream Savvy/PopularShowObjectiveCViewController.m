@@ -27,12 +27,12 @@
     
     
 	
-	//UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
-	//navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
+    UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
+	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
 	
-	//UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
-	//[workaroundImageView addSubview:navigationImage];
-	//self.navigationItem.titleView=workaroundImageView;
+	UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
+	[workaroundImageView addSubview:navigationImage];
+	self.navigationItem.titleView=workaroundImageView;
 	
 //	self.tableView.rowHeight = UITableViewAutomaticDimension;
 //	self.tableView.estimatedRowHeight = 328.0;

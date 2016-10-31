@@ -31,7 +31,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                 resultsController.tableView.dataSource = self
                 resultsController.tableView.delegate = self
                 
-                searchController = UISearchController(searchResultsController: resultsController)
+                searchController = UISearchController(searchResultsController: nil)
                 //        searchController.searchBar.searchBarStyle = .prominent
                 searchController.searchResultsUpdater = self
                 

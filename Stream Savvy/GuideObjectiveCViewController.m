@@ -34,17 +34,33 @@ NSInteger numOfStaticCell = 1;
         return _guideShows;
 }
 
+-(IBAction)search:(id)sender
+{
+    
+    if([self.navigationController isKindOfClass:[SearchNavigationControllerViewController class]])
+    {
+        [((SearchNavigationControllerViewController *)self.navigationController) search];
+        
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 	
-	
-	//UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
-//	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
-//
-//	UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
-//	[workaroundImageView addSubview:navigationImage];
-//	self.navigationItem.titleView=workaroundImageView;
+    UIImageView *navigationImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 34)];
+	navigationImage.image=[UIImage imageNamed:@"streamsavvy-wordmark-large"];
+
+	UIImageView *workaroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 34)];
+	[workaroundImageView addSubview:navigationImage];
+	self.navigationItem.titleView=workaroundImageView;
+    
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search:)];
+    
+    searchButton.tintColor = [Constants StreamSavvyRed];
+    
+    self.navigationItem.rightBarButtonItem = searchButton;
+    
 	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 //	self.tableView.estimatedRowHeight = 328.0;

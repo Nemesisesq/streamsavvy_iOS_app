@@ -408,7 +408,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="pMC-GY-ogB" customClass="CustomNavigationItem" customModule="Stream_Savvy" customModuleProvider="target"/>
+                    <navigationItem key="navigationItem" id="pMC-GY-ogB"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mozCollectionView" destination="TF5-Pw-jat" id="7GM-W7-uSv"/>
@@ -820,6 +820,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7uo-Bq-ORw">
+                            <rect key="frame" x="0.0" y="128" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LiveGuideTableViewCell" rowHeight="100" id="SV7-G2-Ks2" customClass="LiveGuideTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -1103,7 +1108,7 @@
         <!--On Demand-->
         <scene sceneID="iWa-Kd-oWn">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OnDemandNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wOq-CV-4sH" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="On Demand" image="tv-icon" id="sw4-yP-YcI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="streamsavvy-wordmark-large" backIndicatorImage="streamsavvy-wordmark-large" id="awP-mh-OGV">
@@ -1317,7 +1322,7 @@
         <!--Live-->
         <scene sceneID="ksm-By-zQq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXZ-uX-PNa" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LiveNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xXZ-uX-PNa" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Live" image="tv-icon" id="nLK-ZU-vND"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QPR-pz-m9s">
@@ -1339,7 +1344,7 @@
         <!--Favorites-->
         <scene sceneID="VPj-Lp-7BV">
             <objects>
-                <navigationController restorationIdentifier="favorites" automaticallyAdjustsScrollViewInsets="NO" id="9ma-ov-Uhn" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="favorites" storyboardIdentifier="FavoritesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="9ma-ov-Uhn" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="favorites" id="FFo-hD-0zQ"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -1361,7 +1366,7 @@
         <!--Profile-->
         <scene sceneID="IMr-oh-Hau">
             <objects>
-                <navigationController restorationIdentifier="profile" automaticallyAdjustsScrollViewInsets="NO" id="a5R-UH-ybB" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="profile" storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="a5R-UH-ybB" customClass="SearchNavigationControllerViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="tv-icon" id="PjR-Yv-a2l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wV3-lP-eAD">
