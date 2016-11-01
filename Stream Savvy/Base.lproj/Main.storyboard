@@ -196,7 +196,6 @@
                         <outlet property="carousel" destination="6og-Td-oyL" id="lav-1z-zzG"/>
                         <outlet property="emptyLabel" destination="yGj-U5-kDj" id="YTa-3H-khG"/>
                         <segue destination="LNb-Yl-gEE" kind="show" identifier="EpisodeSegue" id="Hcq-We-NDc"/>
-                        <segue destination="Lnh-9m-OXL" kind="show" identifier="ContentDetailSegue" id="OMx-cz-c4Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeT-6H-BZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -434,10 +433,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpiTableViewCell" rowHeight="404" id="rUL-Pb-4ff" customClass="EpisodeTableViewCell" customModule="Stream_Savvy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="404"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rUL-Pb-4ff" id="onp-Iu-NRh">
-                                            <frame key="frameInset" width="375" height="404"/>
+                                            <frame key="frameInset" width="1000" height="404"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hf5-Ek-4Y0"/>
@@ -1123,6 +1122,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="PcA-tz-0VT" kind="relationship" relationship="rootViewController" id="UB6-mk-CdG"/>
+                        <segue destination="Lnh-9m-OXL" kind="show" identifier="ContentDetailSegue" id="zb4-L9-SRA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qL-Gh-Oit" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1337,6 +1337,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="TBZ-IE-z7Y" kind="relationship" relationship="rootViewController" id="1xb-pB-F1i"/>
+                        <segue destination="Lnh-9m-OXL" kind="show" identifier="ContentDetailSegue" id="HxW-k7-KLu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vN-8Z-UaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1359,6 +1360,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="Ftx-ya-yvW" kind="relationship" relationship="rootViewController" id="uH8-Eb-6tX"/>
+                        <segue destination="Lnh-9m-OXL" kind="show" identifier="ContentDetailSegue" id="iwb-hH-tU5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVa-K1-H3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1399,6 +1401,7 @@
         <image name="user" width="32" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="HxW-k7-KLu"/>
         <segue reference="uH8-Eb-6tX"/>
         <segue reference="Hcq-We-NDc"/>
     </inferredMetricsTieBreakers>
