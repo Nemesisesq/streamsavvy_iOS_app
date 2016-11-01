@@ -11,7 +11,7 @@ import Foundation
 
 extension Common {
     
-    func linearGradentTopToBottom(gradientView: UIView) {
+    func linearGradentTopToBottom() -> CAGradientLayer{
         let startColor = UIColor.black
         let endColor = UIColor.clear
         
@@ -19,9 +19,9 @@ extension Common {
         let gradient = CAGradientLayer()
         gradient.colors  = [startColor.cgColor, endColor.cgColor]
         gradient.locations  = [0.0, 0.4]
-        gradient.frame = gradientView.bounds
         
-        gradientView.layer.insertSublayer(gradient, at: 0)
+        
+        return gradient
         
         
         

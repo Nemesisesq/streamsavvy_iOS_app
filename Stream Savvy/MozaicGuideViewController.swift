@@ -167,15 +167,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         cell.popularShow = show
         cell.titleLable.type = .leftRight
     
-        let startColor = UIColor.black
-        let endColor = UIColor.clear
         
         
-        let gradient = CAGradientLayer()
-        gradient.colors  = [startColor.cgColor, endColor.cgColor]
-        gradient.locations  = [0.0, 0.5]
+        let gradient = Common().linearGradentTopToBottom()
         gradient.frame = cell.bounds
-        
         cell.imgView.layer.insertSublayer(gradient, at: 0)
 
 //        Constants.addGradient(for: cell.imgView)
