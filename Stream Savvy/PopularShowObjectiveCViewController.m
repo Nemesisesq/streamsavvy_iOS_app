@@ -70,39 +70,35 @@
 			[popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
 		}
 		self.popularShows = [popularShows copy];
-//		[self.tableView reloadData];
-//		if (self.refreshControl) {
-//			[self.refreshControl endRefreshing];
-//		}
 	}];
 }
 
 #pragma mark - Table view data source
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 1;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return self.popularShows.count;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//	Live *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
-//	[Constants fixSeparators:cell];
-//	cell.isShowingPopularShows = YES;
-//	cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
-//	cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
-//	cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
-//	cell.uivc = self;
-//	[cell setCellDetails];
-//	return cell;
-	NSLog(@"*****************");
-	return Nil;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//	return 1;
+//}
+//
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//	return self.popularShows.count;
+//}
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+////	Live *cell = [tableView dequeueReusableCellWithIdentifier:@"TopGridTableViewCell" forIndexPath:indexPath];
+////	[Constants fixSeparators:cell];
+////	cell.isShowingPopularShows = YES;
+////	cell.bigShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell)];
+////	cell.topShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 1)];
+////	cell.bottomShow = [self.popularShows objectAtIndex:((indexPath.row - numStaticCell) * showsPerCell + 2)];
+////	cell.uivc = self;
+////	[cell setCellDetails];
+////	return cell;
+//	NSLog(@"*****************");
+//	return Nil;
+//}
 
 
 @end

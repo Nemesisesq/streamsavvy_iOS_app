@@ -161,11 +161,19 @@ NSInteger numOfStaticCell = 1;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	LiveGuideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LiveGuideTableViewCell" forIndexPath:indexPath];
 	[Constants fixSeparators:cell];
-	cell.channel = [self.guideShows objectAtIndex:indexPath.row];
-	cell.uivc = self;
-	[cell setCellDetails];
+//	cell.channel = [self.guideShows objectAtIndex:indexPath.row];
+//	cell.uivc = self;
+//	[cell setCellDetails];
 	
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
+    if([cell isKindOfClass: [LiveGuideTableViewCell class]]){
+        ((LiveGuideTableViewCell *)cell).channel = [self.guideShows objectAtIndex:indexPath.row];
+        ((LiveGuideTableViewCell *)cell).uivc = self;
+        [((LiveGuideTableViewCell * )cell) setCellDetails];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

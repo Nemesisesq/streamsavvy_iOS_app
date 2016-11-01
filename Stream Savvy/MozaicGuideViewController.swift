@@ -131,12 +131,12 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         if indexPath.item == 0 {
             return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 2)
         }
-
+            
             
         else if indexPath.item % 4 == 0 {
             return ADMozaikLayoutSize(numberOfColumns: 3, numberOfRows: 1)
             
-
+            
         }
         else if indexPath.item % 2 == 0 {
             return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 2)
@@ -166,10 +166,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         cell.titleLable.text = show.title
         cell.popularShow = show
         cell.titleLable.type = .leftRight
-	Constants.addGradient(for: cell.imgView)
-
+//        Constants.addGradient(for: cell.imgView)
+        
     }
-	
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -185,10 +185,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADMozaikLayoutCell", for: indexPath) as! OnDemandCollectionViewCell
-
-	
-	
-	return cell
+        
+        Constants.addGradient(for: cell.imgView)    
+        
+        return cell
     }
     
     //MARK: - Orientation
