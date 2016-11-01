@@ -88,6 +88,11 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         //                }
         SDWebModel.loadImage(for: channelImage, withRemoteURL: channel.image_link)
         
+        let uri = self.channel.now_playing.preferredImage["uri"]
+        let url = URL(string: "http://developer.tmsimg.com/\(uri!)?api_key=3w8hvfmfxjuwgvbqkahrss35")
+        
+        backgroundImage.sd_setImage(with: url!)
+        
         genres.text = $.join(media.genres as! [String], separator: " | ")
         
         
