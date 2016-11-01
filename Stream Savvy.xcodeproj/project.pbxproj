@@ -90,6 +90,7 @@
 		BDEB232F1DC279C900B21291 /* SSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB232E1DC279C900B21291 /* SSTabBarController.swift */; };
 		BDEB23301DC2F96600B21291 /* PopularShowObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F211DC1AAC90053432E /* PopularShowObjectiveCViewController.m */; };
 		BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */; };
+		BDEE6AEC1DC854B200F9FD2C /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE6AEB1DC854B200F9FD2C /* Gradients.swift */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +241,7 @@
 		BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0Protocol.swift; sourceTree = "<group>"; };
 		BDEB232C1DC267D300B21291 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		BDEB232E1DC279C900B21291 /* SSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTabBarController.swift; sourceTree = "<group>"; };
+		BDEE6AEB1DC854B200F9FD2C /* Gradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +537,7 @@
 				BD39ADF51DA230E20065F02F /* Common.swift */,
 				BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */,
 				BDEB232C1DC267D300B21291 /* File.swift */,
+				BDEE6AEB1DC854B200F9FD2C /* Gradients.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 				BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */,
 				9F5D4E931DBC197400AC7AD2 /* ContentDetailViewController.swift in Sources */,
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
+				BDEE6AEC1DC854B200F9FD2C /* Gradients.swift in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
 				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,
 				BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */,

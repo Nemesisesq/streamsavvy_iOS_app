@@ -166,6 +166,18 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         cell.titleLable.text = show.title
         cell.popularShow = show
         cell.titleLable.type = .leftRight
+    
+        let startColor = UIColor.black
+        let endColor = UIColor.clear
+        
+        
+        let gradient = CAGradientLayer()
+        gradient.colors  = [startColor.cgColor, endColor.cgColor]
+        gradient.locations  = [0.0, 0.5]
+        gradient.frame = cell.bounds
+        
+        cell.imgView.layer.insertSublayer(gradient, at: 0)
+
 //        Constants.addGradient(for: cell.imgView)
         
     }
@@ -186,7 +198,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADMozaikLayoutCell", for: indexPath) as! OnDemandCollectionViewCell
         
-        Constants.addGradient(for: cell.imgView)    
+//        Constants.addGradient(for: cell.imgView)    
         
         return cell
     }

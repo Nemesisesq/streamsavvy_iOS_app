@@ -381,18 +381,28 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWs-uX-XhH">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="wt3-fd-eqR" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leadingMargin" id="1Kj-oS-Zyt"/>
                                             <constraint firstItem="yau-h1-iJb" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leading" id="7pF-Qs-hMj"/>
+                                            <constraint firstItem="jWs-uX-XhH" firstAttribute="top" secondItem="6yk-My-B3o" secondAttribute="top" id="9b1-cs-ZtD"/>
                                             <constraint firstItem="wt3-fd-eqR" firstAttribute="top" secondItem="6yk-My-B3o" secondAttribute="topMargin" id="Bk5-wZ-Mws"/>
+                                            <constraint firstItem="jWs-uX-XhH" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leading" id="Kjk-tf-dLz"/>
                                             <constraint firstAttribute="trailing" secondItem="yau-h1-iJb" secondAttribute="trailing" id="Ri8-91-ICC"/>
+                                            <constraint firstAttribute="trailing" secondItem="jWs-uX-XhH" secondAttribute="trailing" id="SuH-Kc-UyW"/>
                                             <constraint firstItem="yau-h1-iJb" firstAttribute="top" secondItem="6yk-My-B3o" secondAttribute="top" id="UsJ-gX-iHg"/>
+                                            <constraint firstAttribute="bottom" secondItem="jWs-uX-XhH" secondAttribute="bottom" id="ZW9-oj-L5Q"/>
                                             <constraint firstItem="wt3-fd-eqR" firstAttribute="trailing" secondItem="6yk-My-B3o" secondAttribute="trailingMargin" id="gsL-Xc-acl"/>
                                             <constraint firstAttribute="bottom" secondItem="yau-h1-iJb" secondAttribute="bottom" id="nKH-je-Ivg"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="backgroundView" destination="jWs-uX-XhH" id="zSr-g7-fv3"/>
+                                            <outlet property="gradientMask" destination="jWs-uX-XhH" id="zsx-GE-dBh"/>
                                             <outlet property="imgView" destination="yau-h1-iJb" id="zYk-f1-8hX"/>
                                             <outlet property="titleLable" destination="wt3-fd-eqR" id="t08-yn-VpY"/>
                                         </connections>
@@ -433,10 +443,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpiTableViewCell" rowHeight="404" id="rUL-Pb-4ff" customClass="EpisodeTableViewCell" customModule="Stream_Savvy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="404"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rUL-Pb-4ff" id="onp-Iu-NRh">
-                                            <frame key="frameInset" width="1000" height="404"/>
+                                            <frame key="frameInset" width="375" height="404"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hf5-Ek-4Y0"/>

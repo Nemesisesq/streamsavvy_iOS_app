@@ -10,23 +10,12 @@ import UIKit
 import MarqueeLabel
 
 class OnDemandCollectionViewCell: UICollectionViewCell {
-        
-        @IBOutlet var imgView: UIImageView!
-        @IBOutlet var titleLable: MarqueeLabel!
-        
-        var popularShow: PopularShow!
     
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		
-		Constants.addGradient(for: imgView)
+    @IBOutlet var imgView: UIImageView!
+    @IBOutlet var titleLable: MarqueeLabel!
+    @IBOutlet var gradientMask: UIView!
+    
+    var popularShow: PopularShow!
+    
 
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-//		fatalError("init(coder:) has not been implemented")
-		Constants.addGradient(for: imgView)
-
-	}
 }
