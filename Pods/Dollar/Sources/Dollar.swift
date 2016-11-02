@@ -16,7 +16,9 @@
 //  Created by Ankur Patel on 6/3/14.
 //  Copyright (c) 2014 Encore Dev Labs LLC. All rights reserved.
 //
-
+#if os(Linux)
+    import Glibc
+#endif
 import Foundation
 fileprivate func < <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -1039,12 +1041,42 @@ open class $ {
         return $.pull(array, values: elemToRemove)
     }
 
+    /// Returns permutation of array
+    ///
+    /// - parameter character: Characters to source the permutation
+    /// - returns: Array of permutation of the characters specified
+    open class func permutation<T>(_ elements: [T]) -> [String] where T : CustomStringConvertible {
+        guard elements.count > 1 else {
+            return $.map(elements) { $0.description }
+        }
+
+        let strings = self.permutation($.initial(elements))
+        if let char = $.last(elements) {
+            return $.reduce(strings, initial: []) { (result, str) -> [String] in
+                let splitStr = $.map(str.description.characters) { $0.description }
+                return result + $.map(0...splitStr.count) { (index) -> String in
+                    var copy = $.copy(splitStr)
+                    copy.insert(char.description, at: (splitStr.count - index))
+                    return $.join(copy, separator: "")
+                }
+            }.sorted()
+        }
+        return []
+    }
+
     /// Returns random number from 0 upto but not including upperBound
     ///
     /// - parameter upperBound: upper bound when generating random number
     /// - returns: Random number
     open class func random(_ upperBound: Int) -> Int {
-        return Int(arc4random_uniform(UInt32(upperBound)))
+        #if os(Linux)
+            let time = UInt32(NSDate().timeIntervalSinceReferenceDate)
+            srand(time)
+            let randomNumber = Glibc.random() % upperBound
+        #else
+            let randomNumber = Int(arc4random_uniform(UInt32(upperBound)))
+        #endif
+        return randomNumber
     }
 
     /// Creates an array of numbers (positive and/or negative) progressing from start up to but not including end.

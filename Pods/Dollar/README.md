@@ -23,7 +23,7 @@ Dollar is a Swift library that provides useful functional programming helper met
 
 ## Using [Carthage](https://github.com/Carthage/Carthage)
 
-Add `github "ankurp/Dollar" ~> 5.2.0` to your `Cartfile` and run `carthage update`. If unfamiliar with Carthage then checkout their [Getting Started section](https://github.com/Carthage/Carthage#getting-started) or this [sample app](https://github.com/ankurp/DollarCarthageApp)
+Add `github "ankurp/Dollar" ~> 6.1.0` to your `Cartfile` and run `carthage update`. If unfamiliar with Carthage then checkout their [Getting Started section](https://github.com/Carthage/Carthage#getting-started) or this [sample app](https://github.com/ankurp/DollarCarthageApp)
 
 ## Using [cocoapods](http://cocoapods.org/) version 0.36.x or greater
 
@@ -31,7 +31,7 @@ Add `pod 'Dollar'` to your `Podfile` and run `pod install`. Add `use_frameworks!
 
 ## Using [Swift Package Manager](https://github.com/apple/swift-package-manager)
 
-Add the following dependency `.Package(url: "https://github.com/ankurp/Dollar", majorVersion: 5, minor: 2)` to your `Package.swift` file and then run `swift build`. Requires swift version 2.2 or greater that you can install from https://swift.org
+Add the following dependency `.Package(url: "https://github.com/ankurp/Dollar", majorVersion: 6, minor: 0)` to your `Package.swift` file and then run `swift build`. Requires swift version 2.2 or greater that you can install from https://swift.org
 
 ## Using `git submodule`
 
@@ -46,7 +46,7 @@ Still stuck. Then checkout this screencast on [how to import](http://recordit.co
 
 ## Support for Xcode and Swift
 
-* For Xcode 8 (Swift 3) user version `6.0.0`
+* For Xcode 8 (Swift 3) user version `6.1.0`
 * For Xcode 7 (Swift 2) use version `4.1.0` or `5.2.0`
 * For Xcode 6.3 (Swift 1.2) use version `3.0.3`
 * For Xcode 6.1 and 6.2 (Swift 1.1) use version `2.2.0`

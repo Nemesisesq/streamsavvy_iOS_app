@@ -302,11 +302,20 @@ open class MarqueeLabel: UILabel, CAAnimationDelegate {
         }
     }
     
+    
     /**
      The length of delay in seconds that the label pauses at the completion of a scroll.
      */
     @IBInspectable open var animationDelay: CGFloat = 1.0
-
+    
+    
+    /** The read-only duration of the scroll animation (not including delay).
+     
+     The value of this property is calculated from the value set to the `speed` property. If a .duration value is
+     used to set the label animation speed, this value will be equivalent.
+     */
+    private(set) public var animationDuration: CGFloat = 0.0
+    
     //
     // MARK: - Class Functions and Helpers
     //
@@ -1181,7 +1190,6 @@ open class MarqueeLabel: UILabel, CAAnimationDelegate {
     //
     
     private var sublabel = UILabel()
-    private var animationDuration: CGFloat = 0.0
     
     fileprivate var homeLabelFrame = CGRect.zero
     fileprivate var awayOffset: CGFloat = 0.0
@@ -1381,7 +1389,7 @@ open class MarqueeLabel: UILabel, CAAnimationDelegate {
      The default implementation of this method does nothing. Subclasses may override this method in order to perform any custom actions just as
      the label animation begins. This is only called in the event that the conditions for scrolling to begin are met.
      */
-    public func labelWillBeginScroll() {
+    open func labelWillBeginScroll() {
         // Default implementation does nothing - override to customize
         return
     }
@@ -1397,7 +1405,7 @@ open class MarqueeLabel: UILabel, CAAnimationDelegate {
      - Warning: This method will be called, and the `finished` parameter will be `NO`, when any property changes are made that would cause the label
      scrolling to be automatically reset. This includes changes to label text and font/font size changes.
      */
-    public func labelReturnedToHome(_ finished: Bool) {
+    open func labelReturnedToHome(_ finished: Bool) {
         // Default implementation does nothing - override to customize
         return
     }

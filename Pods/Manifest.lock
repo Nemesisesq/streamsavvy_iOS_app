@@ -23,14 +23,14 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - Dollar (6.0.0)
-  - FBSDKCoreKit (4.15.1):
+  - Dollar (6.1.0)
+  - FBSDKCoreKit (4.17.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.15.1):
+  - FBSDKLoginKit (4.17.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.15.1):
+  - FBSDKShareKit (4.17.0):
     - FBSDKCoreKit
-  - Gloss (1.0.0)
+  - Gloss (1.1.0)
   - Lock (1.27.1):
     - Lock/Core (= 1.27.1)
     - Lock/UI (= 1.27.1)
@@ -44,21 +44,21 @@ PODS:
     - Lock/CoreUI
   - Lock/WebView (1.27.1):
     - Lock/CoreUI
-  - MarqueeLabel/Swift (3.0.0)
+  - MarqueeLabel/Swift (3.0.1)
   - Masonry (0.6.4)
   - MBProgressHUD (1.0.0)
-  - PromiseKit (4.0.1):
-    - PromiseKit/Foundation (= 4.0.1)
-    - PromiseKit/QuartzCore (= 4.0.1)
-    - PromiseKit/UIKit (= 4.0.1)
-  - PromiseKit/CorePromise (4.0.1)
-  - PromiseKit/Foundation (4.0.1):
+  - PromiseKit (4.0.4):
+    - PromiseKit/Foundation (= 4.0.4)
+    - PromiseKit/QuartzCore (= 4.0.4)
+    - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/CorePromise (4.0.4)
+  - PromiseKit/Foundation (4.0.4):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.0.1):
+  - PromiseKit/QuartzCore (4.0.4):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.0.1):
+  - PromiseKit/UIKit (4.0.4):
     - PromiseKit/CorePromise
-  - SCLAlertView-Objective-C (1.0.5)
+  - SCLAlertView-Objective-C (1.0.6)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -92,17 +92,17 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Auth0: 3ff1a10fe8f6a323b171de883a8b9f08d29529b2
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
-  FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
-  FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
-  FBSDKShareKit: 11cbb5a4d7b5fda8143cc95b76188147e6725736
-  Gloss: 014789e9e69ca18f127eacca999f4c9b0bff6d58
+  Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
+  FBSDKCoreKit: 30a21d2d7b92984b3d80497113433c00824c35e9
+  FBSDKLoginKit: 42b7129ac0373ca99eaf4cbebf4d07bd42371f59
+  FBSDKShareKit: 9b573d03fbee36cbaf42d5bb1f2bc019e0d72347
+  Gloss: a8340c124ff69c5d1c12e06c252373f4a16d2958
   Lock: c8709bb9d798eb2824accd78170140faab1a3fc2
-  MarqueeLabel: a53e806b65587c9f543dd1c9d4d5c19761192a80
+  MarqueeLabel: 80ba85d2b76a9f5fa6c13de337db80bcd94feb1d
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  PromiseKit: ae9e7f97ee758e23f7b9c5e80380a2e78d6338c5
-  SCLAlertView-Objective-C: a2b8b09b8ce5fe14c233ecaa09c02be582c6389a
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  SCLAlertView-Objective-C: ca78280817e66e74366b78579350dee2ff277e23
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
   Toast: 32c59229abfcf41850162b83bb9259dc84372473

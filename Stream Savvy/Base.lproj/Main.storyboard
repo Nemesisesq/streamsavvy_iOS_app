@@ -160,7 +160,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VIG-OV-sfH"/>
                     </layoutGuides>
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="0Mb-5o-dQ2">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Td-oyL" customClass="iCarousel">
@@ -314,6 +314,7 @@
                         <outlet property="backgroundImageView" destination="Etx-bW-ZKC" id="da0-nx-Ksq"/>
                         <outlet property="durationLabel" destination="Coo-Z5-0Us" id="C9r-gU-6Cw"/>
                         <outlet property="genres" destination="8qF-wc-Ai7" id="38M-9r-BEp"/>
+                        <outlet property="goToEpisodes" destination="XVn-X0-6wP" id="CUV-2K-gaR"/>
                         <outlet property="showDetailsLabel" destination="uHA-nD-vN5" id="HS9-Jb-ydb"/>
                         <outlet property="showTitle" destination="bhQ-KJ-gv5" id="mta-Hh-1zh"/>
                         <segue destination="Ftx-ya-yvW" kind="showDetail" identifier="ContentAdded" id="PqR-Ou-oHG"/>
@@ -1412,7 +1413,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HxW-k7-KLu"/>
-        <segue reference="uH8-Eb-6tX"/>
-        <segue reference="Hcq-We-NDc"/>
+        <segue reference="PqR-Ou-oHG"/>
+        <segue reference="DTT-qn-3uB"/>
     </inferredMetricsTieBreakers>
 </document>
