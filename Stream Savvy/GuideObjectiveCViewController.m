@@ -21,7 +21,8 @@
 
 
 - (NSArray *) getGuideShows;
-@property (strong, nonnull) UIBarButtonItem *loginButton;
+@property (strong, nonatomic) UIBarButtonItem *loginButton;
+@property (strong, nonatomic) UIBarButtonItem *searchButton;
 @end
 
 
@@ -95,8 +96,7 @@ NSInteger numOfStaticCell = 1;
 	[super viewWillAppear:animated];
     
     if (Auth0.loggedIn) {
-        [self.loginButton setEnabled:NO];
-        [self.loginButton setTintColor:[UIColor clearColor]];
+        self.navigationItem.rightBarButtonItem = self.searchButton;
     } else {
         [self.loginButton setEnabled:YES];
         [self.loginButton setTintColor:[Constants StreamSavvyRed]];

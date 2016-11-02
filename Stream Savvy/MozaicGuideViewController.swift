@@ -19,7 +19,7 @@ enum ADMozaikLayoutType {
 
 class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource {
     
-    var searchButton: UIBarButtonItem!
+    var  searchButton: UIBarButtonItem!
     var loginButton: UIBarButtonItem!
     
     override var popularShows : [Any]! {
@@ -93,7 +93,8 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         
         self.navigationItem.rightBarButtonItems = [loginButton, searchButton]
         
-    }
+            }
+    
     
     //        override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
     //                print("The shows have been set!")
@@ -103,7 +104,11 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if Auth0.loggedIn {
+            self.navigationItem.rightBarButtonItems = []
+            self.navigationItem.rightBarButtonItem = searchButton
+        }
+
         self.setCollectionViewLayout(false, ofType: UIScreen.main.bounds.width > UIScreen.main.bounds.height ? .landscape : .portrait)
     }
     

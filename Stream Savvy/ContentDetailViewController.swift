@@ -190,8 +190,12 @@ class ContentDetailViewController:  Auth0ViewController  {
         
         let target = segue.destination as! EpisodeCollectionViewController
         
+        if show != nil {
+            target.content = Content.init(withPopularShow: show)
+        } else {
+            target.content = content
+        }
         
-        target.content = Content.init(withPopularShow: show)
         
         if episodes != nil {
              target.episodes = episodes
