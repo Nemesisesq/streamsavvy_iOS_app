@@ -51,6 +51,9 @@ PODS:
     - PromiseKit/Foundation (= 4.0.4)
     - PromiseKit/QuartzCore (= 4.0.4)
     - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/Alamofire (4.0.4):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
   - PromiseKit/CorePromise (4.0.4)
   - PromiseKit/Foundation (4.0.4):
     - PromiseKit/CorePromise
@@ -80,6 +83,7 @@ DEPENDENCIES:
   - MarqueeLabel/Swift
   - MBProgressHUD (~> 1.0.0)
   - PromiseKit (~> 4.0)
+  - PromiseKit/Alamofire (~> 4.0)
   - SCLAlertView-Objective-C
   - SDWebImage (~> 3.7)
   - SimpleKeychain (~> 0.7)
@@ -108,6 +112,6 @@ SPEC CHECKSUMS:
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: a73906ca2594e8ceb853d62081d5ab1b8f0203d5
+PODFILE CHECKSUM: 3134058a46c697fe313212eb226519ed581fb178
 
 COCOAPODS: 1.1.0.rc.2

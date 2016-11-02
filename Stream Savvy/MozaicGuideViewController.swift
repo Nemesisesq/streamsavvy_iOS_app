@@ -10,7 +10,7 @@ import UIKit
 import ADMozaicCollectionViewLayout
 import PromiseKit
 import MarqueeLabel
-
+import Dollar
 
 enum ADMozaikLayoutType {
     case portrait
@@ -21,6 +21,9 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     var  searchButton: UIBarButtonItem!
     var loginButton: UIBarButtonItem!
+    
+    //    override var nextPage: String!
+    //    override var previous: String!
     
     override var popularShows : [Any]! {
         didSet {
@@ -215,17 +218,24 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         let h = size.height
         let reload_distance:CGFloat = 10
         
-        if (y > h + reload_distance){
-//            _ = Content.getNextPage(url: next)
-//                .then { the_json -> Void in
-//                    
-//                    for i in the_json["results"]! {
-//                        if let p = PopularShow(attributes: [i.key: i.value]) {
-//                            self.popularShows.append(p)
-//                        }
-//                    }
-            
-//            }
+        if (y > h + reload_distance) && nextPage != nil {
+            _ = Content.getNextPage(url: nextPage!)
+                .then { the_json -> Void in
+                    self.nextPage = the_json["next"] as! String!
+                    self.previous = the_json["previous"] as! String!
+                    for i in the_json["results"] as! [[AnyHashable:Any]]{
+                        if let p = PopularShow(attributes: i) {
+                            
+                            if !$.contains(self.popularShows as! [PopularShow], value: p){
+                                self.popularShows.append(p)
+                                
+                            }
+                        }
+                    }
+                    self.popularShows = $.uniq(self.popularShows as! [PopularShow]){ $0.title }
+                    
+                    
+            }
         }
     }
     //MARK: - Orientation

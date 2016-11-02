@@ -16,6 +16,7 @@ pod 'MBProgressHUD', '~> 1.0.0'
 pod 'Toast', '~> 3.0'
 pod 'Alamofire', '~> 4.0'
 pod "PromiseKit", "~> 4.0"
+pod "PromiseKit/Alamofire", "~> 4.0"
 pod "Gloss", "~> 1.0"
 pod 'Dollar'
 pod 'UICollectionViewLeftAlignedLayout'

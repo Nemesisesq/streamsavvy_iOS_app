@@ -15,6 +15,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    [Constants addRadialGradientForImageView:self.backGroundImageView];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,9 +25,10 @@
     // Configure the view for the selected state
 }
 
+
 -(void)setCellDetails{
 //	[Constants addGradientForImageView:self.backGroundImageView];
-	[Constants addRadialGradientForImageView:self.backGroundImageView];
+	
 	NSLog(@"*******************************");
 	[SDWebModel loadImageFor:self.networkImageView withRemoteURL:		self.channel.image_link];
         

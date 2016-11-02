@@ -1,4 +1,4 @@
-//
+ //
 //  SearchResults.swift
 //  Stream Savvy
 //
@@ -55,6 +55,9 @@ public class Content: NSObject {
     var modified : String!
     var image_link : String!
 
+    
+   
+    
     override init() {
         
     }
@@ -69,24 +72,36 @@ public class Content: NSObject {
         print("$$$ ~ \(show.image_link)")
     }
     
-    class func getNextPage(url:String) -> Promise<[String:[AnyHashable:Any]]> {
-        return Promise {fulfill, reject in
-        Alamofire.request(url)
-            .responseJSON { response in
-                
-               
-            let the_json = Common.getReadableJsonDict(data: response.data!)
-                switch response.result{
-                case .success(let the_json):
-                    fulfill(the_json as! [String : [AnyHashable : Any]])
-                case .failure(let error):
-                    reject(error)
-                }
-                
-                
-            }
-            
+    class func getNextPage(url: String) -> Promise<JSONStandardDict> {
+        
+        let q = DispatchQueue.global()
+        UIApplication.shared.isNetworkActivityIndicatorVisible  = true
+        
+        return firstly { _ in
+            Alamofire.request(url, method: .get).responseData()
+            }.then(on: q) {data in
+                Common.getReadableJsonDict(data: data )
+            }.always {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
+        
+//        return Promise {fulfill, reject in
+//        Alamofire.request(url)
+//            .responseJSON { response in
+//                
+//               
+//            let the_json = Common.getReadableJsonDict(data: response.data!)
+//                switch response.result{
+//                case .success(let the_json):
+//                    fulfill(the_json as! [String : [AnyHashable : Any]])
+//                case .failure(let error):
+//                    reject(error)
+//                }
+//                
+//                
+//            }
+//            
+//        }
     }
     
     class func parseList(JSONData : Data) -> [Content] {

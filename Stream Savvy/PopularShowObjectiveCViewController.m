@@ -66,6 +66,12 @@
 -(void)reload{
 	[PopularShow getPopularShowsForPage:0 view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
 		NSMutableArray *popularShows = [NSMutableArray new];
+        NSString *nextPage = [(NSDictionary *)JSON objectForKey:@"next"];
+        NSString *previous = [(NSDictionary *)JSON objectForKey:@"previous"];
+        
+        [self setValue:[(NSDictionary *)JSON objectForKey:@"next"] forKey: @"nextPage" ];
+        
+        [self setValue:[(NSDictionary *)JSON objectForKey:@"previous"] forKey:@"previous"];
 		for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
 			[popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
 		}

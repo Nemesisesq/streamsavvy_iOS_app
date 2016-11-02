@@ -15,4 +15,9 @@
 
 -(void)reload;
 
+@property (strong, nonatomic) NSString *nextPage;
+
+@property (strong, nonatomic) NSString *previous;
+
+
 @end
