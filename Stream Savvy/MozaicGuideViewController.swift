@@ -17,7 +17,7 @@ enum ADMozaikLayoutType {
     case landscape
 }
 
-class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource {
+class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     var  searchButton: UIBarButtonItem!
     var loginButton: UIBarButtonItem!
@@ -43,6 +43,8 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
             x.search()
         }
     }
+    
+    @IBOutlet var scrollView: UIScrollView?
     
     @IBAction func goToLogin(_ sender:UIBarButtonItem) {
         self.performSegue(withIdentifier: "Live", sender: self)
@@ -93,7 +95,9 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         
         self.navigationItem.rightBarButtonItems = [loginButton, searchButton]
         
-            }
+        scrollView?.delegate = self
+        
+    }
     
     
     //        override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -108,7 +112,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
             self.navigationItem.rightBarButtonItems = []
             self.navigationItem.rightBarButtonItem = searchButton
         }
-
+        
         self.setCollectionViewLayout(false, ofType: UIScreen.main.bounds.width > UIScreen.main.bounds.height ? .landscape : .portrait)
     }
     
@@ -171,14 +175,13 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         cell.titleLable.text = show.title
         cell.popularShow = show
         cell.titleLable.type = .leftRight
-    
+        
+        cell.imgView.layer.sublayers?[0].frame = cell.bounds
         
         
-        let gradient = Common().linearGradentTopToBottom()
-        gradient.frame = cell.bounds
-        cell.imgView.layer.insertSublayer(gradient, at: 0)
-
-//        Constants.addGradient(for: cell.imgView)
+        
+        
+        //        Constants.addGradient(for: cell.imgView)
         
     }
     
@@ -198,11 +201,33 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADMozaikLayoutCell", for: indexPath) as! OnDemandCollectionViewCell
         
-//        Constants.addGradient(for: cell.imgView)    
+        //        Constants.addGradient(for: cell.imgView)
         
         return cell
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset
+        let bounds = scrollView.bounds
+        let size = scrollView.contentSize
+        let inset = scrollView.contentInset
+        let y = offset.y + bounds.size.height + inset.bottom
+        let h = size.height
+        let reload_distance:CGFloat = 10
+        
+        if (y > h + reload_distance){
+//            _ = Content.getNextPage(url: next)
+//                .then { the_json -> Void in
+//                    
+//                    for i in the_json["results"]! {
+//                        if let p = PopularShow(attributes: [i.key: i.value]) {
+//                            self.popularShows.append(p)
+//                        }
+//                    }
+            
+//            }
+        }
+    }
     //MARK: - Orientation
     
     //        override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

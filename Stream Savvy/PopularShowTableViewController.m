@@ -20,6 +20,9 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 
+@property (strong, nonatomic) NSString *nextPage;
+
+@property (strong, nonatomic) NSString *previous;
 
 @end
 
@@ -80,6 +83,9 @@ NSInteger numStaticCell = 1;
 -(void)reload{
     [PopularShow getPopularShowsForPage:0 view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
         NSMutableArray *popularShows = [NSMutableArray new];
+        NSString *nextPage = [(NSDictionary *)JSON objectForKey:@"next"];
+        NSString *previous = [(NSDictionary *)JSON objectForKey:@"previous"];
+        
         for (NSDictionary *result in [(NSDictionary *)JSON objectForKey:@"results"]) {
             [popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
         }

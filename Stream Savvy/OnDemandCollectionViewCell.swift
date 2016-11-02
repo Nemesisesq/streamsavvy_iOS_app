@@ -17,5 +17,13 @@ class OnDemandCollectionViewCell: UICollectionViewCell {
     
     var popularShow: PopularShow!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let gradient = Common().linearGradentTopToBottom()
+        gradient.frame = self.bounds
+        self.imgView.layer.insertSublayer(gradient, at: 0)
+
+    }
+    
 
 }

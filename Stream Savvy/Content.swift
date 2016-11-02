@@ -69,7 +69,25 @@ public class Content: NSObject {
         print("$$$ ~ \(show.image_link)")
     }
     
-    
+    class func getNextPage(url:String) -> Promise<[String:[AnyHashable:Any]]> {
+        return Promise {fulfill, reject in
+        Alamofire.request(url)
+            .responseJSON { response in
+                
+               
+            let the_json = Common.getReadableJsonDict(data: response.data!)
+                switch response.result{
+                case .success(let the_json):
+                    fulfill(the_json as! [String : [AnyHashable : Any]])
+                case .failure(let error):
+                    reject(error)
+                }
+                
+                
+            }
+            
+        }
+    }
     
     class func parseList(JSONData : Data) -> [Content] {
         
