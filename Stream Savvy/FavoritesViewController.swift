@@ -180,7 +180,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                 
         
                 if option == iCarouselOption.spacing {
-                        return value * 1.0
+                        return value * 1.2
                 }
                 return value
         }

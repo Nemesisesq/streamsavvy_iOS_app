@@ -115,6 +115,7 @@ class ContentDetailViewController:  Auth0ViewController  {
             showTitle.text = show.title
         } else {
             showTitle.text = content.title
+            backgroundImageView.sd_setImage(with: URL(string:content.image_link))
             if media != nil {
                 showDetailsLabel.text = media.show_description
             }else{

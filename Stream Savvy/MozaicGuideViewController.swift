@@ -67,7 +67,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     fileprivate let ADMozaikCollectionViewLayoutExampleImagesCount = 22
     
     fileprivate var portraitLayout: ADMozaikLayout {
-        let columns = [ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth),ADMozaikLayoutColumn(width: columnWidth)]
+        let columns = [ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth)]
         let layout = ADMozaikLayout(rowHeight: columnWidth, columns: columns)
         layout.delegate = self
         layout.minimumLineSpacing = 1

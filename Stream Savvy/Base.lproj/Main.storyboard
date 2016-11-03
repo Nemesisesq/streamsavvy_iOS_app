@@ -349,7 +349,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="166" height="104"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt3-fd-eqR" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                                    <rect key="frame" x="8" y="8" width="150" height="30"/>
+                                                    <rect key="frame" x="0.0" y="8" width="166" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="KWO-Bx-Nn8"/>
                                                     </constraints>
@@ -377,29 +377,18 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWs-uX-XhH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="166" height="104"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="wt3-fd-eqR" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leadingMargin" id="1Kj-oS-Zyt"/>
+                                            <constraint firstItem="wt3-fd-eqR" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leadingMargin" constant="-8" id="1Kj-oS-Zyt"/>
                                             <constraint firstItem="yau-h1-iJb" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leading" id="7pF-Qs-hMj"/>
-                                            <constraint firstItem="jWs-uX-XhH" firstAttribute="top" secondItem="6yk-My-B3o" secondAttribute="top" id="9b1-cs-ZtD"/>
                                             <constraint firstItem="wt3-fd-eqR" firstAttribute="top" secondItem="6yk-My-B3o" secondAttribute="topMargin" id="Bk5-wZ-Mws"/>
-                                            <constraint firstItem="jWs-uX-XhH" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leading" id="Kjk-tf-dLz"/>
                                             <constraint firstAttribute="trailing" secondItem="yau-h1-iJb" secondAttribute="trailing" id="Ri8-91-ICC"/>
-                                            <constraint firstAttribute="trailing" secondItem="jWs-uX-XhH" secondAttribute="trailing" id="SuH-Kc-UyW"/>
                                             <constraint firstItem="yau-h1-iJb" firstAttribute="top" secondItem="6yk-My-B3o" secondAttribute="top" id="UsJ-gX-iHg"/>
-                                            <constraint firstAttribute="bottom" secondItem="jWs-uX-XhH" secondAttribute="bottom" id="ZW9-oj-L5Q"/>
-                                            <constraint firstItem="wt3-fd-eqR" firstAttribute="trailing" secondItem="6yk-My-B3o" secondAttribute="trailingMargin" id="gsL-Xc-acl"/>
+                                            <constraint firstItem="wt3-fd-eqR" firstAttribute="trailing" secondItem="6yk-My-B3o" secondAttribute="trailingMargin" constant="8" id="gsL-Xc-acl"/>
                                             <constraint firstAttribute="bottom" secondItem="yau-h1-iJb" secondAttribute="bottom" id="nKH-je-Ivg"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="backgroundView" destination="jWs-uX-XhH" id="zSr-g7-fv3"/>
-                                            <outlet property="gradientMask" destination="jWs-uX-XhH" id="zsx-GE-dBh"/>
                                             <outlet property="imgView" destination="yau-h1-iJb" id="zYk-f1-8hX"/>
                                             <outlet property="titleLable" destination="wt3-fd-eqR" id="t08-yn-VpY"/>
                                         </connections>
@@ -422,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mC-ei-qsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="400"/>
+            <point key="canvasLocation" x="3412" y="399.85007496251876"/>
         </scene>
         <!--Episode Collection View Controller-->
         <scene sceneID="pZl-mB-hjV">
