@@ -179,6 +179,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
             return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 2)
         }
             
+        else if  indexPath.item.isPrime() && indexPath.item != 2 && indexPath.item != 3 {
+            return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 2)
+        }
+            
             
         else if indexPath.item % 3 == 0 {
             return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 1)
@@ -186,8 +190,9 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
             
         }
         else if indexPath.item % 2 == 0 {
-            return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 2)
+            return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 3)
         }
+            
             
             
         else {
