@@ -100,6 +100,41 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         
         scrollView?.delegate = self
         
+        mozCollectionView?.infiniteScrollIndicatorStyle = .white
+        
+        mozCollectionView.infiniteScrollTriggerOffset = 500
+        
+        mozCollectionView?.addInfiniteScroll { [weak self] (scrollView) -> Void in
+            
+            _ = Content.getNextPage(url: (self?.nextPage)!)
+                .then { the_json -> Void in
+                    
+                    self?.nextPage = the_json["next"] as? String
+                    self?.previous = the_json["previous"] as? String
+                    
+                    var indexPaths = [IndexPath]()
+                    let index = self?.popularShows.count
+                    var s = [PopularShow]()
+                    
+                    for show in the_json["results"] as! [[AnyHashable:Any]] {
+                        let count = index!
+                        let indexPath = IndexPath(item: count, section: 0)
+                        
+                        indexPaths.append(indexPath)
+                        s.append(PopularShow.init(attributes: show))
+                    }
+                    
+                    
+                    self?.mozCollectionView.performBatchUpdates({ () -> Void in
+                        self?.popularShows = $.merge((self?.popularShows)!, s)
+                        self?.mozCollectionView.insertItems(at: indexPaths)
+                    }, completion: { (finished) -> Void in
+                        self?.mozCollectionView.finishInfiniteScroll()
+                    })
+            }
+            
+        }
+        
     }
     
     
@@ -153,8 +188,8 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         else if indexPath.item % 2 == 0 {
             return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 2)
         }
-        
-        
+            
+            
         else {
             return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 1)
         }
@@ -178,7 +213,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         cell.popularShow = show
         cell.titleLable.type = .leftRight
         
-       
+        
         
         
         
@@ -210,19 +245,6 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         return cell
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset
-        let bounds = scrollView.bounds
-        let size = scrollView.contentSize
-        let inset = scrollView.contentInset
-        let y = offset.y + bounds.size.height + inset.bottom
-        let h = size.height
-        let reload_distance:CGFloat = 10
-        
-        if (y > h + reload_distance) && nextPage != nil {
-            
-                    }
-    }
     //MARK: - Orientation
     
     //        override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
