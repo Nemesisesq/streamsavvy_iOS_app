@@ -179,7 +179,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         cell.popularShow = show
         cell.titleLable.type = .leftRight
         
-        cell.imgView.layer.sublayers?[0].frame = cell.bounds
+       
         
         
         
@@ -206,6 +206,8 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         
         //        Constants.addGradient(for: cell.imgView)
         
+        cell.imgView.layer.sublayers?[0].frame = cell.bounds
+        
         return cell
     }
     
@@ -219,24 +221,8 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         let reload_distance:CGFloat = 10
         
         if (y > h + reload_distance) && nextPage != nil {
-            _ = Content.getNextPage(url: nextPage!)
-                .then { the_json -> Void in
-                    self.nextPage = the_json["next"] as! String!
-                    self.previous = the_json["previous"] as! String!
-                    for i in the_json["results"] as! [[AnyHashable:Any]]{
-                        if let p = PopularShow(attributes: i) {
-                            
-                            if !$.contains(self.popularShows as! [PopularShow], value: p){
-                                self.popularShows.append(p)
-                                
-                            }
-                        }
+            
                     }
-                    self.popularShows = $.uniq(self.popularShows as! [PopularShow]){ $0.title }
-                    
-                    
-            }
-        }
     }
     //MARK: - Orientation
     
