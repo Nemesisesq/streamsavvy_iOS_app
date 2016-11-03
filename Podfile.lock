@@ -68,6 +68,7 @@ PODS:
   - SimpleKeychain (0.7.0)
   - Toast (3.0)
   - UICollectionViewLeftAlignedLayout (1.0.2)
+  - UIScrollView-InfiniteScroll (0.9.1)
 
 DEPENDENCIES:
   - ADMozaicCollectionViewLayout (~> 2.0)
@@ -89,6 +90,7 @@ DEPENDENCIES:
   - SimpleKeychain (~> 0.7)
   - Toast (~> 3.0)
   - UICollectionViewLeftAlignedLayout
+  - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
   ADMozaicCollectionViewLayout: b81be75b99b091fbbff46a013b061f4914fcb175
@@ -111,7 +113,8 @@ SPEC CHECKSUMS:
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
+  UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: 3134058a46c697fe313212eb226519ed581fb178
+PODFILE CHECKSUM: da07f8fe357ac4a6149f3f932953a0a07e09d42a
 
 COCOAPODS: 1.1.0.rc.2

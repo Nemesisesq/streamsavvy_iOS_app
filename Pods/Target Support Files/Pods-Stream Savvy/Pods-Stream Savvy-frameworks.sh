@@ -104,6 +104,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SimpleKeychain/SimpleKeychain.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Toast/Toast.framework"
   install_framework "$BUILT_PRODUCTS_DIR/UICollectionViewLeftAlignedLayout/UICollectionViewLeftAlignedLayout.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ADMozaicCollectionViewLayout/ADMozaicCollectionViewLayout.framework"
@@ -126,4 +127,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SimpleKeychain/SimpleKeychain.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Toast/Toast.framework"
   install_framework "$BUILT_PRODUCTS_DIR/UICollectionViewLeftAlignedLayout/UICollectionViewLeftAlignedLayout.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework"
 fi

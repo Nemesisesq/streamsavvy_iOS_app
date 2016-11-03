@@ -25,6 +25,8 @@ pod 'Auth0', '1.0.0'
 pod 'SimpleKeychain', '~> 0.7'
 pod 'ADMozaicCollectionViewLayout', '~> 2.0'
 pod "MarqueeLabel/Swift"
+pod 'UIScrollView-InfiniteScroll'
+
 
 platform :ios, '10.0'
 
