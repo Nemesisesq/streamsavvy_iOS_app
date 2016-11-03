@@ -95,8 +95,8 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                         self.favorites.contentList = self.favorites.contentList.reversed()
                         
                         if self.favorites.contentList.count > 0 {
-                                self.emptyLabel.isHidden = true
-                        }
+                            
+                    }
                         
                         self.carousel.reloadData()
                         
@@ -162,9 +162,9 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         
         
         func makeCarousel() {
-                carousel.type = .cylinder
-                print("viewWillAppear")
-                print(self.view.subviews)
+                carousel.type = .coverFlow
+//                print("viewWillAppear")
+//                print(self.view.subviews)
                 self.carousel.delegate = self
                 self.carousel.dataSource = self
                 
@@ -180,7 +180,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                 
         
                 if option == iCarouselOption.spacing {
-                        return value * 1.2
+                        return value * 1.0
                 }
                 return value
         }
@@ -202,8 +202,8 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                 carouselItemView.frame = CGRect(
                         x: 0,
                         y: 0,
-                        width: self.view.frame.size.width * 0.9,
-                        height: 400)
+                        width: self.view.frame.size.width * 0.9 ,
+                        height: self.view.frame.size.height * 0.9)
                 
                 SDWebModel.loadImage(for: carouselItemView.showImage, withRemoteURL: favorites.contentList[index].image_link)
                 
