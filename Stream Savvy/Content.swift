@@ -19,7 +19,7 @@ public class SearchResults: NSObject {
         
         let escapedString = q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
-        let url = "http://localhost:8000/api/search/?q=\(escapedString!)"
+        let url = "http://ss-master-staging.herokuapp.com/api/search/?q=\(escapedString!)"
         return Promise { fullfill, reject in
             Alamofire.request(url)
                 .responseJSON{

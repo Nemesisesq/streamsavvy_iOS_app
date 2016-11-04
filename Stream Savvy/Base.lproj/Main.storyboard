@@ -1096,6 +1096,13 @@
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBz-Kh-EdR">
+                                <rect key="frame" x="117" y="635" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1132,6 +1139,7 @@
                         <outlet property="backgroundMask" destination="TAR-fr-ZJu" id="lQj-is-3IK"/>
                         <outlet property="channelImage" destination="6eG-hw-G45" id="7Ts-zf-99Y"/>
                         <outlet property="containerView" destination="r3b-KF-uSV" id="KWE-zG-3Gf"/>
+                        <outlet property="elapsedTime" destination="OBz-Kh-EdR" id="UHM-94-iY4"/>
                         <outlet property="genres" destination="SsH-fi-zSa" id="KLD-gA-zrm"/>
                         <outlet property="showProgress" destination="tbc-JS-2Sb" id="eE9-Mj-crS"/>
                         <outlet property="showSubtitleLabel" destination="Dh2-0O-Cnf" id="WTz-3H-hhz"/>

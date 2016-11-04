@@ -27,6 +27,8 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
     
     var sources: [MediaSource]!
     
+    var timer: Timer!
+    
     @IBOutlet var backgroundImage: UIImageView!
     
     @IBOutlet var backgroundMask: UIImageView!
@@ -37,6 +39,8 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
     @IBOutlet weak var showSubtitleLabel: UITextView!
     
     @IBOutlet var showProgress: UIProgressView!
+    
+    @IBOutlet var elapsedTime: UILabel!
     
     @IBOutlet var containerView: UIView!
     
@@ -103,9 +107,34 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    func updateProgress() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mmzzz"
+        let startString = media.start_time.replacingOccurrences(of: "Z", with: "UTC")
+        let endString = media.end_time.replacingOccurrences(of: "Z", with: "UTC")
+        
+        let start = dateFormatter.date(from: startString)
+        let end = dateFormatter.date(from: endString)
+        
+        let difference = Date().timeIntervalSince(start!)
+        let totalRunTime = end?.timeIntervalSince(start!)
+        
+        let progress = difference/totalRunTime!
+        
+        
+        showProgress.progress = Float(progress)
+        elapsedTime.text = "\(showProgress.progress)"
+        
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.tabBarController?.tabBar.isHidden = true
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LiveDetailsViewController.updateProgress), userInfo: nil, repeats: true)
+        self.timer.fire()
         
     }
     
