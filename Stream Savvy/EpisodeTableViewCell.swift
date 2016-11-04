@@ -9,11 +9,14 @@
 import UIKit
 import UICollectionViewLeftAlignedLayout
 import JavaScriptCore
+import Alamofire
 
 
 class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var jsContext: JSContext = Common.getJSContext()
+    
+    var purchOffset: Int! = 0
     
     @IBOutlet weak var seEp: UILabel!
     
@@ -29,9 +32,27 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        linkCollectionViewFlowLayout.estimatedItemSize = CGSize(width:100, height:100)
+        linkCollectionViewFlowLayout.estimatedItemSize = CGSize(width:30, height:30)
         
+        Alamofire.request("https://edr-go-staging.herokuapp.com/fff", method:.get)
+            .responseJSON { r in
+                
+                switch r.result {
+                case .success:
+                    self.purchOffset = 1
+                case .failure(let _):
+                    self.purchOffset = 0
+                }
+        }
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -74,75 +95,6 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         
     }
     
-    //        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //
-    //                if let item = collectionView.cellForItem(at: indexPath) as? LinkViewCell {
-    //
-    //                        let oldWidth = item.linkImageView.frame.width
-    //                        let oldheight = item.linkImageView.frame.height
-    //
-    //                        let height: CGFloat = 30
-    //                        let ratio = oldWidth / oldheight
-    //                        let final = ratio * height
-    //
-    //                        return CGSize(width: final, height: height)
-    //                }
-    //
-    //
-    //
-    //
-    //
-    //
-    //                //                if indexPath.section == 0  {
-    //                //                        if  let source = episode?.free_ios_sources?[indexPath.row] {
-    //                //
-    //                //                                let image_name = "marks_\(source.source!)"
-    //                //                                if let img = UIImage(named: image_name) {
-    //                //
-    //                //                                        let height: CGFloat = 30
-    //                //                                        let ratio = img.size.width/img.size.height
-    //                //                                        let finalWidth = ratio * height
-    //                //
-    //                //
-    //                //                                        return CGSize(width: finalWidth, height: height)
-    //                //
-    //                //                                }
-    //                //                        }
-    //                //                } else if indexPath.section == 1 {
-    //                //                        if let source = episode?.subscription_ios_sources?[indexPath.row] {
-    //                //
-    //                //                                let image_name = "marks_\(source.source!)"
-    //                //                                if  let img = UIImage(named: image_name) {
-    //                //
-    //                //                                        let height: CGFloat = 30
-    //                //                                        let ratio = img.size.width/img.size.height
-    //                //                                        let finalWidth = ratio * height
-    //                //
-    //                //                                        return CGSize(width: finalWidth, height: height)
-    //                //                                }
-    //                //                        }
-    //                //                } else {
-    //                //                        if let source = episode?.purchase_ios_sources?[indexPath.row]{
-    //                //
-    //                //                                let image_name = "marks_\(source.source!)"
-    //                //                                if let img = UIImage(named: image_name) {
-    //                //
-    //                //                                        let height: CGFloat = 30
-    //                //                                        let ratio = img.size.width / img.size.height
-    //                //                                        let finalWidth = ratio * height
-    //                //
-    //                //
-    //                //                                        return CGSize(width: finalWidth, height: height)
-    //                //
-    //                //                                }
-    //                //                        }
-    //                //
-    //                //                }
-    //                //
-    //                return CGSize(width: 50, height: 30)
-    //        }
-    
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -163,7 +115,7 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         
         if section == 2 {
             if let pws = episode?.purchase_ios_sources {
-                return pws.count
+                return pws.count - purchOffset
             }
         }
         

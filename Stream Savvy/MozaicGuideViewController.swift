@@ -179,10 +179,6 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
             return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 2)
         }
             
-        else if  indexPath.item.isPrime() && indexPath.item != 2 && indexPath.item != 3 {
-            return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 2)
-        }
-            
             
         else if indexPath.item % 3 == 0 {
             return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 1)
