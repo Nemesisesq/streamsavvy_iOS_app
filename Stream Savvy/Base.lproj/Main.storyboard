@@ -425,66 +425,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adz-u7-jsC">
-                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="seasons" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-S9-5Hm">
-                                        <rect key="frame" x="80" y="0.0" width="295" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b30-XN-lxZ">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Season" id="ZSu-EW-BeG" customClass="SeasonViewCell" customModule="Stream_Savvy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5N-co-Jac">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </label>
-                                                    </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="J5N-co-Jac" secondAttribute="trailing" id="0vh-DX-gts"/>
-                                                    <constraint firstItem="J5N-co-Jac" firstAttribute="top" secondItem="ZSu-EW-BeG" secondAttribute="top" id="2pC-Vk-i65"/>
-                                                    <constraint firstAttribute="bottom" secondItem="J5N-co-Jac" secondAttribute="bottom" id="96y-j8-ZOp"/>
-                                                    <constraint firstItem="J5N-co-Jac" firstAttribute="leading" secondItem="ZSu-EW-BeG" secondAttribute="leading" id="RsO-Vo-Jv3"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="seasonLabel" destination="J5N-co-Jac" id="S5x-of-X5v"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="LNb-Yl-gEE" id="hmg-JU-eGm"/>
-                                            <outlet property="delegate" destination="LNb-Yl-gEE" id="4Lo-aa-sGj"/>
-                                        </connections>
-                                    </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Season" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-3s-2wu">
-                                        <rect key="frame" x="8" y="15" width="64" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8c0-YB-JEx"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="404" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QMz-CO-CeD">
-                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpiTableViewCell" rowHeight="404" id="rUL-Pb-4ff" customClass="EpisodeTableViewCell" customModule="Stream_Savvy" customModuleProvider="target">
@@ -621,8 +563,71 @@
                                     <outlet property="delegate" destination="LNb-Yl-gEE" id="NP8-RF-Cof"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adz-u7-jsC">
+                                <rect key="frame" x="0.0" y="45" width="375" height="50"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="seasons" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-S9-5Hm">
+                                        <rect key="frame" x="80" y="0.0" width="295" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b30-XN-lxZ">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Season" id="ZSu-EW-BeG" customClass="SeasonViewCell" customModule="Stream_Savvy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5N-co-Jac">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="J5N-co-Jac" secondAttribute="trailing" id="0vh-DX-gts"/>
+                                                    <constraint firstItem="J5N-co-Jac" firstAttribute="top" secondItem="ZSu-EW-BeG" secondAttribute="top" id="2pC-Vk-i65"/>
+                                                    <constraint firstAttribute="bottom" secondItem="J5N-co-Jac" secondAttribute="bottom" id="96y-j8-ZOp"/>
+                                                    <constraint firstItem="J5N-co-Jac" firstAttribute="leading" secondItem="ZSu-EW-BeG" secondAttribute="leading" id="RsO-Vo-Jv3"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="seasonLabel" destination="J5N-co-Jac" id="S5x-of-X5v"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="LNb-Yl-gEE" id="hmg-JU-eGm"/>
+                                            <outlet property="delegate" destination="LNb-Yl-gEE" id="4Lo-aa-sGj"/>
+                                        </connections>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Season" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-3s-2wu">
+                                        <rect key="frame" x="8" y="15" width="64" height="21"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="BaH-3s-2wu" firstAttribute="leading" secondItem="adz-u7-jsC" secondAttribute="leading" constant="8" id="1PN-kd-q6w"/>
+                                    <constraint firstItem="IRu-S9-5Hm" firstAttribute="leading" secondItem="BaH-3s-2wu" secondAttribute="trailing" constant="5" id="8Ly-S0-bFS"/>
+                                    <constraint firstAttribute="bottom" secondItem="IRu-S9-5Hm" secondAttribute="bottom" id="8YT-Ch-SPk"/>
+                                    <constraint firstAttribute="trailing" secondItem="IRu-S9-5Hm" secondAttribute="trailing" id="FNd-An-S0T"/>
+                                    <constraint firstAttribute="height" constant="50" id="Pus-8s-avz"/>
+                                    <constraint firstAttribute="bottom" secondItem="BaH-3s-2wu" secondAttribute="bottom" constant="14" id="XpV-ad-FlF"/>
+                                    <constraint firstItem="IRu-S9-5Hm" firstAttribute="top" secondItem="adz-u7-jsC" secondAttribute="top" id="eHb-iE-9sK"/>
+                                    <constraint firstItem="BaH-3s-2wu" firstAttribute="top" secondItem="adz-u7-jsC" secondAttribute="top" constant="15" id="hCK-Ps-lnD"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psY-D7-UJU">
-                                <rect key="frame" x="16" y="15" width="343" height="24"/>
+                                <rect key="frame" x="16" y="16.5" width="343" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -630,16 +635,22 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="adz-u7-jsC" firstAttribute="top" secondItem="psY-D7-UJU" secondAttribute="bottom" constant="5" id="CJV-vq-GhG"/>
+                            <constraint firstItem="adz-u7-jsC" firstAttribute="top" secondItem="ID4-kN-UgR" secondAttribute="bottom" constant="25" id="2sz-Rg-TwV"/>
+                            <constraint firstAttribute="trailing" secondItem="adz-u7-jsC" secondAttribute="trailing" id="38I-M5-NCC"/>
+                            <constraint firstItem="adz-u7-jsC" firstAttribute="leading" secondItem="Td6-ma-UB1" secondAttribute="leading" id="ARM-wQ-aJF"/>
                             <constraint firstItem="psY-D7-UJU" firstAttribute="trailing" secondItem="Td6-ma-UB1" secondAttribute="trailingMargin" id="CVn-Yu-GYy"/>
-                            <constraint firstItem="QMz-CO-CeD" firstAttribute="leading" secondItem="Td6-ma-UB1" secondAttribute="leading" id="Sfy-rM-DKr"/>
-                            <constraint firstAttribute="trailing" secondItem="adz-u7-jsC" secondAttribute="trailing" id="Zsh-4F-fMR"/>
-                            <constraint firstItem="adz-u7-jsC" firstAttribute="leading" secondItem="Td6-ma-UB1" secondAttribute="leading" id="b5v-kf-pmj"/>
-                            <constraint firstItem="QMz-CO-CeD" firstAttribute="top" secondItem="adz-u7-jsC" secondAttribute="bottom" id="hsZ-Bl-hcm"/>
-                            <constraint firstAttribute="trailing" secondItem="QMz-CO-CeD" secondAttribute="trailing" id="lJl-oI-SZ5"/>
-                            <constraint firstItem="psY-D7-UJU" firstAttribute="top" secondItem="Td6-ma-UB1" secondAttribute="topMargin" constant="15" id="mAa-VM-lSb"/>
+                            <constraint firstItem="QMz-CO-CeD" firstAttribute="leading" secondItem="Td6-ma-UB1" secondAttribute="leading" id="Cbf-ET-Ld4"/>
+                            <constraint firstAttribute="trailing" secondItem="QMz-CO-CeD" secondAttribute="trailing" id="Cia-ah-bTE"/>
+                            <constraint firstItem="QMz-CO-CeD" firstAttribute="top" secondItem="adz-u7-jsC" secondAttribute="bottom" id="J4F-jh-WAv"/>
+                            <constraint firstItem="pul-X2-fDc" firstAttribute="top" secondItem="QMz-CO-CeD" secondAttribute="bottom" id="Le3-UG-79C"/>
+                            <constraint firstItem="adz-u7-jsC" firstAttribute="top" secondItem="psY-D7-UJU" secondAttribute="bottom" constant="5" id="OLO-sK-enB"/>
+                            <constraint firstItem="QMz-CO-CeD" firstAttribute="leading" secondItem="Td6-ma-UB1" secondAttribute="leading" id="cxd-hX-uPu"/>
+                            <constraint firstItem="pul-X2-fDc" firstAttribute="top" secondItem="QMz-CO-CeD" secondAttribute="bottom" id="eqk-rw-vZA"/>
+                            <constraint firstAttribute="trailing" secondItem="QMz-CO-CeD" secondAttribute="trailing" id="euE-Ns-zSw"/>
+                            <constraint firstAttribute="trailing" secondItem="adz-u7-jsC" secondAttribute="trailing" id="oLv-xk-2FV"/>
                             <constraint firstItem="psY-D7-UJU" firstAttribute="leading" secondItem="Td6-ma-UB1" secondAttribute="leadingMargin" id="pM9-El-Y3R"/>
-                            <constraint firstItem="pul-X2-fDc" firstAttribute="top" secondItem="QMz-CO-CeD" secondAttribute="bottom" id="tGL-IT-tUs"/>
+                            <constraint firstItem="pul-X2-fDc" firstAttribute="top" secondItem="QMz-CO-CeD" secondAttribute="bottom" id="q45-jh-WkE"/>
+                            <constraint firstItem="QMz-CO-CeD" firstAttribute="top" secondItem="adz-u7-jsC" secondAttribute="bottom" id="rex-bH-ChK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -650,7 +661,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVe-rk-nic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4216.8000000000002" y="-294.60269865067471"/>
+            <point key="canvasLocation" x="4217" y="-294"/>
         </scene>
         <!--Popular Show Table View Controller-->
         <scene sceneID="ptM-fs-ybH">
@@ -1096,13 +1107,6 @@
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBz-Kh-EdR">
-                                <rect key="frame" x="117" y="635" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1139,7 +1143,6 @@
                         <outlet property="backgroundMask" destination="TAR-fr-ZJu" id="lQj-is-3IK"/>
                         <outlet property="channelImage" destination="6eG-hw-G45" id="7Ts-zf-99Y"/>
                         <outlet property="containerView" destination="r3b-KF-uSV" id="KWE-zG-3Gf"/>
-                        <outlet property="elapsedTime" destination="OBz-Kh-EdR" id="UHM-94-iY4"/>
                         <outlet property="genres" destination="SsH-fi-zSa" id="KLD-gA-zrm"/>
                         <outlet property="showProgress" destination="tbc-JS-2Sb" id="eE9-Mj-crS"/>
                         <outlet property="showSubtitleLabel" destination="Dh2-0O-Cnf" id="WTz-3H-hhz"/>
