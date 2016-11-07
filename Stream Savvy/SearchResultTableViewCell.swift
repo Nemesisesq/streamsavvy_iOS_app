@@ -10,6 +10,13 @@ import UIKit
 
 class SearchResultTableViewCell: UITableViewCell {
 
+
+    @IBOutlet var backgroundImageView: UIImageView!
+    
+    @IBOutlet var visualEffectView: UIVisualEffectView!
+    @IBOutlet var title: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

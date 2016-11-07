@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc class SearchNavigationControllerViewController: UINavigationController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
+@objc class SearchNavigationControllerViewController: UINavigationController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate,UISearchControllerDelegate {
     var selectedShow: Content!
     let searchResults = SearchResults()
     var resultsController: UITableViewController!
@@ -41,9 +41,11 @@ import UIKit
     func search() {
         //Here we set the search bar and the results table
         resultsController = UITableViewController(style: .plain)
-        resultsController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ResultCell")
+        resultsController.tableView.register(UINib.init(nibName: "SearchResultTableViewCell", bundle: nil), forCellReuseIdentifier: "ResultCell")
         resultsController.tableView.dataSource = self
         resultsController.tableView.delegate = self
+        resultsController.tableView.backgroundColor = .clear
+        resultsController.tableView.separatorStyle = .none
         
         searchController = UISearchController(searchResultsController: resultsController)
         //        searchController.searchBar.searchBarStyle = .prominent
@@ -51,6 +53,8 @@ import UIKit
         searchController.searchBar.barTintColor = .black
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.keyboardAppearance = .dark
+        searchController.delegate = self
+        searchController.searchBar.delegate = self
         
         blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -62,11 +66,6 @@ import UIKit
         UIView.animate(withDuration: 0.3, animations: {
             self.blurEffectView.alpha = 1.0
         })
-        
-        
-        
-        
-        
         
         self.searchController.hidesNavigationBarDuringPresentation = false;
         self.definesPresentationContext = false;
@@ -83,13 +82,8 @@ import UIKit
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
-        if searchResults.results.count  > 0 {
-            let sug = searchResults.results[indexPath.row]
-            
-            cell.textLabel?.text = sug.title
-            cell.detailTextLabel?.text = "detail?"
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! SearchResultTableViewCell
+     
         return cell
     }
     
@@ -99,6 +93,19 @@ import UIKit
         self.searchController.isActive = false
         self.performSegue(withIdentifier: "ContentDetailSegue", sender: self)
         
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if searchResults.results.count  > 0 {
+            let sug = searchResults.results[indexPath.row]
+            if let postCell = cell as? SearchResultTableViewCell {
+                postCell.title.text = sug.title
+                postCell.backgroundImageView?.sd_setImage(with: URL(string: sug.image_link))
+                
+            }
+          
+        }
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -118,24 +125,24 @@ import UIKit
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         UIView.animate(withDuration: 0.3, animations: {
             self.blurEffectView.alpha = 0.0
-        })
+        }, completion: {(Bool) -> Void in
+            self.blurEffectView.removeFromSuperview()
+            
+            })
         
-        blurEffectView.removeFromSuperview()
     }
     
     
     func didDismissSearchController(_ searchController: UISearchController) {
         UIView.animate(withDuration: 0.3, animations: {
             self.blurEffectView.alpha = 0.0
+        }, completion: {(Bool) -> Void in
+            self.blurEffectView.removeFromSuperview()
+            
         })
-        
-        blurEffectView.removeFromSuperview()
+
     }
  
-
-
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
