@@ -46,6 +46,14 @@ import UIKit
         searchController = UISearchController(searchResultsController: resultsController)
         //        searchController.searchBar.searchBarStyle = .prominent
         searchController.searchResultsUpdater = self
+        searchController.searchBar.barTintColor = .black
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        view.addSubview(blurEffectView)
         
         
         self.searchController.hidesNavigationBarDuringPresentation = false;
