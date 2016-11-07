@@ -26,6 +26,7 @@ pod 'SimpleKeychain', '~> 0.7'
 pod 'ADMozaicCollectionViewLayout', '~> 2.0'
 pod "MarqueeLabel/Swift"
 pod 'UIScrollView-InfiniteScroll'
+pod "MBRateApp"
 
 
 platform :ios, '10.0'

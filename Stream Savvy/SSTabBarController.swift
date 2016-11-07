@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MBRateApp
 
 class SSTabBarController: UITabBarController, Auth0Protocol {
     
     var hasIdToken: Bool? = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +32,17 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
             items[2].isEnabled = hasIdToken!
             items[3].isEnabled = hasIdToken!
         }
+        
+        //Application rating via MBRate
+        var rateUsInfo = MBRateUsInfo()
+        
+        rateUsInfo.title = "Enjoying Streamsavvy?"
+        rateUsInfo.titleImage = #imageLiteral(resourceName: "marks_streamsavvy_mark_large")
+        rateUsInfo.itunesId = "1148176910"
+        MBRateUs.sharedInstance.rateUsInfo = rateUsInfo
+        
+        
+        
     }
     
     
@@ -47,13 +60,30 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
             print("something else went wrong")
         }
         
+        MBRateUs.sharedInstance.showRateUs(self
+            , positiveBlock: { () -> Void in
+                let alert = UIAlertController(title: "MBAppRate", message: "User rated the app", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+        }, negativeBlock: { () -> Void in
+            let alert = UIAlertController(title: "MBAppRate", message: "User doesn't like the app", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }) { () -> Void in
+            let alert = UIAlertController(title: "MBAppRate", message: "User dismissed screen", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
         // Do any additional setup after loading the view.
         
         if let items = tabBar.items {
             items[2].isEnabled = hasIdToken!
             items[3].isEnabled = hasIdToken!
         }
-
+        
         
         
     }

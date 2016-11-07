@@ -474,7 +474,6 @@
 				9F5D4E921DBC197400AC7AD2 /* ContentDetailViewController.swift */,
 				BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */,
 				BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */,
-				BDEB232E1DC279C900B21291 /* SSTabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -580,6 +579,7 @@
 			children = (
 				BDB817711DC68A12007EA0C8 /* SearchModalRenderer.swift */,
 				BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */,
+				BDEB232E1DC279C900B21291 /* SSTabBarController.swift */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
