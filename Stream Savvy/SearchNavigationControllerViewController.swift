@@ -14,6 +14,8 @@ import UIKit
     var resultsController: UITableViewController!
     var searchController: UISearchController!
     var favorites =  Favorites()
+    var blurEffect: UIBlurEffect!
+    var blurEffectView: UIVisualEffectView!
   
 
 
@@ -48,12 +50,22 @@ import UIKit
         searchController.searchResultsUpdater = self
         searchController.searchBar.barTintColor = .black
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.keyboardAppearance = .dark
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        blurEffectView.alpha = 0.0
         view.addSubview(blurEffectView)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blurEffectView.alpha = 1.0
+        })
+        
+        
+        
+        
         
         
         self.searchController.hidesNavigationBarDuringPresentation = false;
@@ -102,6 +114,24 @@ import UIKit
         }
         
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blurEffectView.alpha = 0.0
+        })
+        
+        blurEffectView.removeFromSuperview()
+    }
+    
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blurEffectView.alpha = 0.0
+        })
+        
+        blurEffectView.removeFromSuperview()
+    }
+ 
 
 
 
@@ -121,6 +151,7 @@ import UIKit
             
         }
     }
+
     
 
 }
