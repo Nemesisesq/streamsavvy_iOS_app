@@ -50,7 +50,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     @IBOutlet var scrollView: UIScrollView?
     
     @IBAction func goToLogin(_ sender:UIBarButtonItem) {
-        self.performSegue(withIdentifier: "Live", sender: self)
+        self.performSegue(withIdentifier: "Login", sender: self)
     }
     
     

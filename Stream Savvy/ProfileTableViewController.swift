@@ -22,12 +22,21 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
     
     @IBOutlet var emailTextField: UITextField!
     
+    @IBOutlet var verifiedLabel: UILabel!
+    
     @IBOutlet var nicknameTextField: UITextField!
     
     @IBOutlet var profileImageView: UIImageView! {
         didSet{
             profileImageView.layer.cornerRadius = 50
             profileImageView.layer.masksToBounds = true
+        }
+    }
+    
+    
+    @IBAction func feedback(_ sender: AnyObject){
+        if let tbc = self.tabBarController as? SSTabBarController{
+            tbc.showRating()
         }
     }
     
@@ -65,6 +74,8 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
                         self.emailTextField.text = profile.email
                         self.nicknameTextField.text = profile.nickname
                         self.profileImageView.sd_setImage(with: profile.picture)
+                        self.verifiedLabel.text = ""
+                        
                     }
             }
         } catch {

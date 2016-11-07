@@ -45,21 +45,7 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
         
     }
     
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        do {
-            _ =  try checkForIdToken(keychain: Auth0.keychain, controller: Auth0.controller, vc: self)
-            hasIdToken = true
-        } catch MyError.Null {
-            print("there is no token")
-            hasIdToken = false
-        } catch {
-            print("something else went wrong")
-        }
-        
+    func showRating() {
         MBRateUs.sharedInstance.showRateUs(self
             , positiveBlock: { () -> Void in
                 let alert = UIAlertController(title: "MBAppRate", message: "User rated the app", preferredStyle: .alert)
@@ -74,6 +60,22 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        do {
+            _ =  try checkForIdToken(keychain: Auth0.keychain, controller: Auth0.controller, vc: self)
+            hasIdToken = true
+        } catch MyError.Null {
+            print("there is no token")
+            hasIdToken = false
+        } catch {
+            print("something else went wrong")
+        }
+        
         
         
         

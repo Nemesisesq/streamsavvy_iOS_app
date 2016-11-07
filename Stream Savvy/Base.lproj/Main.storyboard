@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="UoQ-D0-QAh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OFj-ZR-I61">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin_background1x" translatesAutoresizingMaskIntoConstraints="NO" id="3ah-eo-AXz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-20" width="375" height="579"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -418,6 +418,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mozCollectionView" destination="TF5-Pw-jat" id="7GM-W7-uSv"/>
+                        <segue destination="nyn-XC-XPI" kind="show" identifier="Login" action="showDetailViewController:sender:" id="xzD-Il-795"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mC-ei-qsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -924,6 +925,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="yfA-4K-PDp"/>
+                    <connections>
+                        <segue destination="nyn-XC-XPI" kind="show" action="showDetailViewController:sender:" id="T0S-Xg-IrC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFZ-2Z-45V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1342,6 +1346,27 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="lW9-JD-hG1">
+                                        <rect key="frame" x="0.0" y="390" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lW9-JD-hG1" id="lDK-LS-jg2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oU-ho-OxG">
+                                                    <rect key="frame" x="8" y="21" width="131" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                    <state key="normal" title="Leave FeedBack"/>
+                                                    <connections>
+                                                        <action selector="feedback:" destination="4hj-pm-nup" eventType="touchUpInside" id="WoG-bX-Zq9"/>
+                                                        <action selector="logout:" destination="4hj-pm-nup" eventType="touchUpInside" id="TZ9-dG-rHE"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1357,6 +1382,7 @@
                         <outlet property="emailTextField" destination="qMM-Sx-0hk" id="pl7-x2-VNJ"/>
                         <outlet property="nicknameTextField" destination="rEG-Qi-LGp" id="w6Q-Uj-4bx"/>
                         <outlet property="profileImageView" destination="L6b-Y8-tGK" id="dC7-ES-5ih"/>
+                        <outlet property="verifiedLabel" destination="wWR-Uj-P2q" id="4x5-cD-sXA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqv-RG-5uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1444,8 +1470,9 @@
         <image name="user" width="32" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HxW-k7-KLu"/>
         <segue reference="PqR-Ou-oHG"/>
+        <segue reference="HxW-k7-KLu"/>
+        <segue reference="xzD-Il-795"/>
         <segue reference="Hcq-We-NDc"/>
     </inferredMetricsTieBreakers>
 </document>
