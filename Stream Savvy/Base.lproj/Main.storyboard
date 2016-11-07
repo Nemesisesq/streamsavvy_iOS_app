@@ -926,7 +926,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="yfA-4K-PDp"/>
                     <connections>
-                        <segue destination="nyn-XC-XPI" kind="show" action="showDetailViewController:sender:" id="T0S-Xg-IrC"/>
+                        <segue destination="nyn-XC-XPI" kind="show" identifier="Login" action="showDetailViewController:sender:" id="T0S-Xg-IrC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFZ-2Z-45V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1472,7 +1472,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="PqR-Ou-oHG"/>
         <segue reference="HxW-k7-KLu"/>
-        <segue reference="xzD-Il-795"/>
+        <segue reference="T0S-Xg-IrC"/>
         <segue reference="Hcq-We-NDc"/>
     </inferredMetricsTieBreakers>
 </document>

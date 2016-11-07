@@ -37,7 +37,8 @@ NSInteger numOfStaticCell = 1;
 }
 
 -(IBAction)goToLogin:(id)sender {
-    [self performSegueWithIdentifier:@"Live" sender:self];
+    [Auth0 resetAll];
+    [self performSegueWithIdentifier:@"Login" sender:self];
 }
 
 -(IBAction)search:(id)sender
