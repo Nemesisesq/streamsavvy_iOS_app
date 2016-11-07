@@ -1271,8 +1271,8 @@
                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="unverified" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWR-Uj-P2q">
-                                                    <rect key="frame" x="61.5" y="5.5" width="48" height="11"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWR-Uj-P2q">
+                                                    <rect key="frame" x="61.5" y="5.5" width="0.0" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="11" id="7Li-H1-bRW"/>
                                                     </constraints>
