@@ -13,6 +13,8 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
     
     var hasIdToken: Bool? = false
     
+    let itunesId = "1148176910"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +40,7 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
         
         rateUsInfo.title = "Enjoying Streamsavvy?"
         rateUsInfo.titleImage = #imageLiteral(resourceName: "marks_streamsavvy_mark_large")
-        rateUsInfo.itunesId = "1148176910"
+        rateUsInfo.itunesId = itunesId
         MBRateUs.sharedInstance.rateUsInfo = rateUsInfo
         
         
@@ -48,15 +50,18 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
     func showRating() {
         MBRateUs.sharedInstance.showRateUs(self
             , positiveBlock: { () -> Void in
-                let alert = UIAlertController(title: "MBAppRate", message: "Awesome! let the workd know how you feel!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                let alert = UIAlertController(title: "MBAppRate", message: "Awesome! Thanks for letting the world know how you feel about StreamSavvy!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                
                 self.present(alert, animated: true, completion: nil)
         }, negativeBlock: { () -> Void in
-            let alert = UIAlertController(title: "MBAppRate", message: "Let us know how we can do better!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            let alert = UIAlertController(title: "MBAppRate", message: "Thanks for letting us know how we can do better!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
             self.present(alert, animated: true, completion: nil)
         }) { () -> Void in
-            let alert = UIAlertController(title: "MBAppRate", message: "User dismissed screen", preferredStyle: .alert)
+            let alert = UIAlertController(title: "MBAppRate", message: "You can leave a rating in your profile tab when you are ready!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
