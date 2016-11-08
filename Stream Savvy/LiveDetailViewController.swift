@@ -125,7 +125,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         
         
         showProgress.progress = Float(progress)
-        elapsedTime.text = "\(showProgress.progress)"
+//        elapsedTime.text = "\(showProgress.progress)"
         
         
     }

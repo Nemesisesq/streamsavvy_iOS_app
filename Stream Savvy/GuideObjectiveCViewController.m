@@ -61,19 +61,6 @@ NSInteger numOfStaticCell = 1;
 	[workaroundImageView addSubview:navigationImage];
 	self.navigationItem.titleView=workaroundImageView;
     
-    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search:)];
-    searchButton.tintColor = [Constants StreamSavvyRed];
-    
-    
-    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStylePlain target:self action:@selector(goToLogin:)];
-    loginButton.tintColor = [Constants StreamSavvyRed];
-    
-    
-    NSArray *tempArray = [[NSArray alloc] initWithObjects:loginButton, searchButton, nil];
-    self.navigationItem.rightBarButtonItems = tempArray;
-    
-    
-	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 //	self.tableView.estimatedRowHeight = 328.0;
 	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -95,6 +82,17 @@ NSInteger numOfStaticCell = 1;
 
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
+    
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search:)];
+    searchButton.tintColor = [Constants StreamSavvyRed];
+    
+    
+    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStylePlain target:self action:@selector(goToLogin:)];
+    loginButton.tintColor = [Constants StreamSavvyRed];
+    
+    
+    NSArray *tempArray = [[NSArray alloc] initWithObjects:loginButton, searchButton, nil];
+    self.navigationItem.rightBarButtonItems = tempArray;
     
     if (Auth0.loggedIn) {
         self.navigationItem.rightBarButtonItem = self.searchButton;

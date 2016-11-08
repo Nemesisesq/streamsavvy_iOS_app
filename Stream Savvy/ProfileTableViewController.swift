@@ -75,12 +75,13 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
                         self.nicknameTextField.text = profile.nickname
                         self.profileImageView.sd_setImage(with: profile.picture)
                         
-                        if profile.extraInfo["email_verified"] as! String == "1" {
-                            self.verifiedLabel.text = "verified"
-                        } else {
-                            self.verifiedLabel.text = "unverified"
+                        if let x = profile.extraInfo["email_verified"]   {
+                            if( x as! Bool) {
+                                self.verifiedLabel.text = "verified"
+                            } else {
+                                self.verifiedLabel.text = "unverified"
+                            }
                         }
-                        
                         
                     }
             }
@@ -90,7 +91,7 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
         
         
         
-
+        
         
     }
     
