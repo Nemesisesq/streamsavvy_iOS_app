@@ -16,15 +16,15 @@ import UIKit
     var favorites =  Favorites()
     var blurEffect: UIBlurEffect!
     var blurEffectView: UIVisualEffectView!
-  
-
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,7 +45,7 @@ import UIKit
         resultsController.tableView.dataSource = self
         resultsController.tableView.delegate = self
         resultsController.tableView.backgroundColor = .clear
-        resultsController.tableView.separatorStyle = .none
+        //        resultsController.tableView.separatorStyle = .none
         
         searchController = UISearchController(searchResultsController: resultsController)
         //        searchController.searchBar.searchBarStyle = .prominent
@@ -56,7 +56,7 @@ import UIKit
         searchController.delegate = self
         searchController.searchBar.delegate = self
         
-        blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+        blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
@@ -68,7 +68,7 @@ import UIKit
         })
         
         self.searchController.hidesNavigationBarDuringPresentation = false;
-        self.definesPresentationContext = false;
+        self.definesPresentationContext = true;
         
         self.present(searchController, animated:true, completion: { print("Done")})
     }
@@ -83,7 +83,7 @@ import UIKit
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! SearchResultTableViewCell
-     
+        cell.backgroundColor = .clear
         return cell
     }
     
@@ -105,10 +105,10 @@ import UIKit
             let sug = searchResults.results[indexPath.row]
             if let postCell = cell as? SearchResultTableViewCell {
                 postCell.title.text = sug.title
-                postCell.backgroundImageView?.sd_setImage(with: URL(string: sug.image_link))
+                //                postCell.backgroundImageView?.sd_setImage(with: URL(string: sug.image_link))
                 
             }
-          
+            
         }
     }
     
@@ -129,26 +129,32 @@ import UIKit
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         UIView.animate(withDuration: 0.3, animations: {
             self.blurEffectView.alpha = 0.0
+            self.tabBarController?.tabBar.alpha = 1.0
         }, completion: {(Bool) -> Void in
             self.blurEffectView.removeFromSuperview()
             
-            })
+        })
         
     }
+    
+    
     
     
     func didDismissSearchController(_ searchController: UISearchController) {
         UIView.animate(withDuration: 0.3, animations: {
             self.blurEffectView.alpha = 0.0
+            self.tabBarController?.tabBar.alpha = 1.0
         }, completion: {(Bool) -> Void in
             self.blurEffectView.removeFromSuperview()
             
         })
-
+        
+        
+        
     }
- 
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -162,7 +168,7 @@ import UIKit
             
         }
     }
-
     
-
+    
+    
 }

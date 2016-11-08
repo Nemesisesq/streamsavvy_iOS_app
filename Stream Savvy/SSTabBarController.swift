@@ -48,11 +48,11 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
     func showRating() {
         MBRateUs.sharedInstance.showRateUs(self
             , positiveBlock: { () -> Void in
-                let alert = UIAlertController(title: "MBAppRate", message: "User rated the app", preferredStyle: .alert)
+                let alert = UIAlertController(title: "MBAppRate", message: "Awesome! let the workd know how you feel!", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
         }, negativeBlock: { () -> Void in
-            let alert = UIAlertController(title: "MBAppRate", message: "User doesn't like the app", preferredStyle: .alert)
+            let alert = UIAlertController(title: "MBAppRate", message: "Let us know how we can do better!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }) { () -> Void in
@@ -62,6 +62,8 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
         }
 
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
