@@ -16,9 +16,22 @@ class AppCell: UICollectionViewCell {
     var service: MatchedLiveStreamingSourceSerivce!
     var presenter: LiveDetailsViewController!
     var showName: String!
+    var versions: String!
     
     func prepareForDeepLink(service: MatchedLiveStreamingSourceSerivce){
-        let alert = UIAlertController(title: "One More Thing!!", message: service.template.template, preferredStyle: .alert)
+        
+        if service.service == "sling_blue" {
+            versions = "Blue, Blue+Orange"
+        } else if service.service == "sling_orange" {
+            versions = "Orange Blue Orange"
+        }
+        
+        var message = service.template.template.replacingOccurrences(of: "{service.template.versions}", with: versions)
+        message = message.replacingOccurrences(of: "{showName}", with: showName )
+        message = message.replacingOccurrences(of: "{service.price.unit_cost}", with: service.price.unitCost)    
+       
+        
+        let alert = UIAlertController(title: "One More Thing!!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
 
             
@@ -238,6 +251,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         
         cell.service = source
         cell.presenter = self
+        cell.showName = media.title
         cell.image.image = UIImage(named:"\(source.app!)")
         cell.backgroundColor = Common.getRandomColor()
         

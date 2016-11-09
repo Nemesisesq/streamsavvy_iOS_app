@@ -12,16 +12,12 @@ import Gloss
 class LiveLinkTemplate: Decodable {
     var appName: String!
     var serviceName: String!
-    var template: String! {
-        willSet(newValue){
-//            return newValue.replacingOccurrences(of: "\\\\", with: "\\")
-        }
-    }
+    var template: String!
     
-    var versions: [String]!
+    var versions: String!
     
     public required init?(json: JSON){
-        appName = "appName" <~~ json
+        appName = "app_name" <~~ json
         serviceName = "service_name" <~~ json
         template = "template" <~~ json
         versions = "versions" <~~ json
