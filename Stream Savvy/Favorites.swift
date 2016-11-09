@@ -46,10 +46,11 @@ class Favorites: NSObject {
                         
                         let params: Parameters = [
                                 "id_token": keychain.string(forKey: "id_token")!,
-                                "email" : profile.email!,
+                                
+                                "email" : profile.email ?? "no_email",
                                 "name"  : profile.name,
                                                         ]
-                        
+                    
                         let authHeader: HTTPHeaders = ["Id-Token" :keychain.string(forKey: "id_token")!,
                                                        "Accept": "application/json",
                                                        "User-Id" : profile.userId]
