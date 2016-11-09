@@ -10,9 +10,51 @@ import UIKit
 import Dollar
 
 class AppCell: UICollectionViewCell {
-    
+ 
     @IBOutlet var image: UIImageView!
     
+    var service: MatchedLiveStreamingSourceSerivce!
+    var presenter: LiveDetailsViewController!
+    var showName: String!
+    
+    func prepareForDeepLink(service: MatchedLiveStreamingSourceSerivce){
+        let alert = UIAlertController(title: "One More Thing!!", message: service.template.template, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
+
+            
+            if application.canOpenURL(URL.init(string: service.links.deeplink)!) {
+                        application.openURL(URL.init(string: service.links.deeplink)!)
+            
+                    } else {
+            
+                        application.openURL(URL.init(string: service.links.app_store)!)
+                    }
+
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Sign Up", style: .default, handler: { _ in
+            application.openURL(URL(string: service.links.signup)!)
+        }))
+        
+        presenter.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func getDeepLink(deepLinks: [String]) -> String {
+        for i in deepLinks {
+            if schemeAvailable(deepLink: i){
+                return i
+            }
+        }
+        
+        return ""
+    }
+    
+    func schemeAvailable(deepLink: String) -> Bool {
+        return application.canOpenURL(URL.init(string: deepLink)!)
+    }
+
 }
 
 
@@ -28,6 +70,8 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
     var sources: [MediaSource]!
     
     var timer: Timer!
+    
+    var matchedLiveStreamingServices : [MatchedLiveStreamingSourceSerivce]!
     
     @IBOutlet var backgroundImage: UIImageView!
     
@@ -55,20 +99,28 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         
         print("THERE")
         self.sources = [MediaSource]()
+        self.matchedLiveStreamingServices = [MatchedLiveStreamingSourceSerivce]()
         // MARK - This is where we make the call to get the streaming services for the channel
         
         channel.getDetailsWith(containerView, success: {task, JSON in
             
             //                        print("supercal")
             let the_json = JSON as! NSDictionary
-            let sourceDict = the_json.object(forKey: "streamingServices") as! [[String:Any]]
             
-            sourceDict.forEach(){src in
+            if let mss = (the_json.object(forKey: "streaming_source_live_show_matches") as? [String:Any])?["services"] as? [[String:Any]] {
+                let servicesWithNotification  = mss
                 
-                let mSrc: MediaSource = MediaSource.init(attributes: src)
-                self.sources.append(mSrc)
-                
+                servicesWithNotification.forEach(){ src in
+                    if let mlss: MatchedLiveStreamingSourceSerivce = MatchedLiveStreamingSourceSerivce.init(json: src){
+                        self.matchedLiveStreamingServices.append(mlss)
+                    }
+                }
             }
+            
+            
+            
+            
+            
             
             self.appCollectionView.reloadData()
             self.appCollectionView.collectionViewLayout.invalidateLayout()
@@ -125,7 +177,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         
         
         showProgress.progress = Float(progress)
-//        elapsedTime.text = "\(showProgress.progress)"
+        //        elapsedTime.text = "\(showProgress.progress)"
         
         
     }
@@ -171,7 +223,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.sources.count
+        return self.matchedLiveStreamingServices.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -180,8 +232,13 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         
         //this needs to be hooked up
         
-        let source = sources[indexPath.row]
-        cell.image.image = UIImage(named:"\(source.source!)")
+        //        let source = sources[indexPath.row]
+        
+        let source = matchedLiveStreamingServices[indexPath.row]
+        
+        cell.service = source
+        cell.presenter = self
+        cell.image.image = UIImage(named:"\(source.app!)")
         cell.backgroundColor = Common.getRandomColor()
         
         return cell
@@ -192,19 +249,24 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
     let application = UIApplication.shared
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("\(indexPath) clicked")
         
-        let source = sources[indexPath.row]
         
-        let link = getDeepLink(deepLinks: source.deep_links as! [String])
+        let cell = collectionView.cellForItem(at: indexPath) as! AppCell
+        cell.prepareForDeepLink(service: cell.service)
         
-        if link != "" {
-            application.openURL(URL.init(string: link)!)
-            
-        } else {
-            
-            application.openURL(URL.init(string: source.app_store_link)!)
-        }
+        //        print("\(indexPath) clicked")
+        //
+        //        let source = sources[indexPath.row]
+        //
+        //        let link = getDeepLink(deepLinks: source.deep_links as! [String])
+        //
+        //        if link != "" {
+        //            application.openURL(URL.init(string: link)!)
+        //
+        //        } else {
+        //
+        //            application.openURL(URL.init(string: source.app_store_link)!)
+        //        }
         
         
         

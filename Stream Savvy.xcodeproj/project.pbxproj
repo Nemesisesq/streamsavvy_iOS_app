@@ -94,6 +94,7 @@
 		BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1B6F1F1DC1AAC90053432E /* AuthViewController.m */; };
 		BDEBA1501DD1056000EDDF75 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEBA14E1DD1056000EDDF75 /* SearchResultTableViewCell.swift */; };
 		BDEBA1511DD1056000EDDF75 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDEBA14F1DD1056000EDDF75 /* SearchResultTableViewCell.xib */; };
+		BDEBA1531DD2704D00EDDF75 /* MatchedLiveStreamingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEBA1521DD2704D00EDDF75 /* MatchedLiveStreamingSource.swift */; };
 		BDEE6AEC1DC854B200F9FD2C /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE6AEB1DC854B200F9FD2C /* Gradients.swift */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
@@ -249,6 +250,7 @@
 		BDEB232E1DC279C900B21291 /* SSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTabBarController.swift; sourceTree = "<group>"; };
 		BDEBA14E1DD1056000EDDF75 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		BDEBA14F1DD1056000EDDF75 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		BDEBA1521DD2704D00EDDF75 /* MatchedLiveStreamingSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedLiveStreamingSource.swift; sourceTree = "<group>"; };
 		BDEE6AEB1DC854B200F9FD2C /* Gradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -455,6 +457,7 @@
 				BD0D745C1D9A0E170012F184 /* Favorites.swift */,
 				BD921BDD1DA1E5960018DCFB /* Episodes.swift */,
 				BDD2B7091DAE052700C77260 /* Sources.swift */,
+				BDEBA1521DD2704D00EDDF75 /* MatchedLiveStreamingSource.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				BDB8176A1DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift in Sources */,
 				9FE1B0501D693B160013DCB1 /* PopularShowTableViewController.m in Sources */,
 				BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */,
+				BDEBA1531DD2704D00EDDF75 /* MatchedLiveStreamingSource.swift in Sources */,
 				BD3184A31DBE978600AAFD1E /* MozaicGuideViewController.swift in Sources */,
 				BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */,
 				BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */,
