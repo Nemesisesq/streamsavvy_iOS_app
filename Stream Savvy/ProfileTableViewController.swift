@@ -13,6 +13,8 @@ import SimpleKeychain
 
 class ProfileTableViewController: UITableViewController, Auth0Protocol {
     
+    var avc: UIActivityViewController!
+    
     var keychain = Auth0.keychain
     
     var client = Auth0.client
@@ -33,6 +35,11 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
         }
     }
     
+    @IBAction func shareApplication(_ sender:AnyObject){
+        avc = UIActivityViewController(activityItems: ["Hey you gotta check out streamsavvy!"], applicationActivities: nil)
+        
+        self.present(avc, animated: true, completion: nil)  
+    }
     
     @IBAction func feedback(_ sender: AnyObject){
         if let tbc = self.tabBarController as? SSTabBarController{

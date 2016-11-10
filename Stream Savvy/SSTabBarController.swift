@@ -61,7 +61,7 @@ class SSTabBarController: UITabBarController, Auth0Protocol {
             
             self.present(alert, animated: true, completion: nil)
         }) { () -> Void in
-            let alert = UIAlertController(title: "MBAppRate", message: "You can leave a rating in your profile tab when you are ready!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "It's Cool!", message: "You can leave a rating in your profile tab when you are ready!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

@@ -48,16 +48,36 @@ class Links: Decodable {
     }
 }
 
-class MatchedLiveStreamingSourceSerivce : Decodable {
+class MatchedLiveStreamingSourceSerivce : Decodable, Hashable {
+    
+    static var nextUid:Int = 1
+    static func generateUid() -> Int {
+        nextUid += 1
+        return nextUid
+    }
+    
+    
+    static func ==(lhs: MatchedLiveStreamingSourceSerivce, rhs: MatchedLiveStreamingSourceSerivce) -> Bool {
+        return lhs.uid == rhs.uid
+    }
     
     var app: String!
+    var appIdentifier: String!
     var service: String!
     var template: LiveLinkTemplate!
     var price: Price!
     var links: Links!
+    var uid: Int!
+    
+    var hashValue: Int {
+        return uid
+    }
+    
     
     public required init?(json: JSON){
+        uid = MatchedLiveStreamingSourceSerivce.generateUid()
         app = "app" <~~ json
+        appIdentifier = "app_identifier" <~~ json
         service = "service" <~~ json
         template = "template" <~~ json
         price = "price" <~~ json

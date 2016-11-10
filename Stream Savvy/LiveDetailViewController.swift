@@ -10,7 +10,7 @@ import UIKit
 import Dollar
 
 class AppCell: UICollectionViewCell {
- 
+    
     @IBOutlet var image: UIImageView!
     
     var service: MatchedLiveStreamingSourceSerivce!
@@ -23,26 +23,29 @@ class AppCell: UICollectionViewCell {
         if service.service == "sling_blue" {
             versions = "Blue, Blue+Orange"
         } else if service.service == "sling_orange" {
-            versions = "Orange Blue Orange"
+            versions = "Orange, Blue+Orange"
         }
         
         var message = service.template.template.replacingOccurrences(of: "{service.template.versions}", with: versions)
         message = message.replacingOccurrences(of: "{showName}", with: showName )
         message = message.replacingOccurrences(of: "{service.price.unit_cost}", with: service.price.unitCost)
-       
+        
         
         let alert = UIAlertController(title: "One More Thing!!", message: message, preferredStyle: .actionSheet)
+        
+        
+        //        alert.view.
         alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
-
+            
             
             if application.canOpenURL(URL.init(string: service.links.deeplink)!) {
-                        application.openURL(URL.init(string: service.links.deeplink)!)
+                application.openURL(URL.init(string: service.links.deeplink)!)
+                
+            } else {
+                
+                application.openURL(URL.init(string: service.links.app_store)!)
+            }
             
-                    } else {
-            
-                        application.openURL(URL.init(string: service.links.app_store)!)
-                    }
-
             
         }))
         
@@ -69,7 +72,7 @@ class AppCell: UICollectionViewCell {
     func schemeAvailable(deepLink: String) -> Bool {
         return application.canOpenURL(URL.init(string: deepLink)!)
     }
-
+    
 }
 
 
@@ -87,6 +90,8 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
     var timer: Timer!
     
     var matchedLiveStreamingServices : [MatchedLiveStreamingSourceSerivce]!
+    
+    var uniqueMatchedLiveStreamingServices: [MatchedLiveStreamingSourceSerivce]!
     
     @IBOutlet var backgroundImage: UIImageView!
     
@@ -115,6 +120,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         print("THERE")
         self.sources = [MediaSource]()
         self.matchedLiveStreamingServices = [MatchedLiveStreamingSourceSerivce]()
+        self.uniqueMatchedLiveStreamingServices = [MatchedLiveStreamingSourceSerivce]()
         // MARK - This is where we make the call to get the streaming services for the channel
         
         channel.getDetailsWith(containerView, success: {task, JSON in
@@ -130,6 +136,8 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
                         self.matchedLiveStreamingServices.append(mlss)
                     }
                 }
+                
+                self.uniqueMatchedLiveStreamingServices  = $.uniq(self.matchedLiveStreamingServices){ $0.appIdentifier }
             }
             
             
@@ -238,7 +246,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.matchedLiveStreamingServices.count
+        return self.uniqueMatchedLiveStreamingServices.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -249,12 +257,12 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         
         //        let source = sources[indexPath.row]
         
-        let source = matchedLiveStreamingServices[indexPath.row]
+        let source = uniqueMatchedLiveStreamingServices[indexPath.row]
         
         cell.service = source
         cell.presenter = self
         cell.showName = media.title
-        cell.image.image = UIImage(named:"\(source.app!)")
+        cell.image.image = UIImage(named:"\(source.appIdentifier!)")
         cell.backgroundColor = Common.getRandomColor()
         
         return cell
