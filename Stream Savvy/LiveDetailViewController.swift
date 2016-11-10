@@ -28,10 +28,10 @@ class AppCell: UICollectionViewCell {
         
         var message = service.template.template.replacingOccurrences(of: "{service.template.versions}", with: versions)
         message = message.replacingOccurrences(of: "{showName}", with: showName )
-        message = message.replacingOccurrences(of: "{service.price.unit_cost}", with: service.price.unitCost)    
+        message = message.replacingOccurrences(of: "{service.price.unit_cost}", with: service.price.unitCost)
        
         
-        let alert = UIAlertController(title: "One More Thing!!", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "One More Thing!!", message: message, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
 
             
@@ -49,6 +49,8 @@ class AppCell: UICollectionViewCell {
         alert.addAction(UIAlertAction(title: "Sign Up", style: .default, handler: { _ in
             application.openURL(URL(string: service.links.signup)!)
         }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         presenter.present(alert, animated: true, completion: nil)
     }
