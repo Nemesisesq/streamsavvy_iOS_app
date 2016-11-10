@@ -20,22 +20,41 @@ class AppCell: UICollectionViewCell {
     
     func prepareForDeepLink(service: MatchedLiveStreamingSourceSerivce){
         
-        if service.service == "sling_blue" {
-            versions = "Blue, Blue+Orange"
-        } else if service.service == "sling_orange" {
-            versions = "Orange, Blue+Orange"
+        
+        switch service.service {
+            case "sling_blue":
+                versions = "Blue, Blue+Orange"
+            case "sling_orange":
+                versions = "Orange, Blue+Orange"
+            case "ps_vue_access":
+                versions = "Playstation Vue Access"
+            case "ps_vue_core":
+            versions = "Playstation Vue Core"
+            case "ps_vue_elite":
+            versions = "Playstation Vue Elite"
+            case "ps_vue_ultra":
+            versions = "Playstation Vue Ultra"
+        default:
+            versions = service.app
         }
+        
         
         var message = service.template.template.replacingOccurrences(of: "{service.template.versions}", with: versions)
         message = message.replacingOccurrences(of: "{showName}", with: showName )
         message = message.replacingOccurrences(of: "{service.price.unit_cost}", with: service.price.unitCost)
+        message = message.replacingOccurrences(of: "\\n", with: "\n")
         
         
-        let alert = UIAlertController(title: "One More Thing!!", message: message, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "One More Thing!!", message: "", preferredStyle: .actionSheet)
+        let attributedString = NSAttributedString(string: message, attributes: [
+            NSForegroundColorAttributeName : UIColor.black
+            ])
+    
         
+        alert.setValue(attributedString, forKey: "attributedTitle")
         
         //        alert.view.
-        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Watch Now", style: .default, handler: { _ in
             
             
             if application.canOpenURL(URL.init(string: service.links.deeplink)!) {
@@ -49,11 +68,12 @@ class AppCell: UICollectionViewCell {
             
         }))
         
-        alert.addAction(UIAlertAction(title: "Sign Up", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Learn More", style: .default, handler: { _ in
             application.openURL(URL(string: service.links.signup)!)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         
         presenter.present(alert, animated: true, completion: nil)
     }

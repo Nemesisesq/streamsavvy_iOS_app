@@ -36,7 +36,7 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
     }
     
     @IBAction func shareApplication(_ sender:AnyObject){
-        avc = UIActivityViewController(activityItems: ["Hey you gotta check out streamsavvy!"], applicationActivities: nil)
+        avc = UIActivityViewController(activityItems: ["I Stream Savvy. Do you? Check out the best TV guide for streaming https://appsto.re/us/oO8Beb.i"], applicationActivities: nil)
         
         self.present(avc, animated: true, completion: nil)  
     }
