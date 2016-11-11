@@ -57,6 +57,10 @@ class AppCell: UICollectionViewCell {
         alert.addAction(UIAlertAction(title: "Watch Now", style: .default, handler: { _ in
             
             
+            guard (service.links.deeplink) != nil else {
+                return
+            }
+            
             if application.canOpenURL(URL.init(string: service.links.deeplink)!) {
                 application.openURL(URL.init(string: service.links.deeplink)!)
                 
