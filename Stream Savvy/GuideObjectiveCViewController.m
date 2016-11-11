@@ -124,7 +124,7 @@ NSInteger numOfStaticCell = 1;
 		//////////////////////this needs edited
 //		int max_to_load = 0;
 		// itll crash if you uncomment all of these
-					NSLog(@"\n\n\n\t\t0\n\n\n%@", JSON);
+//					NSLog(@"\n\n\n\t\t0\n\n\n%@", JSON);
 		////			NSLog(@"\n\n\n\t\t1\n\n\n%@", [[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"]);
 		////			NSLog(@"\n\n\n\t\t2\n\n\n%@", [[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]);
 		////			NSLog(@"\n\n\n\t\t3\n\n\n%@", [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]);
@@ -179,7 +179,7 @@ NSInteger numOfStaticCell = 1;
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	Channel *channel = [self.guideShows objectAtIndex:indexPath.row];
 	LiveGuideDetailsViewController *lgdvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveDetailsViewController"];
-	NSLog(@"HERE");
+//	NSLog(@"HERE");
 	lgdvc.channel = channel;
 	lgdvc.media = channel.now_playing;
 	[self.navigationController pushViewController:lgdvc animated:YES];

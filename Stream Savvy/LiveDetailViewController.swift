@@ -22,17 +22,17 @@ class AppCell: UICollectionViewCell {
         
         
         switch service.service {
-            case "sling_blue":
-                versions = "Blue, Blue+Orange"
-            case "sling_orange":
-                versions = "Orange, Blue+Orange"
-            case "ps_vue_access":
-                versions = "Playstation Vue Access"
-            case "ps_vue_core":
+        case "sling_blue":
+            versions = "Blue, Blue+Orange"
+        case "sling_orange":
+            versions = "Orange, Blue+Orange"
+        case "ps_vue_access":
+            versions = "Playstation Vue Access"
+        case "ps_vue_core":
             versions = "Playstation Vue Core"
-            case "ps_vue_elite":
+        case "ps_vue_elite":
             versions = "Playstation Vue Elite"
-            case "ps_vue_ultra":
+        case "ps_vue_ultra":
             versions = "Playstation Vue Ultra"
         default:
             versions = service.app
@@ -49,7 +49,7 @@ class AppCell: UICollectionViewCell {
         let attributedString = NSAttributedString(string: message, attributes: [
             NSForegroundColorAttributeName : UIColor.black
             ])
-    
+        
         
         alert.setValue(attributedString, forKey: "attributedTitle")
         
@@ -57,19 +57,20 @@ class AppCell: UICollectionViewCell {
         alert.addAction(UIAlertAction(title: "Watch Now", style: .default, handler: { _ in
             
             
-            guard (service.links.deeplink) != nil else {
-                return
-            }
-            
-            if application.canOpenURL(URL.init(string: service.links.deeplink)!) {
-                application.openURL(URL.init(string: service.links.deeplink)!)
+            if let url = URL.init(string: service.links.deeplink){
+                if application.canOpenURL(url) {
+                    application.openURL(url)
+                } else {
+                    if let appStoreUrl = URL.init(string: service.links.app_store) {
+                        application.openURL(appStoreUrl)
+                    }
+                }
                 
             } else {
-                
-                application.openURL(URL.init(string: service.links.app_store)!)
+                if let appStoreUrl = URL.init(string: service.links.app_store) {
+                    application.openURL(appStoreUrl)
+                }
             }
-            
-            
         }))
         
         alert.addAction(UIAlertAction(title: "Learn More", style: .default, handler: { _ in
