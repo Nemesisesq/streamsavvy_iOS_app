@@ -26,9 +26,50 @@
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
         
         [[A0Lock sharedLock] applicationLaunchedWithOptions:launchOptions];
+    
+    //Harpy
+    
+    [self.window makeKeyAndVisible];
+    
+    [[Harpy sharedInstance] setPresentingViewController:_window.rootViewController];
+    
+    [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
+    
+    NSString *model = [[UIDevice currentDevice] model];
+    
+        //device is simulator
+    [[Harpy sharedInstance] setDelegate:self];
+
+    [[Harpy sharedInstance] setPatchUpdateAlertType:HarpyAlertTypeSkip];
+    [[Harpy sharedInstance] setMinorUpdateAlertType:HarpyAlertTypeOption];
+    [[Harpy sharedInstance] setMajorUpdateAlertType:HarpyAlertTypeForce];
+    [[Harpy sharedInstance] setRevisionUpdateAlertType:HarpyAlertTypeOption];
+    
+    
+    [[Harpy sharedInstance] checkVersion];
+    
         
+    
+    
         
         return YES;
+}
+
+- (void)harpyUserDidSkipVersion{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UITabBarController *destCon = [storyboard instantiateViewControllerWithIdentifier:@"Auth0ViewController"];
+    //    destCon.event=notifyEvent;
+    //    UINavigationController *navController =(UINavigationController *) self.window.rootViewController;
+    [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:destCon animated:YES completion:nil];
+}
+
+// User did click on button that cancels update dialog
+- (void)harpyUserDidCancel{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UITabBarController *destCon = [storyboard instantiateViewControllerWithIdentifier:@"Auth0ViewController"];
+//    destCon.event=notifyEvent;
+//    UINavigationController *navController =(UINavigationController *) self.window.rootViewController;
+    [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:destCon animated:YES completion:nil];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
@@ -59,10 +100,13 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[Harpy sharedInstance] checkVersionDaily];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

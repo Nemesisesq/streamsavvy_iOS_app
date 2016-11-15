@@ -193,7 +193,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         SDWebModel.loadImage(for: channelImage, withRemoteURL: channel.image_link)
         
         let uri = self.channel.now_playing.preferredImage["uri"]
-        let url = URL(string: "http://developer.tmsimg.com/\(uri!)?api_key=3w8hvfmfxjuwgvbqkahrss35")
+        let url = URL(string: uri! as! String)
         
         backgroundImage.sd_setImage(with: url!)
         

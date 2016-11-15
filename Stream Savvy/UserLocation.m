@@ -37,12 +37,13 @@
 		NSLog(@"ALLOC INIT");
 		_locationManager = [[CLLocationManager alloc]init];
 		_locationManager.delegate = self;
+//        _locationManager.allowsBackgroundLocationUpdates = YES;
 		if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
 			[self.locationManager requestWhenInUseAuthorization];
 		}
 		_locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 		_locationManager.distanceFilter = kCLLocationAccuracyBest; // or number in Meters.
-		[self.locationManager startUpdatingLocation];
+		[_locationManager startUpdatingLocation];
 
 	}
 	NSLog(@"SWOOSH");
@@ -94,7 +95,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-	NSLog(@"ERRoR");
+	NSLog(@"%@", error);
 	// ...
 }
 

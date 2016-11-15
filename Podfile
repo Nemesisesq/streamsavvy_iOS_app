@@ -27,6 +27,7 @@ pod 'ADMozaicCollectionViewLayout', '~> 2.0'
 pod "MarqueeLabel/Swift"
 pod 'UIScrollView-InfiniteScroll'
 pod "MBRateApp"
+pod "Harpy"
 
 
 platform :ios, '10.0'

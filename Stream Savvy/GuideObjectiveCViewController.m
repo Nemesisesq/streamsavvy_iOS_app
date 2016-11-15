@@ -118,6 +118,8 @@ NSInteger numOfStaticCell = 1;
 -(void)reload{
 	float lat = UserLocation.sharedController.locationManager.location.coordinate.latitude;
 	float lon = UserLocation.sharedController.locationManager.location.coordinate.longitude;
+    
+    
         
 	[Channel getGuideForLattitude:lat Longitude:lon view:self.view Success:^(NSURLSessionDataTask *task, id JSON) {
 		NSMutableArray *guideShows = [NSMutableArray new];

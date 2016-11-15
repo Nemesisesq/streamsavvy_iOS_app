@@ -22,7 +22,7 @@
 	self.display_name			= [attributes valueForKey:@"callSign"];
 	self.affiliate_display_name	= [attributes valueForKey:@"affiliateCallSign"];
 	self.channel_number			= [attributes valueForKey:@"channel"];
-	self.image_link				= [NSString stringWithFormat:@"http://developer.tmsimg.com/%@?api_key=3w8hvfmfxjuwgvbqkahrss35", [[attributes valueForKey:@"preferredImage"] valueForKey:@"uri"]];
+	self.image_link				= [[attributes valueForKey:@"preferredImage"] valueForKey:@"uri"];
 	
 	self.now_playing				= [[Media alloc] initWithAttributes:[[attributes valueForKey:@"airings"] objectAtIndex:0]];
 	
@@ -32,8 +32,9 @@
 
 
 + (void)getGuideForLattitude:(float)lat Longitude:(float)lon view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = [NSString stringWithFormat:@"https://edr-go-staging.herokuapp.com/gracenote/lineup-airings/%f/%f", lat, lon];
-//        NSString *url = [NSString stringWithFormat:@"http://localhost:8080/gracenote/lineup-airings/%f/%f", lat, lon];
+//	NSString *url = [NSString stringWithFormat:@"https://edr-go-staging.herokuapp.com/gracenote/lineup-airings/%f/%f", lat, lon];
+//    	NSString *url = [NSString stringWithFormat:@"https://concurgrid.herokuapp.com/gracenote/lineup-airings/%f/%f", lat, lon];
+        NSString *url = [NSString stringWithFormat:@"http://localhost:8080/gracenote/lineup-airings/%f/%f", lat, lon];
 	NSLog(@"%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];
 	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -49,6 +50,9 @@
 						    NSLog(@"~~~>%@", error);
 						    [MBProgressHUD hideHUDForView:view animated:YES];
 					    });
+//                        sleep(2);
+//                        [self getGuideForLattitude:lat Longitude:lon view:view Success:successBlock];
+                        
 				    }];
 	});
 }

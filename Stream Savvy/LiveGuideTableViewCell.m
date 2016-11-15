@@ -32,7 +32,7 @@
 	NSLog(@"*******************************");
 	[SDWebModel loadImageFor:self.networkImageView withRemoteURL:		self.channel.image_link];
         
-        NSString *url = [NSString stringWithFormat:@"http://developer.tmsimg.com/%@?api_key=3w8hvfmfxjuwgvbqkahrss35", [self.channel.now_playing.preferredImage valueForKey:@"uri"]];
+        NSString *url = [self.channel.now_playing.preferredImage valueForKey:@"uri"];
 	
 	[SDWebModel loadImageFor:self.backGroundImageView withRemoteURL:		url];
 	

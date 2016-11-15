@@ -48,6 +48,7 @@
 		BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1834B51D8CDACE00B472E2 /* favorite.png */; };
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
 		BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */; };
+		BD2C6A591DDA5AD000FC3A61 /* Harpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2C6A581DDA5AD000FC3A61 /* Harpy.framework */; };
 		BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */; };
 		BD3184A31DBE978600AAFD1E /* MozaicGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */; };
 		BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -202,6 +203,7 @@
 		BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
+		BD2C6A581DDA5AD000FC3A61 /* Harpy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Harpy.framework; path = "Pods/../build/Debug-iphoneos/Harpy/Harpy.framework"; sourceTree = "<group>"; };
 		BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewControllerExtension.swift; sourceTree = "<group>"; };
 		BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MozaicGuideViewController.swift; sourceTree = "<group>"; };
 		BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ADMozaicCollectionViewLayout.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/ADMozaicCollectionViewLayout/ADMozaicCollectionViewLayout.framework"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2C6A591DDA5AD000FC3A61 /* Harpy.framework in Frameworks */,
 				BDB817681DC53B48007EA0C8 /* MarqueeLabel.framework in Frameworks */,
 				BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */,
 				BD98187B1DB916A7003A5159 /* Auth0.framework in Frameworks */,
@@ -298,6 +301,7 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD2C6A581DDA5AD000FC3A61 /* Harpy.framework */,
 				BDB817671DC53B48007EA0C8 /* MarqueeLabel.framework */,
 				BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */,
 				BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */,
@@ -1132,6 +1136,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/UICollectionViewLeftAlignedLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Lock",
 					"$(SRCROOT)/**",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Harpy",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1210,6 +1215,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ERJustifiedFlowLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/UICollectionViewLeftAlignedLayout",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Lock",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Harpy",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

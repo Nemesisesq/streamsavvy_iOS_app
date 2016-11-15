@@ -31,6 +31,7 @@ PODS:
   - FBSDKShareKit (4.17.0):
     - FBSDKCoreKit
   - Gloss (1.1.0)
+  - Harpy (4.0.7)
   - Lock (1.27.1):
     - Lock/Core (= 1.27.1)
     - Lock/UI (= 1.27.1)
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - Gloss (~> 1.0)
+  - Harpy
   - Lock (~> 1.27)
   - MarqueeLabel/Swift
   - MBProgressHUD (~> 1.0.0)
@@ -105,6 +107,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 42b7129ac0373ca99eaf4cbebf4d07bd42371f59
   FBSDKShareKit: 9b573d03fbee36cbaf42d5bb1f2bc019e0d72347
   Gloss: a8340c124ff69c5d1c12e06c252373f4a16d2958
+  Harpy: 365eca4561369b4ebfeb188b18155d5e9768c939
   Lock: c8709bb9d798eb2824accd78170140faab1a3fc2
   MarqueeLabel: 80ba85d2b76a9f5fa6c13de337db80bcd94feb1d
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
@@ -118,6 +121,6 @@ SPEC CHECKSUMS:
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: 96cf9208a242beb05fc9feea157bc1dec1ec92d4
+PODFILE CHECKSUM: 3b5829f57ce6484d62de645ea430d679246edd18
 
 COCOAPODS: 1.1.0.rc.2
