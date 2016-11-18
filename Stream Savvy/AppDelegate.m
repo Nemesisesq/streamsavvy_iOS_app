@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Lock/Lock.h>
+#import "Stream_Savvy-Swift.h"
 
 
 
@@ -107,6 +108,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [[Harpy sharedInstance] checkVersionDaily];
+    [[[SocketIOManager alloc] init] echoTest];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

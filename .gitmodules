@@ -1,0 +1,6 @@
+[submodule "Frameworks/SwiftWebSocket"]
+	path = Frameworks/SwiftWebSocket
+	url = git@github.com:tidwall/SwiftWebSocket.git
+[submodule "Frameworks/Amplitude"]
+	path = Frameworks/Amplitude
+	url = git@github.com:amplitude/Amplitude-iOS.git

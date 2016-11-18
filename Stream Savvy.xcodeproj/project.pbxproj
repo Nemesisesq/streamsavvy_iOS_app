@@ -59,6 +59,24 @@
 		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
 		BD712D301DB87A6500320590 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD712D2F1DB87A6500320590 /* Auth0.plist */; };
 		BD712D321DB87C5600320590 /* Auth0ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD712D311DB87C5600320590 /* Auth0ViewController.swift */; };
+		BD71F0D41DDF7BDB00A870AD /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0D31DDF7BDB00A870AD /* WebSocket.swift */; };
+		BD71F0F01DDF7D2700A870AD /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0D81DDF7D2700A870AD /* AMPConstants.m */; };
+		BD71F0F11DDF7D2700A870AD /* AMPDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0DA1DDF7D2700A870AD /* AMPDatabaseHelper.m */; };
+		BD71F0F21DDF7D2700A870AD /* AMPDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0DC1DDF7D2700A870AD /* AMPDeviceInfo.m */; };
+		BD71F0F31DDF7D2700A870AD /* AMPIdentify.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0DE1DDF7D2700A870AD /* AMPIdentify.m */; };
+		BD71F0F41DDF7D2700A870AD /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0E01DDF7D2700A870AD /* Amplitude.m */; };
+		BD71F0F51DDF7D2700A870AD /* AMPLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0E31DDF7D2700A870AD /* AMPLocationManagerDelegate.m */; };
+		BD71F0F61DDF7D2700A870AD /* AMPRevenue.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0E51DDF7D2700A870AD /* AMPRevenue.m */; };
+		BD71F0F71DDF7D2700A870AD /* AMPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0E71DDF7D2700A870AD /* AMPURLConnection.m */; };
+		BD71F0F81DDF7D2700A870AD /* AMPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71F0E91DDF7D2700A870AD /* AMPUtils.m */; };
+		BD71F0F91DDF7D2700A870AD /* api.amplitude.com.der in Resources */ = {isa = PBXBuildFile; fileRef = BD71F0EA1DDF7D2700A870AD /* api.amplitude.com.der */; };
+		BD71F0FA1DDF7D2700A870AD /* AppledocSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD71F0EB1DDF7D2700A870AD /* AppledocSettings.plist */; };
+		BD71F0FB1DDF7D2700A870AD /* ComodoCaLimitedRsaCertificationAuthority.der in Resources */ = {isa = PBXBuildFile; fileRef = BD71F0EC1DDF7D2700A870AD /* ComodoCaLimitedRsaCertificationAuthority.der */; };
+		BD71F0FC1DDF7D2700A870AD /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = BD71F0ED1DDF7D2700A870AD /* ComodoRsaCA.der */; };
+		BD71F0FD1DDF7D2700A870AD /* ComodoRsaDomainValidationCA.der in Resources */ = {isa = PBXBuildFile; fileRef = BD71F0EE1DDF7D2700A870AD /* ComodoRsaDomainValidationCA.der */; };
+		BD71F0FE1DDF7D2700A870AD /* SSLCertificatePinning in Resources */ = {isa = PBXBuildFile; fileRef = BD71F0EF1DDF7D2700A870AD /* SSLCertificatePinning */; };
+		BD71F1001DDF7E2400A870AD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71F0FF1DDF7E2400A870AD /* libz.tbd */; };
+		BD71F1021DDF7E9400A870AD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71F1011DDF7E9400A870AD /* libsqlite3.tbd */; };
 		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
 		BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD921BDD1DA1E5960018DCFB /* Episodes.swift */; };
 		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
@@ -216,6 +234,35 @@
 		BD712D2F1DB87A6500320590 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		BD712D311DB87C5600320590 /* Auth0ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0ViewController.swift; sourceTree = "<group>"; };
 		BD712D331DB87CAA00320590 /* Lock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lock.framework; path = "Pods/../build/Debug-iphoneos/Lock/Lock.framework"; sourceTree = "<group>"; };
+		BD71F0D31DDF7BDB00A870AD /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Frameworks/SwiftWebSocket/Source/WebSocket.swift; sourceTree = "<group>"; };
+		BD71F0D61DDF7D2700A870AD /* AMPARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPARCMacros.h; path = Frameworks/Amplitude/Amplitude/AMPARCMacros.h; sourceTree = "<group>"; };
+		BD71F0D71DDF7D2700A870AD /* AMPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPConstants.h; path = Frameworks/Amplitude/Amplitude/AMPConstants.h; sourceTree = "<group>"; };
+		BD71F0D81DDF7D2700A870AD /* AMPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPConstants.m; path = Frameworks/Amplitude/Amplitude/AMPConstants.m; sourceTree = "<group>"; };
+		BD71F0D91DDF7D2700A870AD /* AMPDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPDatabaseHelper.h; path = Frameworks/Amplitude/Amplitude/AMPDatabaseHelper.h; sourceTree = "<group>"; };
+		BD71F0DA1DDF7D2700A870AD /* AMPDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPDatabaseHelper.m; path = Frameworks/Amplitude/Amplitude/AMPDatabaseHelper.m; sourceTree = "<group>"; };
+		BD71F0DB1DDF7D2700A870AD /* AMPDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPDeviceInfo.h; path = Frameworks/Amplitude/Amplitude/AMPDeviceInfo.h; sourceTree = "<group>"; };
+		BD71F0DC1DDF7D2700A870AD /* AMPDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPDeviceInfo.m; path = Frameworks/Amplitude/Amplitude/AMPDeviceInfo.m; sourceTree = "<group>"; };
+		BD71F0DD1DDF7D2700A870AD /* AMPIdentify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPIdentify.h; path = Frameworks/Amplitude/Amplitude/AMPIdentify.h; sourceTree = "<group>"; };
+		BD71F0DE1DDF7D2700A870AD /* AMPIdentify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPIdentify.m; path = Frameworks/Amplitude/Amplitude/AMPIdentify.m; sourceTree = "<group>"; };
+		BD71F0DF1DDF7D2700A870AD /* Amplitude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Amplitude.h; path = Frameworks/Amplitude/Amplitude/Amplitude.h; sourceTree = "<group>"; };
+		BD71F0E01DDF7D2700A870AD /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Amplitude.m; path = Frameworks/Amplitude/Amplitude/Amplitude.m; sourceTree = "<group>"; };
+		BD71F0E11DDF7D2700A870AD /* Amplitude+SSLPinning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Amplitude+SSLPinning.h"; path = "Frameworks/Amplitude/Amplitude/Amplitude+SSLPinning.h"; sourceTree = "<group>"; };
+		BD71F0E21DDF7D2700A870AD /* AMPLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPLocationManagerDelegate.h; path = Frameworks/Amplitude/Amplitude/AMPLocationManagerDelegate.h; sourceTree = "<group>"; };
+		BD71F0E31DDF7D2700A870AD /* AMPLocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPLocationManagerDelegate.m; path = Frameworks/Amplitude/Amplitude/AMPLocationManagerDelegate.m; sourceTree = "<group>"; };
+		BD71F0E41DDF7D2700A870AD /* AMPRevenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPRevenue.h; path = Frameworks/Amplitude/Amplitude/AMPRevenue.h; sourceTree = "<group>"; };
+		BD71F0E51DDF7D2700A870AD /* AMPRevenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPRevenue.m; path = Frameworks/Amplitude/Amplitude/AMPRevenue.m; sourceTree = "<group>"; };
+		BD71F0E61DDF7D2700A870AD /* AMPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPURLConnection.h; path = Frameworks/Amplitude/Amplitude/AMPURLConnection.h; sourceTree = "<group>"; };
+		BD71F0E71DDF7D2700A870AD /* AMPURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPURLConnection.m; path = Frameworks/Amplitude/Amplitude/AMPURLConnection.m; sourceTree = "<group>"; };
+		BD71F0E81DDF7D2700A870AD /* AMPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPUtils.h; path = Frameworks/Amplitude/Amplitude/AMPUtils.h; sourceTree = "<group>"; };
+		BD71F0E91DDF7D2700A870AD /* AMPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPUtils.m; path = Frameworks/Amplitude/Amplitude/AMPUtils.m; sourceTree = "<group>"; };
+		BD71F0EA1DDF7D2700A870AD /* api.amplitude.com.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = api.amplitude.com.der; path = Frameworks/Amplitude/Amplitude/api.amplitude.com.der; sourceTree = "<group>"; };
+		BD71F0EB1DDF7D2700A870AD /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppledocSettings.plist; path = Frameworks/Amplitude/Amplitude/AppledocSettings.plist; sourceTree = "<group>"; };
+		BD71F0EC1DDF7D2700A870AD /* ComodoCaLimitedRsaCertificationAuthority.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = ComodoCaLimitedRsaCertificationAuthority.der; path = Frameworks/Amplitude/Amplitude/ComodoCaLimitedRsaCertificationAuthority.der; sourceTree = "<group>"; };
+		BD71F0ED1DDF7D2700A870AD /* ComodoRsaCA.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = ComodoRsaCA.der; path = Frameworks/Amplitude/Amplitude/ComodoRsaCA.der; sourceTree = "<group>"; };
+		BD71F0EE1DDF7D2700A870AD /* ComodoRsaDomainValidationCA.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = ComodoRsaDomainValidationCA.der; path = Frameworks/Amplitude/Amplitude/ComodoRsaDomainValidationCA.der; sourceTree = "<group>"; };
+		BD71F0EF1DDF7D2700A870AD /* SSLCertificatePinning */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SSLCertificatePinning; path = Frameworks/Amplitude/Amplitude/SSLCertificatePinning; sourceTree = "<group>"; };
+		BD71F0FF1DDF7E2400A870AD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BD71F1011DDF7E9400A870AD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		BD921BDD1DA1E5960018DCFB /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -263,6 +310,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD71F1021DDF7E9400A870AD /* libsqlite3.tbd in Frameworks */,
+				BD71F1001DDF7E2400A870AD /* libz.tbd in Frameworks */,
 				BD2C6A591DDA5AD000FC3A61 /* Harpy.framework in Frameworks */,
 				BDB817681DC53B48007EA0C8 /* MarqueeLabel.framework in Frameworks */,
 				BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */,
@@ -303,6 +352,10 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD71F1011DDF7E9400A870AD /* libsqlite3.tbd */,
+				BD71F0FF1DDF7E2400A870AD /* libz.tbd */,
+				BD71F0D51DDF7BE000A870AD /* Amplitude */,
+				BD71F0D21DDF7BBE00A870AD /* SwiftWebSockets */,
 				BD2C6A581DDA5AD000FC3A61 /* Harpy.framework */,
 				BDB817671DC53B48007EA0C8 /* MarqueeLabel.framework */,
 				BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */,
@@ -561,6 +614,47 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		BD71F0D21DDF7BBE00A870AD /* SwiftWebSockets */ = {
+			isa = PBXGroup;
+			children = (
+				BD71F0D31DDF7BDB00A870AD /* WebSocket.swift */,
+			);
+			name = SwiftWebSockets;
+			sourceTree = "<group>";
+		};
+		BD71F0D51DDF7BE000A870AD /* Amplitude */ = {
+			isa = PBXGroup;
+			children = (
+				BD71F0D61DDF7D2700A870AD /* AMPARCMacros.h */,
+				BD71F0D71DDF7D2700A870AD /* AMPConstants.h */,
+				BD71F0D81DDF7D2700A870AD /* AMPConstants.m */,
+				BD71F0D91DDF7D2700A870AD /* AMPDatabaseHelper.h */,
+				BD71F0DA1DDF7D2700A870AD /* AMPDatabaseHelper.m */,
+				BD71F0DB1DDF7D2700A870AD /* AMPDeviceInfo.h */,
+				BD71F0DC1DDF7D2700A870AD /* AMPDeviceInfo.m */,
+				BD71F0DD1DDF7D2700A870AD /* AMPIdentify.h */,
+				BD71F0DE1DDF7D2700A870AD /* AMPIdentify.m */,
+				BD71F0DF1DDF7D2700A870AD /* Amplitude.h */,
+				BD71F0E01DDF7D2700A870AD /* Amplitude.m */,
+				BD71F0E11DDF7D2700A870AD /* Amplitude+SSLPinning.h */,
+				BD71F0E21DDF7D2700A870AD /* AMPLocationManagerDelegate.h */,
+				BD71F0E31DDF7D2700A870AD /* AMPLocationManagerDelegate.m */,
+				BD71F0E41DDF7D2700A870AD /* AMPRevenue.h */,
+				BD71F0E51DDF7D2700A870AD /* AMPRevenue.m */,
+				BD71F0E61DDF7D2700A870AD /* AMPURLConnection.h */,
+				BD71F0E71DDF7D2700A870AD /* AMPURLConnection.m */,
+				BD71F0E81DDF7D2700A870AD /* AMPUtils.h */,
+				BD71F0E91DDF7D2700A870AD /* AMPUtils.m */,
+				BD71F0EA1DDF7D2700A870AD /* api.amplitude.com.der */,
+				BD71F0EB1DDF7D2700A870AD /* AppledocSettings.plist */,
+				BD71F0EC1DDF7D2700A870AD /* ComodoCaLimitedRsaCertificationAuthority.der */,
+				BD71F0ED1DDF7D2700A870AD /* ComodoRsaCA.der */,
+				BD71F0EE1DDF7D2700A870AD /* ComodoRsaDomainValidationCA.der */,
+				BD71F0EF1DDF7D2700A870AD /* SSLCertificatePinning */,
+			);
+			name = Amplitude;
+			sourceTree = "<group>";
+		};
 		BD862C8E1D9B642D00C8FFF9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,14 +828,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD71F0FA1DDF7D2700A870AD /* AppledocSettings.plist in Resources */,
+				BD71F0FC1DDF7D2700A870AD /* ComodoRsaCA.der in Resources */,
 				BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */,
 				BDE9604B1DA8B71600E13C68 /* Upload-50.png in Resources */,
+				BD71F0FB1DDF7D2700A870AD /* ComodoCaLimitedRsaCertificationAuthority.der in Resources */,
 				BDE9604D1DA8B71600E13C68 /* Like-50.png in Resources */,
+				BD71F0FE1DDF7D2700A870AD /* SSLCertificatePinning in Resources */,
+				BD71F0FD1DDF7D2700A870AD /* ComodoRsaDomainValidationCA.der in Resources */,
 				9F5A4D421D5AE1D70057AF6D /* LaunchScreen.storyboard in Resources */,
 				9F5A4D3F1D5AE1D70057AF6D /* Assets.xcassets in Resources */,
 				BDEBA1511DD1056000EDDF75 /* SearchResultTableViewCell.xib in Resources */,
 				BDE9604C1DA8B71600E13C68 /* Like Filled-50.png in Resources */,
 				9F5A4D3D1D5AE1D70057AF6D /* Main.storyboard in Resources */,
+				BD71F0F91DDF7D2700A870AD /* api.amplitude.com.der in Resources */,
 				BD712D301DB87A6500320590 /* Auth0.plist in Resources */,
 				BDE960471DA8AF5900E13C68 /* CarouselItem.xib in Resources */,
 				BD1834B61D8CDACE00B472E2 /* favorite.png in Resources */,
@@ -914,6 +1014,8 @@
 				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,
 				9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */,
 				BDC608A81DCBB994001191B6 /* IntegerExtension.swift in Sources */,
+				BD71F0F71DDF7D2700A870AD /* AMPURLConnection.m in Sources */,
+				BD71F0F31DDF7D2700A870AD /* AMPIdentify.m in Sources */,
 				BD712D321DB87C5600320590 /* Auth0ViewController.swift in Sources */,
 				BD39ADF61DA230E20065F02F /* Common.swift in Sources */,
 				BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */,
@@ -925,14 +1027,20 @@
 				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,
 				BD62A1AB1DDECB2D00527E54 /* SocketIOManager.swift in Sources */,
 				BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */,
+				BD71F0F41DDF7D2700A870AD /* Amplitude.m in Sources */,
+				BD71F0D41DDF7BDB00A870AD /* WebSocket.swift in Sources */,
 				BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */,
+				BD71F0F01DDF7D2700A870AD /* AMPConstants.m in Sources */,
+				BD71F0F61DDF7D2700A870AD /* AMPRevenue.m in Sources */,
 				9F5A4D341D5AE1D70057AF6D /* main.m in Sources */,
 				9FE1B04D1D693AE70013DCB1 /* LoginViewController.m in Sources */,
 				BD1834B41D8CD7FE00B472E2 /* FavoritesViewController.swift in Sources */,
+				BD71F0F51DDF7D2700A870AD /* AMPLocationManagerDelegate.m in Sources */,
 				9FE1B0471D6936210013DCB1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */,
 				9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */,
 				BDEBA1501DD1056000EDDF75 /* SearchResultTableViewCell.swift in Sources */,
+				BD71F0F11DDF7D2700A870AD /* AMPDatabaseHelper.m in Sources */,
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */,
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
@@ -940,6 +1048,7 @@
 				BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */,
 				BDEB23301DC2F96600B21291 /* PopularShowObjectiveCViewController.m in Sources */,
 				BDB817721DC68A12007EA0C8 /* SearchModalRenderer.swift in Sources */,
+				BD71F0F21DDF7D2700A870AD /* AMPDeviceInfo.m in Sources */,
 				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9FC296151D76643F005CB080 /* MediaSourceTableViewCell.m in Sources */,
@@ -950,6 +1059,7 @@
 				BD3184A31DBE978600AAFD1E /* MozaicGuideViewController.swift in Sources */,
 				BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */,
 				BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */,
+				BD71F0F81DDF7D2700A870AD /* AMPUtils.m in Sources */,
 				9FBC977E1D6B97E1004B6182 /* Channel.m in Sources */,
 				BDEB232F1DC279C900B21291 /* SSTabBarController.swift in Sources */,
 				9FE1B0451D6936210013DCB1 /* SDWebModel.m in Sources */,
