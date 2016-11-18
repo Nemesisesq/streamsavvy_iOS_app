@@ -54,6 +54,7 @@
 		BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BD39ADF61DA230E20065F02F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39ADF51DA230E20065F02F /* Common.swift */; };
 		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
+		BD62A1AB1DDECB2D00527E54 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62A1AA1DDECB2D00527E54 /* SocketIOManager.swift */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
 		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
 		BD712D301DB87A6500320590 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD712D2F1DB87A6500320590 /* Auth0.plist */; };
@@ -209,6 +210,7 @@
 		BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ADMozaicCollectionViewLayout.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/ADMozaicCollectionViewLayout/ADMozaicCollectionViewLayout.framework"; sourceTree = "<group>"; };
 		BD39ADF51DA230E20065F02F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BD39ADF71DA2A39C0065F02F /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = "Pods/../build/Debug-iphoneos/Dollar/Dollar.framework"; sourceTree = "<group>"; };
+		BD62A1AA1DDECB2D00527E54 /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BD7076E91D8C903200F2B331 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BD712D2F1DB87A6500320590 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 		BD39ADF41DA230CA0065F02F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BD62A1AA1DDECB2D00527E54 /* SocketIOManager.swift */,
 				BD39ADF51DA230E20065F02F /* Common.swift */,
 				BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */,
 				BDEB232C1DC267D300B21291 /* File.swift */,
@@ -680,7 +683,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Stream Savvy";
+				ORGANIZATIONNAME = StreamSavvy;
 				TargetAttributes = {
 					9F5A4D2E1D5AE1D70057AF6D = {
 						CreatedOnToolsVersion = 7.3;
@@ -920,6 +923,7 @@
 				BDD629361DCA80E400A92134 /* UIViewControllerExtension.swift in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
 				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,
+				BD62A1AB1DDECB2D00527E54 /* SocketIOManager.swift in Sources */,
 				BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */,
 				BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */,
 				9F5A4D341D5AE1D70057AF6D /* main.m in Sources */,
