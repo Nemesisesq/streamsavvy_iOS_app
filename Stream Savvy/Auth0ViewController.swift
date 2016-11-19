@@ -10,6 +10,7 @@ import UIKit
 import Lock
 import SimpleKeychain
 import PromiseKit
+import Crashlytics
 
 @objc class Auth0ViewController: UIViewController, Auth0Protocol{
     
@@ -36,9 +37,18 @@ import PromiseKit
         
         Auth0.calledBySubclass = false
         
+
         // Do any additional setup after loading the view.
     }
     
+    func logUser(email: String, id: String, username: String) {
+        // TODO: Use the current user's information
+        // You can call any combination of these three methods
+        Crashlytics.sharedInstance().setUserEmail(email)
+        Crashlytics.sharedInstance().setUserIdentifier(id)
+        Crashlytics.sharedInstance().setUserName(username)
+    }
+
     
     
     
@@ -97,7 +107,8 @@ import PromiseKit
             .then {result -> Void in
                 
                 if let profile = result as? A0UserProfile {
-                    
+                    // TODO: Move this to where you establish a user session
+//                    self.logUser(email: profile.email!, id: profile.userId, username: profile.name)
                     // Our idToken is still valid...
                     // We store the fetched user profile
                     self.keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")

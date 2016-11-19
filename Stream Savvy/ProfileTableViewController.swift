@@ -9,6 +9,7 @@
 import UIKit
 import Lock
 import SimpleKeychain
+import Crashlytics
 
 
 class ProfileTableViewController: UITableViewController, Auth0Protocol {
@@ -34,6 +35,11 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
             profileImageView.layer.masksToBounds = true
         }
     }
+    
+    @IBAction func crashButtonTapped(sender: AnyObject) {
+        Crashlytics.sharedInstance().crash()
+    }
+
     
     @IBAction func shareApplication(_ sender:AnyObject){
         avc = UIActivityViewController(activityItems: ["I Stream Savvy. Do you? Check out the best TV guide for streaming https://appsto.re/us/oO8Beb.i"], applicationActivities: nil)
@@ -97,11 +103,20 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
         }
         
         
+        let button = UIButton(type: .roundedRect)
+        button.frame = CGRect(x:20, y:50, width:100, height:30)
+        button.setTitle("Crash", for: .normal)
+        button.backgroundColor = Constants.streamSavvyRed()
+        button.addTarget(self, action: #selector(ProfileTableViewController.crashButtonTapped), for: UIControlEvents.touchUpInside)
+        view.addSubview(button)
+
+        
         
         
         
     }
     
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

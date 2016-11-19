@@ -289,7 +289,8 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
         cell.showName = media.title
         cell.image.image = UIImage(named:"\(source.appIdentifier!)")
         cell.backgroundColor = Common.getRandomColor()
-        
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.white.cgColor
         return cell
     }
     
