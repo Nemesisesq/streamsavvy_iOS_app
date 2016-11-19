@@ -108,7 +108,11 @@ import Crashlytics
                 
                 if let profile = result as? A0UserProfile {
                     // TODO: Move this to where you establish a user session
-//                    self.logUser(email: profile.email!, id: profile.userId, username: profile.name)
+                    
+                    let em = profile.email ?? "none"
+                    let id = profile.userId
+                    let name = profile.name
+                    self.logUser(email: em, id: id, username: name)
                     // Our idToken is still valid...
                     // We store the fetched user profile
                     self.keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")

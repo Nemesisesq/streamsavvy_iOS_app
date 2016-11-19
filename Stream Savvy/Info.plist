@@ -37,7 +37,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -49,6 +49,17 @@
 				<dict/>
 				<key>KitName</key>
 				<string>Crashlytics</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>BayHiQHty4PeHucTJDmKiZ8Sb</string>
+					<key>consumerSecret</key>
+					<string>HbrW7MpNZaf1FgMMWBmpxEs33I8l2igo98S8QHnCNVejqULtCe</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
 			</dict>
 		</array>
 	</dict>
