@@ -28,6 +28,7 @@ pod "MarqueeLabel/Swift"
 pod 'UIScrollView-InfiniteScroll'
 pod "MBRateApp"
 pod "Harpy"
+pod 'PubNub'
 
 
 platform :ios, '10.0'

@@ -28,8 +28,8 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
     
     var currentIndex: Int?
     var selectedIndex: Int?
-     var episodes: [Episode]?
-    var socket_episodes: [Episode]?{
+    var episodes: [Episode]?
+    var socket_episodes: [Episode]!{
         didSet{
             self.seasons = $.groupBy((self.socket_episodes! as Array<Episode>), callback: { $0.seasonNumber! })
             self.seasonKeys = $.keys(self.seasons).sorted()
@@ -103,12 +103,15 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
     }
     
     func getEpisodesAsync(){
+        self.socket_episodes = [Episode]()
         //add closing logic
         socket = SocketIOManager(endpoint: "epis")
         
         
         socket.ws.event.message = { message in
             
+            //            if message == "close"{
+            //            }
             var epiList = [Episode]()
             
             let data:Data = (message as! String).data(using: .utf8)!
@@ -123,11 +126,11 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
                 epiList.append(Episode(json: epi)!)
             }
             
-            if let x = self.episodes {
-                self.socket_episodes = x + epiList
-            } else {
-                self.socket_episodes  = epiList
-            }
+            //            if let x = self.episodes {
+            self.socket_episodes = Array<Episode>([self.socket_episodes, epiList].joined())
+            //            } else {
+            //                self.socket_episodes  = epiList
+            //            }
             
             
             self.episodeTableView.reloadData()
