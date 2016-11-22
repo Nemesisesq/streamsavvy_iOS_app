@@ -103,6 +103,7 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
     }
     
     func getEpisodesAsync(){
+        //add closing logic
         socket = SocketIOManager(endpoint: "epis")
         
         
