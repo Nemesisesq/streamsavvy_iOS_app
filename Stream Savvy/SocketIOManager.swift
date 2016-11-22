@@ -9,9 +9,27 @@
 import UIKit
 
 class SocketIOManager: NSObject {
+    var path: String!
+    var ws : WebSocket!
+    
+    override init() {
+        super.init()
+        path = "echo"
+    }
+    
+    init(endpoint: String){
+        super.init()
+        path = endpoint
+        ws = WebSocket("ws://localhost:8080/\(path!)")
+        
+    }
+    
+    
+    
+    
     func echoTest(){
         var messageNum = 0
-        let ws = WebSocket("ws://localhost:8080/echo")
+        let ws = WebSocket("ws://localhost:8080/\(path!)")
         let send : ()->() = {
             messageNum += 1
             let msg = "\(messageNum): \(NSDate().description)"

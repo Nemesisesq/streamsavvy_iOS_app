@@ -28,7 +28,17 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
     
     var currentIndex: Int?
     var selectedIndex: Int?
-    var episodes: [Episode]!
+     var episodes: [Episode]?
+    var socket_episodes: [Episode]?{
+        didSet{
+            self.seasons = $.groupBy((self.socket_episodes! as Array<Episode>), callback: { $0.seasonNumber! })
+            self.seasonKeys = $.keys(self.seasons).sorted()
+            self.seasonCollectionView.reloadData()
+            self.seasonCollectionView.collectionViewLayout.invalidateLayout()
+            self.episodeTableView.reloadData()
+            
+        }
+    }
     var content: Content!
     var seasons: [Int:[Episode]]!
     
@@ -43,6 +53,8 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
     
     var activeCells: [EpisodeTableViewCell] = [EpisodeTableViewCell]()
     
+    var socket: SocketIOManager!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,25 +67,30 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
         
         let loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.indeterminate
-        loadingNotification.labelText = "Loading"
-
-            Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
-                //                Episode.getEpisodeList(guidebox_id: "2098")
-                .then{ epiList -> Void in
-                    self.episodes = epiList
-                    self.seasons = $.groupBy((self.episodes as Array<Episode>), callback: { $0.seasonNumber! })
-                    self.seasonKeys = $.keys(self.seasons).sorted()
-                    self.seasonCollectionView.reloadData()
-                    self.seasonCollectionView.collectionViewLayout.invalidateLayout()
-                    self.episodeTableView.reloadData()
-                    
-                    MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-                }.catch { error in
-                    print(error)
-                    
-            }
+        loadingNotification.label.text = "Loading"
         
-            
+        print("calling socket")
+        getEpisodesAsync()
+        print("done calling socket")
+        
+        
+        //        Episode.getEpisodeList(guidebox_id: "\(content.guidebox_id!)")
+        //            //                Episode.getEpisodeList(guidebox_id: "2098")
+        //            .then{ epiList -> Void in
+        //                self.episodes = epiList
+        //                self.seasons = $.groupBy((self.episodes! as Array<Episode>), callback: { $0.seasonNumber! })
+        //                self.seasonKeys = $.keys(self.seasons).sorted()
+        //                self.seasonCollectionView.reloadData()
+        //                self.seasonCollectionView.collectionViewLayout.invalidateLayout()
+        //                self.episodeTableView.reloadData()
+        //
+        //                MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+        //            }.catch { error in
+        //                print(error)
+        //
+        //        }
+        //
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -82,6 +99,46 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
         //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         // Do any additional setup after loading the view.
+        
+    }
+    
+    func getEpisodesAsync(){
+        socket = SocketIOManager(endpoint: "epis")
+        
+        
+        socket.ws.event.message = { message in
+            
+            var epiList = [Episode]()
+            
+            let data:Data = (message as! String).data(using: .utf8)!
+            var error: NSError?
+            
+            
+            let the_json =  Common.getReadableJsonDictArray(data: data)
+            
+            
+            //            let result = the_json["results"] as? NSArray
+            the_json.forEach(){ epi in
+                epiList.append(Episode(json: epi)!)
+            }
+            
+            if let x = self.episodes {
+                self.socket_episodes = x + epiList
+            } else {
+                self.socket_episodes  = epiList
+            }
+            
+            
+            self.episodeTableView.reloadData()
+            
+            MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+            
+            
+        }
+        
+        
+        socket.ws.send("\(content.guidebox_id!)")
+        
         
     }
     

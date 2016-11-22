@@ -112,8 +112,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [[Harpy sharedInstance] checkVersionDaily];
-    [[[SocketIOManager alloc] init] echoTest];
-    [[Amplitude instance] initializeApiKey:@"2e5f3977f9bc996bb2cc8e451c65af1b"];
+        [[Amplitude instance] initializeApiKey:@"2e5f3977f9bc996bb2cc8e451c65af1b"];
     
     [[Amplitude instance] logEvent:@"EVENT_IDENTIFIER_HERE"];
     
