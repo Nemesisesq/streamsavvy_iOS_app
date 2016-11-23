@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+
 	<key>Auth0ClientId</key>
 	<string>NagwQC83XJEPKdRGi9tz6g7kGpTu8y1b</string>
 	<key>Auth0Domain</key>
@@ -60,6 +66,25 @@
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>publish-key</key>
+					<string>pub-c-e3882ac9-569b-4bf1-9730-83865e7b1fb9</string>
+					<key>secret-key</key>
+					<string>sec-c-MDJjZDQ3YzgtZTlkYi00Mzg1LTk5MjMtMmMwZDI3NDZiZTU3</string>
+					<key>subscribe-key</key>
+					<string>sub-c-283f4822-ae29-11e6-a7bb-0619f8945a4f</string>
+				</dict>
+				<key>KitName</key>
+				<string>PubNub</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>MoPub</string>
 			</dict>
 		</array>
 	</dict>

@@ -83,6 +83,9 @@
 		BD71F10C1DE01A4000A870AD /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */; };
 		BD71F10D1DE01A4000A870AD /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71F10A1DE01A4000A870AD /* TwitterCore.framework */; };
 		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
+		BD8F3EF41DE4CD86009C84B5 /* PubNub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F3EF31DE4CD86009C84B5 /* PubNub.framework */; };
+		BD8F3EF71DE4E863009C84B5 /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F3EF51DE4E863009C84B5 /* MoPub.framework */; };
+		BD8F3EF81DE4E863009C84B5 /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */; };
 		BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD921BDD1DA1E5960018DCFB /* Episodes.swift */; };
 		BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD921BFB1DA204A90018DCFB /* Gloss.framework */; };
 		BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9563D81DB088620089652E /* UICollectionViewLeftAlignedLayout.framework */; };
@@ -274,6 +277,9 @@
 		BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		BD71F10A1DE01A4000A870AD /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
+		BD8F3EF31DE4CD86009C84B5 /* PubNub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PubNub.framework; sourceTree = "<group>"; };
+		BD8F3EF51DE4E863009C84B5 /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = "<group>"; };
+		BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MoPub.bundle; path = MoPub.framework/Versions/A/Resources/MoPub.bundle; sourceTree = "<group>"; };
 		BD921BDD1DA1E5960018DCFB /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		BD921BF91DA1F8AB0018DCFB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		BD921BFB1DA204A90018DCFB /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/Gloss/Gloss.framework"; sourceTree = "<group>"; };
@@ -320,6 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8F3EF71DE4E863009C84B5 /* MoPub.framework in Frameworks */,
 				BD71F1021DDF7E9400A870AD /* libsqlite3.tbd in Frameworks */,
 				BD71F1001DDF7E2400A870AD /* libz.tbd in Frameworks */,
 				BD71F1071DDF8F4300A870AD /* Crashlytics.framework in Frameworks */,
@@ -340,6 +347,7 @@
 				9FCF7D1C1D79B01A00B8538B /* CoreLocation.framework in Frameworks */,
 				BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */,
 				BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */,
+				BD8F3EF41DE4CD86009C84B5 /* PubNub.framework in Frameworks */,
 				0C95D34F82A4B97A6F6711DA /* Pods_Stream_Savvy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +421,9 @@
 		9F5A4D261D5AE1D70057AF6D = {
 			isa = PBXGroup;
 			children = (
+				BD8F3EF51DE4E863009C84B5 /* MoPub.framework */,
+				BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */,
+				BD8F3EF31DE4CD86009C84B5 /* PubNub.framework */,
 				BD71F1081DE01A4000A870AD /* TwitterKit.framework */,
 				BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */,
 				BD71F10A1DE01A4000A870AD /* TwitterCore.framework */,
@@ -853,6 +864,7 @@
 			files = (
 				BD71F0FA1DDF7D2700A870AD /* AppledocSettings.plist in Resources */,
 				BD71F0FC1DDF7D2700A870AD /* ComodoRsaCA.der in Resources */,
+				BD8F3EF81DE4E863009C84B5 /* MoPub.bundle in Resources */,
 				BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */,
 				BDE9604B1DA8B71600E13C68 /* Upload-50.png in Resources */,
 				BD71F0FB1DDF7D2700A870AD /* ComodoCaLimitedRsaCertificationAuthority.der in Resources */,
