@@ -59,6 +59,12 @@
 
 
 - (void)getChannelDetailsWithView:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
+    
+    float lat = UserLocation.sharedController.locationManager.location.coordinate.latitude;
+    float lon = UserLocation.sharedController.locationManager.location.coordinate.longitude;
+    
+    NSDictionary *coords = @{@"lat":  [[NSNumber numberWithFloat:lat] stringValue], @"long": [[NSNumber numberWithFloat:lon] stringValue]};
+
 
 	NSString *url = @"http://edr-go-staging.herokuapp.com/live-streaming-service";
 //NSString *url = @"http://localhost:8080/live-streaming-service";
@@ -68,7 +74,8 @@
 				@"CallLetters":			self.display_name,
 					@"DisplayName":		self.affiliate_display_name,
 //					@"SourceLongName":	self.source_long_name,
-					@"SourceId":			[NSString stringWithFormat:@"%@", self.stationID]
+					@"SourceId":			[NSString stringWithFormat:@"%@", self.stationID],
+                @"coords": coords
 				 };
 	NSLog(@"\n\n\n%@\n\n\n", params);
 	dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
