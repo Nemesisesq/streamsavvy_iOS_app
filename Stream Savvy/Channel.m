@@ -10,6 +10,7 @@
 #import "AFAPIClient.h"
 #import "MBProgressHUD.h"
 #import "UserPrefs.h"
+#import "UserLocation.h"
 
 @implementation Channel
 
