@@ -61,10 +61,11 @@
     
     
     [Fabric with:@[[Twitter class], [Crashlytics class], [MoPub class]]];
-
     
+
     return YES;
 }
+
 
 
 - (void)harpyUserDidSkipVersion{

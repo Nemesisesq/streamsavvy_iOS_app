@@ -38,10 +38,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>10</string>
-	<key>CleverTapAccountID</key>
-	<string>WWR-578-974Z</string>
-	<key>CleverTapToken</key>
-	<string>ba5-200</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
