@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
-
 	<key>Auth0ClientId</key>
 	<string>NagwQC83XJEPKdRGi9tz6g7kGpTu8y1b</string>
 	<key>Auth0Domain</key>
@@ -43,7 +37,11 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>7</string>
+	<string>10</string>
+	<key>CleverTapAccountID</key>
+	<string>WWR-578-974Z</string>
+	<key>CleverTapToken</key>
+	<string>ba5-200</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

@@ -14,14 +14,14 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <TwitterKit/TwitterKit.h>
-#import <PubNub/PubNub.h>
+
 #import <MoPub/MoPub.h>
 
 
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) PubNub *client;
+
 
 
 @end
@@ -60,46 +60,10 @@
     
     
     
-    [Fabric with:@[[Twitter class], [PubNub class], [Crashlytics class], [MoPub class]]];
-    
-    self.client = [PubNub client];
-
-    UIUserNotificationType types = (UIUserNotificationTypeBadge | UIUserNotificationTypeSound |
-                                    UIUserNotificationTypeAlert);
-    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-    
-    // In iOS 8, this is when the user receives a system prompt for notifications in your app
-    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    [Fabric with:@[[Twitter class], [Crashlytics class], [MoPub class]]];
 
     
     return YES;
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    
-    [self.client addPushNotificationsOnChannels:@[@"announcements"] withDevicePushToken:deviceToken
-                                  andCompletion:^(PNAcknowledgmentStatus *status) {
-                                      
-                                      // Check whether request successfully completed or not.
-                                      if (!status.isError) {
-                                          
-                                          // Handle successful push notification enabling on passed channels.
-                                      }
-                                      // Request processing failed.
-                                      else {
-                                          
-                                          // Handle modification error. Check 'category' property to find out possible issue because
-                                          // of which request did fail.
-                                          //
-                                          // Request can be resent using: [status retry];
-                                      }
-                                  }];
-}
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    
-    // Something went wrong and you better to look into error description.
 }
 
 

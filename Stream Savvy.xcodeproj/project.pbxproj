@@ -86,7 +86,6 @@
 		BD71F10C1DE01A4000A870AD /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */; };
 		BD71F10D1DE01A4000A870AD /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71F10A1DE01A4000A870AD /* TwitterCore.framework */; };
 		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
-		BD8F3EF41DE4CD86009C84B5 /* PubNub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F3EF31DE4CD86009C84B5 /* PubNub.framework */; };
 		BD8F3EF71DE4E863009C84B5 /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F3EF51DE4E863009C84B5 /* MoPub.framework */; };
 		BD8F3EF81DE4E863009C84B5 /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */; };
 		BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD921BDD1DA1E5960018DCFB /* Episodes.swift */; };
@@ -283,7 +282,6 @@
 		BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		BD71F10A1DE01A4000A870AD /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
-		BD8F3EF31DE4CD86009C84B5 /* PubNub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PubNub.framework; sourceTree = "<group>"; };
 		BD8F3EF51DE4E863009C84B5 /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = "<group>"; };
 		BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MoPub.bundle; path = MoPub.framework/Versions/A/Resources/MoPub.bundle; sourceTree = "<group>"; };
 		BD921BDD1DA1E5960018DCFB /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
@@ -356,7 +354,6 @@
 				BD45400C1DE6A893001523BA /* CleverTapSDK.framework in Frameworks */,
 				BD95CAB01D9055D300BCEBE2 /* Alamofire.framework in Frameworks */,
 				BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */,
-				BD8F3EF41DE4CD86009C84B5 /* PubNub.framework in Frameworks */,
 				0C95D34F82A4B97A6F6711DA /* Pods_Stream_Savvy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,7 +432,6 @@
 				BD45400B1DE6A893001523BA /* CleverTapSDK.framework */,
 				BD8F3EF51DE4E863009C84B5 /* MoPub.framework */,
 				BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */,
-				BD8F3EF31DE4CD86009C84B5 /* PubNub.framework */,
 				BD71F1081DE01A4000A870AD /* TwitterKit.framework */,
 				BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */,
 				BD71F10A1DE01A4000A870AD /* TwitterCore.framework */,
@@ -819,7 +815,7 @@
 		9F5A4D271D5AE1D70057AF6D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = StreamSavvy;
 				TargetAttributes = {
 					9F5A4D2E1D5AE1D70057AF6D = {
@@ -1284,6 +1280,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1295,6 +1292,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 649A5DDCEBAADA909648136B /* Pods-Stream Savvy.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Stream Savvy/Stream Savvy.entitlements";
@@ -1377,6 +1375,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0D65B6561D99A119651F7F64 /* Pods-Stream Savvy.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Stream Savvy/Stream Savvy.entitlements";
@@ -1448,7 +1447,7 @@
 				PROVISIONING_PROFILE = "";
 				RESOURCES_TARGETED_DEVICE_FAMILY = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stream Savvy/Stream Savvy-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64 arm6";

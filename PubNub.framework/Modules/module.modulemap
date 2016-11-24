@@ -1,7 +1,0 @@
-framework module PubNub {
-  umbrella header "PubNub.h"
-
-  link "z"
-  export *
-  module * { export * }
-}
