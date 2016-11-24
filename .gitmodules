@@ -4,3 +4,6 @@
 [submodule "Frameworks/Amplitude"]
 	path = Frameworks/Amplitude
 	url = git@github.com:amplitude/Amplitude-iOS.git
+[submodule "Frameworks/Clevertap-iOS-SDK"]
+	path = Frameworks/Clevertap-iOS-SDK
+	url = git@github.com:CleverTap/clevertap-ios-sdk.git
