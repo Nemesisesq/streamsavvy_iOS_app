@@ -57,9 +57,9 @@ import Crashlytics
             "Photo": "www.foobar.com/image.jpeg" as AnyObject,   // URL to the Image
             
             // optional fields. controls whether the user will be sent email, push etc.
-            "MSG-email": false as AnyObject,                     // Disable email notifications
-            "MSG-push": true as AnyObject,                       // Enable push notifications
-            "MSG-sms": false as AnyObject                       // Disable SMS notifications
+            "MSG-email": true as AnyObject,                     // Disable email notifications
+//            "MSG-push": true as AnyObject,                       // Enable push notifications
+            "MSG-sms": true as AnyObject                       // Disable SMS notifications
         ]
         
         CleverTap.sharedInstance()?.profilePush(profile)
