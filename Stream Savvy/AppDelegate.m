@@ -64,6 +64,16 @@
     
     [Fabric with:@[[Twitter class], [Crashlytics class], [MoPub class]]];
     
+    UIUserNotificationType types = (UIUserNotificationTypeBadge | UIUserNotificationTypeSound |
+                                    UIUserNotificationTypeAlert);
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    
+    // In iOS 8, this is when the user receives a system prompt for notifications in your app
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+
+    
+    
 #ifdef DEBUG
     [CleverTap setDebugLevel:1];
 #endif
