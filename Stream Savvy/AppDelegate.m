@@ -14,7 +14,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <TwitterKit/TwitterKit.h>
-
+#import <CleverTapSDK/CleverTap.h>
 #import <MoPub/MoPub.h>
 
 
@@ -27,6 +27,8 @@
 @end
 
 @implementation AppDelegate
+
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -62,7 +64,12 @@
     
     [Fabric with:@[[Twitter class], [Crashlytics class], [MoPub class]]];
     
-
+#ifdef DEBUG
+    [CleverTap setDebugLevel:1];
+#endif
+    
+    [CleverTap autoIntegrate];
+    
     return YES;
 }
 
@@ -120,7 +127,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [[Harpy sharedInstance] checkVersionDaily];
-        [[Amplitude instance] initializeApiKey:@"2e5f3977f9bc996bb2cc8e451c65af1b"];
+    [[Amplitude instance] initializeApiKey:@"2e5f3977f9bc996bb2cc8e451c65af1b"];
     
     [[Amplitude instance] logEvent:@"EVENT_IDENTIFIER_HERE"];
     

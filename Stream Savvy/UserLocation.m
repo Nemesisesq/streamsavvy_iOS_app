@@ -8,6 +8,8 @@
 
 #import "UserLocation.h"
 #import "AFAPIClient.h"
+#import <CleverTapSDK/CleverTap.h>
+            
 @interface UserLocation()<CLLocationManagerDelegate>
 
 @property int status;
@@ -91,6 +93,7 @@
 //	NSLog(@"LOCATIONS:::: %@", locations);
 	[self.delegate locationControllerDidUpdateLocation:locations.lastObject];
 	[self setLocation:locations.lastObject];
+    [CleverTap setLocation: self.location.coordinate];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

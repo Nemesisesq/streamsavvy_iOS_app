@@ -54,6 +54,7 @@
 		BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BD39ADF61DA230E20065F02F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39ADF51DA230E20065F02F /* Common.swift */; };
 		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
+		BD5602561DE780FB00A3B805 /* CleverTapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5602551DE780FB00A3B805 /* CleverTapSDK.framework */; };
 		BD62A1AB1DDECB2D00527E54 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62A1AA1DDECB2D00527E54 /* SocketIOManager.swift */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
 		BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E91D8C903200F2B331 /* UIKit.framework */; };
@@ -235,6 +236,7 @@
 		BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ADMozaicCollectionViewLayout.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/ADMozaicCollectionViewLayout/ADMozaicCollectionViewLayout.framework"; sourceTree = "<group>"; };
 		BD39ADF51DA230E20065F02F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BD39ADF71DA2A39C0065F02F /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = "Pods/../build/Debug-iphoneos/Dollar/Dollar.framework"; sourceTree = "<group>"; };
+		BD5602551DE780FB00A3B805 /* CleverTapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleverTapSDK.framework; path = "Frameworks/Clevertap-iOS-SDK/CleverTapSDK.framework"; sourceTree = "<group>"; };
 		BD62A1AA1DDECB2D00527E54 /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BD7076E91D8C903200F2B331 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -334,6 +336,7 @@
 				BD71F1061DDF8F4300A870AD /* Fabric.framework in Frameworks */,
 				BD98187B1DB916A7003A5159 /* Auth0.framework in Frameworks */,
 				BD98187C1DB916A7003A5159 /* Lock.framework in Frameworks */,
+				BD5602561DE780FB00A3B805 /* CleverTapSDK.framework in Frameworks */,
 				BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */,
 				BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */,
 				BD71F10B1DE01A4000A870AD /* TwitterKit.framework in Frameworks */,
@@ -371,6 +374,14 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD71F1051DDF8F4300A870AD /* Crashlytics.framework */,
+				BD71F1041DDF8F4300A870AD /* Fabric.framework */,
+				BD71F10A1DE01A4000A870AD /* TwitterCore.framework */,
+				BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */,
+				BD71F1081DE01A4000A870AD /* TwitterKit.framework */,
+				BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */,
+				BD8F3EF51DE4E863009C84B5 /* MoPub.framework */,
+				BD5602551DE780FB00A3B805 /* CleverTapSDK.framework */,
 				BD71F1011DDF7E9400A870AD /* libsqlite3.tbd */,
 				BD71F0FF1DDF7E2400A870AD /* libz.tbd */,
 				BD71F0D51DDF7BE000A870AD /* Amplitude */,
@@ -418,13 +429,6 @@
 		9F5A4D261D5AE1D70057AF6D = {
 			isa = PBXGroup;
 			children = (
-				BD8F3EF51DE4E863009C84B5 /* MoPub.framework */,
-				BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */,
-				BD71F1081DE01A4000A870AD /* TwitterKit.framework */,
-				BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */,
-				BD71F10A1DE01A4000A870AD /* TwitterCore.framework */,
-				BD71F1041DDF8F4300A870AD /* Fabric.framework */,
-				BD71F1051DDF8F4300A870AD /* Crashlytics.framework */,
 				9F5A4D311D5AE1D70057AF6D /* Stream Savvy */,
 				9F5A4D4B1D5AE1D70057AF6D /* Stream SavvyTests */,
 				9F5A4D561D5AE1D70057AF6D /* Stream SavvyUITests */,
@@ -1297,6 +1301,7 @@
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Harpy",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks/Clevertap-iOS-SDK",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1377,6 +1382,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Lock",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Harpy",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks/Clevertap-iOS-SDK",
 				);
 				INFOPLIST_FILE = "Stream Savvy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

@@ -12,6 +12,7 @@ import SimpleKeychain
 import PromiseKit
 import Crashlytics
 
+
 @objc class Auth0ViewController: UIViewController, Auth0Protocol{
     
     var fromSegue: Bool = false {
@@ -37,7 +38,34 @@ import Crashlytics
         
         Auth0.calledBySubclass = false
         
-
+        var dob = DateComponents()
+        dob.day = 24
+        dob.month = 5
+        dob.year = 1992
+        let d = NSCalendar.current.date(from: dob)
+        let profile: Dictionary<String, AnyObject> = [
+            "Name": "Jack Montana" as AnyObject,                 // String
+            "Identity": 61026032 as AnyObject,                   // String or number
+            "Email": "jack@gmail.com" as AnyObject,              // Email address of the user
+            "Phone": "4155551234" as AnyObject,                    // Phone (without the country code)
+            "Gender": "M" as AnyObject,                          // Can be either M or F
+            "Employed": "Y" as AnyObject,                        // Can be either Y or N
+            "Education": "Graduate" as AnyObject,                // Can be either School, College or Graduate
+            "Married": "Y" as AnyObject,                         // Can be either Y or N
+            "DOB": d! as AnyObject,                        // Date of Birth. An NSDate object
+            "Age": 28 as AnyObject,                              // Not required if DOB is set
+            "Photo": "www.foobar.com/image.jpeg" as AnyObject,   // URL to the Image
+            
+            // optional fields. controls whether the user will be sent email, push etc.
+            "MSG-email": false as AnyObject,                     // Disable email notifications
+            "MSG-push": true as AnyObject,                       // Enable push notifications
+            "MSG-sms": false as AnyObject                       // Disable SMS notifications
+        ]
+        
+        CleverTap.sharedInstance()?.profilePush(profile)
+        CleverTap.sharedInstance()?.recordEvent("mock profile set")
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -48,7 +76,7 @@ import Crashlytics
         Crashlytics.sharedInstance().setUserIdentifier(id)
         Crashlytics.sharedInstance().setUserName(username)
     }
-
+    
     
     
     
@@ -59,18 +87,18 @@ import Crashlytics
     
     override func viewWillAppear(_ animated: Bool) {
         
-//        if Auth0.userDismissed {
-//            Auth0.userDismissed = false
-//        }
-//        do {
-//            _ =  try checkForIdToken(keychain: keychain, controller: controller, vc: self)
-//            
-//        } catch MyError.Null {
-//            print("there is no token")
-//            continueToApp(controller: controller, vc: self)
-//        } catch {
-//            print("something else went wrong")
-//        }
+        //        if Auth0.userDismissed {
+        //            Auth0.userDismissed = false
+        //        }
+        //        do {
+        //            _ =  try checkForIdToken(keychain: keychain, controller: controller, vc: self)
+        //
+        //        } catch MyError.Null {
+        //            print("there is no token")
+        //            continueToApp(controller: controller, vc: self)
+        //        } catch {
+        //            print("something else went wrong")
+        //        }
         
         
     }
@@ -120,7 +148,7 @@ import Crashlytics
                     Auth0.loginComplete = true
                     
                     if Auth0.calledBySubclass == false {
-                    
+                        
                         self.continueToApp(controller: self.controller, vc: self)
                     }
                     
@@ -156,6 +184,10 @@ import Crashlytics
                 
         }
         
+        
+        // each of the below mentioned fields are optional
+        // if set, these populate demographic information in the Dashboard
+  
     }
     
 }
