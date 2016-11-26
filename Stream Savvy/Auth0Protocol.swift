@@ -1,6 +1,6 @@
 //
 //  Auth0.swift
-//  Stream Savvy 
+//  Stream Savvy
 //
 //  Created by Carl Lewis on 10/27/16.
 //  Copyright © 2016 Stream Savvy. All rights reserved.
@@ -26,12 +26,6 @@ import PromiseKit
     static let keychain = A0SimpleKeychain(service: "Auth0")
     
     static let client = A0Lock.shared().apiClient()
-    
-    
-    
-
-    
-    
     
     static var controller: A0LockViewController {
         let c = A0Lock.shared().newLockViewController()
@@ -64,7 +58,7 @@ import PromiseKit
             UserPrefs.setToken(token?.accessToken)
             UserPrefs.setEmail(profile?.email)
             
-           
+            
             
             guard
                 let token = token,
@@ -80,10 +74,10 @@ import PromiseKit
             // Don't forget to dismiss the Lock controller
             c?.dismiss(animated: true, completion: nil)
             
-        
+            
             loggedIn = true
         }
-    
+        
         return c!
         
     }
@@ -116,7 +110,7 @@ extension Auth0Protocol {
             // Present A0Lock Login
             
             if Auth0.userDismissed == false {
-            A0Lock.shared().present(controller, from: vc)
+                A0Lock.shared().present(controller, from: vc)
             }
             throw MyError.Null
         }
@@ -146,7 +140,7 @@ extension Auth0Protocol {
                                     fulfill(newToken)
                                     
                                     // ✅ At this point, you can log the user into your app, by navigating to the corresponding screen
-                },
+            },
                                    failure: { error in
                                     
                                     Auth0.loggedIn = false
@@ -171,7 +165,7 @@ extension Auth0Protocol {
                                         fulfill(profile)
                                         
                                         Auth0.loggedIn = true
-                },
+            },
                                     failure: { error in
                                         
                                         Auth0.loggedIn = false

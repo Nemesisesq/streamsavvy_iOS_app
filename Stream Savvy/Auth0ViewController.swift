@@ -38,46 +38,11 @@ import Crashlytics
         
         Auth0.calledBySubclass = false
         
-        var dob = DateComponents()
-        dob.day = 24
-        dob.month = 5
-        dob.year = 1992
-        let d = NSCalendar.current.date(from: dob)
-        let profile: Dictionary<String, AnyObject> = [
-            "Name": "Jack Montana" as AnyObject,                 // String
-            "Identity": 61026032 as AnyObject,                   // String or number
-            "Email": "jack@gmail.com" as AnyObject,              // Email address of the user
-            "Phone": "4155551234" as AnyObject,                    // Phone (without the country code)
-            "Gender": "M" as AnyObject,                          // Can be either M or F
-            "Employed": "Y" as AnyObject,                        // Can be either Y or N
-            "Education": "Graduate" as AnyObject,                // Can be either School, College or Graduate
-            "Married": "Y" as AnyObject,                         // Can be either Y or N
-            "DOB": d! as AnyObject,                        // Date of Birth. An NSDate object
-            "Age": 28 as AnyObject,                              // Not required if DOB is set
-            "Photo": "www.foobar.com/image.jpeg" as AnyObject,   // URL to the Image
-            
-            // optional fields. controls whether the user will be sent email, push etc.
-            "MSG-email": true as AnyObject,                     // Disable email notifications
-//            "MSG-push": true as AnyObject,                       // Enable push notifications
-            "MSG-sms": true as AnyObject                       // Disable SMS notifications
-        ]
-        
-        CleverTap.sharedInstance()?.profilePush(profile)
-        CleverTap.sharedInstance()?.recordEvent("mock profile set")
-        
-        
         // Do any additional setup after loading the view.
     }
     
-    func logUser(email: String, id: String, username: String) {
-        // TODO: Use the current user's information
-        // You can call any combination of these three methods
-        Crashlytics.sharedInstance().setUserEmail(email)
-        Crashlytics.sharedInstance().setUserIdentifier(id)
-        Crashlytics.sharedInstance().setUserName(username)
-    }
     
-    
+        
     
     
     override func didReceiveMemoryWarning() {
@@ -137,10 +102,12 @@ import Crashlytics
                 if let profile = result as? A0UserProfile {
                     // TODO: Move this to where you establish a user session
                     
-                    let em = profile.email ?? "none"
-                    let id = profile.userId
-                    let name = profile.name
-                    self.logUser(email: em, id: id, username: name)
+                    let p = UserProfile(profile: profile)
+//                    p.setCleverTapProfile()
+                    
+                    p.logUserForCrashlytics()
+                    
+                    
                     // Our idToken is still valid...
                     // We store the fetched user profile
                     self.keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")

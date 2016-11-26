@@ -14,6 +14,9 @@ import Crashlytics
 
 class ProfileTableViewController: UITableViewController, Auth0Protocol {
     
+    
+    var userProfile: UserProfile?
+    
     var avc: UIActivityViewController!
     
     var keychain = Auth0.keychain
@@ -84,6 +87,8 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
                 .then { result -> Void in
                     
                     if let profile = result as? A0UserProfile {
+                        
+                        self.userProfile = UserProfile(profile: profile)
                         self.emailTextField.text = profile.email
                         self.nicknameTextField.text = profile.nickname
                         self.profileImageView.sd_setImage(with: profile.picture)
@@ -103,15 +108,15 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
         }
         
         
-        let button = UIButton(type: .roundedRect)
-        button.frame = CGRect(x:20, y:50, width:100, height:30)
-        button.setTitle("Crash", for: .normal)
-        button.backgroundColor = Constants.streamSavvyRed()
-        button.addTarget(self, action: #selector(ProfileTableViewController.crashButtonTapped), for: UIControlEvents.touchUpInside)
-        view.addSubview(button)
-
-        
-        
+//        let button = UIButton(type: .roundedRect)
+//        button.frame = CGRect(x:20, y:50, width:100, height:30)
+//        button.setTitle("Crash", for: .normal)
+//        button.backgroundColor = Constants.streamSavvyRed()
+//        button.addTarget(self, action: #selector(ProfileTableViewController.crashButtonTapped), for: UIControlEvents.touchUpInside)
+//        view.addSubview(button)
+//
+//        
+//        
         
         
     }
