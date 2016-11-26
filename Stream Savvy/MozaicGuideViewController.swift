@@ -126,6 +126,15 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
                     }
                     
                     
+                    
+                    for _ in 0...s.count {
+                        let randomInt1 = Int(arc4random() % UInt32.init(s.count))
+                        let randomInt2 = Int(arc4random() % UInt32.init(s.count))
+                        
+                        s[randomInt1] = s[randomInt2]
+    
+                    }
+                    
                     self?.mozCollectionView.performBatchUpdates({ () -> Void in
                         self?.popularShows = $.merge((self?.popularShows)!, s)
                         self?.mozCollectionView.insertItems(at: indexPaths)
