@@ -817,6 +817,7 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 85CZ56MH66;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -1357,6 +1358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stream Savvy/Stream Savvy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1438,6 +1440,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stream-savvy.Stream-Savvy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				RESOURCES_TARGETED_DEVICE_FAMILY = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stream Savvy/Stream Savvy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

@@ -103,7 +103,9 @@ import Crashlytics
                     // TODO: Move this to where you establish a user session
                     
                     let p = UserProfile(profile: profile)
-//                    p.setCleverTapProfile()
+                    
+                    //TODO: remove this CleverTap Instance when more robust init process taking to account syncronization to prevent overriding data with Auth0Profile.
+                    p.setCleverTapProfile()
                     
                     p.logUserForCrashlytics()
                     
