@@ -49,6 +49,7 @@
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
 		BD1ED1C01DE8C30B00A61547 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1ED1BF1DE8C30B00A61547 /* UserProfile.swift */; };
 		BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */; };
+		BD2936651DEBC9BD003216FA /* Pushbots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2936641DEBC9BD003216FA /* Pushbots.framework */; };
 		BD2C6A591DDA5AD000FC3A61 /* Harpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2C6A581DDA5AD000FC3A61 /* Harpy.framework */; };
 		BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */; };
 		BD3184A31DBE978600AAFD1E /* MozaicGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */; };
@@ -232,6 +233,7 @@
 		BD1ED1BF1DE8C30B00A61547 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
+		BD2936641DEBC9BD003216FA /* Pushbots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushbots.framework; sourceTree = "<group>"; };
 		BD2C6A581DDA5AD000FC3A61 /* Harpy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Harpy.framework; path = "Pods/../build/Debug-iphoneos/Harpy/Harpy.framework"; sourceTree = "<group>"; };
 		BD3184A01DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewControllerExtension.swift; sourceTree = "<group>"; };
 		BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MozaicGuideViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				BD9563D91DB088620089652E /* UICollectionViewLeftAlignedLayout.framework in Frameworks */,
 				BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */,
 				BD71F10B1DE01A4000A870AD /* TwitterKit.framework in Frameworks */,
+				BD2936651DEBC9BD003216FA /* Pushbots.framework in Frameworks */,
 				BD921BFC1DA204A90018DCFB /* Gloss.framework in Frameworks */,
 				BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */,
 				BD7076EA1D8C903200F2B331 /* UIKit.framework in Frameworks */,
@@ -376,6 +379,7 @@
 		09CC489A0B343BA646159362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD2936641DEBC9BD003216FA /* Pushbots.framework */,
 				BD71F1051DDF8F4300A870AD /* Crashlytics.framework */,
 				BD71F1041DDF8F4300A870AD /* Fabric.framework */,
 				BD71F10A1DE01A4000A870AD /* TwitterCore.framework */,
@@ -819,6 +823,9 @@
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};

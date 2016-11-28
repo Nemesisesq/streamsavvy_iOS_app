@@ -80,10 +80,66 @@
     
     [CleverTap autoIntegrate];
     
+    
+#pragma mark pushbots
+    
+    self.PushbotsClient = [[Pushbots alloc] initWithAppId:@"583b93704a9efa50c08b4568" prompt:YES];
+    [self.PushbotsClient trackPushNotificationOpenedWithLaunchOptions:launchOptions];
+    
+    NSDictionary *userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (userInfo) {
+        //Check for openURL [optional]
+        //[Pushbots openURL:userInfo];
+        //Capture notification data e.g. badge, alert and sound
+        NSDictionary *aps = [userInfo objectForKey:@"aps"];
+        
+        if (aps) {
+            NSString *alertMsg = [aps objectForKey:@"alert"];
+            NSLog(@"Notification message: %@", alertMsg);
+        }
+        
+        //Capture custom fields
+        NSString* articleId = [userInfo objectForKey:@"articleId"];
+    }
+    
     return YES;
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Register the deviceToken on Pushbots
+    [self.PushbotsClient registerOnPushbots:deviceToken];
+}
 
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"Notification Registration Error %@", [error description]);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    //Check for openURL [optional]
+    //[Pushbots openURL:userInfo];
+    //Track notification only if the application opened from Background by clicking on the notification.
+    if (application.applicationState == UIApplicationStateInactive) {
+        [self.PushbotsClient trackPushNotificationOpenedWithPayload:userInfo];
+    }
+    
+    //The application was already active when the user got the notification, just show an alert.
+    //That should *not* be considered open from Push.
+    if (application.applicationState == UIApplicationStateActive) {
+        NSDictionary *notificationDict = [userInfo objectForKey:@"aps"];
+        NSString *alertString = [notificationDict objectForKey:@"alert"];
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Push Notification Received" message:alertString delegate:self
+                              cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+        [alert show];
+    }
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
+    // .. Process notification data
+    handler(UIBackgroundFetchResultNewData);
+}
 
 - (void)harpyUserDidSkipVersion{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
