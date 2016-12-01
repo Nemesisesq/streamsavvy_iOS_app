@@ -84,7 +84,7 @@
  * @param adUnitID The ad unit ID associated with the video ad you wish to play.
  * @param viewController The view controller that will present the rewarded video ad.
  *
- * @warning **Important**: You should not attempt to play the rewarded video unless `+hasAdAvailableForAdUnitID:` indicates that an 
+ * @warning **Important**: You should not attempt to play the rewarded video unless `+hasAdAvailableForAdUnitID:` indicates that an
  * ad is available for playing or you have received the `[-rewardedVideoAdDidLoadForAdUnitID:]([MPRewardedVideoDelegate rewardedVideoAdDidLoadForAdUnitID:])`
  * message.
  */

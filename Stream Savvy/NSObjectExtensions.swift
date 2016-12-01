@@ -12,7 +12,7 @@ protocol PropertyNames {
     func propertyNames() -> [String]
 }
 
-func debounce(delay: Int, queue: DispatchQueue, action: @escaping (()->()) ) -> ()->() {
+func old_debounce(delay: Int, queue: DispatchQueue, action: @escaping (()->()) ) -> ()->() {
     var lastFireTime   = DispatchTime.now()
     let dispatchDelay  = DispatchTimeInterval.seconds(delay)
     

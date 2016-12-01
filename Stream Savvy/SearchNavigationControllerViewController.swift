@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 @objc class SearchNavigationControllerViewController: UINavigationController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate,UISearchControllerDelegate {
     var selectedShow: Content!
@@ -112,19 +113,46 @@ import UIKit
         }
     }
     
+    
+    var debounceTimer: Timer?
+    
+    func fetch(text:String){
+        let loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.indeterminate
+        loadingNotification.label.text = "searching.."
+        
+        _ = searchResults.fetchResults(q: text)
+            .then{result -> Void in
+                
+                self.resultsController.tableView.reloadData()
+                MBProgressHUD.hide(for: self.view, animated: true)
+                
+        }
+    }
+    
     func updateSearchResults(for searchController: UISearchController) {
+        
+        if let timer = debounceTimer{
+            timer.invalidate()
+        }
         if (searchController.searchBar.text!.isEmpty != true ){
             //            searchResults.results.removeAll()
             
-            _ = searchResults.fetchResults(q: searchController.searchBar.text!)
-                .then{result -> Void in
-                    
-                    self.resultsController.tableView.reloadData()
-                    
+            if #available(iOS 10.0, *) {
+                debounceTimer = Timer.init(timeInterval: 0.5, repeats: false, block: { (Timer) in
+                    self.fetch(text: searchController.searchBar.text!)
+                })
+            } else {
+                // Fallback on earlier versions
             }
+            RunLoop.current.add(debounceTimer!, forMode: .defaultRunLoopMode)
+        } else {
+            searchResults.results.removeAll(keepingCapacity: true)
         }
         
     }
+    
+    
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         UIView.animate(withDuration: 0.3, animations: {

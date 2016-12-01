@@ -99,16 +99,15 @@
 		BD98187C1DB916A7003A5159 /* Lock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187A1DB916A7003A5159 /* Lock.framework */; };
 		BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */; };
 		BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9818801DBA8D10003A5159 /* UILableExtensions.swift */; };
+		BDA7B4E91DF0776300A67ED0 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
 		BDB817681DC53B48007EA0C8 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB817671DC53B48007EA0C8 /* MarqueeLabel.framework */; };
 		BDB8176A1DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */; };
-		BDB817721DC68A12007EA0C8 /* SearchModalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB817711DC68A12007EA0C8 /* SearchModalRenderer.swift */; };
 		BDC608A81DCBB994001191B6 /* IntegerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC608A71DCBB994001191B6 /* IntegerExtension.swift */; };
 		BDCDA6221DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDA6211DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
 		BDD2B7081DAD907F00C77260 /* DeepLinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */; };
 		BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7091DAE052700C77260 /* Sources.swift */; };
-		BDD629361DCA80E400A92134 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD629351DCA80E400A92134 /* UIViewControllerExtension.swift */; };
 		BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */; };
 		BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE960441DA8AF5900E13C68 /* CarouselItem.swift */; };
 		BDE960471DA8AF5900E13C68 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE960451DA8AF5900E13C68 /* CarouselItem.xib */; };
@@ -296,16 +295,15 @@
 		BD98187D1DB94198003A5159 /* Stream Savvy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stream Savvy.entitlements"; sourceTree = "<group>"; };
 		BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleKeychain.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/SimpleKeychain/SimpleKeychain.framework"; sourceTree = "<group>"; };
 		BD9818801DBA8D10003A5159 /* UILableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILableExtensions.swift; sourceTree = "<group>"; };
+		BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
 		BDB817671DC53B48007EA0C8 /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/MarqueeLabel/MarqueeLabel.framework"; sourceTree = "<group>"; };
 		BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigationControllerViewController.swift; sourceTree = "<group>"; };
-		BDB817711DC68A12007EA0C8 /* SearchModalRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModalRenderer.swift; sourceTree = "<group>"; };
 		BDC608A71DCBB994001191B6 /* IntegerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerExtension.swift; sourceTree = "<group>"; };
 		BDCDA6211DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnDemandCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7091DAE052700C77260 /* Sources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
-		BDD629351DCA80E400A92134 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		BDE4C0701DA3E4460011996D /* LiveDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveDetailViewController.swift; sourceTree = "<group>"; };
 		BDE960441DA8AF5900E13C68 /* CarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
 		BDE960451DA8AF5900E13C68 /* CarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
@@ -692,8 +690,8 @@
 				BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */,
 				BD0DCC171DB4785E005C32B2 /* UIApplication.swift */,
 				BD9818801DBA8D10003A5159 /* UILableExtensions.swift */,
-				BDD629351DCA80E400A92134 /* UIViewControllerExtension.swift */,
 				BDC608A71DCBB994001191B6 /* IntegerExtension.swift */,
+				BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -717,7 +715,6 @@
 		BDB8176B1DC5A1F2007EA0C8 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				BDB817711DC68A12007EA0C8 /* SearchModalRenderer.swift */,
 				BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */,
 				BDEB232E1DC279C900B21291 /* SSTabBarController.swift */,
 			);
@@ -1015,6 +1012,7 @@
 			files = (
 				9F5D4E911DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m in Sources */,
 				BDCDA6221DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift in Sources */,
+				BDA7B4E91DF0776300A67ED0 /* SwiftExtensions.swift in Sources */,
 				BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */,
 				9FBC97851D6D32CB004B6182 /* GuideObjectiveCViewController.m in Sources */,
 				BDE960461DA8AF5900E13C68 /* CarouselItem.swift in Sources */,
@@ -1028,7 +1026,6 @@
 				9F5D4E931DBC197400AC7AD2 /* ContentDetailViewController.swift in Sources */,
 				9FE1B0481D6936210013DCB1 /* UserLocation.m in Sources */,
 				BDEE6AEC1DC854B200F9FD2C /* Gradients.swift in Sources */,
-				BDD629361DCA80E400A92134 /* UIViewControllerExtension.swift in Sources */,
 				9FE1B0431D6936210013DCB1 /* AFAPIClient.m in Sources */,
 				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,
 				BD62A1AB1DDECB2D00527E54 /* SocketIOManager.swift in Sources */,
@@ -1053,7 +1050,6 @@
 				BD9563E11DB209790089652E /* LinkCollectionViewFlowLayout.swift in Sources */,
 				BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */,
 				BDEB23301DC2F96600B21291 /* PopularShowObjectiveCViewController.m in Sources */,
-				BDB817721DC68A12007EA0C8 /* SearchModalRenderer.swift in Sources */,
 				BD71F0F21DDF7D2700A870AD /* AMPDeviceInfo.m in Sources */,
 				9FE1B05C1D6946410013DCB1 /* User.m in Sources */,
 				9FE1B0461D6936210013DCB1 /* TPKeyboardAvoidingScrollView.m in Sources */,
@@ -1504,6 +1500,7 @@
 				BD2936731DEC8DFD003216FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
