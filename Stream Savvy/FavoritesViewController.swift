@@ -162,7 +162,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         
         
         func makeCarousel() {
-                carousel.type = .coverFlow
+                carousel.type = .linear
 //                print("viewWillAppear")
 //                print(self.view.subviews)
                 self.carousel.delegate = self
@@ -180,7 +180,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                 
         
                 if option == iCarouselOption.spacing {
-                        return value * 1.2
+                        return value * 1.0
                 }
                 return value
         }
@@ -190,7 +190,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                 let randomRed:CGFloat = CGFloat(drand48())
                 let randomGreen:CGFloat = CGFloat(drand48())
                 let randomBlue:CGFloat = CGFloat(drand48())
-                return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+                return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.1)
         }
         
         
@@ -202,13 +202,13 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
                 carouselItemView.frame = CGRect(
                         x: 0,
                         y: 0,
-                        width: self.view.frame.size.width * 0.9 ,
-                        height: self.view.frame.size.height * 0.9)
+                        width: carousel.frame.size.width * 0.75 ,
+                        height: carousel.frame.size.height * 0.9)
                 
                 SDWebModel.loadImage(for: carouselItemView.showImage, withRemoteURL: favorites.contentList[index].image_link)
                 
-                carouselItemView.showImage.contentMode = .scaleAspectFill
-                carouselItemView.showImage.clipsToBounds = true
+                carouselItemView.showImage.contentMode = .scaleAspectFit
+                carouselItemView.showImage.clipsToBounds = false
                 
                 carouselItemView.showTitle.text = favorites.contentList[index].title
                 carouselItemView.vc = self
