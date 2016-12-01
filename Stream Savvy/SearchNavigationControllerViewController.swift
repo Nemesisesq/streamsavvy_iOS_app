@@ -127,6 +127,10 @@ import MBProgressHUD
                 self.resultsController.tableView.reloadData()
                 MBProgressHUD.hide(for: self.view, animated: true)
                 
+            }.catch{_ in
+                MBProgressHUD.hide(for: self.view, animated: true)
+
+                
         }
     }
     
@@ -139,7 +143,7 @@ import MBProgressHUD
             //            searchResults.results.removeAll()
             
             if #available(iOS 10.0, *) {
-                debounceTimer = Timer.init(timeInterval: 0.5, repeats: false, block: { (Timer) in
+                debounceTimer = Timer.init(timeInterval: 0.3, repeats: false, block: { (Timer) in
                     self.fetch(text: searchController.searchBar.text!)
                 })
             } else {
