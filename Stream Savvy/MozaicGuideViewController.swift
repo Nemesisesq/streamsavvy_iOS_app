@@ -125,13 +125,15 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
                         s.append(PopularShow.init(attributes: show))
                     }
                     
-                    
+                    var shuffled = [PopularShow]()
                     
                     for _ in 0...s.count {
                         let randomInt1 = Int(arc4random() % UInt32.init(s.count))
                         let randomInt2 = Int(arc4random() % UInt32.init(s.count))
                         
-                        s[randomInt1] = s[randomInt2]
+                        s = s.sorted {_, _ in arc4random() % 2 == 0}
+                    
+                        
     
                     }
                     

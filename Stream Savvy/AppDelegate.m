@@ -19,7 +19,7 @@
 
 
 
-@interface AppDelegate ()
+@interface AppDelegate()
 
 
 
@@ -53,7 +53,7 @@
     [[Harpy sharedInstance] setDelegate:self];
     
     [[Harpy sharedInstance] setPatchUpdateAlertType:HarpyAlertTypeSkip];
-    [[Harpy sharedInstance] setMinorUpdateAlertType:HarpyAlertTypeOption];
+    [[Harpy sharedInstance] setMinorUpdateAlertType:HarpyAlertTypeForce];
     [[Harpy sharedInstance] setMajorUpdateAlertType:HarpyAlertTypeForce];
     [[Harpy sharedInstance] setRevisionUpdateAlertType:HarpyAlertTypeOption];
     
