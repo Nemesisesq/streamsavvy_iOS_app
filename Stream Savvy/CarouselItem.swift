@@ -24,6 +24,21 @@ class CarouselItem: UIView {
     
     var recomendations = [Content]()
     
+    var socket: SocketIOManager!
+    
+    var isActive: Bool! {
+        willSet{
+            if newValue == true {
+                if socket != nil {
+                    socket.ws.close()
+                }
+                openSocket()
+            } else {
+                self.socket.ws.close()
+            }
+        }
+    }
+    
     @IBOutlet var showTitle: UILabel!
     
     @IBOutlet var showImage: UIImageView!
@@ -31,18 +46,48 @@ class CarouselItem: UIView {
     
     func getRecommendations(){
         
-        if recomendations.count < 0{
+        if recomendations.count > 0{
             vc.recomendations = recomendations
-        }
+        } else {
+            
         
-        vc.socket.ws.send(content.guidebox_id!)
+        
+        socket.ws.send(content.guidebox_id!)
         loadingNotification = MBProgressHUD.showAdded(to: vc.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.indeterminate
         loadingNotification.label.text = "Loading"
-        
+        }
     }
     
+    override func willChangeValue(forKey key: String) {
+        let x = "hello"
+    }
+
     
+    func openSocket(){
+        self.recomendations = [Content]()
+        //add closing logic
+        socket = SocketIOManager(endpoint: "recomendations")
+        
+        
+        socket.ws.event.message = { message in
+            
+            let data:Data = (message as! String).data(using: .utf8)!
+            var error: NSError?
+            
+            
+            let the_json =  Common.getReadableJsonDict(data: data)
+            
+            
+            self.vc.recomendations.append(Content.parseDetail(dict: the_json as AnyObject))
+            
+            
+            //            self.recomendationCollectionView.reloadData()
+            
+            MBProgressHUD.hideAllHUDs(for: self.vc.view, animated: true)
+            
+        }
+    }
     
     
     @IBAction func watchEpisode(_ sender: UIButton) {

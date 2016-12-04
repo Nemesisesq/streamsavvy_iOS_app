@@ -18,7 +18,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     let searchResults = SearchResults()
     let favorites = Favorites()
     var searchButton: UIBarButtonItem!
-    var socket: SocketIOManager!
+    
     var recomendations: [Content]!{
         didSet{
             recomendationCollectionView.reloadData()
@@ -63,6 +63,8 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        recomendations = [Content]()
+        
         Auth0.calledBySubclass = true
         //carousel.type = .cylinder
         // Do any additional setup after loading the view.
@@ -73,11 +75,11 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        openSocket()
+//        openSocket()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        socket.ws.close()
+//        socket.ws.close()
     }
     
     override func viewDidLayoutSubviews() {
@@ -181,12 +183,14 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         return carouselItemView
         
     }
-    func carouselWillBeginDecelerating(_ carousel: iCarousel) {
+    
+       func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
+        if let x = recomendations {
             recomendations.removeAll()
+        }
         
-    }
-    func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
         if let item = carousel.currentItemView as? CarouselItem{
+            item.isActive = true
             item.getRecommendations()
         }
         
@@ -216,28 +220,4 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         }
     }
     
-    func openSocket(){
-        self.recomendations = [Content]()
-        //add closing logic
-        socket = SocketIOManager(endpoint: "recomendations")
-        
-        
-        socket.ws.event.message = { message in
-            
-            let data:Data = (message as! String).data(using: .utf8)!
-            var error: NSError?
-            
-            
-            let the_json =  Common.getReadableJsonDict(data: data)
-            
-            
-            self.recomendations.append(Content.parseDetail(dict: the_json as AnyObject))
-            
-            
-//            self.recomendationCollectionView.reloadData()
-            
-            MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-            
-        }
     }
-}
