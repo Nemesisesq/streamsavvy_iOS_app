@@ -172,7 +172,7 @@
             </objects>
             <point key="canvasLocation" x="-490" y="400"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Data Source-->
         <scene sceneID="8Q0-Kf-AE6">
             <objects>
                 <viewController restorationIdentifier="favorites" storyboardIdentifier="FavoritesViewController" id="Ftx-ya-yvW" customClass="FavoritesViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
@@ -190,26 +190,48 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="5WF-2d-GTu"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ftx-ya-yvW" id="hFw-4Y-sUh"/>
+                                    <outlet property="delegate" destination="Ftx-ya-yvW" id="EDA-LN-AlA"/>
+                                </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dao-6i-hBP">
                                 <rect key="frame" x="0.0" y="155" width="375" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nfq-Sm-6Uf">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="172" height="137"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aCu-Pe-UbR">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Recomendation" id="aCu-Pe-UbR" customClass="RecomendationCollectionViewCell" customModule="Stream_Savvy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="172" height="137"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="172" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e52-tr-khm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="172" height="137"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="e52-tr-khm" secondAttribute="trailing" id="QS7-gE-w99"/>
+                                            <constraint firstItem="e52-tr-khm" firstAttribute="top" secondItem="aCu-Pe-UbR" secondAttribute="top" id="ads-o7-W0i"/>
+                                            <constraint firstItem="e52-tr-khm" firstAttribute="leading" secondItem="aCu-Pe-UbR" secondAttribute="leading" id="ihF-89-q5S"/>
+                                            <constraint firstAttribute="bottom" secondItem="e52-tr-khm" secondAttribute="bottom" id="rcu-61-ylR"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="showImage" destination="e52-tr-khm" id="pfT-BW-emT"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ftx-ya-yvW" id="Nwo-ah-WPU"/>
+                                    <outlet property="delegate" destination="Ftx-ya-yvW" id="bgp-xk-6zs"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -228,6 +250,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="Akg-gi-mff" id="piR-TV-sY3"/>
+                        <outlet property="recomendationCollectionView" destination="dao-6i-hBP" id="Jxf-S7-PF9"/>
                         <segue destination="LNb-Yl-gEE" kind="show" identifier="EpisodeSegue" id="Hcq-We-NDc"/>
                     </connections>
                 </viewController>

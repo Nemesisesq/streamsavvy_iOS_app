@@ -100,6 +100,7 @@
 		BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */; };
 		BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9818801DBA8D10003A5159 /* UILableExtensions.swift */; };
 		BDA7B4E91DF0776300A67ED0 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */; };
+		BDA7B4EB1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
 		BDB817681DC53B48007EA0C8 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB817671DC53B48007EA0C8 /* MarqueeLabel.framework */; };
 		BDB8176A1DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */; };
@@ -296,6 +297,7 @@
 		BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleKeychain.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/SimpleKeychain/SimpleKeychain.framework"; sourceTree = "<group>"; };
 		BD9818801DBA8D10003A5159 /* UILableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILableExtensions.swift; sourceTree = "<group>"; };
 		BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
+		BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
 		BDB817671DC53B48007EA0C8 /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/MarqueeLabel/MarqueeLabel.framework"; sourceTree = "<group>"; };
 		BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigationControllerViewController.swift; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 				BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */,
 				BD9563E41DB2A9C60089652E /* LinkCellCollectionReusableView.swift */,
 				BDCDA6211DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift */,
+				BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */,
 			);
 			name = CollectionViewCells;
 			sourceTree = "<group>";
@@ -1057,6 +1060,7 @@
 				BDB8176A1DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift in Sources */,
 				BD95CAAE1D9039FB00BCEBE2 /* Content.swift in Sources */,
 				BDEBA1531DD2704D00EDDF75 /* MatchedLiveStreamingSource.swift in Sources */,
+				BDA7B4EB1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift in Sources */,
 				BD3184A31DBE978600AAFD1E /* MozaicGuideViewController.swift in Sources */,
 				BD3184A11DBBE7A600AAFD1E /* EpisodeTableViewControllerExtension.swift in Sources */,
 				BDE4C0711DA3E4460011996D /* LiveDetailViewController.swift in Sources */,

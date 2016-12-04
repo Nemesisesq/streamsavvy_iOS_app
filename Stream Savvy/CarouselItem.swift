@@ -7,62 +7,65 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class CarouselItem: UIView {
+    
+    
+    
+    
+    var loadingNotification: MBProgressHUD!
+    
+    var vc: FavoritesViewController!
+    
+    var index: Int!
+    
+    var content: Content!
+    
+    var recomendations = [Content]()
+    
+    @IBOutlet var showTitle: UILabel!
+    
+    @IBOutlet var showImage: UIImageView!
+    
+    
+    func getRecommendations(){
         
-        @IBOutlet var likeButtonStatus: UIButton!
-        
-        @IBOutlet var share: UIButton!
-        
-        
-        var vc: FavoritesViewController!
-        
-        var index: Int!
-        
-        var content: Content!
-        
-        @IBOutlet var showTitle: UILabel!
-        
-        @IBOutlet var showImage: UIImageView!
-        
-        @IBAction func toggleLikeButton(_ sender: UIButton) {
-                vc.favorites.removeContentFromFavorites(content: content)
-                        
-                        .then {result -> Void in
-                                
-                                self.vc.favorites.contentList.remove(at: self.index)
-                                self.likeButtonStatus.imageView?.image = #imageLiteral(resourceName: "Like-50")
-                                self.vc.carousel.reloadData()
-
-                                
-                }
-                
+        if recomendations.count < 0{
+            vc.recomendations = recomendations
         }
         
-        @IBAction func Share(_ sender: AnyObject) {
-        }
+        vc.socket.ws.send(content.guidebox_id!)
+        loadingNotification = MBProgressHUD.showAdded(to: vc.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.indeterminate
+        loadingNotification.label.text = "Loading"
         
-        @IBAction func watchEpisode(_ sender: UIButton) {
-                vc.performSegue(withIdentifier: "EpisodeSegue", sender: self)
-                
-        }
+    }
+    
+    
+    
+    
+    @IBAction func watchEpisode(_ sender: UIButton) {
+        vc.performSegue(withIdentifier: "EpisodeSegue", sender: self)
         
-        //        override init(frame: CGRect) {
-        //                super.init(frame: frame)
-        //                UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: self, options: nil)
-        //                      }
-        //
-        //        required init?(coder aDecoder: NSCoder) {
-        //                super.init(coder: aDecoder)
-        //                UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: self, options: nil)
-        //        }
+    }
+    
+    //        override init(frame: CGRect) {
+    //                super.init(frame: frame)
+    //                UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: self, options: nil)
+    //                      }
+    //
+    //        required init?(coder aDecoder: NSCoder) {
+    //                super.init(coder: aDecoder)
+    //                UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: self, options: nil)
+    //        }
+    
+    class func instantiateFromNib() -> CarouselItem {
+        let view = UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: nil, options: nil).first as! CarouselItem
         
-        class func instantiateFromNib() -> CarouselItem {
-                let view = UINib(nibName: "CarouselItem", bundle: nil).instantiate(withOwner: nil, options: nil).first as! CarouselItem
-                
-                
-                view.share.removeFromSuperview()
-                
-                return view
-        }
+        
+        
+        
+        return view
+    }
 }
