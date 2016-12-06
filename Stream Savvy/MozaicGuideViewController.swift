@@ -28,6 +28,9 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     override var popularShows : [Any]! {
         didSet {
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing() 
+            }
             mozCollectionView.reloadData()
         }
     }
