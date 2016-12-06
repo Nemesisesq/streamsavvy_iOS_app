@@ -173,6 +173,8 @@ import MBProgressHUD
     
     
     func didDismissSearchController(_ searchController: UISearchController) {
+        MBProgressHUD.hide(for: self.view, animated: true)
+
         UIView.animate(withDuration: 0.3, animations: {
             self.blurEffectView.alpha = 0.0
             self.tabBarController?.tabBar.alpha = 1.0

@@ -38,8 +38,6 @@
 //	self.tableView.estimatedRowHeight = 328.0;
 //	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 //	[self.tableView setSeparatorColor:[UIColor blackColor]];
-	
-//	self.refreshControl = [[UIRefreshControl alloc] init];
 //	self.refreshControl.backgroundColor = [UIColor blackColor];
 //	self.refreshControl.tintColor = [Constants StreamSavvyRed];
 //	[self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];

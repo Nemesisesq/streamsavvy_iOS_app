@@ -21,6 +21,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     var  searchButton: UIBarButtonItem!
     var loginButton: UIBarButtonItem!
+    var refreshControl = UIRefreshControl()
     
     //    override var nextPage: String!
     //    override var previous: String!
@@ -30,6 +31,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
             mozCollectionView.reloadData()
         }
     }
+    
     
     
     
@@ -100,6 +102,12 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         self.navigationItem.rightBarButtonItems = [loginButton, searchButton]
         
         scrollView?.delegate = self
+        
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: #selector(self.reload), for: UIControlEvents.valueChanged)
+        self.refreshControl.tintColor = Constants.streamSavvyRed()  
+        self.mozCollectionView?.addSubview(refreshControl)
+        
         
         mozCollectionView?.infiniteScrollIndicatorStyle = .white
         

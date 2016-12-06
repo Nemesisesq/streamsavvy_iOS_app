@@ -4,3 +4,6 @@
 [submodule "Frameworks/Amplitude"]
 	path = Frameworks/Amplitude
 	url = git@github.com:amplitude/Amplitude-iOS.git
+[submodule "Frameworks/FSCalendar"]
+	path = Frameworks/FSCalendar
+	url = git@github.com:WenchaoD/FSCalendar.git
