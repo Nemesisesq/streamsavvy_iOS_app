@@ -18,7 +18,7 @@ public class SearchResults: NSObject {
     public func fetchResults(q: String) -> Promise<Any> {
         
         let escapedString = q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        
+        //TODO NEED TO CHANGE THIS URL AND RE HOOKIN SS DATA
         let url = "http://ss-master-staging.herokuapp.com/api/search/?q=\(escapedString!)"
         return Promise { fullfill, reject in
             Alamofire.request(url)

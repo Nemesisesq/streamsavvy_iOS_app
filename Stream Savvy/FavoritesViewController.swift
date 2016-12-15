@@ -19,14 +19,19 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     let favorites = Favorites()
     var searchButton: UIBarButtonItem!
     
-    var recomendations: [Content]!{
+    var recommendations: [Content]!{
         didSet{
-            recomendationCollectionView.reloadData()
+            let sorted: [Content]! = self.recommendations.sorted {
+                $0.curr_pop_score > $1.curr_pop_score
+            }
+            
+            self.recommendations = sorted
+            recommendationCollectionView.reloadData()
         }
     }
     
     
-    @IBOutlet var recomendationCollectionView: UICollectionView!
+    @IBOutlet var recommendationCollectionView: UICollectionView!
     @IBOutlet var carousel: iCarousel!
     @IBOutlet var emptyLabel: UILabel!
     
@@ -63,7 +68,13 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recomendations = [Content]()
+        let navigationImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 200, height: 34))
+        
+        navigationImageView.image = #imageLiteral(resourceName: "streamsavvy-wordmark-large")
+        navigationImageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = navigationImageView
+        
+        recommendations = [Content]()
         
         Auth0.calledBySubclass = true
         //carousel.type = .cylinder
@@ -103,25 +114,34 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let item = carousel.currentItemView as? CarouselItem {
-            return self.recomendations.count
+            return self.recommendations.count
         }
         
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Recomendation", for: indexPath) as! RecomendationCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Recommendation", for: indexPath) as! RecommendationCollectionViewCell
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let cell = cell as! RecomendationCollectionViewCell
+        let cell = cell as! RecommendationCollectionViewCell
         let item = carousel.currentItemView as! CarouselItem
-        if let reco = self.recomendations {
+        if let reco = self.recommendations {
             cell.content =  reco[indexPath.row]
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! RecommendationCollectionViewCell
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
+        vc.content = cell.content
+        self.navigationController?.pushViewController(vc, animated: true)
+
     }
     
     
@@ -185,8 +205,8 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     }
     
        func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
-        if let x = recomendations {
-            recomendations.removeAll()
+        if let x = recommendations {
+            recommendations.removeAll()
         }
         
         if let item = carousel.currentItemView as? CarouselItem{

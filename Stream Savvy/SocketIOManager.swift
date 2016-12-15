@@ -20,7 +20,7 @@ class SocketIOManager: NSObject {
     init(endpoint: String){
         super.init()
         path = endpoint
-        ws = WebSocket("ws://edr-go-staging.herokuapp.com/\(path!)")
+        ws = WebSocket("ws://Aizengolangapi-dev.us-east-1.elasticbeanstalk.com/sock/\(path!)")
         //        ws = WebSocket("ws://localhost:8080/\(path!)")
         
     }

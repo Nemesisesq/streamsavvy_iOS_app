@@ -33,7 +33,7 @@
 
 
 + (void)getGuideForLattitude:(float)lat Longitude:(float)lon view:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = [NSString stringWithFormat:@"https://edr-go-staging.herokuapp.com/gracenote/lineup-airings/%f/%f", lat, lon];
+	NSString *url = [NSString stringWithFormat:@"http://Aizengolangapi-dev.us-east-1.elasticbeanstalk.com/gracenote/lineup-airings/%f/%f", lat, lon];
 //    	NSString *url = [NSString stringWithFormat:@"https://concurgrid.herokuapp.com/gracenote/lineup-airings/%f/%f", lat, lon];
 //        NSString *url = [NSString stringWithFormat:@"http://localhost:8080/gracenote/lineup-airings/%f/%f", lat, lon];
 	
@@ -67,7 +67,7 @@
     NSDictionary *coords = @{@"lat":  [[NSNumber numberWithFloat:lat] stringValue], @"long": [[NSNumber numberWithFloat:lon] stringValue]};
 
 
-	NSString *url = @"http://edr-go-staging.herokuapp.com/live-streaming-service";
+	NSString *url = @"http://Aizengolangapi-dev.us-east-1.elasticbeanstalk.com/live-streaming-service";
 //NSString *url = @"http://localhost:8080/live-streaming-service";
 	NSLog(@"\n\n\n%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];

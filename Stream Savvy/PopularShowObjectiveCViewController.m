@@ -34,7 +34,7 @@
 	[workaroundImageView addSubview:navigationImage];
 	self.navigationItem.titleView=workaroundImageView;
 	
-//	self.tableView.rowHeight = UITableViewAutomaticDimension;
+//	self.tableView.rowHeight = UITableViewAutomaticDimensi/Users/Nem/streamsavvy_iOS_app/Stream Savvy/AuthTableViewController.hon;
 //	self.tableView.estimatedRowHeight = 328.0;
 //	self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 //	[self.tableView setSeparatorColor:[UIColor blackColor]];

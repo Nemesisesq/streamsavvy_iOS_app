@@ -106,6 +106,7 @@
 		BDB8176A1DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */; };
 		BDC608A81DCBB994001191B6 /* IntegerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC608A71DCBB994001191B6 /* IntegerExtension.swift */; };
 		BDCDA6221DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDA6211DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift */; };
+		BDD02D991E022E6A0040BE15 /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD02D981E022E6A0040BE15 /* Timeout.swift */; };
 		BDD2B7061DAD902500C77260 /* SeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */; };
 		BDD2B7081DAD907F00C77260 /* DeepLinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */; };
 		BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2B7091DAE052700C77260 /* Sources.swift */; };
@@ -140,6 +141,7 @@
 		BDFA04801DF74D1E00A33670 /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFA046F1DF74D1E00A33670 /* FSCalendarStickyHeader.m */; };
 		BDFA04811DF74D1E00A33670 /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFA04711DF74D1E00A33670 /* FSCalendarWeekdayView.m */; };
 		BDFA04821DF74D1E00A33670 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDFA04721DF74D1E00A33670 /* Info.plist */; };
+		BDFA04841DF7B96300A33670 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA04831DF7B96300A33670 /* CalendarViewController.swift */; };
 		C857130C64671CF46F86329D /* Pods_Stream_SavvyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB545BB365EAAB1C2B24E1 /* Pods_Stream_SavvyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -319,6 +321,7 @@
 		BDB817691DC544D8007EA0C8 /* SearchNavigationControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigationControllerViewController.swift; sourceTree = "<group>"; };
 		BDC608A71DCBB994001191B6 /* IntegerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerExtension.swift; sourceTree = "<group>"; };
 		BDCDA6211DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnDemandCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDD02D981E022E6A0040BE15 /* Timeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeout.swift; sourceTree = "<group>"; };
 		BDD2B7051DAD902500C77260 /* SeasonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7071DAD907F00C77260 /* DeepLinkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDD2B7091DAE052700C77260 /* Sources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
@@ -366,6 +369,7 @@
 		BDFA04701DF74D1E00A33670 /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarWeekdayView.h; sourceTree = "<group>"; };
 		BDFA04711DF74D1E00A33670 /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarWeekdayView.m; sourceTree = "<group>"; };
 		BDFA04721DF74D1E00A33670 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDFA04831DF7B96300A33670 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,6 +612,7 @@
 				9F5D4E921DBC197400AC7AD2 /* ContentDetailViewController.swift */,
 				BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */,
 				BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */,
+				BDFA04831DF7B96300A33670 /* CalendarViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -688,6 +693,7 @@
 				BDEB232A1DC254A000B21291 /* Auth0Protocol.swift */,
 				BDEB232C1DC267D300B21291 /* File.swift */,
 				BDEE6AEB1DC854B200F9FD2C /* Gradients.swift */,
+				BDD02D981E022E6A0040BE15 /* Timeout.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1115,6 +1121,7 @@
 				9F5A4D371D5AE1D70057AF6D /* AppDelegate.m in Sources */,
 				BDC608A81DCBB994001191B6 /* IntegerExtension.swift in Sources */,
 				BD71F0F71DDF7D2700A870AD /* AMPURLConnection.m in Sources */,
+				BDD02D991E022E6A0040BE15 /* Timeout.swift in Sources */,
 				BD71F0F31DDF7D2700A870AD /* AMPIdentify.m in Sources */,
 				BD712D321DB87C5600320590 /* Auth0ViewController.swift in Sources */,
 				BD39ADF61DA230E20065F02F /* Common.swift in Sources */,
@@ -1181,6 +1188,7 @@
 				BD1ED1C01DE8C30B00A61547 /* UserProfile.swift in Sources */,
 				9FE1B0441D6936210013DCB1 /* Constants.m in Sources */,
 				BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */,
+				BDFA04841DF7B96300A33670 /* CalendarViewController.swift in Sources */,
 				9F402A2D1DC773AD00DA651E /* RadialGradientLayer.m in Sources */,
 				BD0D74611D9AB1120012F184 /* EpisodeCollectionViewController.swift in Sources */,
 				9FC296121D76621F005CB080 /* ShowDetailsTableViewCell.m in Sources */,

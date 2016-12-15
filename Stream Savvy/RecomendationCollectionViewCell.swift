@@ -1,5 +1,5 @@
 //
-//  RecomendationCollectionViewCell.swift
+//  RecommendationCollectionViewCell.swift
 //  Stream Savvy
 //
 //  Created by Carl Lewis on 12/2/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecomendationCollectionViewCell: UICollectionViewCell {
+class RecommendationCollectionViewCell: UICollectionViewCell {
     var content : Content! {
         didSet{
             if content.image_link != nil{

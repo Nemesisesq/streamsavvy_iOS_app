@@ -17,7 +17,7 @@ import Lock
 //import SwiftyJSON
 
 
-let host = "edr-go-staging.herokuapp.com"
+let host = "Aizengolangapi-dev.us-east-1.elasticbeanstalk.com"
 //var host = "localhost:8080"
 
 

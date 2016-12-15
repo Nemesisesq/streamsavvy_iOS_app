@@ -22,9 +22,11 @@ class CarouselItem: UIView {
     
     var content: Content!
     
-    var recomendations = [Content]()
+    var recommendations = [Content]()
     
     var socket: SocketIOManager!
+    
+    var timeout : Timeout!
     
     var isActive: Bool! {
         willSet{
@@ -46,8 +48,8 @@ class CarouselItem: UIView {
     
     func getRecommendations(){
         
-        if recomendations.count > 0{
-            vc.recomendations = recomendations
+        if recommendations.count > 0{
+            vc.recommendations = recommendations
         } else {
             
         
@@ -56,6 +58,11 @@ class CarouselItem: UIView {
         loadingNotification = MBProgressHUD.showAdded(to: vc.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.indeterminate
         loadingNotification.label.text = "Loading"
+            
+            timeout = Timeout(10.0) {
+                MBProgressHUD.hideAllHUDs(for: self.vc.view, animated: true)
+                self.socket.ws.close()
+            }
         }
     }
     
@@ -65,9 +72,9 @@ class CarouselItem: UIView {
 
     
     func openSocket(){
-        self.recomendations = [Content]()
+        self.recommendations = [Content]()
         //add closing logic
-        socket = SocketIOManager(endpoint: "recomendations")
+        socket = SocketIOManager(endpoint: "reco")
         
         
         socket.ws.event.message = { message in
@@ -79,11 +86,11 @@ class CarouselItem: UIView {
             let the_json =  Common.getReadableJsonDict(data: data)
             
             
-            self.vc.recomendations.append(Content.parseDetail(dict: the_json as AnyObject))
+            self.vc.recommendations.append(Content.parseDetail(dict: the_json as AnyObject))
             
             
-            //            self.recomendationCollectionView.reloadData()
-            
+            //            self.recommendationCollectionView.reloadData()
+            self.timeout.cancel()
             MBProgressHUD.hideAllHUDs(for: self.vc.view, animated: true)
             
         }

@@ -34,7 +34,7 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         // Initialization code
         linkCollectionViewFlowLayout.estimatedItemSize = CGSize(width:30, height:30)
         
-        Alamofire.request("https://edr-go-staging.herokuapp.com/fff", method:.get)
+        Alamofire.request("http://Aizengolangapi-dev.us-east-1.elasticbeanstalk.com/fff", method:.get)
             .responseJSON { r in
                 
                 switch r.result {

@@ -63,7 +63,7 @@
 }
 
 - (void)getShowDetailsWithView:(UIView *)view Success:(void (^)(NSURLSessionDataTask *task, id JSON))successBlock{
-	NSString *url = @"https://edr-go-staging.herokuapp.com/on-demand-streaming-service";
+	NSString *url = @"http://Aizengolangapi-dev.us-east-1.elasticbeanstalk.com/on-demand-streaming-service";
 
 	NSLog(@"%@\n\n\n", url);
 	[MBProgressHUD showHUDAddedTo:view animated:YES];
