@@ -21,7 +21,7 @@ class AppCell: UICollectionViewCell {
     func prepareForDeepLink(service: MatchedLiveStreamingSourceSerivce){
         
         
-        switch service.service {
+        switch service.service { 
         case "sling_blue":
             versions = "Blue, Blue+Orange"
         case "sling_orange":

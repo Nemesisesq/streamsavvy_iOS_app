@@ -29,7 +29,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     override var popularShows : [Any]! {
         didSet {
             if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing() 
+                self.refreshControl.endRefreshing()
             }
             mozCollectionView.reloadData()
         }
@@ -42,7 +42,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     private var context = 0
     
-    let columnWidth = UIScreen.main.bounds.size.width / 3
+    let columnWidth = UIScreen.main.bounds.size.width / 2
     
     @IBOutlet var mozCollectionView: UICollectionView!
     
@@ -55,7 +55,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     @IBOutlet var scrollView: UIScrollView?
     
     @IBAction func goToLogin(_ sender:UIBarButtonItem) {
-        Auth0.resetAll()    
+        Auth0.resetAll()
         self.performSegue(withIdentifier: "Login", sender: self)
     }
     
@@ -73,7 +73,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     fileprivate let ADMozaikCollectionViewLayoutExampleImagesCount = 22
     
     fileprivate var portraitLayout: ADMozaikLayout {
-        let columns = [ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth)]
+        let columns = [ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth)]
         let layout = ADMozaikLayout(rowHeight: columnWidth, columns: columns)
         layout.delegate = self
         layout.minimumLineSpacing = 1
@@ -108,7 +108,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: #selector(self.reload), for: UIControlEvents.valueChanged)
-        self.refreshControl.tintColor = Constants.streamSavvyRed()  
+        self.refreshControl.tintColor = Constants.streamSavvyRed()
         self.mozCollectionView?.addSubview(refreshControl)
         
         
@@ -143,9 +143,9 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
                         let randomInt2 = Int(arc4random() % UInt32.init(s.count))
                         
                         s = s.sorted {_, _ in arc4random() % 2 == 0}
-                    
                         
-    
+                        
+                        
                     }
                     
                     self?.mozCollectionView.performBatchUpdates({ () -> Void in
@@ -198,25 +198,8 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     //MARK: - ADMozaikLayoutDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, mozaikSizeForItemAtIndexPath indexPath: IndexPath) -> ADMozaikLayoutSize {
-        if indexPath.item == 0 {
-            return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 2)
-        }
-            
-            
-        else if indexPath.item % 3 == 0 {
-            return ADMozaikLayoutSize(numberOfColumns: 2, numberOfRows: 1)
-            
-            
-        }
-        else if indexPath.item % 2 == 0 {
-            return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 3)
-        }
-            
-            
-            
-        else {
-            return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 1)
-        }
+        return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 1)
+        
     }
     
     //MARK: - UICollectionViewDataSource

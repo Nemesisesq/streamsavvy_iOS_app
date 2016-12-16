@@ -428,7 +428,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="166" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yau-h1-iJb">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yau-h1-iJb">
                                                     <rect key="frame" x="0.0" y="0.0" width="166" height="104"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt3-fd-eqR" customClass="MarqueeLabel" customModule="MarqueeLabel">
@@ -1650,8 +1650,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zb4-L9-SRA"/>
+        <segue reference="xzD-Il-795"/>
         <segue reference="PqR-Ou-oHG"/>
         <segue reference="Hcq-We-NDc"/>
-        <segue reference="T0S-Xg-IrC"/>
     </inferredMetricsTieBreakers>
 </document>
