@@ -181,7 +181,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3nq-I0-npx"/>
                     </layoutGuides>
                     <view key="view" contentMode="top" id="Cvz-rQ-ybw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Akg-gi-mff" customClass="iCarousel">
@@ -196,7 +196,7 @@
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dao-6i-hBP">
-                                <rect key="frame" x="10" y="180" width="355" height="487"/>
+                                <rect key="frame" x="10" y="180" width="355" height="374"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nfq-Sm-6Uf">
                                     <size key="itemSize" width="172" height="137"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -268,7 +268,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeT-6H-BZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="pLS-OQ-rmU"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="-294.60269865067471"/>
+            <point key="canvasLocation" x="2601" y="-759"/>
         </scene>
         <!--Content Detail View Controller-->
         <scene sceneID="Xfw-gw-6QP">
@@ -506,11 +506,11 @@
                         <viewControllerLayoutGuide type="bottom" id="pul-X2-fDc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Td6-ma-UB1" propertyAccessControl="none">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="404" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QMz-CO-CeD">
-                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="479"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpiTableViewCell" rowHeight="404" id="rUL-Pb-4ff" customClass="EpisodeTableViewCell" customModule="Stream_Savvy" customModuleProvider="target">
@@ -648,7 +648,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adz-u7-jsC">
-                                <rect key="frame" x="0.0" y="45" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="25" width="375" height="50"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="seasons" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-S9-5Hm">
                                         <rect key="frame" x="70" y="0.0" width="305" height="50"/>
@@ -711,7 +711,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psY-D7-UJU">
-                                <rect key="frame" x="16" y="16.5" width="343" height="23.5"/>
+                                <rect key="frame" x="16" y="-3.5" width="343" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -745,7 +745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVe-rk-nic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4217" y="-294"/>
+            <point key="canvasLocation" x="3372" y="-758"/>
         </scene>
         <!--Popular Show Table View Controller-->
         <scene sceneID="ptM-fs-ybH">
@@ -1297,6 +1297,7 @@
                         <segue destination="xXZ-uX-PNa" kind="relationship" relationship="viewControllers" id="Pie-UD-6xi"/>
                         <segue destination="9ma-ov-Uhn" kind="relationship" relationship="viewControllers" id="xLd-ae-1lb"/>
                         <segue destination="a5R-UH-ybB" kind="relationship" relationship="viewControllers" id="LIj-GG-qWG"/>
+                        <segue destination="vg2-1j-Qth" kind="relationship" relationship="viewControllers" id="oiO-to-nW1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUn-qF-wCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1506,7 +1507,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqv-RG-5uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="1914.6926536731635"/>
+            <point key="canvasLocation" x="3412" y="1802"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="izO-eN-v9g">
@@ -1524,12 +1525,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPR-NK-OvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="2597"/>
+            <point key="canvasLocation" x="246" y="1119"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="stU-mM-nYa">
             <objects>
-                <viewController id="H1Z-u5-J3p" customClass="CalendarViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="H1Z-u5-J3p" customClass="InterfaceBuilderViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="inO-3T-2U7"/>
                         <viewControllerLayoutGuide type="bottom" id="d0k-az-vH5"/>
@@ -1542,7 +1543,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="554" id="lzG-fX-SBI"/>
+                                    <constraint firstAttribute="height" constant="554" id="s2z-nK-HAc"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="H1Z-u5-J3p" id="yaQ-C6-cHH"/>
@@ -1552,21 +1553,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d0k-az-vH5" firstAttribute="top" secondItem="Ccv-T6-XgU" secondAttribute="bottom" id="She-ZN-nQU"/>
-                            <constraint firstItem="Ccv-T6-XgU" firstAttribute="leading" secondItem="r4n-as-WD0" secondAttribute="leading" id="gX5-dG-csy"/>
-                            <constraint firstAttribute="trailing" secondItem="Ccv-T6-XgU" secondAttribute="trailing" id="wFy-0e-2zL"/>
-                            <constraint firstItem="Ccv-T6-XgU" firstAttribute="top" secondItem="inO-3T-2U7" secondAttribute="bottom" id="z8X-Vc-OVx"/>
+                            <constraint firstItem="Ccv-T6-XgU" firstAttribute="top" secondItem="inO-3T-2U7" secondAttribute="bottom" id="15q-MU-GJK"/>
+                            <constraint firstAttribute="trailing" secondItem="Ccv-T6-XgU" secondAttribute="trailing" id="dLQ-Y0-WOn"/>
+                            <constraint firstItem="Ccv-T6-XgU" firstAttribute="leading" secondItem="r4n-as-WD0" secondAttribute="leading" id="jug-Xg-muE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EE6-uH-dRB"/>
                     <connections>
-                        <outlet property="calendar" destination="Ccv-T6-XgU" id="qR2-s5-FaO"/>
-                        <outlet property="calendarHeightConstraint" destination="lzG-fX-SBI" id="1tF-14-3vs"/>
+                        <outlet property="calendar" destination="Ccv-T6-XgU" id="H6n-i3-4hJ"/>
+                        <outlet property="calendarHeightConstraint" destination="s2z-nK-HAc" id="MI8-ge-omv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtx-3A-Mjt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="2600.1499250374814"/>
+            <point key="canvasLocation" x="246" y="1802"/>
         </scene>
         <!--Live-->
         <scene sceneID="ksm-By-zQq">
@@ -1612,7 +1612,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVa-K1-H3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="-293"/>
+            <point key="canvasLocation" x="1812" y="-759"/>
         </scene>
         <!--Profile-->
         <scene sceneID="IMr-oh-Hau">
@@ -1636,7 +1636,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EX4-uY-sSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600.8000000000002" y="1914.6926536731635"/>
+            <point key="canvasLocation" x="2601" y="1803"/>
         </scene>
     </scenes>
     <resources>
@@ -1649,9 +1649,9 @@
         <image name="user" width="32" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zb4-L9-SRA"/>
         <segue reference="xzD-Il-795"/>
-        <segue reference="PqR-Ou-oHG"/>
+        <segue reference="uH8-Eb-6tX"/>
+        <segue reference="iwb-hH-tU5"/>
         <segue reference="Hcq-We-NDc"/>
     </inferredMetricsTieBreakers>
 </document>

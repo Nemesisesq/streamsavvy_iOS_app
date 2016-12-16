@@ -1,18 +1,17 @@
 //
-//  CalendarViewController.swift
-//  Stream Savvy
+//  ViewController.swift
+//  SwiftExample
 //
-//  Created by Carl Lewis on 12/6/16.
-//  Copyright © 2016 StreamSavvy. All rights reserved.
+//  Created by Wenchao Ding on 9/3/15.
+//  Copyright (c) 2015 wenchao. All rights reserved.
 //
 
 import UIKit
 
-class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+class InterfaceBuilderViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
     
-    
-    @IBOutlet var calendar: FSCalendar!
-    @IBOutlet var calendarHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     
     private let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -20,28 +19,38 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         return formatter
     }()
     private let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
-
+    
+    let datesWithCat = ["2016/05/05","2016/06/05","2016/07/05","2016/08/05","2016/09/05","2016/10/05","2016/11/05","2016/12/05","2016/01/06",
+                        "2016/02/06","2016/03/06","2017/04/06","2017/05/06","2017/06/06","2017/07/06"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.calendar.appearance.caseOptions = [.headerUsesUpperCase,.weekdayUsesUpperCase]
+        self.calendar.select(self.formatter.date(from: "2016/12/18")!)
+        //        self.calendar.scope = .week
         self.calendar.scopeGesture.isEnabled = true
-         self.calendar.appearance.caseOptions = [.headerUsesUpperCase,.weekdayUsesUpperCase]
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //        calendar.allowsMultipleSelection = true
+        
+        // Uncomment this to test month->week and week->month transition
+        /*
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(2.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+         self.calendar.setScope(.Week, animated: true)
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+         self.calendar.setScope(.Month, animated: true)
+         }
+         }
+         */
+        
     }
     
-    //func minimumDate(for calendar: FSCalendar) -> Date {
-    //    return self.formatter.date(from: "2015/01/01")!
-    ///}
+    func minimumDate(for calendar: FSCalendar) -> Date {
+        return self.formatter.date(from: "2016/01/01")!
+    }
     
-    //func maximumDate(for calendar: FSCalendar) -> Date {
-    //    return self.formatter.date(from: "2016/10/31")!
-    //}
+    func maximumDate(for calendar: FSCalendar) -> Date {
+        return self.formatter.date(from: "2017/10/31")!
+    }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         let day: Int! = self.gregorian.component(.day, from: date)
@@ -64,19 +73,10 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         view.layoutIfNeeded()
     }
     
-    //func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-      //  let day: Int! = self.gregorian.component(.day, from: date)
-       // return [13,24].contains(day) ? UIImage(named: "icon_cat") : nil
-    //}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        let day: Int! = self.gregorian.component(.day, from: date)
+        return [13,24].contains(day) ? UIImage(named: "icon_cat") : nil
     }
-    */
-
+    
 }
+
