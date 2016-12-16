@@ -30,7 +30,52 @@ class Stream_SavvyUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        snapshot("homepage")
+        //XCUIApplication().textFields["Email"].tap()
+        
+        let app = XCUIApplication()
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["On Demand"].tap()
+        snapshot("1OnDemand")
+        
+        let firstChild = app.collectionViews.children(matching: .any).element(boundBy: 0)
+        if firstChild.exists {
+            firstChild.tap()
+            app.buttons["ADD TO FAVORITES"].tap()
+            
+            snapshot("2ContentDetail")
+            firstChild.tap()
+            app.buttons["Watch Episodes"].tap()
+            snapshot("3Episodes")
+
+        }
+    
+        app.navigationBars["Stream_Savvy.EpisodeCollectionView"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
+        
+        
+        app.navigationBars["Stream_Savvy.ContentDetailView"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
+        
+        tabBarsQuery.buttons["Live"].tap()
+        snapshot("4Live")
+        
+        app.navigationBars["Stream_Savvy.LiveDetailsView"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
+        snapshot("5LiveDetail")
+        
+        let favoritesButton = app.tabBars.buttons["Favorites"]
+        favoritesButton.tap()
+        favoritesButton.tap()
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        element.swipeLeft()
+        element.swipeLeft()
+        snapshot("6Favorites")
+        
+        app.navigationBars["Stream_Savvy.FavoritesView"].buttons["Search"].tap()
+        
+        let searchSearchField = app.searchFields["Search"]
+        searchSearchField.tap()
+        searchSearchField.typeText("orange")
+        snapshot("7Search")
+        // snapshot("homepage")
     }
     
 }

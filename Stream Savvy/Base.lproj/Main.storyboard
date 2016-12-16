@@ -1297,7 +1297,6 @@
                         <segue destination="xXZ-uX-PNa" kind="relationship" relationship="viewControllers" id="Pie-UD-6xi"/>
                         <segue destination="9ma-ov-Uhn" kind="relationship" relationship="viewControllers" id="xLd-ae-1lb"/>
                         <segue destination="a5R-UH-ybB" kind="relationship" relationship="viewControllers" id="LIj-GG-qWG"/>
-                        <segue destination="vg2-1j-Qth" kind="relationship" relationship="viewControllers" id="0g8-wE-fKP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUn-qF-wCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1650,9 +1649,9 @@
         <image name="user" width="32" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T0S-Xg-IrC"/>
         <segue reference="zb4-L9-SRA"/>
         <segue reference="PqR-Ou-oHG"/>
         <segue reference="Hcq-We-NDc"/>
+        <segue reference="xzD-Il-795"/>
     </inferredMetricsTieBreakers>
 </document>

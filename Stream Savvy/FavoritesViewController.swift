@@ -21,9 +21,11 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     
     var recommendations: [Content]!{
         didSet{
-            let sorted: [Content]! = self.recommendations.sorted {
+            var sorted: [Content]! = self.recommendations.sorted {
                 $0.curr_pop_score > $1.curr_pop_score
             }
+            
+            sorted = $.uniq(sorted)
             
             self.recommendations = sorted
             recommendationCollectionView.reloadData()
