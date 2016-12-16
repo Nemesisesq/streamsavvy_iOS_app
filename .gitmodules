@@ -7,3 +7,9 @@
 [submodule "Frameworks/FSCalendar"]
 	path = Frameworks/FSCalendar
 	url = git@github.com:WenchaoD/FSCalendar.git
+[submodule "Frameworks/Lock"]
+	path = Frameworks/Lock
+	url = git@github.com:auth0/Lock.iOS-OSX.git
+[submodule "Frameworks/Lock-ios"]
+	path = Frameworks/Lock-ios
+	url = git@github.com:auth0/Lock.iOS-OSX.git
