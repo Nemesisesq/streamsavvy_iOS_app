@@ -104,11 +104,7 @@ import Crashlytics
                     
                     let p = UserProfile(profile: profile)
                     
-                    //TODO: remove this CleverTap Instance when more robust init process taking to account syncronization to prevent overriding data with Auth0Profile.
-                    p.setCleverTapProfile()
-                    
-                    p.logUserForCrashlytics()
-                    
+          
                     
                     // Our idToken is still valid...
                     // We store the fetched user profile

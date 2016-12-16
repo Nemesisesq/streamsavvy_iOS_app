@@ -10,6 +10,7 @@ import Foundation
 import Gloss
 
 class LiveLinkTemplate: Decodable {
+    var app: String!
     var appName: String!
     var serviceName: String!
     var template: String!
@@ -17,6 +18,7 @@ class LiveLinkTemplate: Decodable {
     var versions: String!
     
     public required init?(json: JSON){
+        app = "app" <~~ json
         appName = "app_name" <~~ json
         serviceName = "service_name" <~~ json
         template = "template" <~~ json

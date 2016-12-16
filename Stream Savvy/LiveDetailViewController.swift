@@ -35,7 +35,7 @@ class AppCell: UICollectionViewCell {
         case "ps_vue_ultra":
             versions = "Playstation Vue Ultra"
         default:
-            versions = service.app
+            versions = service.template.app
         }
         
         

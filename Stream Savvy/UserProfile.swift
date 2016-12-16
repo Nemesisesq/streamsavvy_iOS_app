@@ -51,34 +51,34 @@ class UserProfile: User {
         
     }
     
-    func setCleverTapProfile(){
-        
-        let p = self
-        let profile: Dictionary<String, Any> = [
-            "Name": p.name ?? "blank",                // String
-            "Identity": p.identity!,                   // String or number
-            "Email": p.email ?? "blank",              // Email address of the user
-            "Phone": "",                    // Phone (without the country code)
-            "Gender": p.gender as Any,                          // Can be either M or F
-            "Employed": p.employed as Any,                        // Can be either Y or N
-            "Education": p.education as Any,                // Can be either School, College or Graduate
-            "Married": p.married as Any,                         // Can be either Y or N
-            "DOB": p.dob as Any,                        // Date of Birth. An NSDate object
-            "Age": p.age as Any,                              // Not required if DOB is set
-            "Photo": p.photo!,   // URL to the Image
-            
-            // optional fields. controls whether the user will be sent email, push etc.
-            "MSG-email": p.msgEmail as Any,                     // Disable email notifications
-            //                        "MSG-push": true as AnyObject,                       // Enable push notifications
-            "MSG-sms": true as Any                       // Disable SMS notifications
-        ]
-        
-        
-        CleverTap.sharedInstance()?.profilePush(profile)
-    
-        CleverTap.sharedInstance()?.recordEvent("profile set")
-        
-    }
+//    func setCleverTapProfile(){
+//        
+//        let p = self
+//        let profile: Dictionary<String, Any> = [
+//            "Name": p.name ?? "blank",                // String
+//            "Identity": p.identity!,                   // String or number
+//            "Email": p.email ?? "blank",              // Email address of the user
+//            "Phone": "",                    // Phone (without the country code)
+//            "Gender": p.gender as Any,                          // Can be either M or F
+//            "Employed": p.employed as Any,                        // Can be either Y or N
+//            "Education": p.education as Any,                // Can be either School, College or Graduate
+//            "Married": p.married as Any,                         // Can be either Y or N
+//            "DOB": p.dob as Any,                        // Date of Birth. An NSDate object
+//            "Age": p.age as Any,                              // Not required if DOB is set
+//            "Photo": p.photo!,   // URL to the Image
+//            
+//            // optional fields. controls whether the user will be sent email, push etc.
+//            "MSG-email": p.msgEmail as Any,                     // Disable email notifications
+//            //                        "MSG-push": true as AnyObject,                       // Enable push notifications
+//            "MSG-sms": true as Any                       // Disable SMS notifications
+//        ]
+//        
+//        
+//        CleverTap.sharedInstance()?.profilePush(profile)
+//    
+//        CleverTap.sharedInstance()?.recordEvent("profile set")
+//        
+//    }
     func logUserForCrashlytics() {
         // TODO: Use the current user's information
         // You can call any combination of these three methods

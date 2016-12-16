@@ -14,7 +14,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <TwitterKit/TwitterKit.h>
-#import <CleverTapSDK/CleverTap.h>
+
 #import <MoPub/MoPub.h>
 
 
@@ -72,15 +72,6 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 
-    
-    
-#ifdef DEBUG
-    [CleverTap setDebugLevel:1];
-#endif
-    
-    [CleverTap autoIntegrate];
-    
-    
 #pragma mark pushbots
     
     self.PushbotsClient = [[Pushbots alloc] initWithAppId:@"583b93704a9efa50c08b4568" prompt:YES];
