@@ -127,8 +127,10 @@ import MBProgressHUD
                 self.resultsController.tableView.reloadData()
                 MBProgressHUD.hide(for: self.view, animated: true)
                 
+                
             }.catch{_ in
                 MBProgressHUD.hide(for: self.view, animated: true)
+                MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
 
                 
         }

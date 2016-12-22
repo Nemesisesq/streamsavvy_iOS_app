@@ -88,11 +88,11 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        openSocket()
+        //        openSocket()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        socket.ws.close()
+        //        socket.ws.close()
     }
     
     override func viewDidLayoutSubviews() {
@@ -143,7 +143,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
         vc.content = cell.content
         self.navigationController?.pushViewController(vc, animated: true)
-
+        
     }
     
     
@@ -168,6 +168,23 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         
         if option == iCarouselOption.spacing {
             return value * 1.0
+        }
+        
+        if option == iCarouselOption.wrap {
+            return 1.0
+        }
+        
+        if option == iCarouselOption.fadeMin{
+            
+        }
+        if option == iCarouselOption.fadeMax {
+            
+        }
+        if option == iCarouselOption.fadeRange{
+            
+        }
+        if option == iCarouselOption.fadeMinAlpha {
+            
         }
         return value
     }
@@ -206,16 +223,52 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         
     }
     
-       func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
-        if let x = recommendations {
+    var debounceTimer: Timer?
+    
+    func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
+//        if let timer = debounceTimer{
+//            timer.invalidate()
+//        }
+//        
+//        if let x = recommendations {
+//            recommendations.removeAll()
+//        }
+//        
+//        if #available(iOS 10.0, *) {
+//            debounceTimer = Timer.init(timeInterval: 0.3, repeats: false, block: { (Timer) in
+//                if let item = carousel.currentItemView as? CarouselItem{
+//                    item.isActive = true
+//                    item.getRecommendations()
+//                }
+//                
+//            })
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//        RunLoop.current.add(debounceTimer!, forMode: .defaultRunLoopMode)
+//    }
+    }
+    func carouselDidScroll(_ carousel: iCarousel) {
+        if let timer = debounceTimer{
+            timer.invalidate()
+        }
+        
+        if recommendations != nil {
             recommendations.removeAll()
         }
         
-        if let item = carousel.currentItemView as? CarouselItem{
-            item.isActive = true
-            item.getRecommendations()
+        if #available(iOS 10.0, *) {
+            debounceTimer = Timer.init(timeInterval: 0.3, repeats: false, block: { (Timer) in
+                if let item = carousel.currentItemView as? CarouselItem{
+                    item.isActive = true
+                    item.getRecommendations()
+                }
+                
+            })
+        } else {
+            // Fallback on earlier versions
         }
-        
+        RunLoop.current.add(debounceTimer!, forMode: .defaultRunLoopMode)
     }
     
     func showEpisodes() {
@@ -242,4 +295,4 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
         }
     }
     
-    }
+}

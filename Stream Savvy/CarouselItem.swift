@@ -32,11 +32,11 @@ class CarouselItem: UIView {
         willSet{
             if newValue == true {
                 if socket != nil {
-                    socket.ws.close()
+//                    socket.ws.close()
                 }
                 openSocket()
             } else {
-                self.socket.ws.close()
+//                self.socket.ws.close()
             }
         }
     }

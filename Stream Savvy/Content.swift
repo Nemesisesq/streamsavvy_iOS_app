@@ -148,11 +148,11 @@ public class Content: NSObject {
         content.title = dict["title"] as? String
         content.guidebox_id = (dict["guidebox_data"] as? NSMutableDictionary)?.object(forKey: "id") as! Int!
         content.guidebox_data = dict["guidebox_data"] as? NSMutableDictionary
-        content.on_netflix = dict["on_netflix"] as? Bool
-        content.channel = dict["channel"] as? NSMutableDictionary
+//        content.on_netflix = dict["on_netflix"] as? Bool
+//        content.channel = dict["channel"] as? NSMutableDictionary
         content.curr_pop_score = dict["curr_pop_score"] as? Float
-        content.channels_last_checked  = dict["channels_last_checked"] as? String
-        content.modified = dict["modified"] as? String
+//        content.channels_last_checked  = dict["channels_last_checked"] as? String
+//        content.modified = dict["modified"] as? String
 	content.image_link = (dict["guidebox_data"] as? NSMutableDictionary)?.object(forKey: "artwork_608x342") as? String
         return content
 	
