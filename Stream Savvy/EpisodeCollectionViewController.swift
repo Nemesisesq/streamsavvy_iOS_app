@@ -10,6 +10,7 @@ import UIKit
 import PromiseKit
 import Dollar
 import MBProgressHUD
+import Crashlytics
 
 struct Season {
     var number : Int
@@ -148,6 +149,8 @@ class EpisodeCollectionViewController:  Auth0ViewController, UICollectionViewDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        Answers.logContentView(withName: "Episodes", contentType: "episode", contentId: "\(content.guidebox_id)", customAttributes: ["provider":"guidebox"])
         
         self.navigationController?.tabBarController?.tabBar.isHidden = true
     }

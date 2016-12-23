@@ -7,16 +7,20 @@
 //
 
 import Foundation
+import Crashlytics
 
 extension EpisodeCollectionViewController: UITableViewDelegate, UITableViewDataSource {
 
 
         // MARK: UITableViewDelegate
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            var c = tableView.cellForRow(at: indexPath) as! EpisodeTableViewCell
                 if  (selectedIndex != indexPath.row){
                         selectedIndex = nil
                         tableView.reloadData()
                         selectedIndex = indexPath.row
+                    Answers.logCustomEvent(withName: "Select Episode", customAttributes: ["Show Name":content.title,
+                                                                                          "Episode Title":c.epTitle])
                 } else {
                         selectedIndex = nil
                 }

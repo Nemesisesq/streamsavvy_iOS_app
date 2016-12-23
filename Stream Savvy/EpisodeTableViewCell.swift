@@ -10,6 +10,7 @@ import UIKit
 import UICollectionViewLeftAlignedLayout
 import JavaScriptCore
 import Alamofire
+import Crashlytics
 
 
 class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -174,6 +175,7 @@ class EpisodeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! LinkViewCell
+        Answers.logCustomEvent(withName: "Open Deep Link", customAttributes: ["App":cell.display])
         cell.openDeepLink()
     }
 }

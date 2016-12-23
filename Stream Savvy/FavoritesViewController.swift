@@ -10,6 +10,7 @@ import UIKit
 import PromiseKit
 import Dollar
 import MBProgressHUD
+import Crashlytics
 
 class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarouselDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -49,6 +50,9 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        Answers.logContentView(withName: "Favorites", contentType: "Shows", contentId: "", customAttributes: [:])
         makeCarousel()
         
         

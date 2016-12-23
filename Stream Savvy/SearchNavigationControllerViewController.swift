@@ -147,7 +147,7 @@ import Crashlytics
             
             if #available(iOS 10.0, *) {
                 debounceTimer = Timer.init(timeInterval: 0.3, repeats: false, block: { (Timer) in
-                    Answers.logSearch(withQuery: "mobile analytics", customAttributes: ["query": searchController.search.text!])
+                    Answers.logSearch(withQuery: searchController.searchBar.text!, customAttributes: ["user": "test" ])
                     self.fetch(text: searchController.searchBar.text!)
                 })
             } else {
@@ -157,7 +157,7 @@ import Crashlytics
         } else {
             searchResults.results.removeAll(keepingCapacity: true)
         }
-        
+    
     }
     
     

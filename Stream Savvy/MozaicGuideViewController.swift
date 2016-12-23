@@ -11,6 +11,7 @@ import ADMozaicCollectionViewLayout
 import PromiseKit
 import MarqueeLabel
 import Dollar
+import Crashlytics
 
 enum ADMozaikLayoutType {
     case portrait
@@ -169,6 +170,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        Answers.logContentView(withName: "Popular Shows", contentType: "On demand", contentId: "", customAttributes: [:])
         if Auth0.loggedIn {
             self.navigationItem.rightBarButtonItems = []
             self.navigationItem.rightBarButtonItem = searchButton

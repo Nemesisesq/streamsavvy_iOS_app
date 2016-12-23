@@ -8,6 +8,7 @@
 
 import UIKit
 import Dollar
+import Crashlytics
 
 class AppCell: UICollectionViewCell {
     
@@ -59,25 +60,34 @@ class AppCell: UICollectionViewCell {
             
             if let url = URL.init(string: service.links.deeplink){
                 if application.canOpenURL(url) {
+                    Answers.logCustomEvent(withName: "Deeplink into app", customAttributes: ["app":service.app,
+                                                                                             "has app": "true"])
                     application.openURL(url)
                 } else {
                     if let appStoreUrl = URL.init(string: service.links.app_store) {
+                        Answers.logCustomEvent(withName: "Go to appstore", customAttributes: ["app":service.app,
+                                                                                              "has app" : "false"])
                         application.openURL(appStoreUrl)
                     }
                 }
                 
             } else {
                 if let appStoreUrl = URL.init(string: service.links.app_store) {
+                    Answers.logCustomEvent(withName: "Go to appstore", customAttributes: ["app":service.app,
+                                                                                          "app has deeplink" : "false"])
                     application.openURL(appStoreUrl)
                 }
             }
         }))
         
         alert.addAction(UIAlertAction(title: "Learn More", style: .default, handler: { _ in
+            Answers.logCustomEvent(withName: "Sign up for deep link", customAttributes: ["app":service.app])
             application.openURL(URL(string: service.links.signup)!)
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{_  in
+        Answers.logCustomEvent(withName: "Cancelled deep link", customAttributes: ["app":service.app])
+        }))
         
         
         presenter.present(alert, animated: true, completion: nil)
@@ -232,6 +242,7 @@ class LiveDetailsViewController:  Auth0ViewController, UICollectionViewDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        Answers.logContentView(withName: "Live Detail Screen", contentType: "gracenote", contentId: "\(self.channel.stationID)", customAttributes: ["Show": self.media.title])
         self.navigationController?.tabBarController?.tabBar.isHidden = true
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LiveDetailsViewController.updateProgress), userInfo: nil, repeats: true)
         self.timer.fire()

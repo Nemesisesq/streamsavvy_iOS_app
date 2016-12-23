@@ -9,6 +9,7 @@ import UIKit
 import Dollar
 import Lock
 import MBProgressHUD
+import Crashlytics
 
 class ContentDetailViewController:  Auth0ViewController  {
     
@@ -48,7 +49,7 @@ class ContentDetailViewController:  Auth0ViewController  {
         }
             
         else {
-            
+            Answers.logCustomEvent(withName: "Add to favorites", customAttributes: ["show":content.title])
             favorites.addContentToFavorites(content: content)
                 .then { _ -> Void in
                     
@@ -149,6 +150,7 @@ class ContentDetailViewController:  Auth0ViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        Answers.logContentView(withName: "Content Detail View", contentType: "OnDemand", contentId: "\(content.guidebox_id)" , customAttributes: nil)
         self.navigationController?.tabBarController?.tabBar.isHidden = true
         controller.onUserDismissBlock = {
             self.addFavoriteButton.removeTarget(self, action: #selector(ContentDetailViewController.addContentToFavorites(_:)), for: UIControlEvents.touchUpInside)
