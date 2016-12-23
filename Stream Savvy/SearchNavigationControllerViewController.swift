@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import Crashlytics
 
 @objc class SearchNavigationControllerViewController: UINavigationController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate,UISearchControllerDelegate {
     var selectedShow: Content!
@@ -146,6 +147,7 @@ import MBProgressHUD
             
             if #available(iOS 10.0, *) {
                 debounceTimer = Timer.init(timeInterval: 0.3, repeats: false, block: { (Timer) in
+                    Answers.logSearch(withQuery: "mobile analytics", customAttributes: ["query": searchController.search.text!])
                     self.fetch(text: searchController.searchBar.text!)
                 })
             } else {

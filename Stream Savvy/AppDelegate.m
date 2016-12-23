@@ -62,7 +62,7 @@
     
     
     
-    [Fabric with:@[[Twitter class], [Crashlytics class], [MoPub class]]];
+    [Fabric with:@[[Twitter class],[Answers class], [Crashlytics class], [MoPub class]]];
     
     UIUserNotificationType types = (UIUserNotificationTypeBadge | UIUserNotificationTypeSound |
                                     UIUserNotificationTypeAlert);
