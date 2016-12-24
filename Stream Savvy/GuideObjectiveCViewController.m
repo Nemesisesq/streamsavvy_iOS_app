@@ -134,13 +134,17 @@ NSInteger numOfStaticCell = 1;
         ////			NSLog(@"\n\n\n\t\t2\n\n\n%@", [[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]);
         ////			NSLog(@"\n\n\n\t\t3\n\n\n%@", [[[[(NSArray *)JSON objectAtIndex:0] objectForKey:@"data"] objectForKey:@"GridScheduleResult"]objectForKey:@"GridChannels"]);
         
-        NSArray *chans = (NSArray *)JSON[@"stations"];
-        self.zip = (NSString *)JSON[@"zip"];
-        
-        [Answers logCustomEventWithName: @"live guide" customAttributes:@{
-                                                                          @"zip_code" : self.zip}];
-        
-        for (NSDictionary *region_channels in chans) {
+//        NSArray *chans = (NSArray *)JSON[@"stations"];
+//        self.zip = (NSString *)JSON[@"zip"];
+        [Answers logCustomEventWithName: @"live guide" customAttributes:nil];
+        Pushbots *pushBotsClient = [Pushbots sharedInstance];
+        [pushBotsClient update:@{
+                                 @"location":@[
+                                         [NSNumber numberWithFloat:lat],
+                                         [NSNumber numberWithFloat:lon]
+                                         ]
+                                 }];
+        for (NSDictionary *region_channels in (NSArray *)JSON) {
             //			if (max_to_load > 99) break;
             //			max_to_load ++;
             [guideShows addObject:[[Channel alloc] initWithAttributes: region_channels]];

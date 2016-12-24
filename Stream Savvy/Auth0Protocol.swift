@@ -133,7 +133,6 @@ extension Auth0Protocol {
             client.fetchNewIdToken(withRefreshToken: refreshToken,
                                    parameters: nil,
                                    success: {newToken in
-                                    
                                     Auth0.loggedIn = true
                                     
                                     
@@ -163,7 +162,8 @@ extension Auth0Protocol {
             client.fetchUserProfile(withIdToken: idToken,
                                     success: { profile in
                                         fulfill(profile)
-                                        
+                                        Pushbots.sharedInstance().setAlias(profile.email)
+
                                         Auth0.loggedIn = true
             },
                                     failure: { error in

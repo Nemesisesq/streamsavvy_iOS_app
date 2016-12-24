@@ -11,6 +11,7 @@ import Lock
 import MBProgressHUD
 import Crashlytics
 
+
 class ContentDetailViewController:  Auth0ViewController  {
     
     var hello = "Detailed World"
@@ -52,10 +53,10 @@ class ContentDetailViewController:  Auth0ViewController  {
             Answers.logCustomEvent(withName: "Add to favorites", customAttributes: ["show":content.title])
             favorites.addContentToFavorites(content: content)
                 .then { _ -> Void in
-                    
                     if let navigationController = self.navigationController {
                         navigationController.popViewController(animated: true)
                     }
+                    
                     
                 }.catch{ err in
                     print(err)
