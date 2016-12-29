@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nyn-XC-XPI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iR1-WS-noO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1625,24 +1625,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTo-N1-Jxj">
-                                <rect key="frame" x="16" y="529" width="343" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marks_streamsavvy_mark_large" translatesAutoresizingMaskIntoConstraints="NO" id="tD2-cG-DTg">
+                                <rect key="frame" x="148" y="45" width="78" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get Started"/>
-                                <connections>
-                                    <segue destination="iYo-wp-ZjQ" kind="show" id="BP0-T1-zjh"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5jV-CV-DsU">
                                 <rect key="frame" x="168" y="610" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.25490197539999998" green="0.27450981740000002" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.060853812200000003" blue="0.11330069869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marks_streamsavvy_mark_large" translatesAutoresizingMaskIntoConstraints="NO" id="tD2-cG-DTg">
-                                <rect key="frame" x="148" y="45" width="78" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTo-N1-Jxj">
+                                <rect key="frame" x="16" y="547" width="343" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Get Started"/>
+                                <connections>
+                                    <segue destination="iYo-wp-ZjQ" kind="show" id="BP0-T1-zjh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.75001350743968176" green="0.77061510793497745" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1731,7 +1731,7 @@
         <!--Setup Table View Controller-->
         <scene sceneID="RJL-uK-zUR">
             <objects>
-                <viewController storyboardIdentifier="ThirdSetupController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n6k-mH-sQO" customClass="SetupTableViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetupTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n6k-mH-sQO" customClass="SetupTableViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g1k-Oa-Rqr"/>
                         <viewControllerLayoutGuide type="bottom" id="bis-n8-vzA"/>
@@ -1768,6 +1768,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.6366293503299566" green="1" blue="0.82416847812871796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="setupTableView" destination="tBz-PZ-fcY" id="TZX-ya-Xvy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysm-hk-hFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
