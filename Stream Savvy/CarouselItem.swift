@@ -18,6 +18,8 @@ class CarouselItem: UIView {
     
     var vc: FavoritesViewController!
     
+    var cv: UICollectionView!
+    
     var index: Int!
     
     var content: Content!
@@ -51,16 +53,17 @@ class CarouselItem: UIView {
         if recommendations.count > 0{
             vc.recommendations = recommendations
         } else {
-            
+        
+       cv = vc.recommendationCollectionView
         
         
         socket.ws.send(content.guidebox_id!)
-        loadingNotification = MBProgressHUD.showAdded(to: vc.view, animated: true)
+        loadingNotification = MBProgressHUD.showAdded(to: self.cv, animated: true)
         loadingNotification.mode = MBProgressHUDMode.indeterminate
         loadingNotification.label.text = "Loading"
             
             timeout = Timeout(10.0) {
-                MBProgressHUD.hideAllHUDs(for: self.vc.view, animated: true)
+                MBProgressHUD.hideAllHUDs(for: self.cv, animated: true)
                 self.socket.ws.close()
             }
         }
@@ -91,7 +94,7 @@ class CarouselItem: UIView {
             
             //            self.recommendationCollectionView.reloadData()
             self.timeout.cancel()
-            MBProgressHUD.hideAllHUDs(for: self.vc.view, animated: true)
+            MBProgressHUD.hideAllHUDs(for: self.cv, animated: true)
             
         }
     }

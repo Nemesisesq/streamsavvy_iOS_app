@@ -229,29 +229,22 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     
     var debounceTimer: Timer?
     
-    func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
-//        if let timer = debounceTimer{
-//            timer.invalidate()
-//        }
-//        
-//        if let x = recommendations {
-//            recommendations.removeAll()
-//        }
-//        
-//        if #available(iOS 10.0, *) {
-//            debounceTimer = Timer.init(timeInterval: 0.3, repeats: false, block: { (Timer) in
-//                if let item = carousel.currentItemView as? CarouselItem{
-//                    item.isActive = true
-//                    item.getRecommendations()
-//                }
-//                
-//            })
-//        } else {
-//            // Fallback on earlier versions
-//        }
-//        RunLoop.current.add(debounceTimer!, forMode: .defaultRunLoopMode)
-//    }
+    func carousel(_ carousel: iCarousel, didSelectItemAt index:Int){
+        performSegue(withIdentifier: "FavContentDetailSegue", sender: self)
+        
     }
+    
+    func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
+        if let item = carousel.currentItemView as? CarouselItem{
+            if let s = item.socket?.ws {
+                s.close()
+            }
+            
+        }
+        
+        
+    }
+    
     func carouselDidScroll(_ carousel: iCarousel) {
         if let timer = debounceTimer{
             timer.invalidate()
@@ -285,9 +278,11 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ContentDetailSegue" {
+        if segue.identifier == "ContentDetailSegue" || segue.identifier == "FavContentDetailSegue"  {
             let cdvc = segue.destination as! ContentDetailViewController
-            cdvc.content = selectedShow
+            let current = carousel.currentItemView as? CarouselItem
+            cdvc.content = current?.content
+            
             cdvc.favorites = favorites
             
             

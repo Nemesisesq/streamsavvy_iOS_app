@@ -19,7 +19,7 @@ public class SearchResults: NSObject {
         
         let escapedString = q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         //TODO NEED TO CHANGE THIS URL AND RE HOOKIN SS DATA
-        let url = "http://ss-master-staging.herokuapp.com/api/search/?q=\(escapedString!)"
+        let url = "http://data.streamsavvy.cloud/search/?q=\(escapedString!)"
         return Promise { fullfill, reject in
             Alamofire.request(url)
                 .responseJSON{

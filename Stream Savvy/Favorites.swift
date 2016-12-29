@@ -17,7 +17,7 @@ import Lock
 //import SwiftyJSON
 
 
-let host = "Aizengolangapi-dev.us-east-1.elasticbeanstalk.com"
+let host = "www.streamsavvy.cloud"
 //var host = "localhost:8080"
 
 

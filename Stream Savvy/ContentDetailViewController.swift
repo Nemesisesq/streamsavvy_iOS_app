@@ -45,8 +45,18 @@ class ContentDetailViewController:  Auth0ViewController  {
         let titles  = favorites.contentList.map { $0.title } as [String]
         
         if $.contains(titles, value: content.title){
+            Answers.logCustomEvent(withName: "Remove from favorites", customAttributes: ["show":content.title])
+            if let navigationController = self.navigationController {
+                navigationController.popViewController(animated: true)
+            }
+            favorites.removeContentFromFavorites(content: content)
+                .then { _ -> Void in
+                    
+                }.catch{ err in
+                    print(err)
+            }
             
-            Constants.showAlert("Great News!!!", withMessage: "You already added \(content.title!)")
+            
         }
             
         else {
@@ -88,8 +98,11 @@ class ContentDetailViewController:  Auth0ViewController  {
             
             if $.contains(titles, value: self.content.title){
                 
-                self.addFavoriteButton.isEnabled = false
-                self.addFavoriteButton.setTitle("Already Added", for: .normal)
+                
+                self.addFavoriteButton.setTitle("Remove From Favorites", for: .normal)
+            }
+            else {
+                self.addFavoriteButton.setTitle("ADD TO FAVORITES", for: .normal)
             }
         }
     }
@@ -202,7 +215,7 @@ class ContentDetailViewController:  Auth0ViewController  {
         
         
         if episodes != nil {
-             target.episodes = episodes
+            target.episodes = episodes
         }
         
         

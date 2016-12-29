@@ -55,6 +55,7 @@
 		BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BD39ADF61DA230E20065F02F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39ADF51DA230E20065F02F /* Common.swift */; };
 		BD39ADF81DA2A39C0065F02F /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39ADF71DA2A39C0065F02F /* Dollar.framework */; };
+		BD521A7D1E1368C3008B9B60 /* ReleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD521A7C1E1368C3008B9B60 /* ReleaseUITests.swift */; };
 		BD5602561DE780FB00A3B805 /* CleverTapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5602551DE780FB00A3B805 /* CleverTapSDK.framework */; };
 		BD62A1AB1DDECB2D00527E54 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62A1AA1DDECB2D00527E54 /* SocketIOManager.swift */; };
 		BD7076E81D8C8FC300F2B331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7076E71D8C8FC300F2B331 /* Foundation.framework */; };
@@ -84,6 +85,11 @@
 		BD71F10B1DE01A4000A870AD /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71F1081DE01A4000A870AD /* TwitterKit.framework */; };
 		BD71F10C1DE01A4000A870AD /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */; };
 		BD71F10D1DE01A4000A870AD /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71F10A1DE01A4000A870AD /* TwitterCore.framework */; };
+		BD77AA491E1425C20018F756 /* SetUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA481E1425C20018F756 /* SetUpPageViewController.swift */; };
+		BD77AA4B1E144A0F0018F756 /* SecondSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4A1E144A0F0018F756 /* SecondSetupViewController.swift */; };
+		BD77AA4D1E14600D0018F756 /* SetUpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4C1E14600D0018F756 /* SetUpCollectionViewCell.swift */; };
+		BD77AA501E146EDF0018F756 /* SetupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4F1E146EDF0018F756 /* SetupTableViewController.swift */; };
+		BD77AA521E146F4F0018F756 /* SetupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA511E146F4F0018F756 /* SetupTableViewCell.swift */; };
 		BD862C901D9B648400C8FFF9 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */; };
 		BD8F3EF71DE4E863009C84B5 /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F3EF51DE4E863009C84B5 /* MoPub.framework */; };
 		BD8F3EF81DE4E863009C84B5 /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */; };
@@ -255,6 +261,7 @@
 		BD3184A41DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ADMozaicCollectionViewLayout.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphonesimulator/ADMozaicCollectionViewLayout/ADMozaicCollectionViewLayout.framework"; sourceTree = "<group>"; };
 		BD39ADF51DA230E20065F02F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BD39ADF71DA2A39C0065F02F /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = "Pods/../build/Debug-iphoneos/Dollar/Dollar.framework"; sourceTree = "<group>"; };
+		BD521A7C1E1368C3008B9B60 /* ReleaseUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseUITests.swift; sourceTree = "<group>"; };
 		BD5602551DE780FB00A3B805 /* CleverTapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleverTapSDK.framework; path = "Frameworks/Clevertap-iOS-SDK/CleverTapSDK.framework"; sourceTree = "<group>"; };
 		BD62A1AA1DDECB2D00527E54 /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		BD7076E71D8C8FC300F2B331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -296,6 +303,11 @@
 		BD71F1081DE01A4000A870AD /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		BD71F10A1DE01A4000A870AD /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		BD77AA481E1425C20018F756 /* SetUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetUpPageViewController.swift; path = "Stream Savvy/SetUpPageViewController.swift"; sourceTree = "<group>"; };
+		BD77AA4A1E144A0F0018F756 /* SecondSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondSetupViewController.swift; path = "Stream Savvy/SecondSetupViewController.swift"; sourceTree = "<group>"; };
+		BD77AA4C1E14600D0018F756 /* SetUpCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetUpCollectionViewCell.swift; path = "Stream Savvy/SetUpCollectionViewCell.swift"; sourceTree = "<group>"; };
+		BD77AA4F1E146EDF0018F756 /* SetupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTableViewController.swift; sourceTree = "<group>"; };
+		BD77AA511E146F4F0018F756 /* SetupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTableViewCell.swift; sourceTree = "<group>"; };
 		BD862C8F1D9B648400C8FFF9 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		BD8F3EF51DE4E863009C84B5 /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = "<group>"; };
 		BD8F3EF61DE4E863009C84B5 /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MoPub.bundle; path = MoPub.framework/Versions/A/Resources/MoPub.bundle; sourceTree = "<group>"; };
@@ -516,6 +528,7 @@
 				BD1834AE1D8CD48500B472E2 /* iCarousel */,
 				9FE1B01D1D6922400013DCB1 /* View */,
 				9FE1B01E1D6922550013DCB1 /* Model */,
+				BD77AA4E1E1464CE0018F756 /* Setup */,
 				9FE1B01F1D6922630013DCB1 /* Controller */,
 				9FBC97821D6D31DB004B6182 /* Login */,
 				9F5A4D321D5AE1D70057AF6D /* Supporting Files */,
@@ -682,6 +695,7 @@
 				BD2936741DEC8EBA003216FA /* SnapshotHelper.swift */,
 				BD29366C1DEC8DFD003216FA /* Stream_SavvyUITests.swift */,
 				BD29366E1DEC8DFD003216FA /* Info.plist */,
+				BD521A7C1E1368C3008B9B60 /* ReleaseUITests.swift */,
 			);
 			path = "Stream SavvyUITests";
 			sourceTree = "<group>";
@@ -738,6 +752,19 @@
 				BD71F0EF1DDF7D2700A870AD /* SSLCertificatePinning */,
 			);
 			name = Amplitude;
+			sourceTree = "<group>";
+		};
+		BD77AA4E1E1464CE0018F756 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				BD77AA481E1425C20018F756 /* SetUpPageViewController.swift */,
+				BD77AA4C1E14600D0018F756 /* SetUpCollectionViewCell.swift */,
+				BD77AA4A1E144A0F0018F756 /* SecondSetupViewController.swift */,
+				BD77AA4F1E146EDF0018F756 /* SetupTableViewController.swift */,
+				BD77AA511E146F4F0018F756 /* SetupTableViewCell.swift */,
+			);
+			name = Setup;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BD862C8E1D9B642D00C8FFF9 /* Extensions */ = {
@@ -1111,6 +1138,7 @@
 				9F5D4E911DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m in Sources */,
 				BDFA047F1DF74D1E00A33670 /* FSCalendarScopeHandle.m in Sources */,
 				BDCDA6221DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift in Sources */,
+				BD77AA501E146EDF0018F756 /* SetupTableViewController.swift in Sources */,
 				BDFA04741DF74D1E00A33670 /* FSCalendar.m in Sources */,
 				BDA7B4E91DF0776300A67ED0 /* SwiftExtensions.swift in Sources */,
 				BDFA04731DF74D1E00A33670 /* FSCalendar+Deprecated.m in Sources */,
@@ -1149,10 +1177,13 @@
 				BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */,
 				9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */,
 				BDEBA1501DD1056000EDDF75 /* SearchResultTableViewCell.swift in Sources */,
+				BD77AA521E146F4F0018F756 /* SetupTableViewCell.swift in Sources */,
+				BD77AA4D1E14600D0018F756 /* SetUpCollectionViewCell.swift in Sources */,
 				BD71F0F11DDF7D2700A870AD /* AMPDatabaseHelper.m in Sources */,
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */,
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
+				BD77AA4B1E144A0F0018F756 /* SecondSetupViewController.swift in Sources */,
 				BD9563E11DB209790089652E /* LinkCollectionViewFlowLayout.swift in Sources */,
 				BDFA04771DF74D1E00A33670 /* FSCalendarCalculator.m in Sources */,
 				BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */,
@@ -1177,6 +1208,7 @@
 				9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */,
 				BDEB232D1DC267D300B21291 /* File.swift in Sources */,
 				9FC296181D766F63005CB080 /* MediaSource.m in Sources */,
+				BD77AA491E1425C20018F756 /* SetUpPageViewController.swift in Sources */,
 				BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */,
 				BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */,
 				BDFA04801DF74D1E00A33670 /* FSCalendarStickyHeader.m in Sources */,
@@ -1211,6 +1243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD29366D1DEC8DFD003216FA /* Stream_SavvyUITests.swift in Sources */,
+				BD521A7D1E1368C3008B9B60 /* ReleaseUITests.swift in Sources */,
 				BD2936761DEC8ED5003216FA /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

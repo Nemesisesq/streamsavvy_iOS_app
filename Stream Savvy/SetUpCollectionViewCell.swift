@@ -9,22 +9,17 @@
 import UIKit
 import MarqueeLabel
 
-class OnDemandCollectionViewCell: UICollectionViewCell {
+class SetUpCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imgView: UIImageView!
-    @IBOutlet var titleLable: MarqueeLabel!
-    @IBOutlet var gradientMask: UIView!
-    
+       
     
     var popularShow: PopularShow!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let gradient = Common().linearGradentTopToBottom()
-        gradient.frame = self.bounds
-        self.imgView.layer.insertSublayer(gradient, at: 0)
-
+        
     }
     
-
+    
 }

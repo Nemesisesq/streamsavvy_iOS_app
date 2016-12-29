@@ -9,7 +9,7 @@
 import XCTest
 
 class Stream_SavvyUITests: XCTestCase {
-        
+    
     override func setUp() {
         super.setUp()
         
@@ -18,7 +18,7 @@ class Stream_SavvyUITests: XCTestCase {
         let app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
-
+        
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
@@ -37,45 +37,38 @@ class Stream_SavvyUITests: XCTestCase {
         tabBarsQuery.buttons["On Demand"].tap()
         snapshot("1OnDemand")
         
-        let firstChild = app.collectionViews.children(matching: .any).element(boundBy: 0)
+        let firstChild = app.collectionViews.cells.element(boundBy: 0)
         if firstChild.exists {
-            firstChild.tap()
-            app.buttons["ADD TO FAVORITES"].tap()
-            
-            snapshot("2ContentDetail")
             firstChild.tap()
             app.buttons["Watch Episodes"].tap()
             snapshot("3Episodes")
-
+            app.navigationBars["Stream_Savvy.EpisodeCollectionView"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
+            
+            
+            app.navigationBars["Stream_Savvy.ContentDetailView"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
+            
         }
-    
-        app.navigationBars["Stream_Savvy.EpisodeCollectionView"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
-        
-        
-        app.navigationBars["Stream_Savvy.ContentDetailView"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
         
         tabBarsQuery.buttons["Live"].tap()
         snapshot("4Live")
         
-        app.navigationBars["Stream_Savvy.LiveDetailsView"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
-        snapshot("5LiveDetail")
-        
         let favoritesButton = app.tabBars.buttons["Favorites"]
         favoritesButton.tap()
-        favoritesButton.tap()
         
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
-        element.swipeLeft()
-        element.swipeLeft()
-        snapshot("6Favorites")
+        sleep(5)
+        
+        snapshot("5Favorites")
         
         app.navigationBars["Stream_Savvy.FavoritesView"].buttons["Search"].tap()
         
         let searchSearchField = app.searchFields["Search"]
         searchSearchField.tap()
         searchSearchField.typeText("orange")
+        
+        
+        sleep(5)
         snapshot("7Search")
-        // snapshot("homepage")
+        
     }
     
 }
