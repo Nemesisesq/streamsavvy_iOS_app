@@ -94,12 +94,13 @@ NSInteger numOfStaticCell = 1;
     loginButton.tintColor = [Constants StreamSavvyRed];
     
     
-    NSArray *tempArray = [[NSArray alloc] initWithObjects:loginButton, searchButton, nil];
+//    NSArray *tempArray = [[NSArray alloc] initWithObjects:loginButton, searchButton, nil];
+    NSArray *tempArray = [[NSArray alloc] initWithObjects:loginButton, nil];
+
     self.navigationItem.rightBarButtonItems = tempArray;
     
     if (Auth0.loggedIn) {
-        self.navigationItem.rightBarButtonItem = self.searchButton;
-    } else {
+        self.navigationItem.rightBarButtonItem = nil;
         [self.loginButton setEnabled:YES];
         [self.loginButton setTintColor:[Constants StreamSavvyRed]];
     }

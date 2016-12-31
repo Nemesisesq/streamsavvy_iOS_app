@@ -93,7 +93,13 @@ import Crashlytics
         selectedShow = searchResults.results[indexPath.row]
         
         self.searchController.isActive = false
-        self.performSegue(withIdentifier: "ContentDetailSegue", sender: self)
+         self.performSegue(withIdentifier: "ContentDetailSegue", sender: self)
+        
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContentDetailViewController") as! ContentDetailViewController
+//        vc.content = selectedShow
+//        vc.favorites = favorites
+//        
+//        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
