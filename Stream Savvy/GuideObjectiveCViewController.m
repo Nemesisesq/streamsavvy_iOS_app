@@ -16,7 +16,7 @@
 #import "Stream_Savvy-Swift.h"
 #import <Crashlytics/Crashlytics.h>
 
-@interface GuideObjectiveCViewController ()
+@interface GuideObjectiveCViewController()
 //@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 
 

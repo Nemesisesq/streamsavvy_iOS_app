@@ -4,21 +4,25 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "0DAF84CD8D013F25BA0484DC1FF870819723A671" : 9223372036854775807,
-    "E7F2737C934D502567EAFD9D71CD56D25951FF12" : 9223372036854775807,
+    "14B9282DE8C9348118885F7CB46D250DF450E983" : 9223372036854775807,
     "BA5484F6D6D365748014E98FA722AEED53849F89" : 9223372036854775807,
     "8E582E62FAFB19B146D1569C431860EC18ABFCA1" : 9223372036854775807,
-    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : 9223372036854775807,
-    "9645304FD07223EA2CCFA859E2CF506724733DB8" : 9223372036854775807
+    "E7F2737C934D502567EAFD9D71CD56D25951FF12" : 9223372036854775807,
+    "9645304FD07223EA2CCFA859E2CF506724733DB8" : 9223372036854775807,
+    "0DAF84CD8D013F25BA0484DC1FF870819723A671" : 9223372036854775807,
+    "17D2C92A6CBE047D0E6D9C2CE301E548BA26D70B" : 9223372036854775807,
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EFF3CD1B-33E7-42A5-BD28-E78986B4377A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "0DAF84CD8D013F25BA0484DC1FF870819723A671" : "streamsavvy_iOS_app\/Frameworks\/SwiftWebSocket\/",
-    "E7F2737C934D502567EAFD9D71CD56D25951FF12" : "streamsavvy_iOS_app\/Frameworks\/Clevertap-iOS-SDK\/",
+    "14B9282DE8C9348118885F7CB46D250DF450E983" : "streamsavvy_iOS_app\/Frameworks\/Lock-ios\/",
     "BA5484F6D6D365748014E98FA722AEED53849F89" : "streamsavvy_iOS_app\/Frameworks\/Amplitude\/",
     "8E582E62FAFB19B146D1569C431860EC18ABFCA1" : "streamsavvy_iOS_app\/Frameworks\/FSCalendar\/",
-    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : "streamsavvy_iOS_app\/SwiftyJSON\/",
-    "9645304FD07223EA2CCFA859E2CF506724733DB8" : "streamsavvy_iOS_app\/"
+    "E7F2737C934D502567EAFD9D71CD56D25951FF12" : "streamsavvy_iOS_app\/Frameworks\/Clevertap-iOS-SDK\/",
+    "9645304FD07223EA2CCFA859E2CF506724733DB8" : "streamsavvy_iOS_app\/",
+    "0DAF84CD8D013F25BA0484DC1FF870819723A671" : "streamsavvy_iOS_app\/Frameworks\/SwiftWebSocket\/",
+    "17D2C92A6CBE047D0E6D9C2CE301E548BA26D70B" : "streamsavvy_iOS_app\/Frameworks\/GraphQLicious\/",
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : "streamsavvy_iOS_app\/SwiftyJSON\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Stream Savvy",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -28,6 +32,16 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:tidwall\/SwiftWebSocket.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0DAF84CD8D013F25BA0484DC1FF870819723A671"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:auth0\/Lock.iOS-OSX.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "14B9282DE8C9348118885F7CB46D250DF450E983"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:WeltN24\/GraphQLicious.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "17D2C92A6CBE047D0E6D9C2CE301E548BA26D70B"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:WenchaoD\/FSCalendar.git",

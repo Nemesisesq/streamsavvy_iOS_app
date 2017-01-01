@@ -1177,6 +1177,20 @@
 			remoteGlobalIDString = 79C040AFDDCE1BCBF6D8B5EB0B85887F;
 			remoteInfo = Alamofire;
 		};
+		BD77AA651E18BF790018F756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD77AA601E18BF790018F756 /* GraphQLicious.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D86C60491CAC20AE002691B9;
+			remoteInfo = GraphQLicious;
+		};
+		BD77AA671E18BF790018F756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD77AA601E18BF790018F756 /* GraphQLicious.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D86C60531CAC20AE002691B9;
+			remoteInfo = GraphQLiciousTests;
+		};
 		C3CD1AA14D47E4157F84D0E156AFDF8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -2028,6 +2042,7 @@
 		BCAF7FE6C1D2CCEB22D39BD6540A3334 /* FBSDKTypeUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTypeUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTypeUtility.m; sourceTree = "<group>"; };
 		BD41D96D3B4929E9AFC61CB417D3FF14 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		BD6985176FB6F35C7DBE68DE6A394210 /* URLDataPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLDataPromise.swift; path = Extensions/Foundation/Sources/URLDataPromise.swift; sourceTree = "<group>"; };
+		BD77AA601E18BF790018F756 /* GraphQLicious.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GraphQLicious.xcodeproj; path = ../Frameworks/GraphQLicious/GraphQLicious.xcodeproj; sourceTree = "<group>"; };
 		BD8E4516A9AB7A6C4D75116594FE78AE /* A0WebAuthenticable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = A0WebAuthenticable.h; path = Lock/WebView/A0WebAuthenticable.h; sourceTree = "<group>"; };
 		BDD19CAFBBB03394E237A8441D45AB22 /* NSError+A0LockErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+A0LockErrors.h"; path = "Lock/Core/NSError+A0LockErrors.h"; sourceTree = "<group>"; };
 		BDEA2B744BE5CCAFE228A9B645F4C687 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3744,6 +3759,15 @@
 			name = Tasks;
 			sourceTree = "<group>";
 		};
+		BD77AA611E18BF790018F756 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD77AA661E18BF790018F756 /* GraphQLicious.framework */,
+				BD77AA681E18BF790018F756 /* GraphQLicious Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BE37C918C53DD62C4D318B0075B75871 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -4236,6 +4260,7 @@
 		F28F610822781932B8650BDF2B4CAA3A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				BD77AA601E18BF790018F756 /* GraphQLicious.xcodeproj */,
 				30CB8D7BB8469F54DB47CB76C2E51917 /* Pods-Stream Savvy */,
 				8C4C4F75D3B672B134BB582FF6F9675E /* Pods-Stream SavvyTests */,
 				6C36FCC9A00B094367AC7FCAD4268982 /* Pods-Stream SavvyUITests */,
@@ -5406,6 +5431,12 @@
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 968B1C661B65AEF15AF71C3AB969698B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BD77AA611E18BF790018F756 /* Products */;
+					ProjectRef = BD77AA601E18BF790018F756 /* GraphQLicious.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				235D24254702490B1B3768DFBD96DFC7 /* ADMozaicCollectionViewLayout */,
@@ -5438,6 +5469,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BD77AA661E18BF790018F756 /* GraphQLicious.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GraphQLicious.framework;
+			remoteRef = BD77AA651E18BF790018F756 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BD77AA681E18BF790018F756 /* GraphQLicious Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "GraphQLicious Tests.xctest";
+			remoteRef = BD77AA671E18BF790018F756 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		12867CA1EBE418342E3532C86CC3E6E5 /* Resources */ = {
