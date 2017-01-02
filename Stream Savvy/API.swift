@@ -24,6 +24,19 @@ class GraphQLAPI : NSObject   {
         
     )
     
+    static func teamsForSportQuery(id: String) -> Query{
+        let teamsQuery: Query = Query(request: Request (
+            withAlias:"teams",
+            name: "teams",
+            fields:[
+                "teamId",
+                "teamName"
+            ]
+        ))
+        
+        return teamsQuery
+    }
+    
     //    encoding: .Custom({
     //    (convertible, params) in
     //    let mutableRequest = convertible.URLRequest.copy() as! NSMutableURLRequest
@@ -36,13 +49,13 @@ class GraphQLAPI : NSObject   {
     static func fetchGraphQLQuery(q: String) -> Promise<JSONStandardDict>{
         let url = "http://localhost:8080/graphql"
         
-        let q = DispatchQueue.global()
+        let dispatch = DispatchQueue.global()
         
         return firstly {_ in
             Alamofire.request(url, method: .post, parameters: ["query":q], encoding: JSONEncoding.default, headers: [:])
                 .responseData()
             }
-            .then(on: q) { data in
+            .then(on: dispatch) { data in
                 Common.getReadableJsonDict(data: data )
         }
         

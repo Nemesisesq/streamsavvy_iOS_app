@@ -21,7 +21,7 @@ class Sport: Decodable {
 
 class SetupTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var sports: [Sport]!
+    var sportsList: [Sport]!
     @IBOutlet var setupTableView: UITableView!
 
     override func viewDidLoad() {
@@ -30,8 +30,8 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let q = GraphQLAPI.sportQuery.create()
         
         print(q)
-        
-        GraphQLAPI.fetchGraphQLQuery(q: q)
+        sportsList = [Sport]()
+       _ =  GraphQLAPI.fetchGraphQLQuery(q: q)
             .then{ the_json -> Void in
                 print(the_json)
                 let data = the_json["data"] as! [String:Any]
@@ -39,9 +39,11 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 
                 sports.forEach { x in
                     
-                    sports.append(Sport.init(json: x))
+                    self.sportsList.append(Sport.init(json: x)!)
                     
                 }
+                
+                self.setupTableView.reloadData()
                 
         }
         // Uncomment the following line to preserve selection between presentations
@@ -65,7 +67,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 100
+        return sportsList.count
     }
 
     
@@ -77,6 +79,11 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.backgroundColor = Common.getRandomColor()
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = cell as! SetupTableViewCell
+        cell.sport = sportsList[indexPath.row]
     }
     
 
@@ -115,14 +122,16 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let q = GraphQLAPI.teamsForSportQuery().create
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

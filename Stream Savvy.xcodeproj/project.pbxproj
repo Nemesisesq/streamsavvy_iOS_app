@@ -86,10 +86,10 @@
 		BD71F10C1DE01A4000A870AD /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */; };
 		BD71F10D1DE01A4000A870AD /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71F10A1DE01A4000A870AD /* TwitterCore.framework */; };
 		BD77AA491E1425C20018F756 /* SetUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA481E1425C20018F756 /* SetUpPageViewController.swift */; };
-		BD77AA4B1E144A0F0018F756 /* SecondSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4A1E144A0F0018F756 /* SecondSetupViewController.swift */; };
-		BD77AA4D1E14600D0018F756 /* SetUpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4C1E14600D0018F756 /* SetUpCollectionViewCell.swift */; };
-		BD77AA501E146EDF0018F756 /* SetupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4F1E146EDF0018F756 /* SetupTableViewController.swift */; };
-		BD77AA521E146F4F0018F756 /* SetupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA511E146F4F0018F756 /* SetupTableViewCell.swift */; };
+		BD77AA4B1E144A0F0018F756 /* TVShowCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4A1E144A0F0018F756 /* TVShowCollectionViewController.swift */; };
+		BD77AA4D1E14600D0018F756 /* TVShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4C1E14600D0018F756 /* TVShowCollectionViewCell.swift */; };
+		BD77AA501E146EDF0018F756 /* SportsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA4F1E146EDF0018F756 /* SportsTableViewController.swift */; };
+		BD77AA521E146F4F0018F756 /* SportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA511E146F4F0018F756 /* SportsTableViewCell.swift */; };
 		BD77AA561E18BD910018F756 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AA551E18BD910018F756 /* API.swift */; };
 		BD77AB1D1E18C5430018F756 /* GraphQLAPI_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AB1C1E18C5430018F756 /* GraphQLAPI_Tests.swift */; };
 		BD77AB311E18C8B20018F756 /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77AB211E18C8B20018F756 /* Fragment.swift */; };
@@ -120,6 +120,8 @@
 		BD98187C1DB916A7003A5159 /* Lock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187A1DB916A7003A5159 /* Lock.framework */; };
 		BD98187F1DBA6D64003A5159 /* SimpleKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */; };
 		BD9818811DBA8D10003A5159 /* UILableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9818801DBA8D10003A5159 /* UILableExtensions.swift */; };
+		BD998FB91E1A3E580004E7DB /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD998FB81E1A3E580004E7DB /* TeamTableViewController.swift */; };
+		BD998FBB1E1A3EE50004E7DB /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD998FBA1E1A3EE50004E7DB /* TeamTableViewCell.swift */; };
 		BDA7B4E91DF0776300A67ED0 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */; };
 		BDA7B4EB1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
@@ -319,10 +321,10 @@
 		BD71F1091DE01A4000A870AD /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		BD71F10A1DE01A4000A870AD /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		BD77AA481E1425C20018F756 /* SetUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetUpPageViewController.swift; path = "Stream Savvy/SetUpPageViewController.swift"; sourceTree = "<group>"; };
-		BD77AA4A1E144A0F0018F756 /* SecondSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondSetupViewController.swift; path = "Stream Savvy/SecondSetupViewController.swift"; sourceTree = "<group>"; };
-		BD77AA4C1E14600D0018F756 /* SetUpCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetUpCollectionViewCell.swift; path = "Stream Savvy/SetUpCollectionViewCell.swift"; sourceTree = "<group>"; };
-		BD77AA4F1E146EDF0018F756 /* SetupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTableViewController.swift; sourceTree = "<group>"; };
-		BD77AA511E146F4F0018F756 /* SetupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTableViewCell.swift; sourceTree = "<group>"; };
+		BD77AA4A1E144A0F0018F756 /* TVShowCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TVShowCollectionViewController.swift; path = "Stream Savvy/TVShowCollectionViewController.swift"; sourceTree = "<group>"; };
+		BD77AA4C1E14600D0018F756 /* TVShowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TVShowCollectionViewCell.swift; path = "Stream Savvy/TVShowCollectionViewCell.swift"; sourceTree = "<group>"; };
+		BD77AA4F1E146EDF0018F756 /* SportsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsTableViewController.swift; sourceTree = "<group>"; };
+		BD77AA511E146F4F0018F756 /* SportsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsTableViewCell.swift; sourceTree = "<group>"; };
 		BD77AA551E18BD910018F756 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BD77AB1C1E18C5430018F756 /* GraphQLAPI_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLAPI_Tests.swift; sourceTree = "<group>"; };
 		BD77AB1F1E18C8B20018F756 /* GraphQLicious.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphQLicious.h; path = Frameworks/GraphQLicious/Sources/GraphQLicious.h; sourceTree = "<group>"; };
@@ -357,6 +359,8 @@
 		BD98187D1DB94198003A5159 /* Stream Savvy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stream Savvy.entitlements"; sourceTree = "<group>"; };
 		BD98187E1DBA6D64003A5159 /* SimpleKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleKeychain.framework; path = "../Library/Developer/Xcode/DerivedData/Stream_Savvy-civrvpwfialygpdmozpqnbyzpedj/Build/Products/Debug-iphoneos/SimpleKeychain/SimpleKeychain.framework"; sourceTree = "<group>"; };
 		BD9818801DBA8D10003A5159 /* UILableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILableExtensions.swift; sourceTree = "<group>"; };
+		BD998FB81E1A3E580004E7DB /* TeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		BD998FBA1E1A3EE50004E7DB /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
 		BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
@@ -792,10 +796,12 @@
 			isa = PBXGroup;
 			children = (
 				BD77AA481E1425C20018F756 /* SetUpPageViewController.swift */,
-				BD77AA4C1E14600D0018F756 /* SetUpCollectionViewCell.swift */,
-				BD77AA4A1E144A0F0018F756 /* SecondSetupViewController.swift */,
-				BD77AA4F1E146EDF0018F756 /* SetupTableViewController.swift */,
-				BD77AA511E146F4F0018F756 /* SetupTableViewCell.swift */,
+				BD77AA4C1E14600D0018F756 /* TVShowCollectionViewCell.swift */,
+				BD77AA4A1E144A0F0018F756 /* TVShowCollectionViewController.swift */,
+				BD77AA4F1E146EDF0018F756 /* SportsTableViewController.swift */,
+				BD77AA511E146F4F0018F756 /* SportsTableViewCell.swift */,
+				BD998FBA1E1A3EE50004E7DB /* TeamTableViewCell.swift */,
+				BD998FB81E1A3E580004E7DB /* TeamTableViewController.swift */,
 			);
 			name = Setup;
 			path = ..;
@@ -1238,7 +1244,7 @@
 				9F5D4E911DBBFEDA00AC7AD2 /* LiveGuideTableViewCell.m in Sources */,
 				BDFA047F1DF74D1E00A33670 /* FSCalendarScopeHandle.m in Sources */,
 				BDCDA6221DBEB06800ADFB1B /* OnDemandCollectionViewCell.swift in Sources */,
-				BD77AA501E146EDF0018F756 /* SetupTableViewController.swift in Sources */,
+				BD77AA501E146EDF0018F756 /* SportsTableViewController.swift in Sources */,
 				BDFA04741DF74D1E00A33670 /* FSCalendar.m in Sources */,
 				BDA7B4E91DF0776300A67ED0 /* SwiftExtensions.swift in Sources */,
 				BDFA04731DF74D1E00A33670 /* FSCalendar+Deprecated.m in Sources */,
@@ -1281,18 +1287,19 @@
 				BD0DCC241DB5C60D005C32B2 /* EpisodeTableViewCell.swift in Sources */,
 				9F2810701D83B4B900158502 /* AuthTableViewController.m in Sources */,
 				BDEBA1501DD1056000EDDF75 /* SearchResultTableViewCell.swift in Sources */,
-				BD77AA521E146F4F0018F756 /* SetupTableViewCell.swift in Sources */,
-				BD77AA4D1E14600D0018F756 /* SetUpCollectionViewCell.swift in Sources */,
+				BD77AA521E146F4F0018F756 /* SportsTableViewCell.swift in Sources */,
+				BD77AA4D1E14600D0018F756 /* TVShowCollectionViewCell.swift in Sources */,
 				BD71F0F11DDF7D2700A870AD /* AMPDatabaseHelper.m in Sources */,
 				9FE1B05F1D6A5CAC0013DCB1 /* Media.m in Sources */,
 				9FE1B0531D693BDC0013DCB1 /* TopGridTableViewCell.m in Sources */,
 				BD77AB3C1E18C8B20018F756 /* Argument.swift in Sources */,
 				9FE1B0491D6936210013DCB1 /* UserPrefs.m in Sources */,
-				BD77AA4B1E144A0F0018F756 /* SecondSetupViewController.swift in Sources */,
+				BD77AA4B1E144A0F0018F756 /* TVShowCollectionViewController.swift in Sources */,
 				BD9563E11DB209790089652E /* LinkCollectionViewFlowLayout.swift in Sources */,
 				BDFA04771DF74D1E00A33670 /* FSCalendarCalculator.m in Sources */,
 				BD921BDE1DA1E5960018DCFB /* Episodes.swift in Sources */,
 				BDEB23301DC2F96600B21291 /* PopularShowObjectiveCViewController.m in Sources */,
+				BD998FBB1E1A3EE50004E7DB /* TeamTableViewCell.swift in Sources */,
 				BD77AB371E18C8B20018F756 /* GraphQLConvertible.swift in Sources */,
 				BD71F0F21DDF7D2700A870AD /* AMPDeviceInfo.m in Sources */,
 				BDFA047B1DF74D1E00A33670 /* FSCalendarConstants.m in Sources */,
@@ -1315,6 +1322,7 @@
 				9FBC97811D6BD742004B6182 /* PopularShow.m in Sources */,
 				BDEB232D1DC267D300B21291 /* File.swift in Sources */,
 				9FC296181D766F63005CB080 /* MediaSource.m in Sources */,
+				BD998FB91E1A3E580004E7DB /* TeamTableViewController.swift in Sources */,
 				BD77AA491E1425C20018F756 /* SetUpPageViewController.swift in Sources */,
 				BD1834B11D8CD4C800B472E2 /* iCarousel.m in Sources */,
 				BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */,

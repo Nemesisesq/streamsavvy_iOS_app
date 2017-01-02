@@ -9,7 +9,15 @@
 import UIKit
 
 class SetupTableViewCell: UITableViewCell {
-
+    
+    var sport: Sport! {
+        didSet{
+            self.sportName.text = sport.sportsName
+        }
+    }
+    
+    @IBOutlet var sportName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
