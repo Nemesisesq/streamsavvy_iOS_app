@@ -7,17 +7,43 @@
 //
 
 import UIKit
+import Gloss
+
+class Sport: Decodable {
+    let sportsId: String!
+    let sportsName: String!
+    
+    required init?(json: JSON) {
+        sportsId = "sportsId" <~~ json
+        sportsName = "sportsName" <~~ json
+    }
+}
 
 class SetupTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    var sports: [Sport]!
     @IBOutlet var setupTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(GraphQLAPI.sportQuery.create())
-
+        let q = GraphQLAPI.sportQuery.create()
+        
+        print(q)
+        
+        GraphQLAPI.fetchGraphQLQuery(q: q)
+            .then{ the_json -> Void in
+                print(the_json)
+                let data = the_json["data"] as! [String:Any]
+                let sports = data["sports"] as! [[String:Any]]
+                
+                sports.forEach { x in
+                    
+                    sports.append(Sport.init(json: x))
+                    
+                }
+                
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
