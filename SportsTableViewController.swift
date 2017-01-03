@@ -22,6 +22,7 @@ class Sport: Decodable {
 class SetupTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var sportsList: [Sport]!
+    var chosenSport: Sport!
     @IBOutlet var setupTableView: UITableView!
 
     override func viewDidLoad() {
@@ -86,6 +87,34 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.sport = sportsList[indexPath.row]
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        chosenSport = sportsList[indexPath.row]
+        
+        let q = GraphQLAPI.teamsForSportQuery(id: chosenSport.sportsId).create()
+        
+        _ = GraphQLAPI.fetchGraphQLQuery(q: q)
+            .then{ the_json -> Void in
+                
+                let vc: TeamTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamTableViewController") as! TeamTableViewController
+                vc.teams = the_json["data"]?["teams"] as! [[String: Any]]
+                self.present(vc, animated: true, completion: nil)
+                
+        }
+        
+        let xq = GraphQLAPI.leaguesForSportQuery(id: chosenSport.sportsId).create()
+        _ = GraphQLAPI.fetchGraphQLQuery(q: xq)
+            .then{ the_json -> Void in
+                
+                let vc: TeamTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LeagueTableViewController") as! TeamTableViewController
+                vc.leagues = the_json["data"]?["teams"] as! [[String: Any]]
+                self.present(vc, animated: true, completion: nil)
+                
+        }
+
+
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -128,7 +157,8 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let q = GraphQLAPI.teamsForSportQuery().create
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

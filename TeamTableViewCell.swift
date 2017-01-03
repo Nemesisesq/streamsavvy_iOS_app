@@ -12,6 +12,12 @@ class TeamTableViewCell: UITableViewCell {
     
     @IBOutlet var teamName: UILabel!
     
+    var team :Team! {
+        didSet {
+            teamName.text = team.name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -7,11 +7,38 @@
 //
 
 import UIKit
+import Gloss
+
+class Team : Decodable {
+    var img : String!
+    var name : String!
+    var nickname : String!
+    var propername : String!
+    
+    required init?(json: JSON) {
+        img = "img" <~~ json
+        name = "name" <~~ json
+        nickname = "nickname" <~~ json
+        propername = "propername" <~~ json
+    }
+}
 
 class TeamTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    var teamList : [Team]! = [Team]()
+    var teams : [[String : Any]]!
+    
+    
+    @IBOutlet var teamTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        for i in teams {
+            teamList.append(Team.init(json: i)!)
+        }
+        
+        self.teamTableView.reloadData()
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,7 +61,7 @@ class TeamTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return teams.count
     }
 
 
@@ -45,6 +72,15 @@ class TeamTableViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.backgroundColor = Common.getRandomColor()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let cell = cell as! TeamTableViewCell
+        
+        cell.team  = teamList[indexPath.row]
+        
+        
     }
 
     /*

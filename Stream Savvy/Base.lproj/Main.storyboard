@@ -1768,7 +1768,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="sportName" destination="yfm-SB-LFS" id="a02-Rq-2JU"/>
-                                            <segue destination="zKe-R4-AkK" kind="show" id="8Jv-d9-nXS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1797,7 +1796,7 @@
         <!--Team Table View Controller-->
         <scene sceneID="kzp-ot-HMA">
             <objects>
-                <tableViewController id="zKe-R4-AkK" customClass="TeamTableViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TeamTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zKe-R4-AkK" customClass="TeamTableViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SwV-NK-F7O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1824,6 +1823,9 @@
                                         <constraint firstItem="veP-Ld-aKK" firstAttribute="top" secondItem="Awq-jY-yYk" secondAttribute="topMargin" id="ou9-eb-4fG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="teamName" destination="veP-Ld-aKK" id="rpk-vf-EYD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1831,6 +1833,9 @@
                             <outlet property="delegate" destination="zKe-R4-AkK" id="DB3-MJ-Yp6"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="teamTableView" destination="SwV-NK-F7O" id="XbR-Ny-sVG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Taa-03-ZC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

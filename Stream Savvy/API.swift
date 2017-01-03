@@ -24,13 +24,37 @@ class GraphQLAPI : NSObject   {
         
     )
     
+    static func leaguesForSportQuery(id: String) -> Query{
+        let teamsQuery: Query = Query(request: Request (
+            withAlias:"SportLeagues",
+            name: "leagues",
+            arguments: [
+                Argument(key: "sportId", value:id)
+            ],
+            fields:[
+                "organization",
+                "gracenote_organization_id",
+                "img"
+                
+                ]
+        ))
+        
+        return teamsQuery
+    }
+
+    
     static func teamsForSportQuery(id: String) -> Query{
         let teamsQuery: Query = Query(request: Request (
             withAlias:"teams",
             name: "teams",
+            arguments: [
+                Argument(key: "sportId", value:id)
+            ],
             fields:[
-                "teamId",
-                "teamName"
+                "name",
+                "nickname",
+                "propername",
+                "img"
             ]
         ))
         
