@@ -64,6 +64,11 @@ class ProfileTableViewController: UITableViewController, Auth0Protocol {
         
     }
     
+    @IBAction func setUp(_ sender: AnyObject){
+        let vc = UIStoryboard.init(name: "SetUp", bundle: nil).instantiateViewController(withIdentifier: "SetUpNavgaitionController")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         controller.onUserDismissBlock = {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Gloss
+import PromiseKit
 
 class Sport: Decodable {
     let sportsId: String!
@@ -24,7 +25,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
     var sportsList: [Sport]!
     var chosenSport: Sport!
     @IBOutlet var setupTableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +33,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         print(q)
         sportsList = [Sport]()
-       _ =  GraphQLAPI.fetchGraphQLQuery(q: q)
+        _ =  GraphQLAPI.fetchGraphQLQuery(q: q)
             .then{ the_json -> Void in
                 print(the_json)
                 let data = the_json["data"] as! [String:Any]
@@ -49,36 +50,36 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
-     func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return sportsList.count
     }
-
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
+        
         // Configure the cell...
         
         cell.backgroundColor = Common.getRandomColor()
-
+        
         return cell
     }
     
@@ -91,69 +92,121 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         chosenSport = sportsList[indexPath.row]
         
+        
+        firstly {
+            goToOrgView()
+            }
+            .then {r -> Void in
+                
+                if r {
+                    _ = self.goToTeamsView()
+                } else {
+                    self.addSportToFavorites()
+                }
+                
+            }.catch{ error in
+                return
+        }
+        
+//        _ = goToOrgView()
+//            .then{ res -> Promise<Bool> in
+//                if res {
+//                    return self.goToTeamsView()
+//                    
+//                } else {
+//                    self.addSportToFavorites()
+//                }
+//            }.then {res -> Bool in
+//                    
+//                }
+//        }
+    }
+    
+    func addSportToFavorites(){
+        
+    }
+    
+    func goToTeamsView() -> Promise<Bool> {
         let q = GraphQLAPI.teamsForSportQuery(id: chosenSport.sportsId).create()
         
-        _ = GraphQLAPI.fetchGraphQLQuery(q: q)
-            .then{ the_json -> Void in
+        return GraphQLAPI.fetchGraphQLQuery(q: q)
+            .then{ the_json -> Bool in
                 
-                let vc: TeamTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamTableViewController") as! TeamTableViewController
+                let vc: TeamTableViewController = UIStoryboard(name: "SetUp", bundle: nil).instantiateViewController(withIdentifier: "TeamTableViewController") as! TeamTableViewController
                 vc.teams = the_json["data"]?["teams"] as! [[String: Any]]
-                self.present(vc, animated: true, completion: nil)
                 
+                if vc.teams.count > 1 {
+//                self.present(vc, animated: true, completion: nil)
+                self.navigationController?.pushViewController(vc, animated: true)
+                return false
+                } else {
+                    return true
+                }
+                
+        }
+    }
+    
+    func goToOrgView() -> Promise<Bool> {
+        let xq = GraphQLAPI.leaguesForSportQuery(id: chosenSport.sportsId).create()
+        return GraphQLAPI.fetchGraphQLQuery(q: xq)
+            .then{ the_json -> Bool in
+                print(the_json)
+                let vc: LeagueTableViewController = UIStoryboard(name: "SetUp", bundle: nil).instantiateViewController(withIdentifier: "LeagueTableViewController") as! LeagueTableViewController
+                
+                
+                let o = the_json["data"]?["orgs"] as! [[String: Any]]
+                
+                if o.count > 1 {
+                    vc.orgList = o
+                   self.navigationController?.pushViewController(vc, animated: true)
+                    
+                    return true
+                }
+                
+                return false
         }
         
-        let xq = GraphQLAPI.leaguesForSportQuery(id: chosenSport.sportsId).create()
-        _ = GraphQLAPI.fetchGraphQLQuery(q: xq)
-            .then{ the_json -> Void in
-                
-                let vc: TeamTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LeagueTableViewController") as! TeamTableViewController
-                vc.leagues = the_json["data"]?["teams"] as! [[String: Any]]
-                self.present(vc, animated: true, completion: nil)
-                
-        }
-
-
+        
     }
     
-
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -162,6 +215,6 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-
-
+    
+    
 }
