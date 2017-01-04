@@ -9,6 +9,12 @@
 import UIKit
 
 class SetUpPageViewController: UIPageViewController {
+    
+    var title = "Your single guide to all TV entertainment"
+    
+    var body = "To get the most out of your StreamSavvy app, we'll walk you through adding your favorites."
+    
+    var callToAction = "you can add more at any time, but we'll start with one to show you how it works."
 
     override func viewDidLoad() {
         super.viewDidLoad()
