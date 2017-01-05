@@ -26,6 +26,12 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
     var chosenSport: Sport!
     @IBOutlet var setupTableView: UITableView!
     
+    @IBAction func launchApp(_ sender: Any) {
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnDemandViewController")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,7 +84,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Configure the cell...
         
-        cell.backgroundColor = Common.getRandomColor()
+//        cell.backgroundColor = Common.getRandomColor()
         
         return cell
     }
@@ -96,13 +102,16 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         firstly {
             goToOrgView()
             }
-            .then {r -> Void in
+            .then {r -> Promise<Bool> in
                 
-                if r {
-                    _ = self.goToTeamsView()
-                } else {
-                    self.addSportToFavorites()
+                if !r {
+                    return self.goToTeamsView()
                 }
+                
+                return Promise.init(value: false)
+            }.then { r  in
+                    self.addSportToFavorites()
+                
                 
             }.catch{ error in
                 return

@@ -1668,7 +1668,7 @@
         <!--Mozaic Collection View Controller-->
         <scene sceneID="07z-AX-Y2y">
             <objects>
-                <viewController id="ZX0-s7-CyO" customClass="MozaicCollectionViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnDemandViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZX0-s7-CyO" customClass="MozaicCollectionViewController" customModule="Stream_Savvy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nVM-9Y-0hz"/>
                         <viewControllerLayoutGuide type="bottom" id="ILz-pT-NSn"/>
@@ -1773,9 +1773,9 @@
         <image name="user" width="32" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uH8-Eb-6tX"/>
         <segue reference="T0S-Xg-IrC"/>
-        <segue reference="2C3-D4-2ZH"/>
-        <segue reference="DTT-qn-3uB"/>
+        <segue reference="uH8-Eb-6tX"/>
+        <segue reference="Hcq-We-NDc"/>
+        <segue reference="x6p-ML-bpi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,27 +8,30 @@
 
 import UIKit
 
-class SetUpPageViewController: UIPageViewController {
+class SetUpPageViewController: UIViewController {
     
-    var title = "Your single guide to all TV entertainment"
     
-    var body = "To get the most out of your StreamSavvy app, we'll walk you through adding your favorites."
+    @IBOutlet var header: UILabel!
+   
+    @IBOutlet var callToAction: UILabel!
+    @IBOutlet var body: UILabel!
     
-    var callToAction = "you can add more at any time, but we'll start with one to show you how it works."
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource = self
+        let setupTitle = "Your single guide to all TV entertainment"
         
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-        }
+        let setupBody = "To get the most out of your StreamSavvy app, we'll walk you through adding your favorites."
+        
+        let setupcallToAction = "You can add more at any time, but we'll start with one to show you how it works."
 
-        // Do any additional setup after loading the view.
+        header.text = setupTitle
+        body.text = setupBody
+        callToAction.text = setupcallToAction
+        
+        
+               // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,63 +54,7 @@ class SetUpPageViewController: UIPageViewController {
     }
     */
     
-    private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newColoredViewController(num: "First"),
-                self.newColoredViewController(num: "Second"),
-                self.newColoredViewController(num: "Third")]
-    }()
     
-    private func newColoredViewController(num: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil) .
-            instantiateViewController(withIdentifier: "\(num)SetupController")
-    }
-
 }
 
 //MARK: UIPageViewControllerDataSource
-
-
-extension SetUpPageViewController: UIPageViewControllerDataSource {
-    
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
-            return nil
-        }
-        
-        let previousIndex = viewControllerIndex - 1
-        
-        guard previousIndex >= 0 else {
-            return nil
-        }
-        
-        guard orderedViewControllers.count > previousIndex else {
-            return nil
-        }
-        
-        return orderedViewControllers[previousIndex]
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
-       
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
-            return nil
-        }
-        
-        let nextIndex = viewControllerIndex + 1
-        let orderedViewControllersCount = orderedViewControllers.count
-        
-        guard orderedViewControllersCount != nextIndex else {
-            return nil
-        }
-        
-        guard orderedViewControllersCount > nextIndex else {
-            return nil
-        }
-        
-        return orderedViewControllers[nextIndex]
-    }
-    
-}

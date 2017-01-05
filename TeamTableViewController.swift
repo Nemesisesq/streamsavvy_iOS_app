@@ -69,7 +69,7 @@ class TeamTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath)
 
         // Configure the cell...
-        cell.backgroundColor = Common.getRandomColor()
+//        cell.backgroundColor = Common.getRandomColor()
         
         return cell
     }

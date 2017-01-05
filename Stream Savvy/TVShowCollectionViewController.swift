@@ -96,34 +96,6 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
         
         let titles  = favorites.contentList.map { $0.title } as [String]
         
-//        if $.contains(titles, value: content.title){
-//            Answers.logCustomEvent(withName: "Remove from favorites", customAttributes: ["show":content.title])
-//            if let navigationController = self.navigationController {
-//                navigationController.popViewController(animated: true)
-//            }
-//            favorites.removeContentFromFavorites(content: content)
-//                .then { _ -> Void in
-//                    
-//                }.catch{ err in
-//                    print(err)
-//            }
-//        }
-//            
-//            else {
-//                Answers.logCustomEvent(withName: "Add to favorites", customAttributes: ["show":content.title])
-//                favorites.addContentToFavorites(content: content)
-//                    .then { _ -> Void in
-//                        if let navigationController = self.navigationController {
-//                            navigationController.popViewController(animated: true)
-//                        }
-//                        
-//                        
-//                    }.catch{ err in
-//                        print(err)
-//                }
-//            }
-
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
