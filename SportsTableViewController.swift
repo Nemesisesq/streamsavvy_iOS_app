@@ -28,6 +28,9 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func launchApp(_ sender: Any) {
         
+        
+        
+        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnDemandViewController")
         self.present(vc, animated: true, completion: nil)
     }
@@ -95,7 +98,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let cell = tableView.cellForRow(at: indexPath) as! SetupTableViewCell
         chosenSport = sportsList[indexPath.row]
         
         
@@ -109,31 +112,31 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
                 
                 return Promise.init(value: false)
-            }.then { r  in
-                    self.addSportToFavorites()
+            }.then { r -> Void in
                 
+                let q = GraphQLAPI.toggleSport(sport: self.chosenSport, fav: !cell.fav).create()
+                print(q)
                 
+                _ = GraphQLAPI.fetchGraphQLQuery(q: q)
+                    .then { the_json -> Void in
+                        
+                        if let t = the_json["data"] as? [String: [String: Any]]{
+                            cell.fav = t["toggleSport"]?["status"] as! Bool
+                            cell.isHighlighted = true
+                            
+                        }
+
+                }
+
+                
+               
             }.catch{ error in
                 return
         }
-        
-//        _ = goToOrgView()
-//            .then{ res -> Promise<Bool> in
-//                if res {
-//                    return self.goToTeamsView()
-//                    
-//                } else {
-//                    self.addSportToFavorites()
-//                }
-//            }.then {res -> Bool in
-//                    
-//                }
-//        }
     }
     
-    func addSportToFavorites(){
-        
-    }
+    func addSportToFavorites(sport : Sport){
+            }
     
     func goToTeamsView() -> Promise<Bool> {
         let q = GraphQLAPI.teamsForSportQuery(id: chosenSport.sportsId).create()

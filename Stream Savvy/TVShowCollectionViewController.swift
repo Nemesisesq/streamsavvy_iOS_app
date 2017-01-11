@@ -64,8 +64,6 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
             }
             
         }
-
-
         // Do any additional setup after loading the view.
     }
 
@@ -92,18 +90,29 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! TVSetUpCollectionViewCell
         setupFaves.append(popularShows[indexPath.row] as! PopularShow)
         
-        let titles  = favorites.contentList.map { $0.title } as [String]
+        let popshow = popularShows[indexPath.row] as! PopularShow
+        let show = Content.init(withPopularShow: popshow)
+        
+        let mutation = GraphQLAPI.toggleShowToFavorites(show: show, favorite: !cell.fav).create()
+        
+        _ = GraphQLAPI.fetchGraphQLQuery(q: mutation)
+            .then { the_json -> Void in
+                
+                if let t = the_json["data"] as? [String: [String: Any]]{
+                    cell.fav = t["toggleShow"]?["status"] as! Bool
+                    cell.isHighlighted = true
+
+                }
+                
+                        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SetUpCollectionViewCell
-        
-        
-        
-  
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TVSetUpCollectionViewCell
         
         return cell
     }
@@ -112,7 +121,7 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let show = popularShows[indexPath.row] as! PopularShow
-        let cell = cell as! SetUpCollectionViewCell
+        let cell = cell as! TVSetUpCollectionViewCell
         cell.imgView.sd_setImage(with: URL(string : show.image_link ))
 
         cell.popularShow = show

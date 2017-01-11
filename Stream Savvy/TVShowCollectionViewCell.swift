@@ -9,9 +9,10 @@
 import UIKit
 import MarqueeLabel
 
-class SetUpCollectionViewCell: UICollectionViewCell {
+class TVSetUpCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imgView: UIImageView!
+    var fav: Bool! = false
        
     
     var popularShow: PopularShow!

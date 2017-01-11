@@ -10,6 +10,8 @@ import UIKit
 
 class SetupTableViewCell: UITableViewCell {
     
+    var fav : Bool! = false
+    
     var sport: Sport! {
         didSet{
             self.sportName.text = sport.sportsName

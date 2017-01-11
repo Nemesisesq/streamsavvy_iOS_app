@@ -9,9 +9,77 @@
 import Foundation
 import Alamofire
 import PromiseKit
+import Lock
+import SimpleKeychain
 
 
 class GraphQLAPI : NSObject   {
+    
+    static var profile: A0UserProfile!
+    
+    static var keychain = A0SimpleKeychain(service: "Auth0")
+    
+    static func toggleShowToFavorites(show: Content, favorite: Bool) -> Mutation {
+        
+        if  let p = keychain.data(forKey: "profile") {
+            
+            profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
+        }
+
+        let mutatingRequest = Request(
+            name: "toggleShow",
+            arguments: [
+                Argument(key: "favorite", value: favorite),
+                Argument(key: "guidebox_id", value: show.guidebox_id),
+                Argument(key: "userId", value: profile.userId),
+                Argument(key: "email", value: profile.email!),
+
+            ],
+            fields :[
+                "status",
+                ]
+        )
+        
+        
+        let mutation = Mutation(
+            withAlias: "toggleShowToFavorites",
+            mutatingRequest: mutatingRequest
+        )
+        
+        return mutation
+
+    }
+    
+    static func toggleSport(sport: Sport, fav: Bool) -> Mutation {
+        
+        if  let p = keychain.data(forKey: "profile") {
+            
+            profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
+        }
+        
+        let mutatingRequest = Request(
+            name: "toggleSport",
+            arguments: [
+                Argument(key: "favorite", value: fav),
+                Argument(key: "sportsId", value: Int(sport.sportsId)!),
+                Argument(key: "userId", value: profile.userId),
+                Argument(key: "email", value: profile.email!),
+            ],
+            fields :[
+                "status"
+                ]
+        )
+        
+        
+        let mutation = Mutation(
+            withAlias: "addSportsToFavorites",
+            mutatingRequest: mutatingRequest
+        )
+        
+        return mutation
+    }
+    
+    
     static var sportQuery: Query =  Query( request: Request (
         withAlias: "sports", //this is an alias that I can uses to differentiate two similar queries.
         name: "sports", //this is the name of the node that I am querying
@@ -41,7 +109,7 @@ class GraphQLAPI : NSObject   {
         
         return teamsQuery
     }
-
+    
     
     static func leaguesForSportQuery(id: String) -> Query{
         let teamsQuery: Query = Query(request: Request (
@@ -54,12 +122,12 @@ class GraphQLAPI : NSObject   {
                 "gracenote_organization_id",
                 "img"
                 
-                ]
+            ]
         ))
         
         return teamsQuery
     }
-
+    
     
     static func teamsForSportQuery(id: String) -> Query{
         let teamsQuery: Query = Query(request: Request (
