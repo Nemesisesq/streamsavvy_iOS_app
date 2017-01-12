@@ -12,6 +12,16 @@ class TeamTableViewCell: UITableViewCell {
     
     @IBOutlet var teamName: UILabel!
     @IBOutlet var img: UIImageView!
+    var fav: Bool = false {
+        didSet{
+            
+            if fav {
+                self.accessoryType = .checkmark
+            } else {
+                self.accessoryType = .none
+            }
+        }
+    }
     
     var team :Team! {
         didSet {
@@ -23,11 +33,11 @@ class TeamTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

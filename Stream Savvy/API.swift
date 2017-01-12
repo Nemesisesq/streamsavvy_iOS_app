@@ -19,6 +19,38 @@ class GraphQLAPI : NSObject   {
     
     static var keychain = A0SimpleKeychain(service: "Auth0")
     
+    static func toggleTeamToFavorites(team: Team, fav: Bool) -> Mutation {
+        
+        if  let p = keychain.data(forKey: "profile") {
+            
+            profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
+        }
+        
+        let mutatingRequest = Request(
+            name: "toggleTeam",
+            arguments: [
+                Argument(key: "favorite", value: fav),
+                Argument(key: "team_brand_id", value: team.teamBrandId),
+                Argument(key: "userId", value: profile.userId),
+                Argument(key: "email", value: profile.email!),
+                
+                ],
+            fields :[
+                "status",
+                ]
+        )
+        
+        
+        let mutation = Mutation(
+            withAlias: "toggleShowToFavorites",
+            mutatingRequest: mutatingRequest
+        )
+        
+        return mutation
+        
+    }
+
+    
     static func toggleShowToFavorites(show: Content, favorite: Bool) -> Mutation {
         
         if  let p = keychain.data(forKey: "profile") {
@@ -103,7 +135,8 @@ class GraphQLAPI : NSObject   {
                 "name",
                 "nickname",
                 "propername",
-                "img"
+                "img",
+                "team_brand_id"
             ]
         ))
         
@@ -137,6 +170,7 @@ class GraphQLAPI : NSObject   {
                 Argument(key: "sportId", value:id)
             ],
             fields:[
+                "team_brand_id",
                 "name",
                 "nickname",
                 "propername",

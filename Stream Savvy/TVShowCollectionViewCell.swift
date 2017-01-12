@@ -11,8 +11,19 @@ import MarqueeLabel
 
 class TVSetUpCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var checkmark: UIImageView!
+    
     @IBOutlet var imgView: UIImageView!
-    var fav: Bool! = false
+    var fav: Bool! = false {
+        didSet{
+            if fav == true {
+                self.checkmark.isHidden = false
+            } else {
+                self.checkmark.isHidden = true
+            }
+            
+        }
+    }
        
     
     var popularShow: PopularShow!

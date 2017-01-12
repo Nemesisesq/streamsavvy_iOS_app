@@ -87,7 +87,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Configure the cell...
         
-//        cell.backgroundColor = Common.getRandomColor()
+        //        cell.backgroundColor = Common.getRandomColor()
         
         return cell
     }
@@ -111,32 +111,33 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
                     return self.goToTeamsView()
                 }
                 
-                return Promise.init(value: false)
+                return Promise.init(value: r)
             }.then { r -> Void in
-                
-                let q = GraphQLAPI.toggleSport(sport: self.chosenSport, fav: !cell.fav).create()
-                print(q)
-                
-                _ = GraphQLAPI.fetchGraphQLQuery(q: q)
-                    .then { the_json -> Void in
-                        
-                        if let t = the_json["data"] as? [String: [String: Any]]{
-                            cell.fav = t["toggleSport"]?["status"] as! Bool
-                            cell.isHighlighted = true
+                if r {
+                    let q = GraphQLAPI.toggleSport(sport: self.chosenSport, fav: !cell.fav).create()
+                    print(q)
+                    
+                    _ = GraphQLAPI.fetchGraphQLQuery(q: q)
+                        .then { the_json -> Void in
                             
-                        }
-
+                            if let t = the_json["data"] as? [String: [String: Any]]{
+                                let state = t["toggleSport"]?["status"] as! Bool
+                                cell.fav = state
+                                cell.isHighlighted = state
+                                
+                            }
+                            
+                    }
                 }
-
                 
-               
+                
             }.catch{ error in
                 return
         }
     }
     
     func addSportToFavorites(sport : Sport){
-            }
+    }
     
     func goToTeamsView() -> Promise<Bool> {
         let q = GraphQLAPI.teamsForSportQuery(id: chosenSport.sportsId).create()
@@ -148,9 +149,9 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 vc.teams = the_json["data"]?["teams"] as! [[String: Any]]
                 
                 if vc.teams.count > 1 {
-//                self.present(vc, animated: true, completion: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
-                return false
+                    //                self.present(vc, animated: true, completion: nil)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    return false
                 } else {
                     return true
                 }
@@ -170,7 +171,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 
                 if o.count > 1 {
                     vc.orgList = o
-                   self.navigationController?.pushViewController(vc, animated: true)
+                    self.navigationController?.pushViewController(vc, animated: true)
                     
                     return true
                 }

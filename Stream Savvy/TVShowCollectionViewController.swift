@@ -102,8 +102,10 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
             .then { the_json -> Void in
                 
                 if let t = the_json["data"] as? [String: [String: Any]]{
-                    cell.fav = t["toggleShow"]?["status"] as! Bool
-                    cell.isHighlighted = true
+                    
+                    let state = t["toggleShow"]?["status"] as! Bool
+                    cell.fav = state
+                    cell.isHighlighted = state
 
                 }
                 

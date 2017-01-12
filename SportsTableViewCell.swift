@@ -10,7 +10,17 @@ import UIKit
 
 class SetupTableViewCell: UITableViewCell {
     
-    var fav : Bool! = false
+    var fav : Bool = false {
+        didSet{
+            
+            if fav {
+                self.accessoryType = .checkmark
+            } else {
+                self.accessoryType = .none
+            }
+        }
+    }
+
     
     var sport: Sport! {
         didSet{
