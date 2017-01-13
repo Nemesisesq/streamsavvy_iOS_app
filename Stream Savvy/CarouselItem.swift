@@ -56,7 +56,7 @@ class CarouselItem: UIView {
         
        cv = vc.recommendationCollectionView
         
-        
+            
         socket.ws.send(content.guidebox_id!)
         loadingNotification = MBProgressHUD.showAdded(to: self.cv, animated: true)
         loadingNotification.mode = MBProgressHUDMode.indeterminate

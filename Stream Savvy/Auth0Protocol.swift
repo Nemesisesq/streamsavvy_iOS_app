@@ -162,8 +162,12 @@ extension Auth0Protocol {
             client.fetchUserProfile(withIdToken: idToken,
                                     success: { profile in
                                         fulfill(profile)
+                                        
+                                        if profile.email != nil {
+                                            
+                                        
                                         Pushbots.sharedInstance().setAlias(profile.email)
-
+                                        }
                                         Auth0.loggedIn = true
             },
                                     failure: { error in

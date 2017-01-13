@@ -191,7 +191,7 @@ class GraphQLAPI : NSObject   {
     //    }
     
     static func fetchGraphQLQuery(q: String) -> Promise<JSONStandardDict>{
-        let url = "http://localhost:8080/graphql"
+        let url = "http://www.streamsavvy.cloud/graphql"
         
         let dispatch = DispatchQueue.global()
         
