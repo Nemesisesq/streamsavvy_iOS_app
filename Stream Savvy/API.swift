@@ -32,7 +32,7 @@ class GraphQLAPI : NSObject   {
                 Argument(key: "favorite", value: fav),
                 Argument(key: "team_brand_id", value: team.teamBrandId),
                 Argument(key: "userId", value: profile.userId),
-                Argument(key: "email", value: profile.email!),
+                Argument(key: "email", value: "\(profile.email)"),
                 
                 ],
             fields :[
@@ -89,13 +89,16 @@ class GraphQLAPI : NSObject   {
             profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
         }
         
+        
+       
         let mutatingRequest = Request(
             name: "toggleSport",
             arguments: [
                 Argument(key: "favorite", value: fav),
                 Argument(key: "sportsId", value: Int(sport.sportsId)!),
                 Argument(key: "userId", value: profile.userId),
-                Argument(key: "email", value: profile.email!),
+                
+                Argument(key: "email", value: "\(profile.email)"),
             ],
             fields :[
                 "status"
@@ -191,7 +194,7 @@ class GraphQLAPI : NSObject   {
     //    }
     
     static func fetchGraphQLQuery(q: String) -> Promise<JSONStandardDict>{
-        let url = "http://www.streamsavvy.cloud/graphql"
+        let url = "http://hatch.us-east-1.elasticbeanstalk.com/graphql"
         
         let dispatch = DispatchQueue.global()
         

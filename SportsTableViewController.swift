@@ -31,7 +31,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnDemandViewController")
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
         self.present(vc, animated: true, completion: nil)
     }
     

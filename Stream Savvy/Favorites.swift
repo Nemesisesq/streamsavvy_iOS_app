@@ -17,8 +17,8 @@ import Lock
 //import SwiftyJSON
 
 
-//let host = "www.streamsavvy.cloud"
-var host = "localhost:8080"
+let host = "www.streamsavvy.cloud"
+//var host = "localhost:8080"
 
 
 class Favorites: NSObject {
