@@ -14,6 +14,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <TwitterKit/TwitterKit.h>
+#import <AWSCognito/AWSCognito.h>
 
 #import <MoPub/MoPub.h>
 
@@ -62,7 +63,7 @@
     
     
     
-    [Fabric with:@[[Twitter class],[Answers class], [Crashlytics class], [MoPub class]]];
+    [Fabric with:@[[Twitter class],[Answers class], [Crashlytics class], [MoPub class], [AWSCognito class]]];
     
     UIUserNotificationType types = (UIUserNotificationTypeBadge | UIUserNotificationTypeSound |
                                     UIUserNotificationTypeAlert);
@@ -187,6 +188,14 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo  fetchCompletionHandler:(v
     [[Amplitude instance] initializeApiKey:@"2e5f3977f9bc996bb2cc8e451c65af1b"];
     
     [[Amplitude instance] logEvent:@"EVENT_IDENTIFIER_HERE"];
+    
+    AWSCognitoCredentialsProvider *credentialsProvider = [[AWSCognitoCredentialsProvider alloc]
+                                                          initWithRegionType:AWSRegionUSEast1
+                                                          identityPoolId:@"us-east-1:2ae1ef8e-a34b-4982-a3b0-3d11b5481819"];
+    
+    AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1 credentialsProvider:credentialsProvider];
+    
+    [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
     
     
     

@@ -84,6 +84,19 @@
 				<key>KitName</key>
 				<string>MoPub</string>
 			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>AWSCognitoIdentityPoolId</key>
+					<string>us-east-1:2ae1ef8e-a34b-4982-a3b0-3d11b548181</string>
+					<key>AWSCognitoIdentityRegionType</key>
+					<string>USEast1</string>
+					<key>AWSDefaultRegionType</key>
+					<string>USEast1</string>
+				</dict>
+				<key>KitName</key>
+				<string>AWSCognitoIdentity</string>
+			</dict>
 		</array>
 	</dict>
 	<key>FacebookAppID</key>

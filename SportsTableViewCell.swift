@@ -32,6 +32,7 @@ class SetupTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .black
         // Initialization code
     }
 

@@ -9,6 +9,7 @@
 import UIKit
 import Gloss
 import PromiseKit
+import AWSCognito
 
 class Sport: Decodable {
     let sportsId: String!
@@ -21,15 +22,16 @@ class Sport: Decodable {
 }
 
 class SetupTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var dataset: AWSCognitoDataset!
     var sportsList: [Sport]!
     var chosenSport: Sport!
     @IBOutlet var setupTableView: UITableView!
     
     @IBAction func launchApp(_ sender: Any) {
         
-        
-        
+        dataset.setString("seen", forKey: "set_up")
+
+        dataset.synchronize()
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
         self.present(vc, animated: true, completion: nil)
@@ -37,6 +39,8 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataset = AWSCognito.default().openOrCreateDataset("userProfile")
+
         
         let q = GraphQLAPI.sportQuery.create()
         

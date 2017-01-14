@@ -11,9 +11,15 @@ import Lock
 import SimpleKeychain
 import PromiseKit
 import Crashlytics
+import AWSCognito
 
 
 @objc class Auth0ViewController: UIViewController, Auth0Protocol{
+    
+    
+    public var dataset: AWSCognitoDataset!
+    public var colorField: UITextField!
+
     
     var fromSegue: Bool = false {
         willSet {
@@ -36,11 +42,56 @@ import Crashlytics
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.usEast1,
+                                                                identityPoolId:"us-east-1:2ae1ef8e-a34b-4982-a3b0-3d11b5481819")
+        
+        let configuration = AWSServiceConfiguration(region:.usEast1, credentialsProvider:credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
         Auth0.calledBySubclass = false
         
         // Do any additional setup after loading the view.
+        
+        // Initialized from the pool ID and region in Info.plist, and
+        // implicitly logs in an anonymous user.
+        dataset = AWSCognito.default().openOrCreateDataset("userProfile")
+        
+//        colorField = UITextField(frame: CGRect(x:40, y:70, 280, 30))
+//        colorField.returnKeyType = .done
+//        colorField.placeholder = "Favorite color"
+//        colorField.addTarget(self, action: #selector(self.syncColor(_:)), for: .PrimaryActionTriggered)
+//        view.addSubview(colorField)
+//        
+//        colorField.becomeFirstResponder()
+        synchronizeDataset()
+
     }
     
+    func synchronizeDataset() {
+        dataset.synchronize().continue({ task in
+            if let error = task.error {
+                NSLog("Error in sync: %@", error.localizedDescription)
+                return nil
+            }
+            
+            if task.isCompleted {
+                NSLog("Sync successful")
+                DispatchQueue.main.async() { [weak self] in
+                    
+                    
+                    if(self?.dataset.string(forKey: "set_up") != "seen"){
+                        let vc = UIStoryboard(name: "SetUp", bundle: nil).instantiateViewController(withIdentifier:"SetUpNavgaitionController")
+                        
+                        self?.present(vc, animated: true, completion: nil)
+                    }
+                }
+            }
+            
+            return nil
+        })
+    }
+
     
         
     

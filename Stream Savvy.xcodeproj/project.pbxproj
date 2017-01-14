@@ -125,6 +125,8 @@
 		BD998FBF1E1C065D0004E7DB /* LeagueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD998FBE1E1C065D0004E7DB /* LeagueTableViewController.swift */; };
 		BD998FC11E1C10F00004E7DB /* LeagueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD998FC01E1C10F00004E7DB /* LeagueTableViewCell.swift */; };
 		BD998FC31E1C114D0004E7DB /* SetUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD998FC21E1C114D0004E7DB /* SetUp.storyboard */; };
+		BD998FC61E2961780004E7DB /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD998FC41E2961780004E7DB /* AWSCognito.framework */; };
+		BD998FC71E2961780004E7DB /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD998FC51E2961780004E7DB /* AWSCore.framework */; };
 		BDA7B4E91DF0776300A67ED0 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */; };
 		BDA7B4EB1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
@@ -367,6 +369,8 @@
 		BD998FBE1E1C065D0004E7DB /* LeagueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueTableViewController.swift; sourceTree = "<group>"; };
 		BD998FC01E1C10F00004E7DB /* LeagueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueTableViewCell.swift; sourceTree = "<group>"; };
 		BD998FC21E1C114D0004E7DB /* SetUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SetUp.storyboard; sourceTree = "<group>"; };
+		BD998FC41E2961780004E7DB /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
+		BD998FC51E2961780004E7DB /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
 		BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
 		BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
@@ -434,8 +438,10 @@
 				BD71F1021DDF7E9400A870AD /* libsqlite3.tbd in Frameworks */,
 				BD71F1001DDF7E2400A870AD /* libz.tbd in Frameworks */,
 				BD71F1071DDF8F4300A870AD /* Crashlytics.framework in Frameworks */,
+				BD998FC61E2961780004E7DB /* AWSCognito.framework in Frameworks */,
 				BD2C6A591DDA5AD000FC3A61 /* Harpy.framework in Frameworks */,
 				BDB817681DC53B48007EA0C8 /* MarqueeLabel.framework in Frameworks */,
+				BD998FC71E2961780004E7DB /* AWSCore.framework in Frameworks */,
 				BD3184A51DBE996100AAFD1E /* ADMozaicCollectionViewLayout.framework in Frameworks */,
 				BD71F1061DDF8F4300A870AD /* Fabric.framework in Frameworks */,
 				BD98187B1DB916A7003A5159 /* Auth0.framework in Frameworks */,
@@ -827,6 +833,8 @@
 		BD77AB1E1E18C8880018F756 /* GraphQLicious */ = {
 			isa = PBXGroup;
 			children = (
+				BD998FC41E2961780004E7DB /* AWSCognito.framework */,
+				BD998FC51E2961780004E7DB /* AWSCore.framework */,
 				BD77AB1F1E18C8B20018F756 /* GraphQLicious.h */,
 				BD77AB201E18C8B20018F756 /* Helper */,
 				BD77AB241E18C8B20018F756 /* Info.plist */,
