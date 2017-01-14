@@ -34,11 +34,11 @@ class CarouselItem: UIView {
         willSet{
             if newValue == true {
                 if socket != nil {
-//                    socket.ws.close()
+                    //                    socket.ws.close()
                 }
                 openSocket()
             } else {
-//                self.socket.ws.close()
+                //                self.socket.ws.close()
             }
         }
     }
@@ -53,18 +53,20 @@ class CarouselItem: UIView {
         if recommendations.count > 0{
             vc.recommendations = recommendations
         } else {
-        
-       cv = vc.recommendationCollectionView
-        
             
-        socket.ws.send(content.guidebox_id!)
-        loadingNotification = MBProgressHUD.showAdded(to: self.cv, animated: true)
-        loadingNotification.mode = MBProgressHUDMode.indeterminate
-        loadingNotification.label.text = "Loading"
+            cv = vc.recommendationCollectionView
             
-            timeout = Timeout(10.0) {
-                MBProgressHUD.hideAllHUDs(for: self.cv, animated: true)
-                self.socket.ws.close()
+            
+            if let x = content.guidebox_id {
+                socket.ws.send(x)
+                loadingNotification = MBProgressHUD.showAdded(to: self.cv, animated: true)
+                loadingNotification.mode = MBProgressHUDMode.indeterminate
+                loadingNotification.label.text = "Loading"
+                
+                timeout = Timeout(10.0) {
+                    MBProgressHUD.hideAllHUDs(for: self.cv, animated: true)
+                    self.socket.ws.close()
+                }
             }
         }
     }
@@ -72,7 +74,7 @@ class CarouselItem: UIView {
     override func willChangeValue(forKey key: String) {
         let x = "hello"
     }
-
+    
     
     func openSocket(){
         self.recommendations = [Content]()
