@@ -127,6 +127,7 @@
 		BD998FC31E1C114D0004E7DB /* SetUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD998FC21E1C114D0004E7DB /* SetUp.storyboard */; };
 		BD998FC61E2961780004E7DB /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD998FC41E2961780004E7DB /* AWSCognito.framework */; };
 		BD998FC71E2961780004E7DB /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD998FC51E2961780004E7DB /* AWSCore.framework */; };
+		BD998FC91E2B272C0004E7DB /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD998FC81E2B272C0004E7DB /* PairViewController.swift */; };
 		BDA7B4E91DF0776300A67ED0 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */; };
 		BDA7B4EB1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */; };
 		BDAEC8A81DAEE791001370F6 /* lodash.js in Resources */ = {isa = PBXBuildFile; fileRef = BDAEC8A71DAEE791001370F6 /* lodash.js */; };
@@ -371,6 +372,7 @@
 		BD998FC21E1C114D0004E7DB /* SetUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SetUp.storyboard; sourceTree = "<group>"; };
 		BD998FC41E2961780004E7DB /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
 		BD998FC51E2961780004E7DB /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		BD998FC81E2B272C0004E7DB /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		BDA7B4E81DF0776300A67ED0 /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
 		BDA7B4EA1DF2144000A67ED0 /* RecomendationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDAEC8A71DAEE791001370F6 /* lodash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lodash.js; sourceTree = "<group>"; };
@@ -678,6 +680,7 @@
 				BD3184A21DBE978600AAFD1E /* MozaicGuideViewController.swift */,
 				BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */,
 				BDFA04831DF7B96300A33670 /* CalendarViewController.swift */,
+				BD998FC81E2B272C0004E7DB /* PairViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1358,6 +1361,7 @@
 				BD77AB3B1E18C8B20018F756 /* ObjectValue.swift in Sources */,
 				BD77AA561E18BD910018F756 /* API.swift in Sources */,
 				BDD2B70A1DAE052700C77260 /* Sources.swift in Sources */,
+				BD998FC91E2B272C0004E7DB /* PairViewController.swift in Sources */,
 				BD77AB351E18C8B20018F756 /* ArgumentValue.swift in Sources */,
 				BDFA04841DF7B96300A33670 /* CalendarViewController.swift in Sources */,
 				9F402A2D1DC773AD00DA651E /* RadialGradientLayer.m in Sources */,
