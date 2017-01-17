@@ -222,6 +222,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="img" destination="fhA-7I-12y" id="Vcq-rx-hnP"/>
                                     <outlet property="label" destination="OkB-Ka-fCN" id="aWL-6Z-Dml"/>
@@ -376,6 +377,7 @@
                                         <constraint firstItem="acS-sB-HZe" firstAttribute="top" secondItem="VTx-Fy-5iX" secondAttribute="top" id="ufT-o8-fbL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="img" destination="acS-sB-HZe" id="VH3-wX-7bx"/>
                                     <outlet property="teamName" destination="XfU-Sw-JGx" id="Ggw-lE-3fz"/>
