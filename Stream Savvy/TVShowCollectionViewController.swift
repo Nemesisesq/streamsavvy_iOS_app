@@ -25,7 +25,7 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
     
     
     @IBOutlet var collectionView: UICollectionView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,12 +66,12 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
         }
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     //MARK: - UICollectionViewDataSource
     
@@ -87,7 +87,7 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
         
         return 0
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! TVSetUpCollectionViewCell
@@ -106,10 +106,10 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
                     let state = t["toggleShow"]?["status"] as! Bool
                     cell.fav = state
                     cell.isHighlighted = state
-
+                    
                 }
                 
-                        }
+        }
         
     }
     
@@ -119,28 +119,28 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
         return cell
     }
     
-
+    
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let show = popularShows[indexPath.row] as! PopularShow
         let cell = cell as! TVSetUpCollectionViewCell
         cell.imgView.sd_setImage(with: URL(string : show.image_link ))
-
+        
         cell.popularShow = show
- 
+        
     }
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

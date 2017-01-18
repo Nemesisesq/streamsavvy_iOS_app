@@ -46,6 +46,7 @@
 		BD1CF92D1D989F21007E1EC2 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1CF92C1D989F21007E1EC2 /* PromiseKit.framework */; };
 		BD1ED1C01DE8C30B00A61547 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1ED1BF1DE8C30B00A61547 /* UserProfile.swift */; };
 		BD2264F11DC031D500AF184A /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */; };
+		BD26F5AA1E2EA8A400087D75 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD26F5A91E2EA8A400087D75 /* FavoritesTableViewController.swift */; };
 		BD2936651DEBC9BD003216FA /* Pushbots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2936641DEBC9BD003216FA /* Pushbots.framework */; };
 		BD29366D1DEC8DFD003216FA /* Stream_SavvyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29366C1DEC8DFD003216FA /* Stream_SavvyUITests.swift */; };
 		BD2936761DEC8ED5003216FA /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2936741DEC8EBA003216FA /* SnapshotHelper.swift */; };
@@ -273,6 +274,7 @@
 		BD1ED1BF1DE8C30B00A61547 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BD25C0301DA646CF005C28C2 /* app_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app_icons; path = ../../Downloads/app_icons; sourceTree = "<group>"; };
+		BD26F5A91E2EA8A400087D75 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		BD2936641DEBC9BD003216FA /* Pushbots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushbots.framework; sourceTree = "<group>"; };
 		BD29366A1DEC8DFD003216FA /* Stream SavvyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stream SavvyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD29366C1DEC8DFD003216FA /* Stream_SavvyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream_SavvyUITests.swift; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 				BD2264F01DC031D500AF184A /* ProfileTableViewController.swift */,
 				BDFA04831DF7B96300A33670 /* CalendarViewController.swift */,
 				BD998FC81E2B272C0004E7DB /* PairViewController.swift */,
+				BD26F5A91E2EA8A400087D75 /* FavoritesTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1291,6 +1294,7 @@
 				BD9563E51DB2A9C60089652E /* LinkCellCollectionReusableView.swift in Sources */,
 				BD62A1AB1DDECB2D00527E54 /* SocketIOManager.swift in Sources */,
 				BDEB23311DC2F99000B21291 /* AuthViewController.m in Sources */,
+				BD26F5AA1E2EA8A400087D75 /* FavoritesTableViewController.swift in Sources */,
 				BD71F0F41DDF7D2700A870AD /* Amplitude.m in Sources */,
 				BD77AB331E18C8B20018F756 /* String.swift in Sources */,
 				BD71F0D41DDF7BDB00A870AD /* WebSocket.swift in Sources */,

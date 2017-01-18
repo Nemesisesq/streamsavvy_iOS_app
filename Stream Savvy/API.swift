@@ -14,8 +14,15 @@ import SimpleKeychain
 
 
 class GraphQLAPI : NSObject   {
+
+    static var email: String!
     
-    static var profile: A0UserProfile!
+    static var profile: A0UserProfile! {
+        didSet {
+            
+        email = profile.email ?? ""
+        }
+    }
     
     static var keychain = A0SimpleKeychain(service: "Auth0")
     
@@ -32,7 +39,7 @@ class GraphQLAPI : NSObject   {
                 Argument(key: "favorite", value: fav),
                 Argument(key: "team_brand_id", value: team.teamBrandId),
                 Argument(key: "userId", value: profile.userId),
-                Argument(key: "email", value: "\(profile.email)"),
+                Argument(key: "email", value: email ),
                 
                 ],
             fields :[
@@ -49,6 +56,8 @@ class GraphQLAPI : NSObject   {
         return mutation
         
     }
+    
+   
 
     
     static func toggleShowToFavorites(show: Content, favorite: Bool) -> Mutation {
@@ -57,6 +66,8 @@ class GraphQLAPI : NSObject   {
             
             profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
         }
+        
+        
 
         let mutatingRequest = Request(
             name: "toggleShow",
@@ -64,7 +75,7 @@ class GraphQLAPI : NSObject   {
                 Argument(key: "favorite", value: favorite),
                 Argument(key: "guidebox_id", value: show.guidebox_id),
                 Argument(key: "userId", value: profile.userId),
-                Argument(key: "email", value: profile.email!),
+                Argument(key: "email", value: email),
 
             ],
             fields :[
@@ -98,7 +109,7 @@ class GraphQLAPI : NSObject   {
                 Argument(key: "sportsId", value: Int(sport.sportsId)!),
                 Argument(key: "userId", value: profile.userId),
                 
-                Argument(key: "email", value: "\(profile.email)"),
+                Argument(key: "email", value: email),
             ],
             fields :[
                 "status"
@@ -126,6 +137,29 @@ class GraphQLAPI : NSObject   {
         )
         
     )
+    
+    
+    static func getFavoritesQuery() -> Query{
+        if  let p = keychain.data(forKey: "profile") {
+            
+            profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
+        }
+        
+        let teamsQuery: Query = Query(request: Request (
+            withAlias:"favorites",
+            name: "favorites",
+            arguments: [
+                Argument(key: "user_id", value:profile.userId)
+            ],
+            fields:[
+                "name",
+                        ]
+        ))
+        
+        return teamsQuery
+    }
+    
+
     
     static func teamsForOrgQuery(id: String) -> Query{
         let teamsQuery: Query = Query(request: Request (
@@ -194,7 +228,9 @@ class GraphQLAPI : NSObject   {
     //    }
     
     static func fetchGraphQLQuery(q: String) -> Promise<JSONStandardDict>{
-        let url = "http://www.streamsavvy.cloud/graphql"
+//        let url = "http://www.streamsavvy.cloud/graphql"
+        let url = "http://localhost:8080/graphql"
+
         
         let dispatch = DispatchQueue.global()
         
