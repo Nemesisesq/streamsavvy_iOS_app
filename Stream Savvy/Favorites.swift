@@ -23,6 +23,8 @@ let host = "www.streamsavvy.cloud"
 
 class Favorites: NSObject {
     
+    var favs = [TableFav]()
+    
     var contentList = [Content]() {
         didSet{
             let titles = contentList.map {
@@ -41,7 +43,30 @@ class Favorites: NSObject {
     
     
     public func fetchFavorites() -> Promise<Any> {
+         let q = GraphQLAPI.getFavoritesQuery().create()
+        
+        _ = GraphQLAPI.fetchGraphQLQuery(q: q)
+            .then { the_json -> Void in
+                
+                if let t = the_json["data"] as? [String: [[String: Any]]] {
+                    
+                    for i in t["favorites"]! {
+                        let x = TableFav.init(json: i as [String:Any])
+                        self.favs.append(x)
+                    }
+                    
+                
+                    
+                    
+                }
+                
+                
+        }
+
         let url = "http://\(host)/favorites"
+        
+        
+        
         
         return Promise { fullfil, reject in
             
@@ -89,6 +114,21 @@ class Favorites: NSObject {
         }
         
         
+        let mutation = GraphQLAPI.toggleShowToFavorites(show: content, favorite: false).create()
+        
+        _ = GraphQLAPI.fetchGraphQLQuery(q: mutation)
+            .then { the_json -> Void in
+                
+                if let t = the_json["data"] as? [String: [String: Any]]{
+                    
+                    let state = t["toggleShow"]?["status"] as! Bool
+                    
+                }
+                
+        }
+
+        
+        
         let url = "http://\(host)/favorites/remove"
         let theJson = content.asJson()
         let authHeader: HTTPHeaders = ["Id-Token" :keychain.string(forKey: "id_token")!,
@@ -118,6 +158,20 @@ class Favorites: NSObject {
             
             profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
         }
+        
+        let mutation = GraphQLAPI.toggleShowToFavorites(show: content, favorite: true).create()
+        
+        _ = GraphQLAPI.fetchGraphQLQuery(q: mutation)
+            .then { the_json -> Void in
+                
+                if let t = the_json["data"] as? [String: [String: Any]]{
+                    
+                    let state = t["toggleShow"]?["status"] as! Bool
+                                        
+                }
+                
+        }
+
         
         
         let url = "http://\(host)/favorites/add"
