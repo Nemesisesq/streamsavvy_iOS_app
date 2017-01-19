@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin_background1x" translatesAutoresizingMaskIntoConstraints="NO" id="3ah-eo-AXz">
-                                <rect key="frame" x="0.0" y="-20" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="-20" width="375" height="579"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,7 +192,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IXw-Tg-ggl" id="uEC-Dr-U5A">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTt-a9-U0X">
@@ -235,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8r-ba-913" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3464" y="-1436"/>
+            <point key="canvasLocation" x="3505" y="-1436"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="8Q0-Kf-AE6">
@@ -497,49 +497,22 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yau-h1-iJb">
                                                     <rect key="frame" x="0.0" y="0.0" width="166" height="104"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt3-fd-eqR" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                                    <rect key="frame" x="0.0" y="8" width="166" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="KWO-Bx-Nn8"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" red="0.98609011303554905" green="1" blue="0.99258838311778308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollDuration">
-                                                            <real key="value" value="0.80000000000000004"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leadingBuffer">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Like Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="Aq1-1Q-pWc">
+                                                    <rect key="frame" x="124" y="8" width="34" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="1" green="0.060853812200000003" blue="0.11330069869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="wt3-fd-eqR" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leadingMargin" constant="-8" id="1Kj-oS-Zyt"/>
                                             <constraint firstItem="yau-h1-iJb" firstAttribute="leading" secondItem="6yk-My-B3o" secondAttribute="leading" id="7pF-Qs-hMj"/>
-                                            <constraint firstItem="wt3-fd-eqR" firstAttribute="top" secondItem="6yk-My-B3o" secondAttribute="topMargin" id="Bk5-wZ-Mws"/>
                                             <constraint firstAttribute="trailing" secondItem="yau-h1-iJb" secondAttribute="trailing" id="Ri8-91-ICC"/>
                                             <constraint firstItem="yau-h1-iJb" firstAttribute="top" secondItem="6yk-My-B3o" secondAttribute="top" id="UsJ-gX-iHg"/>
-                                            <constraint firstItem="wt3-fd-eqR" firstAttribute="trailing" secondItem="6yk-My-B3o" secondAttribute="trailingMargin" constant="8" id="gsL-Xc-acl"/>
                                             <constraint firstAttribute="bottom" secondItem="yau-h1-iJb" secondAttribute="bottom" id="nKH-je-Ivg"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="checkmark" destination="Aq1-1Q-pWc" id="Zye-U7-IHh"/>
                                             <outlet property="imgView" destination="yau-h1-iJb" id="zYk-f1-8hX"/>
-                                            <outlet property="titleLable" destination="wt3-fd-eqR" id="t08-yn-VpY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1837,49 +1810,16 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yci-lc-csi">
                                                     <rect key="frame" x="0.0" y="0.0" width="166" height="104"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqQ-4a-M3j" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                                    <rect key="frame" x="0.0" y="8" width="166" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="n3L-wv-BkK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" red="0.98609011300000005" green="1" blue="0.99258838309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollDuration">
-                                                            <real key="value" value="0.80000000000000004"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leadingBuffer">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="fqQ-4a-M3j" firstAttribute="top" secondItem="4QQ-1B-T5F" secondAttribute="topMargin" id="5OB-ba-mt0"/>
                                             <constraint firstAttribute="trailing" secondItem="Yci-lc-csi" secondAttribute="trailing" id="F8D-4e-fBl"/>
                                             <constraint firstItem="Yci-lc-csi" firstAttribute="leading" secondItem="4QQ-1B-T5F" secondAttribute="leading" id="Gdf-66-7Cw"/>
-                                            <constraint firstItem="fqQ-4a-M3j" firstAttribute="trailing" secondItem="4QQ-1B-T5F" secondAttribute="trailingMargin" constant="8" id="LgH-gd-1ab"/>
                                             <constraint firstItem="Yci-lc-csi" firstAttribute="top" secondItem="4QQ-1B-T5F" secondAttribute="top" id="O2i-v3-8RY"/>
-                                            <constraint firstItem="fqQ-4a-M3j" firstAttribute="leading" secondItem="4QQ-1B-T5F" secondAttribute="leadingMargin" constant="-8" id="uMd-54-aeg"/>
                                             <constraint firstAttribute="bottom" secondItem="Yci-lc-csi" secondAttribute="bottom" id="w2A-70-Dwo"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imgView" destination="Yci-lc-csi" id="UnS-A8-Lip"/>
-                                            <outlet property="titleLable" destination="fqQ-4a-M3j" id="ApC-Iy-lgD"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1904,6 +1844,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Like Filled-50" width="50" height="50"/>
         <image name="combinedShape" width="38" height="30"/>
         <image name="favorites" width="36" height="34"/>
         <image name="fubo_tv" width="224" height="74"/>
@@ -1913,8 +1854,8 @@
         <image name="user" width="32" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T0S-Xg-IrC"/>
-        <segue reference="2C3-D4-2ZH"/>
+        <segue reference="zb4-L9-SRA"/>
+        <segue reference="xzD-Il-795"/>
         <segue reference="Hcq-We-NDc"/>
     </inferredMetricsTieBreakers>
 </document>

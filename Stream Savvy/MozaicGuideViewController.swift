@@ -18,7 +18,9 @@ enum ADMozaikLayoutType {
     case landscape
 }
 
-class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMozaikLayoutDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
+class MozaicCollectionViewController: PopularShowObjectiveCViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var favorites: Favorites!
     
     var  searchButton: UIBarButtonItem!
     var loginButton: UIBarButtonItem!
@@ -71,31 +73,18 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     
     
-    fileprivate let ADMozaikCollectionViewLayoutExampleImagesCount = 22
     
-    fileprivate var portraitLayout: ADMozaikLayout {
-        let columns = [ADMozaikLayoutColumn(width: columnWidth), ADMozaikLayoutColumn(width: columnWidth)]
-        let layout = ADMozaikLayout(rowHeight: columnWidth, columns: columns)
-        layout.delegate = self
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
-        return layout;
-    }
-    
-    fileprivate var landscapeLayout: ADMozaikLayout {
-        let columns = [ADMozaikLayoutColumn(width: 110), ADMozaikLayoutColumn(width: 110), ADMozaikLayoutColumn(width: 111), ADMozaikLayoutColumn(width: 111), ADMozaikLayoutColumn(width: 110), ADMozaikLayoutColumn(width: 110)]
-        let layout = ADMozaikLayout(rowHeight: 110, columns: columns)
-        layout.delegate = self
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
-        return layout;
-    }
+  
     
     //MARK: - Set Up
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Auth0.calledBySubclass = true
+        
+        if favorites == nil  {
+            favorites = Favorites()
+        }
         
         searchButton = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(self.search(_:)))
         searchButton.tintColor = Constants.streamSavvyRed()
@@ -176,7 +165,6 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
             self.navigationItem.rightBarButtonItem = searchButton
         }
         
-        self.setCollectionViewLayout(false, ofType: UIScreen.main.bounds.width > UIScreen.main.bounds.height ? .landscape : .portrait)
     }
     
     
@@ -193,16 +181,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
     
     //MARK: - Helpers
     
-    fileprivate func setCollectionViewLayout(_ animated: Bool, ofType type: ADMozaikLayoutType) {
-        self.mozCollectionView?.setCollectionViewLayout(self.portraitLayout, animated: false)
-    }
+    
     
     //MARK: - ADMozaikLayoutDelegate
     
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, mozaikSizeForItemAtIndexPath indexPath: IndexPath) -> ADMozaikLayoutSize {
-        return ADMozaikLayoutSize(numberOfColumns: 1, numberOfRows: 1)
-        
-    }
     
     //MARK: - UICollectionViewDataSource
     
@@ -218,9 +200,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, ADMoz
         let show = popularShows[indexPath.row] as! PopularShow
         let cell = cell as! OnDemandCollectionViewCell
         cell.imgView.sd_setImage(with: URL(string : show.image_link ))
-        cell.titleLable.text = show.title
+//        cell.titleLable.text = show.title
         cell.popularShow = show
-        cell.titleLable.type = .leftRight
+        cell.favorites = self.favorites
+//        cell.titleLable.type = .leftRight
         
         
         

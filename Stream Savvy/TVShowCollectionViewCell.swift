@@ -9,24 +9,24 @@
 import UIKit
 import MarqueeLabel
 
-class TVSetUpCollectionViewCell: UICollectionViewCell {
+class TVSetUpCollectionViewCell: OnDemandCollectionViewCell {
     
-    @IBOutlet var checkmark: UIImageView!
+//    @IBOutlet var checkmark: UIImageView!
     
-    @IBOutlet var imgView: UIImageView!
-    var fav: Bool! = false {
-        didSet{
-            if fav == true {
-                self.checkmark.isHidden = false
-            } else {
-                self.checkmark.isHidden = true
-            }
-            
-        }
-    }
-       
+//    @IBOutlet var imgView: UIImageView!
+//    var fav: Bool! = false {
+//        didSet{
+//            if fav == true {
+//                self.checkmark.isHidden = false
+//            } else {
+//                self.checkmark.isHidden = true
+//            }
+//            
+//        }
+//    }
     
-    var popularShow: PopularShow!
+    
+//    override var popularShow: PopularShow!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -23,7 +23,19 @@ let host = "www.streamsavvy.cloud"
 
 class Favorites: NSObject {
     
-    var favs = [TableFav]()
+    var favs: [TableFav]? {
+        get {
+            if self.favs == nil || self.favs?.count == 0 {
+               getFavsFromGraphQL()
+            }
+            
+            return self.favs
+        }
+        
+        set(x) {
+            self.favs = x
+        }
+    }
     
     var contentList = [Content]() {
         didSet{
@@ -41,9 +53,8 @@ class Favorites: NSObject {
     var keychain = A0SimpleKeychain(service: "Auth0")
     
     
-    
-    public func fetchFavorites() -> Promise<Any> {
-         let q = GraphQLAPI.getFavoritesQuery().create()
+    func getFavsFromGraphQL(){
+        let q = GraphQLAPI.getFavoritesQuery().create()
         
         _ = GraphQLAPI.fetchGraphQLQuery(q: q)
             .then { the_json -> Void in
@@ -52,10 +63,10 @@ class Favorites: NSObject {
                     
                     for i in t["favorites"]! {
                         let x = TableFav.init(json: i as [String:Any])
-                        self.favs.append(x)
+                        self.favs?.append(x)
                     }
                     
-                
+                    
                     
                     
                 }
@@ -63,10 +74,13 @@ class Favorites: NSObject {
                 
         }
 
+    }
+    public func fetchFavorites() -> Promise<Any> {
+        
         let url = "http://\(host)/favorites"
         
         
-        
+        getFavsFromGraphQL()
         
         return Promise { fullfil, reject in
             
@@ -80,7 +94,6 @@ class Favorites: NSObject {
             
             let params: Parameters = [
                 "id_token": keychain.string(forKey: "id_token")!,
-                
                 "email" : profile.email ?? "no_email",
                 "name"  : profile.name,
                 ]
@@ -122,7 +135,7 @@ class Favorites: NSObject {
                 if let t = the_json["data"] as? [String: [String: Any]]{
                     
                     let state = t["toggleShow"]?["status"] as! Bool
-                    
+                    print(state)
                 }
                 
         }
@@ -167,7 +180,7 @@ class Favorites: NSObject {
                 if let t = the_json["data"] as? [String: [String: Any]]{
                     
                     let state = t["toggleShow"]?["status"] as! Bool
-                                        
+                    print(state)
                 }
                 
         }

@@ -43,7 +43,7 @@ class ContentDetailViewController:  Auth0ViewController  {
     @IBAction func addContentToFavorites(_ sender: UIButton) {
         
         let titles  = favorites.contentList.map { $0.title } as [String]
-        let fTitles = favorites.favs.map { $0.name } as [String]
+        let fTitles = favorites.favs.map { $0.name } as! [String]
         
         if  $.contains(fTitles, value: content.title){
             Answers.logCustomEvent(withName: "Remove from favorites", customAttributes: ["show":content.title])

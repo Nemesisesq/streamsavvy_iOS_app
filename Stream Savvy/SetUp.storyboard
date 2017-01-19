@@ -125,9 +125,10 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXw-q0-0Pq">
                                                     <rect key="frame" x="0.0" y="0.0" width="178" height="119"/>
                                                 </imageView>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Like Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-kP-JkZ">
-                                                    <rect key="frame" x="44" y="14" width="90" height="90"/>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Like Filled-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-kP-JkZ">
+                                                    <rect key="frame" x="136" y="0.0" width="34" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="1" green="0.060853812200000003" blue="0.11330069869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -138,7 +139,7 @@
                                             <constraint firstItem="sXw-q0-0Pq" firstAttribute="leading" secondItem="0Sz-8X-NUn" secondAttribute="leading" id="ate-D3-CeT"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="checkmark" destination="hzP-kP-JkZ" id="hlz-zj-rOa"/>
+                                            <outlet property="checkmark" destination="hzP-kP-JkZ" id="Go6-by-YLp"/>
                                             <outlet property="imgView" destination="sXw-q0-0Pq" id="HKK-wf-e7V"/>
                                         </connections>
                                     </collectionViewCell>
@@ -418,7 +419,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Like Filled-50" width="50" height="50"/>
+        <image name="Like Filled-50.png" width="50" height="50"/>
         <image name="marks_streamsavvy_mark_large" width="43" height="43"/>
     </resources>
 </document>
