@@ -34,7 +34,7 @@ class FavsTableCell: UITableViewCell {
 }
 
 class FavoritesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    let favorites = Favorites.sharedInstance
     var favs = [TableFav]()
     
     @IBOutlet var favoriteTable: UITableView!
@@ -48,24 +48,11 @@ class FavoritesTableViewController: UIViewController, UITableViewDelegate, UITab
 
     
     override func viewWillAppear(_ animated: Bool) {
-        let q = GraphQLAPI.getFavoritesQuery().create()
         
-        _ = GraphQLAPI.fetchGraphQLQuery(q: q)
-            .then { the_json -> Void in
-                
-                if let t = the_json["data"] as? [String: [[String: Any]]] {
-                    
-                    for i in t["favorites"]! {
-                        let x = TableFav.init(json: i as [String:Any])
-                        self.favs.append(x)
-                    }
-                    
-                    
-                }
-                
-                self.favoriteTable.reloadData()
-                
-        }
+        favs = favorites.favs
+        
+        self.favoriteTable.reloadData()
+    
 
     }
     
