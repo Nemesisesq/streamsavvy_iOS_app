@@ -17,7 +17,7 @@ class FavoritesViewController: Auth0ViewController, iCarouselDataSource, iCarous
     var numbers = [String]()
     var selectedShow: Content!
     let searchResults = SearchResults()
-    let favorites = Favorites()
+    let favorites = Favorites.sharedInstance    
     var searchButton: UIBarButtonItem!
     
     var recommendations: [Content]!{

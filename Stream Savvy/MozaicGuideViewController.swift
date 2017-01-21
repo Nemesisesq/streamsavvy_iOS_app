@@ -22,7 +22,7 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, UICol
     
     var favorites: Favorites!
     
-    var  searchButton: UIBarButtonItem!
+    var searchButton: UIBarButtonItem!
     var loginButton: UIBarButtonItem!
     var refreshControl = UIRefreshControl()
     
@@ -62,29 +62,14 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, UICol
         self.performSegue(withIdentifier: "Login", sender: self)
     }
     
-    
-    //        lazy var refreshControl: UIRefreshControl = {
-    //                let refreshControl = UIRefreshControl()
-    //                //                refreshControl.addTarget(self, action: #selector(self.handleRefresh(_:)), for: UIControlEvents.valueChanged)
-    //
-    //                return refreshControl
-    //        }()
-    
-    
-    
-    
-    
-  
-    
     //MARK: - Set Up
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Auth0.calledBySubclass = true
         
-        if favorites == nil  {
-            favorites = Favorites()
-        }
+        favorites = Favorites.sharedInstance
+        
         
         searchButton = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(self.search(_:)))
         searchButton.tintColor = Constants.streamSavvyRed()
@@ -200,10 +185,10 @@ class MozaicCollectionViewController: PopularShowObjectiveCViewController, UICol
         let show = popularShows[indexPath.row] as! PopularShow
         let cell = cell as! OnDemandCollectionViewCell
         cell.imgView.sd_setImage(with: URL(string : show.image_link ))
-//        cell.titleLable.text = show.title
+        //        cell.titleLable.text = show.title
         cell.popularShow = show
         cell.favorites = self.favorites
-//        cell.titleLable.type = .leftRight
+        //        cell.titleLable.type = .leftRight
         
         
         

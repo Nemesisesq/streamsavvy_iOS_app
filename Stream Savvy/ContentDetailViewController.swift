@@ -42,8 +42,7 @@ class ContentDetailViewController:  Auth0ViewController  {
     
     @IBAction func addContentToFavorites(_ sender: UIButton) {
         
-        let titles  = favorites.contentList.map { $0.title } as [String]
-        let fTitles = favorites.favs.map { $0.name } as! [String]
+        let fTitles = favorites.favs?.map { $0.name } as! [String]
         
         if  $.contains(fTitles, value: content.title){
             Answers.logCustomEvent(withName: "Remove from favorites", customAttributes: ["show":content.title])
@@ -92,18 +91,20 @@ class ContentDetailViewController:  Auth0ViewController  {
     
     func checkIfInFavorites(){
         if favorites != nil{
-            self.favorites.contentList = self.favorites.contentList.reversed()
             
-            
-            let titles  = self.favorites.contentList.map { $0.title } as [String]
-            
-            if $.contains(titles, value: self.content.title){
-                
-                
-                self.addFavoriteButton.setTitle("Remove From Favorites", for: .normal)
-            }
-            else {
-                self.addFavoriteButton.setTitle("ADD TO FAVORITES", for: .normal)
+            favorites.fetchFavorites()
+                .then { result -> Void in
+                    self.favorites.favs = self.favorites.favs.reversed() //TODO change this to a method on the favorites object
+                    
+                    let titles  = self.favorites.favs.map { $0.name } as [String]
+                    
+                    if $.contains(titles, value: self.content.title){
+                        
+                        self.addFavoriteButton.setTitle("Remove From Favorites", for: .normal)
+                    }
+                    else {
+                        self.addFavoriteButton.setTitle("ADD TO FAVORITES", for: .normal)
+                    }
             }
         }
     }
@@ -113,10 +114,8 @@ class ContentDetailViewController:  Auth0ViewController  {
         super.viewDidLoad()
         
         Auth0.calledBySubclass = true
-        if favorites == nil  {
-            favorites = Favorites()
-        }
         
+        favorites = Favorites.sharedInstance
         
         if content == nil {
             content = Content(withPopularShow: show)
@@ -165,6 +164,7 @@ class ContentDetailViewController:  Auth0ViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        checkIfInFavorites()
         Answers.logContentView(withName: "Content Detail View", contentType: "OnDemand", contentId: "\(content.guidebox_id)" , customAttributes: nil)
         self.navigationController?.tabBarController?.tabBar.isHidden = true
         controller.onUserDismissBlock = {
@@ -225,11 +225,7 @@ class ContentDetailViewController:  Auth0ViewController  {
     //MARK - ReShow tool bar here we are tryingt o reshow the tool bar after exiting the view.
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        //                if let tabBarController = self.navigationController?.tabBarController {
-        //                        tabBarController.tabBar.isHidden = false
-        //                }
+        super.viewWillDisappear(animated)
         
         self.navigationController?.tabBarController?.tabBar.isHidden = false
         

@@ -15,7 +15,7 @@ import Crashlytics
     let searchResults = SearchResults()
     var resultsController: UITableViewController!
     var searchController: UISearchController!
-    var favorites =  Favorites()
+    var favorites =  Favorites.sharedInstance
     var blurEffect: UIBlurEffect!
     var blurEffectView: UIVisualEffectView!
     
@@ -140,6 +140,8 @@ import Crashlytics
                 MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
 
                 
+            }.always {
+                MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
         }
     }
     
@@ -207,7 +209,7 @@ import Crashlytics
         if segue.identifier == "ContentDetailSegue" {
             let cdvc = segue.destination as! ContentDetailViewController
             cdvc.content = selectedShow
-            cdvc.favorites = Favorites()
+            cdvc.favorites = Favorites.sharedInstance
             
             
         }

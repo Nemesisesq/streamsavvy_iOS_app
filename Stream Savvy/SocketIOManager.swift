@@ -20,8 +20,8 @@ class SocketIOManager: NSObject {
     init(endpoint: String){
         super.init()
         path = endpoint
-//        ws = WebSocket("ws://www.streamsavvy.cloud/sock/\(path!)")
-        ws = WebSocket("ws://localhost:8080/sock/\(path!)")
+        ws = WebSocket("ws://www.streamsavvy.cloud/sock/\(path!)")
+//        ws = WebSocket("ws://localhost:8080/sock/\(path!)")
 
         //        ws = WebSocket("ws://localhost:8080/\(path!)")
         

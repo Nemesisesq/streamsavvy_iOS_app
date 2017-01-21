@@ -48,23 +48,13 @@ class OnDemandCollectionViewCell: UICollectionViewCell {
     }
     
     
-    var popularShow: PopularShow! {
-        didSet {
-             let fTitles = favorites.favs?.map { $0.name } as! [String]
-            if let t = popularShow.title {
-               fav =  $.contains(fTitles, value: t)
-            }
-        }
-    }
-    
+    var popularShow: PopularShow!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         let gradient = Common().linearGradentTopToBottom()
         gradient.frame = self.bounds
         self.imgView.layer.insertSublayer(gradient, at: 0)
-        
-        //        checkmark.image = checkmark.image!.withRenderingMode(.alwaysTemplate)
-        checkmark.tintColor = Constants.streamSavvyRed()
         
     }
     

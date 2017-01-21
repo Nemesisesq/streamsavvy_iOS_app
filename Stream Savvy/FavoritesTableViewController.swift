@@ -12,12 +12,12 @@ import Gloss
 
 class TableFav: Decodable {
     var name: String!
-    var img: String!
+//    var img: String!
     
     
     required init(json: JSON)  {
         name = "name" <~~ json
-        img = "img" <~~ json
+//        img = "img" <~~ json
     }
 }
 

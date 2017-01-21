@@ -23,17 +23,26 @@ let host = "www.streamsavvy.cloud"
 
 class Favorites: NSObject {
     
-    var favs: [TableFav]? {
+    static let sharedInstance = Favorites()
+    
+    private override init() {
+        super.init()
+        getFavsFromGraphQL()
+    }
+    
+    var _favs = [TableFav]()
+    
+    var favs: [TableFav]! {
         get {
-            if self.favs == nil || self.favs?.count == 0 {
-               getFavsFromGraphQL()
+            if self._favs.count == 0 {
+                getFavsFromGraphQL()
             }
             
-            return self.favs
+            return self._favs
         }
         
         set(x) {
-            self.favs = x
+            self._favs = x
         }
     }
     
@@ -61,62 +70,37 @@ class Favorites: NSObject {
                 
                 if let t = the_json["data"] as? [String: [[String: Any]]] {
                     
+                    var temp = [TableFav]()
                     for i in t["favorites"]! {
                         let x = TableFav.init(json: i as [String:Any])
-                        self.favs?.append(x)
+                        temp.append(x)
                     }
                     
-                    
-                    
-                    
+                    self._favs = temp
                 }
-                
-                
         }
-
+        
     }
-    public func fetchFavorites() -> Promise<Any> {
+    
+    public func fetchFavorites() -> Promise<Void> {
         
-        let url = "http://\(host)/favorites"
+        let q = GraphQLAPI.getFavoritesQuery().create()
         
-        
-        getFavsFromGraphQL()
-        
-        return Promise { fullfil, reject in
-            
-            
-            
-            if  let p = keychain.data(forKey: "profile") {
+        return GraphQLAPI.fetchGraphQLQuery(q: q)
+            .then { the_json -> Void in
                 
-                profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
-            }
-            
-            
-            let params: Parameters = [
-                "id_token": keychain.string(forKey: "id_token")!,
-                "email" : profile.email ?? "no_email",
-                "name"  : profile.name,
-                ]
-            
-            let authHeader: HTTPHeaders = ["Id-Token" :keychain.string(forKey: "id_token")!,
-                                           "Accept": "application/json",
-                                           "User-Id" : profile.userId]
-            
-            
-            Alamofire.request(url, parameters: params, headers: authHeader)
-                .responseJSON {response in
+                if let t = the_json["data"] as? [String: [[String: Any]]] {
                     
-                    self.contentList = Content.parseList(JSONData: (response.data! as Data))
-                    
-                    switch response.result {
-                    case .success(let dict):
-                        fullfil(dict)
-                        
-                    case .failure(let error):
-                        reject(error)
+                    var temp = [TableFav]()
+                    for i in t["favorites"]! {
+                        let x = TableFav.init(json: i as [String:Any])
+                        temp.append(x)
                     }
-            }
+                    
+                    self._favs = temp
+                }
         }
+        
     }
     
     public func removeContentFromFavorites(content: Content) -> Promise<Void> {
@@ -129,43 +113,23 @@ class Favorites: NSObject {
         
         let mutation = GraphQLAPI.toggleShowToFavorites(show: content, favorite: false).create()
         
-        _ = GraphQLAPI.fetchGraphQLQuery(q: mutation)
+        return GraphQLAPI.fetchGraphQLQuery(q: mutation)
             .then { the_json -> Void in
+                Pushbots.sharedInstance().update(["tags_remove": content.title ])
                 
-                if let t = the_json["data"] as? [String: [String: Any]]{
+                if let t = the_json["data"] as? [String: [[String: Any]]] {
                     
-                    let state = t["toggleShow"]?["status"] as! Bool
-                    print(state)
-                }
-                
-        }
-
-        
-        
-        let url = "http://\(host)/favorites/remove"
-        let theJson = content.asJson()
-        let authHeader: HTTPHeaders = ["Id-Token" :keychain.string(forKey: "id_token")!,
-                                       "Accept": "application/json",
-                                       "User-Id" : profile.userId]
-        
-        
-        Pushbots.sharedInstance().update(["tags_remove": content.title ])
-        return Promise { fulfill, reject in
-            Alamofire.request(url, method: .delete, parameters: theJson as? Parameters,  encoding: JSONEncoding.default, headers: authHeader)
-                .responseJSON { response in
-                    
-                    switch response.result {
-                    case .success:
-                        fulfill()
-                        
-                    case .failure(let error):
-                        reject(error)
+                    var temp = [TableFav]()
+                    for i in t["toggleShow"]! {
+                        let x = TableFav.init(json: i as [String:Any])
+                        temp.append(x)
                     }
-            }
+                    
+                    self._favs = temp
+                }
         }
-        
-        
     }
+    
     public func addContentToFavorites(content: Content) -> Promise<Void> {
         if  let p = keychain.data(forKey: "profile") {
             
@@ -174,40 +138,19 @@ class Favorites: NSObject {
         
         let mutation = GraphQLAPI.toggleShowToFavorites(show: content, favorite: true).create()
         
-        _ = GraphQLAPI.fetchGraphQLQuery(q: mutation)
+        return GraphQLAPI.fetchGraphQLQuery(q: mutation)
             .then { the_json -> Void in
-                
-                if let t = the_json["data"] as? [String: [String: Any]]{
+                Pushbots.sharedInstance().update(["tags_add": content.title ])
+                if let t = the_json["data"] as? [String: [[String: Any]]] {
                     
-                    let state = t["toggleShow"]?["status"] as! Bool
-                    print(state)
-                }
-                
-        }
-
-        
-        
-        let url = "http://\(host)/favorites/add"
-        let theJson = content.asJson()
-        let authHeader: HTTPHeaders = ["Id-Token" :keychain.string(forKey: "id_token")!,
-                                       "Accept": "application/json",
-                                       "User-Id" : profile.userId]
-        
-        Pushbots.sharedInstance().update(["tags_add": content.title ])
-        return Promise { fulfill, reject in
-            Alamofire.request(url, method: .post, parameters: theJson as? Parameters,  encoding: JSONEncoding.default, headers: authHeader)
-                .responseJSON { response in
-                    
-                    switch response.result {
-                    case .success:
-                        fulfill()
-                        
-                        
-                    case .failure(let error):
-                        reject(error)
+                    var temp = [TableFav]()
+                    for i in t["toggleShow"]! {
+                        let x = TableFav.init(json: i as [String:Any])
+                        temp.append(x)
                     }
-            }
+                    
+                    self._favs = temp
+                }
         }
-        
     }
 }

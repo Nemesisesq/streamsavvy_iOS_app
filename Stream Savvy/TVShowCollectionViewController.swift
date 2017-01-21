@@ -14,7 +14,9 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
     
     
     
-    var favorites: Favorites!
+    var favorites =  Favorites.sharedInstance
+    
+    
     override var popularShows: [Any]!{
         didSet{
             self.collectionView.reloadData()
@@ -29,7 +31,6 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupFaves = [PopularShow]()
         
         collectionView?.infiniteScrollIndicatorStyle = .white
         
@@ -64,6 +65,7 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
             }
             
         }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -101,11 +103,17 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
         _ = GraphQLAPI.fetchGraphQLQuery(q: mutation)
             .then { the_json -> Void in
                 
-                if let t = the_json["data"] as? [String: [String: Any]]{
+                if let t = the_json["data"] as? [String: [[String: Any]]]{
                     
-                    let state = t["toggleShow"]?["status"] as! Bool
-                    cell.fav = state
-                    cell.isHighlighted = state
+                    var temp = [TableFav]()
+                    for i in t["toggleShow"]! {
+                        let x = TableFav.init(json: i as [String:Any])
+                        temp.append(x)
+                    }
+                    
+                    self.favorites.favs = temp
+                    self.reload()
+
                     
                 }
                 
@@ -125,6 +133,10 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
         let show = popularShows[indexPath.row] as! PopularShow
         let cell = cell as! TVSetUpCollectionViewCell
         cell.imgView.sd_setImage(with: URL(string : show.image_link ))
+        let titles = favorites.favs?.map { $0.name } as! [String]
+        if $.contains(titles, value: show.title) {
+            cell.fav = true
+        }
         
         cell.popularShow = show
         

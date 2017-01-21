@@ -30,6 +30,8 @@ class TeamTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var teamList : [Team]! = [Team]()
     var teams : [[String : Any]]!
     
+    var favorites = Favorites.sharedInstance
+    
     
     @IBOutlet var teamTableView: UITableView!
     
@@ -96,11 +98,15 @@ class TeamTableViewController: UIViewController, UITableViewDelegate, UITableVie
         _ = GraphQLAPI.fetchGraphQLQuery(q: q)
             .then { the_json -> Void in
                 
-                if let t = the_json["data"] as? [String: [String: Any]]{
-                    let state = t["toggleTeam"]?["status"] as! Bool
-                    cell.fav = state
-                    cell.isHighlighted = state
+                if let t = the_json["data"] as? [String: [[String: Any]]] {
                     
+                    var temp = [TableFav]()
+                    for i in t["toggleTeam"]! {
+                        let x = TableFav.init(json: i as [String:Any])
+                        temp.append(x)
+                    }
+                    
+                    self.favorites.favs = temp
                 }
                 
         }
