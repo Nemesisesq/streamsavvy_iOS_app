@@ -80,7 +80,7 @@ import AWSCognito
                 DispatchQueue.main.async() { [weak self] in
                     
                     
-                    if(self?.dataset.string(forKey: "set_up") != "seen"){
+                    if(self?.dataset.string(forKey: "set_up") != "seen") && Auth0.loggedIn {
                         let vc = UIStoryboard(name: "SetUp", bundle: nil).instantiateViewController(withIdentifier:"SetUpNavgaitionController")
                         
                         self?.present(vc, animated: true, completion: nil)

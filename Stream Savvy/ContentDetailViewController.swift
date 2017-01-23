@@ -90,9 +90,9 @@ class ContentDetailViewController:  Auth0ViewController  {
     }
     
     func checkIfInFavorites(){
-        if favorites != nil{
+        if favorites != nil && Auth0.loggedIn {
             
-            favorites.fetchFavorites()
+            _ = favorites.fetchFavorites()
                 .then { result -> Void in
                     self.favorites.favs = self.favorites.favs.reversed() //TODO change this to a method on the favorites object
                     

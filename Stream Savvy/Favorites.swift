@@ -63,30 +63,30 @@ class Favorites: NSObject {
     
     
     func getFavsFromGraphQL(){
-        let q = GraphQLAPI.getFavoritesQuery().create()
-        
-        _ = GraphQLAPI.fetchGraphQLQuery(q: q)
-            .then { the_json -> Void in
-                
-                if let t = the_json["data"] as? [String: [[String: Any]]] {
+        if let x = GraphQLAPI.getFavoritesQuery() {
+            let q = x.create()
+            _ = GraphQLAPI.fetchGraphQLQuery(q: q)
+                .then { the_json -> Void in
                     
-                    var temp = [TableFav]()
-                    for i in t["favorites"]! {
-                        let x = TableFav.init(json: i as [String:Any])
-                        temp.append(x)
+                    if let t = the_json["data"] as? [String: [[String: Any]]] {
+                        
+                        var temp = [TableFav]()
+                        for i in t["favorites"]! {
+                            let x = TableFav.init(json: i as [String:Any])
+                            temp.append(x)
+                        }
+                        
+                        self._favs = temp
                     }
-                    
-                    self._favs = temp
-                }
+            }
         }
-        
     }
     
     public func fetchFavorites() -> Promise<Void> {
         
-        let q = GraphQLAPI.getFavoritesQuery().create()
+        let q = GraphQLAPI.getFavoritesQuery()?.create()
         
-        return GraphQLAPI.fetchGraphQLQuery(q: q)
+        return GraphQLAPI.fetchGraphQLQuery(q: q!)
             .then { the_json -> Void in
                 
                 if let t = the_json["data"] as? [String: [[String: Any]]] {

@@ -14,13 +14,13 @@ import SimpleKeychain
 
 
 class GraphQLAPI : NSObject   {
-
+    
     static var email: String!
     
     static var profile: A0UserProfile! {
         didSet {
             
-        email = profile.email ?? ""
+            email = profile.email ?? ""
         }
     }
     
@@ -57,8 +57,8 @@ class GraphQLAPI : NSObject   {
         
     }
     
-   
-
+    
+    
     
     static func toggleShowToFavorites(show: Content, favorite: Bool) -> Mutation {
         
@@ -68,7 +68,7 @@ class GraphQLAPI : NSObject   {
         }
         
         
-
+        
         let mutatingRequest = Request(
             name: "toggleShow",
             arguments: [
@@ -76,8 +76,8 @@ class GraphQLAPI : NSObject   {
                 Argument(key: "guidebox_id", value: show.guidebox_id),
                 Argument(key: "userId", value: profile.userId),
                 Argument(key: "email", value: email),
-
-            ],
+                
+                ],
             fields :[
                 "name",
                 ]
@@ -90,7 +90,7 @@ class GraphQLAPI : NSObject   {
         )
         
         return mutation
-
+        
     }
     
     static func toggleSport(sport: Sport, fav: Bool) -> Mutation {
@@ -101,7 +101,7 @@ class GraphQLAPI : NSObject   {
         }
         
         
-       
+        
         let mutatingRequest = Request(
             name: "toggleSport",
             arguments: [
@@ -110,10 +110,10 @@ class GraphQLAPI : NSObject   {
                 Argument(key: "userId", value: profile.userId),
                 
                 Argument(key: "email", value: email),
-            ],
+                ],
             fields :[
                 "name"
-                ]
+            ]
         )
         
         
@@ -139,27 +139,30 @@ class GraphQLAPI : NSObject   {
     )
     
     
-    static func getFavoritesQuery() -> Query{
+    static func getFavoritesQuery() -> Query? {
         if  let p = keychain.data(forKey: "profile") {
             
             profile = NSKeyedUnarchiver.unarchiveObject(with:p) as! A0UserProfile
+            
+            
+            let teamsQuery: Query = Query(request: Request (
+                withAlias:"favorites",
+                name: "favorites",
+                arguments: [
+                    Argument(key: "user_id", value:profile.userId)
+                ],
+                fields:[
+                    "name",
+                    ]
+            ))
+            
+            return teamsQuery
         }
         
-        let teamsQuery: Query = Query(request: Request (
-            withAlias:"favorites",
-            name: "favorites",
-            arguments: [
-                Argument(key: "user_id", value:profile.userId)
-            ],
-            fields:[
-                "name",
-                        ]
-        ))
-        
-        return teamsQuery
+        return nil
     }
     
-
+    
     
     static func teamsForOrgQuery(id: String) -> Query{
         let teamsQuery: Query = Query(request: Request (
@@ -229,8 +232,8 @@ class GraphQLAPI : NSObject   {
     
     static func fetchGraphQLQuery(q: String) -> Promise<JSONStandardDict>{
         let url = "http://www.streamsavvy.cloud/graphql"
-//        let url = "http://localhost:8080/graphql"
-
+        //        let url = "http://localhost:8080/graphql"
+        
         
         let dispatch = DispatchQueue.global()
         
