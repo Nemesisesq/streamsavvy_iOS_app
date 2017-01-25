@@ -10,6 +10,7 @@ import UIKit
 import Gloss
 import PromiseKit
 import AWSCognito
+import Dollar
 
 class Sport: Decodable {
     let sportsId: String!
@@ -50,6 +51,12 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         print(q)
         sportsList = [Sport]()
+        
+        
+       _ = favorites.fetchFavorites()
+       
+        
+        
         _ =  GraphQLAPI.fetchGraphQLQuery(q: q)
             .then{ the_json -> Void in
                 print(the_json)
@@ -103,6 +110,10 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cell = cell as! SetupTableViewCell
         cell.sport = sportsList[indexPath.row]
+        
+        if $.contains(self.favorites.favs.map {$0.name}, value: cell.sport.sportsName){
+            cell.fav = true
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -119,7 +130,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
                     return self.goToTeamsView()
                 }
                 
-                return Promise.init(value: r)
+                return Promise.init(value: !r)
             }.then { r -> Void in
                 if r {
                     let q = GraphQLAPI.toggleSport(sport: self.chosenSport, fav: !cell.fav).create()
@@ -137,6 +148,7 @@ class SetupTableViewController: UIViewController, UITableViewDelegate, UITableVi
                                 }
                                 
                                 self.favorites.favs = temp
+                                cell.fav = !cell.fav
                             }
                     }
                 }

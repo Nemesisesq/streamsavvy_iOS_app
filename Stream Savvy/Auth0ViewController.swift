@@ -42,6 +42,8 @@ import AWSCognito
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+               
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.usEast1,
                                                                 identityPoolId:"us-east-1:2ae1ef8e-a34b-4982-a3b0-3d11b5481819")
         
@@ -64,7 +66,7 @@ import AWSCognito
 //        view.addSubview(colorField)
 //        
 //        colorField.becomeFirstResponder()
-        synchronizeDataset()
+       
 
     }
     
@@ -102,7 +104,8 @@ import AWSCognito
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        synchronizeDataset()
+
         //        if Auth0.userDismissed {
         //            Auth0.userDismissed = false
         //        }

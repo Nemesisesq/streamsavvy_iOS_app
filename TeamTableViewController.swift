@@ -8,6 +8,7 @@
 
 import UIKit
 import Gloss
+import Dollar
 
 class Team : Decodable {
     var teamBrandId : String!
@@ -80,9 +81,13 @@ class TeamTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        let cell = cell as! TeamTableViewCell 
+        let cell = cell as! TeamTableViewCell
         
         cell.team  = teamList[indexPath.row]
+        
+        if $.contains(favorites.favs.map {$0.name}, value: cell.team.name) {
+            cell.fav = true
+        }
         
         
     }
@@ -104,9 +109,12 @@ class TeamTableViewController: UIViewController, UITableViewDelegate, UITableVie
                     for i in t["toggleTeam"]! {
                         let x = TableFav.init(json: i as [String:Any])
                         temp.append(x)
+                        
                     }
                     
                     self.favorites.favs = temp
+                    cell.fav = !cell.fav
+                    
                 }
                 
         }

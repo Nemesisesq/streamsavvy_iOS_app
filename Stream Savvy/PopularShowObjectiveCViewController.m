@@ -74,11 +74,11 @@
 			[popularShows addObject:[[PopularShow alloc] initWithAttributes:result]];
 		}
         
-        for (int i = 0; i < popularShows.count; i++) {
-            int randomInt1 = arc4random() % [popularShows count];
-            int randomInt2 = arc4random() % [popularShows count];
-            [popularShows exchangeObjectAtIndex:randomInt1 withObjectAtIndex:randomInt2];
-        }
+//        for (int i = 0; i < popularShows.count; i++) {
+//            int randomInt1 = arc4random() % [popularShows count];
+//            int randomInt2 = arc4random() % [popularShows count];
+//            [popularShows exchangeObjectAtIndex:randomInt1 withObjectAtIndex:randomInt2];
+//        }
 		self.popularShows = [popularShows copy];
 	}];
 }

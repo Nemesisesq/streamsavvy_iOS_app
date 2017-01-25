@@ -232,7 +232,7 @@ class GraphQLAPI : NSObject   {
     
     static func fetchGraphQLQuery(q: String) -> Promise<JSONStandardDict>{
         let url = "http://www.streamsavvy.cloud/graphql"
-        //        let url = "http://localhost:8080/graphql"
+//                let url = "http://localhost:8080/graphql"
         
         
         let dispatch = DispatchQueue.global()
@@ -242,7 +242,7 @@ class GraphQLAPI : NSObject   {
                 .responseData()
             }
             .then(on: dispatch) { data in
-                Common.getReadableJsonDict(data: data )
+                Common.getReadableJsonDict(data: data)
         }
         
     }

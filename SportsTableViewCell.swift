@@ -28,6 +28,10 @@ class SetupTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        fav = false
+    }
+    
     @IBOutlet var sportName: UILabel!
     
     override func awakeFromNib() {

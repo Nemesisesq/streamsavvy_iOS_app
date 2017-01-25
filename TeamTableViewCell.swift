@@ -29,6 +29,10 @@ class TeamTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        fav = false
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -93,7 +93,7 @@ class SecondSetupViewController: PopularShowObjectiveCViewController, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! TVSetUpCollectionViewCell
-        setupFaves.append(popularShows[indexPath.row] as! PopularShow)
+//        setupFaves.append(popularShows[indexPath.row] as! PopularShow)
         
         let popshow = popularShows[indexPath.row] as! PopularShow
         let show = Content.init(withPopularShow: popshow)
